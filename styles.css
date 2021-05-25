@@ -1,16 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
 * {
   background-color: #23303d;
   font-family: "Fira Code", monospace;
-  
+  color: #e7efef;
 }
 
 nav {
   background-color: #1d2833;
-  padding-left: 8rem;
+  padding-left: 128px;
+  top: 13px;
+  box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
 }
+
+b {
+  font-size: 26px;
+}
+
 nav * {
   background-color: #1d2833;
+  font-weight: 700;
 }
 g {
   color: #1ea54c;
@@ -23,10 +32,60 @@ g {
   border: none;
   width: 154px;
   height: 36px;
-
-  
+  font-size: 16.9706px;
 }
 
 .navbar-nav {
-    padding-right: 8rem;
+  padding-right: 128px;
+}
+
+@media (max-width: 992px) {
+  nav {
+    padding-left: 12px;
+  }
+
+  .navbar-nav {
+    padding-right: 0;
+  }
+}
+
+.landingimage {
+  padding-left: 128px;
+}
+
+.landing-text {
+  padding-top: 156px;
+  font-size: 46px;
+  font-weight: 700;
+  padding-right: 128px;
+  line-height: 60px;
+  text-align: end;
+}
+
+.ld {
+  padding-top: 57px;
+  font-family: "Nunito Sans", sans-serif;
+  text-align: end;
+  padding-right: 128px;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
+.footerbottom div > div {
+  top: 31px;
+
+  font-family: Fira Code;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 38.2353px;
+  line-height: 50px;
+  letter-spacing: 0.04em;
+  background: #1d2833;
+  box-shadow: -3px -3px 3px 1px rgba(24, 33, 42, 0.83);
+}
+g1 {
+  background: #1d2833;
+  color: #1ea54c;
 }

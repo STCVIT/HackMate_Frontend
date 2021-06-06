@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito+Sans&family=Raleway&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito+Sans&family=Raleway&display=swap");
 * {
   background-color: #23303d;
   font-family: "Fira Code", monospace;
@@ -38,17 +38,8 @@ g {
   padding-right: 128px;
 }
 
-@media (max-width: 992px) {
-  nav {
-    padding-left: 12px;
-  }
-
-  .navbar-nav {
-    padding-right: 0;
-  }
-}
-
 .landingimage {
+  position: relative;
   padding-left: 128px;
 }
 
@@ -72,9 +63,21 @@ g {
   letter-spacing: 0.04em;
 }
 
-.footerbottom{
+.footerbottom {
+  top: 31px;
+  font-family: Fira Code;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 38.2353px;
+  line-height: 50px;
+  letter-spacing: 0.04em;
+  background: #1d2833;
+}
 
-  
+.foo {
+  box-shadow: -3px -3px 3px 1px rgba(24, 33, 42, 0.83);
+}
+.footerbottomt {
   top: 31px;
 
   font-family: Fira Code;
@@ -84,10 +87,8 @@ g {
   line-height: 50px;
   letter-spacing: 0.04em;
   background: #1d2833;
-  box-shadow: -3px -3px 3px 1px rgba(24, 33, 42, 0.83);
 }
-.footerbottom1{
-
+.footerbottom1 {
   font-family: Raleway;
   font-style: normal;
   font-weight: 500;
@@ -97,12 +98,12 @@ g {
   color: rgba(231, 239, 239, 0.7);
   background: #1d2833;
 }
-.footerbottom1 .row{
+.footerbottom1 .row {
   margin: 0;
 }
 
-.bottomtext{
-margin-left: 7.5rem;
+.bottomtext {
+  margin-left: 7.5rem;
 }
 
 g1 {
@@ -110,68 +111,154 @@ g1 {
   color: #1ea54c;
 }
 
-.text-center{
+.text-center {
   padding-top: 31px;
 }
 
-.footerbottom hr{
-  width: 67rem;
+.footerbottom hr {
+  width: 77vw;
   margin-top: 26px;
   margin-left: 8.125rem;
   border: 1px solid rgba(231, 239, 239, 0.2);
 }
 
-.box{
-width: 379px;
-height: 286.36px;
-left: 278px;
-top: 685px;
-
-background: #1D2833;
-border: 1px solid rgba(0, 0, 0, 0.1);
-box-sizing: border-box;
-box-shadow: 6px 6px 28px rgba(0, 0, 0, 0.25);
-border-radius: 4px;
+.container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .box {
+  width: 379px;
+  height: 286.36px;
+  left: 278px;
+  top: 685px;
   margin-bottom: 105.64px;
   margin-top: 144.61px;
+  background: #1d2833;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  box-shadow: 6px 6px 28px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  align-content: center;
+  flex-basis: 379px;
 }
 
-.card-bigtext{
-  background: #1D2833;
-  font-family: Fira Code;
-font-style: normal;
-font-weight: bold;
-font-size: 29.9457px;
-line-height: 39px;
-letter-spacing: 0.04em;
-color: #E7EFEF;
+.box2 {
+  margin-left: 5vw;
 }
-.card-text{
-  background: #1D2833;
+.card-bigtext {
+  background: #1d2833;
+  font-family: Fira Code;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 29.9457px;
+  line-height: 39px;
+  letter-spacing: 0.04em;
+  color: #e7efef;
+}
+.card-text {
+  background: #1d2833;
   margin-top: 44.88px;
   font-family: Nunito Sans;
-font-style: normal;
-font-weight: normal;
-font-size: 15.4px;
-line-height: 21px;
-text-align: center;
-letter-spacing: 0.04em;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15.4px;
+  line-height: 21px;
+  text-align: center;
+  letter-spacing: 0.04em;
 
-color: rgba(231, 239, 239, 0.7);
+  color: rgba(231, 239, 239, 0.7);
 }
 
 .btngetstarted {
   margin-top: 46px;
   width: 306px;
-height: 41px;
-left: 314px;
-top: 889px;
-background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);
-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
-border-radius: 2px;
-border: none;
+  height: 41px;
+  left: 314px;
+  top: 889px;
+  background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  border: none;
   font-size: 16.9706px;
+}
+
+.footerbottomimg{
+  margin-left: 6vw;
+}
+
+@media (max-width: 992px) {
+  nav {
+    padding-left: 12px;
+  }
+
+  .navbar-nav {
+    padding-right: 0;
+  }
+
+  .landingimg {
+    text-align: center;
+    margin-left: 12.5vw;
+  }
+}
+
+@media (max-width: 1028px) {
+  .landingimg {
+    width: 400px;
+    height: 502px;
+  }
+}
+
+@media (max-width: 550px) {
+  .landingimg {
+    display: none;
+  }
+
+  .landing-text {
+    text-align: center;
+    justify-content: center;
+    font-size: 26px;
+  }
+
+  .ld {
+    font-size: 16px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .footerbottom hr {
+    margin-left: 4rem;
+  }
+
+  .footerbottom1{
+    font-size: 8.5391px;
+  }
+  .footerbottom1 img{
+    height: 14.89px;
+    width: 14.89px;
+  }
+  .bottomtext {
+    margin-left: 6vw;
+
+  }
+
+  .lantext{
+    margin-left: 3.75rem;
+  }
+}
+
+@media (max-width:769px){
+
+  .lantext{
+    margin-left: 3.75rem;
+  }
+  .bottomtext{
+    margin-left: 2.5rem;
+  }
+
+  .footerbottomimgmain{
+    margin-left: 3.5rem;
+  }
 }

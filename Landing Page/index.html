@@ -10,29 +10,16 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-        <div class="container-fluid">
-            <a class="navbar-brand logo" href="#"> <g><</g><b>HackMate</b><g>></g></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="justify-content-end collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="navbar-brand btnsignup btn btn-primary" href="#" role="button">Sign Up</a>
-                </div>
-            </div>
-        </div>
-    </nav>
 
+<body>
+    <div id="nav"></div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6 landingimage">
-                <img src="../Images/Group 249.png" alt="">
+            <div class="col-6 landingimage">
+                <img class="landingimg" src="../Images/Group 249.png" alt="">
             </div>
-            <div class="col-md-1"></div>
-            <div class="col-md-5">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-5 col-md-11 col-sm-11 lantext">
                 <div class="landing-text">
                     Let's start hacking<g>.</g>
                 </div>
@@ -45,74 +32,36 @@
     </div>
 
     <div class="main">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-2">
-                </div>
-                <div class="col-4 ms-5">
-                    <div class="box text-center">
+        <div class="container-fluid container2">
+                
+                    <div class="box text-center"> 
                         <p class="card-bigtext">For Participants</p>
                         <p class="card-text">Looking for teammates from various domains? Find them here and win laurels.</p>
                         <a class="btngetstarted btn btn-primary" href="#" role="button">Get Started</a>
 
                     </div>
-                </div>
-                <div class="col-4">
-                    <div class="box text-center">
+                
+                    <div class="box text-center box2">
                         <p class="card-bigtext">For Organisers</p>
                         <p class="card-text">Register your hacks here and attract the best teams with breakthrough ideas.</p>
                         <a class="btngetstarted btn btn-primary" href="#" role="button">Get Started</a>
                     
                     </div>
-                </div>
-            </div>
+                
         </div>
         </div>
     </div>
 
 
-    <div class="footerbottom">
+    <div id="foobottom">
 
-        <div class="footerbottom container-fluid justify-content-center">
-            <div class="footerbottom row">
-                <div class="footerbottom col-12 text-center">
-                    <g1><</g1>HackMate<g1>></g1>
-                </div>
-                <hr>
-            </div>            
-        </div>
-        <div class="container-fluid">
-            <div class="footerbottom1 row">
-                <div class="footerbottom1 bottomtext col-4">
-                    <b class="footerbottom1">©2021 STC. All Rights Reserved.</b>
-                </div>
-                <div class="footerbottom1 col-3">
-                </div>
-                <div class="footerbottom1 col-3">
-                    <a href="https://www.facebook.com/mstcvit/"><img src="../Images/FaceBook.png" alt="STC-FB"></a>
-                    <a href="https://in.linkedin.com/company/micvitvellore" style="margin-left: 90px;"><img src="../Images/LinkedIn.png" alt="STC-FB"></a>
-                    <a href="https://www.instagram.com/stcvit/" style="margin-left: 90px;"><img src="../Images/Instagram.png" alt="STC-FB"></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="footerbottom1 container-fluid justify-content-center">
-            <div class="footerbottom1 row">
-                <div class="footerbottom1 col-12 text-center">
-                    Made with ❤️ by
-                </div>
-            </div>
-            <div class="footerbottom1 row">
-                <div class="footerbottom1 col-12 text-center">
-                    <img src="../Images/STC Logo.png" style="  background: #1d2833;" alt="STC-Logo">
-                </div>
-            </div>
-        </div>
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
         crossorigin="anonymous"></script>
+    <script src="./index.js"></script>
         
 </body>
 </html>

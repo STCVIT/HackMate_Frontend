@@ -1,0 +1,38 @@
+<div class="footerbottom">
+
+        <div class="footerbottomt container-fluid justify-content-center">
+            <div class="footerbottomt row">
+                <div class="foo footerbottomt col-12 text-center">
+                    <g1><</g1>HackMate<g1>></g1>
+                </div>
+                <hr>
+            </div>            
+        </div>
+        <div class="container-fluid">
+            <div class="footerbottom1 row">
+                <div class="footerbottom1 bottomtext col-md-4 col-sm-5 col-5">
+                    <z class="footerbottom1">©2021 STC. All Rights Reserved.</z>
+                </div>
+                <div class="footerbottom1 col-lg-3 col-md-2 col-sm-1 col-1">
+                </div>
+                <div class="footerbottom1 col-lg-3 col-md-4 col-sm-5 col-5">
+                    <a class="footerbottomimgmain" href="https://www.facebook.com/mstcvit/"><img src="../Images/FaceBook.png" alt="STC-FB"></a>
+                    <a class="footerbottomimg" href="https://in.linkedin.com/company/micvitvellore"><img src="../Images/LinkedIn.png" alt="STC-FB"></a>
+                    <a class="footerbottomimg" href="https://www.instagram.com/stcvit/"><img src="../Images/Instagram.png" alt="STC-FB"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footerbottom1 container-fluid justify-content-center">
+            <div class="footerbottom1 row">
+                <div class="footerbottom1 col-12 text-center">
+                    Made with ❤️ by
+                </div>
+            </div>
+            <div class="footerbottom1 row">
+                <div class="footerbottom1 col-12 text-center">
+                    <img src="../Images/STC Logo.png" style="  background: #1d2833;" alt="STC-Logo">
+                </div>
+            </div>
+        </div>
+    </div>

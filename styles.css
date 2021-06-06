@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito+Sans&family=Raleway&display=swap');
 * {
   background-color: #23303d;
   font-family: "Fira Code", monospace;
@@ -73,7 +72,9 @@ g {
   letter-spacing: 0.04em;
 }
 
-.footerbottom div > div {
+.footerbottom{
+
+  
   top: 31px;
 
   font-family: Fira Code;
@@ -85,7 +86,92 @@ g {
   background: #1d2833;
   box-shadow: -3px -3px 3px 1px rgba(24, 33, 42, 0.83);
 }
+.footerbottom1{
+
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16.5391px;
+  line-height: 19px;
+  letter-spacing: 0.04em;
+  color: rgba(231, 239, 239, 0.7);
+  background: #1d2833;
+}
+.footerbottom1 .row{
+  margin: 0;
+}
+
+.bottomtext{
+margin-left: 7.5rem;
+}
+
 g1 {
   background: #1d2833;
   color: #1ea54c;
+}
+
+.text-center{
+  padding-top: 31px;
+}
+
+.footerbottom hr{
+  width: 67rem;
+  margin-top: 26px;
+  margin-left: 8.125rem;
+  border: 1px solid rgba(231, 239, 239, 0.2);
+}
+
+.box{
+width: 379px;
+height: 286.36px;
+left: 278px;
+top: 685px;
+
+background: #1D2833;
+border: 1px solid rgba(0, 0, 0, 0.1);
+box-sizing: border-box;
+box-shadow: 6px 6px 28px rgba(0, 0, 0, 0.25);
+border-radius: 4px;
+}
+
+.box {
+  margin-bottom: 105.64px;
+  margin-top: 144.61px;
+}
+
+.card-bigtext{
+  background: #1D2833;
+  font-family: Fira Code;
+font-style: normal;
+font-weight: bold;
+font-size: 29.9457px;
+line-height: 39px;
+letter-spacing: 0.04em;
+color: #E7EFEF;
+}
+.card-text{
+  background: #1D2833;
+  margin-top: 44.88px;
+  font-family: Nunito Sans;
+font-style: normal;
+font-weight: normal;
+font-size: 15.4px;
+line-height: 21px;
+text-align: center;
+letter-spacing: 0.04em;
+
+color: rgba(231, 239, 239, 0.7);
+}
+
+.btngetstarted {
+  margin-top: 46px;
+  width: 306px;
+height: 41px;
+left: 314px;
+top: 889px;
+background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);
+box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+border-radius: 2px;
+border: none;
+  font-size: 16.9706px;
 }

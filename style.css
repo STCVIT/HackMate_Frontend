@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&display=swap');
+.form-control{
+    max-width:478px;
+    box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
+    border: 3px solid rgba(30, 165, 76, 0.2)!important;
+    border-radius:2px !important;
+    background-color: #2E3D4C!important;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 23px;
+    letter-spacing: 0.04em;
+    color: #E7EFEF;
+    opacity: 0.7;
+}
+input{
+    border: 3px solid rgba(30, 165, 76, 0.2);
+    border-radius:2px ;
+    background-color: #2E3D4C;
+}
+.maintext{
+    font-family: 'Fira Code', monospace;
+    font-style: normal;
+    font-weight: bold;
+    padding-top:132px;
+    font-size: 36px;
+    line-height: 47px;
+    letter-spacing: 0.04em;
+    color: #E7EFEF;
+}
+#dashes{
+     padding-top: 50px;
+     overflow: hidden;
+}
+.mainsection{
+   background-color: #23303D;
+}
+#girl{
+    overflow: hidden;
+    max-width:642px;
+    max-height:463.76px;
+    padding-top:130px;
+}
+#man{
+    overflow: hidden;
+    max-width:486.11px;
+    max-height:363.92px;
+}
+#organiser{
+    overflow: hidden;
+    padding-top:60px;
+}
+.btnsmallversion{
+    width: 143px;
+    height: 46px;
+    left: 1168px;
+     top: 637px;
+     font-family: "Fira Code";
+font-style: normal;
+font-weight: bold;
+font-size: 22px;
+line-height: 29px;
+/* identical to box height */
+letter-spacing: 0.04em;
+color: #E7EFEF;
+}
+
+@media only screen and (max-width:600px){
+ #man{
+    display: none;
+ }
+ #organiser{
+    display: none;
+ }
+ #girl{
+     display: none;
+ }
+}

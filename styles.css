@@ -23,7 +23,6 @@ nav * {
 g {
   color: #1ea54c;
 }
-
 .btnsignup {
   background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
@@ -33,7 +32,6 @@ g {
   height: 36px;
   font-size: 16.9706px;
 }
-
 .navbar-nav {
   padding-right: 128px;
 }

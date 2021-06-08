@@ -1,0 +1,110 @@
+html,body{
+	background-color: #23303D;
+	margin:0;
+	font-family: Fira Code;
+	font-style: normal;
+	font-weight: bold;
+}
+.first{
+	padding-left: 130px;
+	padding-top: 80px;
+}
+input {
+  font: 16px/26px "Raleway", sans-serif; 
+}
+.form-wrap {
+  background-color: #1D2833;
+  width: 450px;
+  margin: 3em auto;
+  box-shadow: 0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19); 
+}
+.form-wrap .tabs {
+    overflow: hidden; 
+}
+.form-wrap .tabs h3 {
+	float: left;
+	width: 50%; 
+}
+.form-wrap .tabs h3 a {
+    padding: 0.5em 0;
+    text-align: center;
+    font-family: Fira Code;
+	 font-style: normal;
+	 font-weight: bold;
+    background-color: #23303D;
+    display: block;
+    color: #fff; 
+}
+.active3 {
+    border-bottom:6px solid transparent; 
+    border-color: #1EA54C;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 2px 0px 0px;
+}
+.inactive4 {
+	background-color: #23303D;
+	opacity: 0.8;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  border-radius: 2px 0px 0px 0px;
+}
+.form-wrap .tabs-content {
+    padding: 1.5em; 
+}
+.form-wrap .tabs-content div[id$="tab-content"] {
+   	display: none; 
+}
+.form-wrap .tabs-content .active {
+    display: block !important; 
+}
+.form-wrap form .input {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 20px;
+  padding: .8em 0 10px .8em;
+  border: 2px solid rgba(30, 165, 76, 0.2);
+  outline: 0;
+  display: inline-block;
+  margin: 0 0 1em 0;
+  padding-right: 2em;
+  width: 100%; 
+  background-color: #2E3D4C;
+}
+.form-wrap form .button {
+  width: 100%;
+  margin-top: 58px;
+  padding: .8em 0 10px .8em;
+  background-color: #226045;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase; 
+}
+.form-wrap form .button:hover {
+  background-color: #4FDA8C; 
+}
+.form-wrap .help-text {
+	margin-top: .6em; 
+	margin-left: 285px;
+  font-family: Nunito Sans;
+  font-weight: 600;
+  font-size: 14px;
+}
+.forgot{
+  color: #fff;
+}
+.forgot:hover{
+  color: #fff;
+}
+@media screen and (max-width: 1000px){
+  .first{
+    display: none;
+  }
+  .form-wrap{
+    margin-top: 450px;
+    width: 425px;
+    transform: scale(2.0);
+  }
+}

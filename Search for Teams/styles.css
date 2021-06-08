@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito+Sans&family=Raleway&display=swap");
 html,body{
 	background-color: #23303D;
 	margin:0;
@@ -134,7 +135,7 @@ html,body{
 	background: #1D2833;
 	box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
 	color: #fff;
-	width: 18rem;
+	width: 20rem;
 }
 .text4 {
   box-sizing: border-box;

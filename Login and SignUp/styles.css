@@ -1,7 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito+Sans&family=Raleway&display=swap");
 html,body{
 	background-color: #23303D;
 	margin:0;
-	font-family: Fira Code;
+	font-family: "Fira Code";
 	font-style: normal;
 	font-weight: bold;
 }
@@ -28,7 +29,7 @@ input {
 .form-wrap .tabs h3 a {
     padding: 0.5em 0;
     text-align: center;
-    font-family: Fira Code;
+    font-family: "Fira Code";
 	 font-style: normal;
 	 font-weight: bold;
     background-color: #23303D;
@@ -103,8 +104,8 @@ input {
     display: none;
   }
   .form-wrap{
-    margin-top: 450px;
-    width: 425px;
-    transform: scale(2.0);
+    margin-top: 250px;
+    width: 475px;
+    transform: scale(1.5);
   }
 }

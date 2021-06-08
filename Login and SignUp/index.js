@@ -18,19 +18,29 @@ loginBtn.addEventListener('click', function() {
   document.getElementById("active1").className = "inactive4";
 });
 
+
 const form=document.getElementById("form");
 form.addEventListener('submit',(e)=>{
     (e).preventDefault();
 });
 
-  function signup(){
+
+
+function signup(){
     const email=document.getElementById('user_email').value;
     const password=document.getElementById('user_pass1').value;
-    const confirmpwd=document.getElementById('user_pass2').value;
+    const confirmpwd=document.getElementById('user_pass2').value; 
 
     console.log(email);
     console.log(password);
     console.log(confirmpwd);
+
+    if(password != confirmpwd) {  
+      alert("Password and Confirm Password are not same");  
+      return false;  
+    } 
+    else {  
+      alert ("Your password created successfully"); 
     firebase.auth().createUserWithEmailAndPassword(email, password)
   .then(({user}) => {
     // Signed in 
@@ -47,4 +57,5 @@ form.addEventListener('submit',(e)=>{
     var errorMessage = error.message;
     // ..
   });
+}
 };

@@ -101,7 +101,7 @@ input{
 /* identical to box height */
     letter-spacing: 0.04em;
     color: #E7EFEF;
-    border-radius: 2px;
+    border-radius: 2px !important;
     border: none;
 }
 
@@ -166,7 +166,7 @@ input{
   .footerbottomimg {
     margin-left: 6vw;
   }
-@media only screen and (max-width:600px){
+@media only screen and (max-width:599px){
  #man{
     display: none;
  }
@@ -188,7 +188,7 @@ input{
   padding-top:20%;
 }
 }
-@media only screen and (min-width:768px) {
+@media only screen and (min-width:1025px) {
   .organiserdash{
     display:none;
   }
@@ -199,6 +199,38 @@ input{
   position:absolute;
   top:40%;
   right:25%;
+}
+#foobottom{
+  padding-top: 10%;
+}
+}
+@media only screen and (min-width:602px) and (max-width:1024px) {
+  .organiserdash{
+    display:none;
+  }
+.content{
+  position:relative;
+}
+#btnaddhack{
+  position:absolute;
+  top:40%;
+  right:1%;
+}
+#foobottom{
+  padding-top: 10%;
+}
+}
+@media only screen and (min-width:600px) and (max-width:601px) {
+  .organiserdash{
+    display:none;
+  }
+.content{
+  position:relative;
+}
+#btnaddhack{
+  position:absolute;
+  top:40%;
+  right:7%;
 }
 #foobottom{
   padding-top: 10%;

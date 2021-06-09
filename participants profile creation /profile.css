@@ -65,7 +65,7 @@ input{
     font-family: 'Fira Code', monospace;
     font-style: normal;
     font-weight: bold;
-    padding-top:132px;
+    padding-top:3%;
     font-size: 36px;
     line-height: 47px;
     letter-spacing: 0.04em;
@@ -84,24 +84,25 @@ input{
 }
 #man{
     overflow: hidden;
-    max-width:486.11px;
-    max-height:363.92px;
-}
-#organiser{
-    overflow: hidden;
     padding-top:60px;
+  max-width:486.11px;
+  max-height:363.92px;
+}
+#skills{
+  overflow: hidden;
+  padding-top:60px;
 }
 .btnsmallversion{
-    width: 143px;
-    height: 46px;
+    width: 120px;
+    height: 40px;
     font-family: "Fira Code";
     font-weight: bold;
-    font-size: 44px;
+    font-size: 22px;
     line-height: 29px;
 /* identical to box height */
     letter-spacing: 0.04em;
     color: #E7EFEF;
-    border-radius: 2px;
+    border-radius: 2px!important;
     border: none;
 }
 
@@ -176,13 +177,15 @@ input{
  #girl{
      display: none;
  }
+ #skills{
+   display: none;
+ }
  .content{
   position:relative;
 }
-#btnaddhack{
+#btnnext{
   position:absolute;
-  top:40%;
-  right:0;
+  right:0%;
 }
 #foobottom{
   padding-top:20%;
@@ -195,12 +198,64 @@ input{
 .content{
   position:relative;
 }
-#btnaddhack{
-  position:absolute;
-  top:40%;
+#btnnext{
+  position: absolute;
   right:25%;
 }
 #foobottom{
   padding-top: 10%;
 }
 }
+/*skills page*/
+.skill_selection{
+  padding-top:13%;
+  padding-bottom:20%;
+}
+.top-button{
+  padding-bottom:30px;
+}
+.middle-button{
+  padding-bottom:30px;
+}
+
+
+
+
+.button1{
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 4px;
+  cursor: pointer;
+  background: #1D2833;
+  border: 2.53333px solid #1EA54C;
+  box-sizing: border-box;
+  border-radius: 63.3333px;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 15.2px;
+  line-height: 140%;
+  letter-spacing: 0.04em;
+  color: #1EA54C;
+  filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
+  height: 38px;
+}
+.button {
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 4px;
+  cursor: pointer;
+  background: #1EA54C;
+  border: 2.53333px solid #1EA54C;
+  box-sizing: border-box;
+  border-radius: 63.3333px;
+  filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
+  height: 38px;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 15.2px;
+}
+

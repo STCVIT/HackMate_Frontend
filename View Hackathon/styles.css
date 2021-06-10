@@ -5,106 +5,122 @@
   color: #e7efef;
 }
 
-nav {
-  background-color: #1d2833;
+.main {
   padding-left: 128px;
-  top: 13px;
+}
+
+.hackathons {
+  padding-top: 72px;
+  font-family: Fira Code;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 140%;
+  /* or 50px */
+
+  letter-spacing: 0.04em;
+  padding-left: 0.5rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-basis: 353.33px;
+  justify-content: center;
+  text-align: start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nb1 {
+  font-family: Fira Code;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25.3533px;
+  line-height: 33px;
+  letter-spacing: 0.04em;
+}
+
+.box {
+  background: #1d2833;
+  width: 353.33px;
+  height: 424px;
+  margin-top: 57px;
+  margin-right: 61.67px;
   box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
+  border-radius: 4px;
 }
 
-.navbar-dark .navbar-nav .nav-link:focus,
-.navbar-dark .navbar-nav .nav-link:hover {
-  color: #e7efef;
-}
-.navbar-dark .navbar-nav .nav-link {
-  color: #e7efef;
+.innertxt {
+  padding-left: 43.09px;
 }
 
-b {
-  font-size: 26px;
+.box * {
+  background: #1d2833;
 }
 
-nav * {
-  background-color: #1d2833;
-  font-weight: 700;
-  color: #e7efef;
-}
-g {
-  color: #1ea54c;
+nbg {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13.7886px;
+  line-height: 160%;
+  /* or 22px */
+
+  letter-spacing: 0.04em;
+
+  color: #979797;
 }
 
-.btnsignup {
+.nbg {
+  margin-top: 15.05px;
+}
+.nbw {
+  margin-top: 5.17px;
+}
+
+nbw {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15.5122px;
+  line-height: 160%;
+  /* identical to box height, or 25px */
+
+  letter-spacing: 0.04em;
+}
+
+.box2 {
+  padding-left: 25.85px;
+}
+.dates {
+  display: flex;
+}
+
+
+.status {
+
+    margin-top: 18.12px;
+}
+.btnkm {
+  margin-top: 26.04px;
   background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 2px;
-  border: none;
-  width: 154px;
-  height: 36px;
+  border-radius: 4px;
+  width: 267px;
+  height: 41px;
+  font-family: Fira Code;
+  font-style: normal;
+  font-weight: bold;
   font-size: 16.9706px;
-}
+  line-height: 22px;
+  border: none;
+  /* identical to box height */
 
-.navbar-nav {
-  padding-right: 128px;
-}
-
-.dropdown-item {
-  color: #e7efef;
-  background-color: #1d2833;
-}
-
-.dropdown-menu {
-  padding: 0;
-  border: 0;
-}
-
-.nav-link.img {
-  padding-top: 0;
-  display: none;
-}
-
-.nav-item .nav-link {
-  padding-right: 56px;
-}
-
-@media (min-width: 1060px) {
-  .navbar-expand-lg .navbar-nav .nav-link {
-    padding-right: 56px;
-    padding-left: 0;
-  }
-
-  .navbar-expand-lg .navbar-nav .nav-link.alerts {
-      padding-right: 0.5rem;
-  }
-  .navbar-expand-lg .navbar-nav .nav-link.dropdown-toggle.username{
-    padding-left: 0.5rem;
-}
-}
-
-@media (min-width: 992px) {
-  .alerts::after {
-    content: "|";
-    color: rgba(255, 255, 255, 0.55);
-  }
-  .alerts img {
-    margin-right: 47.25px;
-  }
-  .nav-link {
-    padding: 15px 0 0 0;
-  }
-
-  .nav-item .nav-link.img {
-    display: initial;
-  }
-
-  
+  letter-spacing: 0.04em;
 }
 
 @media (max-width: 992px) {
-  nav {
+  .main {
     padding-left: 12px;
-  }
-
-  .navbar-nav {
-    padding-right: 0;
   }
 }

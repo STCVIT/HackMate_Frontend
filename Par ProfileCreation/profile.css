@@ -11,7 +11,7 @@ nav {
     box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
   }
   #nav{
-      padding-bottom:8%;
+      padding-bottom:5%;
   }
   b {
     font-size: 26px;
@@ -61,11 +61,14 @@ input{
     border-radius:2px ;
     background-color: #2E3D4C;
 }
+.form{
+  padding-bottom:50px;
+}
 .maintext{
     font-family: 'Fira Code', monospace;
     font-style: normal;
     font-weight: bold;
-    padding-top:132px;
+    padding-top:3%;
     font-size: 36px;
     line-height: 47px;
     letter-spacing: 0.04em;
@@ -75,33 +78,46 @@ input{
      padding-top: 50px;
      overflow: hidden;
 }
+#dashes2{
+  padding-top: 40px;
+  overflow: hidden;
+  padding-bottom: 30px;
+}
+#dashes3{
+  padding-top: 50px;
+  overflow: hidden;
+  padding-bottom: 30px;
+}
 
 #girl{
     overflow: hidden;
     max-width:642px;
     max-height:463.76px;
-    padding-top:130px;
+    padding-top:60px;
 }
 #man{
     overflow: hidden;
-    max-width:486.11px;
-    max-height:363.92px;
-}
-#organiser{
-    overflow: hidden;
     padding-top:60px;
+  max-width:486.11px;
+  max-height:363.92px;
+}
+#skills{
+  overflow: hidden;
+  padding-top:10%;
+  max-width:515.16px;
+  max-height:373.02px;
 }
 .btnsmallversion{
-    width: 143px;
-    height: 46px;
+    width: 120px;
+    height: 40px;
     font-family: "Fira Code";
     font-weight: bold;
-    font-size: 44px;
+    font-size: 22px;
     line-height: 29px;
 /* identical to box height */
     letter-spacing: 0.04em;
     color: #E7EFEF;
-    border-radius: 2px;
+    border-radius: 2px!important;
     border: none;
 }
 
@@ -176,13 +192,15 @@ input{
  #girl{
      display: none;
  }
+ #skills{
+   display: none;
+ }
  .content{
   position:relative;
 }
-#btnaddhack{
+#btnnext{
   position:absolute;
-  top:40%;
-  right:0;
+  right:0%;
 }
 #foobottom{
   padding-top:20%;
@@ -195,12 +213,78 @@ input{
 .content{
   position:relative;
 }
-#btnaddhack{
-  position:absolute;
-  top:40%;
+#btnnext{
+  position: absolute;
   right:25%;
 }
 #foobottom{
   padding-top: 10%;
 }
+}
+#foobottom{
+  padding-top:6%;
+}
+/*skills page*/
+.skill_selection{
+  padding-bottom:20px;
+}
+.top-button{
+  padding-bottom:20px;
+}
+.middle-button{
+  padding-left: 7%;
+  padding-right: 30px;
+  padding-bottom:20px;
+}
+.bottom-button{
+  padding-bottom:20px;
+  padding-left:15%;
+}
+.bottommost-button{
+  padding-bottom:20px;
+  padding-left:20%;
+}
+
+
+
+
+.button1{
+  padding: 10px 20px;
+  padding-bottom:30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 4px;
+  cursor: pointer;
+  background: #1D2833;
+  border: 2.53333px solid #1EA54C;
+  box-sizing: border-box;
+  border-radius: 63.3333px;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 17.21px;
+  line-height: 23.48px;
+  letter-spacing: 0.04em;
+  color: #1EA54C;
+  filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
+  height: 38px;
+}
+.button {
+  padding: 10px 20px;
+  padding-bottom:30px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 4px;
+  cursor: pointer;
+  background: #1EA54C;
+  border: 2.53333px solid #1EA54C;
+  box-sizing: border-box;
+  border-radius: 63.3333px;
+  filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
+  height: 38px;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 17.21px;
 }

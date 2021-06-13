@@ -50,7 +50,7 @@ g {
   }
 }  
 #nav{
-  padding-bottom:8%;
+  padding-bottom:7%;
 }
 /*Mainsection CSS*/
 .form-control{
@@ -238,6 +238,12 @@ g1 {
 #foobottom{
   padding-top:20%;
 }
+.m{
+  justify-content:center;
+}
+.heading_top{
+  padding-bottom:20px;
+}
 }
 @media only screen and (min-width:768px) {
   .organiserdash{
@@ -253,9 +259,22 @@ g1 {
 #foobottom{
   padding-top: 10%;
 }
+.x{
+  display:inline-flex;
 }
-#foobottom{
-  padding-top:6%;
+.m{
+  justify-content: flex-start;
+}
+.second{
+  padding-left:8%;
+}
+.heading_top{
+  display: none;
+}
+.card{
+  width:813.15px;
+  height:356px;
+}
 }
 /*skills page*/
 .skill_selection{
@@ -377,4 +396,10 @@ p{
 }
 .check-label{
   background:#1D2833;
+}
+.card-body h5{
+  padding-bottom: 20px;
+}
+.not_button{
+  padding-left:30px;
 }

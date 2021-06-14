@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito+Sans&family=Raleway&display=swap");
 
-.footer > div {
+.footer > div > div > div {
   background: #1d2833;
   color: rgba(231, 239, 239, 0.7);
 }
@@ -22,6 +22,7 @@
 }
 
 g1 {
+  background: #1d2833;
   color: #1ea54c;
 }
 
@@ -37,11 +38,11 @@ g1 {
 }
 
 .footerbottomimg{
-    padding-left: 6vw;
+    margin-left: 6vw;
 }
 
 @media (max-width: 550px){
     .footerbottomimg{
-    padding-left: 1vw;
+    margin-left: 1vw;
 }
 }

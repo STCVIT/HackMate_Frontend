@@ -1,17 +1,14 @@
-.footerbottom {
-  top: 31px;
-  font-family: Fira Code;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 38.2353px;
-  line-height: 50px;
-  letter-spacing: 0.04em;
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito+Sans&family=Raleway&display=swap");
+
+.footer > div {
   background: #1d2833;
+  color: rgba(231, 239, 239, 0.7);
 }
 
-.foo {
+.footer {
   box-shadow: -3px -3px 3px 1px rgba(24, 33, 42, 0.83);
 }
+
 .footerbottomt {
   top: 31px;
 
@@ -21,65 +18,30 @@
   font-size: 38.2353px;
   line-height: 50px;
   letter-spacing: 0.04em;
-  background: #1d2833;
+  color: #e7efef;
 }
+
+g1 {
+  color: #1ea54c;
+}
+
 .footerbottom1 {
   font-family: Raleway;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 500; 
   font-size: 16.5391px;
   line-height: 19px;
   letter-spacing: 0.04em;
   color: rgba(231, 239, 239, 0.7);
-  background: #1d2833;
-}
-.footerbottom1 .row {
-  margin: 0;
+  background: #1d2833; 
 }
 
-.bottomtext {
-  margin-left: 7.5rem;
+.footerbottomimg{
+    padding-left: 6vw;
 }
 
-g1 {
-  background: #1d2833;
-  color: #1ea54c;
+@media (max-width: 550px){
+    .footerbottomimg{
+    padding-left: 1vw;
 }
-
-.text-center {
-  padding-top: 31px;
-}
-
-.footerbottom hr {
-  width: 77vw;
-  margin-top: 26px;
-  margin-left: 8.125rem;
-  border: 1px solid rgba(231, 239, 239, 0.2);
-}
-
-.footerbottomimg {
-  margin-left: 6vw;
-}
-
-@media (max-width: 769px) {
-    .footerbottomimgmain {
-    margin-left: 3.5rem;
-  }
-}
-
-@media (max-width: 600px) {
-    .footerbottom hr {
-    margin-left: 4rem;
-  }
-
-  .footerbottom1 {
-    font-size: 8.5391px;
-  }
-  .footerbottom1 img {
-    height: 14.89px;
-    width: 14.89px;
-  }
-  .footerbottomimgmain {
-    margin-left: 0px;
-  }
 }

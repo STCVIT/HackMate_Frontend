@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito+Sans&family=Raleway&display=swap");
+* {
+  background-color: #23303d;
+  font-family: "Fira Code", monospace;
+  color: #e7efef;
+}
+
+.main {
+  padding-left: 128px;
+}
+
+bg {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.08em;
+  color: rgba(231, 239, 239, 0.36);
+}
+
+input {
+    opacity: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-basis: 276.26px;
+  justify-content: center;
+  text-align: start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nb1 {
+    
+  font-family: Fira Code;
+font-style: normal;
+font-weight: bold;
+font-size: 19.9188px;
+line-height: 140%;
+/* identical to box height, or 28px */
+
+letter-spacing: 0.04em;
+
+color: #E7EFEF;
+}
+
+.box {
+  background: #1d2833;
+  width: 276.26px;
+height: 263px;
+  margin-top: 103px;
+  margin-bottom: 154px;
+  margin-right: 61.67px;
+border-radius: 2.21008px;
+}
+
+.innertxt {
+  padding-left: 43.09px;
+}
+
+.box * {
+  background: #1d2833;
+}
+
+nbg {
+  font-family: Nunito Sans;
+font-style: normal;
+font-weight: normal;
+font-size: 11.2478px;
+line-height: 160%;
+/* or 18px */
+
+letter-spacing: 0.04em;
+
+color: #979797;
+}
+
+.nbg {
+  margin-top: 14.77px;
+}
+.nbw {
+  margin-top: 4.22px;
+}
+
+nbw {
+  font-family: Nunito Sans;
+font-style: normal;
+font-weight: 400;
+font-size: 12.6538px;
+line-height: 160%;
+/* identical to box height, or 20px */
+
+letter-spacing: 0.04em;
+
+color: #E7EFEF;
+}
+
+.box2 {
+  padding-left: 25.85px;
+}
+.dates {
+  display: flex;
+}
+
+
+.status {
+
+    margin-top: 18.12px;
+}
+
+
+@media (max-width: 992px) {
+  .main {
+    padding-left: 12px;
+  }
+}

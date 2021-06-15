@@ -5,39 +5,32 @@
   color: #e7efef;
 }
 
-.landingimage {
-  position: relative;
-  padding-left: 128px;
+.text {
+  padding-top: 10%;
 }
-
-.landing {
-  display: flex;
-  flex-basis: 50vw;
-  justify-content: center;
-  align-items: center;
-}
-
-.landingimage1 {
-  padding-left: 19vw;
-}
-
-.landing-text1 {
-  padding-top: 156px;
+lt {
+  font-family: Fira Code;
+  font-style: normal;
+  font-weight: bold;
   font-size: 46px;
-  font-weight: 700;
-  padding-right: 128px;
   line-height: 60px;
-  text-align: end;
+  text-align: right;
+  letter-spacing: 0.04em;
+
+  color: #e7efef;
 }
 
-.ld1 {
-  padding-top: 57px;
-  font-family: "Nunito Sans", sans-serif;
-  text-align: end;
-  padding-right: 128px;
-  font-size: 20px;
-  line-height: 30px;
+.space {
+
+  padding-top: 5%;
+}
+
+lt1 {
+  font-family: Nunito Sans;
+  font-style: normal;
   font-weight: 400;
+  font-size: 22px;
+  line-height: 30px;
   letter-spacing: 0.04em;
 }
 
@@ -104,90 +97,32 @@
   font-size: 16.9706px;
 }
 
-@media (max-width: 1028px) {
-  .landingimg {
-    width: 400px;
-    height: 502px;
-  }
-}
-
-@media (max-width: 992px) {
-  
-  .landing {
-    display: grid;
-    grid-template-columns: auto;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .landingimg {
-    margin-left: 12.5vw;
-  }
-  .lantextmain1 {
-    justify-content: center;
-    text-align: center;
-  }
-  .lantextmain {
-    text-align: center;
-  }
-  .landing-text1 {
-    text-align: center;
-  }
-
-  .lantext {
-    margin-left: 8vw;
-  }
-  .ld1 {
-    text-align: center;
-  }
-}
-
-@media (max-width: 769px) {
-  .lantext {
-    margin-left: 8vw;
-  }
-  .bottomtext {
-    margin-left: 2.5rem;
-  }
-}
-
-
-@media (max-width: 600px) {
-  .landingimg1 {
+@media (max-width: 767px) {
+  .lanimg1 {
     display: none;
   }
+}
 
-  .landing-text1 {
-    text-align: center;
-    justify-content: center;
-    font-size: 1.625rem;
-    line-height: 36.74px;
-    padding-top: 75px;
-  }
-
-  .ld1 {
-    font-family: Nunito Sans;
+@media (max-width: 576px) {
+  lt {
+    font-family: Fira Code;
     font-style: normal;
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 22px;
-    text-align: center;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 37px;
+
     letter-spacing: 0.04em;
 
     color: #e7efef;
   }
 
-  .bottomtext {
-    margin-left: 12vw;
+  lt1 {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    letter-spacing: 0.04em;
   }
-
-  .lantext1 {
-    margin-left: 22vw;
-  }
-}
-
-@media (max-width: 470px) {
-  .lantext1 {
-    margin-left: 30vw;
-}
 }

@@ -29,20 +29,41 @@ g1 {
 .footerbottom1 {
   font-family: Raleway;
   font-style: normal;
-  font-weight: 500; 
+  font-weight: 500;
   font-size: 16.5391px;
   line-height: 19px;
   letter-spacing: 0.04em;
   color: rgba(231, 239, 239, 0.7);
-  background: #1d2833; 
+  background: #1d2833;
 }
 
-.footerbottomimg{
-    margin-left: 6vw;
+.footerbottomimg {
+  margin-left: 6vw;
 }
 
-@media (max-width: 550px){
-    .footerbottomimg{
+#foobottom {
+  background: #23303D;
+  padding-top: 105.640px;
+}
+
+@media (max-width: 550px) {
+  .footerbottomimg {
     margin-left: 1vw;
-}
+  }
+
+  .footerbottom1 {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 8.57143px;
+    line-height: 10px;
+  }
+  .footerbottomimg img {
+    width: 14.89px;
+    background: #1d2833;
+  }
+  .footerbottomimgmain img {
+    width: 14.89px;
+    background: #1d2833;
+  }
 }

@@ -15,11 +15,11 @@
             </div>
             <div class="row">
                 <div class="col-1"></div>
-                <div class="col-5 ">
+                <div class="col-5 footerbottom1 ">
                     ©2021 STC. All Rights Reserved.
                 </div>
                 
-                <div class="col-5 justify-content-end align-content-end text-end">
+                <div class="col-5 align-content-start text-end">
                     <a class="footerbottomimgmain" href="https://www.facebook.com/mstcvit/"><img src="../Images/FaceBook.png"
                             alt="STC-FB"></a>
                     <a class="footerbottomimg" href="https://in.linkedin.com/company/micvitvellore"><img src="../Images/LinkedIn.png"

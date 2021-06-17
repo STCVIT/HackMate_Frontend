@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito+Sans&family=Raleway&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&display=swap');
+* {
+    color: #e7efef;
+  }
+.mainsection{
+    background-color: #23303d;
+}
+  nav {
+    background-color: #1d2833;
+    padding-left: 128px;
+    top: 13px;
+    box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
+  }
+  .maintext{
+      font-family: "Fira Code", monospace;
+      padding-top:5%;
+      padding-bottom:4%;
+  }
+  text{
+    color: #1ea54c;
+  }
+  hackathon{
+    color: #E7EFEF99;
+  }
+  f{
+    font-family: 'Nunito Sans', sans-serif;
+    font-size:40px;
+  }
+  .vl{
+    height: 184px;
+    border-left: 1.08px solid #F3F3F34D;
+  }
+  .card-details{
+      display: flex;
+  }
+  .team-members{
+      list-style-type: none;
+  }
+  #pp{
+      padding-bottom:10px;
+  }
+  li p1{
+      float:right;
+  }
+  li p2{
+    float:right;
+}
+li p3{
+    float:right;
+}
+li p4{
+    float:right;
+}
+r{
+    float: right;
+    padding: 10px;
+    color: #E7EFEF99;
+}
+.card{
+    border:none !important;
+    background-color: #1d2833 !important;
+    box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
+  }
+.right-triangles{
+    position: absolute;
+}
+.card{
+    position:relative;
+    top:-30px;
+    left:50px;
+}

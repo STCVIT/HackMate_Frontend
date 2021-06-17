@@ -21,7 +21,6 @@ lt {
 }
 
 .space {
-
   padding-top: 5%;
 }
 
@@ -97,6 +96,16 @@ lt1 {
   font-size: 16.9706px;
 }
 
+@media (max-width: 823px) {
+  .box2 {
+    margin-left: 1vw;
+  }
+}
+@media (max-width: 781px) {
+  .box2 {
+    margin-left: 0vw;
+  }
+}
 @media (max-width: 767px) {
   .lanimg1 {
     display: none;

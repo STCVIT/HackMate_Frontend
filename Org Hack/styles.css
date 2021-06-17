@@ -9,6 +9,9 @@
   padding-left: 128px;
 }
 
+.adhac{
+  padding-top: 105px;
+}
 bg {
   font-family: Nunito Sans;
   font-style: normal;
@@ -21,9 +24,13 @@ bg {
 }
 
 input {
-    opacity: 0;
+  opacity: 0;
 }
 
+.hacksadded {
+
+  padding-top: 76px;
+}
 .wrapper {
   display: flex;
   flex-basis: 276.26px;
@@ -34,29 +41,31 @@ input {
 }
 
 nb1 {
-    
   font-family: Fira Code;
-font-style: normal;
-font-weight: bold;
-font-size: 19.9188px;
-line-height: 140%;
-/* identical to box height, or 28px */
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19.9188px;
+  line-height: 140%;
+  /* identical to box height, or 28px */
 
-letter-spacing: 0.04em;
+  letter-spacing: 0.04em;
 
-color: #E7EFEF;
+  color: #e7efef;
 }
 
 .box {
   background: #1d2833;
   width: 276.26px;
-height: 263px;
+  height: 320px;
   margin-top: 103px;
   margin-bottom: 154px;
   margin-right: 61.67px;
-border-radius: 2.21008px;
+  border-radius: 2.21008px;
 }
 
+.hackname{
+  margin-top: 18px;
+}
 .innertxt {
   padding-left: 43.09px;
 }
@@ -67,15 +76,15 @@ border-radius: 2.21008px;
 
 nbg {
   font-family: Nunito Sans;
-font-style: normal;
-font-weight: normal;
-font-size: 11.2478px;
-line-height: 160%;
-/* or 18px */
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11.2478px;
+  line-height: 160%;
+  /* or 18px */
 
-letter-spacing: 0.04em;
+  letter-spacing: 0.04em;
 
-color: #979797;
+  color: #979797;
 }
 
 .nbg {
@@ -87,15 +96,15 @@ color: #979797;
 
 nbw {
   font-family: Nunito Sans;
-font-style: normal;
-font-weight: 400;
-font-size: 12.6538px;
-line-height: 160%;
-/* identical to box height, or 20px */
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12.6538px;
+  line-height: 160%;
+  /* identical to box height, or 20px */
 
-letter-spacing: 0.04em;
+  letter-spacing: 0.04em;
 
-color: #E7EFEF;
+  color: #e7efef;
 }
 
 .box2 {
@@ -105,12 +114,9 @@ color: #E7EFEF;
   display: flex;
 }
 
-
 .status {
-
-    margin-top: 18.12px;
+  margin-top: 18.12px;
 }
-
 
 @media (max-width: 992px) {
   .main {

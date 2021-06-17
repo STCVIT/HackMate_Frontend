@@ -1,124 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="teams.css">
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <title>Hackmate</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-  <div id="nav"></div>
-  <div class="mainsection">
-      <div class="container">
-          <div class="row">
-              <div class=" maintext col=lg-12 col-md-12 col-sm-12">
-                  <h2>My Teams.</h2>
-              </div>
-          </div>
-          <div class="cards">
-              <div class="row">
-                  <div class="col-lg-6 col-md-6 col-sm-12">
-                      <img id="right_triangles" src="../images/traingles.svg">
-                      <div class="card" style="max-width: 497px; max-height: 351px;">
-                         <div class="card-body">
-                             <h5 class="card-title">Lollapalooza</h5>
-                             <p>
-                                 <text>Hackathon:</text>
-                                 <hackathon>DevSpace'21</hackathon>
-                            </p>
-                            <div class="card-details">
-                                <p><f>4</f><r> Team <br> Members</r></p>
-                                <div class="vl"></div>
-                                    <ul class="team-members">
-                                        <li class="list-item"><img id="pp" src="../images/Rectangle 155.svg"><p1>Dwija Patel<br>UI/UX Design</p1></li>
-                                        <li class="list-item"><img id="pp" src="../images/Rectangle 154.svg"><p2>Deep Gandhi<br>Backend Development</p2></li>
-                                        <li class="list-item"><img id="pp" src="../images/Rectangle 156.svg"><p3>Tanmay Shah<br>Frontend Development</p3></li>
-                                        <li class="list-item"><img id="pp" src="../images/Rectangle 157.svg"><p4>Victor Mayer<br>Management</p4></li>
-                                    </ul>
-                            </div>
-                         </div>
-                     </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <img id="right_triangles" src="../images/traingles.svg">
-                        <div class="card" style="max-width: 497px; max-height: 351px;">
-                           <div class="card-body">
-                               <h5 class="card-title">Lollapalooza</h5>
-                               <p>
-                                   <text>Hackathon:</text>
-                                   <hackathon>DevSpace'21</hackathon>
-                              </p>
-                              <div class="card-details">
-                                  <p><f>4</f><r> Team <br> Members</r></p>
-                                  <div class="vl"></div>
-                                      <ul class="team-members">
-                                          <li class="list-item"><img id="pp" src="../images/Rectangle 155.svg"><p1>Dwija Patel<br>UI/UX Design</p1></li>
-                                          <li class="list-item"><img id="pp" src="../images/Rectangle 154.svg"><p2>Deep Gandhi<br>Backend Development</p2></li>
-                                          <li class="list-item"><img id="pp" src="../images/Rectangle 156.svg"><p3>Tanmay Shah<br>Frontend Development</p3></li>
-                                          <li class="list-item"><img id="pp" src="../images/Rectangle 157.svg"><p4>Victor Mayer<br>Management</p4></li>
-                                      </ul>
-                              </div>
-                           </div>
-                       </div>
+    <div id="nav"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 col-md-12 col-sm-12">
+					<form>
+                    <div class="mb-3">
+                        <label for="particpants" class="form-label"></label>
+                        <input type="text" class="form-control" id="participants" placeholder="Search Participants by Username">
                       </div>
-                </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-12">
-                <img id="right_triangles" src="../images/traingles.svg">
-                <div class="card" style="max-width: 497px; max-height: 351px;">
-                   <div class="card-body">
-                       <h5 class="card-title">Lollapalooza</h5>
-                       <p>
-                           <text>Hackathon:</text>
-                           <hackathon>DevSpace'21</hackathon>
-                      </p>
-                      <div class="card-details">
-                          <p><f>4</f><r> Team <br> Members</r></p>
-                          <div class="vl"></div>
-                              <ul class="team-members">
-                                  <li class="list-item"><img id="pp" src="../images/Rectangle 155.svg"><p1>Dwija Patel<br>UI/UX Design</p1></li>
-                                  <li class="list-item"><img id="pp" src="../images/Rectangle 154.svg"><p2>Deep Gandhi<br>Backend Development</p2></li>
-                                  <li class="list-item"><img id="pp" src="../images/Rectangle 156.svg"><p3>Tanmay Shah<br>Frontend Development</p3></li>
-                                  <li class="list-item"><img id="pp" src="../images/Rectangle 157.svg"><p4>Victor Mayer<br>Management</p4></li>
-                              </ul>
-                      </div>
-                   </div>
-               </div>
-              </div>
-              <div class="col-lg-6 col-md-6 col-sm-12">
-                  <img id="right_triangles" src="../images/traingles.svg">
-                  <div class="card" style="max-width: 497px; max-height: 351px;">
-                     <div class="card-body">
-                         <h5 class="card-title">Lollapalooza</h5>
-                         <p>
-                             <text>Hackathon:</text>
-                             <hackathon>DevSpace'21</hackathon>
-                        </p>
-                        <div class="card-details">
-                            <p><f>4</f><r> Team <br> Members</r></p>
-                            <div class="vl"></div>
-                                <ul class="team-members">
-                                    <li class="list-item"><img id="pp" src="../images/Rectangle 155.svg"><p1>Dwija Patel<br>UI/UX Design</p1></li>
-                                    <li class="list-item"><img id="pp" src="../images/Rectangle 154.svg"><p2>Deep Gandhi<br>Backend Development</p2></li>
-                                    <li class="list-item"><img id="pp" src="../images/Rectangle 156.svg"><p3>Tanmay Shah<br>Frontend Development</p3></li>
-                                    <li class="list-item"><img id="pp" src="../images/Rectangle 157.svg"><p4>Victor Mayer<br>Management</p4></li>
-                                </ul>
+                      </form>
+					<div class="row-buttons">
+						<div class="box">
+							<button id="active1" class="button"><h6 class="text5">All</h6></button>
+							<button id="inactive1" class="button1"><h6 class="text3">App Dev</h6></button>
+							<button id="inactive2" class="button1"><h6 class="text6">Frontend Dev</h6></button>
+							<button id="inactive3" class="button1"><h6 class="text7">Backend Dev</h6></button>
+							<button id="inactive4" class="button1"><h6 class="text8">Machine Learning</h6></button>
+        					<button id="inactive5" class="button1"><h6 class="text9">UI/UX Design</h6></button>
+        					<button id="inactive6" class="button1"><h6 class="text10">Management</h6></button>
                         </div>
-                     </div>
-                 </div>
+        			</div>
+        		</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 col-md-12 col-sm-12">
+                    <div class="card" style="max-width:750px">
+                        <div class="card-body">
+                            <img id="dp" src="../images/dp.svg"> 
+                            <p>Aneesh Panda<br><t>Frontend Development</t></p>
+                            <click>INVITE</click>
+                        </div>
+                    </div>
+                        <div class="card" style="max-width:750px">
+                            <div class="card-body">
+                                <img id="dp" src="../images/dp.svg"> 
+                                <p>Aneesh Panda<br><t>Frontend Development</t></p>
+                                <click>INVITE</click>
+                            </div>
+                        </div>
+                        <div class="card" style="max-width:750px">
+                            <div class="card-body">
+                                <img id="dp" src="../images/dp.svg"> 
+                                <p>Aneesh Panda<br><t>Frontend Development</t></p>
+                                <click>INVITE</click>
+                            </div>
+                        </div>
+                        <div class="card" style="max-width:750px">
+                            <div class="card-body">
+                                <img id="dp" src="../images/dp.svg"> 
+                                <p>Aneesh Panda<br><t>Frontend Development</t></p>
+                                <click>INVITE</click>
+                            </div>
+                        </div>
                 </div>
-          </div>
-       </div>
-  </div>
+            </div>
+        </div>
+        <div id="foobottom">
 
-  
-</body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        </div>
+<!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-<script src="./teams_profile.js"></script>
+<!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.js"
+></script>
+<script type="text/javascript" src="index.js"></script>
+</body>
 </html>

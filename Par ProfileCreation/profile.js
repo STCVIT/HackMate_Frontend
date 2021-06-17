@@ -1,4 +1,4 @@
 $(document).ready(function () {
-    $("#nav").load("../Header/header.txt");
+    $("#nav").load("../Header2/headerWithoutButton.txt");
     $("#foobottom").load("../Footer/footer.txt");
 });

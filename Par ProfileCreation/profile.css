@@ -235,6 +235,10 @@ g1 {
   position:absolute;
   right:0%;
 }
+#next1{
+  position:absolute;
+  right:0%;
+}
 #foobottom{
   padding-top:20%;
 }
@@ -245,6 +249,11 @@ g1 {
   padding-bottom:20px;
 }
 }
+@media only screen and (max-width:1000px){
+  #skills{
+    display: none;
+  }
+}
 @media only screen and (min-width:768px) {
   .organiserdash{
     display:none;
@@ -254,7 +263,15 @@ g1 {
 }
 #btnnext{
   position: absolute;
+  right:12%;
+}
+#next1{
+  position: absolute;
   right:25%;
+}
+#btnback{
+  position: absolute;
+  left:15%;
 }
 #foobottom{
   padding-top: 10%;
@@ -285,7 +302,6 @@ g1 {
 }
 .middle-button{
   padding-left: 7%;
-  padding-right: 30px;
   padding-bottom:20px;
 }
 .bottom-button{
@@ -296,29 +312,19 @@ g1 {
   padding-bottom:20px;
   padding-left:20%;
 }
-
-
+.maincap{
+  padding-right: 20%;
+}
 
 
 .button1{
-  padding: 1vw 1vw ;
-  padding-bottom: 2vw;
+  padding: 0.5vw 2vw ;
+  padding-bottom:2vw;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 0.5vw 0.5vw;
-  cursor: pointer;
   background: #1D2833;
   border: 2.53333px solid #1EA54C;
   box-sizing: border-box;
   border-radius: 63.3333px;
-  font-style: normal;
-  font-weight: 800;
-  /*font-size: 17.21px;
-  line-height: 23.48px;*/
-  font-size:1.3vw;
-  line-height: 1.28rem;
-  letter-spacing: 0.04em;
   color: #fff;
   filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
   max-height: 38px;
@@ -326,25 +332,17 @@ g1 {
   min-height:29.64px;
 }
 .button {
-  padding: 1vw 1vw;
-  padding-bottom: 2vw;
-  color: #fff;
+  padding: 0.5vw 2vw ;
+  padding-bottom:2vw;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 0.5vw 0.5vw;
-  cursor: pointer;
+  color: #fff;
   background: #1EA54C;
   border: 2.53333px solid #1EA54C;
   box-sizing: border-box;
   border-radius: 63.3333px;
   filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
   max-height: 38px;
-  font-style: normal;
-  font-weight: 800;
-  font-size:1.3vw;
-  line-height: 1.28rem;
-  min-width:117.44px;
+  min-width :103.19px;
   min-height:29.64px;
 }
 
@@ -376,7 +374,10 @@ g1 {
   color: rgba(231, 239, 239, 0.36);
 }
 .bottommost-button{
-  padding-top:40px;
+  padding-bottom:40px;
+}
+.bottommost_button{
+  padding-top:60px;
 }
 #bottom_square{
   padding-bottom:20px;

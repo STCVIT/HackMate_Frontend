@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="profile.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>Hackmate</title>
+</head>
+<body>
+    <div id="nav"></div>
+    <div class="mainsection">
+    <div class="container">
+        <div class="row">
+            <div class="caption">
+                <h2>Victor Mayer.</h2>
+            </div>
+            <div class="topmost_buttons">
+                <button id="active" class="button">About</button>
+                <button type="inactive" class="button1">Projects</button>
+            </div>
+        </div>
+        <div class="row">
+            <div  class="col-lg-6 col-md-6 col-sm-12">
+                <div class="m d-flex">
+                <img id="profile_pic" src="../images/Group 252.png" height="77px" width="77px">
+                </div>
+        </div>
+        <div  class="col-lg-6 col-md-6 col-sm-12" id="save_button">
+            <div class="d-flex justify-content-center">
+            <button id="square_inactive" class="square_inactive"> Invite </button>
+            </div>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <form id="form">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">NAME</label>
+                        <input type="text" class="form-control" id="name" placeholder="Name">
+                      </div>
+                      <div class="mb-3">
+                        <label for="username" class="form-label">USERNAME</label>
+                        <input type="text" class="form-control" id="username" placeholder="Username">
+                      </div>
+                      <div class="mb-3">
+                        <label for="email" class="form-label">EMAIL</label>
+                        <input type="email" class="form-control" id="email" placeholder="Email">
+                      </div>
+                      <div class="mb-3">
+                        <label for="college" class="form-label">COLLEGE/UNIVERSITY</label>
+                        <input type="text" class="form-control" id="college" placeholder="College/University">
+                      </div>
+                      <div class="mb-3">
+                        <label for="github" class="form-label">GITHUB LINK</label>
+                        <input type="link" class="form-control" id="git" placeholder="GITHUB link">
+                      </div>
+                      <div class="mb-3">
+                        <label for="linkedln" class="form-label">LINKEDIN</label>
+                        <input type="text" class="form-control" id="linkedln" placeholder="Linkedln">
+                      </div>
+                      <div class="mb-3">
+                        <label for="personal_website" class="form-label">PERSONAL WEBSITE</label>
+                        <input type="text" class="form-control" id="personal_website" placeholder="Personal Website">
+                      </div>
+                      <div class="mb-3">
+                        <label for="year" class="form-label">YEAR OF GRADUATION</label>
+                        <input type="text" class="form-control" id="year" placeholder="Year of Graduation">
+                      </div>
+                      <div class="mb-3">
+                        <label for="year" class="form-label">ADD A REVIEW</label>
+                        <textarea class="form-control"rows="6" spellcheck="false" id="review" placeholder="Review"></textarea>
+                      </div>
+                </form>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <form id="form">
+                    <div class="mb-3">
+                        <label for="bio" class="form-label">BIO</label>
+                        <textarea class="form-control"rows="8" spellcheck="false" id="bio" placeholder="Bio"></textarea>
+                      </div>
+                </form>
+                <div class="d-flex justify-content-center">
+                <div class="card" style="width: 21rem;">
+                    <div class="card-body">
+                        <div class="card-body">
+                            <h5 class="card-title">Skills</h5>
+                            <p>
+                            <input class="check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                            <label class="check-label" for="flexCheckDefault">Frontend Development</label>
+                            </p>
+                            <p>
+                            <input class="check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                            <label class="form-check-label" for="flexCheckDefault">UI/UX Design</label>
+                            </p>
+                          </div>
+                      </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="bottommost-button">
+            <div class=" x col-lg-6 col-md-6 col-sm-12">
+                <div class="d-flex justify-content-center" id="bottom_square">
+                    <button id="square_active" class="square_inactive">Submit</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="foobottom"></div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+<script src="./profile.js"></script>
+</html>

@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito+Sans&family=Raleway&display=swap");
+* {
+  background-color: #23303d;
+  font-family: "Fira Code", monospace;
+  color: #e7efef;
+}
+
+.hackname {
+  padding-top: 72px;
+  font-family: Fira Code;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 140%;
+  /* or 50px */
+
+  letter-spacing: 0.04em;
+
+  color: #e7efef;
+}
+
+.details {
+  padding-top: 48px;
+}
+.details2 {
+  padding-top: 61px;
+}
+nbg {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  /* identical to box height */
+
+  text-align: center;
+  letter-spacing: 0.08em;
+
+  color: rgba(231, 239, 239, 0.36);
+}
+input#image_uploads {
+  opacity: 0;
+}
+
+.inputimg {
+  width: 101.6%;
+}
+
+.textbox {
+  margin-top: 4px;
+
+  width: 84.25%;
+  height: 43.14px;
+
+  background: #2e3d4c;
+  border: 1.54059px solid rgba(30, 165, 76, 0.2);
+  box-sizing: border-box;
+  border-radius: 1.54059px;
+}
+
+.inputdeets {
+  margin-top: 28px;
+}
+
+.textboxbio {
+  margin-top: 4px;
+  width: 84.25%;
+  height: 296px;
+
+  background: #2e3d4c;
+  border: 1.54059px solid rgba(30, 165, 76, 0.2);
+  box-sizing: border-box;
+  border-radius: 1.54059px;
+}
+
+.btns {
+  padding-top: 72px;
+}
+
+.delete {
+  width: 165px;
+  height: 37px;
+  background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);
+  box-shadow: 0.75px 0.75px 7.5px rgba(0, 0, 0, 0.2);
+  border-radius: 1.5px;
+  border: none;
+}
+
+.savechanges {
+  width: 165px;
+  height: 37px;
+  left: 1100px;
+  top: 142px;
+  background: none;
+  filter: drop-shadow(0.75px 0.75px 7.5px rgba(0, 0, 0, 0.2));
+  border-radius: 1.5px;
+  border-color: #008249;
+}
+
+/* <img class="inputimg" src="../Images/Input.svg" alt=""> */
+
+.box {
+  margin-top: 4px;
+
+  width: 32.9vw;
+  height: 192px;
+
+  vertical-align: middle;
+  background: #2e3d4c;
+  border: 1.54059px solid rgba(30, 165, 76, 0.2);
+  box-sizing: border-box;
+  border-radius: 1.54059px;
+}
+
+.plus {
+  background: #2e3d4c;
+  padding-top: 67px;
+}
+
+.nbg{
+  margin-top: 91px;
+}

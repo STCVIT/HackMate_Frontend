@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackMate</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="../Header/headerl.css">
+    <link rel="stylesheet" href="../Footer/footer.css">
+</head>
+
+<body>
+
+    <div id="nav"></div>
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-1 col-sm-1 col-1"> </div>
+            <div class="col-md-5">
+                <div class="hackname">DevSpace'21</div>
+            </div>
+            <div class="col-md-5">
+                <div class="text-end justify-content-end">
+                    <div class="btns"><a class=" delete btn btn-primary" href="#" role="button">Delete Hack</a>
+                        <a class=" savechanges btn btn-primary" href="#" role="button">Save Changes</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1 col-sm-1 col-1"> </div>
+            <div class="col-md-5">
+
+                <div class="details">
+                    <div class="inputdeets">
+                        <nbg>NAME</nbg> <br>
+                        <input class="textbox" type="text" name="" id=""> <br>
+                    </div>
+                    <div class="inputdeets">
+                        <nbg>VENUE</nbg> <br>
+                        <input class="textbox" type="text" name="" id=""> <br>
+                    </div>
+                    <div class="inputdeets">
+                        <nbg>MODE OF CONDUCT</nbg> <br>
+                        <input class="textbox" type="text" name="" id=""> <br>
+                    </div>
+                    <div class="inputdeets">
+                        <nbg>WEBSITE LINK</nbg> <br>
+                        <input class="textbox" type="text" name="" id=""> <br>
+                    </div>
+                    <div class="inputdeets">
+                        <nbg>BIO</nbg> <br>
+                        <input class="textboxbio" type="text" name="" id=""> <br>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+
+                <div class="details2">
+                    <div class="inputdeets" style="height: 216.062px;">
+                        <nbg>POSTER</nbg> <br>
+                        <label for="image_uploads">
+                            <div class="box text-center"><img class="plus" src="../Images/plus.svg" alt=""></div>
+                        </label>
+                        <input style="height: 0px;" type="file" id="image_uploads" name="image_uploads"
+                            accept=".jpg, .jpeg, .png" multiple>
+                    </div>
+                    <div class="inputdeets">
+                        <nbg>START DATE</nbg> <br>
+                        <input class="textbox" type="date" name="" id=""> <br>
+                    </div>
+                    <div class="inputdeets">
+                        <nbg>END DATE</nbg> <br>
+                        <input class="textbox" type="date" name="" id=""> <br>
+                    </div>
+                    <div class="inputdeets">
+                        <nbg>MIN TEAM SIZE</nbg> <br>
+                        <input class="textbox" type="number" name="" id="" min="0">
+                    </div>
+                    <div class="inputdeets">
+                        <nbg>MAX TEAM SIZE</nbg> <br>
+                        <input class="textbox" type="number" name="" id="" min="0">
+                    </div>
+                    <div class="inputdeets">
+                        <nbg>PRIZES POOL</nbg> <br>
+                        <input class="textbox" type="text" name="" id=""> <br>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-1 col-sm-1 col-1"> </div>
+            <div class="col-md-5">
+                <div class="nbg">
+                    <nbg>TEAMS</nbg>
+                </div>
+            </div>
+            <div class="col-md-5">
+
+            </div>
+            <div class="col-1"></div>
+        </div>
+    </div>
+
+    <div id="foobottom"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>

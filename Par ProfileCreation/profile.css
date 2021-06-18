@@ -1,0 +1,406 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito+Sans&family=Raleway&display=swap");
+* {
+    background-color: #23303d;
+    font-family: "Fira Code", monospace;
+    color: #e7efef;
+  }
+  body{
+    background-color: #23303d;
+  }
+/*Navbar CSS*/
+nav {
+  background-color: #1d2833;
+  padding-left: 128px;
+  top: 13px;
+  box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
+}
+
+b {
+  font-size: 26px;
+}
+
+nav * {
+  background-color: #1d2833;
+  font-weight: 700;
+}
+g {
+  color: #1ea54c;
+}
+
+.btnsignup {
+  background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  border: none;
+  width: 154px;
+  height: 36px;
+  font-size: 16.9706px;
+}
+
+.navbar-nav {
+  padding-right: 128px;
+}
+
+@media (max-width: 992px) {
+  nav {
+    padding-left: 12px;
+  }
+  .navbar-nav {
+    padding-right: 0;
+  }
+}  
+#nav{
+  padding-bottom:7%;
+}
+/*Mainsection CSS*/
+.form-control{
+    max-width: 478px;
+    box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
+    border: 3px solid rgba(30, 165, 76, 0.2)!important;
+    border-radius:2px !important;
+    background-color: #2E3D4C!important;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 23px;
+    letter-spacing: 0.04em;
+    color: #E7EFEF!important;
+    opacity: 0.7;
+}
+input{
+    border: 3px solid rgba(30, 165, 76, 0.2);
+    border-radius:2px ;
+    background-color: #2E3D4C;
+}
+.form{
+  padding-bottom:50px;
+}
+.maintext{
+    font-family: 'Fira Code', monospace;
+    font-style: normal;
+    font-weight: bold;
+    padding-top:3%;
+    font-size: 36px;
+    line-height: 47px;
+    letter-spacing: 0.04em;
+    color: #E7EFEF;
+}
+#dashes{
+     padding-top: 50px;
+     overflow: hidden;
+}
+#dashes2{
+  padding-top: 40px;
+  overflow: hidden;
+  padding-bottom: 30px;
+}
+#dashes3{
+  padding-top: 50px;
+  overflow: hidden;
+  padding-bottom: 30px;
+}
+
+#girl{
+    overflow: hidden;
+    max-width:642px;
+    max-height:463.76px;
+    padding-top:60px;
+}
+#man{
+    overflow: hidden;
+    padding-top:60px;
+  max-width:486.11px;
+  max-height:363.92px;
+}
+#skills{
+  overflow: hidden;
+  padding-top:10%;
+  max-width:515.16px;
+  max-height:373.02px;
+}
+.btnsmallversion{
+   width: 120px;
+    height: 40px;
+    font-family: "Fira Code";
+    font-weight: bold;
+    font-size: 22px;
+/* identical to box height */
+    letter-spacing: 0.04em;
+    color: #E7EFEF;
+    border-radius: 2px!important;
+    border: none;
+}
+/*Footer CSS*/
+.footerbottom {
+  top: 31px;
+  font-family: Fira Code;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 38.2353px;
+  line-height: 50px;
+  letter-spacing: 0.04em;
+  background: #1d2833;
+}
+
+.foo {
+  box-shadow: -3px -3px 3px 1px rgba(24, 33, 42, 0.83);
+}
+.footerbottomt {
+  top: 31px;
+
+  font-family: Fira Code;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 38.2353px;
+  line-height: 50px;
+  letter-spacing: 0.04em;
+  background: #1d2833;
+}
+.footerbottom1 {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16.5391px;
+  line-height: 19px;
+  letter-spacing: 0.04em;
+  color: rgba(231, 239, 239, 0.7);
+  background: #1d2833;
+}
+.footerbottom1 .row {
+  margin: 0;
+}
+
+.bottomtext {
+  margin-left: 7.5rem;
+}
+
+g1 {
+  background: #1d2833;
+  color: #1ea54c;
+}
+
+.text-center {
+  padding-top: 31px;
+}
+
+.footerbottom hr {
+  width: 77vw;
+  margin-top: 26px;
+  margin-left: 8.125rem;
+  border: 1px solid rgba(231, 239, 239, 0.2);
+}
+
+.footerbottomimg {
+  margin-left: 6vw;
+}
+
+@media (max-width: 769px) {
+    .footerbottomimgmain {
+    margin-left: 3.5rem;
+  }
+}
+/*mainsection media queries*/
+@media only screen and (max-width:600px){
+  .footerbottom hr {
+    margin-left: 4rem;
+  }
+
+  .footerbottom1 {
+    font-size: 8.5391px;
+  }
+  .footerbottom1 img {
+    height: 14.89px;
+    width: 14.89px;
+  }
+  .footerbottomimgmain {
+    margin-left: 0px;
+  }
+ #man{
+    display: none;
+ }
+ #organiser{
+    display: none;
+ }
+ #girl{
+     display: none;
+ }
+ #skills{
+   display: none;
+ }
+ .content{
+  position:relative;
+}
+#btnnext{
+  position:absolute;
+  right:0%;
+}
+#next1{
+  position:absolute;
+  right:0%;
+}
+#foobottom{
+  padding-top:20%;
+}
+.m{
+  justify-content:center;
+}
+.heading_top{
+  padding-bottom:20px;
+}
+}
+@media only screen and (max-width:1000px){
+  #skills{
+    display: none;
+  }
+}
+@media only screen and (min-width:768px) {
+  .organiserdash{
+    display:none;
+  }
+.content{
+  position:relative;
+}
+#btnnext{
+  position: absolute;
+  right:12%;
+}
+#next1{
+  position: absolute;
+  right:25%;
+}
+#btnback{
+  position: absolute;
+  left:15%;
+}
+#foobottom{
+  padding-top: 10%;
+}
+.x{
+  display:inline-flex;
+}
+.m{
+  justify-content: flex-start;
+}
+.second{
+  padding-left:8%;
+}
+.heading_top{
+  display: none;
+}
+.card{
+  width:813.15px;
+  height:356px;
+}
+}
+/*skills page*/
+.skill_selection{
+  padding-bottom:30px;
+}
+.top-button{
+  padding-bottom:20px;
+}
+.middle-button{
+  padding-left: 7%;
+  padding-bottom:20px;
+}
+.bottom-button{
+  padding-bottom:20px;
+  padding-left:15%;
+}
+.bottommost-button{
+  padding-bottom:20px;
+  padding-left:20%;
+}
+.maincap{
+  padding-right: 20%;
+}
+
+
+.button1{
+  padding: 0.5vw 2vw ;
+  padding-bottom:2vw;
+  text-align: center;
+  background: #1D2833;
+  border: 2.53333px solid #1EA54C;
+  box-sizing: border-box;
+  border-radius: 63.3333px;
+  color: #fff;
+  filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
+  max-height: 38px;
+  min-width :103.19px;
+  min-height:29.64px;
+}
+.button {
+  padding: 0.5vw 2vw ;
+  padding-bottom:2vw;
+  text-align: center;
+  color: #fff;
+  background: #1EA54C;
+  border: 2.53333px solid #1EA54C;
+  box-sizing: border-box;
+  border-radius: 63.3333px;
+  filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
+  max-height: 38px;
+  min-width :103.19px;
+  min-height:29.64px;
+}
+
+/*profile_userview*/
+.caption{
+  padding-top:2%;
+  padding-bottom:2%;
+}
+.topmost_buttons{
+  padding-bottom:40px;
+}
+#save_button{
+  padding-top:20px;
+  padding-bottom:40px;
+}
+#square_inactive{
+  padding:1vh 4.5vh;
+  border: 2.53333px solid #1EA54C;
+  filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
+}
+#square_active{
+  padding:1vh 4.5vh;
+  border: 2.53333px solid #1EA54C;
+  filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
+  background: #1EA54C;
+}
+.form-label{
+  margin-bottom: 0rem !important;
+  color: rgba(231, 239, 239, 0.36);
+}
+.bottommost-button{
+  padding-bottom:40px;
+}
+.bottommost_button{
+  padding-top:60px;
+}
+#bottom_square{
+  padding-bottom:20px;
+}
+.card{
+  border:none !important;
+}
+.card-body{
+  background:#1D2833;
+}
+.card-title{
+  background:#1D2833;
+}
+p{
+  background:#1D2833;
+  margin-bottom:0.2rem !important;
+}
+.check-label{
+  background:#1D2833;
+}
+.card-body h5{
+  padding-bottom: 20px;
+}
+.not_button{
+  padding-left:30px;
+}

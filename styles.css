@@ -5,132 +5,32 @@
   color: #e7efef;
 }
 
-nav {
-  background-color: #1d2833;
-  padding-left: 128px;
-  top: 13px;
-  box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
+.text {
+  padding-top: 10%;
 }
-
-b {
-  font-size: 26px;
-}
-
-nav * {
-  background-color: #1d2833;
-  font-weight: 700;
-}
-g {
-  color: #1ea54c;
-}
-
-.btnsignup {
-  background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 2px;
-  border: none;
-  width: 154px;
-  height: 36px;
-  font-size: 16.9706px;
-}
-
-.navbar-nav {
-  padding-right: 128px;
-}
-
-.landingimage {
-  position: relative;
-  padding-left: 128px;
-}
-
-.landing {
-  display: flex;
-  flex-basis: 50vw;
-  justify-content: center;
-  align-items: center;
-}
-
-.landingimage1 {
-  padding-left: 19vw;
-}
-
-.landing-text1 {
-  padding-top: 156px;
+lt {
+  font-family: Fira Code;
+  font-style: normal;
+  font-weight: bold;
   font-size: 46px;
-  font-weight: 700;
-  padding-right: 128px;
   line-height: 60px;
-  text-align: end;
+  text-align: right;
+  letter-spacing: 0.04em;
+
+  color: #e7efef;
 }
 
-.ld1 {
-  padding-top: 57px;
-  font-family: "Nunito Sans", sans-serif;
-  text-align: end;
-  padding-right: 128px;
-  font-size: 20px;
-  line-height: 30px;
+.space {
+  padding-top: 5%;
+}
+
+lt1 {
+  font-family: Nunito Sans;
+  font-style: normal;
   font-weight: 400;
+  font-size: 22px;
+  line-height: 30px;
   letter-spacing: 0.04em;
-}
-
-.footerbottom {
-  top: 31px;
-  font-family: Fira Code;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 38.2353px;
-  line-height: 50px;
-  letter-spacing: 0.04em;
-  background: #1d2833;
-}
-
-.foo {
-  box-shadow: -3px -3px 3px 1px rgba(24, 33, 42, 0.83);
-}
-.footerbottomt {
-  top: 31px;
-
-  font-family: Fira Code;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 38.2353px;
-  line-height: 50px;
-  letter-spacing: 0.04em;
-  background: #1d2833;
-}
-.footerbottom1 {
-  font-family: Raleway;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16.5391px;
-  line-height: 19px;
-  letter-spacing: 0.04em;
-  color: rgba(231, 239, 239, 0.7);
-  background: #1d2833;
-}
-.footerbottom1 .row {
-  margin: 0;
-}
-
-.bottomtext {
-  margin-left: 7.5rem;
-}
-
-g1 {
-  background: #1d2833;
-  color: #1ea54c;
-}
-
-.text-center {
-  padding-top: 31px;
-}
-
-.footerbottom hr {
-  width: 77vw;
-  margin-top: 26px;
-  margin-left: 8.125rem;
-  border: 1px solid rgba(231, 239, 239, 0.2);
 }
 
 .container2 {
@@ -196,120 +96,42 @@ g1 {
   font-size: 16.9706px;
 }
 
-.footerbottomimg {
-  margin-left: 6vw;
-}
-
-@media (max-width: 1028px) {
-  .landingimg {
-    width: 400px;
-    height: 502px;
+@media (max-width: 823px) {
+  .box2 {
+    margin-left: 1vw;
   }
 }
-
-@media (max-width: 992px) {
-  nav {
-    padding-left: 12px;
-  }
-
-  .navbar-nav {
-    padding-right: 0;
-  }
-
-  .landing {
-    display: grid;
-    grid-template-columns: auto;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .landingimg {
-    margin-left: 12.5vw;
-  }
-  .lantextmain1 {
-    justify-content: center;
-    text-align: center;
-  }
-  .lantextmain {
-    text-align: center;
-  }
-  .landing-text1 {
-    text-align: center;
-  }
-
-  .lantext {
-    margin-left: 8vw;
-  }
-  .ld1 {
-    text-align: center;
+@media (max-width: 781px) {
+  .box2 {
+    margin-left: 0vw;
   }
 }
-
-@media (max-width: 769px) {
-  .lantext {
-    margin-left: 8vw;
-  }
-  .bottomtext {
-    margin-left: 2.5rem;
-  }
-
-  .footerbottomimgmain {
-    margin-left: 3.5rem;
-  }
-}
-
-
-@media (max-width: 600px) {
-  .landingimg1 {
+@media (max-width: 767px) {
+  .lanimg1 {
     display: none;
   }
+}
 
-  .landing-text1 {
-    text-align: center;
-    justify-content: center;
-    font-size: 1.625rem;
-    line-height: 36.74px;
-    padding-top: 75px;
-  }
-
-  .ld1 {
-    font-family: Nunito Sans;
+@media (max-width: 576px) {
+  lt {
+    font-family: Fira Code;
     font-style: normal;
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 22px;
-    text-align: center;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 37px;
+
     letter-spacing: 0.04em;
 
     color: #e7efef;
   }
 
-  .footerbottom hr {
-    margin-left: 4rem;
+  lt1 {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    letter-spacing: 0.04em;
   }
-
-  .footerbottom1 {
-    font-size: 8.5391px;
-  }
-  .footerbottom1 img {
-    height: 14.89px;
-    width: 14.89px;
-  }
-  .bottomtext {
-    margin-left: 12vw;
-  }
-
-  .lantext1 {
-    margin-left: 22vw;
-  }
-
-  .footerbottomimgmain {
-    margin-left: 0px;
-  }
-}
-
-@media (max-width: 470px) {
-  .lantext1 {
-    margin-left: 30vw;
-}
 }

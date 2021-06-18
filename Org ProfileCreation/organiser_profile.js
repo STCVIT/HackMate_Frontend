@@ -1,8 +1,7 @@
-// $(document).ready(function () {
-//     $("#nav").load("../Header/header.txt");
-//     $("#foobottom").load("../Footer/footer.txt");
-// });
-
+$(document).ready(function () {
+    $("#nav").load("../Header2/headerWithoutButton.txt");
+    $("#foobottom").load("../Footer/footer.txt");
+});
 const form=document.getElementById("form");
 form.addEventListener('submit',(e)=>{
     (e).preventDefault();

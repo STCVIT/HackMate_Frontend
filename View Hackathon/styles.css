@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito+Sans&family=Raleway&display=swap");
+* {
+  background-color: #23303d;
+  font-family: "Fira Code", monospace;
+  color: #e7efef;
+}
+
+.main {
+  padding-left: 128px;
+}
+
+.hackathons {
+  padding-top: 72px;
+  font-family: Fira Code;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 140%;
+  /* or 50px */
+
+  letter-spacing: 0.04em;
+  padding-left: 0.5rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-basis: 353.33px;
+  justify-content: center;
+  text-align: start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nb1 {
+  font-family: Fira Code;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25.3533px;
+  line-height: 33px;
+  letter-spacing: 0.04em;
+}
+
+.box {
+  background: #1d2833;
+  width: 353.33px;
+  height: 424px;
+  margin-top: 57px;
+  margin-right: 61.67px;
+  box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
+  border-radius: 4px;
+}
+
+.innertxt {
+  padding-left: 43.09px;
+}
+
+.box * {
+  background: #1d2833;
+}
+
+nbg {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13.7886px;
+  line-height: 160%;
+  /* or 22px */
+
+  letter-spacing: 0.04em;
+
+  color: #979797;
+}
+
+.nbg {
+  margin-top: 15.05px;
+}
+.nbw {
+  margin-top: 5.17px;
+}
+
+nbw {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15.5122px;
+  line-height: 160%;
+  /* identical to box height, or 25px */
+
+  letter-spacing: 0.04em;
+}
+
+.box2 {
+  padding-left: 25.85px;
+}
+.dates {
+  display: flex;
+}
+
+
+.status {
+
+    margin-top: 18.12px;
+}
+.btnkm {
+  margin-top: 26.04px;
+  background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  width: 267px;
+  height: 41px;
+  font-family: Fira Code;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16.9706px;
+  line-height: 22px;
+  border: none;
+  /* identical to box height */
+
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 992px) {
+  .main {
+    padding-left: 12px;
+  }
+}

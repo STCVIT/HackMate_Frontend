@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login and SignUp page</title>
+</head>
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-6 first">
+				<img src="file:///C:/Users/Shreyan%20Sanyal/Desktop/STC%20Project/Login%20and%20SignUp/Group%20242.svg" height="400">
+				<img src="file:///C:/Users/Shreyan%20Sanyal/Desktop/STC%20Project/Login%20and%20SignUp/Group%20243.svg" height="400">
+			</div>
+			<div class="col-lg-6">
+				<div class="form-wrap">
+					<div class="tabs">
+						<h3 class="signup-tab"><a class="active" href="#signup-tab-content">Sign Up</a></h3>
+						<h3 class="login-tab"><a class="inactive" href="#login-tab-content">Login</a></h3>
+					</div><!--.tabs-->
+
+					<div class="tabs-content">
+						<div id="signup-tab-content" class="active">
+							<form class="signup-form" action="" method="post">
+								<input type="email" class="input" id="user_email" autocomplete="off" placeholder="Email">
+								<input type="password" class="input" id="user_pass1" autocomplete="off" placeholder="Password">
+								<input type="password" class="input" id="user_pass2" autocomplete="off" placeholder="Confirm Password">
+								<input type="submit" class="button" value="Sign Up">
+							</form><!--.login-form-->
+						</div><!--.signup-tab-content-->
+						<div id="login-tab-content">
+							<form class="login-form" action="" method="post">
+								<input type="text" class="input" id="login_email" autocomplete="off" placeholder="Email">
+								<input type="password" class="input" id="login_pass1" autocomplete="off" placeholder="Password">
+								<div class="help-text">
+									<p><a href="#">Forgot password?</a></p>
+								</div><!--.help-text-->
+								<input type="submit" class="button" value="Sign Up">
+							</form><!--.login-form-->
+						</div>
+					</div>
+				</div>
+			</div>
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+<!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.js"
+></script>
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
+></script>
+<script type="text/javascript" src="index.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+html,body{
+	background-color: #23303D;
+	margin:0;
+	font-family: Fira Code;
+	font-style: normal;
+	font-weight: bold;
+}
+.first{
+	padding-left: 130px;
+	padding-top: 80px;
+}
+a {
+  color: #fff;
+  text-decoration: none; 
+}
+a:hover {
+  color: #fff; }
+
+input {
+  font: 16px/26px "Raleway", sans-serif; }
+
+.form-wrap {
+  background-color: #1D2833;
+  width: 450px;
+  margin: 3em auto;
+  box-shadow: 0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19); 
+}
+.form-wrap .tabs {
+    overflow: hidden; 
+}
+.form-wrap .tabs h3 {
+	float: left;
+	width: 50%; 
+}
+.form-wrap .tabs h3 a {
+    padding: 0.5em 0;
+    text-align: center;
+    font-family: Fira Code;
+	font-style: normal;
+	font-weight: bold;
+    background-color: #23303D;
+    display: block;
+    color: #fff; 
+}
+.form-wrap .tabs h3 a.active {
+    border-bottom:6px solid transparent; 
+    border-color: #1EA54C;
+}
+.form-wrap .tabs h3 a.inactive {
+	background-color: #23303D;
+	opacity: 2;
+}
+.form-wrap .tabs-content {
+    padding: 1.5em; 
+}
+.form-wrap .tabs-content div[id$="tab-content"] {
+   	display: none; 
+}
+.form-wrap .tabs-content .active {
+    display: block !important; 
+}
+.form-wrap form .input {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  color: #ffffff;
+  font-family: inherit;
+  padding: .8em 0 10px .8em;
+  border: 2px solid rgba(30, 165, 76, 0.2);
+  outline: 0;
+  display: inline-block;
+  margin: 0 0 .8em 0;
+  padding-right: 2em;
+  width: 100%; 
+  background-color: #2E3D4C;
+}
+.form-wrap form .button {
+  width: 100%;
+  padding: .8em 0 10px .8em;
+  background-color: #28A55F;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase; 
+}
+.form-wrap form .button:hover {
+  background-color: #4FDA8C; 
+}
+.form-wrap .help-text {
+	margin-top: .6em; 
+	margin-left: 250px;
+}
+
+
+
+
+
+
+jQuery(document).ready(function($) {
+	tab = $('.tabs h3 a');
+
+	tab.on('click', function(event) {
+		event.preventDefault();
+		tab.removeClass('active');
+		$(this).addClass('active');
+
+		tab_content = $(this).attr('href');
+		$('div[id$="tab-content"]').removeClass('active');
+		$(tab_content).addClass('active');
+	});
+});

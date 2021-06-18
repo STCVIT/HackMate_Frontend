@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito+Sans&family=Raleway&display=swap");
+html,body{
+	background-color: #23303D;
+	margin:0;
+	font-family: "Fira Code";
+	font-style: normal;
+	font-weight: bold;
+}
+.text1{
+	color: #fff;
+	font-family: "Fira Code";
+	font-style: normal;
+	font-weight: bold;
+	font-size: 36px;
+	line-height: 140%;
+	letter-spacing: 0.04em;
+	margin-top: 50px;
+}
+.text2 {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  color: #ffffff;
+  font-family: "Fira Code";
+  padding: .8em 0 10px .8em;
+  border: 2px solid rgba(30, 165, 76, 0.2);
+  outline: 0;
+  display: inline-block;
+  margin-top: 70px;
+  margin-left: 10px;
+  margin-bottom: 50px;
+  width: 100%; 
+  background-color: #2E3D4C;
+  border-radius: 2px;
+}
+.buttons{
+	margin-left: 20px;
+	display: contents;
+}
+.button {
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 4px;
+  cursor: pointer;
+  background: #1EA54C;
+  border: 2.53333px solid #1EA54C;
+  box-sizing: border-box;
+  border-radius: 63.3333px;
+  filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
+  height: 38px;
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 15.2px;
+}
+.button1{
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 4px;
+  cursor: pointer;
+  background: #1D2833;
+  border: 2.53333px solid #1EA54C;
+  box-sizing: border-box;
+  border-radius: 63.3333px;
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 15.2px;
+  line-height: 140%;
+  letter-spacing: 0.04em;
+  color: #1EA54C;
+  filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
+  height: 38px;
+}
+.top-button{
+	display: contents;
+}
+.low-button{
+	display: contents;
+}
+.text3{
+	height: 21px;
+	left: 251px;
+	top: 370px;
+}
+.text5{
+	height: 21px;
+	left: 251px;
+	top: 370px;
+}
+.text6{
+	height: 21px;
+	left: 251px;
+	top: 370px;
+}
+.text7{
+	height: 21px;
+	left: 251px;
+	top: 370px;
+}
+.text8{
+	height: 21px;
+	left: 251px;
+	top: 370px;
+}
+.text9{
+	height: 21px;
+	left: 251px;
+	top: 370px;
+}
+.text10{
+	height: 21px;
+	left: 251px;
+	top: 370px;
+}
+.text11{
+	height: 21px;
+	left: 251px;
+	top: 370px;
+}
+.text12{
+	height: 21px;
+	left: 251px;
+	top: 370px;
+}
+.cards{
+	margin-left: 100px;
+	margin-top: 10px;
+}
+.card{
+	background: #1D2833;
+	box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
+	color: #fff;
+	width: 20rem;
+}
+.text4 {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  color: #ffffff;
+  font-family: "Fira Code";
+  padding: .8em 0 10px .8em;
+  border: 2px solid rgba(30, 165, 76, 0.2);
+  outline: 0;
+  display: inline-block;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  width: 100%; 
+  background-color: #2E3D4C;
+  border-radius: 2px;
+}
+.button2 {
+  width: 50%;
+  margin-left: 60px;
+  margin-top: 18px;
+  padding: 10px 10px 10px 10px;
+  background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);
+  border: none;
+  color: #fff;
+  cursor: pointer; 
+}
+@media (min-width: 990px) and (max-width: 1200px){
+	.cards{
+		margin-left: 40px;
+	}
+}
+@media (min-width: 315px) and (max-width: 995px){
+	.text1{
+		transform: scale(1.5);
+		margin-left: 120px;
+		margin-top: 70px;
+	}
+	.card{
+		margin: 20px 0 0 50px;
+		width: 500px;
+	}
+	.complete{
+		margin-left: 220px;
+	}
+	.cards{
+		margin-left: 20px;
+	}
+	.button2{
+		margin-left: 120px;
+	}
+}

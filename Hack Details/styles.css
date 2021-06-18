@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito+Sans&family=Raleway&display=swap");
+* {
+  background-color: #23303d;
+  font-family: "Fira Code", monospace;
+  color: #e7efef;
+}
+
+.main {
+  padding: 0;
+  background: #1d2833;
+
+  box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
+  border-radius: 4px;
+}
+
+.main * {
+  background: #1d2833;
+}
+
+.nbw {
+    font-family: Fira Code;
+font-style: normal;
+font-weight: bold;
+font-size: 36.9176px;
+line-height: 48px;
+/* identical to box height */
+
+letter-spacing: 0.04em;
+
+color: #E7EFEF;
+}
+
+nbgre{
+    font-family: Nunito Sans;
+font-style: normal;
+font-weight: 800;
+font-size: 16px;
+line-height: 22px;
+/* identical to box height */
+
+letter-spacing: 0.04em;
+
+color: #1EA54C;
+}
+
+.nbws{
+    padding-top: 11px;
+    font-family: Nunito Sans;
+font-style: normal;
+font-weight: 400;
+font-size: 14.3378px;
+line-height: 26px;
+letter-spacing: 0.04em;
+
+color: #E7EFEF;
+
+}
+
+.nbwsb{
+    padding-top: 5.98px;
+    font-family: Nunito Sans;
+font-style: normal;
+font-weight: 400;
+font-size: 14.3378px;
+line-height: 26px;
+letter-spacing: 0.04em;
+
+color: #E7EFEF;
+}

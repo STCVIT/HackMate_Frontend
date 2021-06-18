@@ -1,6 +1,6 @@
 nav {
   background-color: #1d2833;
-  padding-left: 128px;
+  padding-left: 8.3333%;
   top: 13px;
   box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
 }
@@ -37,7 +37,7 @@ g {
 }
 
 .navbar-nav {
-  padding-right: 128px;
+  padding-right: 8.333%;
 }
 
 .dropdown-item {

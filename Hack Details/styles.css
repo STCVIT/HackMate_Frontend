@@ -18,52 +18,89 @@
 }
 
 .nbw {
-    font-family: Fira Code;
-font-style: normal;
-font-weight: bold;
-font-size: 36.9176px;
-line-height: 48px;
-/* identical to box height */
+  font-family: Fira Code;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36.9176px;
+  line-height: 48px;
+  /* identical to box height */
 
-letter-spacing: 0.04em;
+  letter-spacing: 0.04em;
 
-color: #E7EFEF;
+  color: #e7efef;
 }
 
-nbgre{
-    font-family: Nunito Sans;
-font-style: normal;
-font-weight: 800;
-font-size: 16px;
-line-height: 22px;
-/* identical to box height */
+nbgre {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 22px;
+  /* identical to box height */
 
-letter-spacing: 0.04em;
+  letter-spacing: 0.04em;
 
-color: #1EA54C;
+  color: #1ea54c;
 }
 
-.nbws{
-    padding-top: 11px;
-    font-family: Nunito Sans;
-font-style: normal;
-font-weight: 400;
-font-size: 14.3378px;
-line-height: 26px;
-letter-spacing: 0.04em;
+.nbws {
+  padding-top: 11px;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14.3378px;
+  line-height: 26px;
+  letter-spacing: 0.04em;
 
-color: #E7EFEF;
-
+  color: #e7efef;
 }
 
-.nbwsb{
-    padding-top: 5.98px;
-    font-family: Nunito Sans;
-font-style: normal;
-font-weight: 400;
-font-size: 14.3378px;
-line-height: 26px;
-letter-spacing: 0.04em;
+.nbwsd {
+  padding-top: 5.98px;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14.3378px;
+  line-height: 26px;
+  letter-spacing: 0.04em;
 
-color: #E7EFEF;
+  color: #e7efef;
+}
+
+.nbwsb {
+  padding-top: 12px;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0.04em;
+  color: #e7efef;
+  padding-bottom: 112.41px;
+}
+
+.card{
+  margin-top: 81.74px;
+  background: #1D2833;
+/* card shadow */
+
+box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
+border-radius: 2px;
+}
+
+
+
+.btns {
+  width: 165px;
+  height: 37px;
+  background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);
+  box-shadow: 0.75px 0.75px 7.5px rgba(0, 0, 0, 0.2);
+  border-radius: 1.5px;
+  border: none;
+}
+
+@media (max-width:1315px) {
+  .box2{
+  margin-right: 0;
+}
 }

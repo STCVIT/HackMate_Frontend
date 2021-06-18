@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito+Sans&family=Raleway&display=swap");
+* {
+  background-color: #23303d;
+  font-family: "Fira Code", monospace;
+  color: #e7efef;
+}
+
+.nbw {
+  margin-top: 72px;
+  font-family: Fira Code;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 140%;
+
+  letter-spacing: 0.04em;
+
+  color: #e7efef;
+}
+
+.btns {
+  padding-top: 32px;
+}
+
+.addprojects {
+  width: 129px;
+  height: 38px;
+  background: #1ea54c;
+  /* Pill Button Colour */
+
+  border: 2.5px solid #1ea54c;
+  box-sizing: border-box;
+  border-radius: 63.3333px;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 15.2px;
+  line-height: 140%;
+  /* or 21px */
+
+  letter-spacing: 0.04em;
+
+  /* Text Colour */
+
+  color: #e7efef;
+}
+
+.about {
+  width: 101px;
+  height: 38px;
+  border: 2.53333px solid #1ea54c;
+  box-sizing: border-box;
+  border-radius: 63.3333px;
+  background: none;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15.2px;
+  line-height: 140%;
+  /* or 21px */
+
+  letter-spacing: 0.04em;
+
+  /* Pill Button Colour */
+
+  color: #1ea54c;
+}
+
+nbg {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  /* identical to box height */
+
+  text-align: center;
+  letter-spacing: 0.08em;
+
+  color: rgba(231, 239, 239, 0.36);
+}
+
+.content {
+  padding-top: 81px;
+}
+
+.card {
+  margin-top: 21px;
+  background: #1d2833;
+  box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
+  border: none;
+}
+
+nbgre {
+  font-family: Fira Code;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: #1ea54c;
+}
+
+.disc {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0.04em;
+  color: rgba(231, 239, 239, 0.7);
+}
+
+.boxname {
+  background: #1d2833;
+  box-shadow: 2.53541px 2.53541px 2.53541px 0.845138px rgba(24, 33, 42, 0.83);
+}
+
+.boxname * {
+  background: #1d2833;
+}
+
+.text {
+  font-family: Fira Code;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26.2628px;
+  line-height: 34px;
+  letter-spacing: 0.04em;
+
+  color: #e7efef;
+}
+
+.textbox {
+  margin-top: 56px;
+
+  width: 502.13px;
+  height: 48.57px;
+
+  background: #2e3d4c;
+  border: 1.73448px solid rgba(30, 165, 76, 0.2);
+  box-sizing: border-box;
+  border-radius: 1.73448px;
+}
+
+.start {
+  width: 142px;
+  height: 41px;
+
+  /* Button Gradient */
+
+  background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  font-family: Fira Code;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16.9706px;
+  line-height: 22px;
+  letter-spacing: 0.04em;
+
+  /* Text Colour */
+
+  color: #e7efef;
+
+  border: none;
+}

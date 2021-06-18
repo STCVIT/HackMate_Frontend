@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito+Sans&family=Raleway&display=swap");
+* {
+  background-color: #23303d;
+  font-family: "Fira Code", monospace;
+  color: #e7efef;
+}
+
+.teamname {
+  font-family: Fira Code;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 140%;
+  /* or 50px */
+
+  letter-spacing: 0.04em;
+
+  color: #e7efef;
+}
+
+nbgre {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18.5651px;
+  line-height: 140%;
+  /* or 26px */
+
+  letter-spacing: 0.04em;
+
+  /* Pill Button Colour */
+
+  color: #1ea54c;
+}
+
+nbgw {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 140%;
+  /* or 28px */
+
+  letter-spacing: 0.12em;
+
+  color: rgba(231, 239, 239, 0.6);
+}
+
+.text {
+  padding-top: 24px;
+}
+
+.box2 {
+  margin-top: 37px;
+  padding-left: 0px;
+  background: #1d2833;
+  box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
+  border-radius: 2px;
+}
+
+.box2 * {
+    background: #1d2833;
+}
+
+nbg1 {
+    font-family: Nunito Sans;
+font-style: normal;
+font-weight: normal;
+font-size: 22px;
+line-height: 30px;
+/* identical to box height */
+
+letter-spacing: 0.04em;
+
+color: #E7EFEF;
+}
+
+nbg {
+font-family: Nunito Sans;
+font-style: normal;
+font-weight: 800;
+font-size: 15.2632px;
+line-height: 21px;
+/* identical to box height */
+letter-spacing: 0.04em;
+color: #1EA54C;
+}
+
+nbw {
+    font-family: Nunito Sans;
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 19px;
+/* identical to box height */
+
+letter-spacing: 0.04em;
+
+color: rgba(231, 239, 239, 0.6);
+
+}
+
+.box3 {
+
+    background: #1D2833;
+/* card shadow */
+
+box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
+border-radius: 4px;
+}

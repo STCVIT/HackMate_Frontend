@@ -6,6 +6,48 @@ html,body{
 	font-style: normal;
 	font-weight: bold;
 }
+/*Navbar CSS*/
+nav {
+  background-color: #1d2833;
+  padding-left: 128px;
+  top: 13px;
+  box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
+}
+
+b {
+  font-size: 26px;
+}
+
+nav * {
+  background-color: #1d2833;
+  font-weight: 700;
+}
+g {
+  color: #1ea54c;
+}
+
+.btnsignup {
+  background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  border: none;
+  width: 154px;
+  height: 36px;
+  font-size: 16.9706px;
+}
+
+.navbar-nav {
+  padding-right: 128px;
+}
+
+@media (max-width: 992px) {
+  nav {
+    padding-left: 12px;
+  }
+  .navbar-nav {
+    padding-right: 0;
+  }
+}  
 .form-control{
   max-width: 750px;
   max-height:56px;

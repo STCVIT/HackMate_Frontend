@@ -72,7 +72,7 @@ html,body{
 	border-radius: 3px;
 	margin-left: 50px;
 	margin-bottom: 20px;
-	margin-top: 75px;
+	margin-top: 125px;
 }
 .card-body{
 	color: #ffffff;
@@ -275,4 +275,14 @@ html,body{
 	.card-body{
 		padding-right: 0px;
 	}
+}
+.text16{
+	font-family: Fira Code;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 28px;
+	line-height: 140%;
+	letter-spacing: 0.04em;
+	color: rgba(231, 239, 239, 0.7);
+	margin-top: 50px;
 }

@@ -51,3 +51,7 @@ all.addEventListener('click', function() {
   document.getElementById("inactive7").className = "button2";
   document.getElementById("inactive8").className = "button2";
 });
+$(document).ready(function () {
+    $("#nav").load("../Header/headerl.txt");
+    $("#foobottom").load("../Footer/footer.txt");
+});

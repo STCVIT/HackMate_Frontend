@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito+Sans&family=Raleway&display=swap");
+html,body{
+	background-color: #23303D;
+	margin:0;
+	font-family: "Fira Code";
+	font-style: normal;
+	font-weight: bold;
+}
+.card{
+	width: 328px;
+	height: 370px;
+	margin-left: 90px;
+	margin-top: 80px;
+	background-color: #1D2833;
+	box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
+	border-radius: 2px;
+}
+.box{
+	position: absolute;
+	width: 308px;
+	height: 249px;
+	left: 10px;
+	top: 10px;
+	background-color: #C4C4C4;
+	border-radius: 0px;
+}
+.ones{
+	padding-left: 65px;
+}
+.twoes{
+	padding-left: 0px;
+}
+.button{
+	width: 230.16px;
+	height: 41.37px;
+	background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);
+	border-radius: 2px;
+	margin-top: 280px;
+	margin-left: 40px;
+  	filter: drop-shadow(1.36585px 1.36585px 13.6585px rgba(0, 0, 0, 0.2));
+	font-family: Fira Code;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16.9706px;
+	line-height: 22px;
+	letter-spacing: 0.04em;
+	color: #ffffff;
+}

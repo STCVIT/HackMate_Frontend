@@ -90,6 +90,9 @@ nbg {
   box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
   border: none;
 }
+.card *{
+  background: #1d2833;
+}
 
 nbgre {
   font-family: Fira Code;
@@ -135,7 +138,7 @@ nbgre {
 .textbox {
   margin-top: 56px;
 
-  width: 502.13px;
+  width: 90%;
   height: 48.57px;
 
   background: #2e3d4c;

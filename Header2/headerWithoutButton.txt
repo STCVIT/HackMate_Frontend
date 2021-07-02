@@ -1,5 +1,0 @@
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-        <div class="container-fluid">
-            <a class="navbar-brand logo" href="#"> <g><</g><b>HackMate</b><g>></g></a>
-        </div>
-</nav>

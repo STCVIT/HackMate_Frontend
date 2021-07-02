@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $("#nav").load("../Header2/headerWithoutButton.txt");
+    $("#nav").load("../Assets/Header/headerwobtn.txt");
     $("#foobottom").load("../Footer/footer.txt");
 });
 const form=document.getElementById("form");

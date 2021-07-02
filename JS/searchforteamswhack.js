@@ -53,6 +53,6 @@ all.addEventListener('click', function() {
 });
 
 $(document).ready(function () {
-    $("#nav").load("../Header/headerl.txt");
-    $("#foobottom").load("../Footer/footer.txt");
+    $("#nav").load("../Assets/Header/headerl.txt");
+    $("#foobottom").load("../Assets/Footer/footer.txt");
 });

@@ -358,16 +358,24 @@ g1 {
   padding-top:20px;
   padding-bottom:40px;
 }
+#square_inactive1{
+  padding:1vh 4.5vh;
+  border: 2.53333px solid  #226045;
+  filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+}
 #square_inactive{
   padding:1vh 4.5vh;
   border: 2.53333px solid #1EA54C;
   filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
 }
 #square_active{
   padding:1vh 4.5vh;
-  border: 2.53333px solid #1EA54C;
+  border: 2.53333px solid  #226045;
   filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
-  background: #1EA54C;
+  background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
 }
 .form-label{
   margin-bottom: 0rem !important;
@@ -403,4 +411,11 @@ p{
 }
 .not_button{
   padding-left:30px;
+}
+.form-check-input:checked {
+  background-color: green !important;
+  border-color: green !important;
+}
+.form-check-input[type=checkbox] {
+  border-radius:0rem !important;
 }

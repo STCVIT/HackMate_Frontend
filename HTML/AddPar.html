@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <title>Hackmate</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/addPar.css">
 </head>
 <body>
     <div id="nav"></div>
@@ -20,49 +20,63 @@
                         <input type="text" class="form-control" id="participants" placeholder="Search Participants by Username">
                       </div>
                       </form>
-					<div class="row-buttons">
+					<div class="buttons">
 						<div class="box">
-							<button id="active1" class="button"><h6 class="text5">All</h6></button>
-							<button id="inactive1" class="button1"><h6 class="text3">App Dev</h6></button>
-							<button id="inactive2" class="button1"><h6 class="text6">Frontend Dev</h6></button>
-							<button id="inactive3" class="button1"><h6 class="text7">Backend Dev</h6></button>
-							<button id="inactive4" class="button1"><h6 class="text8">Machine Learning</h6></button>
-        					<button id="inactive5" class="button1"><h6 class="text9">UI/UX Design</h6></button>
-        					<button id="inactive6" class="button1"><h6 class="text10">Management</h6></button>
+							<div class="row">
+                                <ul class="top-button">
+                                    <button id="active1" class="button"><h6 class="text5">All</h6></button>
+                                    <button id="inactive1" class="button1"><h6 class="text3">App Dev</h6></button>
+                                    <button id="inactive2" class="button1"><h6 class="text6">Frontend Dev</h6></button>
+                                    <button id="inactive3" class="button1"><h6 class="text7">Backend Dev</h6></button>
+                                    <button id="inactive4" class="button1"><h6 class="text8">Management</h6></button>
+                                </ul>
+                                <ul class="low buttons">
+                                    <button id="inactive5" class="button1"><h6 class="text9">UI/UX Design</h6></button>
+                                    <button id="inactive6" class="button1"><h6 class="text10">Machine learning</h6></button>
+                                </ul>    
+                            </div>
                         </div>
         			</div>
         		</div>
             </div>
             <div class="row">
                 <div class="col-lg-10 col-md-12 col-sm-12">
-                    <div class="card" style="max-width:750px">
+                    <div class="parbox">
+                    <div class="card" style="max-width:760px">
                         <div class="card-body">
-                            <img id="dp" src="../images/dp.svg"> 
+                            <img id="dp" src="../Assets/Images/dp.svg"> 
                             <p>Aneesh Panda<br><t>Frontend Development</t></p>
                             <click>INVITE</click>
                         </div>
                     </div>
-                        <div class="card" style="max-width:750px">
+                    </div>
+                    <div class="parbox">
+                        <div class="card" style="max-width:760px">
                             <div class="card-body">
-                                <img id="dp" src="../images/dp.svg"> 
+                                <img id="dp" src="../Assets/Images/dp.svg"> 
                                 <p>Aneesh Panda<br><t>Frontend Development</t></p>
                                 <click>INVITE</click>
                             </div>
                         </div>
-                        <div class="card" style="max-width:750px">
+                    </div>
+                    <div class="parbox">
+                        <div class="card" style="max-width:760px">
                             <div class="card-body">
-                                <img id="dp" src="../images/dp.svg"> 
+                                <img id="dp" src="../Assets/Images/dp.svg"> 
                                 <p>Aneesh Panda<br><t>Frontend Development</t></p>
                                 <click>INVITE</click>
                             </div>
                         </div>
-                        <div class="card" style="max-width:750px">
+                    </div>
+                    <div class="parbox">
+                        <div class="card" style="max-width:760px">
                             <div class="card-body">
-                                <img id="dp" src="../images/dp.svg"> 
+                                <img id="dp" src="../Assets/Images/dp.svg"> 
                                 <p>Aneesh Panda<br><t>Frontend Development</t></p>
                                 <click>INVITE</click>
                             </div>
                         </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -76,6 +90,6 @@
   type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.js"
 ></script>
-<script src="./teams.js"></script>
+<script src="../JS/teams.js"></script>
 </body>
 </html>

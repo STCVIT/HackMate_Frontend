@@ -10,7 +10,7 @@
 /*Navbar CSS*/
 nav {
   background-color: #1d2833;
-  padding-left: 128px;
+  padding-left: 8.3333%;
   top: 13px;
   box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
 }
@@ -45,12 +45,10 @@ g {
   nav {
     padding-left: 12px;
   }
+
   .navbar-nav {
     padding-right: 0;
   }
-}  
-#nav{
-  padding-bottom:7%;
 }
 /*Mainsection CSS*/
 .form-control{
@@ -80,7 +78,7 @@ input{
     font-family: 'Fira Code', monospace;
     font-style: normal;
     font-weight: bold;
-    padding-top:3%;
+    padding-top:15%;
     font-size: 36px;
     line-height: 47px;
     letter-spacing: 0.04em;
@@ -105,7 +103,7 @@ input{
     overflow: hidden;
     max-width:642px;
     max-height:463.76px;
-    padding-top:60px;
+    padding-top:100px;
 }
 #man{
     overflow: hidden;
@@ -132,20 +130,15 @@ input{
     border: none;
 }
 /*Footer CSS*/
-.footerbottom {
-  top: 31px;
-  font-family: Fira Code;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 38.2353px;
-  line-height: 50px;
-  letter-spacing: 0.04em;
+.footer > div > div > div {
   background: #1d2833;
+  color: rgba(231, 239, 239, 0.7);
 }
 
-.foo {
+.footer {
   box-shadow: -3px -3px 3px 1px rgba(24, 33, 42, 0.83);
 }
+
 .footerbottomt {
   top: 31px;
 
@@ -155,8 +148,14 @@ input{
   font-size: 38.2353px;
   line-height: 50px;
   letter-spacing: 0.04em;
-  background: #1d2833;
+  color: #e7efef;
 }
+
+g1 {
+  background: #1d2833;
+  color: #1ea54c;
+}
+
 .footerbottom1 {
   font-family: Raleway;
   font-style: normal;
@@ -167,39 +166,38 @@ input{
   color: rgba(231, 239, 239, 0.7);
   background: #1d2833;
 }
-.footerbottom1 .row {
-  margin: 0;
-}
-
-.bottomtext {
-  margin-left: 7.5rem;
-}
-
-g1 {
-  background: #1d2833;
-  color: #1ea54c;
-}
-
-.text-center {
-  padding-top: 31px;
-}
-
-.footerbottom hr {
-  width: 77vw;
-  margin-top: 26px;
-  margin-left: 8.125rem;
-  border: 1px solid rgba(231, 239, 239, 0.2);
-}
 
 .footerbottomimg {
   margin-left: 6vw;
 }
 
-@media (max-width: 769px) {
-    .footerbottomimgmain {
-    margin-left: 3.5rem;
+#foobottom {
+  background: #23303D;
+  padding-top: 105.640px;
+}
+
+@media (max-width: 550px) {
+  .footerbottomimg {
+    margin-left: 1vw;
+  }
+
+  .footerbottom1 {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 8.57143px;
+    line-height: 10px;
+  }
+  .footerbottomimg img {
+    width: 14.89px;
+    background: #1d2833;
+  }
+  .footerbottomimgmain img {
+    width: 14.89px;
+    background: #1d2833;
   }
 }
+
 /*mainsection media queries*/
 @media only screen and (max-width:600px){
   .footerbottom hr {
@@ -358,16 +356,24 @@ g1 {
   padding-top:20px;
   padding-bottom:40px;
 }
+#square_inactive1{
+  padding:1vh 4.5vh;
+  border: 2.53333px solid  #226045;
+  filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+}
 #square_inactive{
   padding:1vh 4.5vh;
   border: 2.53333px solid #1EA54C;
   filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
 }
 #square_active{
   padding:1vh 4.5vh;
-  border: 2.53333px solid #1EA54C;
+  border: 2.53333px solid  #226045;
   filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
-  background: #1EA54C;
+  background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
 }
 .form-label{
   margin-bottom: 0rem !important;
@@ -403,4 +409,11 @@ p{
 }
 .not_button{
   padding-left:30px;
+}
+.form-check-input:checked {
+  background-color: green !important;
+  border-color: green !important;
+}
+.form-check-input[type=checkbox] {
+  border-radius:0rem !important;
 }

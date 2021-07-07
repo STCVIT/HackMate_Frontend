@@ -93,13 +93,11 @@ r{
     border:none !important;
     background-color: #1d2833 !important;
     box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
-    padding-right:10px;
   }
   .card2{
     border:none !important;
     background-color: #1d2833 !important;
     box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
-    padding-left: 10px;
   }
   .empty{
       padding:40px;
@@ -108,7 +106,7 @@ r{
     color: #1ea54c;
     font-size:small;
   }
-  @media only screen and (min-width:1024px){
+  @media only screen and (min-width:1400px){
 .card1{
     position:relative;
     top:-30px;
@@ -123,7 +121,7 @@ r{
     margin-left: 8%;
 }
   }
-  @media only screen and (max-width:1025px){
+  @media only screen and (max-width:1400px){
     #left_triangles{
         display: none;
     }
@@ -134,4 +132,3 @@ r{
         padding-top:40px;
     }
   }
-

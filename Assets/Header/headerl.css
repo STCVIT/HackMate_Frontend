@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito+Sans&family=Raleway&display=swap");
+
 nav {
   background-color: #1d2833;
   padding-left: 8.3333%;
@@ -42,17 +44,40 @@ g {
 
 .dropdown-item {
   color: #e7efef;
-  background-color: #1d2833;
+  background-color: #2e3d4c;
+  font-family: Nunito Sans;
+font-style: normal;
+font-weight: bold;
+font-size: 10px;
+line-height: 14px;
+/* identical to box height */
+
+letter-spacing: 0.08em;
+
+color: rgba(231, 239, 239, 0.7);
 }
 
 .dropdown-menu {
   padding: 0;
   border: 0;
-}
 
+}
+.dropdown-menu.show {
+  margin-top: 15px;
+  background: #23303d;
+}
 .nav-link.img {
   padding-top: 0;
   display: none;
+}
+
+.triangle-up {
+  background: #23303d;
+	width: 0;
+	height: 0;
+	border-left: 6.25px solid transparent;
+	border-right: 6.25px solid transparent;
+	border-bottom: 12.5px solid #2e3d4c;
 }
 
 .nav-item .nav-link {
@@ -66,11 +91,11 @@ g {
   }
 
   .navbar-expand-lg .navbar-nav .nav-link.alerts {
-      padding-right: 0.5rem;
+    padding-right: 0.5rem;
   }
-  .navbar-expand-lg .navbar-nav .nav-link.dropdown-toggle.username{
+  .navbar-expand-lg .navbar-nav .nav-link.dropdown-toggle.username {
     padding-left: 0.5rem;
-}
+  }
 }
 
 @media (min-width: 992px) {
@@ -88,8 +113,6 @@ g {
   .nav-item .nav-link.img {
     display: initial;
   }
-
-  
 }
 
 @media (max-width: 992px) {

@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand logo" href="../index.html">
+            <g><</g><b>HackMate</b><g>></g>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="justify-content-end collapse navbar-collapse" id="navbarNavAltMarkup">
+
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="./viewhackathon.html">Hackathons</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./addhack.html">Add Hack</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link alerts" href="#"><img src="../Assets/Images/carbon_notification-new.svg"
+                            alt=""></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle username" href="#" id="navbarDropdown"
+                        style="padding-right: 2vw;" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        STC
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="triangle-up"></div>
+                        <li><a class="dropdown-item" href="./orghack.html">MY HACKS</a></li>
+                        <li><a class="dropdown-item" href="./orguserview.html">MY PROFILE</a></li>
+                        <li><a class="dropdown-item" href="#" style="color: #F54646;">LOGOUT</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link img" href="./orguserview.html"><img src="../Assets/Images/STC.svg" style="width:47px; height: 47px;" alt=""></a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>

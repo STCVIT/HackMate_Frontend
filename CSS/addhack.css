@@ -120,3 +120,18 @@ input#image_uploads {
 .nbg{
   margin-top: 91px;
 }
+
+@media (max-width: 768px) {
+  .btns{
+    text-align: start;
+  }
+  .textbox{
+    width: 100%;
+  }
+  .box{
+    width: 96vw;
+  }
+  .textboxbio{
+    width: 100%;
+  }
+}

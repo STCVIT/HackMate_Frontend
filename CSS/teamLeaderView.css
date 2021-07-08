@@ -145,15 +145,29 @@
     padding-bottom: 40px;
 }
 @media (max-width:599px){
-    .card .card-row clicktext{
-        padding-left:0%;
+    .card .card-row l{
+        padding-left:18%;
     }
-    .card .card-row clicktext1{
-        padding-left: 0%;
+    .card .card-row l1{
+        padding-left:25%;
     }
-    .card .card-row clicktext2{
-        padding-left: 0%;
+    .card .card-row l2{
+        padding-left:25%;
     }
+    .hackdetailsbox{
+      display:none;
+    }
+}
+@media (max-width:375px){
+  .card .card-row l{
+    padding-left:0%;
+}
+.card .card-row l1{
+    padding-left:0%;
+}
+.card .card-row l2{
+    padding-left:0%;
+}
 }
 .maintext {
   padding-top:6%;
@@ -200,4 +214,66 @@
     border-style: dashed;
     background: #1d2833;
   }
+}
+@media (min-width:600px){
+  .hackdetailsMobile{
+    display:none;
+  }
+}
+
+
+nb1 {
+  font-family: Fira Code;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25.3533px;
+  line-height: 33px;
+  letter-spacing: 0.04em;
+}
+
+.box {
+  background: #1d2833;
+  max-width: 353.33px;
+  max-height: 424px;
+  margin-top: 57px;
+  box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
+  border-radius: 4px;
+}
+
+.innertxt {
+  padding-left: 43.09px;
+}
+
+.box * {
+  background: #1d2833;
+}
+
+nbg {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13.7886px;
+  line-height: 160%;
+  /* or 22px */
+
+  letter-spacing: 0.04em;
+
+  color: #979797;
+}
+
+.nbg {
+  margin-top: 15.05px;
+}
+.nbw {
+  margin-top: 5.17px;
+}
+nbw {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15.5122px;
+  line-height: 160%;
+  /* identical to box height, or 25px */
+
+  letter-spacing: 0.04em;
 }

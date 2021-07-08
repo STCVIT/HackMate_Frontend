@@ -38,6 +38,7 @@ input {
   text-align: start;
   align-items: center;
   flex-wrap: wrap;
+  margin-top: 103px;
 }
 
 nb1 {
@@ -57,9 +58,9 @@ nb1 {
   background: #1d2833;
   width: 276.26px;
   height: 320px;
-  margin-top: 103px;
   margin-bottom: 154px;
-  margin-right: 61.67px;
+  margin-right: 30px;
+  margin-left: 30px;
   border-radius: 2.21008px;
 }
 
@@ -121,5 +122,11 @@ nbw {
 @media (max-width: 992px) {
   .main {
     padding-left: 12px;
+  }
+}
+
+@media (max-width:768px) {
+  .center{
+    text-align: center;
   }
 }

@@ -122,9 +122,6 @@ input#image_uploads {
 }
 
 @media (max-width: 768px) {
-  .btns{
-    text-align: start;
-  }
   .textbox{
     width: 100%;
   }

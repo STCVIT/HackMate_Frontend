@@ -1,53 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito+Sans&family=Raleway&display=swap");
-* {
+*{
     background-color: #23303d;
     font-family: "Fira Code", monospace;
     color: #e7efef;
-  }
-  /*Navbar CSS*/
-  nav {
-    background-color: #1d2833;
-    padding-left: 128px;
-    top: 13px;
-    box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
-  }
-  
-  b {
-    font-size: 26px;
-  }
-  
-  nav * {
-    background-color: #1d2833;
-    font-weight: 700;
-  }
-  g {
-    color: #1ea54c;
-  }
-  
-  .btnsignup {
-    background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 2px;
-    border: none;
-    width: 154px;
-    height: 36px;
-    font-size: 16.9706px;
-  }
-  
-  .navbar-nav {
-    padding-right: 128px;
-  }
-  
-  @media (max-width: 992px) {
-    nav {
-      padding-left: 12px;
-    }
-    .navbar-nav {
-      padding-right: 0;
-    }
-  }  
-  #nav{
-    padding-bottom:8%;
   }
 /*Mainsection CSS*/
 .form-control{
@@ -87,132 +42,17 @@ textarea:focus, input:focus {
 }
 .btnsmallversion{
     width: 143px;
-    height: 46px;
+    height: 42px;
     font-family: "Fira Code";
     font-weight: bold;
-    font-size: 44px;
-    line-height: 29px;
+    text-align: center;
 /* identical to box height */
     letter-spacing: 0.04em;
     color: #E7EFEF;
     border-radius: 2px;
     border: none;
 }
-/*Footer CSS*/
-.footerbottom {
-  top: 31px;
-  font-family: Fira Code;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 38.2353px;
-  line-height: 50px;
-  letter-spacing: 0.04em;
-  background: #1d2833;
-}
-
-.foo {
-  box-shadow: -3px -3px 3px 1px rgba(24, 33, 42, 0.83);
-}
-.footerbottomt {
-  top: 31px;
-
-  font-family: Fira Code;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 38.2353px;
-  line-height: 50px;
-  letter-spacing: 0.04em;
-  background: #1d2833;
-}
-.footerbottom1 {
-  font-family: Raleway;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16.5391px;
-  line-height: 19px;
-  letter-spacing: 0.04em;
-  color: rgba(231, 239, 239, 0.7);
-  background: #1d2833;
-}
-.footerbottom1 .row {
-  margin: 0;
-}
-
-.bottomtext {
-  margin-left: 7.5rem;
-}
-
-g1 {
-  background: #1d2833;
-  color: #1ea54c;
-}
-
-.text-center {
-  padding-top: 31px;
-}
-
-.footerbottom hr {
-  width: 77vw;
-  margin-top: 26px;
-  margin-left: 8.125rem;
-  border: 1px solid rgba(231, 239, 239, 0.2);
-}
-
-.footerbottomimg {
-  margin-left: 6vw;
-}
-
-@media (max-width: 769px) {
-    .footerbottomimgmain {
-    margin-left: 3.5rem;
-  }
-}
-
-@media (max-width: 600px) {
-    .footerbottom hr {
-    margin-left: 4rem;
-  }
-
-  .footerbottom1 {
-    font-size: 8.5391px;
-  }
-  .footerbottom1 img {
-    height: 14.89px;
-    width: 14.89px;
-  }
-  .footerbottomimgmain {
-    margin-left: 0px;
-  }
-}
-@media only screen and (max-width:600px){
- #organiser{
-    display: none;
- }
- .content{
-  position:relative;
-}
-#btnaddhack{
-  position:absolute;
-  top:40%;
-  right:0;
-}
-#foobottom{
-  padding-top:20%;
-}
-}
-@media only screen and (min-width:768px) {
-  .organiserdash{
-    display:none;
-  }
 .content{
-  position:relative;
-}
-#btnaddhack{
-  position:absolute;
-  top:40%;
-  right:25%;
-}
-#foobottom{
-  padding-top: 10%;
-}
+  max-width:478px;
+  padding-top: 20px;
 }

@@ -1,55 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito+Sans&family=Raleway&display=swap");
-* {
+*{
     background-color: #23303d;
     font-family: "Fira Code", monospace;
     color: #e7efef;
   }
-  body{
-    background-color: #23303d;
-  }
-/*Navbar CSS*/
-nav {
-  background-color: #1d2833;
-  padding-left: 8.3333%;
-  top: 13px;
-  box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
-}
-
-b {
-  font-size: 26px;
-}
-
-nav * {
-  background-color: #1d2833;
-  font-weight: 700;
-}
-g {
-  color: #1ea54c;
-}
-
-.btnsignup {
-  background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 2px;
-  border: none;
-  width: 154px;
-  height: 36px;
-  font-size: 16.9706px;
-}
-
-.navbar-nav {
-  padding-right: 128px;
-}
-
-@media (max-width: 992px) {
-  nav {
-    padding-left: 12px;
-  }
-
-  .navbar-nav {
-    padding-right: 0;
-  }
-}
 /*Mainsection CSS*/
 .form-control{
     max-width: 478px;
@@ -129,75 +83,6 @@ input{
     border-radius: 2px!important;
     border: none;
 }
-/*Footer CSS*/
-.footer > div > div > div {
-  background: #1d2833;
-  color: rgba(231, 239, 239, 0.7);
-}
-
-.footer {
-  box-shadow: -3px -3px 3px 1px rgba(24, 33, 42, 0.83);
-}
-
-.footerbottomt {
-  top: 31px;
-
-  font-family: Fira Code;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 38.2353px;
-  line-height: 50px;
-  letter-spacing: 0.04em;
-  color: #e7efef;
-}
-
-g1 {
-  background: #1d2833;
-  color: #1ea54c;
-}
-
-.footerbottom1 {
-  font-family: Raleway;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16.5391px;
-  line-height: 19px;
-  letter-spacing: 0.04em;
-  color: rgba(231, 239, 239, 0.7);
-  background: #1d2833;
-}
-
-.footerbottomimg {
-  margin-left: 6vw;
-}
-
-#foobottom {
-  background: #23303D;
-  padding-top: 105.640px;
-}
-
-@media (max-width: 550px) {
-  .footerbottomimg {
-    margin-left: 1vw;
-  }
-
-  .footerbottom1 {
-    font-family: Raleway;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 8.57143px;
-    line-height: 10px;
-  }
-  .footerbottomimg img {
-    width: 14.89px;
-    background: #1d2833;
-  }
-  .footerbottomimgmain img {
-    width: 14.89px;
-    background: #1d2833;
-  }
-}
-
 /*mainsection media queries*/
 @media only screen and (max-width:600px){
   .footerbottom hr {
@@ -291,6 +176,14 @@ g1 {
   height:356px;
 }
 }
+@media only screen and (max-width:767px){
+  .m{
+  justify-content:center;
+  }
+  .maincap{
+    padding-top: 10%;
+  }
+}
 /*skills page*/
 .skill_selection{
   padding-bottom:30px;
@@ -346,7 +239,7 @@ g1 {
 
 /*profile_userview*/
 .caption{
-  padding-top:2%;
+  padding-top:5%;
   padding-bottom:2%;
 }
 .topmost_buttons{
@@ -416,4 +309,37 @@ p{
 }
 .form-check-input[type=checkbox] {
   border-radius:0rem !important;
+}
+
+@media only screen and (max-width:413px){
+  .button1{
+    padding: 0.5vw 2vw ;
+    padding-bottom:2vw;
+    font-size:small;
+    text-align: center;
+    background: #1D2833;
+    border: 2.53333px solid #1EA54C;
+    box-sizing: border-box;
+    border-radius: 63.3333px;
+    color: #fff;
+    filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
+    max-height: 38px;
+    min-width :103.19px;
+    min-height:29.64px;
+  }
+  .button {
+    padding: 0.5vw 2vw ;
+    padding-bottom:2vw;
+    font-size:small;
+    text-align: center;
+    color: #fff;
+    background: #1EA54C;
+    border: 2.53333px solid #1EA54C;
+    box-sizing: border-box;
+    border-radius: 63.3333px;
+    filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
+    max-height: 38px;
+    min-width :103.19px;
+    min-height:29.64px;
+  }
 }

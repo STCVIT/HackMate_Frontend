@@ -64,36 +64,36 @@ form1.addEventListener('submit',(e)=>{
 });
 
 
-function signin(){
-    const email=document.getElementById('login_email').value;
-    const password=document.getElementById('login_pass1').value;
+// function signin(){
+//     const email=document.getElementById('login_email').value;
+//     const password=document.getElementById('login_pass1').value;
 
-    console.log(email);
-    console.log(password);
-    firebase.auth().signInWithEmailAndPassword(email, password)
-  .then(({user}) => {
-    // Signed in 
-    console.log("Signed in")
-    user.getIdToken().then(function(idToken){
-        console.log(idToken)
+//     console.log(email);
+//     console.log(password);
+//     firebase.auth().signInWithEmailAndPassword(email, password)
+//   .then(({user}) => {
+//     // Signed in 
+//     console.log("Signed in")
+//     user.getIdToken().then(function(idToken){
+//         console.log(idToken)
         
-    fetch("https://f4a5bf963ab0.ngrok.io/organiser/login",{
-      method:"GET",
-      headers: new Headers({
-          'Authorization': 'Bearer ' + idToken
-        })
-    }).then(response => {
-    if (response.status == 400) {
-      return response.json().then(change => {
-        window.location = "";
-        change = window.location;
-        return change;
-      });
-    }
-  }); 
+//     fetch("https://f4a5bf963ab0.ngrok.io/organiser/login",{
+//       method:"GET",
+//       headers: new Headers({
+//           'Authorization': 'Bearer ' + idToken
+//         })
+//     }).then(response => {
+//     if (response.status == 400) {
+//       return response.json().then(change => {
+//         window.location = "";
+//         change = window.location;
+//         return change;
+//       });
+//     }
+//   }); 
 
-      // .then(response => response.json())   
-      // .then(json => console.log(json))
-    })
-  })
-}
+//       // .then(response => response.json())   
+//       // .then(json => console.log(json))
+//     })
+//   })
+// }

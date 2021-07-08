@@ -81,13 +81,20 @@ nbgre {
 
 .card{
   margin-top: 81.74px;
+  width: 320px;
   background: #1D2833;
 /* card shadow */
-
+margin-left: 8.33%;
 box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
 border-radius: 2px;
 }
 
+.center{
+  text-align: center;
+}
+.card *{
+  background: #1D2833;
+}
 
 
 .btns {
@@ -103,4 +110,9 @@ border-radius: 2px;
   .box2{
   margin-right: 0;
 }
+}
+@media (max-width:500px) {
+  .nbwsb{
+    font-size: 13px;
+  }
 }

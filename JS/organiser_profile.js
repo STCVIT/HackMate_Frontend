@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $("#nav").load("../Assets/Header/headerwobtn.txt");
-    $("#foobottom").load("../Footer/footer.txt");
+    $("#foobottom").load("../Assets/Footer/footer.txt");
 });
 const form=document.getElementById("form");
 form.addEventListener('submit',(e)=>{

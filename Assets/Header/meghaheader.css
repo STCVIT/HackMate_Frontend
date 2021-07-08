@@ -1,109 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito+Sans&family=Raleway&display=swap");
-
 nav {
-<<<<<<< HEAD
-  background-color: #1d2833;
-  padding-left: 8.3333%;
-  top: 13px;
-  box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
-}
-
-.navbar-dark .navbar-nav .nav-link:focus,
-.navbar-dark .navbar-nav .nav-link:hover {
-  color: #e7efef;
-}
-.navbar-dark .navbar-nav .nav-link {
-  color: #e7efef;
-}
-
-b {
-  font-size: 26px;
-}
-
-nav * {
-  background-color: #1d2833;
-  font-weight: 700;
-  color: #e7efef;
-}
-g {
-  color: #1ea54c;
-}
-
-.btnsignup {
-  background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 2px;
-  border: none;
-  width: 154px;
-  height: 36px;
-  font-size: 16.9706px;
-}
-
-.navbar-nav {
-  padding-right: 8.333%;
-}
-
-.dropdown-item {
-  color: #e7efef;
-  background-color: #2e3d4c;
-  font-family: Nunito Sans;
-font-style: normal;
-font-weight: bold;
-font-size: 10px;
-line-height: 14px;
-/* identical to box height */
-
-letter-spacing: 0.08em;
-
-color: rgba(231, 239, 239, 0.7);
-}
-
-.dropdown-menu {
-  padding: 0;
-  border: 0;
-
-}
-.dropdown-menu.show {
-  margin-top: 15px;
-  background: #23303d;
-}
-.nav-link.img {
-  padding-top: 0;
-  display: none;
-}
-
-.triangle-up {
-  background: #23303d;
-	width: 0;
-	height: 0;
-	border-left: 6.25px solid transparent;
-	border-right: 6.25px solid transparent;
-	border-bottom: 12.5px solid #2e3d4c;
-}
-
-.nav-item .nav-link {
-  padding-right: 56px;
-}
-
-@media (min-width: 1060px) {
-  .navbar-expand-lg .navbar-nav .nav-link {
-    padding-right: 56px;
-    padding-left: 0;
-  }
-
-  .navbar-expand-lg .navbar-nav .nav-link.alerts {
-    padding-right: 0.5rem;
-  }
-  .navbar-expand-lg .navbar-nav .nav-link.dropdown-toggle.username {
-    padding-left: 0.5rem;
-  }
-}
-
-@media (min-width: 992px) {
-  .alerts::after {
-    content: "|";
-    color: rgba(255, 255, 255, 0.55);
-=======
     background-color: #1d2833;
     padding-left: 8.3333%;
     top: 13px;
@@ -116,7 +11,6 @@ color: rgba(231, 239, 239, 0.7);
   }
   .navbar-dark .navbar-nav .nav-link {
     color: #e7efef;
->>>>>>> main
   }
   
   b {
@@ -131,13 +25,6 @@ color: rgba(231, 239, 239, 0.7);
   g {
     color: #1ea54c;
   }
-<<<<<<< HEAD
-}
-
-@media (max-width: 992px) {
-  nav {
-    padding-left: 12px;
-=======
   
   .btnsignup {
     background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);
@@ -147,7 +34,6 @@ color: rgba(231, 239, 239, 0.7);
     width: 154px;
     height: 36px;
     font-size: 16.9706px;
->>>>>>> main
   }
   
   .navbar-nav {
@@ -172,9 +58,6 @@ color: rgba(231, 239, 239, 0.7);
   .nav-item .nav-link {
     padding-right: 56px;
   }
-<<<<<<< HEAD
-}
-=======
   .tabs {
     overflow: hidden; 
 }
@@ -257,4 +140,3 @@ color: rgba(231, 239, 239, 0.7);
       padding-right: 0;
     }
   }
->>>>>>> main

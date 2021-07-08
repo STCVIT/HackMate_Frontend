@@ -86,3 +86,8 @@ r{
         padding-top:40px;
     }
   }
+@media only screen and (max-width:600px){
+  .maintext h2{
+    padding-top:5%;
+  }
+}

@@ -176,6 +176,11 @@ input{
   height:356px;
 }
 }
+@media only screen and (max-width:767px){
+  .m{
+  justify-content:center;
+  }
+}
 /*skills page*/
 .skill_selection{
   padding-bottom:30px;

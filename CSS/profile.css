@@ -180,6 +180,9 @@ input{
   .m{
   justify-content:center;
   }
+  .maincap{
+    padding-top: 10%;
+  }
 }
 /*skills page*/
 .skill_selection{
@@ -306,4 +309,37 @@ p{
 }
 .form-check-input[type=checkbox] {
   border-radius:0rem !important;
+}
+
+@media only screen and (max-width:413px){
+  .button1{
+    padding: 0.5vw 2vw ;
+    padding-bottom:2vw;
+    font-size:small;
+    text-align: center;
+    background: #1D2833;
+    border: 2.53333px solid #1EA54C;
+    box-sizing: border-box;
+    border-radius: 63.3333px;
+    color: #fff;
+    filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
+    max-height: 38px;
+    min-width :103.19px;
+    min-height:29.64px;
+  }
+  .button {
+    padding: 0.5vw 2vw ;
+    padding-bottom:2vw;
+    font-size:small;
+    text-align: center;
+    color: #fff;
+    background: #1EA54C;
+    border: 2.53333px solid #1EA54C;
+    box-sizing: border-box;
+    border-radius: 63.3333px;
+    filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
+    max-height: 38px;
+    min-width :103.19px;
+    min-height:29.64px;
+  }
 }

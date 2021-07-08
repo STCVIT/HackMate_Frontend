@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito+Sans&family=Raleway&display=swap");
-
 nav {
   background-color: #1d2833;
   padding-left: 8.3333%;
@@ -91,11 +89,11 @@ color: rgba(231, 239, 239, 0.7);
   }
 
   .navbar-expand-lg .navbar-nav .nav-link.alerts {
-    padding-right: 0.5rem;
+      padding-right: 0.5rem;
   }
-  .navbar-expand-lg .navbar-nav .nav-link.dropdown-toggle.username {
+  .navbar-expand-lg .navbar-nav .nav-link.dropdown-toggle.username{
     padding-left: 0.5rem;
-  }
+}
 }
 
 @media (min-width: 992px) {
@@ -103,46 +101,26 @@ color: rgba(231, 239, 239, 0.7);
     content: "|";
     color: rgba(255, 255, 255, 0.55);
   }
+  .alerts img {
+    margin-right: 47.25px;
+  }
+  .nav-link {
+    padding: 15px 0 0 0;
+  }
+
+  .nav-item .nav-link.img {
+    display: initial;
+  }
+
   
-  b {
-    font-size: 26px;
-  }
-  
-  nav * {
-    background-color: #1d2833;
-    font-weight: 700;
-    color: #e7efef;
-  }
-  g {
-    color: #1ea54c;
-  }
 }
 
 @media (max-width: 992px) {
   nav {
     padding-left: 12px;
   }
-  
+
   .navbar-nav {
-    padding-right: 8.333%;
-  }
-  
-  .dropdown-item {
-    color: #e7efef;
-    background-color: #1d2833;
-  }
-  
-  .dropdown-menu {
-    padding: 0;
-    border: 0;
-  }
-  
-  .nav-link.img {
-    padding-top: 0;
-    display: none;
-  }
-  
-  .nav-item .nav-link {
-    padding-right: 56px;
+    padding-right: 0;
   }
 }

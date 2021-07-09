@@ -84,7 +84,8 @@ nbgre {
   width: 320px;
   background: #1D2833;
 /* card shadow */
-margin-left: 8.33%;
+margin-left: 4.165%;
+margin-right: 4.165%;
 box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
 border-radius: 2px;
 }
@@ -106,13 +107,27 @@ border-radius: 2px;
   border: none;
 }
 
+.display2{
+  display: none;
+}
 @media (max-width:1315px) {
   .box2{
   margin-right: 0;
 }
 }
+@media (max-width:897px) {
+  .display1{
+    display: none;
+  }
+  .display2{
+    display: block;
+  }
+}
 @media (max-width:500px) {
   .nbwsb{
+    font-size: 13px;
+  }
+  .nbws{
     font-size: 13px;
   }
 }

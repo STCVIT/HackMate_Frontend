@@ -89,8 +89,9 @@ nbg {
   background: #1d2833;
   box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
   border: none;
+  width: 340px;
 }
-.card *{
+.card * {
   background: #1d2833;
 }
 
@@ -168,4 +169,72 @@ nbgre {
   color: #e7efef;
 
   border: none;
+}
+
+.addprojects1 {
+  width: 220px;
+  height: 41px;
+  background: transparent;
+  border: 3px solid #1ea54c;
+  box-sizing: border-box;
+  /* Button Shadow */
+  border-radius: 2px;
+  filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.2));
+}
+
+
+.card1{
+  width: 340px;
+    margin-right: 32px;
+}
+
+
+@media (max-width: 711px) {
+  .plus{
+    width: 75vw;
+  }
+}
+@media (max-width: 700px) {
+  .addprojects1 {
+    width: 150px;
+  }
+}
+@media (max-width: 500px) {
+  .nbw {
+    font-size: 21px;
+  }
+
+  .btns {
+    font-size: 21px;
+  }
+
+  .addprojects1 {
+    width: 100px;
+    height: 25.75px;
+
+    /* Button Gradient */
+    border: none;
+    background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);
+    box-shadow: 0.628135px 0.628135px 6.28135px rgba(0, 0, 0, 0.2);
+    border-radius: 1.25627px;
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10.6598px;
+    line-height: 15px;
+    /* identical to box height */
+
+    letter-spacing: 0.04em;
+
+    /* Text Colour */
+
+    color: #e7efef;
+  }
+
+  .card{
+    width: 320px;
+  }
+  .card1{
+    width: 320px;
+  }
 }

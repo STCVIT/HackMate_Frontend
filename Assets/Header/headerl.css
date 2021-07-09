@@ -123,4 +123,12 @@ color: rgba(231, 239, 239, 0.7);
   .navbar-nav {
     padding-right: 0;
   }
+  .triangle-up {
+  background: #1d2833;
+  }
+
+  .dropdown-menu.show {
+  margin-top: 15px;
+  background: #1d2833;
+}
 }

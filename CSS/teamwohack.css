@@ -40,3 +40,47 @@ html,body{
 	letter-spacing: 0.04em;
 	color: #ffffff;
 }
+@media (min-width: 1200px) and (max-width: 1440px){
+	.combined{
+		margin-bottom: 70px;
+	}
+	.ones{
+		margin-right: 0px;
+	}
+}
+@media (min-width: 992px) and (max-width: 1200px){
+	.combined{
+		margin-bottom: 70px;
+	}
+	.ones{
+		margin-right: 0px;
+		padding-left: 0px;
+	}
+}
+@media (min-width: 375px) and (max-width: 991px){
+	.combined{
+		margin-bottom: 70px;
+	}
+	.ones{
+		margin-right: 0px;
+		margin-top: 350px;
+		padding-left: 175px;
+		transform: scale(2.5);
+	}
+	.twoes{
+		margin-right: 0px;
+		margin-top: 650px;
+		margin-bottom: 800px;
+		padding-left: 175px;
+		transform: scale(2.5);
+	}
+	#nav{
+		padding-top: 35px;
+		margin-left: 390px;
+		transform: scale(2.38);
+	}
+	#foobottom{
+		transform: scale(2.3);
+		margin-left: 350px
+	}
+}

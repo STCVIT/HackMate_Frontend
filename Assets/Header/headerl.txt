@@ -16,9 +16,22 @@
                 <li class="nav-item">
                     <a class="nav-link" href="./teamwohack.html">Create Team</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link alerts" href="#"><img src="../Assets/Images/carbon_notification-new.svg"
-                            alt=""></a>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                        style="padding-right: 2vw;" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="../Assets/Images/carbon_notification-new.svg"
+                            alt="">
+                    </a>
+                    
+                    <div class="carbon-notification dropdown-menu dropdown-menu-end" style="background: #26313c; width: 576px; height: 188px;" aria-labelledby="navbarDropdown">
+                        <div class="text-center notification1" style="background: #26313c;">
+                            Notifications
+                        </div>
+                        <div class="text-center notification2" style="background: #26313c; padding-top: 50px">
+                            You don't have any Notifications
+                        </div>
+                    </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle username" href="#" id="navbarDropdown"

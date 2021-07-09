@@ -1,58 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito+Sans&family=Raleway&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&display=swap');
 * {
     color: #e7efef;
     font-family: "Fira Code", monospace;
-  }
+}
 .mainsection{
     background-color: #23303d;
 }
-nav {
-    background-color: #1d2833;
-    padding-left: 128px;
-    top: 13px;
-    box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
-  }
-  
-  b {
-    font-size: 26px;
-  }
-  
-  nav * {
-    background-color: #1d2833;
-    font-weight: 700;
-  }
-  g {
-    color: #1ea54c;
-  }
-  
-  .btnsignup {
-    background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 2px;
-    border: none;
-    width: 154px;
-    height: 36px;
-    font-size: 16.9706px;
-  }
-  
-  .navbar-nav {
-    padding-right: 128px;
-  }
-  
-  @media (max-width: 992px) {
-    nav {
-      padding-left: 12px;
-    }
-    .navbar-nav {
-      padding-right: 0;
-    }
-  }
-  
-  
-
-
-  .maintext{
+.maintext{
       font-family: "Fira Code", monospace;
       padding-top:5%;
       padding-bottom:4%;
@@ -118,7 +72,10 @@ r{
     left:13%;
 }
 .card-body{
-    margin-left: 8%;
+  margin-left: 8%;
+}
+.card-body #btnadd{
+  padding-left:30%;
 }
   }
   @media only screen and (max-width:1400px){
@@ -131,4 +88,17 @@ r{
     .col-lg-6{
         padding-top:40px;
     }
+    .card-body #btnadd{
+      padding-left:20%;
+    }
   }
+  @media only screen and (max-width:1000px) and (min-width:768px){
+    .card-body #btnadd{
+      padding-left:5%;
+    }
+  }
+@media only screen and (max-width:600px){
+  .maintext h2{
+    padding-top:5%;
+  }
+}

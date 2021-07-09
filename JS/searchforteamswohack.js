@@ -8,37 +8,103 @@ const block = document.querySelector('.text11');
 const cyber = document.querySelector('.text12');
 const all = document.querySelector('.text5');
 
+var n = 0;
 app.addEventListener('click', function() {
-  document.getElementById("active1").className = "button1";
-  document.getElementById("inactive1").className = "button";
+  if(n%2 == 0){
+    document.getElementById("active1").className = "button1";
+    document.getElementById("inactive1").className = "button";
+    n = n+1;
+  }
+  else{
+    document.getElementById("active1").className = "button1";
+    document.getElementById("inactive1").className = "button1";
+    n = n+1;
+  }
 });
+
 fweb.addEventListener('click', function() {
-  document.getElementById("active1").className = "button1";
-  document.getElementById("inactive2").className = "button";
+  if(n%2 == 0){
+    document.getElementById("active1").className = "button1";
+    document.getElementById("inactive2").className = "button";
+    n = n+1;
+  }
+  else{
+    document.getElementById("active1").className = "button1";
+    document.getElementById("inactive2").className = "button1";
+    n = n+1;
+  }
 });
 bweb.addEventListener('click', function() {
-  document.getElementById("active1").className = "button1";
-  document.getElementById("inactive3").className = "button";
+  if(n%2 == 0){
+    document.getElementById("active1").className = "button1";
+    document.getElementById("inactive3").className = "button";
+    n = n+1;
+  }
+  else{
+    document.getElementById("active1").className = "button1";
+    document.getElementById("inactive3").className = "button1";
+    n = n+1;
+  }
 });
 ml.addEventListener('click', function() {
-  document.getElementById("active1").className = "button1";
-  document.getElementById("inactive4").className = "button";
+  if(n%2 == 0){
+    document.getElementById("active1").className = "button1";
+    document.getElementById("inactive4").className = "button";
+    n = n+1;
+  }
+  else{
+    document.getElementById("active1").className = "button1";
+    document.getElementById("inactive4").className = "button1";
+    n = n+1;
+  }
 });
 design.addEventListener('click', function() {
-  document.getElementById("active1").className = "button1";
-  document.getElementById("inactive5").className = "button";
+  if(n%2 == 0){
+    document.getElementById("active1").className = "button1";
+    document.getElementById("inactive5").className = "button";
+    n = n+1;
+  }
+  else{
+    document.getElementById("active1").className = "button1";
+    document.getElementById("inactive5").className = "button1";
+    n = n+1;
+  }
 });
 mgmt.addEventListener('click', function() {
-  document.getElementById("active1").className = "button1";
-  document.getElementById("inactive6").className = "button";
+  if(n%2 == 0){
+    document.getElementById("active1").className = "button1";
+    document.getElementById("inactive6").className = "button";
+    n = n+1;
+  }
+  else{
+    document.getElementById("active1").className = "button1";
+    document.getElementById("inactive6").className = "button1";
+    n = n+1;
+  }
 });
 block.addEventListener('click', function() {
-  document.getElementById("active1").className = "button1";
-  document.getElementById("inactive7").className = "button";
+  if(n%2 == 0){
+    document.getElementById("active1").className = "button1";
+    document.getElementById("inactive7").className = "button";
+    n = n+1;
+  }
+  else{
+    document.getElementById("active1").className = "button1";
+    document.getElementById("inactive7").className = "button1";
+    n = n+1;
+  }
 });
 cyber.addEventListener('click', function() {
-  document.getElementById("active1").className = "button1";
-  document.getElementById("inactive8").className = "button";
+  if(n%2 == 0){
+    document.getElementById("active1").className = "button1";
+    document.getElementById("inactive8").className = "button";
+    n = n+1;
+  }
+  else{
+    document.getElementById("active1").className = "button1";
+    document.getElementById("inactive8").className = "button1";
+    n = n+1;
+  }
 });
 all.addEventListener('click', function() {
   document.getElementById("active1").className = "button";

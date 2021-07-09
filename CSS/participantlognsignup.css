@@ -16,7 +16,7 @@ input {
 .form-wrap {
   background-color: #1D2833;
   width: 450px;
-  margin: 3em auto;
+  margin-top: 50px;
   box-shadow: 0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19); 
 }
 .form-wrap .tabs {
@@ -95,17 +95,24 @@ input {
 }
 .forgot{
   color: #fff;
+  font-size: 14px;
 }
 .forgot:hover{
   color: #fff;
 }
-@media screen and (max-width: 1000px){
+@media (min-width: 375px) and (max-width: 1000px){
   .first{
     display: none;
   }
+  .form-wrap .help-text{
+    margin-left: 290px;
+    font-size: 40px;
+  }
   .form-wrap{
-    margin-top: 75px;
+    margin-top: 525px;
+    margin-bottom: 980px;
+    margin-left: 240px;
     width: 475px;
-    transform: scale(1.0);
+    transform: scale(1.9);
   }
 }

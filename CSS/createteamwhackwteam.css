@@ -86,10 +86,10 @@ html,body{
 	margin-top: 15px;
 	margin-bottom: 20px;
 }
-.check-input{
+.form-check-input{
 	margin-left: 30px;
     height: 20px;
-    width: 25px;
+    width: 20px;
 }
 .check-label{
 	font-family: Nunito Sans;
@@ -261,9 +261,64 @@ html,body{
 	margin: 40px 0 0 60px;
 	cursor: pointer;
 }
-@media (min-width: 315px) and (max-width: 991px){
+@media (min-width: 375px) and (max-width: 991px){
 	.button{
 		margin-left: 250px;
+		transform: scale(1.3);
+		margin-bottom: 30px;
+	}
+	.team_name{
+		transform: scale(1.35);
+	}
+	.names{
+		transform: scale(1.35);
+		margin-top: 100px;
+		margin-bottom: 100px;
+	}
+	.button3{
+		margin-left: 60px;
+		margin-right: 75px;
+		margin-bottom: 50px;
+		transform: scale(1.8);
+	}
+	.button2{
+		margin-left: 40px;
+		margin-right: 88px;
+		margin-bottom: 65px;
+		transform: scale(1.8);
+	}
+	.button1{
+		margin: 10px 20px 10px 85px;
+	}
+	.persons{
+		margin-top: 100px;
+		transform: scale(1.3);
+	}
+	.card{
+		transform: scale(2.6);
+		margin-top: 580px;
+		margin-left: 180px;
+		margin-bottom: 500px;
+		height: 500px;
+	}
+	.text1{
+		font-size: 48px;
+	}
+	.input{
+		font-size: 30px;
+	}
+	.input1{
+		font-size: 30px;
+	}
+	.text13{
+		font-size: 40px;
+	}
+	.text14{
+		font-size: 20px;
+		margin-top: 10px;
+	}
+	.text15{
+		font-size: 24px;
 	}
 }
 @media (min-width: 992px) and (max-width: 1100px){
@@ -273,4 +328,11 @@ html,body{
 	.card-body{
 		padding-right: 0px;
 	}
+}
+.form-check-input:checked {
+  background-color: green !important;
+  border-color: green !important;
+}
+.form-check-input[type=checkbox] {
+  border-radius:0rem !important;
 }

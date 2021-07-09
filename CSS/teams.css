@@ -11,44 +11,73 @@
       padding-top:5%;
       padding-bottom:4%;
   }
-text{
-  color: #1ea54c;
+  text{
+    color: #1ea54c;
+  }
+  hackathon{
+    color: #E7EFEF99;
+  }
+  f{
+    font-family: 'Nunito Sans', sans-serif;
+    font-size:40px;
+  }
+  .vl{
+    height: 230px;
+    border-left: 1.08px solid #F3F3F34D;
+  }
+  .card-details{
+      display: flex;
+  }
+  .team-members{
+      list-style-type: none;
+  }
+ li{
+     display: flex;
+     line-height:0.99;
+ }
+ #pp{
+     padding-right:20px;
+ }
+r{
+    float: right;
+    padding: 10px;
+    color: #E7EFEF99;
 }
-hackathon{
-  color: #E7EFEF99;
+.card1{
+    border:none !important;
+    background-color: #1d2833 !important;
+    box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
+  }
+  .card2{
+    border:none !important;
+    background-color: #1d2833 !important;
+    box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
+  }
+  .empty{
+      padding:40px;
+  }
+  li p t{
+    color: #1ea54c;
+    font-size:small;
+  }
+  @media only screen and (min-width:1400px){
+.card1{
+    position:relative;
+    top:-30px;
+    left:8%;
 }
-f{
-  font-family: 'Nunito Sans', sans-serif;
-  font-size:40px;
+.card2{
+    position: relative;
+    top:-30px;
+    left:13%;
 }
-.vl{
-  height: 230px;
-  border-left: 1.08px solid #F3F3F34D;
-}
-.card-details{
-    display: flex;
-}
-.card2 {
-  position: relative;
-  top: -30px;
-  left: 13%;
-}
-.card-body {
+.card-body{
   margin-left: 8%;
 }
-
-@media only screen and (max-width: 1400px) {
-  #left_triangles {
-    display: none;
-  }
-  #right_triangles {
-    display: none;
-  }
-  .col-lg-6 {
-    padding-top: 40px;
-  }
+.card-body #btnadd{
+  padding-left:30%;
 }
-  
+  }
   @media only screen and (max-width:1400px){
     #left_triangles{
         display: none;
@@ -58,6 +87,14 @@ f{
     }
     .col-lg-6{
         padding-top:40px;
+    }
+    .card-body #btnadd{
+      padding-left:20%;
+    }
+  }
+  @media only screen and (max-width:1000px) and (min-width:768px){
+    .card-body #btnadd{
+      padding-left:5%;
     }
   }
 @media only screen and (max-width:600px){

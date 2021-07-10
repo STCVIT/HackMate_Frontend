@@ -83,6 +83,9 @@ input{
     border-radius: 2px!important;
     border: none;
 }
+::placeholder{
+  font-family: "Fira Code", monospace;
+}
 /*mainsection media queries*/
 @media only screen and (max-width:600px){
   .footerbottom hr {

@@ -3,6 +3,7 @@
     background-color: #23303d;
     font-family: "Fira Code", monospace;
     color: #e7efef;
+    max-height:100%;
   }
 /*Mainsection CSS*/
 .form-control{
@@ -19,6 +20,29 @@
     letter-spacing: 0.04em;
     color: #E7EFEF;
     opacity: 0.7;
+}
+::placeholder{
+  font-family: "Fira Code", monospace;
+}
+input[type="text"]:focus{
+  outline: none;
+  border: none;
+}
+select:focus{
+  outline: none;
+  border: none;
+}
+textarea:focus{
+    outline: none;
+    border: none;
+}
+:focus{
+  outline:none;
+  border:none;
+}
+::placeholder :focus{
+  outline: none;
+  border: none;
 }
 input{
     border: 3px solid rgba(30, 165, 76, 0.2);
@@ -55,4 +79,25 @@ textarea:focus, input:focus {
 .content{
   max-width:478px;
   padding-top: 20px;
+  text-align: end;
+}
+.maintext{
+  padding-top:20%;
+}
+@media only screen and (min-width:600px){
+  #dashes{
+    display:none;
+  }
+  .maintext{
+    display:none;
+  }
+  .formpart{
+    padding-top:20%;
+    padding-bottom:10%;
+  }
+}
+@media only screen and (max-width:599px){
+  #organiser{
+    display:none;
+  }
 }

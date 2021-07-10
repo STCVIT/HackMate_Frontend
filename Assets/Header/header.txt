@@ -7,7 +7,7 @@
             </button>
             <div class="justify-content-end collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="navbar-brand btnsignup btn btn-primary" href="#main" role="button">Sign Up</a>
+                    <a class="navbar-brand btnsignup btn btn-success" href="#main" role="button">Sign Up</a>
                 </div>
             </div>
         </div>

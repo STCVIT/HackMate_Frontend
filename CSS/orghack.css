@@ -9,7 +9,7 @@
   padding-left: 128px;
 }
 
-.adhac{
+.adhac {
   padding-top: 105px;
 }
 bg {
@@ -28,13 +28,11 @@ input {
 }
 
 .hacksadded {
-
   padding-top: 76px;
 }
 .wrapper {
   display: flex;
   flex-basis: 276.26px;
-  justify-content: center;
   text-align: start;
   align-items: center;
   flex-wrap: wrap;
@@ -58,12 +56,11 @@ nb1 {
   width: 276.26px;
   height: 320px;
   margin-bottom: 154px;
-  margin-right: 30px;
-  margin-left: 30px;
+  margin-right: 120px;
   border-radius: 2.21008px;
 }
 
-.hackname{
+.hackname {
   padding-top: 18px;
 }
 .innertxt {
@@ -124,8 +121,17 @@ nbw {
   }
 }
 
-@media (max-width:768px) {
-  .center{
+@media (max-width: 768px) {
+  .center {
     text-align: center;
+  }
+
+  .wrapper {
+    justify-content: center;
+  }
+
+  .box {
+    margin-left: 1vw;
+    margin-right: 1vw;
   }
 }

@@ -38,6 +38,7 @@ lt1 {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  padding-top: 108px;
 }
 
 .box {
@@ -46,7 +47,7 @@ lt1 {
   left: 278px;
   top: 685px;
   margin-bottom: 105.64px;
-  margin-top: 144.61px;
+  margin-top: 36px;
   background: #1d2833;
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
@@ -97,6 +98,10 @@ lt1 {
   font-size: 16.9706px;
 }
 
+.btngetstarted:hover {
+  background: linear-gradient(103.71deg, #157347 -20.85%, #226045 122.33%);
+}
+
 @media (max-width: 823px) {
   .box2 {
     margin-left: 1vw;
@@ -134,5 +139,9 @@ lt1 {
     line-height: 22px;
     text-align: center;
     letter-spacing: 0.04em;
+  }
+
+  .container2{
+    padding-top: 72px;
   }
 }

@@ -86,6 +86,27 @@ input#image_uploads {
   border: none;
 }
 
+input:hover{
+  border-color: #008249 ;
+}
+
+input:active{
+    border-color: #008249 ;
+
+}
+
+.delete:hover {
+  background: linear-gradient(103.71deg, #157347 -20.85%, #226045 122.33%);
+}
+
+.savechanges.btn:hover {
+  color: #fff;
+  background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);
+  box-shadow: 0.75px 0.75px 7.5px rgba(0, 0, 0, 0.2);
+  border-radius: 1.5px;
+  border-color: #008249;
+}
+
 .savechanges {
   width: 165px;
   height: 37px;
@@ -117,18 +138,18 @@ input#image_uploads {
   padding-top: 67px;
 }
 
-.nbg{
+.nbg {
   margin-top: 91px;
 }
 
 @media (max-width: 768px) {
-  .textbox{
+  .textbox {
     width: 100%;
   }
-  .box{
+  .box {
     width: 96vw;
   }
-  .textboxbio{
+  .textboxbio {
     width: 100%;
   }
 }

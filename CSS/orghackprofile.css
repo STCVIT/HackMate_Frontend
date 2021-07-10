@@ -97,8 +97,17 @@ input#image_uploads {
   border-color: #008249;
 }
 
-/* <img class="inputimg" src="../Images/Input.svg" alt=""> */
+.delete:hover {
+  background: linear-gradient(103.71deg, #157347 -20.85%, #226045 122.33%);
+}
 
+.savechanges.btn:hover {
+  color: #fff;
+  background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);
+  box-shadow: 0.75px 0.75px 7.5px rgba(0, 0, 0, 0.2);
+  border-radius: 1.5px;
+  border-color: #008249;
+}
 .box {
   margin-top: 4px;
 

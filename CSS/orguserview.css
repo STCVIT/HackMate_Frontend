@@ -90,6 +90,10 @@ input#image_uploads {
   border: none;
 }
 
+.delete:hover {
+  background: linear-gradient(103.71deg, #157347 -20.85%, #226045 122.33%);
+}
+
 .savechanges {
   width: 165px;
   height: 37px;
@@ -101,8 +105,10 @@ input#image_uploads {
   border-color: #008249;
 }
 
-/* <img class="inputimg" src="../Images/Input.svg" alt=""> */
-
+.savechanges:hover {
+  background: linear-gradient(103.71deg, #157347 -20.85%, #226045 122.33%);
+  border-color: #157347;
+}
 .box {
   margin-top: 4px;
 

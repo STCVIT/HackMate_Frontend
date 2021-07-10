@@ -39,6 +39,10 @@ g1 {
 
 .footerbottomimg {
   margin-left: 6vw;
+  background: #1d2833;
+}
+.footerbottomimgmain {
+  background: #1d2833;
 }
 
 #foobottom {

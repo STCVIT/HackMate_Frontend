@@ -49,6 +49,7 @@ padding-bottom:30px;
   filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
   max-height: 38px;
   min-height:29.64px;
+  font-family: "Fira Code";
 }
 .button {
   padding: 0.5vw 2vw ;
@@ -62,6 +63,7 @@ padding-bottom:30px;
   filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
   max-height: 38px;
   min-height:29.64px;
+  font-family: "Fira Code";
 }
 .box{
   padding-bottom:20px;

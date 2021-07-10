@@ -6,31 +6,29 @@ html,body{
 	font-style: normal;
 	font-weight: bold;
 }
-.card{
-	width: 328px;
-	height: 370px;
-	margin-left: 90px;
-	margin-top: 80px;
+.card1{
+	width:20rem;
+	height:22rem;
+	background-color: #1D2833;
+	box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
+	border-radius: 2px;
+}
+.card2{
+	width:20rem;
+	height:22rem;
 	background-color: #1D2833;
 	box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
 	border-radius: 2px;
 }
 .box{
-	position: absolute;
-	width: 308px;
-	height: 249px;
-	left: 10px;
-	top: 10px;
+	width:18rem;
+	height:14rem;
 	background-color: #C4C4C4;
 	border-radius: 0px;
 }
 .button{
-	width: 230.16px;
-	height: 41.37px;
 	background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);
 	border-radius: 2px;
-	margin-top: 280px;
-	margin-left: 40px;
   	filter: drop-shadow(1.36585px 1.36585px 13.6585px rgba(0, 0, 0, 0.2));
 	font-family: Fira Code;
 	font-style: normal;
@@ -39,48 +37,38 @@ html,body{
 	line-height: 22px;
 	letter-spacing: 0.04em;
 	color: #ffffff;
+	width:14rem;
+	height:3rem;
+	text-align: center;
 }
-@media (min-width: 1200px) and (max-width: 1440px){
-	.combined{
-		margin-bottom: 70px;
+.bottom_box{
+	padding-top:10%;
+	text-align: center;
+}
+.image_box{
+	text-align: end;
+}
+@media only screen  and (min-width:1200px){
+	.image_box{
+		position: relative;
+		top:10%;
 	}
-	.ones{
-		margin-right: 0px;
+	#leftBIG_triangles{
+		position: relative;
+		top:10%;
 	}
 }
-@media (min-width: 992px) and (max-width: 1200px){
-	.combined{
-		margin-bottom: 70px;
+@media only screen  and (max-width:1200px){
+	.image_box{
+		display:none;
 	}
-	.ones{
-		margin-right: 0px;
-		padding-left: 0px;
+	#leftBIG_triangles{
+		display:none;
 	}
-}
-@media (min-width: 375px) and (max-width: 991px){
-	.combined{
-		margin-bottom: 70px;
+	.cards{
+		padding-top:20%;
 	}
-	.ones{
-		margin-right: 0px;
-		margin-top: 350px;
-		padding-left: 175px;
-		transform: scale(2.5);
-	}
-	.twoes{
-		margin-right: 0px;
-		margin-top: 650px;
-		margin-bottom: 800px;
-		padding-left: 175px;
-		transform: scale(2.5);
-	}
-	#nav{
-		padding-top: 35px;
-		margin-left: 390px;
-		transform: scale(2.38);
-	}
-	#foobottom{
-		transform: scale(2.3);
-		margin-left: 350px
+	.empty{
+		padding:10%;
 	}
 }

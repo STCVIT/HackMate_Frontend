@@ -10,7 +10,7 @@
   href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css"
   rel="stylesheet"
 />
-<link rel="stylesheet" href="../CSS/createteamwohackwteam.css">
+<link rel="stylesheet" href="../CSS/createteamwhackwteam.css">
 <link rel="stylesheet" href="../Assets/Header/headerl.css">
 <link rel="stylesheet" href="../Assets/Footer/footer.css">
 <body>
@@ -23,18 +23,21 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-8">
+			<div class="col-lg-8 col-md-12">
 				<div class="row">
-					<div class="col-lg-9">
+					<div class="col-lg-9 col-md-12 team_name">
 						<input type="text" class="input" id="team_name" autocomplete="off" placeholder="Enter Team Name">
 					</div>
 					<div class="col-lg-3">
 						<!-- <input type="submit" class="button" value="Create"> -->
-						<a href="./createteamwohack.html" class="button btn btn-primary">Create</a>
+						<input type="submit" class="button" value="Create" onclick="location.href='./createteamwohack.html'">
+						<!-- <a href="./createteamwhack.html" class="button btn btn-primary">Create</a> -->
 					</div>
 				</div>
-				<div class="row names">
-					<input type="text" class="input1" id="participant_name" autocomplete="off" placeholder="Search Participants by Username">
+				<div class="row1">
+					<div class="col-lg-9 col-md-12">
+						<input type="text" class="input1" id="participant_name" autocomplete="off" placeholder="Search Participants by Username">
+					</div>
 				</div>
 				<div class="row options">
 					<div class="row buttons">
@@ -157,6 +160,6 @@
   type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.js"
 ></script>
-<script src="../JS/createteamwohackwteam.js"></script>
+<script src="../JS/createteamwhackwteam.js"></script>
 </body>
 </html>

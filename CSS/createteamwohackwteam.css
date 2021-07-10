@@ -124,7 +124,7 @@ html,body{
 }
 .button3{
   color: #fff;
-  padding: 10px 20px;
+  padding: 8px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -142,7 +142,7 @@ html,body{
   font-size: 15.2px;
 }
 .button2{
-  padding: 10px 20px;
+  padding: 8px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -208,9 +208,8 @@ html,body{
 	left: 251px;
 	top: 370px;
 }
-.names{
+.row1{
 	margin-top: 30px;
-	margin-left: 0px;
 }
 .options{
 	margin-top: 30px;
@@ -270,7 +269,7 @@ html,body{
 	.team_name{
 		transform: scale(1.35);
 	}
-	.names{
+	.row1{
 		transform: scale(1.35);
 		margin-top: 100px;
 		margin-bottom: 100px;

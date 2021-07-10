@@ -8,24 +8,42 @@
 .form-control{
     max-width: 478px;
     box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
-    border: 3px solid rgba(30, 165, 76, 0.2)!important;
-    border-radius:2px !important;
-    background-color: #2E3D4C!important;
+    border: 3px solid rgba(30, 165, 76, 0.2);
+    border-radius:2px ;
+    background-color: #2E3D4C;
     font-family: 'Nunito';
     font-style: normal;
     font-weight: bold;
     font-size: 17px;
     line-height: 23px;
     letter-spacing: 0.04em;
-    color: #E7EFEF!important;
+    color: #E7EFEF;
     opacity: 0.7;
+}
+.content{
+  max-width: 478px;
+  padding-top:20px;
+  text-align:end;
+}
+.content1{
+  width: 239px;
+  padding-top:20px;
+  text-align:start;
+}
+.content2{
+  width: 239px;
+  padding-top:20px;
+  text-align:end;
+}
+input::placeholder:focus{
+  background-color: #2E3D4C;
 }
 input{
     border: 3px solid rgba(30, 165, 76, 0.2);
     border-radius:2px ;
     background-color: #2E3D4C;
 }
-.form{
+#form{
   padding-bottom:50px;
 }
 .maintext{
@@ -72,36 +90,22 @@ input{
   max-height:373.02px;
 }
 .btnsmallversion{
-   width: 120px;
+    width: 120px;
     height: 40px;
     font-family: "Fira Code";
-    font-weight: bold;
-    font-size: 22px;
+    font-size: 18px;
 /* identical to box height */
     letter-spacing: 0.04em;
     color: #E7EFEF;
-    border-radius: 2px!important;
+    border-radius: 2px;
     border: none;
+    font-family: "Fira Code", monospace;
 }
 ::placeholder{
   font-family: "Fira Code", monospace;
 }
 /*mainsection media queries*/
 @media only screen and (max-width:600px){
-  .footerbottom hr {
-    margin-left: 4rem;
-  }
-
-  .footerbottom1 {
-    font-size: 8.5391px;
-  }
-  .footerbottom1 img {
-    height: 14.89px;
-    width: 14.89px;
-  }
-  .footerbottomimgmain {
-    margin-left: 0px;
-  }
  #man{
     display: none;
  }
@@ -114,17 +118,6 @@ input{
  #skills{
    display: none;
  }
- .content{
-  position:relative;
-}
-#btnnext{
-  position:absolute;
-  right:0%;
-}
-#next1{
-  position:absolute;
-  right:0%;
-}
 #foobottom{
   padding-top:20%;
 }
@@ -135,30 +128,18 @@ input{
   padding-bottom:20px;
 }
 }
-@media only screen and (max-width:1000px){
+@media only screen and  (max-width:990px){
   #skills{
-    display: none;
+    display:none;
+  }
+}
+@media only screen and  (max-width:990px) and (min-width:768px){
+  .button_section{
+    padding-left:15%;
+    padding-top:12%;
   }
 }
 @media only screen and (min-width:768px) {
-  .organiserdash{
-    display:none;
-  }
-.content{
-  position:relative;
-}
-#btnnext{
-  position: absolute;
-  right:12%;
-}
-#next1{
-  position: absolute;
-  right:25%;
-}
-#btnback{
-  position: absolute;
-  left:15%;
-}
 #foobottom{
   padding-top: 10%;
 }
@@ -190,21 +171,20 @@ input{
 /*skills page*/
 .skill_selection{
   padding-bottom:30px;
+  max-width:478px;
+  text-align: end;
 }
 .top-button{
   padding-bottom:20px;
 }
 .middle-button{
-  padding-left: 7%;
   padding-bottom:20px;
 }
 .bottom-button{
   padding-bottom:20px;
-  padding-left:15%;
 }
 .bottommost-button{
   padding-bottom:20px;
-  padding-left:20%;
 }
 .maincap{
   padding-right: 20%;
@@ -224,6 +204,7 @@ input{
   max-height: 38px;
   min-width :103.19px;
   min-height:29.64px;
+  font-family: "Fira Code", monospace;
 }
 .button {
   padding: 0.5vw 2vw ;
@@ -238,6 +219,7 @@ input{
   max-height: 38px;
   min-width :103.19px;
   min-height:29.64px;
+  font-family: "Fira Code", monospace;
 }
 
 /*profile_userview*/
@@ -257,12 +239,14 @@ input{
   border: 2.53333px solid  #226045;
   filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  font-family: "Fira Code", monospace;
 }
 #square_inactive{
   padding:1vh 4.5vh;
-  border: 2.53333px solid #1EA54C;
+  border: 2.53333px solid  #226045;
   filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  font-family: "Fira Code", monospace;
 }
 #square_active{
   padding:1vh 4.5vh;
@@ -270,9 +254,10 @@ input{
   filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
   background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  font-family: "Fira Code", monospace;
 }
 .form-label{
-  margin-bottom: 0rem !important;
+  margin-bottom: 0rem;
   color: rgba(231, 239, 239, 0.36);
 }
 .bottommost-button{
@@ -285,7 +270,7 @@ input{
   padding-bottom:20px;
 }
 .card{
-  border:none !important;
+  border:none;
 }
 .card-body{
   background:#1D2833;
@@ -295,7 +280,7 @@ input{
 }
 p{
   background:#1D2833;
-  margin-bottom:0.2rem !important;
+  margin-bottom:0.2rem;
 }
 .check-label{
   background:#1D2833;
@@ -307,11 +292,11 @@ p{
   padding-left:30px;
 }
 .form-check-input:checked {
-  background-color: green !important;
-  border-color: green !important;
+  background-color: green ;
+  border-color: green ;
 }
 .form-check-input[type=checkbox] {
-  border-radius:0rem !important;
+  border-radius:0rem;
 }
 
 @media only screen and (max-width:413px){

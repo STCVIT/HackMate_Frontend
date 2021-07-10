@@ -11,7 +11,7 @@ let machine = document.querySelector("#machine");
 let management = document.querySelector("#management");
 let cyber = document.querySelector("#cyber");
 let block = document.querySelector("#block");
-var n=0;
+var n=2;
 
 app.addEventListener('click',function() { 
     if(n%2==0){

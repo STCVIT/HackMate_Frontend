@@ -20,11 +20,11 @@
                 </div>
                 
                 <div class="col-5 align-content-start text-end">
-                    <a class="footerbottomimgmain" href="https://www.facebook.com/mstcvit/"><img src="../Assets/Images/FaceBook.svg"
+                    <a class="footerbottomimgmain" href="https://www.facebook.com/mstcvit/" target="_blank"><img src="../Assets/Images/FaceBook.svg"
                             alt="STC-FB"></a>
-                    <a class="footerbottomimg" href="https://in.linkedin.com/company/micvitvellore"><img src="../Assets/Images/LinkedIn.svg"
+                    <a class="footerbottomimg" href="https://in.linkedin.com/company/micvitvellore" target="_blank"><img src="../Assets/Images/LinkedIn.svg"
                             alt="STC-FB"></a>
-                    <a class="footerbottomimg" href="https://www.instagram.com/stcvit/"><img src="../Assets/Images/Instagram.svg" style="background: #1d2833;" alt="STC-FB"></a>
+                    <a class="footerbottomimg" href="https://www.instagram.com/stcvit/" target="_blank"><img src="../Assets/Images/Instagram.svg" style="background: #1d2833;" alt="STC-FB"></a>
                 </div>
                 <div class="col-1"></div>
             </div>
@@ -32,7 +32,7 @@
             <div class="row">
                 <div class="col-12 footerbottom1 justify-content-center align-content-center text-center">
                     Made with ❤️ by <br>
-                    <img src="../Assets/Images/STC Logo.svg" alt="" style="background: #1d2833; padding-top: 31px; padding-bottom: 30px">
+                        <a href="https://stcvit.in/" target="_blank"><img src="../Assets/Images/STC Logo.svg" alt="" style="background: #1d2833; padding-top: 31px;"></a>
                 </div>
             </div>
         </div>

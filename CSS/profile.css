@@ -20,12 +20,23 @@
     color: #ffffff!important;
     outline: 0;
 }
+input,input:focus {
+  outline: none!important;
+  border: 3px solid rgba(30, 165, 76, 0.2)!important;
+  box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83)!important;
+}
+textarea,textarea:focus {
+  outline: none!important;
+  border: 3px solid rgba(30, 165, 76, 0.2)!important;
+  box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83)!important;
+}
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
   -webkit-text-fill-color:white;
+  -webkit-focus-ring:unset;
 }
 input#git.form-control{
   background-color:#2E3D4C;

@@ -19,7 +19,11 @@ html,body{
   line-height: 23px;
   letter-spacing: 0.04em;
   color:white!important;
-  opacity: 0.7;
+}
+input,input:focus {
+  outline: none!important;
+  border: 3px solid rgba(30, 165, 76, 0.2)!important;
+  box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83)!important;
 }
 input{
   border: 3px solid rgba(30, 165, 76, 0.2);

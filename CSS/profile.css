@@ -18,7 +18,31 @@
     line-height: 23px;
     letter-spacing: 0.04em;
     color: #E7EFEF;
-    opacity: 0.7;
+    opacity:0.2;
+}
+input#linkedln.form-control{
+  background-color:#2E3D4C;
+}
+input#name.form-control{
+  background-color:#2E3D4C;
+}
+input#username.form-control{
+  background-color:#2E3D4C;
+}
+input#college.form-control{
+  background-color:#2E3D4C;
+}
+input#year.form-control{
+  background-color:#2E3D4C;
+}
+input#github.form-control{
+  background-color:#2E3D4C;
+}
+input#personal_website.form-control{
+  background-color:#2E3D4C;
+}
+textarea#bio.form-control{
+  background-color:#2E3D4C;
 }
 .content{
   max-width: 478px;
@@ -189,7 +213,6 @@ input{
 .maincap{
   padding-right: 20%;
 }
-
 
 .button1{
   padding: 0.5vw 2vw ;

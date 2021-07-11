@@ -21,6 +21,21 @@
     color: #E7EFEF;
     opacity: 0.7;
 }
+input#name.form-control{
+  background-color:#2E3D4C;
+}
+input#phone_num.form-control{
+  background-color:#2E3D4C;
+}
+input#college.form-control{
+  background-color:#2E3D4C;
+}
+input#email.form-control{
+  background-color:#2E3D4C;
+}
+input#website.form-control{
+  background-color:#2E3D4C;
+}
 ::placeholder{
   font-family: "Fira Code", monospace;
 }

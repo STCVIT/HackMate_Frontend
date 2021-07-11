@@ -24,12 +24,15 @@
                             alt="">
                     </a>
                     
-                    <div class="carbon-notification dropdown-menu dropdown-menu-end" style="background: #26313c; width: 576px; height: 188px;" aria-labelledby="navbarDropdown">
-                        <div class="text-center notification1" style="background: #26313c;">
-                            Notifications
-                        </div>
-                        <div class="text-center notification2" style="background: #26313c; padding-top: 50px">
-                            You don't have any Notifications
+                    <div class="carbon-notification dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <div class="triangle-up1"></div>
+                        <div class="wrap1" style="background: #283d4c; width: 576px; height: 188px; border: 1px solid rgba(30, 165, 76, 0.2);">
+                            <div class="text-center notification1" style="background: #2e3d4c; padding-top: 16px;">
+                                Notifications
+                            </div>
+                            <div class="text-center notification2" style="background: #2e3d4c; padding-top: 50px">
+                                You don't have any Notifications
+                            </div>
                         </div>
                     </div>
                 </li>

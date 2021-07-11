@@ -9,9 +9,9 @@
 .form-control{
     max-width: 478px;
     box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
-    border: 3px solid rgba(30, 165, 76, 0.2)!important;
-    border-radius:2px !important;
-    background-color: #2E3D4C!important;
+    border: 3px solid rgba(30, 165, 76, 0.2);
+    border-radius:2px ;
+    background-color: #2E3D4C;
     font-family: 'Nunito';
     font-style: normal;
     font-weight: bold;

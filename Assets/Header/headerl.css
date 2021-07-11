@@ -76,6 +76,16 @@ g {
   border-right: 6.25px solid transparent;
   border-bottom: 12.5px solid #2e3d4c;
 }
+.triangle-up1 {
+  background: #23303d;
+  position: relative;
+  left: 535px;
+  width: 0;
+  height: 0;
+  border-left: 6.25px solid transparent;
+  border-right: 6.25px solid transparent;
+  border-bottom: 12.5px solid #2e3d4c;
+}
 
 .nav-item .nav-link {
   padding-right: 56px;
@@ -118,35 +128,32 @@ g {
 }
 .carbon-notification * {
   background: #26313c;
-
 }
 
-.notification1{
+.notification1 {
   font-family: Nunito Sans;
-font-style: normal;
-font-weight: bold;
-font-size: 16px;
-line-height: 22px;
-/* identical to box height */
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  /* identical to box height */
 
-text-align: center;
-letter-spacing: 0.04em;
+  text-align: center;
+  letter-spacing: 0.04em;
 
-color: rgba(231, 239, 239, 0.6);
-
+  color: rgba(231, 239, 239, 0.6);
 }
 
-.notification2{
+.notification2 {
   font-family: Nunito Sans;
-font-style: normal;
-font-weight: bold;
-font-size: 20px;
-line-height: 27px;
-text-align: center;
-letter-spacing: 0.08em;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 27px;
+  text-align: center;
+  letter-spacing: 0.08em;
 
-color: rgba(231, 239, 239, 0.2);
-
+  color: rgba(231, 239, 239, 0.2);
 }
 @media (min-width: 992px) {
   .alerts::after {
@@ -174,6 +181,9 @@ color: rgba(231, 239, 239, 0.2);
     padding-right: 0;
   }
   .triangle-up {
+    background: #1d2833;
+  }
+  .triangle-up1 {
     background: #1d2833;
   }
 

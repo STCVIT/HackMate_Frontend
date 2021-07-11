@@ -12,14 +12,13 @@
     border: 3px solid rgba(30, 165, 76, 0.2);
     border-radius:2px ;
     background-color: #2E3D4C;
-    font-family: 'Nunito';
+    font-family:"Fira Code", monospace;
     font-style: normal;
     font-weight: bold;
     font-size: 17px;
     line-height: 23px;
     letter-spacing: 0.04em;
-    color: #E7EFEF;
-    opacity: 0.7;
+    color:white!important;
 }
 input#name.form-control{
   background-color:#2E3D4C;
@@ -39,37 +38,10 @@ input#website.form-control{
 ::placeholder{
   font-family: "Fira Code", monospace;
 }
-input[type="text"]:focus{
-  outline: none;
-  border: none;
-}
-select:focus{
-  outline: none;
-  border: none;
-}
-textarea:focus{
-    outline: none;
-    border: none;
-}
-:focus{
-  outline:none;
-  border:none;
-}
-::placeholder :focus{
-  outline: none;
-  border: none;
-}
 input{
     border: 3px solid rgba(30, 165, 76, 0.2);
     border-radius:2px ;
     background-color: #2E3D4C;
-}
-input, select, textarea{
-  color:white;
-}
-
-textarea:focus, input:focus {
-  color:white;
 }
 #dashes{
      padding-top: 50px;

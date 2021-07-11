@@ -11,14 +11,26 @@
     border: 3px solid rgba(30, 165, 76, 0.2);
     border-radius:2px ;
     background-color: #2E3D4C;
-    font-family: 'Nunito';
+    font-family: "Fira Code", monospace;
     font-style: normal;
     font-weight: bold;
     font-size: 17px;
     line-height: 23px;
     letter-spacing: 0.04em;
-    color: #E7EFEF;
-    opacity:0.2;
+    color: #ffffff!important;
+    outline: 0;
+}
+input#git.form-control{
+  background-color:#2E3D4C;
+}
+input#email.form-control{
+  background-color:#2E3D4C;
+}
+textarea#review.form-control{
+  background-color:#2E3D4C;
+}
+input#projectName.form-control{
+  background-color:#2E3D4C;
 }
 input#linkedln.form-control{
   background-color:#2E3D4C;
@@ -59,7 +71,10 @@ textarea#bio.form-control{
   padding-top:20px;
   text-align:end;
 }
-input::placeholder:focus{
+::placeholder{
+  background-color: #2E3D4C;
+}
+:placeholder-shown{
   background-color: #2E3D4C;
 }
 input{

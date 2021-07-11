@@ -10,28 +10,21 @@ html,body{
   max-width: 764px;
   max-height: 56px;
   border: 3px solid rgba(30, 165, 76, 0.2)!important;
-  border-radius:2px !important;
+  border-radius:2px ;
   background-color: #2E3D4C!important;
-  font-family:inherit;
+  font-family:"Fira Code";
   font-style: normal;
   font-weight: bold;
   padding:20px;
   line-height: 23px;
   letter-spacing: 0.04em;
-  color: rgba(239, 255, 255, 0.7);
+  color:white!important;
   opacity: 0.7;
 }
 input{
   border: 3px solid rgba(30, 165, 76, 0.2);
   border-radius:2px ;
   background-color: #2E3D4C;
-}
-input, select, textarea{
-color:white;
-}
-
-textarea:focus, input:focus {
-color:white;
 }
 form{
 padding-top:70px;

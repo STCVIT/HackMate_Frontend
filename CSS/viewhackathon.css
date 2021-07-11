@@ -97,6 +97,65 @@ nbw {
   display: flex;
 }
 
+.button {
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  background: #1EA54C;
+  border: 2.53333px solid #1EA54C;
+  box-sizing: border-box;
+  border-radius: 63.3333px;
+  filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
+  height: 38px;
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 15.2px;
+  width: 115.27px;
+  padding-top: 8px;
+  padding-bottom: 9px;
+
+}
+.button *{
+   background: #1EA54C;
+}
+.button1{
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  background: #1D2833;
+  border: 2.53333px solid #1EA54C;
+  box-sizing: border-box;
+  border-radius: 63.3333px;
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 15.2px;
+  line-height: 140%;
+  letter-spacing: 0.04em;
+  color: #1EA54C;
+  filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
+  height: 38px;
+  width: 115.27px;
+  padding-top: 8px;
+  padding-bottom: 9px;
+}
+
+h6 {
+  margin-bottom: 0;
+}
+
+.button1 *{
+    background: #1D2833;
+}
+
+.top-button{
+	display: contents;
+}
+
 
 .status {
 

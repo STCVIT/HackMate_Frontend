@@ -20,10 +20,17 @@
     letter-spacing: 0.04em;
     color:white!important;
 }
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color:white;
+}
 input#name.form-control{
   background-color:#2E3D4C;
 }
-input#phone_num.form-control{
+input#phone.form-control{
   background-color:#2E3D4C;
 }
 input#college.form-control{

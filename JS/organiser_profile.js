@@ -8,14 +8,16 @@ form.addEventListener('submit',(e)=>{
     const name=document.getElementById('name').value;
     const phone_num=document.getElementById('phone_num').value;
     const college=document.getElementById('college').value;
-    const email=document.getElementById('email').value;
     const website=document.getElementById('website').value;
-
-    console.log(name);
-    console.log(phone_num);
-    console.log(college);
-    console.log(email);
-    console.log(website);
+    checkInputs(name,phone_num,college);
 
     form.reset()
 });
+
+function checkInputs(name,phone_num,college){
+    name=name.toUpperCase();
+    let n =name.length;
+    if(n<=30){
+        if()
+    }
+}

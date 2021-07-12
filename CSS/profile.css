@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito+Sans&family=Raleway&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@800&display=swap');
 *{
     background-color: #23303d;
     font-family: "Fira Code", monospace;
@@ -22,13 +23,19 @@
 }
 input,input:focus {
   outline: none!important;
-  border: 3px solid rgba(30, 165, 76, 0.2)!important;
+  border: 2px solid rgba(30, 165, 76, 0.2)!important;
   box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83)!important;
+}
+input:focus{
+  border-color:rgba(11, 226, 83, 0.329)!important;
 }
 textarea,textarea:focus {
   outline: none!important;
-  border: 3px solid rgba(30, 165, 76, 0.2)!important;
+  border: 2px solid rgba(30, 165, 76, 0.2)!important;
   box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83)!important;
+}
+textarea:focus{
+  border-color:rgba(11, 226, 83, 0.329)!important;
 }
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -260,7 +267,7 @@ input{
   max-height: 38px;
   min-width :103.19px;
   min-height:29.64px;
-  font-family: "Fira Code", monospace;
+  font-family: 'Nunito Sans';
 }
 .button {
   padding: 0.5vw 2vw ;
@@ -275,7 +282,7 @@ input{
   max-height: 38px;
   min-width :103.19px;
   min-height:29.64px;
-  font-family: "Fira Code", monospace;
+  font-family: 'Nunito Sans';
 }
 
 /*profile_userview*/
@@ -353,37 +360,4 @@ p{
 }
 .form-check-input[type=checkbox] {
   border-radius:0rem;
-}
-
-@media only screen and (max-width:413px){
-  .button1{
-    padding: 0.5vw 2vw ;
-    padding-bottom:2vw;
-    font-size:small;
-    text-align: center;
-    background: #1D2833;
-    border: 2.53333px solid #1EA54C;
-    box-sizing: border-box;
-    border-radius: 63.3333px;
-    color: #fff;
-    filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
-    max-height: 38px;
-    min-width :103.19px;
-    min-height:29.64px;
-  }
-  .button {
-    padding: 0.5vw 2vw ;
-    padding-bottom:2vw;
-    font-size:small;
-    text-align: center;
-    color: #fff;
-    background: #1EA54C;
-    border: 2.53333px solid #1EA54C;
-    box-sizing: border-box;
-    border-radius: 63.3333px;
-    filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
-    max-height: 38px;
-    min-width :103.19px;
-    min-height:29.64px;
-  }
 }

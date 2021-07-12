@@ -30,6 +30,15 @@
   align-items: center;
   flex-wrap: wrap;
 }
+.wrapper1 {
+  display: flex;
+  flex-basis: 353.33px;
+  justify-content: center;
+  text-align: start;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 10px;
+}
 
 nb1 {
   font-family: Fira Code;
@@ -98,6 +107,7 @@ nbw {
 }
 
 .button {
+  margin-top: 10px;
   color: #fff;
   text-align: center;
   text-decoration: none;
@@ -121,6 +131,7 @@ nbw {
   background: #1ea54c;
 }
 .button1 {
+  margin-top: 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -155,6 +166,53 @@ h6 {
 
 .status {
   margin-top: 18.12px;
+  width: 93.91px;
+height: 30.96px;
+border: 2.39498px solid #1EA54C;
+box-sizing: border-box;
+border-radius: 51.5993px;
+text-align: center;
+font-family: Nunito Sans;
+font-style: normal;
+font-weight: bold;
+font-size: 12.3838px;
+line-height: 140%;
+/* identical to box height, or 17px */
+
+letter-spacing: 0.04em;
+padding-top: 3px;
+color: #1EA54C;
+}
+
+.circle1{
+  width:13.76px;
+  height:13.76px;
+  border-radius: 50%;
+  background-color: #1EA54C;
+  display: inline-block;
+  position: relative;
+  top: 3px;
+}
+.circle2{
+
+  width:10px;
+  height:10px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  right: 12px;
+  top: 1px;
+}
+.circle3{
+
+  width:6.02px;
+  height:6.02px;
+  border-radius: 50%;
+  background-color: #1EA54C;
+  display: inline-block;
+  position: relative;
+  right: 20px;
+  bottom: 1px;
 }
 .btnkm {
   margin-top: 26.04px;
@@ -174,6 +232,46 @@ h6 {
   letter-spacing: 0.04em;
 }
 
+.pagenation{
+  justify-content: center;
+  text-align: center;
+  margin-top: 82px;
+  margin-left: 11px;
+  width: 42px;
+height: 42px;
+background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);
+box-shadow: 1.17615px 1.17615px 11.7615px rgba(0, 0, 0, 0.2);
+border-radius: 1.55556px;
+border: none;
+font-family: Nunito Sans;
+font-style: normal;
+font-weight: bold;
+font-size: 19.96px;
+line-height: 27px;
+/* identical to box height */
+
+letter-spacing: 0.04em;
+
+/* Text Colour */
+
+color: #E7EFEF;
+
+}
+
+.dots{
+  font-family: Nunito Sans;
+font-style: normal;
+font-weight: bold;
+font-size: 22px;
+line-height: 30px;
+/* identical to box height */
+
+letter-spacing: 0.16em;
+color: #008249;
+position: relative;
+top: 54px;
+margin-left: 11px;
+}
 @media (max-width: 992px) {
   .main {
     padding-left: 12px;

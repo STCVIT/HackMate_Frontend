@@ -5,6 +5,7 @@ html,body{
 	font-family: "Fira Code";
 	font-style: normal;
 	font-weight: bold;
+  overflow: auto;
 }
 .first{
 	padding-left: 130px;
@@ -105,14 +106,10 @@ input {
     display: none;
   }
   .form-wrap .help-text{
-    margin-left: 290px;
-    font-size: 40px;
+    margin-left: 180px;
+    font-size: 10px;
   }
   .form-wrap{
-    margin-top: 525px;
-    margin-bottom: 980px;
-    margin-left: 240px;
     width: 475px;
-    transform: scale(1.9);
   }
 }

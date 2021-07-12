@@ -37,6 +37,7 @@
   text-align: start;
   align-items: center;
   flex-wrap: wrap;
+  padding-top: 10px;
 }
 
 nb1 {
@@ -199,7 +200,7 @@ color: #1EA54C;
   border-radius: 50%;
   display: inline-block;
   position: relative;
-  right: 15.5px;
+  right: 12px;
   top: 1px;
 }
 .circle3{
@@ -210,7 +211,7 @@ color: #1EA54C;
   background-color: #1EA54C;
   display: inline-block;
   position: relative;
-  right: 27px;
+  right: 20px;
   bottom: 1px;
 }
 .btnkm {

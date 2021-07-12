@@ -114,9 +114,8 @@ nbw {
   font-weight: 800;
   font-size: 15.2px;
   width: 115.27px;
-  margin-top: 10px;
-  padding-top: 8px;
-  padding-bottom: 9px;
+    line-height: 140%;
+  letter-spacing: 0.04em;
 }
 .button * {
   background: #1ea54c;
@@ -140,9 +139,6 @@ nbw {
   filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
   height: 38px;
   width: 115.27px;
-  margin-top: 10px;
-  padding-top: 8px;
-  padding-bottom: 9px;
 }
 
 h6 {

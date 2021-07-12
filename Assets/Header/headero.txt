@@ -13,10 +13,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="./addhack.html">Add Hack</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link alerts" href="#"><img src="../Assets/Images/carbon_notification-new.svg"
-                            alt=""></a>
-                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle username" href="#" id="navbarDropdown"
                         style="padding-right: 2vw;" role="button" data-bs-toggle="dropdown" aria-expanded="false">

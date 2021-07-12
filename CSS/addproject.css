@@ -237,4 +237,17 @@ nbgre {
   .card1{
     width: 320px;
   }
+
+  .text{
+    font-size: 18px;
+line-height: 16px;
+letter-spacing: 0.04em;
+  }
+
+  .start{
+    width: 108px;
+    height: 30px;
+    font-size: 16px;
+    font-weight: bold;
+  }
 }

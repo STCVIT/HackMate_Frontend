@@ -32,7 +32,7 @@
             <div class="row">
                 <div class="col-12 footerbottom1 justify-content-center align-content-center text-center">
                     Made with ❤️ by <br>
-                        <a href="https://stcvit.in/" target="_blank"><img src="../Assets/Images/STC Logo.svg" alt="" style="background: #1d2833; padding-top: 31px;"></a>
+                        <a href="https://stcvit.in/" target="_blank"><img src="../Assets/Images/STC Logo.svg" alt="" style="background: #1d2833; padding-top: 31px; padding-bottom: 31px;"></a>
                 </div>
             </div>
         </div>

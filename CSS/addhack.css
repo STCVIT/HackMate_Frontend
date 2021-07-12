@@ -86,13 +86,16 @@ input#image_uploads {
   border: none;
 }
 
-input:hover{
-  border-color: #008249 ;
+
+input:focus {
+  outline: none;
+  border-color: #008249;
 }
 
-input:active{
-    border-color: #008249 ;
 
+textarea:focus {
+  outline: none;
+  border-color: #008249;
 }
 
 .delete:hover {

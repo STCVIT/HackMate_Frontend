@@ -1,12 +1,13 @@
-$(document).ready(function () {
-  $("#nav").load("../Assets/Header/headerl.txt");
-  $("#foobottom").load("../Assets/Footer/footer.txt");
-});
-
+var hacks = {};
 const all = document.querySelector(".all");
 const ongoing = document.querySelector(".ongoing");
 const upcoming = document.querySelector(".upcoming");
 const popular = document.querySelector(".popular");
+
+$(document).ready(function () {
+  $("#nav").load("../Assets/Header/headerl.txt");
+  $("#foobottom").load("../Assets/Footer/footer.txt");
+});
 
 all.addEventListener("click", function () {
   for (var i = 0; i < all.classList.length; i++) {
@@ -39,7 +40,6 @@ ongoing.addEventListener("click", function () {
       upcoming.classList.add("button1");
       popular.classList.remove("button");
       popular.classList.add("button1");
-
     }
   }
 });
@@ -78,3 +78,19 @@ popular.addEventListener("click", function () {
     }
   }
 });
+
+fetch(`${url}/getHacks/all?page=1`, {
+  headers: {
+    "Content-Type": "application/json",
+    Authorization: "Bearer " + auth,
+  },
+})
+  .then((response) => response.json())
+  .then((data) => {
+    hacks = data;
+    console.log(hacks);
+    console.log("Success:", data);
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });

@@ -5,6 +5,9 @@
   color: #e7efef;
 }
 
+p{
+  font-family: Nunito Sans;
+}
 .hackname {
   padding-top: 72px;
   font-family: Fira Code;

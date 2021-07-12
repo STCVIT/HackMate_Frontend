@@ -62,6 +62,11 @@ input#image_uploads {
   margin-top: 28px;
 }
 
+input:focus {
+  outline: none;
+  border-color: #008249;
+}
+
 .textboxbio {
   margin-top: 4px;
   width: 84.25%;

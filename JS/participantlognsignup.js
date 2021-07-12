@@ -28,35 +28,46 @@ function signup(){
     const email=document.getElementById('user_email').value;
     const password=document.getElementById('user_pass1').value;
     const confirmpwd=document.getElementById('user_pass2').value; 
+    const minNumberofChars = 8;
 
     console.log(email);
     console.log(password);
     console.log(confirmpwd);
 
-    if(password != confirmpwd) {  
+    // Password greater or equal to 8
+    if(password.length < minNumberofChars){
+      alert("Password should be of Minimum 8 Characters.");
+    }
+    // Password and confirm Password should be same
+    else if(password != confirmpwd) {  
       alert("Password and Confirm Password are not same");  
       return false;  
     } 
     else {  
       alert ("Your password created successfully"); 
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-  .then(({user}) => {
-    // Signed in 
-    user.getIdToken().then(function(idToken){
-        console.log(idToken);
-        })
-      user.sendEmailVerification().then(function() {
-        console.log('Email has been sent!');
-        })
-    // ...
-  })
-  .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // ..
-  });
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+          .then(({user}) => {
+            console.log('signed up!')
+            user.getIdToken().then(function(idToken){
+              console.log(idToken)
+              fetch('https://hackportalbackend.herokuapp.com/participant/signup',{
+                method:'POST',
+                headers: new Headers({
+                  'Authorization': 'Bearer '+ idToken
+                })
+              }).then((res)=>{
+                console.log(res.status)
+              })
+              })
+            user.sendEmailVerification().then(function() {
+              console.log('Email has been sent!')
+              })
+            })
+          .catch((error) => {
+            console.log(error)
+          });
+        }
 }
-};
 
 const form1=document.getElementById("form1");
 form1.addEventListener('submit',(e)=>{
@@ -64,36 +75,43 @@ form1.addEventListener('submit',(e)=>{
 });
 
 
-// function signin(){
-//     const email=document.getElementById('login_email').value;
-//     const password=document.getElementById('login_pass1').value;
+function signin(){
+    const email=document.getElementById('login_email').value;
+    const password=document.getElementById('login_pass1').value;
+    // const url = 'https://hackportalbackend.herokuapp.com/';
 
-//     console.log(email);
-//     console.log(password);
-//     firebase.auth().signInWithEmailAndPassword(email, password)
-//   .then(({user}) => {
-//     // Signed in 
-//     console.log("Signed in")
-//     user.getIdToken().then(function(idToken){
-//         console.log(idToken)
+    console.log(email);
+    console.log(password);
+    firebase.auth().signInWithEmailAndPassword(email, password)
+  .then(({user}) => {
+    // Signed in 
+    console.log("Signed in")
+    user.getIdToken().then(function(idToken){
+        console.log(idToken)
         
-//     fetch("https://f4a5bf963ab0.ngrok.io/organiser/login",{
-//       method:"GET",
-//       headers: new Headers({
-//           'Authorization': 'Bearer ' + idToken
-//         })
-//     }).then(response => {
-//     if (response.status == 400) {
-//       return response.json().then(change => {
-//         window.location = "";
-//         change = window.location;
-//         return change;
-//       });
-//     }
-//   }); 
+    fetch(`https://hackportalbackend.herokuapp.com/participant/login`,{
+      method:"GET",
+      headers: new Headers({
+          'Authorization': 'Bearer ' + idToken
+        })
+    }).then(response => {
+      // console.log(response.json());
+      console.log(response.status);
+      if (response.status == 404) {
+        window.location.assign("./profile.html");
+        // location.href = ""; 
+    }
+      else if(response.status == 200){
+        window.location.assign("./viewhackathon.html");
+        // location.href = "";
+      }
+  }); 
+      // .then(response => response.json())   
+      // .then(json => console.log(json));
+    })
 
-//       // .then(response => response.json())   
-//       // .then(json => console.log(json))
-//     })
-//   })
-// }
+  })
+            .catch((error) => {
+            console.log(error)
+          });
+}

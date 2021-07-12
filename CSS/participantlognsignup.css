@@ -1,14 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito+Sans&family=Raleway&display=swap");
 html,body{
-	background-color: #23303D;
-	margin:0;
-	font-family: "Fira Code";
-	font-style: normal;
-	font-weight: bold;
+  background-color: #23303D;
+  margin:0;
+  font-family: "Fira Code";
+  font-style: normal;
+  font-weight: bold;
+  overflow: auto;
 }
 .first{
-	padding-left: 130px;
-	padding-top: 80px;
+  padding-left: 130px;
+  padding-top: 80px;
 }
 input {
   font: 16px/26px "Raleway", sans-serif; 
@@ -23,15 +24,15 @@ input {
     overflow: hidden; 
 }
 .form-wrap .tabs h3 {
-	float: left;
-	width: 50%; 
+  float: left;
+  width: 50%; 
 }
 .form-wrap .tabs h3 a {
     padding: 0.5em 0;
     text-align: center;
     font-family: "Fira Code";
-	 font-style: normal;
-	 font-weight: bold;
+   font-style: normal;
+   font-weight: bold;
     background-color: #23303D;
     display: block;
     color: #fff; 
@@ -43,8 +44,8 @@ input {
     border-radius: 0px 2px 0px 0px;
 }
 .inactive4 {
-	background-color: #23303D;
-	opacity: 0.8;
+  background-color: #23303D;
+  opacity: 0.8;
   border: 2px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   border-radius: 2px 0px 0px 0px;
@@ -53,7 +54,7 @@ input {
     padding: 1.5em; 
 }
 .form-wrap .tabs-content div[id$="tab-content"] {
-   	display: none; 
+    display: none; 
 }
 .form-wrap .tabs-content .active {
     display: block !important; 
@@ -87,8 +88,8 @@ input {
   background-color: #157347; 
 }
 .form-wrap .help-text {
-	margin-top: .6em; 
-	margin-left: 285px;
+  margin-top: .6em; 
+  margin-left: 285px;
   font-family: Nunito Sans;
   font-weight: 600;
   font-size: 14px;
@@ -105,14 +106,11 @@ input {
     display: none;
   }
   .form-wrap .help-text{
-    margin-left: 290px;
-    font-size: 40px;
+    margin-left: 180px;
+    font-size: 10px;
   }
   .form-wrap{
-    margin-top: 525px;
-    margin-bottom: 980px;
-    margin-left: 240px;
     width: 475px;
-    transform: scale(1.9);
   }
+}
 }

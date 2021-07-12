@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+		<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Hackmate</title>
-</head>
 <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
@@ -11,18 +12,20 @@
   href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css"
   rel="stylesheet"
 />
-<link rel="stylesheet" href="../CSS/participantlognsignup.css">
+<link rel="stylesheet" type="text/css" href="../CSS/participantlognsignup.css">
 <link rel="stylesheet" href="../Assets/Header/header.css">
 <link rel="stylesheet" href="../Assets/Footer/footer.css">
+</head>
 <body>
 	<div id="nav"></div>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-lg-6 first">
-				<img src="../Assets/Images/parlog1.svg" height="400">
-				<img src="../Assets/Images/parlog2.svg" height="400">
+			<div class="col-lg-6 col-md-12 col-12 first">
+				<img src="../Assets/Images/orglog1.svg" height="400">
+				<img src="../Assets/Images/orglog2.svg" height="400">
 			</div>
-			<div class="col-lg-6">
+			<div class="col-lg-6 col-md-12 col-12">
+				<div class="d-flex justify-content-center">
 				<div class="form-wrap">
 					<div class="tabs">
 						<h3 class="signup-tab"><a id="active1" class="active3" href="#signup-tab-content">Sign Up</a></h3>
@@ -45,11 +48,13 @@
 								<div class="help-text">
 									<p><a class="forgot" href="#">Forgot password?</a></p>
 								</div><!--.help-text-->
-								<input type="submit" class="button" value="Log In" onclick="location.href='./profile.html'" id="getBtn">
+								 <!-- <input type="submit" class="button" value="Log In" onclick="location.href='./profile.html'" id="getBtn"> -->	
+								<input type="submit" class="button" value="Log In" onclick="signin()" id="getBtn">
 								<!-- <a class="button" href="./profile.html" role="button">Log In</a> -->
-							</form><!--.login-form-->
+							</form><!--.login-form-->	
 						</div>
 					</div>
+				</div>
 				</div>
 			</div>
 		</div>

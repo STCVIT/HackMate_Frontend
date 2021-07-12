@@ -16,6 +16,7 @@ var n=2;
 app.addEventListener('click',function() { 
     if(n%2==0){
         app.style.backgroundColor="#1ea54c";
+        all.style.backgroundColor="#1D2833";
         n=n+1;
     }
     else{
@@ -26,26 +27,31 @@ app.addEventListener('click',function() {
 frontend.addEventListener('click',function() { 
     if(n%2==0){
         frontend.style.backgroundColor="#1ea54c";
+        all.style.backgroundColor="#1D2833";
         n=n+1;
     }
     else{
         frontend.style.backgroundColor="#1D2833";
+        all.style.backgroundColor="#1D2833";
         n=n+1;
     }
 });
 backend.addEventListener('click',function() { 
     if(n%2==0){
         backend.style.backgroundColor="#1ea54c";
+        all.style.backgroundColor="#1D2833";
         n=n+1;
     }
     else{
         backend.style.backgroundColor="#1D2833";
+        all.style.backgroundColor="#1D2833";
         n=n+1;
     }
 });
 ui.addEventListener('click',function() { 
     if(n%2==0){
         ui.style.backgroundColor="#1ea54c";
+        all.style.backgroundColor="#1D2833";
         n=n+1;
     }
     else{
@@ -56,6 +62,7 @@ ui.addEventListener('click',function() {
 machine.addEventListener('click',function() { 
     if(n%2==0){
         machine.style.backgroundColor="#1ea54c";
+        all.style.backgroundColor="#1D2833";
         n=n+1;
     }
     else{
@@ -66,6 +73,7 @@ machine.addEventListener('click',function() {
 management.addEventListener('click',function() { 
     if(n%2==0){
         management.style.backgroundColor="#1ea54c";
+        all.style.backgroundColor="#1D2833";
         n=n+1;
     }
     else{
@@ -76,6 +84,7 @@ management.addEventListener('click',function() {
 cyber.addEventListener('click',function(){
     if(n%2==0){
         cyber.style.backgroundColor="#1ea54c";
+        all.style.backgroundColor="#1D2833";
         n=n+1;
     }
     else{
@@ -86,6 +95,7 @@ cyber.addEventListener('click',function(){
 block.addEventListener('click',function(){
     if(n%2==0){
         block.style.backgroundColor="#1ea54c";
+        all.style.backgroundColor="#1D2833";
         n=n+1;
     }
     else{
@@ -94,6 +104,7 @@ block.addEventListener('click',function(){
     }
 });
 all.addEventListener('click', function() {
+    all.style.backgroundColor="1ea54";
     block.style.backgroundColor="#1D2833";
     cyber.style.backgroundColor="#1D2833";
     management.style.backgroundColor="#1D2833";

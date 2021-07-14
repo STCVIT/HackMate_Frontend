@@ -1,12 +1,46 @@
 var hacks = {};
+var eventot = "all";
 const all = document.querySelector("#all");
 const ongoing = document.querySelector("#ongoing");
 const upcoming = document.querySelector("#upcoming");
-const popular = document.querySelector("#popular");
+const popular = document.querySelector("#popularity");
 
 $(document).ready(function () {
   $("#nav").load("../Assets/Header/headerl.txt");
   $("#foobottom").load("../Assets/Footer/footer.txt");
+  axios(`${url}/getHacks/all?page=1`, {
+    headers: {
+      Authorization: "Bearer " + auth,
+    },
+  })
+    .then((response) => {
+      hacks = response.data;
+      console.log(hacks);
+      for (var i = 0; i < hacks.length; i++) {
+        document.querySelector(".wrapper").innerHTML +=
+          "<div class='box'><img src='../Assets/Images/Name Banner.png' class='namebanner' alt=''> <div class='innertxt'> <nb1 class='hackname'>" +
+          hacks[i].name +
+          " <img src='../Assets/Images/Hack Link.svg' alt=''> </nb1> <br> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw class='startd'>" +
+          hacks[i].start.split("T")[0] +
+          "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw class='endd'>" +
+          hacks[i].end.split("T")[0] +
+          "</nbw> </div> </div> </div> </div> <div class='nbg'> <nbg>Venue: </nbg> <nbw class='venue'>" +
+          hacks[i].venue +
+          "</nbw> </div> <div class='nbg'> <nbg>Max Team Size: </nbg> <nbw class='ts'>" +
+          hacks[i].max_team_size +
+          "</nbw><nbw> Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
+          hacks[i].prize_pool +
+          "</div><div class='status'><circle class='circle1'></circle><circle class='circle2'></circle><circle class='circle3'></circle>" +
+          hacks[i].mode_of_conduct +
+          "</div> <a class='btnkm btn btn-success' href='./hackdetails.html' role='button'>Know More</a> </div> </div>";
+
+        document.querySelector(".wrapper1").innerHTML =
+          "<button class='pagenation' onclick='events(event)'>1</button><button class='pagenation' onclick='events(event)'>2</button><button class='pagenation' onclick='events(event)'>3</button><span class='dots'>...</span><button class='pagenation' onclick='events(event)'>7</button><button class='pagenation' onclick='events(event)'>8</button><button class='pagenation' onclick='events(event)'>9</button>";
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
 });
 
 all.addEventListener("click", function () {
@@ -73,7 +107,7 @@ popular.addEventListener("click", function () {
 
 // fetch(`${url}/getHacks/all?page=1`, {
 //   headers: {
-//     "Content-Type": "application/json",
+//
 //     Authorization: "Bearer " + auth,
 //   },
 // })
@@ -87,47 +121,12 @@ popular.addEventListener("click", function () {
 //     console.error("Error:", error);
 //   });
 
-axios(`${url}/getHacks/all?page=1`, {
-  headers: {
-    "Content-Type": "application/json",
-    Authorization: "Bearer " + auth,
-  },
-})
-  .then((response) => {
-    hacks = response.data;
-    console.log(hacks);
-    for (var i = 0; i < hacks.length; i++) {
-      document.querySelector(".wrapper").innerHTML +=
-        "<div class='box'><img src='../Assets/Images/Name Banner.png' class='namebanner' alt=''> <div class='innertxt'> <nb1 class='hackname'>" +
-        hacks[i].name +
-        " <img src='../Assets/Images/Know More.png' alt=''> </nb1> <br> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw class='startd'>" +
-        hacks[i].start.split("T")[0] +
-        "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw class='endd'>" +
-        hacks[i].end.split("T")[0] +
-        "</nbw> </div> </div> </div> </div> <div class='nbg'> <nbg>Venue: </nbg> <nbw class='venue'>" +
-        hacks[i].venue +
-        "</nbw> </div> <div class='nbg'> <nbg>Max Team Size: </nbg> <nbw class='ts'>" +
-        hacks[i].max_team_size +
-        "</nbw><nbw> Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
-        hacks[i].prize_pool +
-        "</div><div class='status'><circle class='circle1'></circle><circle class='circle2'></circle><circle class='circle3'></circle>" +
-        hacks[i].mode_of_conduct +
-        "</div> <a class='btnkm btn btn-success' href='./hackdetails.html' role='button'>Know More</a> </div> </div>";
-
-      document.querySelector(".wrapper1").innerHTML =
-        "<button class='pagenation' onclick='events(event)'>1</button><button class='pagenation' onclick='events(event)'>2</button><button class='pagenation' onclick='events(event)'>3</button><span class='dots'>...</span><button class='pagenation' onclick='events(event)'>7</button><button class='pagenation' onclick='events(event)'>8</button><button class='pagenation' onclick='events(event)'>9</button>";
-    }
-  })
-  .catch((error) => {
-    console.error("Error:", error);
-  });
-
 function events(event) {
+  console.log(event);
   var eventocc = event.target.innerHTML;
   console.log(eventocc);
-  axios(`${url}/getHacks/all?page=${eventocc}`, {
+  axios(`${url}/getHacks/${eventot}?page=${eventocc}`, {
     headers: {
-      "Content-Type": "application/json",
       Authorization: "Bearer " + auth,
     },
   })
@@ -139,7 +138,45 @@ function events(event) {
         document.querySelector(".wrapper").innerHTML +=
           "<div class='box'><img src='../Assets/Images/Name Banner.png' class='namebanner' alt=''> <div class='innertxt'> <nb1 class='hackname'>" +
           hacks[i].name +
-          " <img src='../Assets/Images/Know More.png' alt=''> </nb1> <br> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw class='startd'>" +
+          " <img src='../Assets/Images/Hack Link.svg' alt=''> </nb1> <br> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw class='startd'>" +
+          hacks[i].start.split("T")[0] +
+          "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw class='endd'>" +
+          hacks[i].end.split("T")[0] +
+          "</nbw> </div> </div> </div> </div> <div class='nbg'> <nbg>Venue: </nbg> <nbw class='venue'>" +
+          hacks[i].venue +
+          "</nbw> </div> <div class='nbg'> <nbg>Max Team Size: </nbg> <nbw class='ts'>" +
+          hacks[i].max_team_size +
+          "</nbw><nbw> Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
+          hacks[i].prize_pool +
+          "</div><div class='status'><circle class='circle1'></circle><circle class='circle2'></circle><circle class='circle3'></circle>" +
+          hacks[i].mode_of_conduct +
+          "</div> <a class='btnkm btn btn-success' href='./hackdetails.html' role='button'>Know More</a> </div> </div>";
+
+        document.querySelector(".wrapper1").innerHTML =
+          "<button class='pagenation' onclick='events(event)'>1</button><button class='pagenation' onclick='events(event)'>2</button><button class='pagenation' onclick='events(event)'>3</button><span class='dots'>...</span><button class='pagenation' onclick='events(event)'>7</button><button class='pagenation' onclick='events(event)'>8</button><button class='pagenation' onclick='events(event)'>9</button>";
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}
+
+function getdeets(event) {
+  eventot = event.target.id;
+  axios(`${url}/getHacks/${event.target.id}?page=1`, {
+    headers: {
+      Authorization: "Bearer " + auth,
+    },
+  })
+    .then((response) => {
+      hacks = response.data;
+      console.log(hacks);
+      document.querySelector(".wrapper").innerHTML = "";
+      for (var i = 0; i < hacks.length; i++) {
+        document.querySelector(".wrapper").innerHTML +=
+          "<div class='box'><img src='../Assets/Images/Name Banner.png' class='namebanner' alt=''> <div class='innertxt'> <nb1 class='hackname'>" +
+          hacks[i].name +
+          " <img src='../Assets/Images/Hack Link.svg' alt=''> </nb1> <br> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw class='startd'>" +
           hacks[i].start.split("T")[0] +
           "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw class='endd'>" +
           hacks[i].end.split("T")[0] +

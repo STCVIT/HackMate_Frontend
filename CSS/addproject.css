@@ -80,16 +80,14 @@ nbg {
   color: rgba(231, 239, 239, 0.36);
 }
 
-.content {
-  padding-top: 81px;
-}
-
 .card {
   margin-top: 21px;
   background: #1d2833;
   box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
   border: none;
-  width: 340px;
+  width: 320px;
+  margin-left: 12px;
+  margin-right: 12px;
 }
 .card * {
   background: #1d2833;
@@ -171,6 +169,11 @@ nbgre {
   border: none;
 }
 
+input:focus {
+  outline: none;
+  border-color: #008249;
+}
+
 .addprojects1 {
   width: 220px;
   height: 41px;
@@ -181,13 +184,6 @@ nbgre {
   border-radius: 2px;
   filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.2));
 }
-
-
-.card1{
-  width: 340px;
-    margin-right: 32px;
-}
-
 
 @media (max-width: 711px) {
   .plus{
@@ -233,21 +229,5 @@ nbgre {
 
   .card{
     width: 320px;
-  }
-  .card1{
-    width: 320px;
-  }
-
-  .text{
-    font-size: 18px;
-line-height: 16px;
-letter-spacing: 0.04em;
-  }
-
-  .start{
-    width: 108px;
-    height: 30px;
-    font-size: 16px;
-    font-weight: bold;
   }
 }

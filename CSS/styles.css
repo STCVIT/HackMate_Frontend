@@ -98,6 +98,10 @@ lt1 {
   font-size: 16.9706px;
 }
 
+.lanimg1{
+  margin-left: 8.33%;
+}
+
 .btngetstarted:hover {
   background: linear-gradient(103.71deg, #157347 -20.85%, #226045 122.33%);
 }

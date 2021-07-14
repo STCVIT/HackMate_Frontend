@@ -173,50 +173,23 @@ r {
   padding: 10px;
   color: #e7efef99;
 }
-.card1 {
+.card {
   border: none !important;
   background-color: #1d2833 !important;
   box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
+  margin-top: 40px;
 }
 
-.card1 * {
+.card * {
   background-color: #1d2833 !important;
-}
-.card2 {
-  border: none !important;
-  background-color: #1d2833 !important;
-  box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
 }
 
-.card2 * {
-  background-color: #1d2833 !important;
-}
 .empty {
   padding: 40px;
 }
 li p t {
   color: #1ea54c;
   font-size: small;
-}
-@media only screen and (min-width: 1400px) {
-  .card1 {
-    position: relative;
-    top: -30px;
-    left: 8%;
-  }
-  .card2 {
-    position: relative;
-    top: -30px;
-    left: 13%;
-  }
-  .card-body {
-    margin-left: 8%;
-  }
-}
-@media only screen and (max-width: 1400px) {
-  .col-lg-6 {
-    padding-top: 40px;
-  }
 }
 
 @media (max-width: 768px) {

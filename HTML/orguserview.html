@@ -27,70 +27,71 @@
             <div class="col-md-5">
                 <div class="text-end justify-content-end">
                     <div class="btns">
-                        <a class="savechanges btn btn-success" href="#" role="button">Save Changes</a>
+                        <a class="savechanges btn btn-success" href="#" onclick="updateacc()" role="button">Save Changes</a>
                     </div>
                 </div>
                 <div class="text-center justify-content-center">
                     <div class="btns1"><a class=" delete btn btn-success" href="#" role="button">Reset Password</a>
-                        <a class=" savechanges btn btn-success" href="#" role="button">Delete Account</a>
+                        <a class=" savechanges btn btn-success" href="#" onclick="deleteacc()" role="button">Delete Account</a>
                     </div>
                 </div>
             </div>
             <div class="col-1"></div>
         </div>
+        <form action="" name="myform" method="post">
+            <div class="row">
+                <div class="col-md-1 col-sm-1 col-1"> </div>
+                <div class="col-md-9">
 
-        <div class="row">
-            <div class="col-md-1 col-sm-1 col-1"> </div>
-            <div class="col-md-9">
+                    <div class="details">
 
-                <div class="details">
+                        <div class="logo inputdeets">
+                            <img src="../Assets/Images/STC.svg" alt="">
+                        </div>
 
-                    <div class="logo inputdeets">
-                        <img src="../Assets/Images/STC.svg" alt="">
-                    </div>
-
-                    <div class="inputdeets">
-                        <nbg>NAME</nbg> <br>
-                        <input class="textbox" > <br>
-                    </div>
-                    <div class="inputdeets">
-                        <nbg>PHONE NUMBER</nbg> <br>
-                        <input class="textbox" > <br>
-                    </div>
-                    <div class="inputdeets">
-                        <nbg>COLLEGE/UNIVERSITY</nbg> <br>
-                        <input class="textbox" > <br>
-                    </div>
-                    <div class="inputdeets">
-                        <nbg>EMAIL</nbg> <br>
-                        <input class="textbox" > <br>
-                    </div>
-                    <div class="inputdeets">
-                        <nbg>WEBSITE</nbg> <br>
-                        <input class="textbox" > <br>
+                        <div class="inputdeets">
+                            <nbg>NAME</nbg> <br>
+                            <input class="textbox" name="name" placeholder=""> <br>
+                        </div>
+                        <div class="inputdeets">
+                            <nbg>PHONE NUMBER</nbg> <br>
+                            <div class="textbox pno const"></div>
+                        </div>
+                        <div class="inputdeets">
+                            <nbg>COLLEGE/UNIVERSITY</nbg> <br>
+                            <input class="textbox" name="uni"> <br>
+                        </div>
+                        <div class="inputdeets">
+                            <nbg>EMAIL</nbg> <br>
+                            <div class="textbox email const"></div>
+                        </div>
+                        <div class="inputdeets">
+                            <nbg>WEBSITE</nbg> <br>
+                            <div class="textbox website const"></div>
+                        </div>
                     </div>
                 </div>
+
+                <div class="col-1"></div>
             </div>
+            <div class="row">
+                <div class="col-md-1 col-sm-1 col-1"> </div>
+                <div class="col-md-9">
+                    <div class="text-start justify-content-start">
+                        <div class="btns"><a class=" delete btn btn-success" href="#" role="button">Reset Password</a>
+                            <a class=" savechanges btn btn-success" href="#" onclick="deleteacc()" role="button">Delete Account</a>
+                        </div>
+                    </div>
+                    <div class="text-center justify-content-center">
+                        <div class="btns1">
+                            <a class="savechanges btn btn-success" href="#" onclick="updateacc()" role="button">Save Changes</a>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="col-1"></div>
-        </div>
-        <div class="row">
-            <div class="col-md-1 col-sm-1 col-1"> </div>
-            <div class="col-md-9">
-                <div class="text-start justify-content-start">
-                    <div class="btns"><a class=" delete btn btn-success" href="#" role="button">Reset Password</a>
-                        <a class=" savechanges btn btn-success" href="#" role="button">Delete Account</a>
-                    </div>
-                </div>
-                <div class="text-center justify-content-center">
-                    <div class="btns1">
-                        <a class="savechanges btn btn-success" href="#" role="button">Save Changes</a>
-                    </div>
-                </div>
+                <div class="col-1"></div>
             </div>
-
-            <div class="col-1"></div>
-        </div>
+        </form>
     </div>
 
     <div id="foobottom"></div>
@@ -99,7 +100,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
         crossorigin="anonymous"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../JS/url.js"></script>
     <script src="../JS/orguserview.js"></script>
 </body>
 

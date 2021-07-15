@@ -13,10 +13,10 @@ axios(`${url}/organiser/login`, {
   .then((response) => {
     user = response.data;
     document.myform.name.value = user.name;
-    document.querySelector(".pno").innerHTML = user.phone;
+    document.myform.pno.value = user.phone;
     document.myform.uni.value = user.college;
     document.querySelector(".email").innerHTML = user.email;
-    document.querySelector(".website").innerHTML = user.website;
+    document.myform.website.value = user.website;
     console.log(user);
   })
   .catch((error) => console.error("Error: " + error));
@@ -37,22 +37,25 @@ function deleteacc() {
 }
 
 function updateacc() {
-
-    axios.patch(`${url}/organiser/updateProfile`,
-        {
-          name: document.myform.name.value,
-          college: document.myform.uni.value,
+  axios
+    .patch(
+      `${url}/organiser/updateProfile`,
+      {
+        name: document.myform.name.value,
+        phone: document.myform.pno.value,
+        college: document.myform.uni.value,
+        website: document.myform.website.value
+      },
+      {
+        headers: {
+          Authorization: "Bearer " + auth,
         },
-        {
-          headers: {
-            Authorization: "Bearer " + auth,
-          },
-        }
-      )
-      .then((response) => {
-        console.log("Success:", response.data);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+      }
+    )
+    .then((response) => {
+      console.log("Success:", response.data);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
 }

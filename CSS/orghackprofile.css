@@ -49,6 +49,10 @@ input#image_uploads {
   width: 101.6%;
 }
 
+input{
+  padding-left: 18px;
+}
+
 .textbox {
   margin-top: 4px;
 

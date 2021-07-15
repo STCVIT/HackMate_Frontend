@@ -32,7 +32,9 @@ $(document).ready(function () {
           hacks[i].prize_pool +
           "</div><div class='status'><circle class='circle1'></circle><circle class='circle2'></circle><circle class='circle3'></circle>" +
           hacks[i].mode_of_conduct +
-          "</div> <a class='btnkm btn btn-success' href='./hackdetails.html' role='button'>Know More</a> </div> </div>";
+          "</div> <a class='btnkm btn btn-success' href='./hackdetails.html?" +
+          hacks[i]._id +
+          "' role='button'>Know More</a> </div> </div>";
 
         document.querySelector(".wrapper1").innerHTML =
           "<button class='pagenation' onclick='events(event)'>1</button><button class='pagenation' onclick='events(event)'>2</button><button class='pagenation' onclick='events(event)'>3</button><span class='dots'>...</span><button class='pagenation' onclick='events(event)'>7</button><button class='pagenation' onclick='events(event)'>8</button><button class='pagenation' onclick='events(event)'>9</button>";
@@ -150,7 +152,7 @@ function events(event) {
           hacks[i].prize_pool +
           "</div><div class='status'><circle class='circle1'></circle><circle class='circle2'></circle><circle class='circle3'></circle>" +
           hacks[i].mode_of_conduct +
-          "</div> <a class='btnkm btn btn-success' href='./hackdetails.html' role='button'>Know More</a> </div> </div>";
+          "</div> <a class='btnkm btn btn-success' href='./hackdetails.html?"+ hacks[i]._id + "' role='button'>Know More</a> </div> </div>";
 
         document.querySelector(".wrapper1").innerHTML =
           "<button class='pagenation' onclick='events(event)'>1</button><button class='pagenation' onclick='events(event)'>2</button><button class='pagenation' onclick='events(event)'>3</button><span class='dots'>...</span><button class='pagenation' onclick='events(event)'>7</button><button class='pagenation' onclick='events(event)'>8</button><button class='pagenation' onclick='events(event)'>9</button>";

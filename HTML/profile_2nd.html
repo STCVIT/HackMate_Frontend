@@ -23,29 +23,33 @@
               <div class="d-flex justify-content-start" style="padding-top:40px;">
               <img id="dashes2" src="../Assets/Images/dashes2.svg">
               </div>
-                <form>
+                <form id="form2">
                     <div class="mb-3">
-                        <label for="linkedln" class="form-label"></label>
-                        <input type="text" class="form-control" id="linkedln"  placeholder="Linkedln">
+                        <label for="linkedln" class="form-label" name=linkedln></label>
+                        <input type="text" class="form-control" id="linkedln" required placeholder="LinkedIn">
+                        <small>Error Message</small>
                       </div>
                       <div class="mb-3">
-                        <label for="github" class="form-label"></label>
-                        <input type="text" class="form-control" id="github"  placeholder="Github Link">
+                        <label for="github" class="form-label" name="github"></label>
+                        <input type="text" class="form-control" id="github" required placeholder="Github Link">
+                        <small>Error Message</small>
                       </div>
                       <div class="mb-3">
-                        <label for="personal_website" class="form-label"></label>
+                        <label for="personal_website" class="form-label" name="personal_website"></label>
                         <input type="text" class="form-control" id="personal_website"  placeholder="Personal Website">
+                        <small>Error Message</small>
                       </div>
                       <div class="mb-3">
-                        <label for="bio"></label>
+                        <label for="bio" name="bio"></label>
                         <textarea class="form-control"rows="4" spellcheck="false" id="bio"  placeholder="Bio"></textarea>
+                        <small>Error Message</small>
                       </div>
                       <div class="lobutton" style="display: flex;">
                       <div class="content1">
                       <a class="btnsmallversion btn btn-success" id="back" href="./profile.html">Back</a>
                       </div>
                       <div class="content2">
-                        <a class="btnsmallversion btn btn-success" id="next1" href="./profile_skills.html">Next</a>
+                        <button class="btnsmallversion btn btn-success" onclick="secondpage_profile()"id="next1">Next</button>
                       </div>
                     </div>
                 </form>
@@ -57,5 +61,5 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-<script src="../JS/profile.js"></script>
+<script src="../JS/functionalProfile.js"></script>
 </html>

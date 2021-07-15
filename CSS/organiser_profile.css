@@ -20,6 +20,9 @@
     letter-spacing: 0.04em;
     color:white!important;
 }
+.mb-3 small{
+  visibility: hidden;
+}
 input {
   outline: none!important;
   border: 2px solid rgba(30, 165, 76, 0.2)!important;

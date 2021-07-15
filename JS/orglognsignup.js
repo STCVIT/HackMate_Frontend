@@ -50,7 +50,7 @@ function signup(){
             console.log('signed up!')
             user.getIdToken().then(function(idToken){
               console.log(idToken)
-              fetch('https://hackportalbackend.herokuapp.com/participant/signup',{
+              fetch('https://hackportalbackend.herokuapp.com/organiser/signup',{
                 method:'POST',
                 headers: new Headers({
                   'Authorization': 'Bearer '+ idToken
@@ -89,13 +89,13 @@ function signin(){
     user.getIdToken().then(function(idToken){
         console.log(idToken)
         
-    fetch(`https://hackportalbackend.herokuapp.com/participant/login`,{
+    fetch(`https://hackportalbackend.herokuapp.com/organiser/login`,{
       method:"GET",
       headers: new Headers({
           'Authorization': 'Bearer ' + idToken
         })
     }).then(response => {
-      // console.log(response.json());
+      console.log(response.json());
       console.log(response.status);
       if (response.status == 404) {
         window.location.assign("./organiser_profile.html");

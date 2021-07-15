@@ -4,6 +4,11 @@
     font-family: "Fira Code", monospace;
     color: #e7efef;
   }
+  .card .card-row l{
+    background:#1D2833;
+    color:rgba(231, 239, 239, 0.6);
+    padding-top:5%;
+  }
   body{
     background-color: #23303d;
   }
@@ -33,10 +38,6 @@
     border-radius: 2px;
     background:#1D2833;
   }
-.card .card-row{
-    background:#1D2833;
-    display: flex;
-}
 .card .card-row img{
     background:#1D2833;
 }
@@ -44,24 +45,11 @@
     padding-top:20px;
     padding-left:30px;
 }
-.card .card-row l{
-    background:#1D2833;
-    padding-top:5%;
-    padding-left:38%;
-    color: rgba(231, 239, 239, 0.7);
+.card-row .component{
+  display: flex;
+  background:#1D2833;
 }
-.card .card-row l1{
-    background:#1D2833;
-    padding-top:5%;
-    padding-left:44%;
-    color: rgba(231, 239, 239, 0.7);
-}
-.card .card-row l2{
-    background:#1D2833;
-    padding-top:5%;
-    padding-left:42%;
-    color: rgba(231, 239, 239, 0.7);
-}
+
 .card .card-row p t{
     background:#1D2833;
     color:#1EA54C;
@@ -145,29 +133,11 @@
     padding-bottom: 40px;
 }
 @media (max-width:599px){
-    .card .card-row l{
-        padding-left:18%;
-    }
-    .card .card-row l1{
-        padding-left:25%;
-    }
-    .card .card-row l2{
-        padding-left:25%;
-    }
-    .hackdetailsbox{
-      display:none;
-    }
-}
-@media (max-width:375px){
   .card .card-row l{
-    padding-left:0%;
-}
-.card .card-row l1{
-    padding-left:0%;
-}
-.card .card-row l2{
-    padding-left:0%;
-}
+    background:#1D2833;
+    color:rgba(231, 239, 239, 0.6);
+    padding-top:10%;
+  }
 }
 .maintext {
   padding-top:6%;

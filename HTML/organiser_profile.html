@@ -29,23 +29,28 @@
             <div class="formpart">
                 <form id="form">
                     <div class="mb-3">
-                        <label for="name" class="form-label"></label>
-                        <input type="text" class="form-control" id="name"  placeholder="Name">
+                        <label for="name" class="form-label" name="username"></label>
+                        <input type="text" name="username" class="form-control" id="name" required placeholder="Name">
+                        <small>Error Message</small>
                       </div>
                       <div class="mb-3">
-                        <label for="phone" class="form-label"></label>
-                        <input type="text" class="form-control" id="phone" placeholder="Phone Number">
+                        <label for="phone" class="form-label" name="email"></label>
+                        <input type="text" class="form-control" id="phone" name="email" required placeholder="Phone Number">
+                        <small>Error Message</small>
                       </div>
                       <div class="mb-3">
-                        <label for="college" class="form-label"></label>
-                        <input type="text" class="form-control" id="college"  placeholder="College/University">
+                        <label for="college" class="form-label" name="college"></label>
+                        <input type="text" class="form-control" id="college" name="college" required placeholder="College/University">
+                        <small>Error Message</small>
                       </div>
                       <div class="mb-3">
-                        <label for="website" class="form-label"></label>
-                        <input type="link" class="form-control" id="website" placeholder="Website">
+                        <label for="website" class="form-label" name="website"></label>
+                        <input type="link" class="form-control" id="website"  name="website" placeholder="Website">
+                        <small>Error Message</small>
                       </div>
                       <div class="content">
-                      <input value="Add Hack" onclick="location.href='./addhack.html'" class="btnsmallversion btn btn-success" id="btnaddhack">
+                        <!--onclick="location.href='./addhack.html'"-->
+                      <button class="btnsmallversion btn btn-success" id="btnaddhack">Add Hack</button>
                       </div>
                 </form>
               </div>

@@ -6,7 +6,7 @@
 }
 
 .hackname {
-  padding-top: 72px;
+  padding-top: 36px;
   font-family: Fira Code;
   font-style: normal;
   font-weight: bold;
@@ -20,7 +20,7 @@
 }
 
 .details {
-  padding-top: 48px;
+  padding-top: 24px;
 }
 .details2 {
   padding-top: 61px;
@@ -82,10 +82,10 @@ input:focus {
 }
 
 .btns {
-  padding-top: 72px;
+  padding-top: 36px;
 }
 .btns1 {
-  padding-top: 72px;
+  padding-top: 36px;
   display: none;
 }
 

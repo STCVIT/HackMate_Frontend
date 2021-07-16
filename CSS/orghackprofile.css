@@ -5,11 +5,11 @@
   color: #e7efef;
 }
 
-p{
+p {
   font-family: Nunito Sans;
 }
 .hackname {
-  padding-top: 72px;
+  padding-top: 36px;
   font-family: Fira Code;
   font-style: normal;
   font-weight: bold;
@@ -22,11 +22,18 @@ p{
   color: #e7efef;
 }
 
+p,
+f,
+r,
+h3 {
+  font-family: Nunito Sans;
+}
+
 .details {
-  padding-top: 48px;
+  padding-top: 24px;
 }
 .details2 {
-  padding-top: 61px;
+  padding-top: 24px;
 }
 nbg {
   font-family: Nunito Sans;
@@ -49,14 +56,26 @@ input#image_uploads {
   width: 101.6%;
 }
 
-input{
+input {
   padding-left: 18px;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  /* identical to box height */
+
+  letter-spacing: 0.04em;
+
+  color: #e7efef;
+
+  opacity: 0.7;
 }
 
 .textbox {
   margin-top: 4px;
 
-  width: 84.25%;
+  width: 91.5%;
   height: 43.14px;
 
   background: #2e3d4c;
@@ -70,9 +89,10 @@ input{
 }
 
 .textboxbio {
+  padding-left: 18px;
   margin-top: 4px;
-  width: 84.25%;
-  height: 296px;
+  width: 91.5%;
+  height: 287px;
 
   background: #2e3d4c;
   border: 1.54059px solid rgba(30, 165, 76, 0.2);
@@ -81,7 +101,7 @@ input{
 }
 
 .btns {
-  padding-top: 72px;
+  padding-top: 36px;
 }
 
 .delete {
@@ -109,7 +129,7 @@ input{
 .box {
   margin-top: 4px;
 
-  width: 32.9vw;
+  width: 36vw;
   height: 192px;
 
   vertical-align: middle;
@@ -125,7 +145,7 @@ input{
 }
 
 .nbg {
-  margin-top: 91px;
+  margin-top: 45px;
 }
 
 input:focus {
@@ -181,7 +201,7 @@ r {
   border: none !important;
   background-color: #1d2833 !important;
   box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .card * {

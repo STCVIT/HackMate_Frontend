@@ -84,8 +84,6 @@ nbgre {
   width: 320px;
   background: #1D2833;
 /* card shadow */
-margin-left: 4.165%;
-margin-right: 4.165%;
 box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
 border-radius: 2px;
 }
@@ -113,7 +111,6 @@ border-radius: 2px;
 
 
 .status {
-  margin-top: 18.12px;
   width: 93.91px;
 height: 30.96px;
 border: 2.39498px solid #1EA54C;
@@ -139,6 +136,7 @@ color: #1EA54C;
   background-color: #1EA54C;
   display: inline-block;
   position: relative;
+  left: 11px;
   top: 3px;
 }
 .circle2{
@@ -148,7 +146,7 @@ color: #1EA54C;
   border-radius: 50%;
   display: inline-block;
   position: relative;
-  right: 15px;
+  right: 3.8px;
   top: 1px;
 }
 .circle3{
@@ -159,7 +157,7 @@ color: #1EA54C;
   background-color: #1EA54C;
   display: inline-block;
   position: relative;
-  right: 27px;
+  right: 15.5px;
   bottom: 1px;
 }
 

@@ -6,7 +6,7 @@
 }
 
 .hackname {
-  padding-top: 72px;
+  padding-top: 36px;
   font-family: Fira Code;
   font-style: normal;
   font-weight: bold;
@@ -20,10 +20,10 @@
 }
 
 .details {
-  padding-top: 48px;
+  padding-top: 24px;
 }
 .details2 {
-  padding-top: 48px;
+  padding-top: 24px;
 }
 nbg {
   font-family: Nunito Sans;
@@ -42,6 +42,20 @@ input#image_uploads {
   opacity: 0;
 }
 
+input {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  /* identical to box height */
+  letter-spacing: 0.04em;
+
+  color: #e7efef;
+
+  opacity: 0.7;
+}
+
 .inputimg {
   width: 101.6%;
 }
@@ -49,7 +63,7 @@ input#image_uploads {
 .textbox {
   margin-top: 4px;
 
-  width: 84.25%;
+  width: 91.5%;
   height: 43.14px;
 
   background: #2e3d4c;
@@ -64,7 +78,7 @@ input#image_uploads {
 
 .textboxbio {
   margin-top: 4px;
-  width: 84.25%;
+  width: 91.5%;
   height: 296px;
 
   background: #2e3d4c;
@@ -86,12 +100,10 @@ input#image_uploads {
   border: none;
 }
 
-
 input:focus {
   outline: none;
   border-color: #008249;
 }
-
 
 textarea:focus {
   outline: none;
@@ -124,7 +136,7 @@ textarea:focus {
 .box {
   margin-top: 4px;
 
-  width: 32.9vw;
+  width: 36vw;
   height: 200px;
 
   vertical-align: middle;

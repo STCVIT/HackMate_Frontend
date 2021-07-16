@@ -6,7 +6,7 @@
 }
 
 .nbw {
-  margin-top: 72px;
+  margin-top: 36px;
   font-family: Fira Code;
   font-style: normal;
   font-weight: bold;
@@ -19,7 +19,7 @@
 }
 
 .btns {
-  padding-top: 32px;
+  padding-top: 16px;
 }
 
 .addprojects {
@@ -43,6 +43,10 @@
   /* Text Colour */
 
   color: #e7efef;
+}
+
+input::placeholder{
+    font-family: Nunito Sans;
 }
 
 .about {
@@ -86,8 +90,7 @@ nbg {
   box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
   border: none;
   width: 320px;
-  margin-left: 12px;
-  margin-right: 12px;
+  padding-left: 12px;
 }
 .card * {
   background: #1d2833;
@@ -175,7 +178,7 @@ input:focus {
 }
 
 .addprojects1 {
-  width: 220px;
+  width: 180px;
   height: 41px;
   background: transparent;
   border: 3px solid #1ea54c;

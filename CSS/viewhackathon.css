@@ -10,7 +10,7 @@
 }
 
 .hackathons {
-  padding-top: 72px;
+  padding-top: 36px;
   font-family: Fira Code;
   font-style: normal;
   font-weight: bold;
@@ -51,17 +51,17 @@ nb1 {
 
 .box {
   background: #1d2833;
-  width: 353.33px;
+  width: 317px;
   height: 424px;
   margin-top: 57px;
   margin-left: 2.5vw;
-  margin-right: 5vw;
+  margin-right: 2.5vw;
   box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
   border-radius: 4px;
 }
 
 .innertxt {
-  padding-left: 43.09px;
+  padding-left: 25px;
 }
 
 .box * {
@@ -191,6 +191,7 @@ color: #1EA54C;
   background-color: #1EA54C;
   display: inline-block;
   position: relative;
+  left: 7px;
   top: 3px;
 }
 .circle2{
@@ -200,7 +201,7 @@ color: #1EA54C;
   border-radius: 50%;
   display: inline-block;
   position: relative;
-  right: 12px;
+  right: 5.2px;
   top: 1px;
 }
 .circle3{
@@ -211,7 +212,7 @@ color: #1EA54C;
   background-color: #1EA54C;
   display: inline-block;
   position: relative;
-  right: 20px;
+  right: 13px;
   bottom: 1px;
 }
 .btnkm {
@@ -230,6 +231,10 @@ color: #1EA54C;
   /* identical to box height */
 
   letter-spacing: 0.04em;
+}
+
+.namebanner{
+  width: 317px;
 }
 
 .pagenation{

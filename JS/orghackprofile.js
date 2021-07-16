@@ -1,6 +1,5 @@
 $(document).ready(function () {
   $("#nav").load("../Assets/Header/headero.txt");
-  $("#foobottom").load("../Assets/Footer/footer.txt");
 });
 
 axios(`${url}/organiser/hack/${window.location.search.split("?")[1]}`, {

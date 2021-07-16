@@ -1,6 +1,5 @@
 $(document).ready(function () {
     $("#nav").load("../Assets/Header/headerwobtn.txt");
-    $("#foobottom").load("../Assets/Footer/footer.txt");
 });
 let photo ="HEY";
 function firstpage_profile(){

@@ -95,7 +95,7 @@ html,body{
 .check-label{
 	font-family: Nunito Sans;
 	font-style: normal;
-	font-weight: 600;
+	font-weight: 400;
 	font-size: 14.2788px;
 	letter-spacing: 0.04em;
 	margin-left: 10px;	
@@ -253,7 +253,7 @@ html,body{
 .text15{
 	font-family: Nunito Sans;
 	font-style: normal;
-	font-weight: bold;
+	font-weight: 600;
 	font-size: 14px;
 	line-height: 19px;
 	letter-spacing: 0.12em;

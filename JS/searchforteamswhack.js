@@ -1,12 +1,12 @@
-const app = document.querySelector('.text3');
-const fweb = document.querySelector('.text6');
-const bweb = document.querySelector('.text7');
-const ml = document.querySelector('.text8');
-const mgmt = document.querySelector('.text10');
-const design = document.querySelector('.text9');
-const block = document.querySelector('.text11');
-const cyber = document.querySelector('.text12');
-const all = document.querySelector('.text5');
+const app = document.querySelector('.button1');
+const fweb = document.querySelector('.button5');
+const bweb = document.querySelector('.button6');
+const ml = document.querySelector('.button7');
+const mgmt = document.querySelector('.button9');
+const design = document.querySelector('.button8');
+const block = document.querySelector('.button10');
+const cyber = document.querySelector('.button11');
+const all = document.querySelector('.button');
 
 var n = 0;
 app.addEventListener('click', function() {

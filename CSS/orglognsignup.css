@@ -65,7 +65,7 @@ input {
   color: #ffffff;
   font-family: inherit;
   font-size: 20px;
-  padding: .8em 0 10px .8em;
+  padding: 15px 0 10px .8em;
   border: 2px solid rgba(30, 165, 76, 0.2);
   outline: 0;
   display: inline-block;
@@ -76,7 +76,7 @@ input {
 }
 .form-wrap form .button {
   width: 100%;
-  margin-top: 58px;
+  margin-top: 40px;
   padding: .8em 0 10px .8em;
   background-color: #226045;
   border: none;

@@ -23,7 +23,7 @@ html,body{
   color: #ffffff;
   font-family: "Fira Code";
   font-size: 26px;
-  padding: .8em 0 10px .8em;
+  padding: 12px 0 8px .8em;
   border: 2px solid rgba(30, 165, 76, 0.2);
   outline: 0;
   display: inline-block;
@@ -56,7 +56,7 @@ html,body{
   font-weight: 800;
   font-size: 15.2px;
 }
-.button1{
+.button1, .button5, .button6, .button7, .button8, .button9, .button10, .button11{
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
@@ -143,7 +143,7 @@ html,body{
   color: #ffffff;
   font-family: "Fira Code";
   font-size: 26px;
-  padding: .8em 0 10px .8em;
+  padding: 12px 0 8px .8em;
   border: 2px solid rgba(30, 165, 76, 0.2);
   outline: 0;
   display: inline-block;

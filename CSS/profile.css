@@ -2,24 +2,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@800&display=swap');
 *{
     background-color: #23303d;
-    font-family: "Fira Code", monospace;
     color: #e7efef;
   }
 /*Mainsection CSS*/
 .form-control{
     max-width: 478px;
-    box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
-    border: 3px solid rgba(30, 165, 76, 0.2);
+    max-height:56px;
+    border: 2px solid rgba(30, 165, 76, 0.2);
     border-radius:2px ;
     background-color: #2E3D4C;
-    font-family: "Fira Code", monospace;
+    font-family: 'Nunito Sans';
     font-style: normal;
-    font-weight: bold;
     font-size: 17px;
     line-height: 23px;
     letter-spacing: 0.04em;
     color: #ffffff!important;
     outline: 0;
+}
+.mb-3{
+  margin-bottom: 0rem!important;
 }
 .mb-3 small{
   visibility: hidden;
@@ -27,7 +28,7 @@
 input,input:focus {
   outline: none!important;
   border: 2px solid rgba(30, 165, 76, 0.2)!important;
-  box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83)!important;
+  box-shadow: 2px 2px 2px 1px rgba(24, 33, 42, 0.83)!important;
 }
 input:focus{
   border-color:rgba(11, 226, 83, 0.329)!important;
@@ -35,7 +36,7 @@ input:focus{
 textarea,textarea:focus {
   outline: none!important;
   border: 2px solid rgba(30, 165, 76, 0.2)!important;
-  box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83)!important;
+  box-shadow: 2px 2px 2px 1px rgba(24, 33, 42, 0.83)!important;
 }
 textarea:focus{
   border-color:rgba(11, 226, 83, 0.329)!important;
@@ -115,13 +116,45 @@ input{
 }
 .maintext{
     font-family: 'Fira Code', monospace;
+    background-color: #23303d;
     font-style: normal;
-    font-weight: bold;
+    font-weight:700 !important;
     padding-top:15%;
-    font-size: 36px;
+    font-size:36px;
     line-height: 47px;
     letter-spacing: 0.04em;
     color: #E7EFEF;
+}
+.maintext h2{
+  font-weight:bold !important;
+}
+.maincap{
+  font-family: 'Fira Code', monospace;
+  background-color: #23303d;
+  font-style: normal;
+  font-weight:700 !important;
+  font-size:36px;
+  padding-top:10%;
+  line-height: 47px;
+  letter-spacing: 0.04em;
+  color: #E7EFEF;
+}
+.maincap h2{
+  font-weight:bold !important;
+}
+.maintext2{
+  font-family: 'Fira Code', monospace;
+  background-color: #23303d;
+  font-style: normal;
+  font-weight:700 !important;
+  padding-top:15%;
+  font-size:36px;
+  line-height: 47px;
+  letter-spacing: 0.04em;
+  color: #E7EFEF;
+}
+.maintext2 h2{
+  font-weight:bold !important;
 }
 #dashes{
      padding-top: 50px;
@@ -142,7 +175,7 @@ input{
     overflow: hidden;
     max-width:642px;
     max-height:463.76px;
-    padding-top:100px;
+    padding-top:15%;
 }
 #man{
     overflow: hidden;
@@ -172,6 +205,11 @@ input{
   font-family: "Fira Code", monospace;
 }
 /*mainsection media queries*/
+@media only screen and (min-width:601px){
+  .maintext2{
+    display:none;
+  }
+}
 @media only screen and (max-width:600px){
  #man{
     display: none;
@@ -193,6 +231,22 @@ input{
 }
 .heading_top{
   padding-bottom:20px;
+}
+.maintext{
+  font-weight: 700;
+  font-size: 25.4313px;
+  line-height: 32px;
+  letter-spacing: 0.04em;
+}
+.maintext2{
+  padding-top:20%;
+  font-weight: 700;
+  font-size: 25.4313px;
+  line-height: 32px;
+  letter-spacing: 0.04em;
+}
+#dashes2{
+  padding-top:0%;
 }
 }
 @media only screen and  (max-width:990px){
@@ -227,19 +281,21 @@ input{
   height:356px;
 }
 }
+@media only screen and (max-width:413px){
+  .maincap{
+    font-size: 25.4313px;
+  }
+}
 @media only screen and (max-width:767px){
   .m{
   justify-content:center;
-  }
-  .maincap{
-    padding-top: 10%;
   }
 }
 /*skills page*/
 .skill_selection{
   padding-bottom:30px;
   max-width:478px;
-  text-align: end;
+  text-align:start;
 }
 .top-button{
   padding-bottom:20px;
@@ -252,9 +308,6 @@ input{
 }
 .bottommost-button{
   padding-bottom:20px;
-}
-.maincap{
-  padding-right: 20%;
 }
 
 .button1{

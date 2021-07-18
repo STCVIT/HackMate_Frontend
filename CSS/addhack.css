@@ -104,6 +104,10 @@ input:focus {
   outline: none;
   border-color: #008249;
 }
+select:focus {
+  outline: none;
+  border-color: #008249;
+}
 
 textarea:focus {
   outline: none;

@@ -37,11 +37,15 @@
                 <div class="text projname" style="margin-top: 70px;">
                     Enter Project Name.
                 </div>
-                <input class="textbox" type="text" name="" id="" placeholder="Project Name"> <br>
-                <div class="btns" style="margin-top: 54.43px; margin-bottom: 71px;">
-                    <a class=" start btn btn-success" href="./UserAdd_Project.html" role="button">Start</a>
-                    <a class=" start btn btn-success" href="#" role="button">Not Now</a>
-                </div>
+                <form name="myform" method="post">
+                    <input class="textbox" type="text" name="projectname" id="" placeholder="Project Name"> <br>
+
+                    <div class="btns" style="margin-top: 54.43px; margin-bottom: 71px;">
+                        <a class=" start btn btn-success" onclick="project_name()" href="./UserAdd_Project.html"
+                            role="button">Start</a>
+                        <a class=" start btn btn-success" href="#" role="button">Not Now</a>
+                    </div>
+                </form>
             </div>
             <div class="col-md-3 col-1"></div>
         </div>

@@ -35,6 +35,7 @@ document.querySelector("form").addEventListener("submit", function (event) {
         start: start,
         end: end,
         poster: "aGV5",
+        min_team_size: mints,
         max_team_size: maxts,
         mode_of_conduct: moc,
         prize_pool: prizes,

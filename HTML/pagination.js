@@ -3,9 +3,9 @@ var Pagination = {
 
   Extend: function (data) {
     data = data || {};
-    Pagination.size = data.size || 300;
-    Pagination.page = data.page || 1;
-    Pagination.step = data.step || 3;
+    Pagination.size = data.size;
+    Pagination.page = data.page;
+    Pagination.step = data.step;
   },
 
 
@@ -17,11 +17,15 @@ var Pagination = {
   },
 
   Last: function () {
-    Pagination.code += "<i>...</i><a>" + Pagination.size + "</a>";
+    Pagination.code +=
+      "<i style='margin-left: 11px;' >...</i><button class='pagenation' onclick='events(event)'>" +
+      Pagination.size +
+      "</button>";
   },
 
   First: function () {
-    Pagination.code += "<a>1</a><i>...</i>";
+    Pagination.code +=
+      "<button class='pagenation' onclick='events(event)'>1</button><i style='margin-left: 11px;'>...</i>";
   },
 
   Click: function () {
@@ -116,3 +120,21 @@ var init = function () {
 };
 
 document.addEventListener("DOMContentLoaded", init, false);
+
+function events(event) {
+  console.log(event);
+  var eventocc = event.target.innerHTML;
+  console.log(eventocc);
+  axios(`${url}/getHacks/all?page=${eventocc}`, {
+    headers: {
+      Authorization: "Bearer " + auth,
+    },
+  })
+    .then((response) => {
+      hacks = response.data;
+      console.log(hacks);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}

@@ -52,6 +52,9 @@ input:-webkit-autofill:active {
 input#git.form-control{
   background-color:#2E3D4C;
 }
+input#design.form-control{
+  background-color:#2E3D4C;
+}
 input#email.form-control{
   background-color:#2E3D4C;
 }

@@ -16,7 +16,7 @@ $(document).ready(function () {
        user = response.data;
        console.log(user);
        document.querySelector(".caption h2").innerHTML = toTitleCase(user.name);
-       document.querySelector("#name").innerHTML = toTitleCase(user.name);
+       document.querySelector("#name").innerHTML = user.name;
        document.querySelector("#username").innerHTML = user.username;
        document.querySelector("#email").innerHTML = user.email;
        document.querySelector("#college").innerHTML = user.college;
@@ -56,7 +56,7 @@ function toTitleCase(str) {
     return str.replace(
       /\w\S*/g,
       function(txt) {
-        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase() + ".";
       }
     );
   }

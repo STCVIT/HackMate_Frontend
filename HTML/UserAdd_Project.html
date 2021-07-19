@@ -22,26 +22,30 @@
         </div>
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12">
-                <form id="form">
+                <form id="project_form" name="project_form" method="post">
                       <div class="mb-3">
                         <label for="github" class="form-label">GITHUB LINK</label>
                         <input type="link" class="form-control" autocomplete="off" id="git" placeholder="GITHUB link">
+                        <small>Error</small>
                       </div>
                       <div class="mb-3">
                         <label for="linkedln" class="form-label">DESIGN</label>
-                        <input type="text" class="form-control" autocomplete="off" id="linkedln" placeholder="Design">
+                        <input type="text" class="form-control" autocomplete="off" id="design" placeholder="Design">
+                        <small>Error</small>
                       </div>
                       <div class="mb-3">
                         <label for="personal_website" class="form-label">DEMO LINK</label>
                         <input type="text" class="form-control" autocomplete="off" id="personal_website" placeholder="Demo Link">
+                        <small>Error</small>
                       </div>
                 </form>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12">
-                <form id="form">
+                <form id="form" name="form" method="post">
                     <div class="mb-3">
                         <label for="bio" class="form-label">DESCRIPTION</label>
-                        <textarea class="form-control"rows="8" spellcheck="false" id="bio" placeholder="Bio"></textarea>
+                        <textarea class="form-control"rows="8" spellcheck="false" id="bio" required placeholder="Bio"></textarea>
+                        <small>Error</small>
                       </div>
                 </form>   
             </div>
@@ -59,5 +63,6 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-<script src="../JS/profile2.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="../JS/UserAdd_Project.js"></script>
 </html>

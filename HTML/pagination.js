@@ -1,38 +1,31 @@
 var Pagination = {
   code: "",
-
-  Extend: function (data) {
-    data = data || {};
+  Extend: function (data){
     Pagination.size = data.size;
     Pagination.page = data.page;
     Pagination.step = data.step;
   },
-
-
   Add: function (s, f) {
     for (var i = s; i < f; i++) {
-      Pagination.code += "<button class='pagenation' onclick='events(event)'>" + i + "</button>";
-
+      Pagination.code +=
+        "<button class='pagenation' onclick='events(event)'>" +
+        i +
+        "</button>";
     }
   },
-
   Last: function () {
     Pagination.code +=
       "<i style='margin-left: 11px;' >...</i><button class='pagenation' onclick='events(event)'>" +
       Pagination.size +
       "</button>";
   },
-
   First: function () {
-    Pagination.code +=
-      "<button class='pagenation' onclick='events(event)'>1</button><i style='margin-left: 11px;'>...</i>";
+    Pagination.code += "";
   },
-
   Click: function () {
     Pagination.page = +this.innerHTML;
     Pagination.Start();
   },
-
   Prev: function () {
     Pagination.page--;
     if (Pagination.page < 1) {
@@ -40,7 +33,6 @@ var Pagination = {
     }
     Pagination.Start();
   },
-
   Next: function () {
     Pagination.page++;
     if (Pagination.page > Pagination.size) {
@@ -48,7 +40,6 @@ var Pagination = {
     }
     Pagination.Start();
   },
-
   Bind: function () {
     var a = Pagination.e.querySelectorAll(".pagenation");
     for (var i = 0; i < a.length; i++) {
@@ -56,23 +47,21 @@ var Pagination = {
       a[i].addEventListener("click", Pagination.Click, false);
     }
   },
-
   Finish: function () {
     Pagination.e.innerHTML = Pagination.code;
     Pagination.code = "";
     Pagination.Bind();
   },
-
   Start: function () {
-    if (Pagination.size < Pagination.step * 2 + 6) {
+    if (Pagination.size < Pagination.step * 2 + 4) {
       Pagination.Add(1, Pagination.size + 1);
     } else if (Pagination.page < Pagination.step * 2 + 1) {
-      Pagination.Add(1, Pagination.step * 2 + 4);
+      Pagination.Add(1, Pagination.step * 2 + 2);
       Pagination.Last();
     } else if (Pagination.page > Pagination.size - Pagination.step * 2) {
       Pagination.First();
       Pagination.Add(
-        Pagination.size - Pagination.step * 2 - 2,
+        Pagination.size - Pagination.step * 2 - 1,
         Pagination.size + 1
       );
     } else {
@@ -85,41 +74,43 @@ var Pagination = {
     }
     Pagination.Finish();
   },
-
   Buttons: function (e) {
     var nav = e.getElementsByTagName("a");
     nav[0].addEventListener("click", Pagination.Prev, false);
     nav[1].addEventListener("click", Pagination.Next, false);
   },
-
   Create: function (e) {
     var html = [
       "<a>&#9668;</a>", // previous button
       "<span></span>", // pagination container
       "<a>&#9658;</a>", // next button
     ];
-
     e.innerHTML = html.join("");
     Pagination.e = e.getElementsByTagName("span")[0];
     Pagination.Buttons(e);
   },
-
   Init: function (e, data) {
     Pagination.Extend(data);
     Pagination.Create(e);
     Pagination.Start();
   },
 };
-
-var init = function () {
+var init = async function () {
+    // const res = await axios(`${url}/getHacks/all?page=1`, {
+    //   headers: {
+    //     Authorization: "Bearer " + auth,
+    //   },
+    // });
+    // const length = await res.data.length;
+    // console.log(length);
+    total_hacks = Math.ceil(length / 6);
   Pagination.Init(document.getElementById("pagination"), {
-    size: 30, // pages size
-    page: 1, // selected page
-    step: 3, // pages before and after current
+    size: 16,
+    page: 1,
+    step: 1,
   });
 };
-
-document.addEventListener("DOMContentLoaded", init, false);
+init();
 
 function events(event) {
   console.log(event);

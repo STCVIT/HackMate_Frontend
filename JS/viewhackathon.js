@@ -16,40 +16,40 @@ $(document).ready(function () {
     .then((response) => {
       hacks = response.data;
       console.log(hacks);
-      for (var i = 0; i < hacks.length; i++) {
+      for (var i = 0; i < hacks.final.length; i++) {
         document.querySelector(".wrapper").innerHTML +=
           "<div class='box'><img src='../Assets/Images/Name Banner.png' class='namebanner' alt=''> <div class='innertxt'> <nb1 class='hackname'>" +
-          hacks[i].name +
+          hacks.final[i].name +
           " <a href='" +
-          hacks[i].website +
+          hacks.final[i].website +
           "'><img src='../Assets/Images/Hack Link.svg' alt=''></a></nb1> <br> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw class='startd'>" +
-          //hacks[i].start.split("T")[0] +
-          new Date(hacks[i].start.split("T")[0]).toString().split(" ")[2] +
+          //hacks.final[i].start.split("T")[0] +
+          new Date(hacks.final[i].start.split("T")[0]).toString().split(" ")[2] +
           " " +
-          new Date(hacks[i].start.split("T")[0]).toString().split(" ")[1] +
+          new Date(hacks.final[i].start.split("T")[0]).toString().split(" ")[1] +
           " " +
-          new Date(hacks[i].start.split("T")[0]).toString().split(" ")[3] +
+          new Date(hacks.final[i].start.split("T")[0]).toString().split(" ")[3] +
           " " +
           "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw class='endd'>" +
-          //hacks[i].end.split("T")[0] +
-          new Date(hacks[i].end.split("T")[0]).toString().split(" ")[2] +
+          //hacks.final[i].end.split("T")[0] +
+          new Date(hacks.final[i].end.split("T")[0]).toString().split(" ")[2] +
           " " +
-          new Date(hacks[i].end.split("T")[0]).toString().split(" ")[1] +
+          new Date(hacks.final[i].end.split("T")[0]).toString().split(" ")[1] +
           " " +
-          new Date(hacks[i].end.split("T")[0]).toString().split(" ")[3] +
+          new Date(hacks.final[i].end.split("T")[0]).toString().split(" ")[3] +
           " " +
           "</nbw> </div> </div> </div> </div> <div class='nbg'> <nbg>Venue: </nbg> <nbw class='venue'>" +
-          hacks[i].venue +
+          hacks.final[i].venue +
           "</nbw> </div> <div class='nbg'> <nbg>Team Size: </nbg> <nbw class='ts'>" +
-          +hacks[i].min_team_size +
+          +hacks.final[i].min_team_size +
           "-" +
-          hacks[i].max_team_size +
+          hacks.final[i].max_team_size +
           "</nbw><nbw> Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
-          hacks[i].prize_pool +
+          hacks.final[i].prize_pool +
           "</div><div class='status'><circle class='circle1'></circle><circle class='circle2'></circle><circle class='circle3'></circle>" +
-          hacks[i].mode_of_conduct +
+          hacks.final[i].mode_of_conduct +
           "</div> <a class='btnkm btn btn-success' href='./hackdetails.html?" +
-          hacks[i]._id +
+          hacks.final[i]._id +
           "' role='button'>Know More</a> </div> </div>";
 
         document.querySelector(".wrapper1").innerHTML =
@@ -155,36 +155,36 @@ function events(event) {
       for (var i = 0; i < hacks.length; i++) {
         document.querySelector(".wrapper").innerHTML +=
           "<div class='box'><img src='../Assets/Images/Name Banner.png' class='namebanner' alt=''> <div class='innertxt'> <nb1 class='hackname'>" +
-          hacks[i].name +
+          hacks.final[i].name +
           " <a href='" +
-          hacks[i].website +
-          "'><img src='../Assets/Images/Hack Link.svg' alt=''></a></nb1> <br> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw class='startd'>" + //hacks[i].start.split("T")[0] +
-          new Date(hacks[i].start.split("T")[0]).toString().split(" ")[2] +
+          hacks.final[i].website +
+          "'><img src='../Assets/Images/Hack Link.svg' alt=''></a></nb1> <br> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw class='startd'>" + //hacks.final[i].start.split("T")[0] +
+          new Date(hacks.final[i].start.split("T")[0]).toString().split(" ")[2] +
           " " +
-          new Date(hacks[i].start.split("T")[0]).toString().split(" ")[1] +
+          new Date(hacks.final[i].start.split("T")[0]).toString().split(" ")[1] +
           " " +
-          new Date(hacks[i].start.split("T")[0]).toString().split(" ")[3] +
+          new Date(hacks.final[i].start.split("T")[0]).toString().split(" ")[3] +
           " " +
           "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw class='endd'>" +
-          //hacks[i].end.split("T")[0] +
-          new Date(hacks[i].end.split("T")[0]).toString().split(" ")[2] +
+          //hacks.final[i].end.split("T")[0] +
+          new Date(hacks.final[i].end.split("T")[0]).toString().split(" ")[2] +
           " " +
-          new Date(hacks[i].end.split("T")[0]).toString().split(" ")[1] +
+          new Date(hacks.final[i].end.split("T")[0]).toString().split(" ")[1] +
           " " +
-          new Date(hacks[i].end.split("T")[0]).toString().split(" ")[3] +
+          new Date(hacks.final[i].end.split("T")[0]).toString().split(" ")[3] +
           " " +
           "</nbw> </div> </div> </div> </div> <div class='nbg'> <nbg>Venue: </nbg> <nbw class='venue'>" +
-          hacks[i].venue +
+          hacks.final[i].venue +
           "</nbw> </div> <div class='nbg'> <nbg>Team Size: </nbg> <nbw class='ts'>" +
-          +hacks[i].min_team_size +
+          +hacks.final[i].min_team_size +
           "-" +
-          hacks[i].max_team_size +
+          hacks.final[i].max_team_size +
           "</nbw><nbw> Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
-          hacks[i].prize_pool +
+          hacks.final[i].prize_pool +
           "</div><div class='status'><circle class='circle1'></circle><circle class='circle2'></circle><circle class='circle3'></circle>" +
-          hacks[i].mode_of_conduct +
+          hacks.final[i].mode_of_conduct +
           "</div> <a class='btnkm btn btn-success' href='./hackdetails.html?" +
-          hacks[i]._id +
+          hacks.final[i]._id +
           "' role='button'>Know More</a> </div> </div>";
 
         document.querySelector(".wrapper1").innerHTML =
@@ -210,34 +210,34 @@ function getdeets(event) {
       for (var i = 0; i < hacks.length; i++) {
         document.querySelector(".wrapper").innerHTML +=
           "<div class='box'><img src='../Assets/Images/Name Banner.png' class='namebanner' alt=''> <div class='innertxt'> <nb1 class='hackname'>" +
-          hacks[i].name +
+          hacks.final[i].name +
           " <a href='" +
-          hacks[i].website +
-          "'><img src='../Assets/Images/Hack Link.svg' alt=''></a></nb1> <br> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw class='startd'>" + //hacks[i].start.split("T")[0] +
-          new Date(hacks[i].start.split("T")[0]).toString().split(" ")[2] +
+          hacks.final[i].website +
+          "'><img src='../Assets/Images/Hack Link.svg' alt=''></a></nb1> <br> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw class='startd'>" + //hacks.final[i].start.split("T")[0] +
+          new Date(hacks.final[i].start.split("T")[0]).toString().split(" ")[2] +
           " " +
-          new Date(hacks[i].start.split("T")[0]).toString().split(" ")[1] +
+          new Date(hacks.final[i].start.split("T")[0]).toString().split(" ")[1] +
           " " +
-          new Date(hacks[i].start.split("T")[0]).toString().split(" ")[3] +
+          new Date(hacks.final[i].start.split("T")[0]).toString().split(" ")[3] +
           " " +
           "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw class='endd'>" +
-          //hacks[i].end.split("T")[0] +
-          new Date(hacks[i].end.split("T")[0]).toString().split(" ")[2] +
+          //hacks.final[i].end.split("T")[0] +
+          new Date(hacks.final[i].end.split("T")[0]).toString().split(" ")[2] +
           " " +
-          new Date(hacks[i].end.split("T")[0]).toString().split(" ")[1] +
+          new Date(hacks.final[i].end.split("T")[0]).toString().split(" ")[1] +
           " " +
-          new Date(hacks[i].end.split("T")[0]).toString().split(" ")[3] +
+          new Date(hacks.final[i].end.split("T")[0]).toString().split(" ")[3] +
           " " +
           "</nbw> </div> </div> </div> </div> <div class='nbg'> <nbg>Venue: </nbg> <nbw class='venue'>" +
-          hacks[i].venue +
+          hacks.final[i].venue +
           "</nbw> </div> <div class='nbg'> <nbg>Team Size: </nbg> <nbw class='ts'>" +
-          +hacks[i].min_team_size +
+          +hacks.final[i].min_team_size +
           "-" +
-          hacks[i].max_team_size +
+          hacks.final[i].max_team_size +
           "</nbw><nbw> Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
-          hacks[i].prize_pool +
+          hacks.final[i].prize_pool +
           "</div><div class='status'><circle class='circle1'></circle><circle class='circle2'></circle><circle class='circle3'></circle>" +
-          hacks[i].mode_of_conduct +
+          hacks.final[i].mode_of_conduct +
           "</div> <a class='btnkm btn btn-success' href='./hackdetails.html' role='button'>Know More</a> </div> </div>";
 
         document.querySelector(".wrapper1").innerHTML =

@@ -7,7 +7,7 @@
 /*Mainsection CSS*/
 .form-control{
     max-width: 478px;
-    max-height:56px;
+    min-height:36px;
     border: 2px solid rgba(30, 165, 76, 0.2);
     border-radius:2px ;
     background-color: #2E3D4C;
@@ -50,6 +50,9 @@ input:-webkit-autofill:active {
   -webkit-focus-ring:unset;
 }
 input#git.form-control{
+  background-color:#2E3D4C;
+}
+input#design.form-control{
   background-color:#2E3D4C;
 }
 input#email.form-control{

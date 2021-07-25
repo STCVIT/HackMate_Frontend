@@ -37,46 +37,55 @@
         </div>
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12">
-                <form id="form" name="par_form" method="post">
+                <form id="par_form" name="par_form" method="post">
                     <div class="mb-3">
                         <label for="name" class="form-label">NAME</label>
                         <input type="text" class="form-control" id="name" autocomplete="off" placeholder="Name">
+                        <small>Error Message</small>
                       </div>
                       <div class="mb-3">
                         <label for="username" class="form-label">USERNAME</label>
                         <input type="text" class="form-control" id="username" autocomplete="off" placeholder="Username">
+                        <small>Error Message</small>
                       </div>
                       <div class="mb-3">
                         <label for="email" class="form-label">EMAIL</label>
-                        <input type="email" class="form-control" id="email" autocomplete="off"  placeholder="Email">
+                        <div type="email" class="form-control" id="email" autocomplete="off"  placeholder="Email"></div>
+                        <small>Error Message</small>
                       </div>
                       <div class="mb-3">
                         <label for="college" class="form-label">COLLEGE/UNIVERSITY</label>
                         <input type="text" class="form-control" id="college" autocomplete="off" placeholder="College/University">
+                        <small>Error Message</small>
                       </div>
                       <div class="mb-3">
                         <label for="github" class="form-label">GITHUB LINK</label>
                         <input type="link" class="form-control" id="git" autocomplete="off"  placeholder="GITHUB link">
+                        <small>Error Message</small>
                       </div>
                       <div class="mb-3">
                         <label for="linkedln" class="form-label">LINKEDIN</label>
                         <input type="text" class="form-control" id="linkedln" autocomplete="off" placeholder="Linkedln">
+                        <small>Error Message</small>
                       </div>
                       <div class="mb-3">
                         <label for="personal_website" class="form-label">PERSONAL WEBSITE</label>
                         <input type="text" class="form-control" id="personal_website" autocomplete="off" placeholder="Personal Website">
+                        <small>Error Message</small>
                       </div>
                       <div class="mb-3">
                         <label for="year" class="form-label">YEAR OF GRADUATION</label>
                         <input type="text" class="form-control" id="year" autocomplete="off" placeholder="Year of Graduation">
+                        <small>Error Message</small>
                       </div>
                 </form>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12">
-                <form id="form">
+                <form id="form" name="form" method="post">
                     <div class="mb-3">
                         <label for="bio" class="form-label">BIO</label>
                         <textarea class="form-control"rows="8" spellcheck="false" id="bio" placeholder="Bio"></textarea>
+                        <small>Error Message</small>
                       </div>
                 </form>
                 <div class="d-flex justify-content-center">
@@ -144,5 +153,6 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="../JS/profile_userview.js"></script>
 </html>

@@ -97,7 +97,7 @@ function checkInputs(Name,username,college,year){
         onError(Name,"Enter a valid name");
     }
     //username should be only alphabets and of max length 30
-    if(n<=10){
+    if(n<=20){
             onSuccess(username);
             flag=flag+1;
     }

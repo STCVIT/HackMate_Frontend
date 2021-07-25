@@ -13,9 +13,9 @@ axios(`${url}/getHacks/${window.location.search.split("?")[1]}`, {
     console.log(hack);
 
     document.querySelector(".parent").innerHTML =
-      "<div class='row' style='padding-top: 54px;'> <div class='col-1'></div> <div class='col-10 main'> <img src='../Assets/Images/Hack Deets Banner.svg' style='width: 83.333vw;' alt=''> <div class='row' style='margin: 41.89px 0 0;'> <div class='col-1'></div> <div class='col-lg-4 col-12 justify-content-center text-center'> <img src='../Assets/Images/DevSpace.svg' style='width: 200px;height: 200px;' alt=''> </div> <div class='col-lg-6 col-12 text-center'> <div class='nbw text-lg-start text-center  '>" +
+      "<div class='row' style='padding-top: 54px;'> <div class='col-1'></div> <div class='col-10 main'> <img src='../Assets/Images/Hack Deets Banner.svg' style='width: 83.333vw;' alt=''> <div class='row' style='margin: 41.89px 0 0;'> <div class='col-1'></div> <div class='col-lg-4 col-12 justify-content-center text-center'> <img src='"+hack.poster+"' style='width: 200px;height: 200px;' alt=''> </div> <div class='col-lg-6 col-12 text-center'> <div class='nbw text-lg-start text-center  '>" +
       hack.name +
-      " <a href='" +
+      " <a target='_blank' href='https://" +
       hack.website +
       "'><img src='../Assets/Images/Attachment.svg' alt=''></a> <img src='../Assets/Images/"+hack.mode_of_conduct+".svg'> </div> <div class='row' style='margin-top: 25.91px;'> <div class='display1 col-3'> <nbgre>Begins:</nbgre> <div class='nbwsd' style='padding-bottom: 5.65px;'>" +
       //hack.start.split("T")[0] +

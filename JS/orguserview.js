@@ -33,7 +33,7 @@ function deleteacc() {
     })
     .catch((error) => console.error("Error: " + error));
 
-  window.location = "";
+  window.location = "../";
 }
 
 function updateacc() {
@@ -54,6 +54,7 @@ function updateacc() {
     )
     .then((response) => {
       console.log("Success:", response.data);
+      window.location = "";
     })
     .catch((error) => {
       console.error("Error:", error);

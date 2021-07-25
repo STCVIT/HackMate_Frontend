@@ -42,7 +42,7 @@ input#image_uploads {
   opacity: 0;
 }
 
-input {
+input, .textboxbio {
   font-family: Nunito Sans;
   font-style: normal;
   font-weight: 400;

@@ -2,8 +2,8 @@ $(document).ready(function () {
     $("#nav").load("../Assets/Header/headerl.txt");
     $("#foobottom").load("../Assets/Footer/footer.txt");
 });
-const url = 'https://hackportalbackend.herokuapp.com';
-auth = ""
+
+
 axios(`${url}/DN_Team/myTeams?page=1`, {
     headers: {
       Authorization: "Bearer " + auth,

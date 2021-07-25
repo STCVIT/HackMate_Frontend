@@ -21,12 +21,12 @@ let choice = [];
 app.addEventListener('click',function() { 
     if(n%2==0){
         app.style.backgroundColor="#1ea54c";
-        choice.push("App Dev");
+        choice.push("appdev");
         n=n+1;
     }
     else{
         app.style.backgroundColor="#1D2833";
-        choice = arrayRemove(choice,"App Dev");
+        choice = arrayRemove(choice,"appdev");
         n=n+1;
     }
 });
@@ -114,8 +114,7 @@ block.addEventListener('click',function(){
         n=n+1;
     }
 });
-const url='https://hackportalbackend.herokuapp.com';
-auth="eyJhbGciOiJSUzI1NiIsImtpZCI6IjFiYjk2MDVjMzZlOThlMzAxMTdhNjk1MTc1NjkzODY4MzAyMDJiMmQiLCJ0eXAiOiJKV1QifQ.eyJwYXJ0aWNpcGFudCI6dHJ1ZSwiaXNzIjoiaHR0cHM6Ly9zZWN1cmV0b2tlbi5nb29nbGUuY29tL2hhY2twb3J0YWwtNDUwZDAiLCJhdWQiOiJoYWNrcG9ydGFsLTQ1MGQwIiwiYXV0aF90aW1lIjoxNjI3MjE2NDMzLCJ1c2VyX2lkIjoiSkVWVGJnandOclZEbVY1ZExTUmk1endoMng5MiIsInN1YiI6IkpFVlRiZ2p3TnJWRG1WNWRMU1JpNXp3aDJ4OTIiLCJpYXQiOjE2MjcyMTY0MzMsImV4cCI6MTYyNzIyMDAzMywiZW1haWwiOiJzaHJleXV1MjAyMUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJzaHJleXV1MjAyMUBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.RejrBzGXFtDHpBLL8DdRoExbLtwVDhLkTilGy1GeA1AWzxOXOMykZnQl-nfGPvVSIDwY-Av51MJa6pS313PnBLGudikKpb7MXb0q9EmtiVgJsKrqdVnXJ04Cfopei7SeSi2e-CM861lI_rA7TQQLbv93raSrUgW6Q-TsX-BftglC7VFSWQBLLylAjjlh9-7Oj0SAFxvei1RUaulbRR1ZLnG8VAzeu2WgVEMoE8DUSSNIP4L98Hhf3Ja5Mttt_S0HMJ_ihH_1Z8hRiOXFBWwyxwy2Vs4CWGL2Y4pcvjA-e4xlUxCTz0Q7BSR6ISoeeukTL57RGrPTDvcW3Y-8t0VLIw"
+
 function add_skills(){
     axios
   .post(`${url}/skills/mySkills`,

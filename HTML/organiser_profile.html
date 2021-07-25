@@ -1,69 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,height=device-height initial-scale=1.0">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/organiser_profile.css">
-    <link rel="stylesheet" href="../Assets/Header/headerl.css">
-    <link rel="stylesheet" href="../Assets/Footer/footer.css">
-    <title>Hackmate</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,height=device-height initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" type="text/css" href="../CSS/organiser_profile.css">
+  <link rel="stylesheet" href="../Assets/Header/headerl.css">
+  <link rel="stylesheet" href="../Assets/Footer/footer.css">
+  <title>Hackmate</title>
 </head>
+
 <body>
   <div id="nav"></div>
   <div class="mainsection">
     <div class="container">
-        <div class="row">
-           <div class="col-lg-6 col-md-6 d-flex justify-content-center">
-                <img id="organiser" src="../Assets/Images/organiser.svg">
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-12">
-              <div class="d-flex justify-content-start">
-                <div class="maintext">
-                  <h2>A bit about yourself.</h2>
-                </div>
-            </div>
-            <div class="formpart">
-                <form id="form">
-                    <div class="mb-3">
-                        <label for="name" class="form-label" name="username"></label>
-                        <input type="text" name="username" class="form-control" id="name" required placeholder="Name">
-                        <small>Error Message</small>
-                      </div>
-                      <div class="mb-3">
-                        <label for="phone" class="form-label" name="email"></label>
-                        <input type="text" class="form-control" id="phone" name="email" required placeholder="Phone Number">
-                        <small>Error Message</small>
-                      </div>
-                      <div class="mb-3">
-                        <label for="college" class="form-label" name="college"></label>
-                        <input type="text" class="form-control" id="college" name="college" required placeholder="College/University">
-                        <small>Error Message</small>
-                      </div>
-                      <div class="mb-3">
-                        <label for="website" class="form-label" name="website"></label>
-                        <input type="link" class="form-control" id="website"  name="website" placeholder="Website">
-                        <small>Error Message</small>
-                      </div>
-                      <div class="content">
-                        <!--onclick="location.href='./addhack.html'"-->
-                      <button class="btnsmallversion btn btn-success" id="btnaddhack">Add Hack</button>
-                      </div>
-                </form>
-              </div>
-              </div>
-            </div>
+      <div class="row">
+        <div class="col-lg-6 col-md-6 d-flex justify-content-center">
+          <img id="organiser" src="../Assets/Images/organiser.svg">
         </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="d-flex justify-content-start">
+            <div class="maintext">
+              <h2>A bit about yourself.</h2>
+            </div>
+          </div>
+          <div class="formpart">
+            <form id="form">
+              <div class="mb-3">
+                <label for="name" class="form-label" name="username"></label>
+                <input type="text" name="username" class="form-control" id="name" required placeholder="Name">
+                <small>Error Message</small>
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label" name="email"></label>
+                <input type="text" class="form-control" id="phone" name="email" required placeholder="Phone Number">
+                <small>Error Message</small>
+              </div>
+              <div class="mb-3">
+                <label for="college" class="form-label" name="college"></label>
+                <input type="text" class="form-control" id="college" name="college" required
+                  placeholder="College/University">
+                <small>Error Message</small>
+              </div>
+              <div class="mb-3">
+                <label for="website" class="form-label" name="website"></label>
+                <input type="link" class="form-control" id="website" name="website" placeholder="Website">
+                <small>Error Message</small>
+              </div>
+              <div class="content">
+                <!--onclick="location.href='./addhack.html'"-->
+                <button class="btnsmallversion btn btn-success" id="btnaddhack">Add Hack</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
   </div>
   <div id="foobottom">
 
   </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+<script src="../JS/url.js"></script>
 <script src="../JS/organiser_profile.js"></script>
+
 </html>

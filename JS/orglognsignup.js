@@ -98,10 +98,12 @@ function signin(){
       console.log(response.json());
       console.log(response.status);
       if (response.status == 404) {
+        localStorage.setItem("auth", idToken);
         window.location.assign("./organiser_profile.html");
         // location.href = ""; 
     }
       else if(response.status == 200){
+        localStorage.setItem("auth", idToken);
         window.location.assign("./addhack.html");
         // location.href = "";
       }

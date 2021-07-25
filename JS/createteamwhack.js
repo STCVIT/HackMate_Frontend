@@ -121,3 +121,7 @@ $(document).ready(function () {
     $("#nav").load("../Assets/Header/headerl.txt");
     $("#foobottom").load("../Assets/Footer/footer.txt");
 });
+
+const team_name = localStorage.getItem("hack_name");
+console.log(team_name);
+document.getElementById("teams").innerHTML = team_name;

@@ -121,3 +121,36 @@ $(document).ready(function () {
     $("#nav").load("../Assets/Header/headerl.txt");
     $("#foobottom").load("../Assets/Footer/footer.txt");
 });
+
+document.querySelector(".creates").innerHTML = "<input type='submit' class='button' value='Create' onclick='create()'>";
+
+function create(){
+  name = document.getElementById("team_name").value;
+  console.log(name);
+    axios
+    .post(
+      `${url}/Dn_Team/createTeam/${window.location.search.split("?")[1]}`,
+      {
+        name: name,
+      },
+      {
+        headers: {
+          Authorization: "Bearer " + auth,
+        },
+      }
+    )
+  .then((response) => {
+    hack = response.data;
+    console.log(hack);
+    // document.querySelector(".creates").innerHTML = "<input type='submit' class='button' value='Create' onclick='create()'>"
+    if (typeof(Storage) !== "undefined") {
+        localStorage.setItem("hack_name", name);
+        window.location.assign("./createteamwhack.html?" + window.location.search.split("?")[1]);
+        // location.href = ""; 
+    }
+    // window.location.assign("./createteamwhack.html?" + window.location.search.split("?")[1]);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}

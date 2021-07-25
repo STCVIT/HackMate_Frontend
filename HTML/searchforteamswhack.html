@@ -29,7 +29,7 @@
     					<h4 class="card-title">Join via Team Code.</h4>
 						<input type="text" class="text4" id="enter_code" autocomplete="off" placeholder="Enter Code">
 						<div class="joins">
-							<input type="submit" class="button2" value="Join">
+							<input type="submit" class="button2" value="Join" onclick="join()">
 						</div>
   					</div>
 				</div>
@@ -37,7 +37,7 @@
 			</div>
 			<div class="col-lg-7 order-lg-1 col-xs-12">
 				<div class="row">
-					<input type="text" class="text2" id="search_teams" autocomplete="off" placeholder="Search for Teams">
+					<input type="text" id="search" class="text2" autocomplete="off" placeholder="Search for Teams">
 					<div class="row buttons">
 						<ul class="top-button">
 							<button id="active1" class="button"><h6 class="text5">All</h6></button>
@@ -61,12 +61,12 @@
 	</div>
 
 	<div class="container cards_container">
-		<div class="row">
+<!-- 		<div class="row">
 			<div class="col-lg-6 md-12 col-12">
 				<div class="d-flex justify-content-center">
 				<div class="card_of_teams1">
 					<div class="card-body">
-						<h3 class="text13">Lollapalooza</h3>
+						<h3 class="text13" id="team1">Lollapalooza</h3>
 						<div class="row">
 							<div class="col-lg-3 col-md-3 col-3">
 								<h2 class="text14">3</h2>
@@ -82,7 +82,7 @@
 										<img src="../Assets/Images/searcdp1.svg" class="Image1">
 									</div>
 									<div class="col-lg-7 col-md-7 col-7">
-										<h5 class="text16">Dwija Patel</h5>
+										<h5 class="text16" id="name1">Dwija Patel</h5>
 									</div>
 								</div>
 								<div class="row">
@@ -177,12 +177,14 @@
 				</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</div>
 	<div id="foobottom"></div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script type="text/javascript" src="../JS/searchforteamswhack.js"></script>
+<script type="text/javascript" src="../JS/url.js"></script>
 </body>
 </html>

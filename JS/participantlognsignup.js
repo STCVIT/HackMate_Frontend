@@ -97,11 +97,13 @@ function signin(){
     }).then(response => {
       // console.log(response.json());
       console.log(response.status);
-      if (response.status == 404) {
+      if (response.status == 404 && typeof(Storage) !== "undefined") {
+        localStorage.setItem("auth", idToken);
         window.location.assign("./profile.html");
         // location.href = ""; 
     }
-      else if(response.status == 200){
+      else if(response.status == 200 && typeof(Storage) !== "undefined"){
+        localStorage.setItem("auth", idToken);
         window.location.assign("./viewhackathon.html");
         // location.href = "";
       }

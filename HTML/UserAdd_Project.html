@@ -22,7 +22,7 @@
         </div>
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12">
-                <form id="project_form" name="project_form" method="post">
+                <form id="project_form">
                       <div class="mb-3">
                         <label for="github" class="form-label">GITHUB LINK</label>
                         <input type="link" class="form-control" autocomplete="off" id="git" placeholder="GITHUB link">
@@ -41,7 +41,7 @@
                 </form>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12">
-                <form id="form" name="form" method="post">
+                <form id="form">
                     <div class="mb-3">
                         <label for="bio" class="form-label">DESCRIPTION</label>
                         <textarea class="form-control"rows="8" spellcheck="false" id="bio" required placeholder="Bio"></textarea>
@@ -52,7 +52,7 @@
         </div>
         <div class="row">
             <div class="d-flex justify-content-center" id="bottom_square" style="padding-top:30px;">
-                <a href="./Project_Profile.html"><button id="square_active" class="square_inactive" style="width:300px;">Submit</button></a>
+                <button id="square_active" class="square_inactive" style="width:300px;" onclick="submitform()">Submit</button>
             </div>
         </div>
     </div>

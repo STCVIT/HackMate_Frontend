@@ -40,7 +40,7 @@ form2.addEventListener('submit',(e)=>{
     console.log(eval);
     if(eval==1)
     {
-        auth="eyJhbGciOiJSUzI1NiIsImtpZCI6Ijc3MTBiMDE3ZmQ5YjcxMWUwMDljNmMzNmIwNzNiOGE2N2NiNjgyMTEiLCJ0eXAiOiJKV1QifQ.eyJwYXJ0aWNpcGFudCI6dHJ1ZSwiaXNzIjoiaHR0cHM6Ly9zZWN1cmV0b2tlbi5nb29nbGUuY29tL2hhY2twb3J0YWwtNDUwZDAiLCJhdWQiOiJoYWNrcG9ydGFsLTQ1MGQwIiwiYXV0aF90aW1lIjoxNjI2MzQ5ODEyLCJ1c2VyX2lkIjoicjBMZ09PTlk5elVnZ3dUckhaZ3ZOSTlBUEI4MiIsInN1YiI6InIwTGdPT05ZOXpVZ2d3VHJIWmd2Tkk5QVBCODIiLCJpYXQiOjE2MjYzNDk4MTIsImV4cCI6MTYyNjM1MzQxMiwiZW1haWwiOiJtZWdoYW1haXRpbjExQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbIm1lZ2hhbWFpdGluMTFAZ21haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.ryAwOmWhz3xIxZgLe9rjc4kHWMxLVuJ1Hbr3wRRi4LhJrJX76mvVcVdQqNhAJrnba021RaaRPWuvr2Zbeb20BfE4wSpDgSB99rK1nDmcEaEJdPpkCR47szkn8y4mLHI6AdjxnAxF2OBJaLrHLB6UoymNBEgmkReW6JeRoQsCxwHdYSpPIzcySKDE8RszPqUhmnMynB-EYKOapzcyEnNMeC_9GreeftqsRJzLHcLtmNqOOLSd8UczJLt3Vj9T4W17_xdPtKTRc5YGC9z-7sT-DhAUt-pflbbvxTJsil-sZ3YMBkAZl1Wx_pWeSPFesyGmEwr-4MnMqnAdP_aAcomGig"
+        auth="eyJhbGciOiJSUzI1NiIsImtpZCI6IjFiYjk2MDVjMzZlOThlMzAxMTdhNjk1MTc1NjkzODY4MzAyMDJiMmQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vaGFja3BvcnRhbC00NTBkMCIsImF1ZCI6ImhhY2twb3J0YWwtNDUwZDAiLCJhdXRoX3RpbWUiOjE2MjcyMDEzNjUsInVzZXJfaWQiOiJFbGdBSHBKVkpMT3hlZm55TVdxak1RdThLWDczIiwic3ViIjoiRWxnQUhwSlZKTE94ZWZueU1XcWpNUXU4S1g3MyIsImlhdCI6MTYyNzIwMTM2NSwiZXhwIjoxNjI3MjA0OTY1LCJlbWFpbCI6ImhhY2ttYXRlbWVnaGF0ZXN0QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImhhY2ttYXRlbWVnaGF0ZXN0QGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.cNDhMQnKSdIpr0UZ-edKyvPVvJ5OJ1Z6Jomo5f-vagBA_bCJiLLdRS28Po58o0ujT8q6I8FFBKhvX_qtAt8ds6sLs2gpL3iddhKw9Afs2JxLLnBKv3tS5TCZf7lNcmRNg4vPA-9vLkxDsv6_1QSPLDmjBsN9OsYceNjmg6EBQlc3UDJZ57TMcFtucjdyIhoCDwgVFM57isQS1l0ZgEUR1gmsXI9OYslilLSQpdx4GwlCDXMJBN70sT6xDOOnm4rLhXg80bB_AIuMoh38InP0x7le94fwnz1xBp7zXKN1nHCnbgDluO5AL_OskOuu_o8-F3cU41Vj9N_i19ODq9DTlg"
         console.log("form validation completed");
         const url = 'https://hackportalbackend.herokuapp.com';
         fetch(`${url}/participant/createProfile`, {
@@ -65,6 +65,7 @@ form2.addEventListener('submit',(e)=>{
         .then((response)=>response.text())
         .then((text) => {
             console.log("Success:",text);
+            window.location.assign("./profile_skills.html");
         })
         .catch((error) => {
             console.log("Error:", error);

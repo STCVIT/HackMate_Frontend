@@ -14,8 +14,6 @@ form.addEventListener('submit',(e)=>{
     let res=checkInputs(username,phone_num,college);
     if(res==3)
     {
-        auth="eyJhbGciOiJSUzI1NiIsImtpZCI6IjhmNDMyMDRhMTc5MTVlOGJlN2NjZDdjYjI2NGRmNmVhMzgzYzQ5YWIiLCJ0eXAiOiJKV1QifQ.eyJvcmdhbmlzZXIiOnRydWUsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9oYWNrcG9ydGFsLTQ1MGQwIiwiYXVkIjoiaGFja3BvcnRhbC00NTBkMCIsImF1dGhfdGltZSI6MTYyNjI1OTYxMiwidXNlcl9pZCI6IkM4d2tNODJ1MnBXV1plYUdZYXVMcXVadnJmTzIiLCJzdWIiOiJDOHdrTTgydTJwV1daZWFHWWF1THF1WnZyZk8yIiwiaWF0IjoxNjI2MjU5NjEyLCJleHAiOjE2MjYyNjMyMTIsImVtYWlsIjoic2hyZXlhbi5zYW55YWwyMDIwQHZpdHN0dWRlbnQuYWMuaW4iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJzaHJleWFuLnNhbnlhbDIwMjBAdml0c3R1ZGVudC5hYy5pbiJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.fjoYpI9yFzXdIpCSd3ZK8sLO5hd-dvk8XwCCmW8vsEqCF3ATdpIgMDyziyAQFMEGdfi6zPwdW51dEP2YAdHYWltRDY2O5uxCMoxk7tPyz4j6i4hiTxgypmxpFGWTojg-S9NHiDt4zY04bF-bw_0og6GtEAQMJO8u5s0eaHrvKFu6J6wvJclRDPsvyeBnatZ7HrsZ-V2TF0g61n_vSFt-lvE0mljHupKh6UazG2OP0kK0u8nrFJgEGmEt1LlH2VREw2-W7Hbmr3xeHw5Q3BU7Ve5SGyI0oyuluBpaogadOwZ9BljOvThsbj6LIN07OtRp0KAIhcu4LZpZn5TuEj7Vtg"
-        console.log("form validation completed");
         const url = 'https://hackportalbackend.herokuapp.com';
         fetch(`${url}/organiser/createProfile`, {
 
@@ -35,6 +33,7 @@ form.addEventListener('submit',(e)=>{
         .then((response)=>response.text())
         .then((text) => {
             console.log("Success:",text);
+            window.location.assign("./orghack.html");
         })
         /*.then(response => {
             console.log(response.status);

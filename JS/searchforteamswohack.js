@@ -121,3 +121,22 @@ $(document).ready(function () {
     $("#nav").load("../Assets/Header/headerl.txt");
     $("#foobottom").load("../Assets/Footer/footer.txt");
 });
+
+document.getElementById("search").addEventListener("keyup", function(event) {
+  event.preventDefault();
+  var hack_id = '60f1cade03a7ce0015c93f6c';
+  if (event.keyCode === 13) {
+    axios(`${url}/DN_Team/teamName/${hack_id}`, {
+      headers: {
+        Authorization: "Bearer " + auth,
+      },
+      params: {
+        name: "Testing 101",
+      },
+    })
+    .then((response) => {
+      teams = response.data;
+      console.log(teams);
+    })
+  }
+});

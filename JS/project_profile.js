@@ -4,8 +4,7 @@ $(document).ready(function () {
 });
 
 var project;
-randomId= "60f40654c24a1800158ed33f"
-axios(`${url}/projects/get/${randomId}`, {
+axios(`${url}/projects/get/${window.location.search.split("?")[1]}`, {
     headers: {
         Authorization: "Bearer " + auth,
     },

@@ -13,11 +13,11 @@ axios(`${url}/getHacks/${window.location.search.split("?")[1]}`, {
     console.log(hack);
 
     document.querySelector(".parent").innerHTML =
-      "<div class='row' style='padding-top: 54px;'> <div class='col-1'></div> <div class='col-10 main'> <img src='../Assets/Images/Hack Deets Banner.svg' style='width: 83.333vw;' alt=''> <div class='row' style='margin: 41.89px 0 0;'> <div class='col-1'></div> <div class='col-lg-4 col-12 justify-content-center text-center'> <img src='"+hack.poster+"' style='width: 200px;height: 200px;' alt=''> </div> <div class='col-lg-6 col-12 text-center'> <div class='nbw text-lg-start text-center  '>" +
+      "<div class='row' style='padding-top: 54px;'> <div class='col-1'></div> <div class='col-10 main'> <img src='../Assets/Images/Hack Deets Banner.svg' style='width: 83.333vw;' alt=''> <div class='row' style='margin: 41.89px 0 0;'> <div class='col-1'></div> <div class='col-lg-4 col-12 justify-content-center text-center'> <img src='" + hack.poster + "' style='width: 200px;height: 200px;' alt=''> </div> <div class='col-lg-6 col-12'> <div class='nbw text-lg-start text-center  '>" +
       hack.name +
       " <a target='_blank' href='https://" +
       hack.website +
-      "'><img src='../Assets/Images/Attachment.svg' alt=''></a> <img src='../Assets/Images/"+hack.mode_of_conduct+".svg'> </div> <div class='row' style='margin-top: 25.91px;'> <div class='display1 col-3'> <nbgre>Begins:</nbgre> <div class='nbwsd' style='padding-bottom: 5.65px;'>" +
+      "'><img src='../Assets/Images/Attachment.svg' alt=''></a> <img class='mode_of_conduct' src='../Assets/Images/" + hack.mode_of_conduct + ".svg'> </div> <div class='row' style='margin-top: 25.91px;'> <div class='display1 col-3'> <nbgre>Begins:</nbgre> <div class='nbwsd' style='padding-bottom: 5.65px;'>" +
       //hack.start.split("T")[0] +
       new Date(hack.start.split("T")[0]).toString().split(" ")[2] +
       " " +
@@ -57,11 +57,11 @@ axios(`${url}/getHacks/${window.location.search.split("?")[1]}`, {
       hack.venue +
       "</div> </div> <div class='display2 col-4'> <nbgre>Prize Pool:</nbgre> <div class='nbws'>" +
       hack.prize_pool +
-      "</div> </div> <div class='display2 col-4'> <nbgre>Team Size:</nbgre> <div class='nbws'> Min: 1 Member<br> Max: " +
+      "</div> </div> <div class='display2 col-5'> <nbgre>Team Size:</nbgre> <div class='nbws2'> Min: 1 Member<br> Max: " +
       hack.max_team_size +
-      " Members </div> </div> <div class='display2 col-4'> <nbgre>Venue:</nbgre> <div class='nbws'>" +
+      " Members </div> </div> <div class='display2 col-3'> <nbgre>Venue:</nbgre> <div class='nbws'>" +
       hack.venue +
-      "</div> </div> </div> </div> <div class='col-1'></div> </div> <div class='row' style='margin: 60.33px 0 0;'> <div class='col-1'></div> <div class='col-10'> <nbgre> About: </nbgre> <div class='nbwsb'>" +
+      "</div> </div> </div> </div> <div class='col-1'></div> </div> <div class='row about'> <div class='col-lg-1'></div> <div class='col-10'> <nbgre> About: </nbgre> <div class='nbwsb'>" +
       hack.description +
       "</div> </div> </div> </div> <div class='col-1'></div> </div>";
 

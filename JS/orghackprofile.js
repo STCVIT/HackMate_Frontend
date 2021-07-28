@@ -12,6 +12,7 @@ axios(`${url}/organiser/hack/${window.location.search.split("?")[1]}`, {
     hack = response.data;
     console.log(hack);
     document.myform.name.value = hack.name;
+    document.querySelector(".hackname").innerHTML = hack.name;
     document.myform.venue.value = hack.venue;
     document.myform.moc.value = hack.mode_of_conduct;
     document.myform.website.value = hack.website;
@@ -151,8 +152,7 @@ var Pagination = {
 function displayTeams() {
   var init = async function () {
     var res = await axios(
-      `${url}/organiser/getTeams/${
-        window.location.search.split("?")[1]
+      `${url}/organiser/getTeams/${window.location.search.split("?")[1]
       }?page=1`,
       {
         headers: {
@@ -207,8 +207,7 @@ function events(event) {
   page = event.target.innerHTML;
   console.log(page);
   axios(
-    `${url}/organiser/getTeams/${
-      window.location.search.split("?")[1]
+    `${url}/organiser/getTeams/${window.location.search.split("?")[1]
     }?page=${page}`,
     {
       headers: {
@@ -219,6 +218,129 @@ function events(event) {
     .then((response) => {
       teams = response.data;
       console.log(teams);
+
+
+      document.querySelector(".wrapper").innerHTML = "";
+
+      for (var i = 0; i < teams.final.length; i++) {
+        console.log(teams.final[i]);
+        document.querySelector(".wrapper").innerHTML +=
+          "<div class='box'> <div class='innertxt'> <h3 class='card-title'>" +
+          teams.final[i].team.name +
+          "</h3> <div class='card-details' style='padding-top: 30.23px;'> <p> <f>" +
+          teams.final[i].participants.length +
+          "</f> <r> Team <br> Members</r> </p> <div class='vl'></div> <ul class='team-members" +
+          i +
+          "'>" +
+          +"</ul> </div> </div> </div>";
+      }
+
+      for (var i = 0; i < teams.final.length; i++) {
+        document.querySelector(".team-members" + i).innerHTML = "";
+        for (var j = 0; j < teams.final[i].participants.length; j++) {
+          document.querySelector(".team-members" + i).innerHTML +=
+            "<li class='list-item'><img id='pp' src='../Assets/Images/Rectangle 155.svg'> <p class='text'>" +
+            teams.final[i].participants[j].name +
+            "</p> </li>";
+        }
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}
+function nextPage() {
+  if(page < total_teams)
+  {
+    page = Pagination.page + 1; 
+  }
+  console.log(page);
+  axios(
+    `${url}/organiser/getTeams/${window.location.search.split("?")[1]
+    }?page=${page}`,
+    {
+      headers: {
+        Authorization: "Bearer " + auth,
+      },
+    }
+  )
+    .then((response) => {
+      teams = response.data;
+      console.log(teams);
+
+
+      document.querySelector(".wrapper").innerHTML = "";
+
+      for (var i = 0; i < teams.final.length; i++) {
+        console.log(teams.final[i]);
+        document.querySelector(".wrapper").innerHTML +=
+          "<div class='box'> <div class='innertxt'> <h3 class='card-title'>" +
+          teams.final[i].team.name +
+          "</h3> <div class='card-details' style='padding-top: 30.23px;'> <p> <f>" +
+          teams.final[i].participants.length +
+          "</f> <r> Team <br> Members</r> </p> <div class='vl'></div> <ul class='team-members" +
+          i +
+          "'>" +
+          +"</ul> </div> </div> </div>";
+      }
+
+      for (var i = 0; i < teams.final.length; i++) {
+        document.querySelector(".team-members" + i).innerHTML = "";
+        for (var j = 0; j < teams.final[i].participants.length; j++) {
+          document.querySelector(".team-members" + i).innerHTML +=
+            "<li class='list-item'><img id='pp' src='../Assets/Images/Rectangle 155.svg'> <p class='text'>" +
+            teams.final[i].participants[j].name +
+            "</p> </li>";
+        }
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}
+function prevPage() {
+  if (page > 1) {
+    page = Pagination.page - 1;
+  }
+  console.log(page);
+  axios(
+    `${url}/organiser/getTeams/${window.location.search.split("?")[1]
+    }?page=${page}`,
+    {
+      headers: {
+        Authorization: "Bearer " + auth,
+      },
+    }
+  )
+    .then((response) => {
+      teams = response.data;
+      console.log(teams);
+
+
+      document.querySelector(".wrapper").innerHTML = "";
+
+      for (var i = 0; i < teams.final.length; i++) {
+        console.log(teams.final[i]);
+        document.querySelector(".wrapper").innerHTML +=
+          "<div class='box'> <div class='innertxt'> <h3 class='card-title'>" +
+          teams.final[i].team.name +
+          "</h3> <div class='card-details' style='padding-top: 30.23px;'> <p> <f>" +
+          teams.final[i].participants.length +
+          "</f> <r> Team <br> Members</r> </p> <div class='vl'></div> <ul class='team-members" +
+          i +
+          "'>" +
+          +"</ul> </div> </div> </div>";
+      }
+
+      for (var i = 0; i < teams.final.length; i++) {
+        document.querySelector(".team-members" + i).innerHTML = "";
+        for (var j = 0; j < teams.final[i].participants.length; j++) {
+          document.querySelector(".team-members" + i).innerHTML +=
+            "<li class='list-item'><img id='pp' src='../Assets/Images/Rectangle 155.svg'> <p class='text'>" +
+            teams.final[i].participants[j].name +
+            "</p> </li>";
+        }
+      }
     })
     .catch((error) => {
       console.error("Error:", error);

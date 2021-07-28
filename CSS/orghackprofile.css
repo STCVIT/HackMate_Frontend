@@ -190,7 +190,7 @@ f {
 .team-members {
   list-style-type: none;
 }
-li {
+.list-item {
   display: flex;
   line-height: 0.99;
   margin-bottom: 11px;
@@ -447,7 +447,7 @@ nb3 {
     color: #e7efef;
   }
 
-  li {
+  .list-item {
   margin-bottom: 5px;
 }
   

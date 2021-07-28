@@ -93,24 +93,24 @@ management.addEventListener('click',function() {
 cyber.addEventListener('click',function(){
     if(n%2==0){
         cyber.style.backgroundColor="#1ea54c";
-        choice.push("cyber");
+        choice.push("cybersecurity");
         n=n+1;
     }
     else{
         cyber.style.backgroundColor="#1D2833";
-        choice = arrayRemove(choice,"cyber");
+        choice = arrayRemove(choice,"cybersecurity");
         n=n+1;
     }
 });
 block.addEventListener('click',function(){
     if(n%2==0){
         block.style.backgroundColor="#1ea54c";
-        choice.push("block");
+        choice.push("blockchain");
         n=n+1;
     }
     else{
         block.style.backgroundColor="#1D2833";
-        choice = arrayRemove(choice,"block");
+        choice = arrayRemove(choice,"blockchain");
         n=n+1;
     }
 });

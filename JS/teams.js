@@ -2,8 +2,7 @@ $(document).ready(function () {
     $("#nav").load("../Assets/Header/headerl.txt");
     $("#foobottom").load("../Assets/Footer/footer.txt");
 });
-
-
+console.log("a");
 axios(`${url}/DN_Team/myTeams?page=1`, {
     headers: {
       Authorization: "Bearer " + auth,

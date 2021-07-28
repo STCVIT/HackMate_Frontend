@@ -24,6 +24,19 @@ axios(`${url}/participant/login`, {
 })
 .catch((error) => console.error("Error: " + error));
 
+var skills=[];
+axios(`${url}/skills/mySkills`, {
+    headers: {
+        Authorization: "Bearer " + auth,
+    }
+})
+.then((response) => {
+    skills=response.data;
+    console.log(skills);
+})
+.catch((error) => console.error("Error: " + error));
+
+
 function delete_accoount(){
   axios 
     .delete(`${url}/participant/deleteProfile`, {
@@ -174,4 +187,106 @@ function onError(input,message){
     let messageEle=parent.querySelector("small");
     messageEle.style.visibility="visible";
     messageEle.innerText=message;  
+}
+function arrayRemove(arr, value) {
+    return arr.filter(function(geeks){
+        return geeks != value;
+    });
+ }
+
+
+function addskills(){
+
+
+    let choice = [];
+    let fd= document.getElementById("frontend");
+    let bd=document.getElementById("backend");
+    let ui = document.getElementById("ui");
+    let ml = document.getElementById("ml");
+    let mg = document.getElementById("management");
+    let app = document.getElementById("app");
+    let cyber = document.getElementById("cyber");
+    let block = document.getElementById("block");
+    if(fd.checked==1){
+        choice.push("frontend");
+    }
+    else{
+        if(choice.includes("frontend")){
+            choice = arrayRemove(choice,"frontend");
+        }
+    }
+    if(bd.checked==1){
+        choice.push("backend");
+    }
+    else{
+        if(choice.includes("backend")){
+            choice = arrayRemove(choice,"backend");
+        }
+    }
+    if(ui.checked==1){
+        choice.push("ui/ux");
+    }
+    else{
+        if(choice.includes("ui/ux")){
+            choice = arrayRemove(choice,"ui/ux");
+        }
+    }
+    if(ml.checked==1){
+        choice.push("ml");
+    }
+    else{
+        if(choice.includes("ml")){
+            choice = arrayRemove(choice,"ml");
+        }
+    }
+    if(mg.checked==1){
+        choice.push("management");
+    }
+    else{
+        if(choice.includes("management")){
+            choice = arrayRemove(choice,"management");
+        }
+    }
+    if(app.checked==1){
+        choice.push("appdev");
+    }
+    else{
+        if(choice.includes("appdev")){
+            choice = arrayRemove(choice,"appdev");
+        }
+    }
+    if(cyber.checked==1){
+        choice.push("cybersecurity");
+    }
+    else{
+        if(choice.includes("cybersecurity")){
+            choice = arrayRemove(choice,"cybersecurity");
+        }
+    }
+    if(block.checked==1){
+        choice.push("blockchain");
+    }
+    else{
+        if(choice.includes("blockchain")){
+            choice = arrayRemove(choice,"blockchain");
+        }
+    }
+
+    axios
+  .post(`${url}/skills/mySkills`,
+  {
+    skills : choice,
+  },
+  {
+    headers: {
+      Authorization: "Bearer " + auth,
+    },
+  }
+  )
+  .then((response) => {
+    console.log("Success:", response.data);
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
 }

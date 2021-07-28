@@ -241,7 +241,7 @@ var Pagination = {
   },
   Create: function (e) {
     var html = [
-      "<a onclick='prevPage()' style='color: #008249;text-decoration: none;'>&#9668;</a>", // previous button
+      "<a href='#hacksadded' onclick='prevPage()' style='color: #008249;text-decoration: none;'>&#9668;</a>", // previous button
       "<span></span>", // pagination container
       "<a href='#hacksadded' onclick='nextPage()' style='margin-left: 11px; color: #008249; text-decoration: none;'>&#9658;</a>", // next button
     ];

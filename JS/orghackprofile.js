@@ -134,9 +134,9 @@ var Pagination = {
   },
   Create: function (e) {
     var html = [
-      "<a style='color: #008249;'>&#9668;</a>", // previous button
+      "<a onclick='prevPage()' style='color: #008249;'>&#9668;</a>", // previous button
       "<span></span>", // pagination container
-      "<a style='margin-left: 11px; color: #008249'>&#9658;</a>", // next button
+      "<a onclick='nextPage()' style='margin-left: 11px; color: #008249'>&#9658;</a>", // next button
     ];
     e.innerHTML = html.join("");
     Pagination.e = e.getElementsByTagName("span")[0];

@@ -143,6 +143,11 @@ input,
   box-sizing: border-box;
   border-radius: 1.54059px;
 }
+.plusboximg {
+  height: 192px;
+
+  vertical-align: middle;
+}
 
 .plus {
   background: #2e3d4c;
@@ -364,9 +369,8 @@ nb3 {
   margin-left: 11px;
 }
 @media (max-width: 1200px) {
-
-  .wrapper{
-    justify-content: center!important;
+  .wrapper {
+    justify-content: center !important;
   }
 }
 @media (max-width: 768px) {
@@ -448,7 +452,6 @@ nb3 {
   }
 
   .list-item {
-  margin-bottom: 5px;
-}
-  
+    margin-bottom: 5px;
+  }
 }

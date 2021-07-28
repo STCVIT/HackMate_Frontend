@@ -24,7 +24,17 @@ axios(`${url}/participant/login`, {
 })
 .catch((error) => console.error("Error: " + error));
 
+
+let fd= document.getElementById("frontend");
+let bd=document.getElementById("backend");
+let ui = document.getElementById("ui");
+let ml = document.getElementById("ml");
+let mg = document.getElementById("management");
+let app = document.getElementById("app");
+let cyber = document.getElementById("cyber");
+let block = document.getElementById("block");
 var skills=[];
+var userskills=[];
 axios(`${url}/skills/mySkills`, {
     headers: {
         Authorization: "Bearer " + auth,
@@ -32,7 +42,35 @@ axios(`${url}/skills/mySkills`, {
 })
 .then((response) => {
     skills=response.data;
-    console.log(skills);
+    // console.log(skills);
+    skills.forEach(element => {
+        userskills.push(element.skill);
+    });
+    console.log(userskills);
+    if(userskills.includes("frontend")){
+        fd.checked = true;
+    }
+    if(userskills.includes("backend")){
+        bd.checked = true;
+    }
+    if(userskills.includes("management")){
+        mg.checked = true;
+    }
+    if(userskills.includes("ui/ux")){
+        ui.checked= true;
+    }
+    if(userskills.includes("ml")){
+        ml.checked = true;
+    }
+    if(userskills.includes("appdev")){
+        app.checked = true; 
+    }
+    if(userskills.includes("cybersecurity")){
+        cyber.checked = true;
+    }
+    if(userskills.includes("blockchain")){
+        block.checked = true;
+    }
 })
 .catch((error) => console.error("Error: " + error));
 

@@ -2,6 +2,7 @@
 * {
     color: #e7efef;
     font-family: "Fira Code", monospace;
+    background-color: #23303d;
 }
 .mainsection{
     background-color: #23303d;
@@ -11,29 +12,42 @@
       padding-top:5%;
       padding-bottom:4%;
   }
+  .card-title{
+    background-color: #1d2833 !important;
+  }
+  .card-body p{
+    background-color: #1d2833 !important;
+  }
   text{
     color: #1ea54c;
+    background-color: #1d2833 !important;
   }
   hackathon{
     color: #E7EFEF99;
+    background-color: #1d2833 !important;
   }
   f{
     font-family: 'Nunito Sans', sans-serif;
     font-size:40px;
+    background-color: #1d2833 !important;
   }
   .vl{
     height: 230px;
     border-left: 1.08px solid #F3F3F34D;
+    background-color: #1d2833 !important;
   }
   .card-details{
       display: flex;
+      background-color: #1d2833 !important;
   }
   .team-members{
       list-style-type: none;
+      background-color: #1d2833 !important;
   }
  li{
      display: flex;
      line-height:0.99;
+     background-color: #1d2833 !important;
  }
  #pp{
      padding-right:20px;
@@ -42,16 +56,13 @@ r{
     float: right;
     padding: 10px;
     color: #E7EFEF99;
+    background-color: #1d2833 !important;
 }
-.card1{
+.card-body{
     border:none !important;
     background-color: #1d2833 !important;
     box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
-  }
-  .card2{
-    border:none !important;
-    background-color: #1d2833 !important;
-    box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
+    padding-bottom: 10%;
   }
   .empty{
       padding:40px;
@@ -59,6 +70,7 @@ r{
   li p t{
     color: #1ea54c;
     font-size:small;
+    background-color: #1d2833 !important;
   }
   @media only screen and (min-width:1400px){
 .card1{

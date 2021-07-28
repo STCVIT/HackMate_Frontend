@@ -143,6 +143,11 @@ input,
   box-sizing: border-box;
   border-radius: 1.54059px;
 }
+.plusboximg {
+  height: 192px;
+
+  vertical-align: middle;
+}
 
 .plus {
   background: #2e3d4c;
@@ -190,7 +195,7 @@ f {
 .team-members {
   list-style-type: none;
 }
-li {
+.list-item {
   display: flex;
   line-height: 0.99;
   margin-bottom: 11px;
@@ -364,9 +369,8 @@ nb3 {
   margin-left: 11px;
 }
 @media (max-width: 1200px) {
-
-  .wrapper{
-    justify-content: center!important;
+  .wrapper {
+    justify-content: center !important;
   }
 }
 @media (max-width: 768px) {
@@ -447,8 +451,7 @@ nb3 {
     color: #e7efef;
   }
 
-  li {
-  margin-bottom: 5px;
-}
-  
+  .list-item {
+    margin-bottom: 5px;
+  }
 }

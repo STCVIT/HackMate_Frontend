@@ -131,9 +131,9 @@ let f = document.querySelector("#flexCheckDefault1");
 let b = document.querySelector("#flexCheckDefault2");
 let u = document.querySelector("#flexCheckDefault3");
 let mac = document.querySelector("#flexCheckDefault4");
-// let man = document.querySelector("#flexCheckDefault5");
-// let c = document.querySelector("#flexCheckDefault7");
-// let blo = document.querySelector("#flexCheckDefault8");
+let man = document.querySelector("#flexCheckDefault5");
+let c = document.querySelector("#flexCheckDefault7");
+let blo = document.querySelector("#flexCheckDefault8");
 
 let choice = [];
 a.addEventListener('click',function() { 
@@ -151,15 +151,15 @@ u.addEventListener('click',function() {
 mac.addEventListener('click',function() { 
         choice.push("ml");
 });
-// man.addEventListener('click',function() { 
-//         choice.push("appdev");
-// });
-// blo.addEventListener('click',function() { 
-//         choice.push("appdev");
-// });
-// c.addEventListener('click',function() { 
-//         choice.push("appdev");
-// });
+man.addEventListener('click',function() { 
+        choice.push("management");
+});
+blo.addEventListener('click',function() { 
+        choice.push("blockchain");
+});
+c.addEventListener('click',function() { 
+        choice.push("cybersecurity");
+});
 
 function submit(){
     axios
@@ -176,6 +176,7 @@ function submit(){
   .then((response) => {
     talent = response.data;
     console.log(talent);
+    swal("SUCCESS!!", "The skills has been submitted successfully.", "success");
   })
   .catch((error) => {
     console.error("Error:", error);

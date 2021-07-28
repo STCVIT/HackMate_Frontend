@@ -42,7 +42,8 @@ input#image_uploads {
   opacity: 0;
 }
 
-input, .textboxbio {
+input,
+.textboxbio {
   font-family: Nunito Sans;
   font-style: normal;
   font-weight: 400;
@@ -159,6 +160,10 @@ textarea:focus {
   margin-top: 91px;
 }
 
+.detailsouter {
+  margin-left: 3.75%;
+}
+
 @media (max-width: 768px) {
   .textbox {
     width: 100%;
@@ -168,5 +173,8 @@ textarea:focus {
   }
   .textboxbio {
     width: 100%;
+  }
+  .detailsouter {
+    margin-left: 0;
   }
 }

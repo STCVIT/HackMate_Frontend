@@ -176,6 +176,7 @@ function submit(){
   .then((response) => {
     talent = response.data;
     console.log(talent);
+    swal("SUCCESS!!", "The skills has been submitted successfully.", "success");
   })
   .catch((error) => {
     console.error("Error:", error);

@@ -44,6 +44,7 @@ async function uploadBlob(file) {
       // Handle successful uploads on complete
       // For instance, get the download URL: https://firebasestorage.googleapis.com/...
       uploadTask.snapshot.ref.getDownloadURL().then(async (downloadURL) => {
+        swal("SUCCESS!!", "Your request has been submitted successfully", "success");
         console.log("File available at", downloadURL);
 
         poster = await downloadURL;
@@ -54,15 +55,15 @@ async function uploadBlob(file) {
         var about = document.myform.about.value;
         var start = new Date(
           document.myform.start.value.split("T")[0] +
-            " " +
-            document.myform.start.value.split("T")[1] +
-            " GMT+05:30"
+          " " +
+          document.myform.start.value.split("T")[1] +
+          " GMT+05:30"
         );
         var end = new Date(
           document.myform.end.value.split("T")[0] +
-            " " +
-            document.myform.end.value.split("T")[1] +
-            " GMT+05:30"
+          " " +
+          document.myform.end.value.split("T")[1] +
+          " GMT+05:30"
         );
         var mints = document.myform.mints.value;
         var maxts = document.myform.maxts.value;
@@ -92,7 +93,7 @@ async function uploadBlob(file) {
           .then((response) => {
             console.log("Success:", response.data);
             console.log(response.data._id);
-            window.location.assign("./orghackprofile.html?"+response.data._id)
+            window.location.assign("./orghackprofile.html?" + response.data._id)
           })
           .catch((error) => {
             console.error("Error:", error);

@@ -12,7 +12,7 @@ html,body{
   padding-top: 80px;
 }
 input {
-  font: 16px/26px "Raleway", sans-serif; 
+  font: 16px "Raleway", sans-serif; 
 }
 .form-wrap {
   background-color: #1D2833;
@@ -64,7 +64,7 @@ input {
   -moz-box-sizing: border-box;
   color: #ffffff;
   font-family: inherit;
-  font-size: 20px;
+  font-size: 16px;
   padding: 15px 0 10px .8em;
   border: 2px solid rgba(30, 165, 76, 0.2);
   outline: 0;

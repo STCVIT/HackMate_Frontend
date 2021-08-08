@@ -93,6 +93,7 @@ function events(event) {
   console.log(event);
   page = event.target.innerHTML;
   console.log(page);
+  window.location = "#wrapper"  
   axios(`${url}/getHacks/${occurence}?page=${page}`, {
     headers: {
       Authorization: "Bearer " + auth,

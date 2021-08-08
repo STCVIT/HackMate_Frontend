@@ -27,8 +27,16 @@
                     <div class="carbon-notification dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <div class="triangle-up1"></div>
                         <div class="wrap1" style="background: #283d4c; width: 576px; height: 188px; border: 1px solid rgba(30, 165, 76, 0.2);">
-                            <div class="text-center notification1" style="background: #2e3d4c; padding-top: 16px;">
+                            <!--<div class="text-center notification1" style="background: #2e3d4c; padding-top: 16px;">
                                 Notifications
+                            </div>
+                            <div class="text-center notification2" style="background: #2e3d4c; padding-top: 50px">
+                                You don't have any Notifications
+                            </div>-->
+                            <div class="d-flex notification1"
+                                    style="background: #2e3d4c;background: #2e3d4c;">
+                                    <div class="notification-type-active flex-fill">Requests</div>
+                                    <div class="notification-type-inactive flex-fill">Invites</div>
                             </div>
                             <div class="text-center notification2" style="background: #2e3d4c; padding-top: 50px">
                                 You don't have any Notifications

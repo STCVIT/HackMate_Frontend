@@ -26,6 +26,7 @@ input {
 .form-wrap .tabs h3 {
 	float: left;
 	width: 50%; 
+  font-size: 23px; 
 }
 .form-wrap .tabs h3 a {
     padding: 0.5em 0;

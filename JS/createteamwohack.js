@@ -14,6 +14,32 @@ app.addEventListener('click', function() {
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive1").className = "button3";
     n = n+1;
+    var occurence = "appdev";
+    displayTeams()
+function displayTeams() {
+  var init = async function () {
+    try{
+    var res = await axios(`${url}/participant/get/skill/null?page=1&skill=${occurence}`, {
+      headers: {
+        Authorization: "Bearer " + auth,
+      },
+    });
+    hacks = await res.data;
+    console.log(hacks);
+    for(let i = 0; i<hacks.final.length; i++){
+      document.querySelector(".persons").innerHTML +=
+        "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'>"+hacks.final[i].pt.name+"</h4><h5 class='text14'>App Dev</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+    }
+}
+  catch(err) {
+    console.log(err.response.status);
+    if(err.response.status == 404){
+      swal("WARNING!!", "You can't search this team.", "warning");
+    }
+  }
+}
+ init();
+}
   }
   else{
     document.getElementById("active1").className = "button2";
@@ -27,6 +53,32 @@ fweb.addEventListener('click', function() {
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive2").className = "button3";
     n = n+1;
+    var occurence = "frontend";
+    displayTeams()
+function displayTeams() {
+  var init = async function () {
+    try{
+    var res = await axios(`${url}/participant/get/skill/null?page=1&skill=${occurence}`, {
+      headers: {
+        Authorization: "Bearer " + auth,
+      },
+    });
+    hacks = await res.data;
+    console.log(hacks);
+    for(let i = 0; i<hacks.final.length; i++){
+      document.querySelector(".persons").innerHTML +=
+        "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'>"+hacks.final[i].pt.name+"</h4><h5 class='text14'>Frontend</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+    }
+}
+  catch(err) {
+    console.log(err.response.status);
+    if(err.response.status == 404){
+      swal("WARNING!!", "You can't search this team.", "warning");
+    }
+  }
+}
+ init();
+}
   }
   else{
     document.getElementById("active1").className = "button2";
@@ -39,6 +91,32 @@ bweb.addEventListener('click', function() {
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive3").className = "button3";
     n = n+1;
+    var occurence = "backend";
+    displayTeams()
+function displayTeams() {
+  var init = async function () {
+    try{
+    var res = await axios(`${url}/participant/get/skill/null?page=1&skill=${occurence}`, {
+      headers: {
+        Authorization: "Bearer " + auth,
+      },
+    });
+    hacks = await res.data;
+    console.log(hacks);
+    for(let i = 0; i<hacks.final.length; i++){
+      document.querySelector(".persons").innerHTML +=
+        "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'>"+hacks.final[i].pt.name+"</h4><h5 class='text14'>Backend</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+    }
+}
+  catch(err) {
+    console.log(err.response.status);
+    if(err.response.status == 404){
+      swal("WARNING!!", "You can't search this team.", "warning");
+    }
+  }
+}
+ init();
+}
   }
   else{
     document.getElementById("active1").className = "button2";
@@ -51,6 +129,32 @@ ml.addEventListener('click', function() {
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive4").className = "button3";
     n = n+1;
+    var occurence = "ml";
+    displayTeams()
+function displayTeams() {
+  var init = async function () {
+    try{
+    var res = await axios(`${url}/participant/get/skill/null?page=1&skill=${occurence}`, {
+      headers: {
+        Authorization: "Bearer " + auth,
+      },
+    });
+    hacks = await res.data;
+    console.log(hacks);
+    for(let i = 0; i<hacks.final.length; i++){
+      document.querySelector(".persons").innerHTML +=
+        "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'>"+hacks.final[i].pt.name+"</h4><h5 class='text14'>Machine Learning</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+    }
+}
+  catch(err) {
+    console.log(err.response.status);
+    if(err.response.status == 404){
+      swal("WARNING!!", "You can't search this team.", "warning");
+    }
+  }
+}
+ init();
+}
   }
   else{
     document.getElementById("active1").className = "button2";
@@ -63,6 +167,32 @@ design.addEventListener('click', function() {
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive5").className = "button3";
     n = n+1;
+    var occurence = "ui/ux";
+    displayTeams()
+function displayTeams() {
+  var init = async function () {
+    try{
+    var res = await axios(`${url}/participant/get/skill/null?page=1&skill=${occurence}`, {
+      headers: {
+        Authorization: "Bearer " + auth,
+      },
+    });
+    hacks = await res.data;
+    console.log(hacks);
+    for(let i = 0; i<hacks.final.length; i++){
+      document.querySelector(".persons").innerHTML +=
+        "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'>"+hacks.final[i].pt.name+"</h4><h5 class='text14'>UI/UX</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+    }
+}
+  catch(err) {
+    console.log(err.response.status);
+    if(err.response.status == 404){
+      swal("WARNING!!", "You can't search this team.", "warning");
+    }
+  }
+}
+ init();
+}
   }
   else{
     document.getElementById("active1").className = "button2";
@@ -75,6 +205,32 @@ mgmt.addEventListener('click', function() {
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive6").className = "button3";
     n = n+1;
+    var occurence = "management";
+    displayTeams()
+function displayTeams() {
+  var init = async function () {
+    try{
+    var res = await axios(`${url}/participant/get/skill/null?page=1&skill=${occurence}`, {
+      headers: {
+        Authorization: "Bearer " + auth,
+      },
+    });
+    hacks = await res.data;
+    console.log(hacks);
+    for(let i = 0; i<hacks.final.length; i++){
+      document.querySelector(".persons").innerHTML +=
+        "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'>"+hacks.final[i].pt.name+"</h4><h5 class='text14'>Management</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+    }
+}
+  catch(err) {
+    console.log(err.response.status);
+    if(err.response.status == 404){
+      swal("WARNING!!", "You can't search this team.", "warning");
+    }
+  }
+}
+ init();
+}
   }
   else{
     document.getElementById("active1").className = "button2";
@@ -87,6 +243,32 @@ block.addEventListener('click', function() {
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive7").className = "button3";
     n = n+1;
+    var occurence = "blockchain";
+    displayTeams()
+function displayTeams() {
+  var init = async function () {
+    try{
+    var res = await axios(`${url}/participant/get/skill/null?page=1&skill=${occurence}`, {
+      headers: {
+        Authorization: "Bearer " + auth,
+      },
+    });
+    hacks = await res.data;
+    console.log(hacks);
+    for(let i = 0; i<hacks.final.length; i++){
+      document.querySelector(".persons").innerHTML +=
+        "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'>"+hacks.final[i].pt.name+"</h4><h5 class='text14'>Blockchain</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+    }
+}
+  catch(err) {
+    console.log(err.response.status);
+    if(err.response.status == 404){
+      swal("WARNING!!", "You can't search this team.", "warning");
+    }
+  }
+}
+ init();
+}
   }
   else{
     document.getElementById("active1").className = "button2";
@@ -99,6 +281,32 @@ cyber.addEventListener('click', function() {
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive8").className = "button3";
     n = n+1;
+    var occurence = "cybersecurity";
+    displayTeams()
+function displayTeams() {
+  var init = async function () {
+    try{
+    var res = await axios(`${url}/participant/get/skill/null?page=1&skill=${occurence}`, {
+      headers: {
+        Authorization: "Bearer " + auth,
+      },
+    });
+    hacks = await res.data;
+    console.log(hacks);
+    for(let i = 0; i<hacks.final.length; i++){
+      document.querySelector(".persons").innerHTML +=
+        "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'>"+hacks.final[i].pt.name+"</h4><h5 class='text14'>Cyber Security</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+    }
+}
+  catch(err) {
+    console.log(err.response.status);
+    if(err.response.status == 404){
+      swal("WARNING!!", "You can't search this team.", "warning");
+    }
+  }
+}
+ init();
+}
   }
   else{
     document.getElementById("active1").className = "button2";

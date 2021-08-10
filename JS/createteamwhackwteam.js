@@ -152,6 +152,10 @@ function create(){
     })
     .catch((error) => {
       console.error("Error:", error);
+      console.log(error.response.status);
+      if(error.response.status == 403){
+        swal("WARNING!!", "The team has been already formed for this Hack.", "warning");
+      }
     });
 }
 

@@ -257,6 +257,7 @@ function nextPage() {
     teams = response.data;
     console.log(teams);
     let body = document.querySelector(".cards");
+    body.innerHTML = "";
     var yourHTML = "";
     for (var i = 0; i < teams.final.length;) {
       yourHTML +="<div class='row'><div class='col-lg-6 col-md-6 col-sm-12'style='padding-bottom:5%'><div class='card1'style='max-width: 497px; max-height: 371px;padding-bottom: 10%;'><div class='card-body'><h4 class='card-title'>" + 
@@ -329,6 +330,7 @@ function prevPage() {
     console.log(teams);
 
     let body = document.querySelector(".cards");
+    body.innerHTML = "";
     var yourHTML = "";
     for (var i = 0; i < teams.final.length;) {
       yourHTML +="<div class='row'><div class='col-lg-6 col-md-6 col-sm-12'style='padding-bottom:5%'><div class='card1'style='max-width: 497px; max-height: 371px;padding-bottom: 10%;'><div class='card-body'><h4 class='card-title'>" + 

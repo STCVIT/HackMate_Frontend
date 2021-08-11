@@ -113,3 +113,92 @@ t{
     display:none;
   }
 }
+
+
+.card2{
+	width: 743px;
+	height: 110px;
+	left: 128px;
+	top: 547px;
+	filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.2));
+	background-color: #1D2833;
+	margin-bottom: 20px;
+}
+.Image1{
+	margin-top: 10px;
+}
+.text13{
+	font-family: Nunito Sans;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 22px;
+	line-height: 30px;
+	letter-spacing: 0.04em;
+	color: #ffffff;
+	margin-top: 30px;
+	margin-bottom: 0px;
+}
+.text14{
+	font-family: Nunito Sans;
+	font-style: normal;
+	font-weight: 800;
+	font-size: 15.2632px;
+	line-height: 21px;
+	letter-spacing: 0.04em;
+	color: #1EA54C;
+}
+.text15{
+	font-family: Nunito Sans;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 19px;
+	letter-spacing: 0.12em;
+	color: #ffffff;
+	margin: 40px 0 0 60px;
+	cursor: pointer;
+}
+	.creates{
+	align-content: center;
+	text-align: center;
+}
+.textteam{
+	font-family: Fira Code;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 28px;
+	line-height: 140%;
+	letter-spacing: 0.04em;
+	color: #ffffff;
+	margin-top: 30px;
+}
+
+@media (min-width: 380px) and (max-width: 464px){
+	.text13{
+		font-size: 24px;
+		margin-left: 20px;
+	}
+	.text14{
+		font-size: 15px;
+		margin-top: 10px;
+		margin-left: 20px;
+	}
+	.text15{
+		font-size: 15px;
+		margin-left: 22px;
+	}
+}
+@media only screen and (max-width:379px){
+  .text13{
+    font-size:18px;
+    margin-left:27px;
+  }
+  .text14{
+    font-size: 14px;
+    margin-left: 27px;
+  }
+  .text15{
+    font-size:12px;
+    margin-left:16px;
+  }
+}

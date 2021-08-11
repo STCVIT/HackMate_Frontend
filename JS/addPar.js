@@ -99,3 +99,64 @@ cyber.addEventListener('click',function(){
         n=n+1;
     }
 });
+
+document.getElementById("participant_name").addEventListener("keyup", function(event) {
+    event.preventDefault();
+    var hack_id = window.location.search.split("?")[1];
+    var name = document.getElementById("participant_name").value;
+    if (event.keyCode === 13) {
+      axios(`${url}/participant/get/userName/${hack_id}?name=${name}&page=1`, {
+        headers: {
+          Authorization: "Bearer " + auth,
+        },
+      })
+      .then((response) => {
+        teams = response.data;
+        console.log(teams);
+  
+         document.querySelector(".persons").innerHTML +=
+          "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'>"+teams.final[0].pt.name+"</h4><h5 class='text14'>"+teams.final[0].skills[0].skill+"</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>"; 
+      })
+      .catch(e => {
+        console.log(e);
+        console.log(e.response.status);
+        if(e.response.status == 404){
+          swal("WARNING!!", "No Participant Found", "warning");
+        }
+      });
+    }
+  });
+  
+  function invite() {
+    // id.innerHTML = "Ooops!";
+    var participant_id = teams.final[0].pt._id;
+    console.log(participant_id);
+        axios
+        .post(
+          `${url}/invites/invite/${window.location.search.split("?")[1]}/${participant_id}`, 
+        {
+          code: invite,
+        },
+          {
+        headers: {
+          Authorization: "Bearer " + auth,
+        },
+      }
+      )
+      .then((response) => {
+        accepted = response.data;
+        console.log(accepted);
+        swal("SUCCESS!!", "Your invite has been submitted successfully", "success");
+      })
+      .catch(e => {
+        console.log(e);
+        console.log(e.response.status);
+        if(e.response.status == 404){
+          swal("WARNING!!", "No Participant Found", "warning");
+        }
+        else if(e.response.status == 400){
+          swal("WARNING!!", "Invite has already been sent", "warning");
+        }
+      });
+  
+  }

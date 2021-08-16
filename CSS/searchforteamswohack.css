@@ -7,6 +7,14 @@ html,body{
 	min-height: 100%;
 	overflow: auto;
 }
+#pagination {
+	display: flex;
+	flex-basis: 353.33px;
+	justify-content: center;
+	align-items: baseline;
+	flex-wrap: wrap;
+	padding-top: 10px;
+  }
 .text1{
 	color: #fff;
 	font-family: "Fira Code";
@@ -168,7 +176,7 @@ html,body{
 }
 .card_of_teams1{
 	width: 450px;
-	height: 505px;
+	height: 555px;
 	background-color: #1D2833;
 	margin-top: 30px;
 }

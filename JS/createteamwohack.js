@@ -15,11 +15,14 @@ app.addEventListener('click', function() {
     document.getElementById("inactive1").className = "button3";
     n = n+1;
     var occurence = "appdev";
-    displayTeams()
+    var page = 1;
+    displayTeams();
+    page=page+1;
+    // displayTeams();
 function displayTeams() {
   var init = async function () {
     try{
-    var res = await axios(`${url}/participant/get/skill/null?page=1&skill=${occurence}`, {
+    var res = await axios(`${url}/participant/get/skill/null?page=${page}&skill=${occurence}`, {
       headers: {
         Authorization: "Bearer " + auth,
       },
@@ -47,18 +50,32 @@ function displayTeams() {
     n = n+1;
   }
 });
-
 fweb.addEventListener('click', function() {
   if(n%2 == 0){
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive2").className = "button3";
     n = n+1;
     var occurence = "frontend";
-    displayTeams()
+    var page = 1;
+    displayTeams();
+    page=page+1;
+    // displayTeams()
+    var height = document.body.clientHeight;
+    console.log(height);
+    if (height == document.body.clientHeight) {
+      window.addEventListener('scroll', someFunction);
+      function someFunction() {
+        if (window.scrollY + window.innerHeight >= 2000) {
+          console.log(window.scrollY + window.innerHeight);
+          displayTeams();
+          window.removeEventListener('scroll', someFunction);
+        }
+      }
+    }
 function displayTeams() {
   var init = async function () {
     try{
-    var res = await axios(`${url}/participant/get/skill/null?page=1&skill=${occurence}`, {
+    var res = await axios(`${url}/participant/get/skill/null?page=${page}&skill=${occurence}`, {
       headers: {
         Authorization: "Bearer " + auth,
       },
@@ -92,11 +109,14 @@ bweb.addEventListener('click', function() {
     document.getElementById("inactive3").className = "button3";
     n = n+1;
     var occurence = "backend";
-    displayTeams()
+    var page = 1;
+    displayTeams();
+    page=page+1;
+    // displayTeams();
 function displayTeams() {
   var init = async function () {
     try{
-    var res = await axios(`${url}/participant/get/skill/null?page=1&skill=${occurence}`, {
+    var res = await axios(`${url}/participant/get/skill/null?page=${page}&skill=${occurence}`, {
       headers: {
         Authorization: "Bearer " + auth,
       },
@@ -130,11 +150,14 @@ ml.addEventListener('click', function() {
     document.getElementById("inactive4").className = "button3";
     n = n+1;
     var occurence = "ml";
-    displayTeams()
+    var page = 1;
+    displayTeams();
+    page=page+1;
+    // displayTeams();
 function displayTeams() {
   var init = async function () {
     try{
-    var res = await axios(`${url}/participant/get/skill/null?page=1&skill=${occurence}`, {
+    var res = await axios(`${url}/participant/get/skill/null?page=${page}&skill=${occurence}`, {
       headers: {
         Authorization: "Bearer " + auth,
       },
@@ -168,11 +191,14 @@ design.addEventListener('click', function() {
     document.getElementById("inactive5").className = "button3";
     n = n+1;
     var occurence = "ui/ux";
-    displayTeams()
+    var page = 1;
+    displayTeams();
+    page=page+1;
+    // displayTeams();
 function displayTeams() {
   var init = async function () {
     try{
-    var res = await axios(`${url}/participant/get/skill/null?page=1&skill=${occurence}`, {
+    var res = await axios(`${url}/participant/get/skill/null?page=${page}&skill=${occurence}`, {
       headers: {
         Authorization: "Bearer " + auth,
       },
@@ -206,11 +232,14 @@ mgmt.addEventListener('click', function() {
     document.getElementById("inactive6").className = "button3";
     n = n+1;
     var occurence = "management";
-    displayTeams()
+    var page = 1;
+    displayTeams();
+    page=page+1;
+    // displayTeams();
 function displayTeams() {
   var init = async function () {
     try{
-    var res = await axios(`${url}/participant/get/skill/null?page=1&skill=${occurence}`, {
+    var res = await axios(`${url}/participant/get/skill/null?page=${page}&skill=${occurence}`, {
       headers: {
         Authorization: "Bearer " + auth,
       },
@@ -244,11 +273,14 @@ block.addEventListener('click', function() {
     document.getElementById("inactive7").className = "button3";
     n = n+1;
     var occurence = "blockchain";
-    displayTeams()
+    var page = 1;
+    displayTeams();
+    page=page+1;
+    // displayTeams();
 function displayTeams() {
   var init = async function () {
     try{
-    var res = await axios(`${url}/participant/get/skill/null?page=1&skill=${occurence}`, {
+    var res = await axios(`${url}/participant/get/skill/null?page=${page}&skill=${occurence}`, {
       headers: {
         Authorization: "Bearer " + auth,
       },
@@ -282,11 +314,14 @@ cyber.addEventListener('click', function() {
     document.getElementById("inactive8").className = "button3";
     n = n+1;
     var occurence = "cybersecurity";
-    displayTeams()
+    var page = 1;
+    displayTeams();
+    page=page+1;
+    // displayTeams();
 function displayTeams() {
   var init = async function () {
     try{
-    var res = await axios(`${url}/participant/get/skill/null?page=1&skill=${occurence}`, {
+    var res = await axios(`${url}/participant/get/skill/null?page=${page}&skill=${occurence}`, {
       headers: {
         Authorization: "Bearer " + auth,
       },
@@ -324,6 +359,34 @@ all.addEventListener('click', function() {
   document.getElementById("inactive6").className = "button2";
   document.getElementById("inactive7").className = "button2";
   document.getElementById("inactive8").className = "button2";
+
+  document.querySelector(".persons").innerHTML = "<div><h1 style='color:white;'>This part of the page is currently in progress. Kindly Wait!! 😊😊</h1></div>";
+//   displayTeams()
+// function displayTeams() {
+// var init = async function () {
+//   try{
+//   var res = await axios(`${url}/participant/get/all/null?page=1`, {
+//     headers: {
+//       Authorization: "Bearer " + auth,
+//     },
+//   });
+//   hacks = await res.data;
+//   console.log(hacks);
+//   for(let i = 0; i<hacks.final.length; i++){
+//     document.querySelector(".persons").innerHTML +=
+//       "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'>"+hacks.final[i].pt.name+"</h4><h5 class='text14'>"+ hacks.final[0].skills[0].skill+"</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+//   }
+// }
+// catch(err) {
+//   console.log(err.response.status);
+//   if(err.response.status == 404){
+//     swal("WARNING!!", "You can't search this team.", "warning");
+//   }
+// }
+// }
+// init();
+// }
+
 });
 $(document).ready(function () {
     $("#nav").load("../Assets/Header/headerl.txt");
@@ -464,7 +527,7 @@ function submit(){
   .then((response) => {
     talent = response.data;
     console.log(talent);
-    swal("SUCCESS!!", "The skills has been submitted successfully.", "success");
+    swal("SUCCESS!!", "The skills has been saved successfully.", "success");
   })
   .catch((error) => {
     console.error("Error:", error);

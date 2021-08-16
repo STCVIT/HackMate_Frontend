@@ -65,8 +65,8 @@ function events(event) {
           hacks.newHacks[i].max_team_size +
           " Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
           hacks.newHacks[i].prize_pool +
-          "</div> <div class='status'> <circle class='circle1'></circle> <circle class='circle2'></circle> <circle class='circle3'></circle>" +
-          hacks.newHacks[i].mode_of_conduct +
+          "</div> <img class='mode_of_conduct pt-3  ' src='../Assets/Images/" + 
+          hacks.newHacks[i].mode_of_conduct + ".svg'>" +
           "</div> </div> </a></div>";
       }
     })
@@ -109,8 +109,8 @@ function nextPage() {
           hacks.newHacks[i].max_team_size +
           " Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
           hacks.newHacks[i].prize_pool +
-          "</div> <div class='status'> <circle class='circle1'></circle> <circle class='circle2'></circle> <circle class='circle3'></circle>" +
-          hacks.newHacks[i].mode_of_conduct +
+          "</div> <img class='mode_of_conduct pt-3  ' src='../Assets/Images/" + 
+          hacks.newHacks[i].mode_of_conduct + ".svg'>" +
           "</div> </div> </a></div>";
       }
     })
@@ -150,9 +150,9 @@ function prevPage() {
           hacks.newHacks[i].max_team_size +
           " Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
           hacks.newHacks[i].prize_pool +
-          "</div> <div class='status'> <circle class='circle1'></circle> <circle class='circle2'></circle> <circle class='circle3'></circle>" +
-          hacks.newHacks[i].mode_of_conduct +
-          "</div> </div> </a></div>";
+          "</div> <img class='mode_of_conduct pt-3  ' src='../Assets/Images/" + 
+          hacks.newHacks[i].mode_of_conduct + ".svg'>" +
+          "</div> </a></div>";
       }
     })
     .catch((error) => {
@@ -286,9 +286,9 @@ function displayHacks() {
         hacks.newHacks[i].max_team_size +
         " Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
         hacks.newHacks[i].prize_pool +
-        "</div> <div class='status'> <circle class='circle1'></circle> <circle class='circle2'></circle> <circle class='circle3'></circle>" +
-        hacks.newHacks[i].mode_of_conduct +
-        "</div> </div> </a></div>";
+        "</div> <img class='mode_of_conduct pt-3  ' src='../Assets/Images/" + 
+        hacks.newHacks[i].mode_of_conduct + ".svg'>" +
+        " </div> </a></div>";
     }
     total_hacks = Math.ceil(length / 6);
     Pagination.Init(document.getElementById("pagination"), {

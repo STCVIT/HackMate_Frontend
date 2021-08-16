@@ -44,7 +44,6 @@ async function uploadBlob(file) {
       // Handle successful uploads on complete
       // For instance, get the download URL: https://firebasestorage.googleapis.com/...
       uploadTask.snapshot.ref.getDownloadURL().then(async (downloadURL) => {
-        swal("SUCCESS!!", "Your request has been submitted successfully", "success");
         console.log("File available at", downloadURL);
 
         poster = await downloadURL;
@@ -93,7 +92,10 @@ async function uploadBlob(file) {
           .then((response) => {
             console.log("Success:", response.data);
             console.log(response.data._id);
-            window.location.assign("./orghackprofile.html?" + response.data._id)
+            swal("SUCCESS!!", "Your request has been submitted successfully", "success");
+            document.querySelector(".swal-button--confirm").addEventListener("click", ()=> {
+              window.location.assign("./orghackprofile.html?" + response.data._id)
+            })
           })
           .catch((error) => {
             console.error("Error:", error);

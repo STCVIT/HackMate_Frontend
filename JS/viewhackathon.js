@@ -93,7 +93,7 @@ function events(event) {
   console.log(event);
   page = event.target.innerHTML;
   console.log(page);
-  window.location = "#wrapper"  
+  window.location = "#wrapper"
   axios(`${url}/getHacks/${occurence}?page=${page}`, {
     headers: {
       Authorization: "Bearer " + auth,
@@ -139,9 +139,9 @@ function events(event) {
           hacks.final[i].max_team_size +
           "</nbw><nbw> Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
           hacks.final[i].prize_pool +
-          "</div><div class='status'><circle class='circle1'></circle><circle class='circle2'></circle><circle class='circle3'></circle>" +
-          hacks.final[i].mode_of_conduct +
-          "</div> <a class='btnkm btn btn-success' href='./hackdetails.html?" +
+          "</div><img class='mode_of_conduct pt-3' src='../Assets/Images/" +
+          hacks.final[i].mode_of_conduct + ".svg'>" +
+          "<a class='btnkm btn btn-success' href='./hackdetails.html?" +
           hacks.final[i]._id +
           "' role='button'>Know More</a> </div> </div>";
       }
@@ -352,9 +352,9 @@ function displayTeams() {
         hacks.final[i].max_team_size +
         "</nbw><nbw> Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
         hacks.final[i].prize_pool +
-        "</div><div class='status'><circle class='circle1'></circle><circle class='circle2'></circle><circle class='circle3'></circle>" +
-        hacks.final[i].mode_of_conduct +
-        "</div> <a class='btnkm btn btn-success' href='./hackdetails.html?" +
+        "</div> <img class='mode_of_conduct pt-3' src='../Assets/Images/" +
+        hacks.final[i].mode_of_conduct + ".svg'>" +
+        "<a class='btnkm btn btn-success' href='./hackdetails.html?" +
         hacks.final[i]._id +
         "' role='button'>Know More</a> </div> </div>";
     }
@@ -419,9 +419,9 @@ function nextPage() {
           hacks.final[i].max_team_size +
           "</nbw><nbw> Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
           hacks.final[i].prize_pool +
-          "</div><div class='status'><circle class='circle1'></circle><circle class='circle2'></circle><circle class='circle3'></circle>" +
-          hacks.final[i].mode_of_conduct +
-          "</div> <a class='btnkm btn btn-success' href='./hackdetails.html?" +
+          "</div><img class='mode_of_conduct pt-3' src='../Assets/Images/" +
+          hacks.final[i].mode_of_conduct + ".svg'>" +
+          "<a class='btnkm btn btn-success' href='./hackdetails.html?" +
           hacks.final[i]._id +
           "' role='button'>Know More</a> </div> </div>";
       }
@@ -478,9 +478,9 @@ function prevPage() {
           hacks.final[i].max_team_size +
           "</nbw><nbw> Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
           hacks.final[i].prize_pool +
-          "</div><div class='status'><circle class='circle1'></circle><circle class='circle2'></circle><circle class='circle3'></circle>" +
-          hacks.final[i].mode_of_conduct +
-          "</div> <a class='btnkm btn btn-success' href='./hackdetails.html?" +
+          "</div><img class='mode_of_conduct pt-3' src='../Assets/Images/" +
+          hacks.final[i].mode_of_conduct + ".svg'>" +
+          "<a class='btnkm btn btn-success' href='./hackdetails.html?" +
           hacks.final[i]._id +
           "' role='button'>Know More</a> </div> </div>";
       }

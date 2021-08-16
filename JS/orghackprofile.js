@@ -28,7 +28,7 @@ axios(`${url}/organiser/hack/${window.location.search.split("?")[1]}`, {
     document.myform.mints.value = hack.min_team_size;
     document.myform.maxts.value = hack.max_team_size;
     document.myform.prizes.value = hack.prize_pool;
-    // document.querySelector(".label").innerHTML += "<img src='"+ hack.poster+"'></img>";
+    document.querySelector(".poster").innerHTML += "<img style='width: 200px;' src='"+ hack.poster+"'></img>";
   })
   .catch((error) => {
     console.error("Error:", error);
@@ -37,7 +37,7 @@ axios(`${url}/organiser/hack/${window.location.search.split("?")[1]}`, {
 function deleteHack() {
   axios
     .delete(
-      `${url}/organiser/deleteHack/:${window.location.search.split("?")[1]}`,
+      `${url}/organiser/deleteHack/${window.location.search.split("?")[1]}`,
       {
         headers: {
           Authorization: "Bearer " + auth,
@@ -47,6 +47,7 @@ function deleteHack() {
     .then((response) => {
       hack = response.data;
       console.log(hack);
+      window.location = "./orghack.html"
     })
     .catch((error) => {
       console.error("Error:", error);

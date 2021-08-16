@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito+Sans&family=Raleway&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@800&display=swap');
-*{
+body{
     background-color: #23303d;
     color: #e7efef;
   }

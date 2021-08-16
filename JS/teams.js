@@ -191,29 +191,9 @@ function displayTeams() {
       "</hackathon></p><div class='card-details'><p><f>"+
       teams["final"][i]["team"].members.length +
      "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>"
-     for(var j=0;j < teams["final"][i]["team"].members.length;j++){
-     yourHTML += "<li class='list-item'><img id='pp' src='../Assets/Images/Rectangle 155.svg'><p>"+
-     teams['final'][i]['pt_skill'][j]['participant'].name+
-     "<br><t>"+
-     teams["final"][i]["pt_skill"][j]["skills"][0]["skill"]+
-     "</t></p></li>"
-     }
-    yourHTML += "</ul></div></div></div></div>"
-    
-    i++;
-    console.log(i);
-    console.log(teams["final"][i]["team"].name);
-    yourHTML += "<div class='col-lg-6 col-md-6 col-sm-12'><div class='card2' style='max-width: 497px; max-height: 371px; padding-bottom:20px;'><div class='card-body'><h4 class='card-title'>" +
-    teams["final"][i]["team"].name +
-      "</h4><p><text>Hackathon:</text><hackathon>" +
-      teams["final"][i]["hackName"] +
-      "</hackathon></p><div class='card-details'><p><f>"+
-      teams["final"][i]["team"].members.length +
-     "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>"
-     for(var j=0;j < teams["final"][i]["team"].members.length;j++){
-     yourHTML += "<li class='list-item'><img id='pp' src='../Assets/Images/Rectangle 155.svg'><p>"+
-     teams['final'][i]['pt_skill'][j]['participant'].name+
-     "<br><t>"
+       for(let j=0;j < teams["final"][i]["team"].members.length;j++){
+         console.log(j);
+      yourHTML += "<li class='list-item'><img id='pp' src='../Assets/Images/Rectangle 155.svg'><p>"+teams['final'][i]['pt_skill'][j]['participant'].name+"<br><t>"
      if(teams["final"][i]["pt_skill"][j]["skills"].length==0){
       yourHTML += "</t></p></li>"
      }
@@ -221,7 +201,23 @@ function displayTeams() {
       yourHTML += teams["final"][i]["pt_skill"][j]["skills"][0]["skill"]+"</t></p></li>"
      }
     }
-     yourHTML += "</ul></div></div></div></div></div>"
+    yourHTML += "</ul></div></div></div></div>"
+    
+    i++;
+    console.log(i);
+    console.log(teams["final"][i]["team"].name);
+    yourHTML += "<div class='col-lg-6 col-md-6 col-sm-12'><div class='card2' style='max-width: 497px; max-height: 371px; padding-bottom:20px;'><div class='card-body'><h4 class='card-title'>" +teams["final"][i]["team"].name +"</h4><p><text>Hackathon:</text><hackathon>" +teams["final"][i]["hackName"] +"</hackathon></p><div class='card-details'><p><f>"+teams["final"][i]["team"].members.length +"</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>"
+    for(let k=0; k < teams["final"][i]["team"].members.length;k++){
+      console.log(k+10);
+      yourHTML += "<li class='list-item'><img id='pp' src='../Assets/Images/Rectangle 155.svg'><p>"+teams['final'][i]['pt_skill'][k]['participant'].name+"<br><t>"
+      if(teams["final"][i]["pt_skill"][k]["skills"].length==0){
+        yourHTML += "</t></p></li>"
+      }
+      else{
+        yourHTML += teams["final"][i]["pt_skill"][k]["skills"][0]["skill"]+"</t></p></li>"
+      }
+    }
+    yourHTML += "</ul></div></div></div></div></div>"
     
     i++;
     console.log(i);

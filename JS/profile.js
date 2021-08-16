@@ -129,7 +129,11 @@ function add_skills(){
   )
   .then((response) => {
     console.log("Success:", response.data);
-    window.location.assign("./viewhackathon.html");
+    swal("SUCCESS!!", "Your profile has been created successfully", "success").then(okay => {
+        if (okay) {
+            window.location.href = "./viewhackathon.html";
+        }
+    })
   })
   .catch((error) => {
     console.error("Error:", error);

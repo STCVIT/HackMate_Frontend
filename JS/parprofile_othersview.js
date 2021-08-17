@@ -24,16 +24,18 @@ $(document).ready(function () {
        document.querySelector("#year").innerHTML = user.participant.graduation_year;
        document.querySelector("#bio").innerHTML = user.participant.bio;
 
-       let body = document.getElementById("#card-body");
-       let yourHTML = "";
+       let body = document.getElementById("card-body");
+       let yourHTML = "<h5 class='card-title'>Skills</h5>";
        console.log(user.skills.length);
        let len = user.skills.length;
        for(let i=0;i<len;i++){
-           yourHTML += "<p class='fill'><input class='form-check-input' type='checkbox' value='' id='flexCheckDefault' checked><label class='check-label' for='flexCheckDefault'>"+user.skills[i].skill+"</label></p>"
+           yourHTML += "<p class='fill'><input class='form-check-input' type='checkbox' value='' id='flexCheckDefault' checked><label class='check-label' for='flexCheckDefault'>"+
+           user.skills[i].skill
+           yourHTML += "</label></p>"
         }
         console.log(yourHTML);
         
-        body.innerHTML += yourHTML;
+        body.innerHTML= yourHTML;
    })
    .catch((error) => console.error("Error: " + error));
 /*function add_review() {

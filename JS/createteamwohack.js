@@ -1045,7 +1045,7 @@ document.getElementById("participant_name").addEventListener("keyup", function (
         var part123 = teams.final[0].pt._id;
         localStorage.setItem("participant", part123);
         document.querySelector(".persons").innerHTML +=
-          "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='../../HTML/MyProfile_otherView.html'>" + teams.final[0].pt.name + "</a></h4><h5 class='text14'>" + teams.final[0].skills[0].skill + "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+          "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + teams.final[0].pt.name + "</a></h4><h5 class='text14'>" + teams.final[0].skills[0].skill + "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
       })
       .catch(e => {
         console.log(e);

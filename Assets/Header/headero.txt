@@ -16,7 +16,6 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle username" href="#" id="navbarDropdown"
                         style="padding-right: 2vw;" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        STC
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <div class="triangle-up"></div>

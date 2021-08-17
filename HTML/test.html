@@ -129,14 +129,10 @@
             Authorization: "Bearer " + auth,
         },
     })
-        .then((response) => {
+    .then((response) => {
             requests = response.data;
             console.log(requests);
 
-            if (response.status == 401) {
-                document.querySelector(".notification2").innerHTML += "<div class='text-center notification1' style='padding-top: 16px;'>    Notifications</div><div class='text-center notification2' style='padding-top: 25px'>    You don't have any Notifications</div>"
-            }
-            else {
                 requests.received.forEach(element => {
                     console.log(element)
                     document.querySelector(".notification2").innerHTML += "<div class='row notification-inner' style='background: #283d4c;'>    <div class='col-1' style='margin-left: 30px; padding-left: 0;'><img            style='width: 47px;' src='../Assets/Images/userdp.svg' alt=''></div>    <div class='col-6 text-start'>        <nbw>" + element.participant.name + "</nbw> has requested you to become a part of your        <nbw>" + element.team.name + "</nbw>.    </div>    <div class='col-2'>        <nbgr id=" + element.req._id + " onclick='acceptreq(event.target.id)'>ACCEPT</nbgr>    </div>    <div class='col-2'>        <nbgr id=" + element.req._id + " onclick='rejectreq(event.target.id)'>REJECT</nbgr>    </div></div>"
@@ -145,11 +141,14 @@
                     console.log(element)
                     document.querySelector(".notification2").innerHTML += "<div class='row notification-inner' style='background: #283d4c;'>    <div class='col-1' style='margin-left: 30px; padding-left: 0;'><img            style='width: 47px;' src='../Assets/Images/userdp.svg' alt=''></div>    <div class='col-6 text-start'><nbw> You </nbw> have requested to become a part of <nbw>" + element.team.name + "</nbw>.    </div>    <div class='col-4 text-center'>        <nbgr id=" + element.req._id + " onclick='deletereq(event.target.id)'>DELETE</nbgr>    </div></div>"
                 })
-            }
 
         })
         .catch((error) => {
             console.error("Error:", error);
+
+            if (error.response.status == 404) {
+                document.querySelector(".notification2").innerHTML += "<div class='text-center notification1' style='padding-top: 16px;'>    Notifications</div><div class='text-center notification2' style='padding-top: 25px'>    You don't have any Notifications</div>"
+            }
         });
     document.querySelector("#requests").addEventListener("click", () => {
 
@@ -204,11 +203,11 @@
                 else {
                     requests.received.forEach(element => {
                         console.log(element)
-                        document.querySelector(".notification2").innerHTML += "<div class='row notification-inner' style='background: #283d4c;'>    <div class='col-1' style='margin-left: 30px; padding-left: 0;'><img            style='width: 47px;' src='../Assets/Images/userdp.svg' alt=''></div>    <div class='col-6 text-start'>        <nbw>" + element.leader.name + "</nbw> has invited you to join the team <nbw>" + element.team.name + "</nbw>.    </div>    <div class='col-2'>        <nbgr id=" + element.inv._id + " onclick='acceptreq(event.target.id)'>ACCEPT</nbgr>    </div>    <div class='col-2'>        <nbgr id=" + element.inv._id + " onclick='rejectreq(event.target.id)'>REJECT</nbgr>    </div></div>"
+                        document.querySelector(".notification2").innerHTML += "<div class='row notification-inner' style='background: #283d4c;'>    <div class='col-1' style='margin-left: 30px; padding-left: 0;'><img            style='width: 47px;' src='../Assets/Images/userdp.svg' alt=''></div>    <div class='col-6 text-start'>        <nbw>" + element.leader.name + "</nbw> has invited you to join the team <nbw>" + element.team.name + "</nbw>.    </div>    <div class='col-2'>        <nbgr id=" + element.inv._id + " onclick='acceptinv(event.target.id)'>ACCEPT</nbgr>    </div>    <div class='col-2'>        <nbgr id=" + element.inv._id + " onclick='rejectinv(event.target.id)'>REJECT</nbgr>    </div></div>"
                     });
                     requests.sent.forEach(element => {
                         console.log(element)
-                        document.querySelector(".notification2").innerHTML += "<div class='row notification-inner' style='background: #283d4c;'>    <div class='col-1' style='margin-left: 30px; padding-left: 0;'><img            style='width: 47px;' src='../Assets/Images/userdp.svg' alt=''></div>    <div class='col-6 text-start'>        <nbw> You </nbw> have invited" + element.participant.name + "to join the team <nbw>" + element.team.name + "</nbw>.    </div>    <div class='col-4 text-center'> <nbgr id=" + element.inv._id + " onclick='deletereq(event.target.id)'>DELETE</nbgr>    </div></div>"
+                        document.querySelector(".notification2").innerHTML += "<div class='row notification-inner' style='background: #283d4c;'>    <div class='col-1' style='margin-left: 30px; padding-left: 0;'><img            style='width: 47px;' src='../Assets/Images/userdp.svg' alt=''></div>    <div class='col-6 text-start'>        <nbw> You </nbw> have invited" + element.participant.name + "to join the team <nbw>" + element.team.name + "</nbw>.    </div>    <div class='col-4 text-center'> <nbgr id=" + element.inv._id + " onclick='deleteinv(event.target.id)'>DELETE</nbgr>    </div></div>"
                     });
                 }
 

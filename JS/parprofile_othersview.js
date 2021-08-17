@@ -4,7 +4,7 @@ $(document).ready(function () {
 });
 
   var user;
-  randomId = "60f2b7b4c28f930015dc3dd7" ;
+  randomId = localStorage.getItem("participant");
   axios(`${url}/participant/get/${randomId}`, {
       headers: {
           Authorization: "Bearer " + auth,

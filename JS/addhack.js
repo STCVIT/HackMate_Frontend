@@ -24,16 +24,13 @@ async function uploadBlob(file) {
   uploadTask.on(
     "state_changed",
     (snapshot) => {
-      // Observe state change events such as progress, pause, and resume
-      // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
       var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-      //console.log("Upload is " + progress + "% done");
       switch (snapshot.state) {
-        case firebase.storage.TaskState.PAUSED: // or 'paused'
-          //console.log("Upload is paused");
+        case firebase.storage.TaskState.PAUSED:
+          console.log("Upload is paused");
           break;
-        case firebase.storage.TaskState.RUNNING: // or 'running'
-          //console.log("Upload is running");
+        case firebase.storage.TaskState.RUNNING:
+          console.log("Upload is running");
           break;
       }
     },
@@ -41,8 +38,6 @@ async function uploadBlob(file) {
       // Handle unsuccessful uploads
     },
     async () => {
-      // Handle successful uploads on complete
-      // For instance, get the download URL: https://firebasestorage.googleapis.com/...
       uploadTask.snapshot.ref.getDownloadURL().then(async (downloadURL) => {
         console.log("File available at", downloadURL);
 
@@ -67,6 +62,10 @@ async function uploadBlob(file) {
         var mints = document.myform.mints.value;
         var maxts = document.myform.maxts.value;
         var prizes = document.myform.prizes.value;
+
+        firebase.auth().currentUser.getIdToken().then(async (id)=>{
+          auth = await id
+      })
         axios
           .post(
             `${url}/organiser/createHack`,
@@ -110,79 +109,3 @@ document
   .addEventListener("change", function () {
     console.log("File Uploaded Locally");
   });
-
-// fetch(`${url}/organiser/createHack`, {
-
-//   method: "POST",
-//   headers: {
-//     "Content-Type": "application/json",
-//     Authorization: "Bearer " + auth,
-//   },
-//   body: JSON.stringify({
-//     name: "Brew",
-//     venue: "VIT",
-//     start: "2021-07-01",
-//     end: "2021-07-30",
-//     poster: "aGV5",
-//     max_team_size: 4,
-//     mode_of_conduct:"Offline",
-//     prize_pool:100000,
-//     description:"Testing 101",
-//     website:"google.com"
-//   }),
-// }).then((response)=>response.json())
-//   .then((data) => {
-//     console.log("Success:", data);
-//   })
-//   .catch((error) => {
-//     console.error("Error:", error);
-//   });
-
-// axios(`${url}/organiser/createHack`, {
-
-//   method: "POST",
-//   headers: {
-//     Authorization: "Bearer " + auth,
-//   },
-//   data: {
-//     name: "Brew",
-//     venue: "VIT",
-//     start: "2021-07-01",
-//     end: "2021-07-30",
-//     poster: "aGV5",
-//     max_team_size: 4,
-//     mode_of_conduct:"Offline",
-//     prize_pool:100000,
-//     description:"Testing 101",
-//     website:"google.com"
-//   },
-// })
-//   .then((data) => {
-//     console.log("Success:", data.data);
-//   })
-//   .catch((error) => {
-//     console.error("Error:", error);
-//   });
-
-// axios.post(`${url}/organiser/createHack`,{
-//     name: "Brew",
-//     venue: "VIT",
-//     start: "2021-07-01",
-//     end: "2021-07-30",
-//     poster: "aGV5",
-//     max_team_size: 4,
-//     mode_of_conduct:"Offline",
-//     prize_pool:100000,
-//     description:"Testing 101",
-//     website:"google.com"},
-//  {
-// headers: {
-//     Authorization: "Bearer " + auth,
-//   },
-// })
-//   .then((data) => {
-//     console.log("Success:", data.data);
-//   })
-//   .catch((error) => {
-//     console.error("Error:", error);
-//   });

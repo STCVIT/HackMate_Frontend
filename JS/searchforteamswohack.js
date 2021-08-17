@@ -2570,9 +2570,11 @@ document.getElementById("search").addEventListener("keyup", function (event) {
         if (e.response.status == 404) {
           swal("WARNING!!", "There is no such team.", "warning");
         }
-        if (e.response.status == 401) {
-          swal("WARNING!!", "Your session has expired. Pls re-login again!!", "warning");
-        }
+        // if (e.response.status == 401) {
+        //   swal("WARNING!!", "Your session has expired. Pls re-login again!!", "warning").then(function() {
+        //     window.location.assign("../../index.html");
+        // });
+        // }
       });
   }
 });
@@ -2634,11 +2636,8 @@ function requests() {
     .catch((error) => {
       console.error("Error:", error);
       console.log(error.response.status);
-      if (error.response.status == 400) {
+      if (error.response.status == 409) {
         swal("WARNING!!", "Request to join this team has already been sent.", "warning");
-      }
-      if (error.response.status == 401) {
-        swal("WARNING!!", "Your session has expired. Pls re-login again!!", "warning");
       }
     });
 }
@@ -2666,11 +2665,8 @@ function request() {
     .catch((error) => {
       console.error("Error:", error);
       console.log(error.response.status);
-      if (error.response.status == 400) {
+      if (error.response.status == 409) {
         swal("WARNING!!", "Request to join this team has already been sent.", "warning");
-      }
-      if (error.response.status == 401) {
-        swal("WARNING!!", "Your session has expired. Pls re-login again!!", "warning");
       }
     });
 }

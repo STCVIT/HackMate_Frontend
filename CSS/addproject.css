@@ -84,6 +84,9 @@ nbg {
   color: rgba(231, 239, 239, 0.36);
 }
 
+.projects>.card{
+  margin-right: 16px;
+}
 .card {
   margin-top: 21px;
   background: #1d2833;
@@ -188,6 +191,11 @@ input:focus {
   filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.2));
 }
 
+@media (max-width: 992px) {
+  .projects>.card{
+    margin-right: 0;
+  }
+}
 @media (max-width: 711px) {
   .plus{
     width: 75vw;

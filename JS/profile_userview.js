@@ -4,10 +4,6 @@ $(document).ready(function () {
 });
 
 var user;
-const url='https://hackportalbackend.herokuapp.com';
-auth="eyJhbGciOiJSUzI1NiIsImtpZCI6Ijc3MTBiMDE3ZmQ5YjcxMWUwMDljNmMzNmIwNzNiOGE2N2NiNjgyMTEiLCJ0eXAiOiJKV1QifQ.eyJwYXJ0aWNpcGFudCI6dHJ1ZSwiaXNzIjoiaHR0cHM6Ly9zZWN1cmV0b2tlbi5nb29nbGUuY29tL2hhY2twb3J0YWwtNDUwZDAiLCJhdWQiOiJoYWNrcG9ydGFsLTQ1MGQwIiwiYXV0aF90aW1lIjoxNjI2NTk0Mzc0LCJ1c2VyX2lkIjoib3hxeXN2bHB2VWU3dXBkcGJVaXNGS0Qyc1I5MyIsInN1YiI6Im94cXlzdmxwdlVlN3VwZHBiVWlzRktEMnNSOTMiLCJpYXQiOjE2MjY1OTQzNzQsImV4cCI6MTYyNjU5Nzk3NCwiZW1haWwiOiJtZWdoYW1haXRpbjI3QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbIm1lZ2hhbWFpdGluMjdAZ21haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.N8e-6hwJk2NhYilbOKcvMiKlO4xodJVRJLqOuB0vwFXy9-Uu4WPO930xtEE66YJsgP_XCW5RGISyyFNu_5-isJyE7J8yRJal0VgVUlSAqWcNT23khWdiU5WkaGBFf6hyEDC8qpKOpU30mcWV9_-K7r0SH3Ve-FgiHs5z5ho9zXpLAqplOyRwmFjFWmk8vaFWOLgeiuPE0j7e0JcqqQO04Y5e8lRBdMpQMlq9GJoNc9gzrr33wJbpBVDF1Zd1O0MuC_2jMh6xkYTwVKDxuXhPY1je1Ax6rL6Dw7GB1CPX9Y1BPrYZXCegd5p8Ek7jPo5eFa7mRsEnlgLNymJE4s-7xQ"
-
-
 axios(`${url}/participant/login`, {
     headers: {
         Authorization: "Bearer " + auth,
@@ -27,6 +23,57 @@ axios(`${url}/participant/login`, {
     console.log(user);
 })
 .catch((error) => console.error("Error: " + error));
+
+
+let fd= document.getElementById("frontend");
+let bd=document.getElementById("backend");
+let ui = document.getElementById("ui");
+let ml = document.getElementById("ml");
+let mg = document.getElementById("management");
+let app = document.getElementById("app");
+let cyber = document.getElementById("cyber");
+let block = document.getElementById("block");
+var skills=[];
+var userskills=[];
+axios(`${url}/skills/mySkills`, {
+    headers: {
+        Authorization: "Bearer " + auth,
+    }
+})
+.then((response) => {
+    skills=response.data;
+    // console.log(skills);
+    skills.forEach(element => {
+        userskills.push(element.skill);
+    });
+    console.log(userskills);
+    if(userskills.includes("frontend")){
+        fd.checked = true;
+    }
+    if(userskills.includes("backend")){
+        bd.checked = true;
+    }
+    if(userskills.includes("management")){
+        mg.checked = true;
+    }
+    if(userskills.includes("ui/ux")){
+        ui.checked= true;
+    }
+    if(userskills.includes("ml")){
+        ml.checked = true;
+    }
+    if(userskills.includes("appdev")){
+        app.checked = true; 
+    }
+    if(userskills.includes("cybersecurity")){
+        cyber.checked = true;
+    }
+    if(userskills.includes("blockchain")){
+        block.checked = true;
+    }
+})
+.catch((error) => console.error("Error: " + error));
+
 
 function delete_accoount(){
   axios 
@@ -161,6 +208,11 @@ function update_account() {
             )
             .then((response) => {
                 console.log("Success:", response.data);
+                swal("SUCCESS!!", "Your profile has been updated successfully", "success").then(okay => {
+                    if (okay) {
+                        window.location.href = "./viewhackathon.html";
+                    }
+                })
             })
             .catch((error) => {
                 console.error("Error:", error);
@@ -178,4 +230,107 @@ function onError(input,message){
     let messageEle=parent.querySelector("small");
     messageEle.style.visibility="visible";
     messageEle.innerText=message;  
+}
+function arrayRemove(arr, value) {
+    return arr.filter(function(geeks){
+        return geeks != value;
+    });
+ }
+
+
+function addskills(){
+
+
+    let choice = [];
+    let fd= document.getElementById("frontend");
+    let bd=document.getElementById("backend");
+    let ui = document.getElementById("ui");
+    let ml = document.getElementById("ml");
+    let mg = document.getElementById("management");
+    let app = document.getElementById("app");
+    let cyber = document.getElementById("cyber");
+    let block = document.getElementById("block");
+    if(fd.checked==1){
+        choice.push("frontend");
+    }
+    else{
+        if(choice.includes("frontend")){
+            choice = arrayRemove(choice,"frontend");
+        }
+    }
+    if(bd.checked==1){
+        choice.push("backend");
+    }
+    else{
+        if(choice.includes("backend")){
+            choice = arrayRemove(choice,"backend");
+        }
+    }
+    if(ui.checked==1){
+        choice.push("ui/ux");
+    }
+    else{
+        if(choice.includes("ui/ux")){
+            choice = arrayRemove(choice,"ui/ux");
+        }
+    }
+    if(ml.checked==1){
+        choice.push("ml");
+    }
+    else{
+        if(choice.includes("ml")){
+            choice = arrayRemove(choice,"ml");
+        }
+    }
+    if(mg.checked==1){
+        choice.push("management");
+    }
+    else{
+        if(choice.includes("management")){
+            choice = arrayRemove(choice,"management");
+        }
+    }
+    if(app.checked==1){
+        choice.push("appdev");
+    }
+    else{
+        if(choice.includes("appdev")){
+            choice = arrayRemove(choice,"appdev");
+        }
+    }
+    if(cyber.checked==1){
+        choice.push("cybersecurity");
+    }
+    else{
+        if(choice.includes("cybersecurity")){
+            choice = arrayRemove(choice,"cybersecurity");
+        }
+    }
+    if(block.checked==1){
+        choice.push("blockchain");
+    }
+    else{
+        if(choice.includes("blockchain")){
+            choice = arrayRemove(choice,"blockchain");
+        }
+    }
+
+    axios
+  .post(`${url}/skills/mySkills`,
+  {
+    skills : choice,
+  },
+  {
+    headers: {
+      Authorization: "Bearer " + auth,
+    },
+  }
+  )
+  .then((response) => {
+    console.log("Success:", response.data);
+    swal("SUCCESS!!", "Your skills have been added successfully", "success");
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
 }

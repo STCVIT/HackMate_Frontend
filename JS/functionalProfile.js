@@ -40,9 +40,7 @@ form2.addEventListener('submit',(e)=>{
     console.log(eval);
     if(eval==1)
     {
-        auth="eyJhbGciOiJSUzI1NiIsImtpZCI6IjFiYjk2MDVjMzZlOThlMzAxMTdhNjk1MTc1NjkzODY4MzAyMDJiMmQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vaGFja3BvcnRhbC00NTBkMCIsImF1ZCI6ImhhY2twb3J0YWwtNDUwZDAiLCJhdXRoX3RpbWUiOjE2MjcyMDEzNjUsInVzZXJfaWQiOiJFbGdBSHBKVkpMT3hlZm55TVdxak1RdThLWDczIiwic3ViIjoiRWxnQUhwSlZKTE94ZWZueU1XcWpNUXU4S1g3MyIsImlhdCI6MTYyNzIwMTM2NSwiZXhwIjoxNjI3MjA0OTY1LCJlbWFpbCI6ImhhY2ttYXRlbWVnaGF0ZXN0QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImhhY2ttYXRlbWVnaGF0ZXN0QGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.cNDhMQnKSdIpr0UZ-edKyvPVvJ5OJ1Z6Jomo5f-vagBA_bCJiLLdRS28Po58o0ujT8q6I8FFBKhvX_qtAt8ds6sLs2gpL3iddhKw9Afs2JxLLnBKv3tS5TCZf7lNcmRNg4vPA-9vLkxDsv6_1QSPLDmjBsN9OsYceNjmg6EBQlc3UDJZ57TMcFtucjdyIhoCDwgVFM57isQS1l0ZgEUR1gmsXI9OYslilLSQpdx4GwlCDXMJBN70sT6xDOOnm4rLhXg80bB_AIuMoh38InP0x7le94fwnz1xBp7zXKN1nHCnbgDluO5AL_OskOuu_o8-F3cU41Vj9N_i19ODq9DTlg"
         console.log("form validation completed");
-        const url = 'https://hackportalbackend.herokuapp.com';
         fetch(`${url}/participant/createProfile`, {
 
             method: "POST",
@@ -76,13 +74,13 @@ form2.addEventListener('submit',(e)=>{
 function checkInputs(Name,username,college,year){
     let flag=0;
     let current_year= new Date().getFullYear();
-    Name.value=Name.value.toUpperCase().trim();
+    Name.value=Name.value.trim();
     username.value=username.value.trim();
     year.value=year.value.trim();
-    college.value=college.value.toUpperCase().trim();
+    college.value=college.value.trim();
     let len=Name.value.length;
     let n = username.value.length;
-    let reg1=/^[A-Z][A-Z\s]*$/;
+    let reg1= /^[a-zA-Z][a-zA-Z\s]*$/;
     let reg2=/(19|20)\d{2}$/;
     //name should be only alphabets and of max length 30
     if(len<=30){

@@ -56,9 +56,9 @@ nb1 {
 .box {
   background: #1d2833;
   width: 276.26px;
-  height: 320px;
+  height: 350px;
   margin-bottom: 60px;
-  margin-right: 60px;
+  margin-right: 30px;
   border-radius: 2.21008px;
 }
 
@@ -133,36 +133,6 @@ padding-top: 3px;
 color: #1EA54C;
 }
 
-.circle1{
-  width:13.76px;
-  height:13.76px;
-  border-radius: 50%;
-  background-color: #1EA54C;
-  display: inline-block;
-  position: relative;
-  top: 3px;
-}
-.circle2{
-
-  width:10px;
-  height:10px;
-  border-radius: 50%;
-  display: inline-block;
-  position: relative;
-  right: 15px;
-  top: 1px;
-}
-.circle3{
-
-  width:6.02px;
-  height:6.02px;
-  border-radius: 50%;
-  background-color: #1EA54C;
-  display: inline-block;
-  position: relative;
-  right: 27px;
-  bottom: 1px;
-}
 
 #pagination {
   display: flex;

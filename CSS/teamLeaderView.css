@@ -4,6 +4,11 @@
     font-family: "Fira Code", monospace;
     color: #e7efef;
   }
+  #skillHeading{
+    font-family: "Fira Code", monospace;
+    font-weight: 700 !important ; 
+    font-size: 19.0385px;
+  }
   .card .card-row l{
     background:#1D2833;
     color:rgba(231, 239, 239, 0.6);
@@ -246,4 +251,21 @@ nbw {
   /* identical to box height, or 25px */
 
   letter-spacing: 0.04em;
+}
+
+@media only screen and (max-width:400px) {
+  .hackdetailsMobile{
+    min-width:300px;
+  }
+  .hackdetailsMobile .box{
+    min-width:300px;
+    overflow: hidden;
+  }
+  .bigbox{
+    min-width: 300px;
+    margin-left: 0%;
+  }
+  .bigbox .card .card-row p{
+    padding-left: 0px;
+  }
 }

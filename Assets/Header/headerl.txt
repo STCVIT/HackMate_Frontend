@@ -1,7 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container-fluid">
         <a class="navbar-brand logo" href="../index.html">
-            <g><</g><b>HackMate</b><g>></g>
+            <g>
+<</g><b>HackMate</b><g>></g>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,20 +19,22 @@
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                    <a class="nav-link dropdown-toggle notification" href="#" id="navbarDropdown"
                         style="padding-right: 2vw;" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="../Assets/Images/carbon_notification-new.svg"
-                            alt="">
+                        <img src="../Assets/Images/carbon_notification-new.svg" alt="">
                     </a>
-                    
-                    <div class="carbon-notification dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
+                    <div class="carbon-notification" style="display: none;">
                         <div class="triangle-up1"></div>
-                        <div class="wrap1" style="background: #283d4c; width: 576px; height: 188px; border: 1px solid rgba(30, 165, 76, 0.2);">
-                            <div class="text-center notification1" style="background: #2e3d4c; padding-top: 16px;">
-                                Notifications
+                        <div class="wrap1"
+                            style="background: #283d4c; width: 576px; height: 188px; border: 1px solid rgba(30, 165, 76, 0.2);">
+                            <div class="d-flex notification1" style="background: #26313c;">
+                                <div class="notification-type-active flex-fill" id="requests" style="cursor: pointer">
+                                    Requests</div>
+                                <div class="notification-type-inactive flex-fill" id="invites" style="cursor: pointer;">
+                                    Invites</div>
                             </div>
-                            <div class="text-center notification2" style="background: #2e3d4c; padding-top: 50px">
-                                You don't have any Notifications
+                            <div class="notification2" style="padding: 12px; background: #283d4c;">
                             </div>
                         </div>
                     </div>
@@ -39,13 +42,13 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle username" href="#" id="navbarDropdown"
                         style="padding-right: 2vw;" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        victor_5
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <div class="triangle-up"></div>
                         <li><a class="dropdown-item" href="./My_teams.html">MY TEAMS</a></li>
                         <li><a class="dropdown-item" href="./MyProfile_userView.html">MY PROFILE</a></li>
-                        <li><a class="dropdown-item" href="#" style="color: #F54646;">LOGOUT</a></li>
+                        <li><a class="dropdown-item" onclick="logout()" href="../" style="color: #F54646;">LOGOUT</a>
+                        </li>
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -56,3 +59,196 @@
         </div>
     </div>
 </nav>
+
+<script>
+
+    axios(`${url}/participant/login`, {
+        headers: {
+            Authorization: "Bearer " + auth,
+        },
+    })
+        .then((response) => { document.querySelector(".username").innerText = response.data.username })
+
+function getRequests(){    axios(`${url}/requests/myRequests`, {
+        headers: {
+            Authorization: "Bearer " + auth,
+        },
+    })
+        .then((response) => {
+            requests = response.data;
+            console.log(requests);
+            document.querySelector(".notification2").innerHTML = ""
+            requests.received.forEach(element => {
+                console.log(element)
+                document.querySelector(".notification2").innerHTML += "<div class='row notification-inner' style='background: #283d4c;'>    <div class='col-1' style='margin-left: 30px; padding-left: 0;'><img            style='width: 47px;' src='../Assets/Images/userdp.svg' alt=''></div>    <div class='col-6 text-start' style='cursor: default;'>        <nbw>" + element.participant.name + "</nbw> has requested you to become a part of your        <nbw>" + element.team.name + "</nbw>.    </div>    <div class='col-2'>        <nbgr id=" + element.req._id + " onclick='acceptreq(event.target.id)' style='cursor: pointer;'>ACCEPT</nbgr>    </div>    <div class='col-2'>        <nbgr id=" + element.req._id + " onclick='rejectreq(event.target.id)' style='cursor: pointer;'>REJECT</nbgr>    </div></div>"
+            })
+            requests.sent.forEach(element => {
+                console.log(element)
+                document.querySelector(".notification2").innerHTML += "<div class='row notification-inner' style='background: #283d4c;'>    <div class='col-1' style='margin-left: 30px; padding-left: 0;'><img            style='width: 47px;' src='../Assets/Images/userdp.svg' alt=''></div>    <div class='col-6 text-start' style='cursor: default;'><nbw> You </nbw> have requested to become a part of <nbw>" + element.team.name + "</nbw>.    </div>    <div class='col-4 text-center'>        <nbgr id=" + element.req._id + " onclick='deletereq(event.target.id)' style='cursor: pointer;'>DELETE</nbgr>    </div></div>"
+            })
+
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+
+            if (error.response.status == 404) {
+                document.querySelector(".notification2").innerHTML = "<div class='text-center notification1' style='padding-top: 16px;'>    Notifications</div><div class='text-center notification2' style='padding-top: 25px'>    You don't have any Notifications</div>"
+            }
+        });
+}
+    function getInvites(){
+        axios(`${url}/invites/myInvites`, {
+            headers: {
+                Authorization: "Bearer " + auth,
+            },
+        })
+            .then((response) => {
+                requests = response.data;
+                console.log(requests);
+                document.querySelector(".notification2").innerHTML = ""
+                requests.received.forEach(element => {
+                    console.log(element)
+                    document.querySelector(".notification2").innerHTML += "<div class='row notification-inner' style='background: #283d4c;'>    <div class='col-1' style='margin-left: 30px; padding-left: 0;'><img            style='width: 47px;' src='../Assets/Images/userdp.svg' alt=''></div>    <div class='col-6 text-start' style='cursor: default;'>        <nbw>" + element.leader.name + "</nbw> has invited you to join the team <nbw>" + element.team.name + "</nbw>.    </div>    <div class='col-2'>        <nbgr id=" + element.inv._id + " onclick='acceptinv(event.target.id)' style='cursor: pointer;'>ACCEPT</nbgr>    </div>    <div class='col-2'>        <nbgr id=" + element.inv._id + " onclick='rejectinv(event.target.id)' style='cursor: pointer;'>REJECT</nbgr>    </div></div>"
+                });
+                requests.sent.forEach(element => {
+                    console.log(element)
+                    document.querySelector(".notification2").innerHTML += "<div class='row notification-inner' style='background: #283d4c;'>    <div class='col-1' style='margin-left: 30px; padding-left: 0;'><img            style='width: 47px;' src='../Assets/Images/userdp.svg' alt=''></div>    <div class='col-6 text-start' style='cursor: default;'>        <nbw> You </nbw> have invited <nbw>" + element.participant.name + " </nbw>to join the team <nbw>" + element.team.name + "</nbw>.    </div>    <div class='col-4 text-center'> <nbgr id=" + element.inv._id + " onclick='deleteinv(event.target.id)' style='cursor: pointer;'>DELETE</nbgr>    </div></div>"
+                });
+
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+                if (error.response.status == 404) {
+                    document.querySelector(".notification2").innerHTML = "<div class='text-center notification1' style='padding-top: 16px;'>    Notifications</div><div class='text-center notification2' style='padding-top: 25px'>    You don't have any Notifications</div>"
+                }
+            });
+}
+getRequests()
+    function logout() {
+        localStorage.clear();
+    }
+
+    document.querySelector(".notification").addEventListener("click", () => {
+        if (document.querySelector(".carbon-notification").getAttribute("style") == "display: none;") {
+            document.querySelector(".carbon-notification").setAttribute("style", "display: block; position:absolute; top: 100%; left: auto; right: 0; margin-top: 15px;")
+        }
+        else if (document.querySelector(".carbon-notification").getAttribute("style") == "display: block; position:absolute; top: 100%; left: auto; right: 0; margin-top: 15px;") {
+            document.querySelector(".carbon-notification").setAttribute("style", "display: none;")
+        }
+    })
+
+    document.querySelector("#requests").addEventListener("click", () => {
+
+        if (document.querySelector("#requests").classList.contains("notification-type-inactive")) {
+            document.querySelector("#requests").classList.remove("notification-type-inactive")
+            document.querySelector("#requests").classList.add("notification-type-active")
+            document.querySelector("#invites").classList.remove("notification-type-active")
+            document.querySelector("#invites").classList.add("notification-type-inactive")
+        }
+        document.querySelector(".notification2").innerHTML = "";
+
+        getRequests()
+
+    })
+    document.querySelector("#invites").addEventListener("click", () => {
+
+        if (document.querySelector("#invites").classList.contains("notification-type-inactive")) {
+            document.querySelector("#invites").classList.remove("notification-type-inactive")
+            document.querySelector("#invites").classList.add("notification-type-active")
+            document.querySelector("#requests").classList.remove("notification-type-active")
+            document.querySelector("#requests").classList.add("notification-type-inactive")
+        }
+        getInvites();
+    })
+
+    async function acceptreq(id) {
+        console.log("Here")
+        var response = await axios.post(
+            `${url}/requests/requestStatus/accepted/${id}`, {},
+            {
+                headers: {
+                    Authorization: "Bearer " + auth,
+                },
+            }
+        )
+
+        var accepted = await response.data;
+        getRequests()
+    }
+    async function rejectreq(id) {
+        console.log("Here")
+        var response = await axios.post(
+            `${url}/requests/requestStatus/rejected/${id}`, {},
+            {
+                headers: {
+                    Authorization: "Bearer " + auth,
+                },
+            }
+        )
+
+        var deleted = await response.data
+
+        getRequests()
+    }
+    async function deletereq(id) {
+        console.log("lmfao")
+        var response = await axios.delete(
+            `${url}/requests/${id}`,
+            {
+                headers: {
+                    Authorization: "Bearer " + auth,
+                },
+            }
+        )
+
+        var deleted = await response.data
+
+        getRequests()
+    }
+    async function acceptinv(id) {
+        console.log("Here")
+        var response = await axios.post(
+            `${url}/invites/inviteStatus/accepted/${id}`, {},
+            {
+                headers: {
+                    Authorization: "Bearer " + auth,
+                },
+            }
+        )
+
+        var accepted = await response.data;
+
+        getInvites()
+    }
+    async function rejectinv(id) {
+        console.log("Here")
+        var response = await axios.post(
+            `${url}/invites/inviteStatus/rejected/${id}`, {},
+            {
+                headers: {
+                    Authorization: "Bearer " + auth,
+                },
+            }
+        )
+
+        var deleted = await response.data
+        
+        getInvites()
+    }
+    async function deleteinv(id) {
+        console.log("lmfao")
+        var response = await axios.delete(
+            `${url}/invites/${id}`,
+            {
+                headers: {
+                    Authorization: "Bearer " + auth,
+                },
+            }
+        )
+
+        var deleted = await response.data
+
+        getInvites()
+    }
+
+</script>

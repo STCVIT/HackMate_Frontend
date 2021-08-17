@@ -73,26 +73,11 @@ popular.addEventListener("click", function () {
   }
 });
 
-// fetch(`${url}/getHacks/all?page=1`, {
-//   headers: {
-//
-//     Authorization: "Bearer " + auth,
-//   },
-// })
-//   .then((response) => response.json())
-//   .then((data) => {
-//     hacks = data;
-//     console.log(hacks);
-//     console.log("Success:", data);
-//   })
-//   .catch((error) => {
-//     console.error("Error:", error);
-//   });
-
 function events(event) {
   console.log(event);
   page = event.target.innerHTML;
   console.log(page);
+  window.location = "#wrapper"
   axios(`${url}/getHacks/${occurence}?page=${page}`, {
     headers: {
       Authorization: "Bearer " + auth,
@@ -109,7 +94,6 @@ function events(event) {
           " <a href='" +
           hacks.final[i].website +
           "'><img src='../Assets/Images/Hack Link.svg' alt=''></a></nb1> <br> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw class='startd'>" +
-          //hacks.final[i].start.split("T")[0] +
           new Date(hacks.final[i].start.split("T")[0])
             .toString()
             .split(" ")[2] +
@@ -123,7 +107,6 @@ function events(event) {
             .split(" ")[3] +
           " " +
           "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw class='endd'>" +
-          //hacks.final[i].end.split("T")[0] +
           new Date(hacks.final[i].end.split("T")[0]).toString().split(" ")[2] +
           " " +
           new Date(hacks.final[i].end.split("T")[0]).toString().split(" ")[1] +
@@ -138,9 +121,9 @@ function events(event) {
           hacks.final[i].max_team_size +
           "</nbw><nbw> Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
           hacks.final[i].prize_pool +
-          "</div><div class='status'><circle class='circle1'></circle><circle class='circle2'></circle><circle class='circle3'></circle>" +
-          hacks.final[i].mode_of_conduct +
-          "</div> <a class='btnkm btn btn-success' href='./hackdetails.html?" +
+          "</div><img class='mode_of_conduct pt-3' src='../Assets/Images/" +
+          hacks.final[i].mode_of_conduct + ".svg'>" +
+          "<a class='btnkm btn btn-success' href='./hackdetails.html?" +
           hacks.final[i]._id +
           "' role='button'>Know More</a> </div> </div>";
       }
@@ -154,63 +137,8 @@ function getdeets(event) {
   occurence = event.target.id;
 
   console.log(occurence);
-  // axios(`${url}/getHacks/${event.target.id}?page=1`, {
-  //   headers: {
-  //     Authorization: "Bearer " + auth,
-  //   },
-  // })
-  //   .then((response) => {
-  //     hacks = response.data;
-  //     console.log(hacks);
-  //     document.querySelector(".wrapper").innerHTML = "";
-  //     for (var i = 0; i < hacks.final.length; i++) {
-  //       document.querySelector(".wrapper").innerHTML +=
-  //         "<div class='box'><img src='../Assets/Images/Name Banner.png' class='namebanner' alt=''> <div class='innertxt'> <nb1 class='hackname'>" +
-  //         hacks.final[i].name +
-  //         " <a href='" +
-  //         hacks.final[i].website +
-  //         "'><img src='../Assets/Images/Hack Link.svg' alt=''></a></nb1> <br> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw class='startd'>" +
-  //         //hacks.final[i].start.split("T")[0] +
-  //         new Date(hacks.final[i].start.split("T")[0])
-  //           .toString()
-  //           .split(" ")[2] +
-  //         " " +
-  //         new Date(hacks.final[i].start.split("T")[0])
-  //           .toString()
-  //           .split(" ")[1] +
-  //         " " +
-  //         new Date(hacks.final[i].start.split("T")[0])
-  //           .toString()
-  //           .split(" ")[3] +
-  //         " " +
-  //         "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw class='endd'>" +
-  //         //hacks.final[i].end.split("T")[0] +
-  //         new Date(hacks.final[i].end.split("T")[0]).toString().split(" ")[2] +
-  //         " " +
-  //         new Date(hacks.final[i].end.split("T")[0]).toString().split(" ")[1] +
-  //         " " +
-  //         new Date(hacks.final[i].end.split("T")[0]).toString().split(" ")[3] +
-  //         " " +
-  //         "</nbw> </div> </div> </div> </div> <div class='nbg'> <nbg>Venue: </nbg> <nbw class='venue'>" +
-  //         hacks.final[i].venue +
-  //         "</nbw> </div> <div class='nbg'> <nbg>Team Size: </nbg> <nbw class='ts'>" +
-  //         +hacks.final[i].min_team_size +
-  //         "-" +
-  //         hacks.final[i].max_team_size +
-  //         "</nbw><nbw> Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
-  //         hacks.final[i].prize_pool +
-  //         "</div><div class='status'><circle class='circle1'></circle><circle class='circle2'></circle><circle class='circle3'></circle>" +
-  //         hacks.final[i].mode_of_conduct +
-  //         "</div> <a class='btnkm btn btn-success' href='./hackdetails.html?" +
-  //         hacks.final[i]._id +
-  //         "' role='button'>Know More</a> </div> </div>";
-  //     }
-  //   })
-  //   .catch((error) => {
-  //     console.error("Error:", error);
-  //   });
-
-  displayTeams(); 
+  
+  displayTeams();
 }
 
 var Pagination = {
@@ -294,9 +222,9 @@ var Pagination = {
   },
   Create: function (e) {
     var html = [
-      "<a style='color: #008249;'>&#9668;</a>", // previous button
+      "<a href='#wrapper' onclick='prevPage()' style='color: #008249;text-decoration: none;'>&#9668;</a>", // previous button
       "<span></span>", // pagination container
-      "<a style='margin-left: 11px; color: #008249'>&#9658;</a>", // next button
+      "<a href='#wrapper' onclick='nextPage()' style='margin-left: 11px; color: #008249;text-decoration: none;'>&#9658;</a>", // next button
     ];
     e.innerHTML = html.join("");
     Pagination.e = e.getElementsByTagName("span")[0];
@@ -351,9 +279,9 @@ function displayTeams() {
         hacks.final[i].max_team_size +
         "</nbw><nbw> Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
         hacks.final[i].prize_pool +
-        "</div><div class='status'><circle class='circle1'></circle><circle class='circle2'></circle><circle class='circle3'></circle>" +
-        hacks.final[i].mode_of_conduct +
-        "</div> <a class='btnkm btn btn-success' href='./hackdetails.html?" +
+        "</div> <img class='mode_of_conduct pt-3' src='../Assets/Images/" +
+        hacks.final[i].mode_of_conduct + ".svg'>" +
+        "<a class='btnkm btn btn-success' href='./hackdetails.html?" +
         hacks.final[i]._id +
         "' role='button'>Know More</a> </div> </div>";
     }
@@ -368,3 +296,123 @@ function displayTeams() {
 }
 
 displayTeams();
+
+
+function nextPage() {
+  if (page < total_hacks) {
+    page = Pagination.page + 1;
+  }
+  console.log(page);
+  axios(
+    `${url}/getHacks/${occurence}?page=${page}`,
+    {
+      headers: {
+        Authorization: "Bearer " + auth,
+      },
+    }
+  )
+    .then((response) => {
+      hacks = response.data;
+      console.log(hacks);
+
+      document.querySelector(".wrapper").innerHTML = "";
+      for (var i = 0; i < hacks.final.length; i++) {
+        document.querySelector(".wrapper").innerHTML +=
+          "<div class='box'><img src='../Assets/Images/Name Banner.png' class='namebanner' alt=''> <div class='innertxt'> <nb1 class='hackname'>" +
+          hacks.final[i].name +
+          " <a target='_blank' href='https://" +
+          hacks.final[i].website +
+          "'><img src='../Assets/Images/Hack Link.svg' alt=''></a></nb1> <br> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw class='startd'>" +
+          //hacks.final[i].start.split("T")[0] +
+          new Date(hacks.final[i].start.split("T")[0]).toString().split(" ")[2] +
+          " " +
+          new Date(hacks.final[i].start.split("T")[0]).toString().split(" ")[1] +
+          " " +
+          new Date(hacks.final[i].start.split("T")[0]).toString().split(" ")[3] +
+          " " +
+          "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw class='endd'>" +
+          //hacks.final[i].end.split("T")[0] +
+          new Date(hacks.final[i].end.split("T")[0]).toString().split(" ")[2] +
+          " " +
+          new Date(hacks.final[i].end.split("T")[0]).toString().split(" ")[1] +
+          " " +
+          new Date(hacks.final[i].end.split("T")[0]).toString().split(" ")[3] +
+          " " +
+          "</nbw> </div> </div> </div> </div> <div class='nbg'> <nbg>Venue: </nbg> <nbw class='venue'>" +
+          hacks.final[i].venue +
+          "</nbw> </div> <div class='nbg'> <nbg>Team Size: </nbg> <nbw class='ts'>" +
+          +hacks.final[i].min_team_size +
+          "-" +
+          hacks.final[i].max_team_size +
+          "</nbw><nbw> Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
+          hacks.final[i].prize_pool +
+          "</div><img class='mode_of_conduct pt-3' src='../Assets/Images/" +
+          hacks.final[i].mode_of_conduct + ".svg'>" +
+          "<a class='btnkm btn btn-success' href='./hackdetails.html?" +
+          hacks.final[i]._id +
+          "' role='button'>Know More</a> </div> </div>";
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}
+function prevPage() {
+  if (page > 1) {
+    page = Pagination.page - 1;
+  }
+  console.log(page);
+  axios(
+    `${url}/getHacks/${occurence}?page=${page}`,
+    {
+      headers: {
+        Authorization: "Bearer " + auth,
+      },
+    }
+  )
+    .then((response) => {
+      hacks = response.data;
+      console.log(hacks);
+
+      document.querySelector(".wrapper").innerHTML = "";
+      for (var i = 0; i < hacks.final.length; i++) {
+        document.querySelector(".wrapper").innerHTML +=
+          "<div class='box'><img src='../Assets/Images/Name Banner.png' class='namebanner' alt=''> <div class='innertxt'> <nb1 class='hackname'>" +
+          hacks.final[i].name +
+          " <a target='_blank' href='https://" +
+          hacks.final[i].website +
+          "'><img src='../Assets/Images/Hack Link.svg' alt=''></a></nb1> <br> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw class='startd'>" +
+          //hacks.final[i].start.split("T")[0] +
+          new Date(hacks.final[i].start.split("T")[0]).toString().split(" ")[2] +
+          " " +
+          new Date(hacks.final[i].start.split("T")[0]).toString().split(" ")[1] +
+          " " +
+          new Date(hacks.final[i].start.split("T")[0]).toString().split(" ")[3] +
+          " " +
+          "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw class='endd'>" +
+          //hacks.final[i].end.split("T")[0] +
+          new Date(hacks.final[i].end.split("T")[0]).toString().split(" ")[2] +
+          " " +
+          new Date(hacks.final[i].end.split("T")[0]).toString().split(" ")[1] +
+          " " +
+          new Date(hacks.final[i].end.split("T")[0]).toString().split(" ")[3] +
+          " " +
+          "</nbw> </div> </div> </div> </div> <div class='nbg'> <nbg>Venue: </nbg> <nbw class='venue'>" +
+          hacks.final[i].venue +
+          "</nbw> </div> <div class='nbg'> <nbg>Team Size: </nbg> <nbw class='ts'>" +
+          +hacks.final[i].min_team_size +
+          "-" +
+          hacks.final[i].max_team_size +
+          "</nbw><nbw> Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
+          hacks.final[i].prize_pool +
+          "</div><img class='mode_of_conduct pt-3' src='../Assets/Images/" +
+          hacks.final[i].mode_of_conduct + ".svg'>" +
+          "<a class='btnkm btn btn-success' href='./hackdetails.html?" +
+          hacks.final[i]._id +
+          "' role='button'>Know More</a> </div> </div>";
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}

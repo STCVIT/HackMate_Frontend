@@ -91,6 +91,55 @@ g {
   padding-right: 56px;
 }
 
+.notification-type-active {
+  padding: 12px 0 0;
+}
+.notification-type-inactive {
+  padding: 12px 0 0;
+}
+.notification-type-active::after {
+  content: "";
+  display: block;
+  margin: 12px auto 0;
+  width: 50%;
+  border-bottom: 1px solid transparent;
+  border-color: #1ea54c;
+}
+
+.carbon-notification{
+  background-color: transparent;
+}
+nbw {
+  font-weight: bold !important;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.08em;
+}
+
+nbg{
+  font-weight: bold;
+font-size: 10px;
+line-height: 14px;
+/* identical to box height */
+
+letter-spacing: 0.12em;
+
+color: rgba(231, 239, 239, 0.7);
+
+
+}
+nbgr{
+  font-weight: bold;
+font-size: 10px;
+line-height: 14px;
+/* identical to box height */
+
+letter-spacing: 0.12em;
+
+color: rgba(231, 239, 239, 0.7);
+
+
+}
 @media (min-width: 1060px) {
   .navbar-expand-lg .navbar-nav .nav-link {
     padding-right: 56px;
@@ -154,6 +203,19 @@ g {
   letter-spacing: 0.08em;
 
   color: rgba(231, 239, 239, 0.2);
+}
+
+.notification2 * {
+  background: #283d4c;
+}
+
+.notification-inner * {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.08em;
 }
 @media (min-width: 992px) {
   .alerts::after {

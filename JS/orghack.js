@@ -5,36 +5,6 @@ $(document).ready(function () {
   $("#foobottom").load("../Assets/Footer/footer.txt");
 });
 
-// axios(`${url}/organiser/hacks?page=1`, {
-//   headers: {
-//     Authorization: "Bearer " + auth,
-//   },
-// })
-//   .then((response) => {
-//     hacks = response.data;
-//     console.log(hacks);
-
-//     for (var i = 0; i < hacks.newHacks.length; i++) {
-//       document.querySelector(".wrapper").innerHTML +=
-//         "<div class='box'> <a href='./orghackprofile.html' style='text-decoration: none;'> <div class='innertxt'> <div class='hackname'> <nb1>" +
-//         hacks.newHacks[i].name +
-//         ". </nb1> </div> <br> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw>" +
-//         hacks.newHacks[i].start.split("T")[0] +
-//         "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw>" +
-//         hacks.newHacks[i].end.split("T")[0] +
-//         "</nbw> </div> </div> </div> </div> <div class='nbg'> <nbg>Venue: </nbg> <nbw>" +
-//         hacks.newHacks[i].venue +
-//         "</nbw> </div> <div class='nbg'> <nbg>Max Team Size: </nbg> <nbw> " +
-//         hacks.newHacks[i].max_team_size +
-//         " Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
-//         hacks.newHacks[i].prize_pool +
-//         "</div> <div class='status'> <circle class='circle1'></circle> <circle class='circle2'></circle> <circle class='circle3'></circle>" +
-//         hacks.newHacks[i].mode_of_conduct +
-//         "</div> </div> </a></div>";
-//     }
-//   })
-//   .catch((error) => console.error("Error: " + error));
-
 function events(event) {
   console.log(event);
   page = event.target.innerHTML;
@@ -65,9 +35,94 @@ function events(event) {
           hacks.newHacks[i].max_team_size +
           " Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
           hacks.newHacks[i].prize_pool +
-          "</div> <div class='status'> <circle class='circle1'></circle> <circle class='circle2'></circle> <circle class='circle3'></circle>" +
-          hacks.newHacks[i].mode_of_conduct +
+          "</div> <img class='mode_of_conduct pt-3  ' src='../Assets/Images/" + 
+          hacks.newHacks[i].mode_of_conduct + ".svg'>" +
           "</div> </div> </a></div>";
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+
+  window.location = "./orghack.html#hacksadded"
+
+}
+function nextPage() {
+  if(page <total_hacks)
+  {
+    page = Pagination.page + 1; 
+  }
+  console.log(page);
+  axios(`${url}/organiser/hacks?page=${page}`, {
+    headers: {
+      Authorization: "Bearer " + auth,
+    },
+  })
+    .then((response) => {
+      hacks = response.data;
+      console.log(hacks);
+      document.querySelector(".wrapper").innerHTML = "";
+
+      for (var i = 0; i < hacks.newHacks.length; i++) {
+        document.querySelector(".wrapper").innerHTML +=
+          "<div class='box'> <a href='./orghackprofile.html?" +
+          hacks.newHacks[i]._id +
+          "' style='text-decoration: none;'> <div class='innertxt'> <div class='hackname'> <nb1>" +
+          hacks.newHacks[i].name +
+          ". </nb1> </div> <br> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw>" +
+          hacks.newHacks[i].start.split("T")[0] +
+          "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw>" +
+          hacks.newHacks[i].end.split("T")[0] +
+          "</nbw> </div> </div> </div> </div> <div class='nbg'> <nbg>Venue: </nbg> <nbw>" +
+          hacks.newHacks[i].venue +
+          "</nbw> </div> <div class='nbg'> <nbg>Max Team Size: </nbg> <nbw> " +
+          hacks.newHacks[i].max_team_size +
+          " Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
+          hacks.newHacks[i].prize_pool +
+          "</div> <img class='mode_of_conduct pt-3  ' src='../Assets/Images/" + 
+          hacks.newHacks[i].mode_of_conduct + ".svg'>" +
+          "</div> </div> </a></div>";
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}
+function prevPage() {
+  if (page > 1) {
+    page = Pagination.page - 1;
+  }
+
+  console.log(page);
+  axios(`${url}/organiser/hacks?page=${page}`, {
+    headers: {
+      Authorization: "Bearer " + auth,
+    },
+  })
+    .then((response) => {
+      hacks = response.data;
+      console.log(hacks);
+      document.querySelector(".wrapper").innerHTML = "";
+
+      for (var i = 0; i < hacks.newHacks.length; i++) {
+        document.querySelector(".wrapper").innerHTML +=
+          "<div class='box'> <a href='./orghackprofile.html?" +
+          hacks.newHacks[i]._id +
+          "' style='text-decoration: none;'> <div class='innertxt'> <div class='hackname'> <nb1>" +
+          hacks.newHacks[i].name +
+          ". </nb1> </div> <br> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw>" +
+          hacks.newHacks[i].start.split("T")[0] +
+          "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw>" +
+          hacks.newHacks[i].end.split("T")[0] +
+          "</nbw> </div> </div> </div> </div> <div class='nbg'> <nbg>Venue: </nbg> <nbw>" +
+          hacks.newHacks[i].venue +
+          "</nbw> </div> <div class='nbg'> <nbg>Max Team Size: </nbg> <nbw> " +
+          hacks.newHacks[i].max_team_size +
+          " Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
+          hacks.newHacks[i].prize_pool +
+          "</div> <img class='mode_of_conduct pt-3  ' src='../Assets/Images/" + 
+          hacks.newHacks[i].mode_of_conduct + ".svg'>" +
+          "</div> </a></div>";
       }
     })
     .catch((error) => {
@@ -156,9 +211,9 @@ var Pagination = {
   },
   Create: function (e) {
     var html = [
-      "<a style='color: #008249;'>&#9668;</a>", // previous button
+      "<a href='#hacksadded' onclick='prevPage()' style='color: #008249;text-decoration: none;'>&#9668;</a>", // previous button
       "<span></span>", // pagination container
-      "<a style='margin-left: 11px; color: #008249'>&#9658;</a>", // next button
+      "<a href='#hacksadded' onclick='nextPage()' style='margin-left: 11px; color: #008249; text-decoration: none;'>&#9658;</a>", // next button
     ];
     e.innerHTML = html.join("");
     Pagination.e = e.getElementsByTagName("span")[0];
@@ -201,9 +256,9 @@ function displayHacks() {
         hacks.newHacks[i].max_team_size +
         " Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
         hacks.newHacks[i].prize_pool +
-        "</div> <div class='status'> <circle class='circle1'></circle> <circle class='circle2'></circle> <circle class='circle3'></circle>" +
-        hacks.newHacks[i].mode_of_conduct +
-        "</div> </div> </a></div>";
+        "</div> <img class='mode_of_conduct pt-3  ' src='../Assets/Images/" + 
+        hacks.newHacks[i].mode_of_conduct + ".svg'>" +
+        " </div> </a></div>";
     }
     total_hacks = Math.ceil(length / 6);
     Pagination.Init(document.getElementById("pagination"), {

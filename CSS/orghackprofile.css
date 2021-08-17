@@ -84,6 +84,17 @@ input,
   box-sizing: border-box;
   border-radius: 1.54059px;
 }
+.datetime {
+  margin-top: 4px;
+
+  width: 44.75%;
+  height: 43.14px;
+
+  background: #2e3d4c;
+  border: 1.54059px solid rgba(30, 165, 76, 0.2);
+  box-sizing: border-box;
+  border-radius: 1.54059px;
+}
 
 .inputdeets {
   margin-top: 28px;
@@ -93,7 +104,7 @@ input,
   padding-left: 18px;
   margin-top: 4px;
   width: 91.5%;
-  height: 287px;
+  height: 300px;
 
   background: #2e3d4c;
   border: 1.54059px solid rgba(30, 165, 76, 0.2);
@@ -130,7 +141,7 @@ input,
 }
 
 .label {
-  width: 91.5%;
+  margin-left: 108px;
 }
 .plusbox {
   margin-top: 4px;
@@ -142,6 +153,11 @@ input,
   border: 1.54059px solid rgba(30, 165, 76, 0.2);
   box-sizing: border-box;
   border-radius: 1.54059px;
+}
+.plusboximg {
+  height: 192px;
+
+  vertical-align: middle;
 }
 
 .plus {
@@ -190,7 +206,7 @@ f {
 .team-members {
   list-style-type: none;
 }
-li {
+.list-item {
   display: flex;
   line-height: 0.99;
   margin-bottom: 11px;
@@ -364,16 +380,12 @@ nb3 {
   margin-left: 11px;
 }
 @media (max-width: 1200px) {
-
-  .wrapper{
-    justify-content: center!important;
+  .wrapper {
+    justify-content: center !important;
   }
 }
 @media (max-width: 768px) {
   .textbox {
-    width: 100%;
-  }
-  .label {
     width: 100%;
   }
   .textboxbio {
@@ -447,8 +459,7 @@ nb3 {
     color: #e7efef;
   }
 
-  li {
-  margin-bottom: 5px;
-}
-  
+  .list-item {
+    margin-bottom: 5px;
+  }
 }

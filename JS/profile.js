@@ -33,48 +33,48 @@ app.addEventListener('click',function() {
 frontend.addEventListener('click',function() { 
     if(n%2==0){
         frontend.style.backgroundColor="#1ea54c";
-        choice.push("Frontend Dev");
+        choice.push("frontend");
         n=n+1;
     }
     else{
         frontend.style.backgroundColor="#1D2833";
-        choice = arrayRemove(choice,"Frontend Dev");
+        choice = arrayRemove(choice,"frontend");
         n=n+1;
     }
 });
 backend.addEventListener('click',function() { 
     if(n%2==0){
         backend.style.backgroundColor="#1ea54c";
-        choice.push("Backend Dev");
+        choice.push("backend");
         n=n+1;
     }
     else{
         backend.style.backgroundColor="#1D2833";
-        choice = arrayRemove(choice,"Backend Dev");
+        choice = arrayRemove(choice,"backend");
         n=n+1;
     }
 });
 ui.addEventListener('click',function() { 
     if(n%2==0){
         ui.style.backgroundColor="#1ea54c";
-        choice.push("UI/UX");
+        choice.push("ui/ux");
         n=n+1;
     }
     else{
         ui.style.backgroundColor="#1D2833";
-        choice = arrayRemove(choice,"UI/UX");
+        choice = arrayRemove(choice,"ui/ux");
         n=n+1;
     }
 });
 machine.addEventListener('click',function() { 
     if(n%2==0){
         machine.style.backgroundColor="#1ea54c";
-        choice.push("ML");
+        choice.push("ml");
         n=n+1;
     }
     else{
         machine.style.backgroundColor="#1D2833";
-        choice = arrayRemove(choice,"ML");
+        choice = arrayRemove(choice,"ml");
         n=n+1;
     }
 });
@@ -93,24 +93,24 @@ management.addEventListener('click',function() {
 cyber.addEventListener('click',function(){
     if(n%2==0){
         cyber.style.backgroundColor="#1ea54c";
-        choice.push("cyber");
+        choice.push("cybersecurity");
         n=n+1;
     }
     else{
         cyber.style.backgroundColor="#1D2833";
-        choice = arrayRemove(choice,"cyber");
+        choice = arrayRemove(choice,"cybersecurity");
         n=n+1;
     }
 });
 block.addEventListener('click',function(){
     if(n%2==0){
         block.style.backgroundColor="#1ea54c";
-        choice.push("block");
+        choice.push("blockchain");
         n=n+1;
     }
     else{
         block.style.backgroundColor="#1D2833";
-        choice = arrayRemove(choice,"block");
+        choice = arrayRemove(choice,"blockchain");
         n=n+1;
     }
 });
@@ -129,6 +129,11 @@ function add_skills(){
   )
   .then((response) => {
     console.log("Success:", response.data);
+    swal("SUCCESS!!", "Your profile has been created successfully", "success").then(okay => {
+        if (okay) {
+            window.location.href = "./viewhackathon.html";
+        }
+    })
   })
   .catch((error) => {
     console.error("Error:", error);

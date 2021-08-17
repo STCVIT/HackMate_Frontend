@@ -34,7 +34,6 @@ axios(`${url}/getHacks/${window.location.search.split("?")[1]}`, {
       new Date(hack.end.split("T")[0]).toString().split(" ")[3] +
       " " +
       "</div> </div> <div class='display2 col-6'> <nbgre>Begins:</nbgre> <div class='nbwsd'>" +
-      //hack.start.split("T")[0] +
       new Date(hack.start.split("T")[0]).toString().split(" ")[2] +
       " " +
       new Date(hack.start.split("T")[0]).toString().split(" ")[1] +
@@ -42,7 +41,6 @@ axios(`${url}/getHacks/${window.location.search.split("?")[1]}`, {
       new Date(hack.start.split("T")[0]).toString().split(" ")[3] +
       " " +
       "</div> </div> <div class='display2 col-6'> <nbgre>Ends:</nbgre> <div class='nbwsd'>" +
-      //hack.end.split("T")[0] +
       new Date(hack.end.split("T")[0]).toString().split(" ")[2] +
       " " +
       new Date(hack.end.split("T")[0]).toString().split(" ")[1] +

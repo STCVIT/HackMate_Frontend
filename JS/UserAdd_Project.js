@@ -34,6 +34,7 @@ function submitform(){
   )
   .then((response) => {
     console.log("Success:", response.data);
+    swal("SUCCESS!!", "Project has been created successfully", "success");
   })
   .catch((error) => {
     console.error("Error:", error);

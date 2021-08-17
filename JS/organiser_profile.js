@@ -33,13 +33,8 @@ form.addEventListener('submit', (e) => {
             .then((text) => {
                 console.log("Success:", text);
                 window.location.assign("./orghack.html");
+                swal("SUCCESS!!", "Your profile has been created successfully", "success");
             })
-            /*.then(response => {
-                console.log(response.status);
-                if (response.status == 200) {
-                  window.location.assign("./addhack.html");
-                }
-              })*/
             .catch((error) => {
                 console.log("Error:", error);
             });
@@ -48,13 +43,13 @@ form.addEventListener('submit', (e) => {
 function checkInputs(username, phone_num, college) {
     let flag = 0;
     //name should be only alphabets and of max length 30
-    username.value = username.value.trim().toUpperCase();
-    college.value = college.value.toUpperCase();
+    username.value = username.value.trim();
+    college.value = college.value;
     let n = username.value.length;
-    let reg1 = /^[A-Z][A-Z\s]*$/;
+    let reg1 = /^[a-zA-Z][a-zA-Z\s]*$/;
     let reg2 = /^[1-9]\d{9}$/;
     if (n <= 30) {
-        if (reg1.test(username.value) === true) {
+        if (username.value.match(reg1)) {
             onSuccess(username);
             flag = flag + 1;
         }

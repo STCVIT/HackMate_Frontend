@@ -208,6 +208,11 @@ function update_account() {
             )
             .then((response) => {
                 console.log("Success:", response.data);
+                swal("SUCCESS!!", "Your profile has been updated successfully", "success").then(okay => {
+                    if (okay) {
+                        window.location.href = "./viewhackathon.html";
+                    }
+                })
             })
             .catch((error) => {
                 console.error("Error:", error);
@@ -323,6 +328,7 @@ function addskills(){
   )
   .then((response) => {
     console.log("Success:", response.data);
+    swal("SUCCESS!!", "Your skills have been added successfully", "success");
   })
   .catch((error) => {
     console.error("Error:", error);

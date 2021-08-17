@@ -18,7 +18,7 @@
     <div id="nav"></div>
 
     <div class="container-fluid">
-
+        <form action="" name="myform" method="post">
         <div class="row">
             <div class="col-md-1 col-sm-1 col-1"> </div>
             <div class="col-md-5">
@@ -28,7 +28,8 @@
                 <div class="text-md-end justify-md-content-end">
                     <div class="btns"><a class=" delete btn btn-success" href="#" onclick="deleteHack()"
                             role="button">Delete Hack</a>
-                        <a class=" savechanges btn btn-success" href="#" role="button">Save Changes</a>
+                        <input class=" savechanges btn btn-success" name="submit" type="submit" value="Save Changes"
+                        style="color: #fff; opacity: 1;">
                     </div>
                 </div>
             </div>
@@ -38,27 +39,26 @@
         <div class="row">
             <div class="col-md-1 col-sm-1 col-1"> </div>
             <div class="col-md-5">
-                <form action="" name="myform" method="post">
                     <div class="details">
                         <div class="inputdeets">
                             <nbg>NAME</nbg> <br>
-                            <input class="textbox" type="text" name="name"> <br>
+                            <input class="textbox" type="text" name="name" required> <br>
                         </div>
                         <div class="inputdeets">
                             <nbg>VENUE</nbg> <br>
-                            <input class="textbox" type="text" name="venue"> <br>
+                            <input class="textbox" type="text" name="venue" required> <br>
                         </div>
                         <div class="inputdeets">
                             <nbg>MODE OF CONDUCT</nbg> <br>
-                            <input class="textbox" type="text" name="moc" id=""> <br>
+                            <input class="textbox" type="text" name="moc" id="" required> <br>
                         </div>
                         <div class="inputdeets">
                             <nbg>WEBSITE LINK</nbg> <br>
-                            <input class="textbox" type="text" name="website" id=""> <br>
+                            <input class="textbox" type="text" name="website" id="" required> <br>
                         </div>
                         <div class="inputdeets">
                             <nbg>BIO</nbg> <br>
-                            <textarea class="textboxbio" name="about" id="" cols="30" rows="10"></textarea>
+                            <textarea class="textboxbio" name="about" id="" cols="30" rows="10" required></textarea>
                         </div>
 
                     </div>
@@ -66,39 +66,38 @@
             <div class="col-md-5 outerdetails">
 
                 <div class="details2">
-                    <div class="inputdeets" style="height: 216.062px;">
-                        <nbg>POSTER</nbg> <br>
-                        <label for="image_uploads" class="label">
-                            <div class="plusbox text-center"> <img class="plus" src="../Assets/Images/plus.svg" alt="">
-                            </div>
-                        </label>
-                        <input style="height: 0px;" type="file" id="image_uploads" name="image_uploads"
-                            accept=".jpg, .jpeg, .png" multiple>
+                    <div class="inputdeets">
+                        <nbg>POSTER</nbg>  <label for="image_uploads" class="label">
+                            <img src="../Assets/Images/EDIT.svg" alt="">
+                        </label>                        
+                        <input style="height: 0px; width: 0px;" type="file" id="image_uploads" name="image_uploads"
+                            accept=".jpg, .jpeg, .png" required>
+                        <div class="poster" style="padding-top: 6px;"></div>
                     </div>
                     <div class="inputdeets">
                         <nbg>START DATE</nbg> <br>
-                        <input class="textbox" type="datetime-local" name="start" id=""> <br>
+                        <input class="textbox" type="datetime-local" name="start" id="" required> <br>
                     </div>
                     <div class="inputdeets">
                         <nbg>END DATE</nbg> <br>
-                        <input class="textbox" type="datetime-local" name="end" id=""> <br>
+                        <input class="textbox" type="datetime-local" name="end" id="" required> <br>
                     </div>
                     <div class="inputdeets">
                         <nbg>MIN TEAM SIZE</nbg> <br>
-                        <input class="textbox" type="number" name="mints" id="" min="0">
+                        <input class="textbox" type="number" name="mints" id="" min="0" required>
                     </div>
                     <div class="inputdeets">
                         <nbg>MAX TEAM SIZE</nbg> <br>
-                        <input class="textbox" type="number" name="maxts" id="" min="0">
+                        <input class="textbox" type="number" name="maxts" id="" min="0" required>
                     </div>
                     <div class="inputdeets">
                         <nbg>PRIZES POOL</nbg> <br>
-                        <input class="textbox" type="text" name="prizes" id=""> <br>
+                        <input class="textbox" type="text" name="prizes" id="" required> <br>
                     </div>
                 </div>
 
 
-                </form>
+
             </div>
             <div class="col-1"></div>
         </div>
@@ -115,230 +114,10 @@
 
         </div>
 
-        <!-- <div class="cards">
-            <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-md-5 col-sm-12">
-
-                    <div class="card" style="max-width: 497px; max-height: 371px;">
-                        <div class="card-body">
-                            <h3 class="card-title" style="padding-bottom:5%;padding-top:5%">Lollapalooza</h3>
-                            <div class="card-details">
-                                <p>
-                                    <f>4</f>
-                                    <r> Team <br> Members</r>
-                                </p>
-                                <div class="vl"></div>
-                                <ul class="team-members">
-                                    <li class="list-item"><img id="pp" src="../Assets/Images/Rectangle 155.svg">
-                                        <p>Dwija Patel<br>
-
-                                        </p>
-                                    </li>
-                                    <li class="list-item"><img id="pp" src="../Assets/Images/Rectangle 154.svg">
-                                        <p>Deep Gandhi<br>
-
-                                        </p>
-                                    </li>
-                                    <li class="list-item"><img id="pp" src="../Assets/Images/Rectangle 156.svg">
-                                        <p>Tanmay Shah<br>
-
-                                        </p>
-                                    </li>
-                                    <li class="list-item"><img id="pp" src="../Assets/Images/Rectangle 157.svg">
-                                        <p>Victor Mayer<br>
-
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-5 col-sm-12 " style="margin-left: 3.75%;">
-                    <div class="card" style="max-width: 497px; max-height: 371px;">
-                        <div class="card-body">
-                            <h3 class="card-title" style="padding-bottom:5%;padding-top:5%">Lollapalooza</h3>
-                            <div class="card-details">
-                                <p>
-                                    <f>4</f>
-                                    <r> Team <br> Members</r>
-                                </p>
-                                <div class="vl"></div>
-                                <ul class="team-members">
-                                    <li class="list-item"><img id="pp" src="../Assets/Images/Rectangle 155.svg">
-                                        <p>Dwija Patel<br>
-
-                                        </p>
-                                    </li>
-                                    <li class="list-item"><img id="pp" src="../Assets/Images/Rectangle 154.svg">
-                                        <p>Deep Gandhi<br>
-
-                                        </p>
-                                    </li>
-                                    <li class="list-item"><img id="pp" src="../Assets/Images/Rectangle 156.svg">
-                                        <p>Tanmay Shah<br>
-
-                                        </p>
-                                    </li>
-                                    <li class="list-item"><img id="pp" src="../Assets/Images/Rectangle 157.svg">
-                                        <p>Victor Mayer<br>
-
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-1"></div>
-                <div class="col-md-5 col-sm-12 ">
-
-                    <div class="card" style="max-width: 497px; max-height: 371px;">
-                        <div class="card-body">
-                            <h3 class="card-title" style="padding-bottom:5%;padding-top:5%">Lollapalooza</h3>
-                            <div class="card-details">
-                                <p>
-                                    <f>4</f>
-                                    <r> Team <br> Members</r>
-                                </p>
-                                <div class="vl"></div>
-                                <ul class="team-members">
-                                    <li class="list-item"><img id="pp" src="../Assets/Images/Rectangle 155.svg">
-                                        <p>Dwija Patel<br>
-
-                                        </p>
-                                    </li>
-                                    <li class="list-item"><img id="pp" src="../Assets/Images/Rectangle 154.svg">
-                                        <p>Deep Gandhi<br>
-
-                                        </p>
-                                    </li>
-                                    <li class="list-item"><img id="pp" src="../Assets/Images/Rectangle 156.svg">
-                                        <p>Tanmay Shah<br>
-
-                                        </p>
-                                    </li>
-                                    <li class="list-item"><img id="pp" src="../Assets/Images/Rectangle 157.svg">
-                                        <p>Victor Mayer<br>
-
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-5 col-sm-12" style="margin-left: 3.75%;">
-                    <div class="card" style="max-width: 497px; max-height:371px;">
-                        <div class="card-body">
-                            <h3 class="card-title" style="padding-bottom:5%;padding-top:5%">Lollapalooza</h3>
-                            <div class="card-details">
-                                <p>
-                                    <f>4</f>
-                                    <r> Team <br> Members</r>
-                                </p>
-                                <div class="vl"></div>
-                                <ul class="team-members">
-                                    <li class="list-item"><img id="pp" src="../Assets/Images/Rectangle 155.svg">
-                                        <p>Dwija Patel<br>
-
-                                        </p>
-                                    </li>
-                                    <li class="list-item"><img id="pp" src="../Assets/Images/Rectangle 154.svg">
-                                        <p>Deep Gandhi<br>
-
-                                        </p>
-                                    </li>
-                                    <li class="list-item"><img id="pp" src="../Assets/Images/Rectangle 156.svg">
-                                        <p>Tanmay Shah<br>
-
-                                        </p>
-                                    </li>
-                                    <li class="list-item"><img id="pp" src="../Assets/Images/Rectangle 157.svg">
-                                        <p>Victor Mayer<br>
-
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-1"></div>
-            </div>
-        </div> -->
+    </form>
     </div>
 
     <div class="wrapper justify-content-lg-between justify-content-sm-center" >
-
-        <!-- <div class="box">
-            <div class="innertxt">
-                <h3 class="card-title">Lollapalooza</h3>
-                <div class="card-details" style="padding-top: 30.23px;">
-                    <p>
-                        <f>4</f>
-                        <r> Team <br> Members</r>
-                    </p>
-                    <div class="vl"></div>
-                    <ul class="team-members">
-                        <li class="list-item"><img id="pp" src="../Assets/Images/Rectangle 155.svg">
-                            <p class="text">Dwija Patel
-                            </p>
-                        </li>
-                        <li class="list-item"><img id="pp" src="../Assets/Images/Rectangle 154.svg">
-                            <p class="text">Deep Gandhi
-
-                            </p>
-                        </li>
-                        <li class="list-item"><img id="pp" src="../Assets/Images/Rectangle 156.svg">
-                            <p class="text">Tanmay Shah
-
-                            </p>
-                        </li>
-                        <li class="list-item"><img id="pp" src="../Assets/Images/Rectangle 157.svg">
-                            <p class="text">Victor Mayer
-
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="box">
-            <div class="innertxt">
-                <h3 class="card-title">Lollapalooza</h3>
-                <div class="card-details" style="padding-top: 30.23px;">
-                    <p>
-                        <f>4</f>
-                        <r> Team <br> Members</r>
-                    </p>
-                    <div class="vl"></div>
-                    <ul class="team-members">
-                        <li class="list-item"><img id="pp" src="../Assets/Images/Rectangle 155.svg">
-                            <p class="text">Dwija Patel
-                            </p>
-                        </li>
-                        <li class="list-item"><img id="pp" src="../Assets/Images/Rectangle 154.svg">
-                            <p class="text">Deep Gandhi
-
-                            </p>
-                        </li>
-                        <li class="list-item"><img id="pp" src="../Assets/Images/Rectangle 156.svg">
-                            <p class="text">Tanmay Shah
-
-                            </p>
-                        </li>
-                        <li class="list-item"><img id="pp" src="../Assets/Images/Rectangle 157.svg">
-                            <p class="text">Victor Mayer
-
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div> -->
     </div>
 
     
@@ -346,11 +125,17 @@
     <div id="pagination"></div>
     <div id="foobottom"></div>
 
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-storage.js"></script>
+    <script type="text/javascript" src="../JS/config.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="../JS/url.js"></script>
     <script src="../JS/orghackprofile.js"></script>
 </body>

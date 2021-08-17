@@ -4,7 +4,7 @@ $(document).ready(function () {
 });
 
   var user;
-  randomId = "60f186b2b7e1c25f80f13f60";
+  randomId = "60f2b7b4c28f930015dc3dd7" ;
   axios(`${url}/participant/get/${randomId}`, {
       headers: {
           Authorization: "Bearer " + auth,
@@ -13,19 +13,31 @@ $(document).ready(function () {
    .then((response) => {
        user = response.data;
        console.log(user);
-       document.querySelector(".caption h2").innerHTML = toTitleCase(user.name);
-       document.querySelector("#name").innerHTML = user.name;
-       document.querySelector("#username").innerHTML = user.username;
-       document.querySelector("#email").innerHTML = user.email;
-       document.querySelector("#college").innerHTML = user.college;
-       document.querySelector("#git").innerHTML = user.github;
-       document.querySelector("#linkedln").innerHTML = user.linkedIn;
-       document.querySelector("#personal_website").innerHTML = user.website;
-       document.querySelector("#year").innerHTML = user.graduation_year;
-       document.querySelector("#bio").innerHTML = user.bio;
+       document.querySelector(".caption h2").innerHTML = toTitleCase(user.participant.name);
+       document.querySelector("#name").innerHTML = user.participant.name;
+       document.querySelector("#username").innerHTML = user.participant.username;
+       document.querySelector("#email").innerHTML = user.participant.email;
+       document.querySelector("#college").innerHTML = user.participant.college;
+       document.querySelector("#git").innerHTML = user.participant.github;
+       document.querySelector("#linkedln").innerHTML = user.participant.linkedIn;
+       document.querySelector("#personal_website").innerHTML = user.participant.website;
+       document.querySelector("#year").innerHTML = user.participant.graduation_year;
+       document.querySelector("#bio").innerHTML = user.participant.bio;
+
+       let body = document.getElementById("card-body");
+       let yourHTML = "<h5 class='card-title'>Skills</h5>";
+       console.log(user.skills.length);
+       let len = user.skills.length;
+       for(let i=0;i<len;i++){
+           yourHTML += "<p class='fill'><input class='form-check-input' type='checkbox' value='' id='flexCheckDefault' checked><label class='check-label' for='flexCheckDefault'>"+
+           user.skills[i].skill
+           yourHTML += "</label></p>"
+        }
+        console.log(yourHTML);
+        
+        body.innerHTML= yourHTML;
    })
    .catch((error) => console.error("Error: " + error));
-
 /*function add_review() {
     axios 
         .add(

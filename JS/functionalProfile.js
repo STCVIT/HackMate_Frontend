@@ -74,13 +74,13 @@ form2.addEventListener('submit',(e)=>{
 function checkInputs(Name,username,college,year){
     let flag=0;
     let current_year= new Date().getFullYear();
-    Name.value=Name.value.toUpperCase().trim();
+    Name.value=Name.value.trim();
     username.value=username.value.trim();
     year.value=year.value.trim();
-    college.value=college.value.toUpperCase().trim();
+    college.value=college.value.trim();
     let len=Name.value.length;
     let n = username.value.length;
-    let reg1=/^[A-Z][A-Z\s]*$/;
+    let reg1= /^[a-zA-Z][a-zA-Z\s]*$/;
     let reg2=/(19|20)\d{2}$/;
     //name should be only alphabets and of max length 30
     if(len<=30){

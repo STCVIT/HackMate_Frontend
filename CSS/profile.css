@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito+Sans&family=Raleway&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@800&display=swap');
-*{
+body{
     background-color: #23303d;
     color: #e7efef;
   }
@@ -359,6 +359,8 @@ input{
 #square_inactive1{
   padding:1vh 4.5vh;
   border: 2.53333px solid  #226045;
+  background: #23303d;
+  color: #e7efef;
   filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
   font-family: "Fira Code", monospace;
@@ -366,6 +368,8 @@ input{
 #square_inactive{
   padding:1vh 4.5vh;
   border: 2.53333px solid  #226045;
+  background: #23303d;
+  color: #e7efef;
   filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
   font-family: "Fira Code", monospace;
@@ -373,6 +377,7 @@ input{
 #square_active{
   padding:1vh 4.5vh;
   border: 2.53333px solid  #226045;
+  color:#e7efef;
   filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
   background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);

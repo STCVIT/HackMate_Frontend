@@ -10,6 +10,9 @@
     padding-top:5%;
     padding-bottom:4%;
 }
+#team_id{
+  display:none;
+}
 #pagination {
   display: flex;
   flex-basis: 353.33px;

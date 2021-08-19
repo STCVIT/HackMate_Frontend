@@ -4,7 +4,7 @@ $(document).ready(function () {
 });
 var teams ={};
 var page = 1;
-
+var participant_id;
 function events(event) {
   console.log(event);
   page = event.target.innerHTML;
@@ -35,7 +35,7 @@ function events(event) {
      teams["final"][i]["pt_skill"][j]["skills"][0]["skill"]+
      "</t></p></li>"
      }
-    yourHTML += "</ul></div></div></div></div>";
+     yourHTML += "</ul></div><p id='admin_id'>"+teams['final'][i].team.admin_id+"</p><p id='team_name'>"+teams["final"][i].team.name+"<p></div></div></div>"
     
     i++;
     if(i<teams.final.length){
@@ -58,7 +58,7 @@ function events(event) {
      }
     }
   }
-     yourHTML += "</ul></div></div></div></div></div>";
+  yourHTML += "</ul></div><p id='admin_id'>"+teams['final'][i].team.admin_id+"</p><p id='team_name'>"+teams["final"][i]["team"].name+"<p></div></div></div>"
     
     i++;
     
@@ -183,7 +183,6 @@ function displayTeams() {
     let body = document.querySelector(".cards");
     var yourHTML = "";
     for (var i = 0; i < teams.final.length;) {
-     console.log(teams["final"][i]["team"].name);
       yourHTML +="<div class='row'><div class='col-lg-6 col-md-6 col-sm-12'style='padding-bottom:5%'  onclick='check()'><div class='card1'style='max-width: 497px; max-height: 371px;padding-bottom: 10%;'><div class='card-body'><h4 class='card-title'>" + 
       teams["final"][i]["team"].name +
       "</h4><p><text>Hackathon:</text><hackathon>" +
@@ -192,7 +191,6 @@ function displayTeams() {
       teams["final"][i]["team"].members.length +
      "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>"
        for(let j=0;j < teams["final"][i]["team"].members.length;j++){
-         console.log(j);
       yourHTML += "<li class='list-item'><img id='pp' src='../Assets/Images/Rectangle 155.svg'><p>"+teams['final'][i]['pt_skill'][j]['participant'].name+"<br><t>"
      if(teams["final"][i]["pt_skill"][j]["skills"].length==0){
       yourHTML += "</t></p></li>"
@@ -201,7 +199,7 @@ function displayTeams() {
       yourHTML += teams["final"][i]["pt_skill"][j]["skills"][0]["skill"]+"</t></p></li>"
      }
     }
-    yourHTML += "</ul></div></div></div></div>"
+    yourHTML += "</ul></div><p id='admin_id'>"+teams['final'][i].team.admin_id+"</p><p id='team_name'>"+teams["final"][i].team.name+"<p></div></div></div>"
     
     i++;
     console.log(i);
@@ -217,7 +215,7 @@ function displayTeams() {
         yourHTML += teams["final"][i]["pt_skill"][k]["skills"][0]["skill"]+"</t></p></li>"
       }
     }
-    yourHTML += "</ul></div></div></div></div></div>"
+    yourHTML += "</ul></div><p id='admin_id'>"+teams['final'][i].team.admin_id+"</p><p id='team_name'>"+teams["final"][i]["team"].name+"<p></div></div></div>"
     
     i++;
     console.log(i);
@@ -270,8 +268,7 @@ function nextPage() {
      teams["final"][i]["pt_skill"][j]["skills"][0]["skill"]+
      "</t></p></li>"
      }
-    yourHTML += "</ul></div></div></div></div>"
-    
+     yourHTML += "</ul></div><p id='admin_id'>"+teams['final'][i].team.admin_id+"</p><p id='team_name'>"+teams["final"][i].team.name+"<p></div></div></div>"
     i++;
     console.log(i);
     
@@ -293,7 +290,7 @@ function nextPage() {
       yourHTML += teams["final"][i]["pt_skill"][j]["skills"][0]["skill"]+"</t></p></li>"
      }
     }
-     yourHTML += "</ul></div></div></div></div></div>"
+    yourHTML += "</ul></div><p id='admin_id'>"+teams['final'][i].team.admin_id+"</p><p id='team_name'>"+teams["final"][i].team.name+"<p></div></div></div>"
     
     i++;
     console.log(i);
@@ -343,7 +340,7 @@ function prevPage() {
      teams["final"][i]["pt_skill"][j]["skills"][0]["skill"]+
      "</t></p></li>"
      }
-    yourHTML += "</ul></div></div></div></div>"
+     yourHTML += "</ul></div><p id='admin_id'>"+teams['final'][i].team.admin_id+"</p><p id='team_name'>"+teams["final"][i].team.name+"<p></div></div></div>"
     
     i++;
     console.log(i);
@@ -366,7 +363,7 @@ function prevPage() {
       yourHTML += teams["final"][i]["pt_skill"][j]["skills"][0]["skill"]+"</t></p></li>"
      }
     }
-     yourHTML += "</ul></div></div></div></div></div>"
+    yourHTML += "</ul></div><p id='admin_id'>"+teams['final'][i].team.admin_id+"</p><p id='team_name'>"+teams["final"][i].team.name+"<p></div></div></div>"
     
     i++;
     console.log(i);
@@ -379,12 +376,32 @@ function prevPage() {
     console.error("Error:", error);
     });
   }
+// var user;
+// axios(`${url}/participant/login`, {
+//     headers: {
+//         Authorization: "Bearer " + auth,
+//     },
+// })
+// .then((response) => {
+//     user = response.data;
+//     participant_id = user._id;
+//     console.log(participant_id);
+// })
+// .catch((error) => console.error("Error: " + error));
 
 
 
 
-  function check(){
-    console.log("DONE");
-  }
+//   function check(){
+//     let admin_id = document.getElementById("team_id");
+//     admin_id = admin_id.value;
+//     console.log(admin_id);
+//     if(admin_id==participant_id){
+//     window.location.assign("./teamProfLeaderView.html");
+//     }
+//     else{
+//       window.location.assign("./teamprofile.html")
+//     }
+//   }
 
-  console.log(auth);
+//   console.log(auth);

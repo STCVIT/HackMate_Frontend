@@ -1,4 +1,5 @@
 const url = "https://hackportalbackend.herokuapp.com";
+var auth;
 
-const auth =
+var auth =
   localStorage.getItem("auth");

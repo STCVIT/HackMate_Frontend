@@ -7,14 +7,6 @@ html,body{
 	min-height: 100%;
 	overflow: auto;
 }
-#pagination {
-	display: flex;
-	flex-basis: 353.33px;
-	justify-content: center;
-	align-items: baseline;
-	flex-wrap: wrap;
-	padding-top: 10px;
-  }
 .text1{
 	color: #fff;
 	font-family: "Fira Code";
@@ -172,11 +164,11 @@ html,body{
 }
 .cards_container{
 	margin-top: 100px;
-	float: none;
+	margin-left: 100px;
 }
 .card_of_teams1{
 	width: 450px;
-	height: 555px;
+	height: 570px;
 	background-color: #1D2833;
 	margin-top: 30px;
 }
@@ -308,6 +300,18 @@ html,body{
 	align-content: center;
 	text-align: center;
 }
+@media(min-width: 1375px) and (max-width: 1450px){
+	.cards_container{
+		margin-top: 100px;
+		margin-left: 150px;
+	}
+}
+@media(min-width: 996px) and (max-width: 1100px){
+	.cards_container{
+		margin-top: 100px;
+		margin-left: 30px;
+	}
+}
 @media(min-width: 768px) and (max-width: 995px){
 	.empty{
 		padding: 6%;
@@ -323,15 +327,27 @@ html,body{
 		text-align: center;
 		align-content: center;
 	}
+	.cards_container{
+		margin-top: 100px;
+		margin-left: 180px;
+	}
 }
 @media(min-width: 690px) and (max-width: 767px){
 	.empty{
 		padding: 6%;
 	}
+	.cards_container{
+		margin-top: 100px;
+		margin-left: 100px;
+	}
 }
 @media(min-width: 585px) and (max-width: 689px){
 	.empty{
 		padding: 6%;
+	}
+	.cards_container{
+		margin-top: 100px;
+		margin-left: 80px;
 	}
 }
 @media (min-width: 540px) and (max-width: 584px){
@@ -343,6 +359,10 @@ html,body{
 	}
 	.text2{
 		width: 500px;
+	}
+	.cards_container{
+		margin-top: 100px;
+		margin-left: 0px;
 	}
 }
 @media (min-width: 475px) and (max-width: 540px){
@@ -362,6 +382,10 @@ html,body{
 		max-width: 20rem;
 		text-align: center;
 		align-content: center;
+	}
+	.cards_container{
+		margin-top: 100px;
+		margin-left: 0px;
 	}
 }
 @media (min-width: 421px) and (max-width: 474px){
@@ -384,6 +408,10 @@ html,body{
 	}
 	.cards{
 		margin-left: 20px;
+	}
+	.cards_container{
+		margin-top: 100px;
+		margin-left: 0px;
 	}
 }
 @media (min-width: 375px) and (max-width: 420px){
@@ -423,9 +451,14 @@ html,body{
 		margin-left: 10px;
 	}
 	.card_of_teams1{
-		height: 500px;
+		width: 350px;
+		height: 620px;
 	}
 	.card_of_teams2{
 		height: 500px;
+	}
+	.cards_container{
+		margin-top: 100px;
+		margin-left: 0px;
 	}
 }

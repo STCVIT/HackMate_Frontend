@@ -7,6 +7,10 @@ html,body{
 	font-weight: bold;
 	overflow: auto;
 }
+a, a:hover, a:focus, a:active {
+	text-decoration: none;
+	color: inherit;
+}
 .text1{
 	font-family: Fira Code;
 	font-style: normal;
@@ -214,6 +218,7 @@ html,body{
 }
 .options{
 	margin-top: 30px;
+	margin-left: auto;
 }
 .persons{
 	margin-top: 30px;

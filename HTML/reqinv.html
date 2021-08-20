@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackMate</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="../CSS/reqinv.css">
+    <link rel="stylesheet" href="../Assets/Footer/footer.css">
+</head>
+
+<body>
+    <div id="nav">
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+            <div class="container-fluid">
+                <a class="navbar-brand logo" href="../index.html">
+                    <g><</g><b>HackMate</b><g>></g>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="justify-content-end collapse navbar-collapse" id="navbarNavAltMarkup">
+        
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./viewhackathon.html">Hackathons</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./teamwohack.html">Create Team</a>
+                        </li>
+        
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle username" href="#" id="navbarDropdown"
+                                style="padding-right: 2vw;" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <div class="triangle-up"></div>
+                                <li><a class="dropdown-item" href="./My_teams.html">MY TEAMS</a></li>
+                                <li><a class="dropdown-item" href="./MyProfile_userView.html">MY PROFILE</a></li>
+                                <li><a class="dropdown-item" onclick="logout()" href="../" style="color: #F54646;">LOGOUT</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link img" href="#"><img src="../Assets/Images/User DP.png" alt=""></a>
+                        </li>
+                    </ul>
+        
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+    <div class="d-flex notification1" style="background: #1D2833;">
+        <div class="notification-type-active flex-fill" id="requests" style="cursor: pointer">
+            Requests</div>
+        <div class="notification-type-inactive flex-fill" id="invites" style="cursor: pointer;">
+            Invites</div>
+    </div>
+
+    <div class="reqinv container-fluid">
+    </div>
+
+    </div>
+    <div id="foobottom"></div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-storage.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript" src="../JS/config.js"></script>
+    <script src="../JS/url.js"></script>
+    <script src="../JS/reqinv.js"></script>
+</body>
+
+</html>

@@ -25,7 +25,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link img" href="./orguserview.html"><img src="../Assets/Images/STC.svg" style="width:47px; height: 47px;" alt=""></a>
+                    <a class="nav-link img" href="./orguserview.html"><img class="orgdp" style="width:47px; height: 47px;" alt=""></a>
                 </li>
             </ul>
 
@@ -35,14 +35,33 @@
 
 <script>
 
-axios(`${url}/organiser/login`, {
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      user.getIdToken().then(function(idToken){
+        console.log(idToken)
+        auth = idToken
+        axios(`${url}/organiser/login`, {
     headers: {
       Authorization: "Bearer " + auth,
     },
   })
-    .then((response) => {document.querySelector(".username").innerText = response.data.name})
+    .then((response) => {
+      document.querySelector(".username").innerText = response.data.name
+      document.querySelector(".orgdp").setAttribute("src", response.data.logo)
+    })
+      })
+    } else {
+      // User is signed out
+      console.log("I'm signed out!")
+    }
+  });
 
-function logout(){
-    localStorage.clear();
-}
+    function logout() {
+        firebase.auth().signOut().then(() => {
+  // Sign-out successful.
+  console.log("Signed Out!")
+}).catch((error) => {
+  // An error happened.
+});
+    }
 </script>

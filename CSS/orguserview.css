@@ -1,10 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito+Sans&family=Raleway&display=swap");
-* {
+.main {
   background-color: #23303d;
   font-family: "Fira Code", monospace;
   color: #e7efef;
 }
 
+nav {
+  font-family: "Fira Code", monospace;
+}
+
+.photo {
+  height: 85px;
+  width: 85px;
+}
 .hackname {
   padding-top: 36px;
   font-family: Fira Code;
@@ -64,6 +72,7 @@ input#image_uploads {
 
 input{
   padding-left: 15px;
+  color: #e7efef;
 }
 input:focus {
   outline: none;
@@ -105,8 +114,12 @@ input:focus {
 .savechanges {
   width: 165px;
   height: 37px;
-  left: 1100px;
-  top: 142px;
+  background: none;
+  filter: drop-shadow(0.75px 0.75px 7.5px rgba(0, 0, 0, 0.2));
+  border-radius: 1.5px;
+  border-color: #008249;
+}
+.edit{
   background: none;
   filter: drop-shadow(0.75px 0.75px 7.5px rgba(0, 0, 0, 0.2));
   border-radius: 1.5px;

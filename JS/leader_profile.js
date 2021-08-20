@@ -40,9 +40,9 @@ console.log(random_id);
 
   function hackinfo(){
     if(hack_name == ""){
-      document.getElementById("hackathon").style.visibility = "hidden";
-      document.getElementById("hackdetails").style.visibility = "hidden";
-      document.getElementById("hackdetails_mobile").style.visibility = "hidden";
+      document.getElementById("hackathon").remove();
+      document.getElementById("hackdetails").remove();
+      document.getElementById("hackdetails_mobile").remove();
     }
     else{
       axios(`${url}/getHacks/${hack_id}`, {

@@ -334,3 +334,74 @@ function addskills(){
     console.error("Error:", error);
   });
 }
+
+
+async function uploadBlob(file) {
+    console.log("Testing");
+    const ref = firebase
+      .storage()
+      .ref("/Participants/Profile/" + document.par_form.name.value);
+  
+    var uploadTask = ref.put(file);
+  
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        switch (snapshot.state) {
+          case firebase.storage.TaskState.PAUSED:
+            console.log("Upload is paused");
+            break;
+          case firebase.storage.TaskState.RUNNING:
+            console.log("Upload is running");
+            break;
+        }
+      },
+      (error) => {
+        // Handle unsuccessful uploads
+      },
+      async () => {
+        uploadTask.snapshot.ref.getDownloadURL().then(async (downloadURL) => {
+          console.log("File available at", downloadURL);
+  
+          logo = await downloadURL;
+  
+  
+          firebase.auth().currentUser.getIdToken().then(async (id)=>{
+            auth = await id
+        })
+  
+        axios
+        .patch(
+          `${url}/participant/updateProfile`,
+          {
+            logo: logo,
+          },
+          {
+            headers: {
+              Authorization: "Bearer " + auth,
+            },
+          }
+        )
+        .then((response) => {
+          console.log("Success:", response.data);
+          swal("SUCCESS!!", "File uploaded successfully", "success");
+          document.querySelector(".swal-button--confirm").addEventListener("click", ()=> {
+            window.location = "";
+          })
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+          
+        });
+      }
+    );
+  }
+  
+  
+  document
+    .querySelector("#image_uploads")
+    .addEventListener("change", function () {
+      uploadBlob(document.getElementById("image_uploads").files[0]);
+    });

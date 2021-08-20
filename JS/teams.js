@@ -9,6 +9,7 @@ function events(event) {
   console.log(event);
   page = event.target.innerHTML;
   console.log(page);
+  window.location = "#start"
   axios(`${url}/DN_Team/myTeams?page=${page}`, {
     headers: {
       Authorization: "Bearer " + auth,

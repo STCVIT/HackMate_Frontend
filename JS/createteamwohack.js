@@ -93,7 +93,7 @@ app.addEventListener('click', function () {
           localStorage.setItem("participant", part123);
           for (let i = 0; i < hacks.final.length; i++) {
             document.querySelector(".persons").innerHTML +=
-              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='../../HTML/MyProfile_otherView.html'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>App Dev</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>App Dev</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
           }
         }
         catch (err) {
@@ -208,7 +208,7 @@ fweb.addEventListener('click', function () {
           localStorage.setItem("participant", part123);
           for (let i = 0; i < hacks.final.length; i++) {
             document.querySelector(".persons").innerHTML +=
-              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='../../HTML/MyProfile_otherView.html'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>Frontend</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>Frontend</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
           }
         }
         catch (err) {
@@ -231,6 +231,7 @@ bweb.addEventListener('click', function () {
   if (n % 2 == 0) {
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive3").className = "button3";
+    n = n + 1;
     var occurence = "backend";
     var page = 1;
     displayTeams();
@@ -310,7 +311,7 @@ bweb.addEventListener('click', function () {
           localStorage.setItem("participant", part123);
           for (let i = 0; i < hacks.final.length; i++) {
             document.querySelector(".persons").innerHTML +=
-              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='../../HTML/MyProfile_otherView.html'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>Backend</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>Backend</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
           }
         }
         catch (err) {
@@ -413,7 +414,7 @@ ml.addEventListener('click', function () {
           localStorage.setItem("participant", part123);
           for (let i = 0; i < hacks.final.length; i++) {
             document.querySelector(".persons").innerHTML +=
-              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='../../HTML/MyProfile_otherView.html'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>Machine Learning</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>Machine Learning</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
           }
         }
         catch (err) {
@@ -516,7 +517,7 @@ design.addEventListener('click', function () {
           localStorage.setItem("participant", part123);
           for (let i = 0; i < hacks.final.length; i++) {
             document.querySelector(".persons").innerHTML +=
-              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='../../HTML/MyProfile_otherView.html'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>UI/UX</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>UI/UX</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
           }
         }
         catch (err) {
@@ -619,7 +620,7 @@ mgmt.addEventListener('click', function () {
           localStorage.setItem("participant", part123);
           for (let i = 0; i < hacks.final.length; i++) {
             document.querySelector(".persons").innerHTML +=
-              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='../../HTML/MyProfile_otherView.html'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>Management</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>Management</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
           }
         }
         catch (err) {
@@ -722,7 +723,7 @@ block.addEventListener('click', function () {
           localStorage.setItem("participant", part123);
           for (let i = 0; i < hacks.final.length; i++) {
             document.querySelector(".persons").innerHTML +=
-              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='../../HTML/MyProfile_otherView.html'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>Blockchain</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>Blockchain</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
           }
         }
         catch (err) {
@@ -825,7 +826,7 @@ cyber.addEventListener('click', function () {
           localStorage.setItem("participant", part123);
           for (let i = 0; i < hacks.final.length; i++) {
             document.querySelector(".persons").innerHTML +=
-              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='../../HTML/MyProfile_otherView.html'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>Cyber Security</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>Cyber Security</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
           }
         }
         catch (err) {

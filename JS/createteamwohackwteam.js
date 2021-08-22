@@ -125,6 +125,8 @@ $(document).ready(function () {
 document.querySelector(".creates").innerHTML = "<input type='submit' class='button' value='Create' onclick='create()'>";
 
 function create(){
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
   name = document.getElementById("team_name").value;
   console.log(name);
     axios
@@ -153,6 +155,7 @@ function create(){
     .catch((error) => {
       console.error("Error:", error);
     });
+  })
 }
 
 // let a = document.querySelector("#flexCheckDefault6");

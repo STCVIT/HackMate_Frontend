@@ -126,6 +126,8 @@ document.querySelector(".creates").innerHTML = "<input type='submit' class='butt
 
 function create(){
   name = document.getElementById("team_name").value;
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
   console.log(name);
     axios
     .post(
@@ -157,6 +159,7 @@ function create(){
         swal("WARNING!!", "The team has been already formed for this Hack.", "warning");
       }
     });
+  })
 }
 
 // let a = document.querySelector("#flexCheckDefault6");

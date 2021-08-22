@@ -10,6 +10,8 @@ const all = document.querySelector('.text5');
 
 var n = 0;
 app.addEventListener('click', function () {
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
   if (n % 2 == 0) {
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive1").className = "button3";
@@ -111,8 +113,11 @@ app.addEventListener('click', function () {
     document.getElementById("inactive1").className = "button2";
     n = n + 1;
   }
+})
 });
 fweb.addEventListener('click', function () {
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
   if (n % 2 == 0) {
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive2").className = "button3";
@@ -226,8 +231,11 @@ fweb.addEventListener('click', function () {
     document.getElementById("inactive2").className = "button2";
     n = n + 1;
   }
+})
 });
 bweb.addEventListener('click', function () {
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
   if (n % 2 == 0) {
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive3").className = "button3";
@@ -329,8 +337,11 @@ bweb.addEventListener('click', function () {
     document.getElementById("inactive3").className = "button2";
     n = n + 1;
   }
+})
 });
 ml.addEventListener('click', function () {
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
   if (n % 2 == 0) {
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive4").className = "button3";
@@ -432,8 +443,11 @@ ml.addEventListener('click', function () {
     document.getElementById("inactive4").className = "button2";
     n = n + 1;
   }
+})
 });
 design.addEventListener('click', function () {
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
   if (n % 2 == 0) {
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive5").className = "button3";
@@ -535,8 +549,11 @@ design.addEventListener('click', function () {
     document.getElementById("inactive5").className = "button2";
     n = n + 1;
   }
+})
 });
 mgmt.addEventListener('click', function () {
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
   if (n % 2 == 0) {
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive6").className = "button3";
@@ -638,8 +655,11 @@ mgmt.addEventListener('click', function () {
     document.getElementById("inactive6").className = "button2";
     n = n + 1;
   }
+})
 });
 block.addEventListener('click', function () {
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
   if (n % 2 == 0) {
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive7").className = "button3";
@@ -741,8 +761,11 @@ block.addEventListener('click', function () {
     document.getElementById("inactive7").className = "button2";
     n = n + 1;
   }
+})
 });
 cyber.addEventListener('click', function () {
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
   if (n % 2 == 0) {
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive8").className = "button3";
@@ -844,6 +867,7 @@ cyber.addEventListener('click', function () {
     document.getElementById("inactive8").className = "button2";
     n = n + 1;
   }
+})
 });
 all.addEventListener('click', function () {
   document.getElementById("active1").className = "button3";
@@ -856,7 +880,7 @@ all.addEventListener('click', function () {
   document.getElementById("inactive7").className = "button2";
   document.getElementById("inactive8").className = "button2";
 
-  document.querySelector(".persons").innerHTML = "<div><h1 style='color:white;'>This part of the page is currently in progress. Kindly Wait!! 😊😊</h1></div>";
+  document.querySelector(".persons").innerHTML = "";
   //   displayTeams()
   // function displayTeams() {
   // var init = async function () {
@@ -1009,6 +1033,8 @@ c.addEventListener('click', function () {
 });
 
 function submit() {
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
   axios
     .post(`${url}/DN_Team/addSkills/${window.location.search.split("?")[1]}`,
       {
@@ -1028,9 +1054,12 @@ function submit() {
     .catch((error) => {
       console.error("Error:", error);
     });
+  })
 }
 
 document.getElementById("participant_name").addEventListener("keyup", function (event) {
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
   event.preventDefault();
   var hack_id = window.location.search.split("?")[1];
   var name = document.getElementById("participant_name").value;
@@ -1045,8 +1074,46 @@ document.getElementById("participant_name").addEventListener("keyup", function (
         console.log(teams);
         var part123 = teams.final[0].pt._id;
         localStorage.setItem("participant", part123);
-        document.querySelector(".persons").innerHTML +=
-          "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + teams.final[0].pt.name + "</a></h4><h5 class='text14'>" + teams.final[0].skills[0].skill + "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+        if(teams.final[0].skills.length == 1){
+          document.querySelector(".persons").innerHTML = "";
+          document.querySelector(".persons").innerHTML +=
+          "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + teams.final[0].pt.name + "</a></h4><h5 class='text14'>" + teams.final[0].skills[0].skill + "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";    
+         }
+         if(teams.final[0].skills.length == 2){
+          document.querySelector(".persons").innerHTML = "";
+           document.querySelector(".persons").innerHTML +=
+           "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + teams.final[0].pt.name + "</a></h4><h5 class='text14'>" + teams.final[0].skills[0].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[1].skill + "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";    
+          }
+          if(teams.final[0].skills.length == 3){
+            document.querySelector(".persons").innerHTML = "";
+           document.querySelector(".persons").innerHTML +=
+           "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + teams.final[0].pt.name + "</a></h4><h5 class='text14'>" + teams.final[0].skills[0].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[1].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[2].skill + "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";    
+          }
+          if(teams.final[0].skills.length == 4){
+            document.querySelector(".persons").innerHTML = "";
+           document.querySelector(".persons").innerHTML +=
+           "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + teams.final[0].pt.name + "</a></h4><h5 class='text14'>" + teams.final[0].skills[0].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[1].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[2].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[3].skill + "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";    
+          }
+          if(teams.final[0].skills.length == 5){
+            document.querySelector(".persons").innerHTML = "";
+           document.querySelector(".persons").innerHTML +=
+           "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + teams.final[0].pt.name + "</a></h4><h5 class='text14'>" + teams.final[0].skills[0].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[1].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[2].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[3].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[4].skill + "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";    
+          }
+          if(teams.final[0].skills.length == 6){
+            document.querySelector(".persons").innerHTML = "";
+           document.querySelector(".persons").innerHTML +=
+           "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + teams.final[0].pt.name + "</a></h4><h5 class='text14'>" + teams.final[0].skills[0].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[1].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[2].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[3].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[4].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[5].skill + "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";    
+          }
+          if(teams.final[0].skills.length == 7){
+            document.querySelector(".persons").innerHTML = "";
+           document.querySelector(".persons").innerHTML +=
+           "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + teams.final[0].pt.name + "</a></h4><h5 class='text14'>" + teams.final[0].skills[0].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[1].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[2].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[3].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[4].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[5].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[6].skill + "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";    
+          }
+          if(teams.final[0].skills.length == 8){
+            document.querySelector(".persons").innerHTML = "";
+           document.querySelector(".persons").innerHTML +=
+           "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + teams.final[0].pt.name + "</a></h4><h5 class='text14'>" + teams.final[0].skills[0].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[1].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[2].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[3].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[4].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[5].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[6].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[7].skill + "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";    
+          }
       })
       .catch(e => {
         console.log(e);
@@ -1056,10 +1123,13 @@ document.getElementById("participant_name").addEventListener("keyup", function (
         }
       });
   }
+})
 });
 
 function invite() {
   // id.innerHTML = "Ooops!";
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
   var participant_id = teams.final[0].pt._id;
   console.log(participant_id);
   axios
@@ -1089,5 +1159,5 @@ function invite() {
         swal("WARNING!!", "Invite has already been sent", "warning");
       }
     });
-
+  })
 }

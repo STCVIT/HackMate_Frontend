@@ -10,6 +10,8 @@ const all = document.querySelector('.button');
 
 var n = 0;
 app.addEventListener('click', function () {
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
   if (n % 2 == 0) {
     document.getElementById("active1").className = "button1";
     document.getElementById("inactive1").className = "button";
@@ -300,9 +302,12 @@ app.addEventListener('click', function () {
     document.getElementById("inactive1").className = "button1";
     n = n + 1;
   }
+})
 });
 
 fweb.addEventListener('click', function () {
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
   if (n % 2 == 0) {
     document.getElementById("active1").className = "button1";
     document.getElementById("inactive2").className = "button";
@@ -593,9 +598,12 @@ fweb.addEventListener('click', function () {
     document.getElementById("inactive2").className = "button1";
     n = n + 1;
   }
+})
 });
 
 bweb.addEventListener('click', function () {
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
   if (n % 2 == 0) {
     document.getElementById("active1").className = "button1";
     document.getElementById("inactive3").className = "button";
@@ -886,9 +894,12 @@ bweb.addEventListener('click', function () {
     document.getElementById("inactive3").className = "button1";
     n = n + 1;
   }
+})
 });
 
 ml.addEventListener('click', function () {
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
   if (n % 2 == 0) {
     document.getElementById("active1").className = "button1";
     document.getElementById("inactive4").className = "button";
@@ -1179,9 +1190,12 @@ ml.addEventListener('click', function () {
     document.getElementById("inactive4").className = "button1";
     n = n + 1;
   }
+})
 });
 
 design.addEventListener('click', function () {
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
   if (n % 2 == 0) {
     document.getElementById("active1").className = "button1";
     document.getElementById("inactive5").className = "button";
@@ -1472,9 +1486,12 @@ design.addEventListener('click', function () {
     document.getElementById("inactive5").className = "button1";
     n = n + 1;
   }
+})
 });
 
 mgmt.addEventListener('click', function () {
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
   if (n % 2 == 0) {
     document.getElementById("active1").className = "button1";
     document.getElementById("inactive6").className = "button";
@@ -1766,9 +1783,12 @@ mgmt.addEventListener('click', function () {
     document.getElementById("inactive6").className = "button1";
     n = n + 1;
   }
+})
 });
 
 block.addEventListener('click', function () {
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
   if (n % 2 == 0) {
     document.getElementById("active1").className = "button1";
     document.getElementById("inactive7").className = "button";
@@ -2059,9 +2079,12 @@ block.addEventListener('click', function () {
     document.getElementById("inactive7").className = "button1";
     n = n + 1;
   }
+})
 });
 
 cyber.addEventListener('click', function () {
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
   if (n % 2 == 0) {
     document.getElementById("active1").className = "button1";
     document.getElementById("inactive8").className = "button";
@@ -2350,6 +2373,7 @@ cyber.addEventListener('click', function () {
     document.getElementById("inactive8").className = "button1";
     n = n + 1;
   }
+})
 });
 
 all.addEventListener('click', function() {
@@ -2363,7 +2387,7 @@ all.addEventListener('click', function() {
   document.getElementById("inactive7").className = "button1";
   document.getElementById("inactive8").className = "button1";
 
-  document.querySelector(".dam1").innerHTML = "<div><h1 style='color:white;'>This part of the page is currently in progress. Kindly Wait!! 😊😊</h1></div>";
+  document.querySelector(".dam1").innerHTML = "";
 });
 
 $(document).ready(function () {
@@ -2373,6 +2397,8 @@ $(document).ready(function () {
 
 function allow() {
   // var team_id = teams[0].team._id;
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
   var team_id = hacks[0].team._id;
   console.log(team_id);
   axios
@@ -2399,10 +2425,13 @@ function allow() {
         swal("WARNING!!", "Request to join this team has already been sent.", "warning");
       }
     });
+  })
 }
 
 document.getElementById("search").addEventListener("keyup", function(event) {
   event.preventDefault();
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
   var hack_id = window.location.search.split("?")[1];
   if (event.keyCode === 13) {
     axios(`${url}/DN_Team/teamName/${hack_id}`, {
@@ -2622,9 +2651,12 @@ document.getElementById("search").addEventListener("keyup", function(event) {
         // }
     });
   }
+})
 });
 
 function join() {
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
   code = document.getElementById("enter_code").value;
   console.log(code);
     axios
@@ -2645,20 +2677,26 @@ function join() {
     if (hack.statusCode == 403) {
       swal("WARNING!!", "You have already joined the team.", "warning")
     }
-    else {
-    swal("SUCCESS!!", "You have joined the team successfully.", "success");
-    } 
+    else{
+      swal("SUCCESS!!", "You have joined the team successfully.", "success");
+    }
     })
     .catch((error) => {
       console.error("Error:", error);
-      if (error.response.status == 401) {
-        swal("WARNING!!", "Your session has expired. Pls re-login again!!", "warning");
+      if (error.response.status == 400) {
+        swal("WARNING!!", "You can't join this team as you are already part of this hack.", "warning")
+      }
+      else if (error.response.status == 403) {
+        swal("WARNING!!", "You have already joined the team.", "warning")
       }
     });
+  })
 }
 
 function request() {
   // var team_id = teams[0].team._id;
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
   var team_id = hacks.final[0].team._id
   console.log(team_id);
     axios
@@ -2685,4 +2723,5 @@ function request() {
         swal("WARNING!!", "Request to join this team has already been sent.", "warning");
       }
     });
+  })
 }

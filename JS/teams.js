@@ -6,6 +6,8 @@ var teams ={};
 var page = 1;
 var participant_id;
 function events(event) {
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
   console.log(event);
   page = event.target.innerHTML;
   console.log(page);
@@ -70,6 +72,7 @@ function events(event) {
     .catch((error) => {
     console.error("Error:", error);
     });
+  })
 }
 var Pagination = {
   code: "",
@@ -169,79 +172,93 @@ var Pagination = {
 
 
 function displayTeams() {
-  var init = async function () {
-    var res = await axios(`${url}/DN_Team/myTeams?page=1`, {
-      headers: {
-        Authorization: "Bearer " + auth,
-      },
-    });
-    teams = await res.data;
-    console.log(teams);
-
-    var length = await res.data.length;
-    console.log(length);
-    let body = document.querySelector(".cards");
-    var yourHTML = "";
-    for (var i = 0; i < teams.final.length;) {
-      yourHTML +="<div class='row'><div class='col-lg-6 col-md-6 col-sm-12'style='padding-bottom:5%' onclick='check()'><div class='card1' id='team'style='max-width: 497px; max-height: 371px;padding-bottom: 10%;'><div class='card-body'><h4 class='card-title'>" + 
-      teams["final"][i]["team"].name +
-      "</h4><p><text>Hackathon:</text><hackathon id='hack_name'>" +
-      teams["final"][i]["hackName"]+
-      "</hackathon></p><div class='card-details'><p><f>"+
-      teams["final"][i]["team"].members.length +
-     "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>"
-     for(var j=0;j < teams["final"][i]["team"].members.length;j++){
-     yourHTML += "<li class='list-item'><img id='pp' src='../Assets/Images/Rectangle 155.svg'><p>"+
-     teams['final'][i]['pt_skill'][j]['participant'].name+
-     "<br><t>"+
-     teams["final"][i]["pt_skill"][j]["skills"][0]["skill"]+
-     "</t></p></li>"
-     }
-     yourHTML += "</ul></div><p id='admin_id'>"+teams['final'][i].team.admin_id+"</p><p id='team_id'>"+teams["final"][i]["team"]._id+"<p><p id='hack_id'>"+teams.final[i].team.hack_id+"</p></div></div></div>"
-    
-    i++;
-    if(i<teams.final.length){
-    yourHTML += "<div class='col-lg-6 col-md-6 col-sm-12'onclick='check()'><div class='card2' id='team' style='max-width: 497px; max-height: 371px; padding-bottom:20px;' ><div class='card-body'><h4 class='card-title'>" +
-    teams["final"][i]["team"].name +
-      "</h4><p><text>Hackathon:</text><hackathon id='hack_name'>" +
-      teams["final"][i]["hackName"] +
-      "</hackathon></p><div class='card-details'><p><f>"+
-      teams["final"][i]["team"].members.length +
-     "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>"
-     for(var j=0;j < teams["final"][i]["team"].members.length;j++){
-     yourHTML += "<li class='list-item'><img id='pp' src='../Assets/Images/Rectangle 155.svg'><p>"+
-     teams['final'][i]['pt_skill'][j]['participant'].name+
-     "<br><t>"
-     if(teams["final"][i]["pt_skill"][j]["skills"].length==0){
-      yourHTML += "</t></p></li>"
-     }
-     else{
-      yourHTML += teams["final"][i]["pt_skill"][j]["skills"][0]["skill"]+"</t></p></li>"
-     }
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      user.getIdToken().then(function(idToken){
+        console.log(idToken)
+        auth = idToken;
+        var init = async function () {
+          var res = await axios(`${url}/DN_Team/myTeams?page=1`, {
+            headers: {
+              Authorization: "Bearer " + auth,
+            },
+          });
+          teams = await res.data;
+          console.log(teams);
+      
+          var length = await res.data.length;
+          console.log(length);
+          let body = document.querySelector(".cards");
+          var yourHTML = "";
+          for (var i = 0; i < teams.final.length;) {
+            yourHTML +="<div class='row'><div class='col-lg-6 col-md-6 col-sm-12'style='padding-bottom:5%' onclick='check()'><div class='card1' id='team'style='max-width: 497px; max-height: 371px;padding-bottom: 10%;'><div class='card-body'><h4 class='card-title'>" + 
+            teams["final"][i]["team"].name +
+            "</h4><p><text>Hackathon:</text><hackathon id='hack_name'>" +
+            teams["final"][i]["hackName"]+
+            "</hackathon></p><div class='card-details'><p><f>"+
+            teams["final"][i]["team"].members.length +
+           "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>"
+           for(var j=0;j < teams["final"][i]["team"].members.length;j++){
+           yourHTML += "<li class='list-item'><img id='pp' src='../Assets/Images/Rectangle 155.svg'><p>"+
+           teams['final'][i]['pt_skill'][j]['participant'].name+
+           "<br><t>"+
+           teams["final"][i]["pt_skill"][j]["skills"][0]["skill"]+
+           "</t></p></li>"
+           }
+           yourHTML += "</ul></div><p id='admin_id'>"+teams['final'][i].team.admin_id+"</p><p id='team_id'>"+teams["final"][i]["team"]._id+"<p><p id='hack_id'>"+teams.final[i].team.hack_id+"</p></div></div></div>"
+          
+          i++;
+          if(i<teams.final.length){
+          yourHTML += "<div class='col-lg-6 col-md-6 col-sm-12'onclick='check()'><div class='card2' id='team' style='max-width: 497px; max-height: 371px; padding-bottom:20px;' ><div class='card-body'><h4 class='card-title'>" +
+          teams["final"][i]["team"].name +
+            "</h4><p><text>Hackathon:</text><hackathon id='hack_name'>" +
+            teams["final"][i]["hackName"] +
+            "</hackathon></p><div class='card-details'><p><f>"+
+            teams["final"][i]["team"].members.length +
+           "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>"
+           for(var j=0;j < teams["final"][i]["team"].members.length;j++){
+           yourHTML += "<li class='list-item'><img id='pp' src='../Assets/Images/Rectangle 155.svg'><p>"+
+           teams['final'][i]['pt_skill'][j]['participant'].name+
+           "<br><t>"
+           if(teams["final"][i]["pt_skill"][j]["skills"].length==0){
+            yourHTML += "</t></p></li>"
+           }
+           else{
+            yourHTML += teams["final"][i]["pt_skill"][j]["skills"][0]["skill"]+"</t></p></li>"
+           }
+          }
+          yourHTML += "</ul></div><p id='admin_id'>"+teams['final'][i].team.admin_id+"</p><p id='team_id'>"+teams["final"][i]["team"]._id+"<p><p id='hack_id'>"+teams.final[i].team.hack_id+"</p></div></div></div>"
+        }
+      
+          
+          i++;
+          
+          console.log(i);
+          body.innerHTML += yourHTML;
+          yourHTML = "";
+          }
+          total_teams = Math.ceil(length / 8);
+          console.log("total_teams",total_teams);
+          Pagination.Init(document.getElementById("pagination"), {
+            size: total_teams,
+            page: 1,
+            step: 1,
+          });
+        };
+        init();
+      })
     }
-    yourHTML += "</ul></div><p id='admin_id'>"+teams['final'][i].team.admin_id+"</p><p id='team_id'>"+teams["final"][i]["team"]._id+"<p><p id='hack_id'>"+teams.final[i].team.hack_id+"</p></div></div></div>"
-  }
-
-    
-    i++;
-    
-    console.log(i);
-    body.innerHTML += yourHTML;
-    yourHTML = "";
+    else {
+      // User is signed out
+      console.log("I'm signed out!")
     }
-    total_teams = Math.ceil(length / 8);
-    console.log("total_teams",total_teams);
-    Pagination.Init(document.getElementById("pagination"), {
-      size: total_teams,
-      page: 1,
-      step: 1,
-    });
-  };
-  init();
+  });
 }
 displayTeams();
 
 function nextPage() {
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
   if (page < total_teams) {
     page = Pagination.page + 1;
   }
@@ -308,10 +325,13 @@ function nextPage() {
     .catch((error) => {
     console.error("Error:", error);
     });
+  })
 }
 
 
 function prevPage() {
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
   if (page > 1) {
     page = Pagination.page - 1;
   }
@@ -378,11 +398,14 @@ function prevPage() {
     .catch((error) => {
     console.error("Error:", error);
     });
+  })
   }
 
 
 
 var user;
+firebase.auth().currentUser.getIdToken().then((id) => {
+  auth = id;
 axios(`${url}/participant/login`, {
     headers: {
         Authorization: "Bearer " + auth,
@@ -394,9 +417,11 @@ axios(`${url}/participant/login`, {
     localStorage.setItem("participant_id",participant_id);
 })
 .catch((error) => console.error("Error: " + error));
-
+})
 
  function check(){
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
    const cards = document.querySelectorAll("#team");
    cards.forEach(card => card.addEventListener('click',look));
    console.log(cards);
@@ -421,6 +446,5 @@ axios(`${url}/participant/login`, {
         window.location.assign("./teamprofile.html")
       }
     }
+  })
   }
-
-  console.log(auth);

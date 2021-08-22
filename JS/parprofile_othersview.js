@@ -4,6 +4,11 @@ $(document).ready(function () {
 });
 
   var user;
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      user.getIdToken().then(function(idToken){
+        console.log(idToken)
+        auth = idToken
   randomId = localStorage.getItem("participant");
   axios(`${url}/participant/get/${randomId}`, {
       headers: {
@@ -36,7 +41,14 @@ $(document).ready(function () {
         body.innerHTML= yourHTML;
    })
    .catch((error) => console.error("Error: " + error));
-
+  })
+} else {
+  // User is signed out
+  console.log("I'm signed out!")
+}
+});
+firebase.auth().currentUser.getIdToken().then((id) => {
+  auth = id;
    var user;
    var user_id;
 axios(`${url}/participant/login`, {
@@ -49,9 +61,11 @@ axios(`${url}/participant/login`, {
     user_id = user._id;
 })
 .catch((error) => console.error("Error: " + error));
-
+})
 let review = document.getElementById("review");
 function add_review() {
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
     axios 
         .post(
           `${url}/review/postReview/${user_id}/${randomId}`,
@@ -70,6 +84,7 @@ function add_review() {
     .catch((error) => {
         console.error("Error:",error);
     });
+  })
 }
 
 function toTitleCase(str) {
@@ -80,14 +95,16 @@ function toTitleCase(str) {
       }
     );
   }
-
+  team_name= localStorage.getItem("hack_name");
   function invite() {
-    // id.innerHTML = "Ooops!";
+    // id.innerHTML = "Ooops!";\
+    firebase.auth().currentUser.getIdToken().then((id) => {
+      auth = id;
     var participant_id = randomId;
     console.log(participant_id);
     axios
       .post(
-        `${url}/invites/invite/${participant_id}/${user_id}`,
+        `${url}/invites/invite/${team_name}/${participant_id}`,
         {
           code: invite,
         },
@@ -112,5 +129,5 @@ function toTitleCase(str) {
           swal("WARNING!!", "Invite has already been sent", "warning");
         }
       });
-  
+    });
   }

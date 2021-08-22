@@ -2,7 +2,11 @@ $(document).ready(function () {
   $("#nav").load("../Assets/Header/headerl.txt");
   $("#foobottom").load("../Assets/Footer/footer.txt");
 });
-
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    user.getIdToken().then(function(idToken){
+      console.log(idToken)
+      auth = idToken
 axios(`${url}/projects/getAll`, {
   headers: {
     Authorization: "Bearer " + auth,
@@ -35,3 +39,9 @@ axios(`${url}/projects/getAll`, {
   .catch((error) => {
     console.error("Error:", error);
   });
+})
+} else {
+  // User is signed out
+  console.log("I'm signed out!")
+}
+});

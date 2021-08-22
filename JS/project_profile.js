@@ -2,7 +2,11 @@ $(document).ready(function () {
     $("#nav").load("../Assets/Header/headerl.txt");
     $("#foobottom").load("../Assets/Footer/footer.txt");
 });
-
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      user.getIdToken().then(function(idToken){
+        console.log(idToken)
+        auth = idToken
 var project;
 axios(`${url}/projects/get/${window.location.search.split("?")[1]}`, {
     headers: {
@@ -18,3 +22,9 @@ axios(`${url}/projects/get/${window.location.search.split("?")[1]}`, {
      document.querySelector("#bio").innerHTML = project.description;
  })
  .catch((error) => console.error("Error: " + error));
+})
+} else {
+  // User is signed out
+  console.log("I'm signed out!")
+}
+});

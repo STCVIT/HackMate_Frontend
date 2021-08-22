@@ -116,6 +116,8 @@ block.addEventListener('click',function(){
 });
 
 function add_skills(){
+    firebase.auth().currentUser.getIdToken().then((id) => {
+        auth = id;
     axios
   .post(`${url}/skills/mySkills`,
   {
@@ -138,5 +140,6 @@ function add_skills(){
   .catch((error) => {
     console.error("Error:", error);
   });
+})
 }
 

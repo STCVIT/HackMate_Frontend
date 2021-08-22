@@ -3,6 +3,12 @@ $(document).ready(function () {
     $("#foobottom").load("../Assets/Footer/footer.txt");
 });
 
+
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      user.getIdToken().then(function(idToken){
+        console.log(idToken)
+        auth = idToken
 var user;
 axios(`${url}/participant/login`, {
     headers: {
@@ -73,8 +79,16 @@ axios(`${url}/skills/mySkills`, {
     }
 })
 .catch((error) => console.error("Error: " + error));
+})
+} else {
+  // User is signed out
+  console.log("I'm signed out!")
+}
+});
 
 function delete_account(){
+    firebase.auth().currentUser.getIdToken().then((id) => {
+        auth = id;
     swal({
         title: "Are you sure?",
         text: "Do you want to delete your profile?",
@@ -104,10 +118,13 @@ function delete_account(){
             swal("Your team is safe!");
           }
     });
+})
 }
 
 
 function update_account() {
+    firebase.auth().currentUser.getIdToken().then((id) => {
+        auth = id;
     let flag=0;
     let Name=document.getElementById("name");
     let username=document.getElementById("username");
@@ -236,7 +253,7 @@ function update_account() {
                 console.error("Error:", error);
             });
         }
-       
+    })
 }
 function onSuccess(input){
     let parent=input.parentElement;

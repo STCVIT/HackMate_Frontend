@@ -38,6 +38,11 @@ form2.addEventListener('submit',(e)=>{
     let bio=document.getElementById("bio");
     let eval=validate(linkedin,git,website,bio);
     console.log(eval);
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          user.getIdToken().then(function(idToken){
+            console.log(idToken)
+            auth = idToken
     if(eval==1)
     {
         console.log("form validation completed");
@@ -69,6 +74,12 @@ form2.addEventListener('submit',(e)=>{
             console.log("Error:", error);
         });
     }
+})
+} else {
+  // User is signed out
+  console.log("I'm signed out!")
+}
+});
 });
 }
 function checkInputs(Name,username,college,year){

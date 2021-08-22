@@ -11,6 +11,11 @@ let participant_id = localStorage.getItem("participant_id");
 console.log(hack_name);
 random_id = localStorage.getItem("team_id");
 console.log(random_id);
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    user.getIdToken().then(function(idToken){
+      console.log(idToken)
+      auth = idToken
   axios(`${url}/DN_Team/${random_id}`, {
     headers: {
       Authorization: "Bearer " + auth,
@@ -37,8 +42,15 @@ console.log(random_id);
     }
   })
   .catch((error) => console.error("Error: " + error));
-
+})
+} else {
+  // User is signed out
+  console.log("I'm signed out!")
+}
+});
   function hackinfo(){
+    firebase.auth().currentUser.getIdToken().then((id) => {
+      auth = id;
     if(hack_name == ""){
       document.getElementById("hackathon").style.visibility = "hidden";
       document.getElementById("hackdetails").style.visibility = "hidden";
@@ -63,5 +75,6 @@ console.log(random_id);
       })
       .catch((error) => console.error("Error: " + error));    
     }
-   }
+   })
+  }
   hackinfo()

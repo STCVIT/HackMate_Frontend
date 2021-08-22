@@ -62,6 +62,10 @@ async function uploadBlob(file) {
         var mints = document.myform.mints.value;
         var maxts = document.myform.maxts.value;
         var prizes = document.myform.prizes.value;
+
+        firebase.auth().currentUser.getIdToken().then(async (id)=>{
+          auth = await id
+      })
         axios
           .post(
             `${url}/organiser/createHack`,

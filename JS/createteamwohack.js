@@ -9,347 +9,843 @@ const cyber = document.querySelector('.text12');
 const all = document.querySelector('.text5');
 
 var n = 0;
-app.addEventListener('click', function() {
-  if(n%2 == 0){
+app.addEventListener('click', function () {
+  if (n % 2 == 0) {
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive1").className = "button3";
-    n = n+1;
+    n = n + 1;
     var occurence = "appdev";
     var page = 1;
     displayTeams();
-    page=page+1;
-    // displayTeams();
-function displayTeams() {
-  var init = async function () {
-    try{
-    var res = await axios(`${url}/participant/get/skill/null?page=${page}&skill=${occurence}`, {
-      headers: {
-        Authorization: "Bearer " + auth,
-      },
-    });
-    hacks = await res.data;
-    console.log(hacks);
-    for(let i = 0; i<hacks.final.length; i++){
-      document.querySelector(".persons").innerHTML +=
-        "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'>"+hacks.final[i].pt.name+"</h4><h5 class='text14'>App Dev</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
-    }
-}
-  catch(err) {
-    console.log(err.response.status);
-    if(err.response.status == 404){
-      swal("WARNING!!", "You can't search this team.", "warning");
+    // var init = async function () {
+    //   try {
+    //     var res = await axios(`${url}/participant/get/skill/null?page=1&skill=${occurence}`, {
+    //       headers: {
+    //         Authorization: "Bearer " + auth,
+    //       },
+    //     });
+    //     hackss = await res.data;
+    //     if (hackss.length >= 13 && hackss.length <= 24) {
+    //       page = page + 1;
+    //       console.log(page);
+    //     }
+    //     else if (hackss.length >= 25 && hackss.length <= 36) {
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //     }
+    //     else if (hackss.length >= 37 && hackss.length <= 48) {
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //     }
+    //     else if (hackss.length >= 49 && hackss.length <= 60) {
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //     }
+    //   }
+    //   catch (err) {
+    //     console.log(err.response.status);
+    //   }
+    // }
+    // init();
+    // var height = document.body.clientHeight;
+    // console.log(height);
+    // if (height == document.body.clientHeight) {
+    //   window.addEventListener('scroll', someFunction);
+    //   function someFunction() {
+    //     if (window.scrollY + window.innerHeight >= 1180) {
+    //       console.log(window.scrollY + window.innerHeight);
+    //       displayTeams();
+    //       window.removeEventListener('scroll', someFunction);
+    //     }
+    //   }
+    // }
+    document.querySelector(".persons").innerHTML = "";
+    console.log(page);
+    function displayTeams() {
+      var init = async function () {
+        try {
+          var res = await axios(`${url}/participant/get/skill/null?page=${page}&skill=${occurence}`, {
+            headers: {
+              Authorization: "Bearer " + auth,
+            },
+          });
+          hacks = await res.data;
+          console.log(hacks);
+          var part123 = hacks.final[0].pt._id;
+          localStorage.setItem("participant", part123);
+          for (let i = 0; i < hacks.final.length; i++) {
+            document.querySelector(".persons").innerHTML +=
+              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>App Dev</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+          }
+        }
+        catch (err) {
+          console.log(err.response.status);
+          if (err.response.status == 404) {
+            swal("WARNING!!", "You can't search this team.", "warning");
+          }
+        }
+      }
+      init();
     }
   }
-}
- init();
-}
-  }
-  else{
+  else {
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive1").className = "button2";
-    n = n+1;
+    n = n + 1;
   }
 });
-fweb.addEventListener('click', function() {
-  if(n%2 == 0){
+fweb.addEventListener('click', function () {
+  if (n % 2 == 0) {
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive2").className = "button3";
-    n = n+1;
+    n = n + 1;
     var occurence = "frontend";
     var page = 1;
     displayTeams();
-    page=page+1;
-    // displayTeams()
-    var height = document.body.clientHeight;
-    console.log(height);
-    if (height == document.body.clientHeight) {
-      window.addEventListener('scroll', someFunction);
-      function someFunction() {
-        if (window.scrollY + window.innerHeight >= 2000) {
-          console.log(window.scrollY + window.innerHeight);
+    var init = async function () {
+      try {
+        var res = await axios(`${url}/participant/get/skill/null?page=1&skill=${occurence}`, {
+          headers: {
+            Authorization: "Bearer " + auth,
+          },
+        });
+        hackss = await res.data;
+        if (hackss.length >= 13 && hackss.length <= 24) {
+          page = page + 1;
+          console.log(page);
+          var height = document.body.clientHeight;
+          console.log(height);
+          if (height == document.body.clientHeight) {
+            window.addEventListener('scroll', someFunction);
+            function someFunction() {
+              if (window.scrollY + window.innerHeight >= 1153) {
+                console.log(window.scrollY + window.innerHeight);
+                displayTeams();
+                window.removeEventListener('scroll', someFunction);
+              }
+            }
+          }
+        }
+        else if (hackss.length >= 25 && hackss.length <= 36) {
+          page = page + 1;
+          console.log(page);
           displayTeams();
-          window.removeEventListener('scroll', someFunction);
+          page = page + 1;
+          console.log(page);
+        }
+        else if (hackss.length >= 37 && hackss.length <= 48) {
+          page = page + 1;
+          console.log(page);
+          displayTeams();
+          page = page + 1;
+          console.log(page);
+          displayTeams();
+          page = page + 1;
+          console.log(page);
+        }
+        else if (hackss.length >= 49 && hackss.length <= 60) {
+          page = page + 1;
+          console.log(page);
+          displayTeams();
+          page = page + 1;
+          console.log(page);
+          displayTeams();
+          page = page + 1;
+          console.log(page);
+          displayTeams();
+          page = page + 1;
+          console.log(page);
         }
       }
+      catch (err) {
+        console.log(err.response.status);
+      }
     }
-function displayTeams() {
-  var init = async function () {
-    try{
-    var res = await axios(`${url}/participant/get/skill/null?page=${page}&skill=${occurence}`, {
-      headers: {
-        Authorization: "Bearer " + auth,
-      },
-    });
-    hacks = await res.data;
-    console.log(hacks);
-    for(let i = 0; i<hacks.final.length; i++){
-      document.querySelector(".persons").innerHTML +=
-        "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'>"+hacks.final[i].pt.name+"</h4><h5 class='text14'>Frontend</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
-    }
-}
-  catch(err) {
-    console.log(err.response.status);
-    if(err.response.status == 404){
-      swal("WARNING!!", "You can't search this team.", "warning");
+    init();
+    // var height = document.body.clientHeight;
+    // console.log(height);
+    // if (height == document.body.clientHeight) {
+    //   window.addEventListener('scroll', someFunction);
+    //   function someFunction() {
+    //     if (window.scrollY + window.innerHeight >= 1153) {
+    //       console.log(window.scrollY + window.innerHeight);
+    //       displayTeams();
+    //       window.removeEventListener('scroll', someFunction);
+    //     }
+    //   }
+    // }
+    document.querySelector(".persons").innerHTML = "";
+    console.log(page);
+    function displayTeams() {
+      var init = async function () {
+        try {
+          var res = await axios(`${url}/participant/get/skill/null?page=${page}&skill=${occurence}`, {
+            headers: {
+              Authorization: "Bearer " + auth,
+            },
+          });
+          hacks = await res.data;
+          console.log(hacks);
+          var part123 = hacks.final[0].pt._id;
+          localStorage.setItem("participant", part123);
+          for (let i = 0; i < hacks.final.length; i++) {
+            document.querySelector(".persons").innerHTML +=
+              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>Frontend</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+          }
+        }
+        catch (err) {
+          console.log(err.response.status);
+          if (err.response.status == 404) {
+            swal("WARNING!!", "You can't search this team.", "warning");
+          }
+        }
+      }
+      init();
     }
   }
-}
- init();
-}
-  }
-  else{
+  else {
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive2").className = "button2";
-    n = n+1;
+    n = n + 1;
   }
 });
-bweb.addEventListener('click', function() {
-  if(n%2 == 0){
+bweb.addEventListener('click', function () {
+  if (n % 2 == 0) {
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive3").className = "button3";
-    n = n+1;
+    n = n + 1;
     var occurence = "backend";
     var page = 1;
     displayTeams();
-    page=page+1;
-    // displayTeams();
-function displayTeams() {
-  var init = async function () {
-    try{
-    var res = await axios(`${url}/participant/get/skill/null?page=${page}&skill=${occurence}`, {
-      headers: {
-        Authorization: "Bearer " + auth,
-      },
-    });
-    hacks = await res.data;
-    console.log(hacks);
-    for(let i = 0; i<hacks.final.length; i++){
-      document.querySelector(".persons").innerHTML +=
-        "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'>"+hacks.final[i].pt.name+"</h4><h5 class='text14'>Backend</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
-    }
-}
-  catch(err) {
-    console.log(err.response.status);
-    if(err.response.status == 404){
-      swal("WARNING!!", "You can't search this team.", "warning");
+    // var init = async function () {
+    //   try {
+    //     var res = await axios(`${url}/participant/get/skill/null?page=1&skill=${occurence}`, {
+    //       headers: {
+    //         Authorization: "Bearer " + auth,
+    //       },
+    //     });
+    //     hackss = await res.data;
+    //     if (hackss.length >= 13 && hackss.length <= 24) {
+    //       page = page + 1;
+    //       console.log(page);
+    //     }
+    //     else if (hackss.length >= 25 && hackss.length <= 36) {
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //     }
+    //     else if (hackss.length >= 37 && hackss.length <= 48) {
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //     }
+    //     else if (hackss.length >= 49 && hackss.length <= 60) {
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //     }
+    //   }
+    //   catch (err) {
+    //     console.log(err.response.status);
+    //   }
+    // }
+    // init();
+    // var height = document.body.clientHeight;
+    // console.log(height);
+    // if (height == document.body.clientHeight) {
+    //   window.addEventListener('scroll', someFunction);
+    //   function someFunction() {
+    //     if (window.scrollY + window.innerHeight >= 1180) {
+    //       console.log(window.scrollY + window.innerHeight);
+    //       displayTeams();
+    //       window.removeEventListener('scroll', someFunction);
+    //     }
+    //   }
+    // }
+    document.querySelector(".persons").innerHTML = "";
+    console.log(page);
+    function displayTeams() {
+      var init = async function () {
+        try {
+          var res = await axios(`${url}/participant/get/skill/null?page=${page}&skill=${occurence}`, {
+            headers: {
+              Authorization: "Bearer " + auth,
+            },
+          });
+          hacks = await res.data;
+          console.log(hacks);
+          var part123 = hacks.final[0].pt._id;
+          localStorage.setItem("participant", part123);
+          for (let i = 0; i < hacks.final.length; i++) {
+            document.querySelector(".persons").innerHTML +=
+              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>Backend</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+          }
+        }
+        catch (err) {
+          console.log(err.response.status);
+          if (err.response.status == 404) {
+            swal("WARNING!!", "You can't search this team.", "warning");
+          }
+        }
+      }
+      init();
     }
   }
-}
- init();
-}
-  }
-  else{
+  else {
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive3").className = "button2";
-    n = n+1;
+    n = n + 1;
   }
 });
-ml.addEventListener('click', function() {
-  if(n%2 == 0){
+ml.addEventListener('click', function () {
+  if (n % 2 == 0) {
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive4").className = "button3";
-    n = n+1;
+    n = n + 1;
     var occurence = "ml";
     var page = 1;
     displayTeams();
-    page=page+1;
-    // displayTeams();
-function displayTeams() {
-  var init = async function () {
-    try{
-    var res = await axios(`${url}/participant/get/skill/null?page=${page}&skill=${occurence}`, {
-      headers: {
-        Authorization: "Bearer " + auth,
-      },
-    });
-    hacks = await res.data;
-    console.log(hacks);
-    for(let i = 0; i<hacks.final.length; i++){
-      document.querySelector(".persons").innerHTML +=
-        "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'>"+hacks.final[i].pt.name+"</h4><h5 class='text14'>Machine Learning</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
-    }
-}
-  catch(err) {
-    console.log(err.response.status);
-    if(err.response.status == 404){
-      swal("WARNING!!", "You can't search this team.", "warning");
+    // var init = async function () {
+    //   try {
+    //     var res = await axios(`${url}/participant/get/skill/null?page=1&skill=${occurence}`, {
+    //       headers: {
+    //         Authorization: "Bearer " + auth,
+    //       },
+    //     });
+    //     hackss = await res.data;
+    //     if (hackss.length >= 13 && hackss.length <= 24) {
+    //       page = page + 1;
+    //       console.log(page);
+    //     }
+    //     else if (hackss.length >= 25 && hackss.length <= 36) {
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //     }
+    //     else if (hackss.length >= 37 && hackss.length <= 48) {
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //     }
+    //     else if (hackss.length >= 49 && hackss.length <= 60) {
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //     }
+    //   }
+    //   catch (err) {
+    //     console.log(err.response.status);
+    //   }
+    // }
+    // init();
+    // var height = document.body.clientHeight;
+    // console.log(height);
+    // if (height == document.body.clientHeight) {
+    //   window.addEventListener('scroll', someFunction);
+    //   function someFunction() {
+    //     if (window.scrollY + window.innerHeight >= 1180) {
+    //       console.log(window.scrollY + window.innerHeight);
+    //       displayTeams();
+    //       window.removeEventListener('scroll', someFunction);
+    //     }
+    //   }
+    // }
+    document.querySelector(".persons").innerHTML = "";
+    console.log(page);
+    function displayTeams() {
+      var init = async function () {
+        try {
+          var res = await axios(`${url}/participant/get/skill/null?page=${page}&skill=${occurence}`, {
+            headers: {
+              Authorization: "Bearer " + auth,
+            },
+          });
+          hacks = await res.data;
+          console.log(hacks);
+          var part123 = hacks.final[0].pt._id;
+          localStorage.setItem("participant", part123);
+          for (let i = 0; i < hacks.final.length; i++) {
+            document.querySelector(".persons").innerHTML +=
+              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>Machine Learning</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+          }
+        }
+        catch (err) {
+          console.log(err.response.status);
+          if (err.response.status == 404) {
+            swal("WARNING!!", "You can't search this team.", "warning");
+          }
+        }
+      }
+      init();
     }
   }
-}
- init();
-}
-  }
-  else{
+  else {
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive4").className = "button2";
-    n = n+1;
+    n = n + 1;
   }
 });
-design.addEventListener('click', function() {
-  if(n%2 == 0){
+design.addEventListener('click', function () {
+  if (n % 2 == 0) {
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive5").className = "button3";
-    n = n+1;
+    n = n + 1;
     var occurence = "ui/ux";
     var page = 1;
     displayTeams();
-    page=page+1;
-    // displayTeams();
-function displayTeams() {
-  var init = async function () {
-    try{
-    var res = await axios(`${url}/participant/get/skill/null?page=${page}&skill=${occurence}`, {
-      headers: {
-        Authorization: "Bearer " + auth,
-      },
-    });
-    hacks = await res.data;
-    console.log(hacks);
-    for(let i = 0; i<hacks.final.length; i++){
-      document.querySelector(".persons").innerHTML +=
-        "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'>"+hacks.final[i].pt.name+"</h4><h5 class='text14'>UI/UX</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
-    }
-}
-  catch(err) {
-    console.log(err.response.status);
-    if(err.response.status == 404){
-      swal("WARNING!!", "You can't search this team.", "warning");
+    // var init = async function () {
+    //   try {
+    //     var res = await axios(`${url}/participant/get/skill/null?page=1&skill=${occurence}`, {
+    //       headers: {
+    //         Authorization: "Bearer " + auth,
+    //       },
+    //     });
+    //     hackss = await res.data;
+    //     if (hackss.length >= 13 && hackss.length <= 24) {
+    //       page = page + 1;
+    //       console.log(page);
+    //     }
+    //     else if (hackss.length >= 25 && hackss.length <= 36) {
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //     }
+    //     else if (hackss.length >= 37 && hackss.length <= 48) {
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //     }
+    //     else if (hackss.length >= 49 && hackss.length <= 60) {
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //     }
+    //   }
+    //   catch (err) {
+    //     console.log(err.response.status);
+    //   }
+    // }
+    // init();
+    // var height = document.body.clientHeight;
+    // console.log(height);
+    // if (height == document.body.clientHeight) {
+    //   window.addEventListener('scroll', someFunction);
+    //   function someFunction() {
+    //     if (window.scrollY + window.innerHeight >= 1180) {
+    //       console.log(window.scrollY + window.innerHeight);
+    //       displayTeams();
+    //       window.removeEventListener('scroll', someFunction);
+    //     }
+    //   }
+    // }
+    document.querySelector(".persons").innerHTML = "";
+    console.log(page);
+    function displayTeams() {
+      var init = async function () {
+        try {
+          var res = await axios(`${url}/participant/get/skill/null?page=${page}&skill=${occurence}`, {
+            headers: {
+              Authorization: "Bearer " + auth,
+            },
+          });
+          hacks = await res.data;
+          console.log(hacks);
+          var part123 = hacks.final[0].pt._id;
+          localStorage.setItem("participant", part123);
+          for (let i = 0; i < hacks.final.length; i++) {
+            document.querySelector(".persons").innerHTML +=
+              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>UI/UX</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+          }
+        }
+        catch (err) {
+          console.log(err.response.status);
+          if (err.response.status == 404) {
+            swal("WARNING!!", "You can't search this team.", "warning");
+          }
+        }
+      }
+      init();
     }
   }
-}
- init();
-}
-  }
-  else{
+  else {
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive5").className = "button2";
-    n = n+1;
+    n = n + 1;
   }
 });
-mgmt.addEventListener('click', function() {
-  if(n%2 == 0){
+mgmt.addEventListener('click', function () {
+  if (n % 2 == 0) {
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive6").className = "button3";
-    n = n+1;
+    n = n + 1;
     var occurence = "management";
     var page = 1;
     displayTeams();
-    page=page+1;
-    // displayTeams();
-function displayTeams() {
-  var init = async function () {
-    try{
-    var res = await axios(`${url}/participant/get/skill/null?page=${page}&skill=${occurence}`, {
-      headers: {
-        Authorization: "Bearer " + auth,
-      },
-    });
-    hacks = await res.data;
-    console.log(hacks);
-    for(let i = 0; i<hacks.final.length; i++){
-      document.querySelector(".persons").innerHTML +=
-        "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'>"+hacks.final[i].pt.name+"</h4><h5 class='text14'>Management</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
-    }
-}
-  catch(err) {
-    console.log(err.response.status);
-    if(err.response.status == 404){
-      swal("WARNING!!", "You can't search this team.", "warning");
+    // var init = async function () {
+    //   try {
+    //     var res = await axios(`${url}/participant/get/skill/null?page=1&skill=${occurence}`, {
+    //       headers: {
+    //         Authorization: "Bearer " + auth,
+    //       },
+    //     });
+    //     hackss = await res.data;
+    //     if (hackss.length >= 13 && hackss.length <= 24) {
+    //       page = page + 1;
+    //       console.log(page);
+    //     }
+    //     else if (hackss.length >= 25 && hackss.length <= 36) {
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //     }
+    //     else if (hackss.length >= 37 && hackss.length <= 48) {
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //     }
+    //     else if (hackss.length >= 49 && hackss.length <= 60) {
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //     }
+    //   }
+    //   catch (err) {
+    //     console.log(err.response.status);
+    //   }
+    // }
+    // init();
+    // var height = document.body.clientHeight;
+    // console.log(height);
+    // if (height == document.body.clientHeight) {
+    //   window.addEventListener('scroll', someFunction);
+    //   function someFunction() {
+    //     if (window.scrollY + window.innerHeight >= 1180) {
+    //       console.log(window.scrollY + window.innerHeight);
+    //       displayTeams();
+    //       window.removeEventListener('scroll', someFunction);
+    //     }
+    //   }
+    // }
+    document.querySelector(".persons").innerHTML = "";
+    console.log(page);
+    function displayTeams() {
+      var init = async function () {
+        try {
+          var res = await axios(`${url}/participant/get/skill/null?page=${page}&skill=${occurence}`, {
+            headers: {
+              Authorization: "Bearer " + auth,
+            },
+          });
+          hacks = await res.data;
+          console.log(hacks);
+          var part123 = hacks.final[0].pt._id;
+          localStorage.setItem("participant", part123);
+          for (let i = 0; i < hacks.final.length; i++) {
+            document.querySelector(".persons").innerHTML +=
+              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>Management</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+          }
+        }
+        catch (err) {
+          console.log(err.response.status);
+          if (err.response.status == 404) {
+            swal("WARNING!!", "You can't search this team.", "warning");
+          }
+        }
+      }
+      init();
     }
   }
-}
- init();
-}
-  }
-  else{
+  else {
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive6").className = "button2";
-    n = n+1;
+    n = n + 1;
   }
 });
-block.addEventListener('click', function() {
-  if(n%2 == 0){
+block.addEventListener('click', function () {
+  if (n % 2 == 0) {
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive7").className = "button3";
-    n = n+1;
+    n = n + 1;
     var occurence = "blockchain";
     var page = 1;
     displayTeams();
-    page=page+1;
-    // displayTeams();
-function displayTeams() {
-  var init = async function () {
-    try{
-    var res = await axios(`${url}/participant/get/skill/null?page=${page}&skill=${occurence}`, {
-      headers: {
-        Authorization: "Bearer " + auth,
-      },
-    });
-    hacks = await res.data;
-    console.log(hacks);
-    for(let i = 0; i<hacks.final.length; i++){
-      document.querySelector(".persons").innerHTML +=
-        "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'>"+hacks.final[i].pt.name+"</h4><h5 class='text14'>Blockchain</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
-    }
-}
-  catch(err) {
-    console.log(err.response.status);
-    if(err.response.status == 404){
-      swal("WARNING!!", "You can't search this team.", "warning");
+    // var init = async function () {
+    //   try {
+    //     var res = await axios(`${url}/participant/get/skill/null?page=1&skill=${occurence}`, {
+    //       headers: {
+    //         Authorization: "Bearer " + auth,
+    //       },
+    //     });
+    //     hackss = await res.data;
+    //     if (hackss.length >= 13 && hackss.length <= 24) {
+    //       page = page + 1;
+    //       console.log(page);
+    //     }
+    //     else if (hackss.length >= 25 && hackss.length <= 36) {
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //     }
+    //     else if (hackss.length >= 37 && hackss.length <= 48) {
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //     }
+    //     else if (hackss.length >= 49 && hackss.length <= 60) {
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //     }
+    //   }
+    //   catch (err) {
+    //     console.log(err.response.status);
+    //   }
+    // }
+    // init();
+    // var height = document.body.clientHeight;
+    // console.log(height);
+    // if (height == document.body.clientHeight) {
+    //   window.addEventListener('scroll', someFunction);
+    //   function someFunction() {
+    //     if (window.scrollY + window.innerHeight >= 1180) {
+    //       console.log(window.scrollY + window.innerHeight);
+    //       displayTeams();
+    //       window.removeEventListener('scroll', someFunction);
+    //     }
+    //   }
+    // }
+    document.querySelector(".persons").innerHTML = "";
+    console.log(page);
+    function displayTeams() {
+      var init = async function () {
+        try {
+          var res = await axios(`${url}/participant/get/skill/null?page=${page}&skill=${occurence}`, {
+            headers: {
+              Authorization: "Bearer " + auth,
+            },
+          });
+          hacks = await res.data;
+          console.log(hacks);
+          var part123 = hacks.final[0].pt._id;
+          localStorage.setItem("participant", part123);
+          for (let i = 0; i < hacks.final.length; i++) {
+            document.querySelector(".persons").innerHTML +=
+              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>Blockchain</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+          }
+        }
+        catch (err) {
+          console.log(err.response.status);
+          if (err.response.status == 404) {
+            swal("WARNING!!", "You can't search this team.", "warning");
+          }
+        }
+      }
+      init();
     }
   }
-}
- init();
-}
-  }
-  else{
+  else {
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive7").className = "button2";
-    n = n+1;
+    n = n + 1;
   }
 });
-cyber.addEventListener('click', function() {
-  if(n%2 == 0){
+cyber.addEventListener('click', function () {
+  if (n % 2 == 0) {
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive8").className = "button3";
-    n = n+1;
+    n = n + 1;
     var occurence = "cybersecurity";
     var page = 1;
     displayTeams();
-    page=page+1;
-    // displayTeams();
-function displayTeams() {
-  var init = async function () {
-    try{
-    var res = await axios(`${url}/participant/get/skill/null?page=${page}&skill=${occurence}`, {
-      headers: {
-        Authorization: "Bearer " + auth,
-      },
-    });
-    hacks = await res.data;
-    console.log(hacks);
-    for(let i = 0; i<hacks.final.length; i++){
-      document.querySelector(".persons").innerHTML +=
-        "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'>"+hacks.final[i].pt.name+"</h4><h5 class='text14'>Cyber Security</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
-    }
-}
-  catch(err) {
-    console.log(err.response.status);
-    if(err.response.status == 404){
-      swal("WARNING!!", "You can't search this team.", "warning");
+    // var init = async function () {
+    //   try {
+    //     var res = await axios(`${url}/participant/get/skill/null?page=1&skill=${occurence}`, {
+    //       headers: {
+    //         Authorization: "Bearer " + auth,
+    //       },
+    //     });
+    //     hackss = await res.data;
+    //     if (hackss.length >= 13 && hackss.length <= 24) {
+    //       page = page + 1;
+    //       console.log(page);
+    //     }
+    //     else if (hackss.length >= 25 && hackss.length <= 36) {
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //     }
+    //     else if (hackss.length >= 37 && hackss.length <= 48) {
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //     }
+    //     else if (hackss.length >= 49 && hackss.length <= 60) {
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //       displayTeams();
+    //       page = page + 1;
+    //       console.log(page);
+    //     }
+    //   }
+    //   catch (err) {
+    //     console.log(err.response.status);
+    //   }
+    // }
+    // init();
+    // var height = document.body.clientHeight;
+    // console.log(height);
+    // if (height == document.body.clientHeight) {
+    //   window.addEventListener('scroll', someFunction);
+    //   function someFunction() {
+    //     if (window.scrollY + window.innerHeight >= 1180) {
+    //       console.log(window.scrollY + window.innerHeight);
+    //       displayTeams();
+    //       window.removeEventListener('scroll', someFunction);
+    //     }
+    //   }
+    // }
+    document.querySelector(".persons").innerHTML = "";
+    console.log(page);
+    function displayTeams() {
+      var init = async function () {
+        try {
+          var res = await axios(`${url}/participant/get/skill/null?page=${page}&skill=${occurence}`, {
+            headers: {
+              Authorization: "Bearer " + auth,
+            },
+          });
+          hacks = await res.data;
+          console.log(hacks);
+          var part123 = hacks.final[0].pt._id;
+          localStorage.setItem("participant", part123);
+          for (let i = 0; i < hacks.final.length; i++) {
+            document.querySelector(".persons").innerHTML +=
+              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>Cyber Security</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+          }
+        }
+        catch (err) {
+          console.log(err.response.status);
+          if (err.response.status == 404) {
+            swal("WARNING!!", "You can't search this team.", "warning");
+          }
+        }
+      }
+      init();
     }
   }
-}
- init();
-}
-  }
-  else{
+  else {
     document.getElementById("active1").className = "button2";
     document.getElementById("inactive8").className = "button2";
-    n = n+1;
+    n = n + 1;
   }
 });
-all.addEventListener('click', function() {
+all.addEventListener('click', function () {
   document.getElementById("active1").className = "button3";
   document.getElementById("inactive1").className = "button2";
   document.getElementById("inactive2").className = "button2";
@@ -361,36 +857,36 @@ all.addEventListener('click', function() {
   document.getElementById("inactive8").className = "button2";
 
   document.querySelector(".persons").innerHTML = "<div><h1 style='color:white;'>This part of the page is currently in progress. Kindly Wait!! 😊😊</h1></div>";
-//   displayTeams()
-// function displayTeams() {
-// var init = async function () {
-//   try{
-//   var res = await axios(`${url}/participant/get/all/null?page=1`, {
-//     headers: {
-//       Authorization: "Bearer " + auth,
-//     },
-//   });
-//   hacks = await res.data;
-//   console.log(hacks);
-//   for(let i = 0; i<hacks.final.length; i++){
-//     document.querySelector(".persons").innerHTML +=
-//       "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'>"+hacks.final[i].pt.name+"</h4><h5 class='text14'>"+ hacks.final[0].skills[0].skill+"</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
-//   }
-// }
-// catch(err) {
-//   console.log(err.response.status);
-//   if(err.response.status == 404){
-//     swal("WARNING!!", "You can't search this team.", "warning");
-//   }
-// }
-// }
-// init();
-// }
+  //   displayTeams()
+  // function displayTeams() {
+  // var init = async function () {
+  //   try{
+  //   var res = await axios(`${url}/participant/get/all/null?page=1`, {
+  //     headers: {
+  //       Authorization: "Bearer " + auth,
+  //     },
+  //   });
+  //   hacks = await res.data;
+  //   console.log(hacks);
+  //   for(let i = 0; i<hacks.final.length; i++){
+  //     document.querySelector(".persons").innerHTML +=
+  //       "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'>"+hacks.final[i].pt.name+"</h4><h5 class='text14'>"+ hacks.final[0].skills[0].skill+"</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+  //   }
+  // }
+  // catch(err) {
+  //   console.log(err.response.status);
+  //   if(err.response.status == 404){
+  //     swal("WARNING!!", "You can't search this team.", "warning");
+  //   }
+  // }
+  // }
+  // init();
+  // }
 
 });
 $(document).ready(function () {
-    $("#nav").load("../Assets/Header/headerl.txt");
-    $("#foobottom").load("../Assets/Footer/footer.txt");
+  $("#nav").load("../Assets/Header/headerl.txt");
+  $("#foobottom").load("../Assets/Footer/footer.txt");
 });
 
 const team_name = localStorage.getItem("hack_name");
@@ -415,126 +911,126 @@ var w = 0;
 var v = 0;
 var ua = 0;
 var t = 0;
-a.addEventListener('click',function() { 
-    if(z%2 == 0){
-        choice.push("appdev");
-        console.log(choice);
-        z+=1;
-      }
-    else{
-      choice = choice.filter((item) => item!== "appdev")
-      console.log(choice);
-      z+=1;
-    }
+a.addEventListener('click', function () {
+  if (z % 2 == 0) {
+    choice.push("appdev");
+    console.log(choice);
+    z += 1;
+  }
+  else {
+    choice = choice.filter((item) => item !== "appdev")
+    console.log(choice);
+    z += 1;
+  }
 });
-f.addEventListener('click',function() { 
-  if(n%2 == 0){
-        choice.push("frontend");
-        console.log(choice);
-        n+=1;
-      }
-    else{
-      choice = choice.filter((item) => item!== "frontend")
-      console.log(choice);
-      n+=1;
-    }
+f.addEventListener('click', function () {
+  if (n % 2 == 0) {
+    choice.push("frontend");
+    console.log(choice);
+    n += 1;
+  }
+  else {
+    choice = choice.filter((item) => item !== "frontend")
+    console.log(choice);
+    n += 1;
+  }
 });
-b.addEventListener('click',function() { 
-      if(y%2 == 0){
-        choice.push("backend");
-        console.log(choice);
-        y+=1;
-      }
-    else{
-      choice = choice.filter((item) => item!== "backend")
-      console.log(choice);
-      y+=1;
-    }
+b.addEventListener('click', function () {
+  if (y % 2 == 0) {
+    choice.push("backend");
+    console.log(choice);
+    y += 1;
+  }
+  else {
+    choice = choice.filter((item) => item !== "backend")
+    console.log(choice);
+    y += 1;
+  }
 });
-u.addEventListener('click',function() {
-      if(x%2 == 0){
-        choice.push("ui/ux");
-        console.log(choice);
-        x+=1;
-      }
-    else{
-      choice = choice.filter((item) => item!== "ui/ux")
-      console.log(choice);
-      x+=1;
-    }
+u.addEventListener('click', function () {
+  if (x % 2 == 0) {
+    choice.push("ui/ux");
+    console.log(choice);
+    x += 1;
+  }
+  else {
+    choice = choice.filter((item) => item !== "ui/ux")
+    console.log(choice);
+    x += 1;
+  }
 });
-mac.addEventListener('click',function() { 
-      if(w%2 == 0){
-        choice.push("ml");
-        console.log(choice);
-        w+=1;
-      }
-    else{
-      choice = choice.filter((item) => item!== "ml")
-      console.log(choice);
-      w+=1;
-    }
+mac.addEventListener('click', function () {
+  if (w % 2 == 0) {
+    choice.push("ml");
+    console.log(choice);
+    w += 1;
+  }
+  else {
+    choice = choice.filter((item) => item !== "ml")
+    console.log(choice);
+    w += 1;
+  }
 });
-man.addEventListener('click',function() {
-      if(v%2 == 0){
-        choice.push("management");
-        console.log(choice);
-        v+=1;
-      }
-    else{
-      choice = choice.filter((item) => item!== "management")
-      console.log(choice);
-      v+=1;
-    }
+man.addEventListener('click', function () {
+  if (v % 2 == 0) {
+    choice.push("management");
+    console.log(choice);
+    v += 1;
+  }
+  else {
+    choice = choice.filter((item) => item !== "management")
+    console.log(choice);
+    v += 1;
+  }
 });
-blo.addEventListener('click',function() {
-      if(ua%2 == 0){
-        choice.push("blockchain");
-        console.log(choice);
-        ua+=1;
-      }
-    else{
-      choice = choice.filter((item) => item!== "blockchain")
-      console.log(choice);
-      ua+=1;
-    }
+blo.addEventListener('click', function () {
+  if (ua % 2 == 0) {
+    choice.push("blockchain");
+    console.log(choice);
+    ua += 1;
+  }
+  else {
+    choice = choice.filter((item) => item !== "blockchain")
+    console.log(choice);
+    ua += 1;
+  }
 });
-c.addEventListener('click',function() {
-      if(t%2 == 0){
-        choice.push("cybersecurity");
-        console.log(choice);
-        t+=1;
-      }
-    else{
-      choice = choice.filter((item) => item!== "cybersecurity")
-      console.log(choice);
-      t+=1;
-    }
+c.addEventListener('click', function () {
+  if (t % 2 == 0) {
+    choice.push("cybersecurity");
+    console.log(choice);
+    t += 1;
+  }
+  else {
+    choice = choice.filter((item) => item !== "cybersecurity")
+    console.log(choice);
+    t += 1;
+  }
 });
 
-function submit(){
-    axios
-  .post(`${url}/DN_Team/addSkills/${window.location.search.split("?")[1]}`,
-  {
-    skills : choice,
-  },
-  {
-    headers: {
-      Authorization: "Bearer " + auth,
-    },
-  }
-  )
-  .then((response) => {
-    talent = response.data;
-    console.log(talent);
-    swal("SUCCESS!!", "The skills has been saved successfully.", "success");
-  })
-  .catch((error) => {
-    console.error("Error:", error);
-  });
+function submit() {
+  axios
+    .post(`${url}/DN_Team/addSkills/${window.location.search.split("?")[1]}`,
+      {
+        skills: choice,
+      },
+      {
+        headers: {
+          Authorization: "Bearer " + auth,
+        },
+      }
+    )
+    .then((response) => {
+      talent = response.data;
+      console.log(talent);
+      swal("SUCCESS!!", "The skills has been saved successfully.", "success");
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
 }
 
-document.getElementById("participant_name").addEventListener("keyup", function(event) {
+document.getElementById("participant_name").addEventListener("keyup", function (event) {
   event.preventDefault();
   var hack_id = window.location.search.split("?")[1];
   var name = document.getElementById("participant_name").value;
@@ -544,20 +1040,21 @@ document.getElementById("participant_name").addEventListener("keyup", function(e
         Authorization: "Bearer " + auth,
       },
     })
-    .then((response) => {
-      teams = response.data;
-      console.log(teams);
-
-       document.querySelector(".persons").innerHTML +=
-        "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'>"+teams.final[0].pt.name+"</h4><h5 class='text14'>"+teams.final[0].skills[0].skill+"</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>"; 
-    })
-    .catch(e => {
-      console.log(e);
-      console.log(e.response.status);
-      if(e.response.status == 404){
-        swal("WARNING!!", "No Participant Found", "warning");
-      }
-    });
+      .then((response) => {
+        teams = response.data;
+        console.log(teams);
+        var part123 = teams.final[0].pt._id;
+        localStorage.setItem("participant", part123);
+        document.querySelector(".persons").innerHTML +=
+          "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + teams.final[0].pt.name + "</a></h4><h5 class='text14'>" + teams.final[0].skills[0].skill + "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+      })
+      .catch(e => {
+        console.log(e);
+        console.log(e.response.status);
+        if (e.response.status == 404) {
+          swal("WARNING!!", "No Participant Found", "warning");
+        }
+      });
   }
 });
 
@@ -565,17 +1062,17 @@ function invite() {
   // id.innerHTML = "Ooops!";
   var participant_id = teams.final[0].pt._id;
   console.log(participant_id);
-      axios
-      .post(
-        `${url}/invites/invite/${window.location.search.split("?")[1]}/${participant_id}`, 
+  axios
+    .post(
+      `${url}/invites/invite/${window.location.search.split("?")[1]}/${participant_id}`,
       {
         code: invite,
       },
-        {
-      headers: {
-        Authorization: "Bearer " + auth,
-      },
-    }
+      {
+        headers: {
+          Authorization: "Bearer " + auth,
+        },
+      }
     )
     .then((response) => {
       accepted = response.data;
@@ -585,10 +1082,10 @@ function invite() {
     .catch(e => {
       console.log(e);
       console.log(e.response.status);
-      if(e.response.status == 404){
+      if (e.response.status == 404) {
         swal("WARNING!!", "No Participant Found", "warning");
       }
-      else if(e.response.status == 400){
+      else if (e.response.status == 400) {
         swal("WARNING!!", "Invite has already been sent", "warning");
       }
     });

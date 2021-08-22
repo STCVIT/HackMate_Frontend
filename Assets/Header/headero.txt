@@ -52,6 +52,8 @@
       })
     } else {
       // User is signed out
+      alert("Please sign in!")
+      window.location = "./orglognsignup.html"
       console.log("I'm signed out!")
     }
   });

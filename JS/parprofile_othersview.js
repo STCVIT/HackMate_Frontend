@@ -4,7 +4,7 @@ $(document).ready(function () {
 });
 
   var user;
-  randomId = "60f2b7b4c28f930015dc3dd7" ;
+  randomId = localStorage.getItem("participant");
   axios(`${url}/participant/get/${randomId}`, {
       headers: {
           Authorization: "Bearer " + auth,
@@ -69,4 +69,38 @@ function toTitleCase(str) {
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase() + ".";
       }
     );
+  }
+
+  function invite() {
+    // id.innerHTML = "Ooops!";
+    var participant_id = teams.final[0].pt._id;
+    console.log(participant_id);
+    axios
+      .post(
+        `${url}/invites/invite/${window.location.search.split("?")[1]}/${participant_id}`,
+        {
+          code: invite,
+        },
+        {
+          headers: {
+            Authorization: "Bearer " + auth,
+          },
+        }
+      )
+      .then((response) => {
+        accepted = response.data;
+        console.log(accepted);
+        swal("SUCCESS!!", "Your invite has been submitted successfully", "success");
+      })
+      .catch(e => {
+        console.log(e);
+        console.log(e.response.status);
+        if (e.response.status == 404) {
+          swal("WARNING!!", "No Participant Found", "warning");
+        }
+        else if (e.response.status == 400) {
+          swal("WARNING!!", "Invite has already been sent", "warning");
+        }
+      });
+  
   }

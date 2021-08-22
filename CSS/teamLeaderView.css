@@ -1,8 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito+Sans&family=Raleway&display=swap");
-*{
+body{
     background-color: #23303d;
     font-family: "Fira Code", monospace;
     color: #e7efef;
+  }
+  #team_code{
+    color: #e7efef;
+    font-size:24px;
+  }
+  #hackathon{
+    color: #e7efef;
+    font-size:24px;
   }
   #skillHeading{
     font-family: "Fira Code", monospace;

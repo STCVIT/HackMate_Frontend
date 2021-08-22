@@ -3,10 +3,13 @@
         <a class="navbar-brand logo" href="../index.html">
             <g><</g><b>HackMate</b><g>></g>
         </a>
+        <div>  
+        <a class="notification-mobile pe-2" href="./reqinv.html"><img src="../Assets/Images/carbon_notification-new.svg" alt=""></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        </div>
         <div class="justify-content-end collapse navbar-collapse" id="navbarNavAltMarkup">
 
             <ul class="navbar-nav">
@@ -17,7 +20,7 @@
                     <a class="nav-link" href="./teamwohack.html">Create Team</a>
                 </li>
 
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown notification-lap">
                     <a class="nav-link dropdown-toggle notification" href="#" id="navbarDropdown"
                         style="padding-right: 2vw;" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="../Assets/Images/carbon_notification-new.svg" alt="">
@@ -103,6 +106,8 @@
             })
         } else {
             // User is signed out
+            alert("Please sign in!")
+            window.location = "./participantlognsignup.html"
             console.log("I'm signed out!")
         }
     });

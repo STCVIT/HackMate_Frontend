@@ -143,7 +143,7 @@ function getdeets(event) {
   occurence = event.target.id;
 
   console.log(occurence);
-  
+
   displayTeams();
 }
 
@@ -340,7 +340,6 @@ function nextPage() {
       .then((response) => {
         hacks = response.data;
         console.log(hacks);
-
         document.querySelector(".wrapper").innerHTML = "";
         for (var i = 0; i < hacks.final.length; i++) {
           document.querySelector(".wrapper").innerHTML +=

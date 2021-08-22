@@ -9,15 +9,3 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      user.getIdToken().then(function(idToken){
-        console.log(idToken)
-        auth = idToken
-      })
-    } else {
-      // User is signed out
-      console.log("I'm signed out!")
-    }
-  });

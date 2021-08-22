@@ -22,10 +22,14 @@
                     << /g><b>HackMate</b>
                         <g>></g>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <div>  
+                <a href="./reqinv.html"><img src="../Assets/Images/carbon_notification-new.svg" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
             <div class="justify-content-end collapse navbar-collapse" id="navbarNavAltMarkup">
 
                 <ul class="navbar-nav">
@@ -36,7 +40,7 @@
                         <a class="nav-link" href="./teamwohack.html">Create Team</a>
                     </li>
 
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown notification-lap">
                         <a class="nav-link dropdown-toggle notification" href="#" id="navbarDropdown"
                             style="padding-right: 2vw;" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="../Assets/Images/carbon_notification-new.svg" alt="">
@@ -129,18 +133,18 @@
             Authorization: "Bearer " + auth,
         },
     })
-    .then((response) => {
+        .then((response) => {
             requests = response.data;
             console.log(requests);
 
-                requests.received.forEach(element => {
-                    console.log(element)
-                    document.querySelector(".notification2").innerHTML += "<div class='row notification-inner' style='background: #283d4c;'>    <div class='col-1' style='margin-left: 30px; padding-left: 0;'><img            style='width: 47px;' src='../Assets/Images/userdp.svg' alt=''></div>    <div class='col-6 text-start'>        <nbw>" + element.participant.name + "</nbw> has requested you to become a part of your        <nbw>" + element.team.name + "</nbw>.    </div>    <div class='col-2'>        <nbgr id=" + element.req._id + " onclick='acceptreq(event.target.id)'>ACCEPT</nbgr>    </div>    <div class='col-2'>        <nbgr id=" + element.req._id + " onclick='rejectreq(event.target.id)'>REJECT</nbgr>    </div></div>"
-                })
-                requests.sent.forEach(element => {
-                    console.log(element)
-                    document.querySelector(".notification2").innerHTML += "<div class='row notification-inner' style='background: #283d4c;'>    <div class='col-1' style='margin-left: 30px; padding-left: 0;'><img            style='width: 47px;' src='../Assets/Images/userdp.svg' alt=''></div>    <div class='col-6 text-start'><nbw> You </nbw> have requested to become a part of <nbw>" + element.team.name + "</nbw>.    </div>    <div class='col-4 text-center'>        <nbgr id=" + element.req._id + " onclick='deletereq(event.target.id)'>DELETE</nbgr>    </div></div>"
-                })
+            requests.received.forEach(element => {
+                console.log(element)
+                document.querySelector(".notification2").innerHTML += "<div class='row notification-inner' style='background: #283d4c;'>    <div class='col-1' style='margin-left: 30px; padding-left: 0;'><img            style='width: 47px;' src='../Assets/Images/userdp.svg' alt=''></div>    <div class='col-6 text-start'>        <nbw>" + element.participant.name + "</nbw> has requested you to become a part of your        <nbw>" + element.team.name + "</nbw>.    </div>    <div class='col-2'>        <nbgr id=" + element.req._id + " onclick='acceptreq(event.target.id)'>ACCEPT</nbgr>    </div>    <div class='col-2'>        <nbgr id=" + element.req._id + " onclick='rejectreq(event.target.id)'>REJECT</nbgr>    </div></div>"
+            })
+            requests.sent.forEach(element => {
+                console.log(element)
+                document.querySelector(".notification2").innerHTML += "<div class='row notification-inner' style='background: #283d4c;'>    <div class='col-1' style='margin-left: 30px; padding-left: 0;'><img            style='width: 47px;' src='../Assets/Images/userdp.svg' alt=''></div>    <div class='col-6 text-start'><nbw> You </nbw> have requested to become a part of <nbw>" + element.team.name + "</nbw>.    </div>    <div class='col-4 text-center'>        <nbgr id=" + element.req._id + " onclick='deletereq(event.target.id)'>DELETE</nbgr>    </div></div>"
+            })
 
         })
         .catch((error) => {

@@ -391,6 +391,7 @@ axios(`${url}/participant/login`, {
 .then((response) => {
     user = response.data;
     participant_id = user._id;
+    localStorage.setItem("participant_id",participant_id);
 })
 .catch((error) => console.error("Error: " + error));
 

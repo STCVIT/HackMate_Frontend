@@ -74,18 +74,36 @@ axios(`${url}/skills/mySkills`, {
 })
 .catch((error) => console.error("Error: " + error));
 
-
-function delete_accoount(){
-  axios 
-    .delete(`${url}/participant/deleteProfile`, {
-        headers: {
-            Authorization: "Bearer " + auth,
-        },
-    })
-    .then((response) => {
-        console.log(response.data);
-    })
-    .catch((error) => console.error("Error: " + error));
+function delete_account(){
+    swal({
+        title: "Are you sure?",
+        text: "Do you want to delete your profile?",
+        type: "warning",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+            swal("Poof! Your team has been deleted!", {
+                icon: "success",
+            });
+            axios 
+            .delete(`${url}/participant/deleteProfile`, {
+                headers: {
+                    Authorization: "Bearer " + auth,
+                },
+            })
+            .then((response) => {
+                console.log(response.data);
+                console.log(res);
+            })
+            .catch((error) => console.error("Error: " + error));
+        }
+        else {
+            swal("Your team is safe!");
+          }
+    });
 }
 
 

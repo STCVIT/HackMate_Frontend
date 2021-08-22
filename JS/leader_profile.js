@@ -214,33 +214,59 @@ function submit(){
   });
 }
 
-// function deleteteam(){
-//   axios
-//     .delete(
-//       `${url}/DN_Team/deleteTeam/${random_id}`,
-//       {
-//         headers: {
-//           Authorization: "Bearer " + auth,
-//         },
-//       }
-//     )
-//     .then((response) => {
-//       res = response.data;
-//       console.log(res);
-//       swal("SUCCESS!!", "Your team has been deleted successfully", "success").then(okay => {
-//         if (okay) {
-//             window.location.href = "./My_teams.html";
-//         }
-//     })
-//     })
-//     .catch((error) => {
-//       console.error("Error:", error);
-//     });
-// }
+function deleteteam(){
+  swal({
+    title: "Are you sure ??",
+    text: "You  will not be able to recover this team once deleted!",
+    icon: "warning",
+    buttons: true,
+    dangerMode: true,
+  })
+  .then((willDelete) => {
+    if (willDelete) {
+      swal("Poof! Your team has been deleted!", {
+        icon: "success",
+      });
+      axios
+      .delete(
+        `${url}/DN_Team/deleteTeam/${random_id}`,
+        {
+          headers: {
+            Authorization: "Bearer " + auth,
+          },
+        }
+      )
+      .then((response) => {
+        res = response.data;
+        console.log(res);
+        swal("Deleted!", "Your team has been deleted.", "success");
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+    }
+    else {
+      swal("Your team is safe!");
+    }
+  });
+}
 
 
 function removemem(){
-  axios
+swal({
+  title: "Are you sure?",
+  text: "Do you want to remove this member from your team?!",
+  type: "warning",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+  })
+  .then((willDelete) => {
+    if (willDelete) {
+        swal("Poof! The team member has been removed!", {
+            icon: "success",
+        });
+    axios
     .delete(
       `${url}/DN_Team/removeMember/${random_id}/${member_id}`,
       {
@@ -252,45 +278,14 @@ function removemem(){
     .then((response) => {
       res = response.data;
       console.log(res);
-      swal({
-        title: "Are you sure?",
-        text: "You  will not be able to recover this imaginary file!",
-        type: "warning",
-        showCancelButton: true,
-        confirmButtonClass: "btn-danger",
-        confirmButtonText: "Yes, delete it!",
-        closeOnConfirm: false
-      },
-      function(){
-        swal("Deleted!", "Your imaginary file has been deleted.", "success");
-      });
     })
-
     .catch((error) => {
       console.error("Error:", error);
     });
+  }
+  else{
+    swal("Your team is safe!!!");
+  }
+});
 }
 
-// function leaveteam(){
-//   axios
-//     .delete(
-//       `${url}/DN_Team/${random_id}`,
-//       {
-//         headers: {
-//           Authorization: "Bearer " + auth,
-//         },
-//       }
-//     )
-//     .then((response) => {
-//       res = response.data;
-//       console.log(res);
-//       swal("WARNING!!", "", "success").then(okay => {
-//         if (okay) {
-//             window.location.href = "./My_teams.html";
-//         }
-//     })
-//     })
-//     .catch((error) => {
-//       console.error("Error:", error);
-//     });
-// }

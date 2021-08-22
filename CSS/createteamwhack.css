@@ -225,7 +225,7 @@ a, a:hover, a:focus, a:active {
 }
 .card2{
 	width: 743px;
-	height: 110px;
+	height: 115px;
 	left: 128px;
 	top: 547px;
 	filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.2));
@@ -254,6 +254,7 @@ a, a:hover, a:focus, a:active {
 	line-height: 21px;
 	letter-spacing: 0.04em;
 	color: #1EA54C;
+	display: inline-block;
 }
 .text15{
 	font-family: Nunito Sans;
@@ -323,6 +324,9 @@ a, a:hover, a:focus, a:active {
 		font-size: 20px;
 		margin-left: 25px;
 	}
+	.card2{
+		height: 180px;
+	}
 }
 @media (min-width: 375px) and (max-width: 464px){
 	.input1{
@@ -345,6 +349,9 @@ a, a:hover, a:focus, a:active {
 		height: 500px;
 		margin-top: 30px;
 		margin-left: 10px;
+	}
+	.card2{
+		height: 180px;
 	}
 }
 @media (min-width: 992px) and (max-width: 1200px){

@@ -180,6 +180,11 @@ nbgr {
 
   color: rgba(231, 239, 239, 0.7);
 }
+
+.notification-mobile{
+  display: none;
+}
+
 @media (min-width: 1060px) {
   .navbar-expand-lg .navbar-nav .nav-link {
     padding-right: 56px;
@@ -292,5 +297,12 @@ nbgr {
   .dropdown-menu.show {
     margin-top: 15px;
     background: #1d2833;
+  }
+
+  .notification-lap{
+    display: none;
+  }
+  .notification-mobile{
+    display: initial;
   }
 }

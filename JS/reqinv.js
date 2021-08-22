@@ -41,6 +41,8 @@ firebase.auth().onAuthStateChanged((user) => {
         })
     } else {
         // User is signed out
+        alert("Please sign in!")
+        window.location = "./participantlognsignup.html"
         console.log("I'm signed out!")
     }
 });

@@ -116,8 +116,11 @@ block.addEventListener('click',function(){
 });
 
 function add_skills(){
-    firebase.auth().currentUser.getIdToken().then((id) => {
-        auth = id;
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          user.getIdToken().then(function(idToken){
+            console.log(idToken)
+            auth = idToken
     axios
   .post(`${url}/skills/mySkills`,
   {
@@ -141,5 +144,11 @@ function add_skills(){
     console.error("Error:", error);
   });
 })
+}
+else {
+    // User is signed out
+    console.log("I'm signed out!")
+  }
+  });
 }
 

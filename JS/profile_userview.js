@@ -3,13 +3,14 @@ $(document).ready(function () {
     $("#foobottom").load("../Assets/Footer/footer.txt");
 });
 
-
+var logo;
+var user;
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       user.getIdToken().then(function(idToken){
         console.log(idToken)
+        sessionStorage.setItem("auth", idToken)
         auth = idToken
-var user;
 axios(`${url}/participant/login`, {
     headers: {
         Authorization: "Bearer " + auth,
@@ -17,6 +18,7 @@ axios(`${url}/participant/login`, {
 })
 .then((response) => {
     user = response.data;
+    document.querySelector(".photo").setAttribute("src", user.photo);
     document.par_form.name.value = user.name;
     document.par_form.username.value = user.username;
     document.querySelector("#email").innerHTML = user.email;
@@ -29,6 +31,14 @@ axios(`${url}/participant/login`, {
     console.log(user);
 })
 .catch((error) => console.error("Error: " + error));
+      })
+    }
+else {
+    // User is signed out
+    console.log("I'm signed out!")
+  }
+  });
+
 
 
 let fd= document.getElementById("frontend");
@@ -41,12 +51,18 @@ let cyber = document.getElementById("cyber");
 let block = document.getElementById("block");
 var skills=[];
 var userskills=[];
-axios(`${url}/skills/mySkills`, {
-    headers: {
-        Authorization: "Bearer " + auth,
-    }
-})
-.then((response) => {
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      user.getIdToken().then(function(idToken){
+        console.log(idToken)
+        sessionStorage.setItem("auth", idToken)
+        auth = idToken
+    axios(`${url}/skills/mySkills`, {
+        headers: {
+            Authorization: "Bearer " + auth,
+        }
+    })
+    .then((response) => {
     skills=response.data;
     // console.log(skills);
     skills.forEach(element => {
@@ -80,11 +96,13 @@ axios(`${url}/skills/mySkills`, {
 })
 .catch((error) => console.error("Error: " + error));
 })
-} else {
-  // User is signed out
-  console.log("I'm signed out!")
-}
-});
+    }
+else {
+    // User is signed out
+    console.log("I'm signed out!")
+  }
+  });
+
 
 function delete_account(){
     firebase.auth().currentUser.getIdToken().then((id) => {
@@ -99,7 +117,7 @@ function delete_account(){
       })
       .then((willDelete) => {
         if (willDelete) {
-            swal("Poof! Your team has been deleted!", {
+            swal("Poof! Your profile has been deleted!", {
                 icon: "success",
             });
             axios 
@@ -115,7 +133,7 @@ function delete_account(){
             .catch((error) => console.error("Error: " + error));
         }
         else {
-            swal("Your team is safe!");
+            swal("Your profile is safe!");
           }
     });
 })
@@ -410,7 +428,7 @@ async function uploadBlob(file) {
         .patch(
           `${url}/participant/updateProfile`,
           {
-            logo: logo,
+            photo : logo,
           },
           {
             headers: {
@@ -435,8 +453,6 @@ async function uploadBlob(file) {
   }
   
   
-  document
-    .querySelector("#image_uploads")
-    .addEventListener("change", function () {
+  document.querySelector("#image_uploads").addEventListener("change", function () {
       uploadBlob(document.getElementById("image_uploads").files[0]);
     });

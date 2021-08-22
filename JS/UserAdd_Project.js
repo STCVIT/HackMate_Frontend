@@ -17,6 +17,11 @@ function submitform(){
   let design = document.getElementById("design").value;
   let demo = document.getElementById("personal_website").value;
   let bio = document.getElementById("bio").value;
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      user.getIdToken().then(function(idToken){
+        console.log(idToken)
+        auth = idToken
   axios 
   .post(`${url}/projects/create`,
   {
@@ -39,4 +44,12 @@ function submitform(){
   .catch((error) => {
     console.error("Error:", error);
   });
+})
+    }
+else {
+  // User is signed out
+  console.log("I'm signed out!")
 }
+});
+  }
+

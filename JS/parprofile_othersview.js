@@ -47,8 +47,11 @@ $(document).ready(function () {
   console.log("I'm signed out!")
 }
 });
-firebase.auth().currentUser.getIdToken().then((id) => {
-  auth = id;
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    user.getIdToken().then(function(idToken){
+      console.log(idToken)
+      auth = idToken
    var user;
    var user_id;
 axios(`${url}/participant/login`, {
@@ -62,7 +65,10 @@ axios(`${url}/participant/login`, {
 })
 .catch((error) => console.error("Error: " + error));
 })
+  }
 let review = document.getElementById("review");
+
+
 function add_review() {
   firebase.auth().currentUser.getIdToken().then((id) => {
     auth = id;
@@ -95,6 +101,7 @@ function toTitleCase(str) {
       }
     );
   }
+  
   team_name= localStorage.getItem("hack_name");
   function invite() {
     // id.innerHTML = "Ooops!";\
@@ -131,3 +138,4 @@ function toTitleCase(str) {
       });
     });
   }
+})

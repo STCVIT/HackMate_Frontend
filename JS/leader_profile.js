@@ -49,14 +49,17 @@ console.log(random_id);
 });
 
   function hackinfo(){
-    firebase.auth().currentUser.getIdToken().then((id) => {
-      auth = id;
     if(hack_name == ""){
       document.getElementById("hackathon").remove();
       document.getElementById("hackdetails").remove();
       document.getElementById("hackdetails_mobile").remove();
     }
     else{
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          user.getIdToken().then(function(idToken){
+            console.log(idToken)
+            auth = idToken
       axios(`${url}/getHacks/${hack_id}`, {
         headers: {
           Authorization: "Bearer " + auth,
@@ -74,7 +77,8 @@ console.log(random_id);
         body.innerHTML = yourhtml;
       })
       .catch((error) => console.error("Error: " + error));    
-    }
+    })
+  }
   })
    }
   hackinfo()
@@ -312,4 +316,4 @@ swal({
 });
   })
 }
-
+  }

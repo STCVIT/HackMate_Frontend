@@ -54,7 +54,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link img" href="#"><img src="../Assets/Images/User DP.png" alt=""></a>
+                    <a class="nav-link img" href="#"><img class="userdp" style="width:47px; height: 47px;" alt=""></a>
                 </li>
             </ul>
 
@@ -74,7 +74,10 @@
                         Authorization: "Bearer " + auth,
                     },
                 })
-                    .then((response) => { document.querySelector(".username").innerText = response.data.username })
+                    .then((response) => { 
+                        document.querySelector(".username").innerText = response.data.username 
+                        document.querySelector(".userdp").setAttribute("src", response.data.photo)
+                        })
             
                         axios(`${url}/requests/myRequests`, {
                 headers: {

@@ -28,12 +28,12 @@ firebase.auth().onAuthStateChanged((user) => {
           }
           for (var i = 0; i < projects.teams.length; i++) {
             document.querySelector(".projects").innerHTML +=
-              "<div class='card'><a href='./Project_Profile.html" +
+              "<div class='card'><a href='./Project_Profile.html?" +
               projects.teams[i]._id +
               "' style='text-decoration: none;'><div class='card-body '><nbgre>" +
-              projects.teams[i].name +
+              projects.teams[i].project_name +
               "</nbgre><div class='disc'>" +
-              projects.teams[i].description +
+              projects.teams[i].project_description +
               "</div></div></a></div>";
           }
         })

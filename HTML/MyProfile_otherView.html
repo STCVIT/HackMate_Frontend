@@ -21,7 +21,7 @@
             </div>
             <div class="topmost_buttons">
                 <button id="active" class="button">About</button>
-                <button type="inactive" class="button1" onclick="location.href='./addproject.html'">Projects</button>
+                <button type="inactive" class="button1" onclick="location.href='./showProject.html'">Projects</button>
             </div>
         </div>
         <div class="row">
@@ -32,7 +32,7 @@
         </div>
         <div  class="col-lg-6 col-md-6 col-sm-12" id="save_button">
             <div class="d-flex justify-content-center">
-            <button id="square_inactive" class="square_inactive"> Invite </button>
+            <button id="square_inactive" class="square_inactive" onclick="invite()"> Invite </button>
             </div>
         </div>
         </div>
@@ -80,7 +80,7 @@
                         <small>Error Message</small>
                       </div>
                       <div class="mb-3">
-                        <label for="year" class="form-label">ADD A REVIEW</label>
+                        <label for="review" class="form-label">ADD A REVIEW</label>
                         <textarea class="form-control" rows="6" autocomplete="off" spellcheck="false" id="review" placeholder="Review"></textarea>
                         <small>Error Message</small>
                       </div>
@@ -128,6 +128,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="../JS/url.js"></script>
 <script src="../JS/parprofile_othersview.js"></script>
 </html>

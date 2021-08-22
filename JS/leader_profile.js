@@ -9,6 +9,11 @@ let hack_id = localStorage.getItem("hack_id");
 let hack_name = localStorage.getItem("hackName");
 console.log(hack_name);
 random_id = localStorage.getItem("team_id");
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    user.getIdToken().then(function(idToken){
+      console.log(idToken)
+      auth = idToken
 console.log(random_id);
   axios(`${url}/DN_Team/${random_id}`, {
     headers: {
@@ -36,13 +41,20 @@ console.log(random_id);
     }
   })
   .catch((error) => console.error("Error: " + error));
-
+})
+} else {
+  // User is signed out
+  console.log("I'm signed out!")
+}
+});
 
   function hackinfo(){
+    firebase.auth().currentUser.getIdToken().then((id) => {
+      auth = id;
     if(hack_name == ""){
-      document.getElementById("hackathon").style.visibility = "hidden";
-      document.getElementById("hackdetails").style.visibility = "hidden";
-      document.getElementById("hackdetails_mobile").style.visibility = "hidden";
+      document.getElementById("hackathon").remove();
+      document.getElementById("hackdetails").remove();
+      document.getElementById("hackdetails_mobile").remove();
     }
     else{
       axios(`${url}/getHacks/${hack_id}`, {
@@ -63,6 +75,7 @@ console.log(random_id);
       })
       .catch((error) => console.error("Error: " + error));    
     }
+  })
    }
   hackinfo()
 
@@ -77,6 +90,8 @@ function getskills(){
   let block = document.getElementById("block");
   var skills=[];
   var userskills=[];
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
   axios(`${url}/DN_Team/getSkills/${random_id}`, {
       headers: {
           Authorization: "Bearer " + auth,
@@ -115,6 +130,7 @@ function getskills(){
       }
   })
   .catch((error) => console.error("Error: " + error));  
+})
 }
 getskills()
 function submit(){
@@ -192,7 +208,8 @@ function submit(){
           choice = arrayRemove(choice,"blockchain");
       }
   }
-
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
     axios
   .post(`${url}/DN_Team/addSkills/${random_id}`,
   {
@@ -212,35 +229,67 @@ function submit(){
   .catch((error) => {
     console.error("Error:", error);
   });
+})
 }
 
-// function deleteteam(){
-//   axios
-//     .delete(
-//       `${url}/DN_Team/deleteTeam/${random_id}`,
-//       {
-//         headers: {
-//           Authorization: "Bearer " + auth,
-//         },
-//       }
-//     )
-//     .then((response) => {
-//       res = response.data;
-//       console.log(res);
-//       swal("SUCCESS!!", "Your team has been deleted successfully", "success").then(okay => {
-//         if (okay) {
-//             window.location.href = "./My_teams.html";
-//         }
-//     })
-//     })
-//     .catch((error) => {
-//       console.error("Error:", error);
-//     });
-// }
+function deleteteam(){
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
+  swal({
+    title: "Are you sure ??",
+    text: "You  will not be able to recover this team once deleted!",
+    icon: "warning",
+    buttons: true,
+    dangerMode: true,
+  })
+  .then((willDelete) => {
+    if (willDelete) {
+      swal("Poof! Your team has been deleted!", {
+        icon: "success",
+      });
+      axios
+      .delete(
+        `${url}/DN_Team/deleteTeam/${random_id}`,
+        {
+          headers: {
+            Authorization: "Bearer " + auth,
+          },
+        }
+      )
+      .then((response) => {
+        res = response.data;
+        console.log(res);
+        swal("Deleted!", "Your team has been deleted.", "success");
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+    }
+    else {
+      swal("Your team is safe!");
+    }
+  });
+})
+}
 
 
 function removemem(){
-  axios
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
+swal({
+  title: "Are you sure?",
+  text: "Do you want to remove this member from your team?!",
+  type: "warning",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+  })
+  .then((willDelete) => {
+    if (willDelete) {
+        swal("Poof! The team member has been removed!", {
+            icon: "success",
+        });
+    axios
     .delete(
       `${url}/DN_Team/removeMember/${random_id}/${member_id}`,
       {
@@ -252,45 +301,15 @@ function removemem(){
     .then((response) => {
       res = response.data;
       console.log(res);
-      swal({
-        title: "Are you sure?",
-        text: "You  will not be able to recover this imaginary file!",
-        type: "warning",
-        showCancelButton: true,
-        confirmButtonClass: "btn-danger",
-        confirmButtonText: "Yes, delete it!",
-        closeOnConfirm: false
-      },
-      function(){
-        swal("Deleted!", "Your imaginary file has been deleted.", "success");
-      });
     })
-
     .catch((error) => {
       console.error("Error:", error);
     });
+  }
+  else{
+    swal("Your team is safe!!!");
+  }
+});
+  })
 }
 
-// function leaveteam(){
-//   axios
-//     .delete(
-//       `${url}/DN_Team/${random_id}`,
-//       {
-//         headers: {
-//           Authorization: "Bearer " + auth,
-//         },
-//       }
-//     )
-//     .then((response) => {
-//       res = response.data;
-//       console.log(res);
-//       swal("WARNING!!", "", "success").then(okay => {
-//         if (okay) {
-//             window.location.href = "./My_teams.html";
-//         }
-//     })
-//     })
-//     .catch((error) => {
-//       console.error("Error:", error);
-//     });
-// }

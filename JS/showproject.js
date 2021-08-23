@@ -2,12 +2,14 @@ $(document).ready(function () {
     $("#nav").load("../Assets/Header/headerl.txt");
     $("#foobottom").load("../Assets/Footer/footer.txt");
   });
+
+  randomId = localStorage.getItem("participant");
+  
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       user.getIdToken().then(function(idToken){
         console.log(idToken)
         auth = idToken
-  randomId = localStorage.getItem("participant");
   axios(`${url}/projects/get/${randomId}`, {
     headers: {
       Authorization: "Bearer " + auth,

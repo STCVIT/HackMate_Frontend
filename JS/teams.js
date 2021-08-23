@@ -271,6 +271,7 @@ function nextPage() {
     }
   )
   .then((response) => {
+    window.location = "#start"
     teams = response.data;
     console.log(teams);
     let body = document.querySelector(".cards");
@@ -345,6 +346,7 @@ function prevPage() {
     }
   )
   .then((response) => {
+    window.location = "#start"
     teams = response.data;
     console.log(teams);
     let body = document.querySelector(".cards");

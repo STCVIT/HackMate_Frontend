@@ -30,12 +30,10 @@ console.log(random_id);
     yourhtml = "";
     for(let i=0;i<team.team.members.length;i++){
       if(team.pt_skills[i].participant._id == team.team.admin_id){
-        yourhtml += "<div class='card-row'><div class='d-flex justify-content-around'><div class='component'><img id='dp' src='../Assets/Images/dp.svg'><p>"+
-        team.pt_skills[i].participant.name+"<m>(Leader)</m><br><t>"+team.pt_skills[i].skills[i].skill+"</t></p></div><l id='leave'>YOU</l></div></div>"
+        yourhtml += "<div class='card-row'><div class='d-flex justify-content-around'><div class='component'><img id='dp' src='../Assets/Images/dp.svg'><p>"+team.pt_skills[i].participant.name+"<m>(Leader)</m><br><t>"+team.pt_skills[i].skills[i].skill+"</t></p></div><l id='leave'>YOU</l></div></div>"
       }
       else{
-        yourhtml += "<div class='card-row'><div class='d-flex justify-content-around'><div class='component'><img id='dp' src='../Assets/Images/dp.svg'><p>"+
-        team.pt_skills[i].participant.name+"<m>(Member)</m><br><t>"+team.pt_skills[i].skills[i].skill+"</t></p></div><l onclick = 'removemem()'>REMOVE</l></div></div>"
+        yourhtml += "<div class='card-row'><div class='d-flex justify-content-around'><div class='component'><img id='dp' src='../Assets/Images/dp.svg'><p>"+team.pt_skills[i].participant.name+"<m>(Member)</m><br><t>"+team.pt_skills[i].skills[i].skill+"</t></p></div><l onclick = 'removemem()'>REMOVE</l></div></div>"
       }
       body.innerHTML=yourhtml;
     }
@@ -55,11 +53,6 @@ console.log(random_id);
       document.getElementById("hackdetails_mobile").remove();
     }
     else{
-      firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
-          user.getIdToken().then(function(idToken){
-            console.log(idToken)
-            auth = idToken
       axios(`${url}/getHacks/${hack_id}`, {
         headers: {
           Authorization: "Bearer " + auth,
@@ -77,10 +70,8 @@ console.log(random_id);
         body.innerHTML = yourhtml;
       })
       .catch((error) => console.error("Error: " + error));    
-    })
+    }
   }
-  })
-   }
   hackinfo()
 
 function getskills(){
@@ -315,4 +306,4 @@ swal({
   }
 });
   })
-}}
+}

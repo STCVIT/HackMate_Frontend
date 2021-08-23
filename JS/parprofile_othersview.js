@@ -18,6 +18,7 @@ $(document).ready(function () {
    .then((response) => {
        user = response.data;
        console.log(user);
+       document.querySelector(".photo").setAttribute("src", user.participant.photo);
        document.querySelector(".caption h2").innerHTML = toTitleCase(user.participant.name);
        document.querySelector("#name").innerHTML = user.participant.name;
        document.querySelector("#username").innerHTML = user.participant.username;
@@ -46,14 +47,22 @@ $(document).ready(function () {
   // User is signed out
   console.log("I'm signed out!")
 }
+function toTitleCase(str) {
+  return str.replace(
+    /\w\S*/g,
+    function(txt) {
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase() + ".";
+    }
+  );
+}
 });
+
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     user.getIdToken().then(function(idToken){
       console.log(idToken)
       auth = idToken
    var user;
-   var user_id;
 axios(`${url}/participant/login`, {
     headers: {
         Authorization: "Bearer " + auth,
@@ -92,15 +101,6 @@ function add_review() {
     });
   })
 }
-
-function toTitleCase(str) {
-    return str.replace(
-      /\w\S*/g,
-      function(txt) {
-        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase() + ".";
-      }
-    );
-  }
   
   team_name= localStorage.getItem("hack_name");
   function invite() {

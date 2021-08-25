@@ -75,6 +75,7 @@ axios(`${url}/participant/login`, {
 .catch((error) => console.error("Error: " + error));
 })
   }
+})
 let review = document.getElementById("review");
 
 
@@ -138,4 +139,3 @@ function add_review() {
       });
     });
   }
-})

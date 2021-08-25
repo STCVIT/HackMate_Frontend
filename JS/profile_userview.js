@@ -7,101 +7,88 @@ var logo;
 var user;
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      user.getIdToken().then(function(idToken){
-        console.log(idToken)
-        sessionStorage.setItem("auth", idToken)
-        auth = idToken
-axios(`${url}/participant/login`, {
-    headers: {
-        Authorization: "Bearer " + auth,
-    },
-})
-.then((response) => {
-    user = response.data;
-    document.querySelector(".photo").setAttribute("src", user.photo);
-    document.par_form.name.value = user.name;
-    document.par_form.username.value = user.username;
-    document.querySelector("#email").innerHTML = user.email;
-    document.par_form.college.value = user.college;
-    document.par_form.git.value = user.github;
-    document.par_form.linkedln.value = user.linkedIn;
-    document.par_form.personal_website.value = user.website;
-    document.par_form.year.value = user.graduation_year;
-    document.form.bio.value = user.bio;
-    console.log(user);
-})
-.catch((error) => console.error("Error: " + error));
-      })
+        user.getIdToken().then(function(idToken){
+            console.log(idToken)
+            sessionStorage.setItem("auth", idToken)
+            auth = idToken
+            axios(`${url}/participant/login`, {
+                headers: {
+                    Authorization: "Bearer " + auth,
+                },
+            })
+            .then((response) => {
+                user = response.data;
+                document.querySelector(".photo").setAttribute("src", user.photo);
+                document.par_form.name.value = user.name;
+                document.par_form.username.value = user.username;
+                document.querySelector("#email").innerHTML = user.email;
+                document.par_form.college.value = user.college;
+                document.par_form.git.value = user.github;
+                document.par_form.linkedln.value = user.linkedIn;
+                document.par_form.personal_website.value = user.website;
+                document.par_form.year.value = user.graduation_year;
+                document.form.bio.value = user.bio;
+                console.log(user);
+            })
+            .catch((error) => console.error("Error: " + error));
+            let fd= document.getElementById("frontend");
+            let bd=document.getElementById("backend");
+            let ui = document.getElementById("ui");
+            let ml = document.getElementById("ml");
+            let mg = document.getElementById("management");
+            let app = document.getElementById("app");
+            let cyber = document.getElementById("cyber");
+            let block = document.getElementById("block");
+            var skills=[];
+            var userskills=[];
+            axios(`${url}/skills/mySkills`, {
+                headers: {
+                    Authorization: "Bearer " + auth,
+                }
+            })
+            .then((response) => {
+                skills=response.data;
+                // console.log(skills);
+                skills.forEach(element => {
+                    userskills.push(element.skill);
+                });
+                console.log(userskills);
+                if(userskills.includes("frontend")){
+                    fd.checked = true;
+                }
+                if(userskills.includes("backend")){
+                    bd.checked = true;
+                }
+                if(userskills.includes("management")){
+                    mg.checked = true;
+                }
+                if(userskills.includes("ui/ux")){
+                    ui.checked= true;
+                }
+                if(userskills.includes("ml")){
+                    ml.checked = true;
+                }
+                if(userskills.includes("appdev")){
+                    app.checked = true; 
+                }
+                if(userskills.includes("cybersecurity")){
+                    cyber.checked = true;
+                }
+                if(userskills.includes("blockchain")){
+                    block.checked = true;
+                }
+            })
+            .catch((error) => console.error("Error: " + error));
+        })
     }
-else {
-    // User is signed out
-    console.log("I'm signed out!")
-  }
-  });
+    else {
+        // User is signed out
+        console.log("I'm signed out!")
+    }
+});
 
 
 
-let fd= document.getElementById("frontend");
-let bd=document.getElementById("backend");
-let ui = document.getElementById("ui");
-let ml = document.getElementById("ml");
-let mg = document.getElementById("management");
-let app = document.getElementById("app");
-let cyber = document.getElementById("cyber");
-let block = document.getElementById("block");
-var skills=[];
-var userskills=[];
-firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      user.getIdToken().then(function(idToken){
-        console.log(idToken)
-        sessionStorage.setItem("auth", idToken)
-        auth = idToken
-    axios(`${url}/skills/mySkills`, {
-        headers: {
-            Authorization: "Bearer " + auth,
-        }
-    })
-    .then((response) => {
-    skills=response.data;
-    // console.log(skills);
-    skills.forEach(element => {
-        userskills.push(element.skill);
-    });
-    console.log(userskills);
-    if(userskills.includes("frontend")){
-        fd.checked = true;
-    }
-    if(userskills.includes("backend")){
-        bd.checked = true;
-    }
-    if(userskills.includes("management")){
-        mg.checked = true;
-    }
-    if(userskills.includes("ui/ux")){
-        ui.checked= true;
-    }
-    if(userskills.includes("ml")){
-        ml.checked = true;
-    }
-    if(userskills.includes("appdev")){
-        app.checked = true; 
-    }
-    if(userskills.includes("cybersecurity")){
-        cyber.checked = true;
-    }
-    if(userskills.includes("blockchain")){
-        block.checked = true;
-    }
-})
-.catch((error) => console.error("Error: " + error));
-})
-    }
-else {
-    // User is signed out
-    console.log("I'm signed out!")
-  }
-  });
 
 
 function delete_account(){
@@ -244,9 +231,9 @@ function update_account() {
         .patch(
             `${url}/participant/updateProfile`,
             {
-                name: document.par_form.name.value,
+                name: toTitleCase(document.par_form.name.value),
                 username: document.par_form.username.value,
-                college: document.par_form.college.value,
+                college: toTitleCase(document.par_form.college.value),
                 github: document.par_form.git.value,
                 linkedIn: document.par_form.linkedln.value,
                 website: document.par_form.personal_website.value,
@@ -456,3 +443,13 @@ async function uploadBlob(file) {
   document.querySelector("#image_uploads").addEventListener("change", function () {
       uploadBlob(document.getElementById("image_uploads").files[0]);
     });
+
+
+    function toTitleCase(str) {
+        return str.replace(
+          /\w\S*/g,
+          function(txt) {
+            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+          }
+        );
+      }

@@ -8,12 +8,12 @@ let team_code = document.getElementById("team_code");
 let hack_id = localStorage.getItem("hack_id");
 let hack_name = localStorage.getItem("hackName");
 console.log(hack_name);
-random_id = localStorage.getItem("team_id");
+var random_id = localStorage.getItem("team_id");
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     user.getIdToken().then(function(idToken){
-      console.log(idToken)
-      auth = idToken
+      console.log(idToken);
+      auth = idToken;
 console.log(random_id);
   axios(`${url}/DN_Team/${random_id}`, {
     headers: {
@@ -33,19 +33,63 @@ console.log(random_id);
         yourhtml += "<div class='card-row'><div class='d-flex justify-content-around'><div class='component'><img id='dp' src='../Assets/Images/dp.svg'><p>"+team.pt_skills[i].participant.name+"<m>(Leader)</m><br><t>"+team.pt_skills[i].skills[i].skill+"</t></p></div><l id='leave'>YOU</l></div></div>"
       }
       else{
-        yourhtml += "<div class='card-row'><div class='d-flex justify-content-around'><div class='component'><img id='dp' src='../Assets/Images/dp.svg'><p>"+team.pt_skills[i].participant.name+"<m>(Member)</m><br><t>"+team.pt_skills[i].skills[i].skill+"</t></p></div><l onclick = 'removemem()'>REMOVE</l></div></div>"
+        yourhtml += "<div class='card-row'><div class='d-flex justify-content-around'><div class='component'><img id='dp' src='../Assets/Images/dp.svg'><p>"+team.pt_skills[i].participant.name+"<m>(Member)</m><br><t>"+team.pt_skills[i].skills[i].skill+"</t></p></div><l id='member' onclick = 'removemem()'>REMOVE<identity id='member_id' style='display:none'>"+team.pt_skills[i].participant._id+"</identity></l></div></div>"
       }
-      body.innerHTML=yourhtml;
+      body.innerHTML=yourhtml; 
     }
   })
   .catch((error) => console.error("Error: " + error));
-})
-} else {
-  // User is signed out
-  console.log("I'm signed out!")
-}
-});
-
+  function getskills(){
+    let fd= document.getElementById("frontend");
+    let bd=document.getElementById("backend");
+    let ui = document.getElementById("ui");
+    let ml = document.getElementById("ml");
+    let mg = document.getElementById("management");
+    let app = document.getElementById("app");
+    let cyber = document.getElementById("cyber");
+    let block = document.getElementById("block");
+    var skills=[];
+    var userskills=[];
+    axios(`${url}/DN_Team/getSkills/${random_id}`, {
+        headers: {
+            Authorization: "Bearer " + auth,
+        }
+    })
+    .then((response) => {
+        skills=response.data;
+        // console.log(skills);
+        skills.forEach(element => {
+            userskills.push(element.skill);
+        });
+        console.log(userskills);
+        if(userskills.includes("frontend")){
+            fd.checked = true;
+        }
+        if(userskills.includes("backend")){
+            bd.checked = true;
+        }
+        if(userskills.includes("management")){
+            mg.checked = true;
+        }
+        if(userskills.includes("ui/ux")){
+            ui.checked= true;
+        }
+        if(userskills.includes("ml")){
+            ml.checked = true;
+        }
+        if(userskills.includes("appdev")){
+            app.checked = true; 
+        }
+        if(userskills.includes("cybersecurity")){
+            cyber.checked = true;
+        }
+        if(userskills.includes("blockchain")){
+            block.checked = true;
+        }
+    })
+    .catch((error) => console.error("Error: " + error));  
+  }
+  getskills()
   function hackinfo(){
     if(hack_name == ""){
       document.getElementById("hackathon").remove();
@@ -70,64 +114,15 @@ console.log(random_id);
         body.innerHTML = yourhtml;
       })
       .catch((error) => console.error("Error: " + error));    
-    }
+  }
   }
   hackinfo()
-
-function getskills(){
-  let fd= document.getElementById("frontend");
-  let bd=document.getElementById("backend");
-  let ui = document.getElementById("ui");
-  let ml = document.getElementById("ml");
-  let mg = document.getElementById("management");
-  let app = document.getElementById("app");
-  let cyber = document.getElementById("cyber");
-  let block = document.getElementById("block");
-  var skills=[];
-  var userskills=[];
-  firebase.auth().currentUser.getIdToken().then((id) => {
-    auth = id;
-  axios(`${url}/DN_Team/getSkills/${random_id}`, {
-      headers: {
-          Authorization: "Bearer " + auth,
-      }
-  })
-  .then((response) => {
-      skills=response.data;
-      // console.log(skills);
-      skills.forEach(element => {
-          userskills.push(element.skill);
-      });
-      console.log(userskills);
-      if(userskills.includes("frontend")){
-          fd.checked = true;
-      }
-      if(userskills.includes("backend")){
-          bd.checked = true;
-      }
-      if(userskills.includes("management")){
-          mg.checked = true;
-      }
-      if(userskills.includes("ui/ux")){
-          ui.checked= true;
-      }
-      if(userskills.includes("ml")){
-          ml.checked = true;
-      }
-      if(userskills.includes("appdev")){
-          app.checked = true; 
-      }
-      if(userskills.includes("cybersecurity")){
-          cyber.checked = true;
-      }
-      if(userskills.includes("blockchain")){
-          block.checked = true;
-      }
-  })
-  .catch((error) => console.error("Error: " + error));  
 })
+} else {
+  // User is signed out
+  console.log("I'm signed out!")
 }
-getskills()
+});
 function submit(){
 
   let choice = [];
@@ -226,7 +221,6 @@ function submit(){
   });
 })
 }
-
 function deleteteam(){
   firebase.auth().currentUser.getIdToken().then((id) => {
     auth = id;
@@ -266,11 +260,20 @@ function deleteteam(){
   });
 })
 }
-
+let member_id;
 
 function removemem(){
   firebase.auth().currentUser.getIdToken().then((id) => {
     auth = id;
+    const members = document.querySelectorAll("#member");
+    members.forEach(member => member.addEventListener('click',look));
+    console.log(members);
+    function look(){
+       console.log(" i was clicked");
+       console.log(this);
+       member_id= this.querySelector("#member_id").textContent;
+       console.log(member_id);
+    }
 swal({
   title: "Are you sure?",
   text: "Do you want to remove this member from your team?!",
@@ -285,7 +288,7 @@ swal({
             icon: "success",
         });
     axios
-    .delete(
+    .patch(
       `${url}/DN_Team/removeMember/${random_id}/${member_id}`,
       {
         headers: {

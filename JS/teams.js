@@ -406,8 +406,11 @@ function prevPage() {
 
 
 var user;
-firebase.auth().currentUser.getIdToken().then((id) => {
-  auth = id;
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    user.getIdToken().then(function(idToken){
+      console.log(idToken)
+      auth = idToken;
 axios(`${url}/participant/login`, {
     headers: {
         Authorization: "Bearer " + auth,
@@ -420,6 +423,12 @@ axios(`${url}/participant/login`, {
 })
 .catch((error) => console.error("Error: " + error));
 })
+  }
+  else {
+    // User is signed out
+    console.log("I'm signed out!")
+  }
+});
 
  function check(){
   firebase.auth().currentUser.getIdToken().then((id) => {

@@ -12,8 +12,12 @@ form.addEventListener('submit', (e) => {
     let website = document.getElementById("website");
     let logo = "HEY";
     let res = checkInputs(username, phone_num, college);
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          user.getIdToken().then(function(idToken){
+            console.log(idToken)
+            auth = idToken
     if (res == 3) {
-
         fetch(`${url}/organiser/createProfile`, {
 
             method: "POST",
@@ -39,6 +43,12 @@ form.addEventListener('submit', (e) => {
                 console.log("Error:", error);
             });
     }
+})
+} else {
+  // User is signed out
+  console.log("I'm signed out!")
+}
+});
 });
 function checkInputs(username, phone_num, college) {
     let flag = 0;

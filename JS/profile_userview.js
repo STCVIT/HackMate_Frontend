@@ -3,7 +3,14 @@ $(document).ready(function () {
     $("#foobottom").load("../Assets/Footer/footer.txt");
 });
 
+var logo;
 var user;
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      user.getIdToken().then(function(idToken){
+        console.log(idToken)
+        sessionStorage.setItem("auth", idToken)
+        auth = idToken
 axios(`${url}/participant/login`, {
     headers: {
         Authorization: "Bearer " + auth,
@@ -11,6 +18,7 @@ axios(`${url}/participant/login`, {
 })
 .then((response) => {
     user = response.data;
+    document.querySelector(".photo").setAttribute("src", user.photo);
     document.par_form.name.value = user.name;
     document.par_form.username.value = user.username;
     document.querySelector("#email").innerHTML = user.email;
@@ -23,6 +31,14 @@ axios(`${url}/participant/login`, {
     console.log(user);
 })
 .catch((error) => console.error("Error: " + error));
+      })
+    }
+else {
+    // User is signed out
+    console.log("I'm signed out!")
+  }
+  });
+
 
 
 let fd= document.getElementById("frontend");
@@ -35,12 +51,18 @@ let cyber = document.getElementById("cyber");
 let block = document.getElementById("block");
 var skills=[];
 var userskills=[];
-axios(`${url}/skills/mySkills`, {
-    headers: {
-        Authorization: "Bearer " + auth,
-    }
-})
-.then((response) => {
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      user.getIdToken().then(function(idToken){
+        console.log(idToken)
+        sessionStorage.setItem("auth", idToken)
+        auth = idToken
+    axios(`${url}/skills/mySkills`, {
+        headers: {
+            Authorization: "Bearer " + auth,
+        }
+    })
+    .then((response) => {
     skills=response.data;
     // console.log(skills);
     skills.forEach(element => {
@@ -73,23 +95,54 @@ axios(`${url}/skills/mySkills`, {
     }
 })
 .catch((error) => console.error("Error: " + error));
+})
+    }
+else {
+    // User is signed out
+    console.log("I'm signed out!")
+  }
+  });
 
 
-function delete_accoount(){
-  axios 
-    .delete(`${url}/participant/deleteProfile`, {
-        headers: {
-            Authorization: "Bearer " + auth,
-        },
-    })
-    .then((response) => {
-        console.log(response.data);
-    })
-    .catch((error) => console.error("Error: " + error));
+function delete_account(){
+    firebase.auth().currentUser.getIdToken().then((id) => {
+        auth = id;
+    swal({
+        title: "Are you sure?",
+        text: "Do you want to delete your profile?",
+        type: "warning",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+            swal("Poof! Your profile has been deleted!", {
+                icon: "success",
+            });
+            axios 
+            .delete(`${url}/participant/deleteProfile`, {
+                headers: {
+                    Authorization: "Bearer " + auth,
+                },
+            })
+            .then((response) => {
+                console.log(response.data);
+                console.log(res);
+            })
+            .catch((error) => console.error("Error: " + error));
+        }
+        else {
+            swal("Your profile is safe!");
+          }
+    });
+})
 }
 
 
 function update_account() {
+    firebase.auth().currentUser.getIdToken().then((id) => {
+        auth = id;
     let flag=0;
     let Name=document.getElementById("name");
     let username=document.getElementById("username");
@@ -218,7 +271,7 @@ function update_account() {
                 console.error("Error:", error);
             });
         }
-       
+    })
 }
 function onSuccess(input){
     let parent=input.parentElement;
@@ -334,3 +387,72 @@ function addskills(){
     console.error("Error:", error);
   });
 }
+
+
+async function uploadBlob(file) {
+    console.log("Testing");
+    const ref = firebase
+      .storage()
+      .ref("/Participants/Profile/" + document.par_form.name.value);
+  
+    var uploadTask = ref.put(file);
+  
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        switch (snapshot.state) {
+          case firebase.storage.TaskState.PAUSED:
+            console.log("Upload is paused");
+            break;
+          case firebase.storage.TaskState.RUNNING:
+            console.log("Upload is running");
+            break;
+        }
+      },
+      (error) => {
+        // Handle unsuccessful uploads
+      },
+      async () => {
+        uploadTask.snapshot.ref.getDownloadURL().then(async (downloadURL) => {
+          console.log("File available at", downloadURL);
+  
+          logo = await downloadURL;
+  
+  
+          firebase.auth().currentUser.getIdToken().then(async (id)=>{
+            auth = await id
+        })
+  
+        axios
+        .patch(
+          `${url}/participant/updateProfile`,
+          {
+            photo : logo,
+          },
+          {
+            headers: {
+              Authorization: "Bearer " + auth,
+            },
+          }
+        )
+        .then((response) => {
+          console.log("Success:", response.data);
+          swal("SUCCESS!!", "File uploaded successfully", "success");
+          document.querySelector(".swal-button--confirm").addEventListener("click", ()=> {
+            window.location = "";
+          })
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+          
+        });
+      }
+    );
+  }
+  
+  
+  document.querySelector("#image_uploads").addEventListener("change", function () {
+      uploadBlob(document.getElementById("image_uploads").files[0]);
+    });

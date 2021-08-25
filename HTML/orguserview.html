@@ -17,7 +17,7 @@
 
     <div id="nav"></div>
 
-    <div class="container-fluid">
+    <div class="main container-fluid">
 
         <div class="row">
             <div class="col-md-1 col-sm-1 col-1"> </div>
@@ -46,7 +46,10 @@
                     <div class="details">
 
                         <div class="logo inputdeets">
-                            <img src="../Assets/Images/STC.svg" alt="">
+                            <img class="photo" alt=""> <label for="image_uploads">
+                                <a class="edit btn btn-success" role="button">Edit</a>
+                            </label><input style="height: 0px; width: 0px;" type="file" id="image_uploads" name="image_uploads"
+                            accept=".jpg, .jpeg, .png" required>
                         </div>
 
                         <div class="inputdeets">
@@ -106,6 +109,7 @@
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="../JS/url.js"></script>
     <script src="../JS/orguserview.js"></script>
 </body>

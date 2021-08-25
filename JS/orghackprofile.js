@@ -5,55 +5,127 @@ $(document).ready(function () {
 });
 var teams;
 var page;
-axios(`${url}/organiser/hack/${window.location.search.split("?")[1]}`, {
-  headers: {
-    Authorization: "Bearer " + auth,
-  },
-})
-  .then((response) => {
-    hack = response.data;
-    console.log(hack);
-    document.myform.name.value = hack.name;
-    document.querySelector(".hackname").innerHTML = hack.name;
-    document.myform.venue.value = hack.venue;
-    document.myform.moc.value = hack.mode_of_conduct;
-    document.myform.website.value = hack.website;
-    document.myform.about.value = hack.description;
-    document.myform.start.value =
-      hack.start.split("T")[0] +
-      "T" +
-      new Date(hack.start).toString().split(" ")[4];
-    document.myform.end.value =
-      hack.end.split("T")[0] +
-      "T" +
-      new Date(hack.end).toString().split(" ")[4];
-    document.myform.mints.value = hack.min_team_size;
-    document.myform.maxts.value = hack.max_team_size;
-    document.myform.prizes.value = hack.prize_pool;
-    document.querySelector(".poster").innerHTML += "<img style='width: 200px; height: 200px;' src='"+ hack.poster+"'></img>";
-  })
-  .catch((error) => {
-    console.error("Error:", error);
-  });
 
-function deleteHack() {
-  axios
-    .delete(
-      `${url}/organiser/deleteHack/${window.location.search.split("?")[1]}`,
-      {
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    user.getIdToken().then(function (idToken) {
+      console.log(idToken)
+      auth = idToken
+
+      axios(`${url}/organiser/hack/${window.location.search.split("?")[1]}`, {
         headers: {
           Authorization: "Bearer " + auth,
         },
+      })
+        .then((response) => {
+          hack = response.data;
+          console.log(hack);
+          document.myform.name.value = hack.name;
+          document.querySelector(".hackname").innerHTML = hack.name;
+          document.myform.venue.value = hack.venue;
+          document.myform.moc.value = hack.mode_of_conduct;
+          document.myform.website.value = hack.website;
+          document.myform.about.value = hack.description;
+          document.myform.start.value =
+            hack.start.split("T")[0] +
+            "T" +
+            new Date(hack.start).toString().split(" ")[4];
+          document.myform.end.value =
+            hack.end.split("T")[0] +
+            "T" +
+            new Date(hack.end).toString().split(" ")[4];
+          document.myform.mints.value = hack.min_team_size;
+          document.myform.maxts.value = hack.max_team_size;
+          document.myform.prizes.value = hack.prize_pool;
+          document.querySelector(".poster").innerHTML += "<img style='width: 200px; height: 200px;' src='" + hack.poster + "'></img>";
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+
+      function displayTeams() {
+        var init = async function () {
+          var res = await axios(
+            `${url}/organiser/getTeams/${window.location.search.split("?")[1]
+            }?page=1`,
+            {
+              headers: {
+                Authorization: "Bearer " + auth,
+              },
+            }
+          );
+          teams = await res.data;
+          console.log(teams);
+
+          document.querySelector(".wrapper").innerHTML = "";
+
+          for (var i = 0; i < teams.final.length; i++) {
+            console.log(teams.final[i]);
+            document.querySelector(".wrapper").innerHTML +=
+              "<div class='box'> <div class='innertxt'> <h3 class='card-title'>" +
+              teams.final[i].team.name +
+              "</h3> <div class='card-details' style='padding-top: 30.23px;'> <p> <f>" +
+              teams.final[i].participants.length +
+              "</f> <r> Team <br> Members</r> </p> <div class='vl'></div> <ul class='team-members" +
+              i +
+              "'>" +
+              +"</ul> </div> </div> </div>";
+          }
+
+          for (var i = 0; i < teams.final.length; i++) {
+            document.querySelector(".team-members" + i).innerHTML = "";
+            for (var j = 0; j < teams.final[i].participants.length; j++) {
+              document.querySelector(".team-members" + i).innerHTML +=
+                "<li class='list-item'><img id='pp' src='../Assets/Images/Rectangle 155.svg'> <p class='text'>" +
+                teams.final[i].participants[j].name +
+                "</p> </li>";
+            }
+          }
+
+          var length = await res.data.length;
+          console.log(length);
+          total_teams = Math.ceil(length / 12);
+          Pagination.Init(document.getElementById("pagination"), {
+            size: total_teams,
+            page: 1,
+            step: 1,
+          });
+        };
+        init();
       }
-    )
-    .then((response) => {
-      hack = response.data;
-      console.log(hack);
-      window.location = "./orghack.html"
+
+      displayTeams();
     })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
+  } else {
+    // User is signed out
+    console.log("I'm signed out!")
+  }
+});
+
+function deleteHack() {
+
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
+
+    axios
+      .delete(
+        `${url}/organiser/deleteHack/${window.location.search.split("?")[1]}`,
+        {
+          headers: {
+            Authorization: "Bearer " + auth,
+          },
+        }
+      )
+      .then((response) => {
+        hack = response.data;
+        console.log(hack);
+        window.location = "./orghack.html"
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+
+  })
 }
 
 var Pagination = {
@@ -152,202 +224,163 @@ var Pagination = {
   },
 };
 
-function displayTeams() {
-  var init = async function () {
-    var res = await axios(
+function events(event) {
+  console.log(event);
+  page = event.target.innerHTML;
+  console.log(page);
+
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
+    axios(
       `${url}/organiser/getTeams/${window.location.search.split("?")[1]
-      }?page=1`,
+      }?page=${page}`,
       {
         headers: {
           Authorization: "Bearer " + auth,
         },
       }
-    );
-    teams = await res.data;
-    console.log(teams);
-
-    document.querySelector(".wrapper").innerHTML = "";
-
-    for (var i = 0; i < teams.final.length; i++) {
-      console.log(teams.final[i]);
-      document.querySelector(".wrapper").innerHTML +=
-        "<div class='box'> <div class='innertxt'> <h3 class='card-title'>" +
-        teams.final[i].team.name +
-        "</h3> <div class='card-details' style='padding-top: 30.23px;'> <p> <f>" +
-        teams.final[i].participants.length +
-        "</f> <r> Team <br> Members</r> </p> <div class='vl'></div> <ul class='team-members" +
-        i +
-        "'>" +
-        +"</ul> </div> </div> </div>";
-    }
-
-    for (var i = 0; i < teams.final.length; i++) {
-      document.querySelector(".team-members" + i).innerHTML = "";
-      for (var j = 0; j < teams.final[i].participants.length; j++) {
-        document.querySelector(".team-members" + i).innerHTML +=
-          "<li class='list-item'><img id='pp' src='../Assets/Images/Rectangle 155.svg'> <p class='text'>" +
-          teams.final[i].participants[j].name +
-          "</p> </li>";
-      }
-    }
-
-    var length = await res.data.length;
-    console.log(length);
-    total_teams = Math.ceil(length / 12);
-    Pagination.Init(document.getElementById("pagination"), {
-      size: total_teams,
-      page: 1,
-      step: 1,
-    });
-  };
-  init();
-}
-
-displayTeams();
-
-function events(event) {
-  console.log(event);
-  page = event.target.innerHTML;
-  console.log(page);
-  axios(
-    `${url}/organiser/getTeams/${window.location.search.split("?")[1]
-    }?page=${page}`,
-    {
-      headers: {
-        Authorization: "Bearer " + auth,
-      },
-    }
-  )
-    .then((response) => {
-      teams = response.data;
-      console.log(teams);
+    )
+      .then((response) => {
+        teams = response.data;
+        console.log(teams);
 
 
-      document.querySelector(".wrapper").innerHTML = "";
+        document.querySelector(".wrapper").innerHTML = "";
 
-      for (var i = 0; i < teams.final.length; i++) {
-        console.log(teams.final[i]);
-        document.querySelector(".wrapper").innerHTML +=
-          "<div class='box'> <div class='innertxt'> <h3 class='card-title'>" +
-          teams.final[i].team.name +
-          "</h3> <div class='card-details' style='padding-top: 30.23px;'> <p> <f>" +
-          teams.final[i].participants.length +
-          "</f> <r> Team <br> Members</r> </p> <div class='vl'></div> <ul class='team-members" +
-          i +
-          "'>" +
-          +"</ul> </div> </div> </div>";
-      }
-
-      for (var i = 0; i < teams.final.length; i++) {
-        document.querySelector(".team-members" + i).innerHTML = "";
-        for (var j = 0; j < teams.final[i].participants.length; j++) {
-          document.querySelector(".team-members" + i).innerHTML +=
-            "<li class='list-item'><img id='pp' src='../Assets/Images/Rectangle 155.svg'> <p class='text'>" +
-            teams.final[i].participants[j].name +
-            "</p> </li>";
+        for (var i = 0; i < teams.final.length; i++) {
+          console.log(teams.final[i]);
+          document.querySelector(".wrapper").innerHTML +=
+            "<div class='box'> <div class='innertxt'> <h3 class='card-title'>" +
+            teams.final[i].team.name +
+            "</h3> <div class='card-details' style='padding-top: 30.23px;'> <p> <f>" +
+            teams.final[i].participants.length +
+            "</f> <r> Team <br> Members</r> </p> <div class='vl'></div> <ul class='team-members" +
+            i +
+            "'>" +
+            +"</ul> </div> </div> </div>";
         }
-      }
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
+
+        for (var i = 0; i < teams.final.length; i++) {
+          document.querySelector(".team-members" + i).innerHTML = "";
+          for (var j = 0; j < teams.final[i].participants.length; j++) {
+            document.querySelector(".team-members" + i).innerHTML +=
+              "<li class='list-item'><img id='pp' src='../Assets/Images/Rectangle 155.svg'> <p class='text'>" +
+              teams.final[i].participants[j].name +
+              "</p> </li>";
+          }
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+
+  })
 }
 function nextPage() {
-  if(page < total_teams)
-  {
-    page = Pagination.page + 1; 
+  if (page < total_teams) {
+    page = Pagination.page + 1;
   }
   console.log(page);
-  axios(
-    `${url}/organiser/getTeams/${window.location.search.split("?")[1]
-    }?page=${page}`,
-    {
-      headers: {
-        Authorization: "Bearer " + auth,
-      },
-    }
-  )
-    .then((response) => {
-      teams = response.data;
-      console.log(teams);
 
-
-      document.querySelector(".wrapper").innerHTML = "";
-
-      for (var i = 0; i < teams.final.length; i++) {
-        console.log(teams.final[i]);
-        document.querySelector(".wrapper").innerHTML +=
-          "<div class='box'> <div class='innertxt'> <h3 class='card-title'>" +
-          teams.final[i].team.name +
-          "</h3> <div class='card-details' style='padding-top: 30.23px;'> <p> <f>" +
-          teams.final[i].participants.length +
-          "</f> <r> Team <br> Members</r> </p> <div class='vl'></div> <ul class='team-members" +
-          i +
-          "'>" +
-          +"</ul> </div> </div> </div>";
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
+    axios(
+      `${url}/organiser/getTeams/${window.location.search.split("?")[1]
+      }?page=${page}`,
+      {
+        headers: {
+          Authorization: "Bearer " + auth,
+        },
       }
+    )
+      .then((response) => {
+        teams = response.data;
+        console.log(teams);
 
-      for (var i = 0; i < teams.final.length; i++) {
-        document.querySelector(".team-members" + i).innerHTML = "";
-        for (var j = 0; j < teams.final[i].participants.length; j++) {
-          document.querySelector(".team-members" + i).innerHTML +=
-            "<li class='list-item'><img id='pp' src='../Assets/Images/Rectangle 155.svg'> <p class='text'>" +
-            teams.final[i].participants[j].name +
-            "</p> </li>";
+
+        document.querySelector(".wrapper").innerHTML = "";
+
+        for (var i = 0; i < teams.final.length; i++) {
+          console.log(teams.final[i]);
+          document.querySelector(".wrapper").innerHTML +=
+            "<div class='box'> <div class='innertxt'> <h3 class='card-title'>" +
+            teams.final[i].team.name +
+            "</h3> <div class='card-details' style='padding-top: 30.23px;'> <p> <f>" +
+            teams.final[i].participants.length +
+            "</f> <r> Team <br> Members</r> </p> <div class='vl'></div> <ul class='team-members" +
+            i +
+            "'>" +
+            +"</ul> </div> </div> </div>";
         }
-      }
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
+
+        for (var i = 0; i < teams.final.length; i++) {
+          document.querySelector(".team-members" + i).innerHTML = "";
+          for (var j = 0; j < teams.final[i].participants.length; j++) {
+            document.querySelector(".team-members" + i).innerHTML +=
+              "<li class='list-item'><img id='pp' src='../Assets/Images/Rectangle 155.svg'> <p class='text'>" +
+              teams.final[i].participants[j].name +
+              "</p> </li>";
+          }
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+
+  })
 }
 function prevPage() {
   if (page > 1) {
     page = Pagination.page - 1;
   }
   console.log(page);
-  axios(
-    `${url}/organiser/getTeams/${window.location.search.split("?")[1]
-    }?page=${page}`,
-    {
-      headers: {
-        Authorization: "Bearer " + auth,
-      },
-    }
-  )
-    .then((response) => {
-      teams = response.data;
-      console.log(teams);
 
-
-      document.querySelector(".wrapper").innerHTML = "";
-
-      for (var i = 0; i < teams.final.length; i++) {
-        console.log(teams.final[i]);
-        document.querySelector(".wrapper").innerHTML +=
-          "<div class='box'> <div class='innertxt'> <h3 class='card-title'>" +
-          teams.final[i].team.name +
-          "</h3> <div class='card-details' style='padding-top: 30.23px;'> <p> <f>" +
-          teams.final[i].participants.length +
-          "</f> <r> Team <br> Members</r> </p> <div class='vl'></div> <ul class='team-members" +
-          i +
-          "'>" +
-          +"</ul> </div> </div> </div>";
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
+    axios(
+      `${url}/organiser/getTeams/${window.location.search.split("?")[1]
+      }?page=${page}`,
+      {
+        headers: {
+          Authorization: "Bearer " + auth,
+        },
       }
+    )
+      .then((response) => {
+        teams = response.data;
+        console.log(teams);
 
-      for (var i = 0; i < teams.final.length; i++) {
-        document.querySelector(".team-members" + i).innerHTML = "";
-        for (var j = 0; j < teams.final[i].participants.length; j++) {
-          document.querySelector(".team-members" + i).innerHTML +=
-            "<li class='list-item'><img id='pp' src='../Assets/Images/Rectangle 155.svg'> <p class='text'>" +
-            teams.final[i].participants[j].name +
-            "</p> </li>";
+
+        document.querySelector(".wrapper").innerHTML = "";
+
+        for (var i = 0; i < teams.final.length; i++) {
+          console.log(teams.final[i]);
+          document.querySelector(".wrapper").innerHTML +=
+            "<div class='box'> <div class='innertxt'> <h3 class='card-title'>" +
+            teams.final[i].team.name +
+            "</h3> <div class='card-details' style='padding-top: 30.23px;'> <p> <f>" +
+            teams.final[i].participants.length +
+            "</f> <r> Team <br> Members</r> </p> <div class='vl'></div> <ul class='team-members" +
+            i +
+            "'>" +
+            +"</ul> </div> </div> </div>";
         }
-      }
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
+
+        for (var i = 0; i < teams.final.length; i++) {
+          document.querySelector(".team-members" + i).innerHTML = "";
+          for (var j = 0; j < teams.final[i].participants.length; j++) {
+            document.querySelector(".team-members" + i).innerHTML +=
+              "<li class='list-item'><img id='pp' src='../Assets/Images/Rectangle 155.svg'> <p class='text'>" +
+              teams.final[i].participants[j].name +
+              "</p> </li>";
+          }
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+
+  })
 }
 
 document
@@ -407,6 +440,11 @@ async function uploadBlob(file) {
         var mints = document.myform.mints.value;
         var maxts = document.myform.maxts.value;
         var prizes = document.myform.prizes.value;
+
+        firebase.auth().currentUser.getIdToken().then(async (id) => {
+          auth = await id
+        })
+
         axios
           .post(
             `${url}/organiser/createHack`,
@@ -433,7 +471,7 @@ async function uploadBlob(file) {
             console.log("Success:", response.data);
             console.log(response.data._id);
             swal("SUCCESS!!", "Your request has been submitted successfully", "success");
-            document.querySelector(".swal-button--confirm").addEventListener("click", ()=> {
+            document.querySelector(".swal-button--confirm").addEventListener("click", () => {
               window.location.assign("./orghackprofile.html?" + response.data._id)
             })
           })

@@ -33,6 +33,11 @@ input,input:focus {
 input:focus{
   border-color:rgba(11, 226, 83, 0.329)!important;
 }
+.photo {
+  height: 85px;
+  width: 95px;
+  padding-right: 5%;
+}
 textarea,textarea:focus {
   outline: none!important;
   border: 2px solid rgba(30, 165, 76, 0.2)!important;
@@ -130,6 +135,20 @@ input{
 }
 .maintext h2{
   font-weight:bold !important;
+}
+.edit {
+  background: none;
+  filter: drop-shadow(0.75px 0.75px 7.5px rgba(0, 0, 0, 0.2));
+  padding:1vh 4.5vh;
+  border: 2.53333px solid  #226045;
+  background: #23303d;
+  color: #e7efef;
+  filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  font-family: "Fira Code", monospace;
+}
+input#image_uploads {
+  opacity: 0;
 }
 .maincap{
   font-family: 'Fira Code', monospace;

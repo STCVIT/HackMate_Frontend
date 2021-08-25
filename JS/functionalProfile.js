@@ -26,18 +26,29 @@ function secondpage_profile(){
 const form2=document.getElementById("form2");
 form2.addEventListener('submit',(e)=>{
     (e).preventDefault();
-    const Name=sessionStorage.getItem("NAME");
+    const Name= toTitleCase(sessionStorage.getItem("NAME"));
     const username=sessionStorage.getItem("USERNAME");
-    const college=sessionStorage.getItem("COLLEGE");
+    const college= toTitleCase(sessionStorage.getItem("COLLEGE"));
     const year=sessionStorage.getItem("YEAR");
-
-
+    function toTitleCase(str) {
+        return str.replace(
+          /\w\S*/g,
+          function(txt) {
+            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase() + ".";
+          }
+        );
+      }
     let linkedin=document.getElementById("linkedln");
     let git=document.getElementById("github");
     let website=document.getElementById("personal_website");
     let bio=document.getElementById("bio");
     let eval=validate(linkedin,git,website,bio);
     console.log(eval);
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          user.getIdToken().then(function(idToken){
+            console.log(idToken)
+            auth = idToken
     if(eval==1)
     {
         console.log("form validation completed");
@@ -69,6 +80,12 @@ form2.addEventListener('submit',(e)=>{
             console.log("Error:", error);
         });
     }
+})
+} else {
+  // User is signed out
+  console.log("I'm signed out!")
+}
+});
 });
 }
 function checkInputs(Name,username,college,year){

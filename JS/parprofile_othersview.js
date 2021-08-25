@@ -4,6 +4,11 @@ $(document).ready(function () {
 });
 
   var user;
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      user.getIdToken().then(function(idToken){
+        console.log(idToken)
+        auth = idToken
   randomId = localStorage.getItem("participant");
   axios(`${url}/participant/get/${randomId}`, {
       headers: {
@@ -13,6 +18,7 @@ $(document).ready(function () {
    .then((response) => {
        user = response.data;
        console.log(user);
+       document.querySelector(".photo").setAttribute("src", user.participant.photo);
        document.querySelector(".caption h2").innerHTML = toTitleCase(user.participant.name);
        document.querySelector("#name").innerHTML = user.participant.name;
        document.querySelector("#username").innerHTML = user.participant.username;
@@ -26,24 +32,60 @@ $(document).ready(function () {
 
        let body = document.getElementById("card-body");
        let yourHTML = "<h5 class='card-title'>Skills</h5>";
-       console.log(user.skills.length);
        let len = user.skills.length;
        for(let i=0;i<len;i++){
            yourHTML += "<p class='fill'><input class='form-check-input' type='checkbox' value='' id='flexCheckDefault' checked><label class='check-label' for='flexCheckDefault'>"+
            user.skills[i].skill
            yourHTML += "</label></p>"
         }
-        console.log(yourHTML);
         
         body.innerHTML= yourHTML;
    })
    .catch((error) => console.error("Error: " + error));
-/*function add_review() {
+  })
+} else {
+  // User is signed out
+  console.log("I'm signed out!")
+}
+function toTitleCase(str) {
+  return str.replace(
+    /\w\S*/g,
+    function(txt) {
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase() + ".";
+    }
+  );
+}
+});
+
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    user.getIdToken().then(function(idToken){
+      console.log(idToken)
+      auth = idToken
+   var user;
+axios(`${url}/participant/login`, {
+    headers: {
+        Authorization: "Bearer " + auth,
+    },
+})
+.then((response) => {
+    user = response.data;
+    user_id = user._id;
+})
+.catch((error) => console.error("Error: " + error));
+})
+  }
+let review = document.getElementById("review");
+
+
+function add_review() {
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
     axios 
-        .add(
-          `${url}/dummy`,
+        .post(
+          `${url}/review/postReview/${user_id}/${randomId}`,
         {
-           review: document.otherview_form.review.value
+           review: review.value
         },
         {
             headers: {
@@ -57,16 +99,43 @@ $(document).ready(function () {
     .catch((error) => {
         console.error("Error:",error);
     });
-
-    windows.location = "";
-
-}*/
-
-function toTitleCase(str) {
-    return str.replace(
-      /\w\S*/g,
-      function(txt) {
-        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase() + ".";
-      }
-    );
+  })
+}
+  
+  team_name= localStorage.getItem("hack_name");
+  function invite() {
+    // id.innerHTML = "Ooops!";\
+    firebase.auth().currentUser.getIdToken().then((id) => {
+      auth = id;
+    var participant_id = randomId;
+    console.log(participant_id);
+    axios
+      .post(
+        `${url}/invites/invite/${team_name}/${participant_id}`,
+        {
+          code: invite,
+        },
+        {
+          headers: {
+            Authorization: "Bearer " + auth,
+          },
+        }
+      )
+      .then((response) => {
+        accepted = response.data;
+        console.log(accepted);
+        swal("SUCCESS!!", "Your invite has been submitted successfully", "success");
+      })
+      .catch(e => {
+        console.log(e);
+        console.log(e.response.status);
+        if (e.response.status == 404) {
+          swal("WARNING!!", "No Participant Found", "warning");
+        }
+        else if (e.response.status == 400) {
+          swal("WARNING!!", "Invite has already been sent", "warning");
+        }
+      });
+    });
   }
+})

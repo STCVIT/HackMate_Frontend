@@ -7,6 +7,18 @@ html,body{
 	min-height: 100%;
 	overflow: auto;
 }
+#more{
+	display: none;
+}
+#more1{
+	display: none;
+}
+#more2{
+	display: none;
+}
+#more3{
+	display: none;
+}
 .text1{
 	color: #fff;
 	font-family: "Fira Code";
@@ -168,13 +180,13 @@ html,body{
 }
 .card_of_teams1{
 	width: 450px;
-	height: 570px;
+	height: auto;
 	background-color: #1D2833;
 	margin-top: 30px;
 }
 .card_of_teams2{
 	width: 450px;
-	height: 455px;
+	height: auto;
 	background-color: #1D2833;
 }
 .text13{
@@ -285,6 +297,7 @@ html,body{
   width: 50%;
   margin-left: 100px;
   margin-top: 30px;
+  margin-bottom: 25px;
   padding: 10px 10px 10px 10px;
   background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);
   border: none;
@@ -452,10 +465,9 @@ html,body{
 	}
 	.card_of_teams1{
 		width: 350px;
-		height: 620px;
 	}
 	.card_of_teams2{
-		height: 500px;
+		height: auto;
 	}
 	.cards_container{
 		margin-top: 100px;

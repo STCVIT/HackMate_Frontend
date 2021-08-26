@@ -30,16 +30,17 @@ firebase.auth().onAuthStateChanged((user) => {
     let body = document.getElementById("member_card");
     yourhtml = "";
     for(let i=0;i<team.team.members.length;i++){
+      console.log(i);
       if(team.pt_skills[i].participant._id == participant_id){
-        yourhtml += "<div class='card-row'><div class='d-flex justify-content-around'><div class='component'><img id='dp' src='../Assets/Images/dp.svg'><p>"+
-        team.pt_skills[i].participant.name+"<m>(You)</m><br><t>"+team.pt_skills[i].skills[i].skill+"</t></p></div><l id='leave' onclick='leave()'>LEAVE</l></div></div>"
+        yourhtml += "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'><img id='dp' src='../Assets/Images/dp.svg'><p>"+team.pt_skills[i].participant.name+"<m>(You)</m><br><t>"+team.pt_skills[i].skills[0].skill+"</t></p></div></div><l id='leave' onclick='leave()'>LEAVE</l></div>";
+        console.log("bye",i);
       }
       else{
-        yourhtml += "<div class='card-row'><div class='d-flex justify-content-around'><div class='component'><img id='dp' src='../Assets/Images/dp.svg'><p>"+
-        team.pt_skills[i].participant.name+"<m>(Member)</m><br><t>"+team.pt_skills[i].skills[i].skill+"</t></p></div><l>&ensp;&ensp;&ensp;&ensp;</l></div></div>"
+        yourhtml += "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'><img id='dp' src='../Assets/Images/dp.svg'><p>"+team.pt_skills[i].participant.name+"<m>(Member)</m><br><t>"+team.pt_skills[i].skills[0].skill+"</t></p></div><l></l></div></div>";
+        console.log("hi",i);
       }
-      body.innerHTML=yourhtml;
     }
+    body.innerHTML=yourhtml;
   })
   .catch((error) => console.error("Error: " + error));
   function hackinfo(){

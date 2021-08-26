@@ -8,7 +8,9 @@ body{
     padding-left:2%;
   }
   l{
-    
+    position:relative;
+    left:80%;
+    top: -50px;
   }
   #team_code{
     color: #e7efef;
@@ -26,7 +28,6 @@ body{
   .card .card-row l{
     background:#1D2833;
     color:rgba(231, 239, 239, 0.6);
-    padding-top:5%;
   }
   body{
     background-color: #23303d;
@@ -62,7 +63,6 @@ body{
 }
 .card .card-row p{
     padding-top:20px;
-    padding-left:30px;
 }
 .card-row .component{
   display: flex;
@@ -155,7 +155,6 @@ body{
   .card .card-row l{
     background:#1D2833;
     color:rgba(231, 239, 239, 0.6);
-    padding-top:10%;
   }
 }
 .maintext {

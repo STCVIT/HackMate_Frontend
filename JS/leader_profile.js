@@ -313,3 +313,7 @@ function removemem(){
     });
   })
 }
+
+function redirect(){
+  window.location.assign("./AddParNew.html?" + random_id);
+  }

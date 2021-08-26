@@ -3,7 +3,9 @@ $(document).ready(function () {
     $("#foobottom").load("../Assets/Footer/footer.txt");
 });
 
-  var user;
+  let user;
+  let user_id;
+  let person_id;
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       user.getIdToken().then(function(idToken){
@@ -29,7 +31,7 @@ $(document).ready(function () {
        document.querySelector("#personal_website").innerHTML = user.participant.website;
        document.querySelector("#year").innerHTML = user.participant.graduation_year;
        document.querySelector("#bio").innerHTML = user.participant.bio;
-
+       person_id = user.participant._id;
        let body = document.getElementById("card-body");
        let yourHTML = "<h5 class='card-title'>Skills</h5>";
        let len = user.skills.length;
@@ -102,17 +104,15 @@ function add_review() {
     });
   })
 }
-  
-  team_name= localStorage.getItem("hack_name");
-  function invite() {
-    // id.innerHTML = "Ooops!";\
-    firebase.auth().currentUser.getIdToken().then((id) => {
-      auth = id;
-    var participant_id = randomId;
-    console.log(participant_id);
+
+function invite() {
+  // id.innerHTML = "Ooops!";
+  firebase.auth().currentUser.getIdToken().then((id) => {
+    auth = id;
+    console.log(person_id);
     axios
       .post(
-        `${url}/invites/invite/${team_name}/${participant_id}`,
+        `${url}/invites/invite/${window.location.search.split("?")[1]}/${person_id}`,
         {
           code: invite,
         },
@@ -137,5 +137,5 @@ function add_review() {
           swal("WARNING!!", "Invite has already been sent", "warning");
         }
       });
-    });
-  }
+  })
+}

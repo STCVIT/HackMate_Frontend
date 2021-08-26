@@ -233,6 +233,7 @@ fweb.addEventListener('click', function () {
     }
   })
 });
+var random_id = localStorage.getItem("team_id");
 function check() {
   const cards = document.querySelectorAll("#good");
   cards.forEach(card => card.addEventListener('click', look));
@@ -242,7 +243,7 @@ function check() {
     console.log(this);
     var participant_id = this.querySelector("#participant-id").textContent;
     console.log(participant_id);
-    window.location.assign('./MyProfile_otherView.html')
+    window.location.assign('./MyProfile_otherView.html?'+ random_id);
     var part123 = participant_id;
     localStorage.setItem("participant", part123);
   }

@@ -86,31 +86,34 @@ function leave(){
   .then((willDelete) => {
     firebase.auth().currentUser.getIdToken().then((id) => {
       auth = id;
-    if (willDelete) {
-      swal("Poof! You left the team successfully!", {
-        icon: "success",
-      });
-      axios
-      .patch(
-        `${url}/DN_Team/${random_id}`,
+      console.log("Work!!");
+      console.log(auth);
+      if (willDelete) {
+        swal("Poof! You left the team successfully!", {
+          icon: "success",
+        });
+        axios
+        .patch(`${url}/DN_Team/${random_id}`,
+        {
+        },
         {
           headers: {
             Authorization: "Bearer " + auth,
           },
         }
-      )
-      .then((response) => {
-        res = response.data;
-        console.log(res);
-        window.location.assign("./My_teams.html");
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  }
-    else {
-      swal("Your team is safe!");
-    }
-  });
-})
+        )
+        .then((response) => {
+          res = response.data;
+          console.log(res);
+          window.location.assign("./My_teams.html");
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+      }
+      else {
+        swal("Your team is safe!");
+      }
+    });
+  })
 }

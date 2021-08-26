@@ -30,10 +30,10 @@ console.log(random_id);
     yourhtml = "";
     for(let i=0;i<team.team.members.length;i++){
       if(team.pt_skills[i].participant._id == team.team.admin_id){
-        yourhtml += "<div class='card-row'><div class='d-flex justify-content-around'><div class='component'><img id='dp' src='../Assets/Images/dp.svg'><p>"+team.pt_skills[i].participant.name+"<m>(Leader)</m><br><t>"+team.pt_skills[i].skills[i].skill+"</t></p></div><l id='leave'>YOU</l></div></div>"
+        yourhtml += "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'><img id='dp' src='../Assets/Images/dp.svg'><p>"+team.pt_skills[i].participant.name+"<m>(Leader)</m><br><t>"+team.pt_skills[i].skills[i].skill+"</t></p></div></div><l id='leave'>YOU</l></div>"
       }
       else{
-        yourhtml += "<div class='card-row'><div class='d-flex justify-content-around'><div class='component'><img id='dp' src='../Assets/Images/dp.svg'><p>"+team.pt_skills[i].participant.name+"<m>(Member)</m><br><t>"+team.pt_skills[i].skills[i].skill+"</t></p></div><l id='member' onclick = 'removemem()'>REMOVE<identity id='member_id' style='display:none'>"+team.pt_skills[i].participant._id+"</identity></l></div></div>"
+        yourhtml += "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'><img id='dp' src='../Assets/Images/dp.svg'><p>"+team.pt_skills[i].participant.name+"<m>(Member)</m><br><t>"+team.pt_skills[i].skills[i].skill+"</t></p></div></div><l id='member' onclick = 'removemem()'>REMOVE<identity id='member_id' style='display:none'>"+team.pt_skills[i].participant._id+"</identity></l></div>"
       }
       body.innerHTML=yourhtml; 
     }
@@ -249,6 +249,7 @@ function deleteteam(){
         res = response.data;
         console.log(res);
         swal("Deleted!", "Your team has been deleted.", "success");
+        window.location.assign("./My_teams.html");
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -269,44 +270,46 @@ function removemem(){
     members.forEach(member => member.addEventListener('click',look));
     console.log(members);
     function look(){
-       console.log(" i was clicked");
-       console.log(this);
-       member_id= this.querySelector("#member_id").textContent;
-       console.log(member_id);
+      console.log(" i was clicked");
+      console.log(this);
+      member_id= this.querySelector("#member_id").textContent;
+      console.log(member_id);
     }
-swal({
-  title: "Are you sure?",
-  text: "Do you want to remove this member from your team?!",
-  type: "warning",
-  icon: "warning",
-  buttons: true,
-  dangerMode: true,
-  })
-  .then((willDelete) => {
-    if (willDelete) {
-        swal("Poof! The team member has been removed!", {
-            icon: "success",
-        });
-    axios
-    .patch(
-      `${url}/DN_Team/removeMember/${random_id}/${member_id}`,
-      {
-        headers: {
-          Authorization: "Bearer " + auth,
-        },
-      }
-    )
-    .then((response) => {
-      res = response.data;
-      console.log(res);
+    swal({
+      title: "Are you sure?",
+      text: "Do you want to remove this member from your team?!",
+      type: "warning",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
     })
-    .catch((error) => {
-      console.error("Error:", error);
+    .then((willDelete) => {
+      if (willDelete) {
+        swal("Poof! The team member has been removed!", {
+          icon: "success",
+        });
+        axios
+        .patch(`${url}/DN_Team/removeMember/${random_id}/${member_id}`,
+        {
+        },
+        {
+          headers: {
+            Authorization: "Bearer " + auth,
+          },
+        }
+        )
+        .then((response) => {
+          res = response.data;
+          console.log(res);
+          window.location.assign("./My_teams.html");
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+      }
+      else{
+        swal("Your team is safe!!!");
+      }
     });
-  }
-  else{
-    swal("Your team is safe!!!");
-  }
-});
   })
 }

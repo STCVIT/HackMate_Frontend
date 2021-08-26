@@ -4,6 +4,12 @@ body{
     font-family: "Fira Code", monospace;
     color: #e7efef;
   }
+  .component{
+    padding-left:2%;
+  }
+  l{
+    
+  }
   #team_code{
     color: #e7efef;
     font-size:24px;

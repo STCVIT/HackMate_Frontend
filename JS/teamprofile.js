@@ -32,12 +32,17 @@ firebase.auth().onAuthStateChanged((user) => {
     for(let i=0;i<team.team.members.length;i++){
       console.log(i);
       if(team.pt_skills[i].participant._id == participant_id){
-        yourhtml += "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'><img id='dp' src='../Assets/Images/dp.svg'><p>"+team.pt_skills[i].participant.name+"<m>(You)</m><br><t>"+team.pt_skills[i].skills[0].skill+"</t></p></div></div><l id='leave' onclick='leave()'>LEAVE</l></div>";
-        console.log("bye",i);
+        yourhtml += "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'>";
+        if(team.pt_skills[i].participant.photo == "hey"){
+          console.log("X");
+          yourhtml += "<img id='dp'src='../Assets/Images/blank-profile.png'><p>"+team.pt_skills[i].participant.name+"<m>(You)</m><br><t>"+team.pt_skills[i].skills[0].skill+"</t></p></div></div><l id='leave' onclick='leave()'>LEAVE</l></div>";
+        }
+        else{
+          yourhtml += "<img id='dp'src='"+team.pt_skills[i].participant.photo+"'><p>"+team.pt_skills[i].participant.name+"<m>(You)</m><br><t>"+team.pt_skills[i].skills[0].skill+"</t></p></div></div><l id='leave' onclick='leave()'>LEAVE</l></div>";
+        }
       }
       else{
-        yourhtml += "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'><img id='dp' src='../Assets/Images/dp.svg'><p>"+team.pt_skills[i].participant.name+"<m>(Member)</m><br><t>"+team.pt_skills[i].skills[0].skill+"</t></p></div><l></l></div></div>";
-        console.log("hi",i);
+        yourhtml += "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'><img id='dp' src='"+team.pt_skills[i].participant.photo+"'><p>"+team.pt_skills[i].participant.name+"<m>(Member)</m><br><t>"+team.pt_skills[i].skills[0].skill+"</t></p></div><l></l></div></div>";
       }
     }
     body.innerHTML=yourhtml;

@@ -32,7 +32,7 @@ function events(event) {
       teams["final"][i]["team"].members.length +
      "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>"
      for(var j=0;j < teams["final"][i]["team"].members.length;j++){
-     yourHTML += "<li class='list-item'><img id='pp' src='../Assets/Images/Rectangle 155.svg'><p>"+
+     yourHTML += "<li class='list-item'><img id='pp' src='"+teams.final[i].pt_skill[j].participant.photo+"'><p>"+
      teams['final'][i]['pt_skill'][j]['participant'].name+
      "<br><t>"+
      teams["final"][i]["pt_skill"][j]["skills"][0]["skill"]+
@@ -50,7 +50,7 @@ function events(event) {
       teams["final"][i]["team"].members.length +
      "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>"
      for(var j=0;j < teams["final"][i]["team"].members.length;j++){
-     yourHTML += "<li class='list-item'><img id='pp' src='../Assets/Images/Rectangle 155.svg'><p>"+
+     yourHTML += "<li class='list-item'><img id='pp' src='"+teams.final[i].pt_skill[j].participant.photo+"'><p>"+
      teams['final'][i]['pt_skill'][j]['participant'].name+
      "<br><t>"
      if(teams["final"][i]["pt_skill"][j]["skills"].length==0){
@@ -199,7 +199,7 @@ function displayTeams() {
             teams["final"][i]["team"].members.length +
            "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>"
            for(var j=0;j < teams["final"][i]["team"].members.length;j++){
-           yourHTML += "<li class='list-item'><img id='pp' src='../Assets/Images/Rectangle 155.svg'><p>"+
+           yourHTML += "<li class='list-item'><img id='pp' src='"+teams.final[i].pt_skill[j].participant.photo+"'><p>"+
            teams['final'][i]['pt_skill'][j]['participant'].name+
            "<br><t>"+
            teams["final"][i]["pt_skill"][j]["skills"][0]["skill"]+
@@ -217,7 +217,7 @@ function displayTeams() {
             teams["final"][i]["team"].members.length +
            "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>"
            for(var j=0;j < teams["final"][i]["team"].members.length;j++){
-           yourHTML += "<li class='list-item'><img id='pp' src='../Assets/Images/Rectangle 155.svg'><p>"+
+           yourHTML += "<li class='list-item'><img id='pp' src='"+teams.final[i].pt_skill[j].participant.photo+"'><p>"+
            teams['final'][i]['pt_skill'][j]['participant'].name+
            "<br><t>"
            if(teams["final"][i]["pt_skill"][j]["skills"].length==0){
@@ -286,7 +286,7 @@ function nextPage() {
       teams["final"][i]["team"].members.length +
      "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>"
      for(var j=0;j < teams["final"][i]["team"].members.length;j++){
-     yourHTML += "<li class='list-item'><img id='pp' src='../Assets/Images/Rectangle 155.svg'><p>"+
+     yourHTML += "<li class='list-item'><img id='pp' src='"+teams.final[i].pt_skill[j].participant.photo+"'><p>"+
      teams['final'][i]['pt_skill'][j]['participant'].name+
      "<br><t>"+
      teams["final"][i]["pt_skill"][j]["skills"][0]["skill"]+
@@ -304,7 +304,7 @@ function nextPage() {
       teams["final"][i]["team"].members.length +
      "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>"
      for(var j=0;j < teams["final"][i]["team"].members.length;j++){
-     yourHTML += "<li class='list-item'><img id='pp' src='../Assets/Images/Rectangle 155.svg'><p>"+
+     yourHTML += "<li class='list-item'><img id='pp' src='"+teams.final[i].pt_skill[j].participant.photo+"'><p>"+
      teams['final'][i]['pt_skill'][j]['participant'].name+
      "<br><t>"
      if(teams["final"][i]["pt_skill"][j]["skills"].length==0){
@@ -361,7 +361,7 @@ function prevPage() {
       teams["final"][i]["team"].members.length +
      "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>"
      for(var j=0;j < teams["final"][i]["team"].members.length;j++){
-     yourHTML += "<li class='list-item'><img id='pp' src='../Assets/Images/Rectangle 155.svg'><p>"+
+     yourHTML += "<li class='list-item'><img id='pp' src='"+teams.final[i].pt_skill[j].participant.photo+"'><p>"+
      teams['final'][i]['pt_skill'][j]['participant'].name+
      "<br><t>"+
      teams["final"][i]["pt_skill"][j]["skills"][0]["skill"]+
@@ -378,7 +378,7 @@ function prevPage() {
       teams["final"][i]["team"].members.length +
      "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>"
      for(var j=0;j < teams["final"][i]["team"].members.length;j++){
-     yourHTML += "<li class='list-item'><img id='pp' src='../Assets/Images/Rectangle 155.svg'><p>"+
+     yourHTML += "<li class='list-item'><img id='pp' src='"+teams.final[i].pt_skill[j].participant.photo+"'><p>"+
      teams['final'][i]['pt_skill'][j]['participant'].name+
      "<br><t>"
      if(teams["final"][i]["pt_skill"][j]["skills"].length==0){

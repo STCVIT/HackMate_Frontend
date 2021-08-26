@@ -157,6 +157,11 @@ body{
     color:rgba(231, 239, 239, 0.6);
   }
 }
+#dp{
+  width:75px;
+  height:75px;
+  padding-right: 2%;
+}
 .maintext {
   padding-top:6%;
   padding-bottom:3%;

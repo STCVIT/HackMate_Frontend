@@ -33,16 +33,23 @@ firebase.auth().onAuthStateChanged((user) => {
       console.log(i);
       if(team.pt_skills[i].participant._id == participant_id){
         yourhtml += "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'>";
-        if(team.pt_skills[i].participant.photo == "hey"){
-          console.log("X");
-          yourhtml += "<img id='dp'src='../Assets/Images/blank-profile.png'><p>"+team.pt_skills[i].participant.name+"<m>(You)</m><br><t>"+team.pt_skills[i].skills[0].skill+"</t></p></div></div><l id='leave' onclick='leave()'>LEAVE</l></div>";
+        if (team.pt_skills[i].participant.photo == "hey") {
+          yourHTML += "<img id='dp' src='../Assets/Images/blank-profile.png'>"
         }
-        else{
-          yourhtml += "<img id='dp'src='"+team.pt_skills[i].participant.photo+"'><p>"+team.pt_skills[i].participant.name+"<m>(You)</m><br><t>"+team.pt_skills[i].skills[0].skill+"</t></p></div></div><l id='leave' onclick='leave()'>LEAVE</l></div>";
+        else {
+          yourHTML += "<img id='dp' src='" + team.pt_skills[i].participant.photo + "'>"
         }
+        yourHTML += "<p>"+team.pt_skills[i].participant.name+"<m>(You)</m><br><t>"+team.pt_skills[i].skills[0].skill+"</t></p></div></div><l id='leave' onclick='leave()'>LEAVE</l></div>";
       }
       else{
-        yourhtml += "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'><img id='dp' src='"+team.pt_skills[i].participant.photo+"'><p>"+team.pt_skills[i].participant.name+"<m>(Member)</m><br><t>"+team.pt_skills[i].skills[0].skill+"</t></p></div><l></l></div></div>";
+        yourhtml += "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'>"
+        if (team.pt_skills[i].participant.photo == "hey") {
+          yourHTML += "<img id='dp' src='../Assets/Images/blank-profile.png'>"
+        }
+        else {
+          yourHTML += "<img id='dp' src='" + team.pt_skills[i].participant.photo + "'>"
+        }
+        yourHTML += "<p>"+team.pt_skills[i].participant.name+"<m>(Member)</m><br><t>"+team.pt_skills[i].skills[0].skill+"</t></p></div><l></l></div></div>";
       }
     }
     body.innerHTML=yourhtml;

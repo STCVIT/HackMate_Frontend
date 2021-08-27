@@ -2,6 +2,11 @@
   color: #e7efef;
   font-family: "Fira Code", monospace;
 }
+#add{
+  position:relative;
+  top:-30px;
+  left:70%;
+}
 .mainsection{
   background-color: #23303d;
 }

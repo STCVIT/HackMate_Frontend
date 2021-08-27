@@ -20,7 +20,12 @@ $(document).ready(function () {
    .then((response) => {
        user = response.data;
        console.log(user);
+       if(user.participant.photo == "hey"){
+        document.querySelector(".photo").setAttribute("src","../Assets/Images/blank-profile.png");
+       }
+       else{
        document.querySelector(".photo").setAttribute("src", user.participant.photo);
+       }
        document.querySelector(".caption h2").innerHTML = toTitleCase(user.participant.name);
        document.querySelector("#name").innerHTML = user.participant.name;
        document.querySelector("#username").innerHTML = user.participant.username;

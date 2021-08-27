@@ -30,10 +30,24 @@ console.log(random_id);
     yourhtml = "";
     for(let i=0;i<team.team.members.length;i++){
       if(team.pt_skills[i].participant._id == team.team.admin_id){
-        yourhtml += "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'><img id='dp' src='"+team.pt_skills[i].participant.photo+"'><p>"+team.pt_skills[i].participant.name+"<m>(Leader)</m><br><t>"+team.pt_skills[i].skills[i].skill+"</t></p></div></div><l id='leave'>YOU</l></div>"
+        yourhtml += "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'>"
+        if (team.pt_skills[i].participant.photo == "hey") {
+          yourHTML += "<img id='dp' src='../Assets/Images/blank-profile.png'>"
+        }
+        else {
+          yourHTML += "<img id='dp' src='" + team.pt_skills[i].participant.photo + "'>"
+        }
+        yourHTML += "<p>"+team.pt_skills[i].participant.name+"<m>(Leader)</m><br><t>"+team.pt_skills[i].skills[i].skill+"</t></p></div></div><l id='leave'>YOU</l></div>"
       }
       else{
-        yourhtml += "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'><img id='dp' src='"+team.pt_skills[i].participant.photo+"'><p>"+team.pt_skills[i].participant.name+"<m>(Member)</m><br><t>"+team.pt_skills[i].skills[i].skill+"</t></p></div></div><l id='member' onclick = 'removemem()'>REMOVE<identity id='member_id' style='display:none'>"+team.pt_skills[i].participant._id+"</identity></l></div>"
+        yourhtml += "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'>"
+        if (team.pt_skills[i].participant.photo == "hey") {
+          yourHTML += "<img id='dp' src='../Assets/Images/blank-profile.png'>"
+        }
+        else {
+          yourHTML += "<img id='dp' src='" + team.pt_skills[i].participant.photo + "'>"
+        }
+        yourHTML += "<p>"+team.pt_skills[i].participant.name+"<m>(Member)</m><br><t>"+team.pt_skills[i].skills[i].skill+"</t></p></div></div><l id='member' onclick = 'removemem()'>REMOVE<identity id='member_id' style='display:none'>"+team.pt_skills[i].participant._id+"</identity></l></div>"
       }
       body.innerHTML=yourhtml; 
     }

@@ -18,7 +18,12 @@ firebase.auth().onAuthStateChanged((user) => {
             })
             .then((response) => {
                 user = response.data;
+                if(user.photo == "hey"){
+                    document.querySelector(".photo").setAttribute("src", "../Assets/Images/blank-profile.png");
+                }
+                else{
                 document.querySelector(".photo").setAttribute("src", user.photo);
+                }
                 document.par_form.name.value = user.name;
                 document.par_form.username.value = user.username;
                 document.querySelector("#email").innerHTML = user.email;

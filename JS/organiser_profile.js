@@ -14,41 +14,41 @@ form.addEventListener('submit', (e) => {
     let res = checkInputs(username, phone_num, college);
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
-          user.getIdToken().then(function(idToken){
-            console.log(idToken)
-            auth = idToken
-    if (res == 3) {
-        fetch(`${url}/organiser/createProfile`, {
+            user.getIdToken().then(function (idToken) {
+                console.log(idToken)
+                auth = idToken
+                if (res == 3) {
+                    fetch(`${url}/organiser/createProfile`, {
 
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json; charset=utf-8",
-                Authorization: "Bearer " + auth,
-            },
-            body: JSON.stringify({
-                name: username.value,
-                college: college.value,
-                phone: phone_num.value,
-                website: website.value,
-                logo: logo
-            }),
-        })
-            .then((response) => response.text())
-            .then((text) => {
-                console.log("Success:", text);
-                window.location.assign("./orghack.html");
-                swal("SUCCESS!!", "Your profile has been created successfully", "success");
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json; charset=utf-8",
+                            Authorization: "Bearer " + auth,
+                        },
+                        body: JSON.stringify({
+                            name: username.value,
+                            college: college.value,
+                            phone: phone_num.value,
+                            website: website.value,
+                            logo: logo
+                        }),
+                    })
+                        .then((response) => response.text())
+                        .then((text) => {
+                            console.log("Success:", text);
+                            window.location.assign("./orghack.html");
+                            swal("SUCCESS!!", "Your profile has been created successfully", "success");
+                        })
+                        .catch((error) => {
+                            console.log("Error:", error);
+                        });
+                }
             })
-            .catch((error) => {
-                console.log("Error:", error);
-            });
-    }
-})
-} else {
-  // User is signed out
-  console.log("I'm signed out!")
-}
-});
+        } else {
+            // User is signed out
+            console.log("I'm signed out!")
+        }
+    });
 });
 function checkInputs(username, phone_num, college) {
     let flag = 0;

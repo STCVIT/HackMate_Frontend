@@ -3,7 +3,6 @@ $(document).ready(function () {
 });
 
 
-const project_name = () =>
-{
+const project_name = () => {
   localStorage.setItem("project_name", document.myform.projectname.value);
-} 
+}

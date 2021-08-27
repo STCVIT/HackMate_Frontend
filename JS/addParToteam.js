@@ -243,7 +243,7 @@ function check() {
     console.log(this);
     var participant_id = this.querySelector("#participant-id").textContent;
     console.log(participant_id);
-    window.location.assign('./MyProfile_otherView.html?'+ random_id);
+    window.location.assign('./MyProfile_otherView.html?' + random_id);
     var part123 = participant_id;
     localStorage.setItem("participant", part123);
   }
@@ -1180,43 +1180,43 @@ function invite() {
 function inviteme() {
   // id.innerHTML = "Ooops!";
   var nk = 0;
-    const cards = document.querySelectorAll("#good");
-    cards.forEach(card => card.addEventListener('click', look));
-    console.log(cards);
-    console.log(nk);
-    function look() {
-      console.log(this);
-      nk = nk + 1; 
-      if(nk == 1){     
+  const cards = document.querySelectorAll("#good");
+  cards.forEach(card => card.addEventListener('click', look));
+  console.log(cards);
+  console.log(nk);
+  function look() {
+    console.log(this);
+    nk = nk + 1;
+    if (nk == 1) {
       var participant_id = this.querySelector("#participant-id").textContent;
       console.log(participant_id);
       firebase.auth().currentUser.getIdToken().then((id) => {
         auth = id;
-      axios
-        .post(
-          `${url}/invites/invite/${window.location.search.split("?")[1]}/${participant_id}`,
-          {
-            code: invite,
-          },
-          {
-            headers: {
-              Authorization: "Bearer " + auth,
+        axios
+          .post(
+            `${url}/invites/invite/${window.location.search.split("?")[1]}/${participant_id}`,
+            {
+              code: invite,
             },
-          }
-        )
-        .then((response) => {
-          accepted = response.data;
-          console.log(accepted);
+            {
+              headers: {
+                Authorization: "Bearer " + auth,
+              },
+            }
+          )
+          .then((response) => {
+            accepted = response.data;
+            console.log(accepted);
             swal("SUCCESS!!", "Your invite has been submitted successfully", "success");
-        })
-        .catch(e => {
-          console.log(e);
-          console.log(e.response.status);
-          // if (e.response.status == 400) {
-          //   swal("SUCCESS!!", "Your invite has been submitted successfully", "success");
-          // }
-        });
+          })
+          .catch(e => {
+            console.log(e);
+            console.log(e.response.status);
+            // if (e.response.status == 400) {
+            //   swal("SUCCESS!!", "Your invite has been submitted successfully", "success");
+            // }
+          });
       })
     }
-    }
+  }
 }

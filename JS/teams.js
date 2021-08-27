@@ -221,16 +221,16 @@ function displayTeams() {
                 "</hackathon></p><div class='card-details'><p><f>" +
                 teams["final"][i]["team"].members.length +
                 "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>"
-                for (var j = 0; j < teams["final"][i]["team"].members.length; j++) {
-                  yourHTML += "<li class='list-item'>";
-                  if (teams.final[i].pt_skill[j].participant.photo == "hey") {
-                    yourHTML += "<img id='pp' src='../Assets/Images/blank-profile.png'>"
-                  }
-                  else {
-                    yourHTML += "<img id='pp' src='" + teams.final[i].pt_skill[j].participant.photo + "'>"
-                  }
-                  yourHTML += "<p>" + teams['final'][i]['pt_skill'][j]['participant'].name + "<br><t>" + teams["final"][i]["pt_skill"][j]["skills"][0]["skill"] + "</t></p></li>"
+              for (var j = 0; j < teams["final"][i]["team"].members.length; j++) {
+                yourHTML += "<li class='list-item'>";
+                if (teams.final[i].pt_skill[j].participant.photo == "hey") {
+                  yourHTML += "<img id='pp' src='../Assets/Images/blank-profile.png'>"
                 }
+                else {
+                  yourHTML += "<img id='pp' src='" + teams.final[i].pt_skill[j].participant.photo + "'>"
+                }
+                yourHTML += "<p>" + teams['final'][i]['pt_skill'][j]['participant'].name + "<br><t>" + teams["final"][i]["pt_skill"][j]["skills"][0]["skill"] + "</t></p></li>"
+              }
               yourHTML += "</ul></div><p id='admin_id'>" + teams['final'][i].team.admin_id + "</p><p id='team_id'>" + teams["final"][i]["team"]._id + "<p><p id='hack_id'>" + teams.final[i].team.hack_id + "</p></div></div></div>"
             }
 
@@ -289,16 +289,16 @@ function nextPage() {
             "</hackathon></p><div class='card-details'><p><f>" +
             teams["final"][i]["team"].members.length +
             "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>"
-            for (var j = 0; j < teams["final"][i]["team"].members.length; j++) {
-              yourHTML += "<li class='list-item'>";
-              if (teams.final[i].pt_skill[j].participant.photo == "hey") {
-                yourHTML += "<img id='pp' src='../Assets/Images/blank-profile.png'>"
-              }
-              else {
-                yourHTML += "<img id='pp' src='" + teams.final[i].pt_skill[j].participant.photo + "'>"
-              }
-              yourHTML += "<p>" + teams['final'][i]['pt_skill'][j]['participant'].name + "<br><t>" + teams["final"][i]["pt_skill"][j]["skills"][0]["skill"] + "</t></p></li>"
+          for (var j = 0; j < teams["final"][i]["team"].members.length; j++) {
+            yourHTML += "<li class='list-item'>";
+            if (teams.final[i].pt_skill[j].participant.photo == "hey") {
+              yourHTML += "<img id='pp' src='../Assets/Images/blank-profile.png'>"
             }
+            else {
+              yourHTML += "<img id='pp' src='" + teams.final[i].pt_skill[j].participant.photo + "'>"
+            }
+            yourHTML += "<p>" + teams['final'][i]['pt_skill'][j]['participant'].name + "<br><t>" + teams["final"][i]["pt_skill"][j]["skills"][0]["skill"] + "</t></p></li>"
+          }
           yourHTML += "</ul></div><p id='admin_id'>" + teams['final'][i].team.admin_id + "</p><p id='team_id'>" + teams["final"][i]["team"]._id + "<p><p id='hack_id'>" + teams.final[i].team.hack_id + "</p></div></div></div>"
 
           i++;
@@ -310,25 +310,25 @@ function nextPage() {
               "</hackathon></p><div class='card-details'><p><f>" +
               teams["final"][i]["team"].members.length +
               "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>"
-              for (var j = 0; j < teams["final"][i]["team"].members.length; j++) {
-                yourHTML += "<li class='list-item'>";
-                if (teams.final[i].pt_skill[j].participant.photo == "hey") {
-                  yourHTML += "<img id='pp' src='../Assets/Images/blank-profile.png'>"
-                }
-                else {
-                  yourHTML += "<img id='pp' src='" + teams.final[i].pt_skill[j].participant.photo + "'>"
-                }
-                yourHTML += "<p>" + teams['final'][i]['pt_skill'][j]['participant'].name + "<br><t>" + teams["final"][i]["pt_skill"][j]["skills"][0]["skill"] + "</t></p></li>"
+            for (var j = 0; j < teams["final"][i]["team"].members.length; j++) {
+              yourHTML += "<li class='list-item'>";
+              if (teams.final[i].pt_skill[j].participant.photo == "hey") {
+                yourHTML += "<img id='pp' src='../Assets/Images/blank-profile.png'>"
               }
+              else {
+                yourHTML += "<img id='pp' src='" + teams.final[i].pt_skill[j].participant.photo + "'>"
+              }
+              yourHTML += "<p>" + teams['final'][i]['pt_skill'][j]['participant'].name + "<br><t>" + teams["final"][i]["pt_skill"][j]["skills"][0]["skill"] + "</t></p></li>"
             }
-            yourHTML += "</ul></div><p id='admin_id'>" + teams['final'][i].team.admin_id + "</p><p id='team_id'>" + teams["final"][i]["team"]._id + "<p><p id='hack_id'>" + teams.final[i].team.hack_id + "</p></div></div></div>"
           }
+          yourHTML += "</ul></div><p id='admin_id'>" + teams['final'][i].team.admin_id + "</p><p id='team_id'>" + teams["final"][i]["team"]._id + "<p><p id='hack_id'>" + teams.final[i].team.hack_id + "</p></div></div></div>"
+        }
 
-          i++;
+        i++;
 
-          body.innerHTML += yourHTML;
-          yourHTML = "";
-        })
+        body.innerHTML += yourHTML;
+        yourHTML = "";
+      })
       .catch((error) => {
         console.error("Error:", error);
       });
@@ -366,16 +366,16 @@ function prevPage() {
             "</hackathon></p><div class='card-details'><p><f>" +
             teams["final"][i]["team"].members.length +
             "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>"
-            for (var j = 0; j < teams["final"][i]["team"].members.length; j++) {
-              yourHTML += "<li class='list-item'>";
-              if (teams.final[i].pt_skill[j].participant.photo == "hey") {
-                yourHTML += "<img id='pp' src='../Assets/Images/blank-profile.png'>"
-              }
-              else {
-                yourHTML += "<img id='pp' src='" + teams.final[i].pt_skill[j].participant.photo + "'>"
-              }
-              yourHTML += "<p>" + teams['final'][i]['pt_skill'][j]['participant'].name + "<br><t>" + teams["final"][i]["pt_skill"][j]["skills"][0]["skill"] + "</t></p></li>"
+          for (var j = 0; j < teams["final"][i]["team"].members.length; j++) {
+            yourHTML += "<li class='list-item'>";
+            if (teams.final[i].pt_skill[j].participant.photo == "hey") {
+              yourHTML += "<img id='pp' src='../Assets/Images/blank-profile.png'>"
             }
+            else {
+              yourHTML += "<img id='pp' src='" + teams.final[i].pt_skill[j].participant.photo + "'>"
+            }
+            yourHTML += "<p>" + teams['final'][i]['pt_skill'][j]['participant'].name + "<br><t>" + teams["final"][i]["pt_skill"][j]["skills"][0]["skill"] + "</t></p></li>"
+          }
           yourHTML += "</ul></div><p id='admin_id'>" + teams['final'][i].team.admin_id + "</p><p id='team_id'>" + teams["final"][i]["team"]._id + "<p><p id='hack_id'>" + teams.final[i].team.hack_id + "</p></div></div></div>"
           i++;
 
@@ -386,16 +386,16 @@ function prevPage() {
             "</hackathon></p><div class='card-details'><p><f>" +
             teams["final"][i]["team"].members.length +
             "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>"
-            for (var j = 0; j < teams["final"][i]["team"].members.length; j++) {
-              yourHTML += "<li class='list-item'>";
-              if (teams.final[i].pt_skill[j].participant.photo == "hey") {
-                yourHTML += "<img id='pp' src='../Assets/Images/blank-profile.png'>"
-              }
-              else {
-                yourHTML += "<img id='pp' src='" + teams.final[i].pt_skill[j].participant.photo + "'>"
-              }
-              yourHTML += "<p>" + teams['final'][i]['pt_skill'][j]['participant'].name + "<br><t>" + teams["final"][i]["pt_skill"][j]["skills"][0]["skill"] + "</t></p></li>"
+          for (var j = 0; j < teams["final"][i]["team"].members.length; j++) {
+            yourHTML += "<li class='list-item'>";
+            if (teams.final[i].pt_skill[j].participant.photo == "hey") {
+              yourHTML += "<img id='pp' src='../Assets/Images/blank-profile.png'>"
             }
+            else {
+              yourHTML += "<img id='pp' src='" + teams.final[i].pt_skill[j].participant.photo + "'>"
+            }
+            yourHTML += "<p>" + teams['final'][i]['pt_skill'][j]['participant'].name + "<br><t>" + teams["final"][i]["pt_skill"][j]["skills"][0]["skill"] + "</t></p></li>"
+          }
           yourHTML += "</ul></div><p id='admin_id'>" + teams['final'][i].team.admin_id + "</p><p id='team_id'>" + teams["final"][i]["team"]._id + "<p><p id='hack_id'>" + teams.final[i].team.hack_id + "</p></div></div></div>"
 
           i++;

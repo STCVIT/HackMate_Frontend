@@ -1,106 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="../CSS/profile.css">
-    <link rel="stylesheet" href="../Assets/Header/headerl.css">
-    <link rel="stylesheet" href="../Assets/Footer/footer.css">
-    <title>Hackmate</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="../CSS/profile.css">
+  <link rel="stylesheet" href="../Assets/Header/headerl.css">
+  <link rel="stylesheet" href="../Assets/Footer/footer.css">
+  <title>Hackmate</title>
 </head>
+
 <body>
-    <div id="nav"></div>
-    <div class="mainsection">
+  <div id="nav"></div>
+  <div class="mainsection">
     <div class="container">
-        <div class="row">
-            <div class="caption">
-                <h2>Victor Mayer.</h2>
-            </div>
-            <div class="topmost_buttons">
-                <button id="active" class="button">About</button>
-                <button type="inactive" class="button1" onclick="location.href='./showProject.html'">Projects</button>
-            </div>
+      <div class="row">
+        <div class="caption">
+          <h2>Victor Mayer.</h2>
         </div>
-        <div class="row">
-            <div  class="col-lg-6 col-md-6 col-sm-12">
-                <div class="m d-flex">
-                  <div class="logo inputdeets">
-                    <img class="photo" alt=""> <label for="image_uploads">
-                    </label><input style="height: 0px; width: 0px;" type="file" id="image_uploads" name="image_uploads" accept=".jpg, .jpeg, .png" required>
-                </div>
-                </div>
+        <div class="topmost_buttons">
+          <button id="active" class="button">About</button>
+          <button type="inactive" class="button1" onclick="location.href='./showProject.html'">Projects</button>
         </div>
-        <div  class="col-lg-6 col-md-6 col-sm-12" id="save_button">
-            <div class="d-flex justify-content-center">
+      </div>
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="m d-flex">
+            <div class="logo inputdeets">
+              <img class="photo" alt=""> <label for="image_uploads">
+              </label><input style="height: 0px; width: 0px;" type="file" id="image_uploads" name="image_uploads"
+                accept=".jpg, .jpeg, .png" required>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12" id="save_button">
+          <div class="d-flex justify-content-center">
             <button id="square_inactive" class="square_inactive" onclick="invite()"> Invite </button>
-            </div>
+          </div>
         </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-12">
-                <form id="otherview_form" method="post">
-                    <div class="mb-3">
-                        <label for="name" class="form-label">NAME</label>
-                        <div type="text" class="form-control" autocomplete="off" id="name" placeholder="name"></div>
-                        <small>Error Message</small>
-                      </div>
-                      <div class="mb-3">
-                        <label for="username" class="form-label">USERNAME</label>
-                        <div type="text" class="form-control" autocomplete="off" id="username" placeholder="username"></div>
-                        <small>Error Message</small>
-                      </div>
-                      <div class="mb-3">
-                        <label for="email" class="form-label">EMAIL</label>
-                        <div type="email" class="form-control" autocomplete="off"  id="email" placeholder="Email"></div>
-                        <small>Error Message</small>
-                      </div>
-                      <div class="mb-3">
-                        <label for="college" class="form-label">COLLEGE/UNIVERSITY</label>
-                        <div type="text" class="form-control" autocomplete="off" id="college" placeholder="College/University"></div>
-                        <small>Error Message</small>
-                      </div>
-                      <div class="mb-3">
-                        <label for="github" class="form-label">GITHUB LINK</label>
-                        <div type="link" class="form-control" autocomplete="off" id="git" placeholder="GITHUB link"></div>
-                        <small>Error Message</small>
-                      </div>
-                      <div class="mb-3">
-                        <label for="linkedln" class="form-label">LINKEDIN</label>
-                        <div type="text" class="form-control" autocomplete="off" id="linkedln" placeholder="Linkedln"></div>
-                        <small>Error Message</small>
-                      </div>
-                      <div class="mb-3">
-                        <label for="personal_website" class="form-label">PERSONAL WEBSITE</label>
-                        <div type="text" class="form-control" autocomplete="off" id="personal_website" placeholder="Personal Website"></div>
-                        <small>Error Message</small>
-                      </div>
-                      <div class="mb-3">
-                        <label for="year" class="form-label">YEAR OF GRADUATION</label>
-                        <div type="text" class="form-control" autocomplete="off" id="year" placeholder="Year of Graduation"></div>
-                        <small>Error Message</small>
-                      </div>
-                      <div class="mb-3">
-                        <label for="review" class="form-label">ADD A REVIEW</label>
-                        <textarea class="form-control" rows="6" autocomplete="off" spellcheck="false" id="review" placeholder="Review"></textarea>
-                        <small>Error Message</small>
-                      </div>
-                </form>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <form id="otherview_form" method="post">
+            <div class="mb-3">
+              <label for="name" class="form-label">NAME</label>
+              <div type="text" class="form-control" autocomplete="off" id="name" placeholder="name"></div>
+              <small>Error Message</small>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-12">
-                <form id="form">
-                    <div class="mb-3">
-                        <label for="bio" class="form-label">BIO</label>
-                        <textarea class="form-control"rows="8" autocomplete="off" spellcheck="false" id="bio" placeholder="Bio"></textarea>
-                        <small>Error Message</small>
-                      </div>
-                </form>
-                <div class="d-flex justify-content-center">
-                <div class="card" style="width: 21rem;">
-                    <div class="card-body" id="card-body">
-                      <!--<h5 class="card-title">Skills</h5>
+            <div class="mb-3">
+              <label for="username" class="form-label">USERNAME</label>
+              <div type="text" class="form-control" autocomplete="off" id="username" placeholder="username"></div>
+              <small>Error Message</small>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">EMAIL</label>
+              <div type="email" class="form-control" autocomplete="off" id="email" placeholder="Email"></div>
+              <small>Error Message</small>
+            </div>
+            <div class="mb-3">
+              <label for="college" class="form-label">COLLEGE/UNIVERSITY</label>
+              <div type="text" class="form-control" autocomplete="off" id="college" placeholder="College/University">
+              </div>
+              <small>Error Message</small>
+            </div>
+            <div class="mb-3">
+              <label for="github" class="form-label">GITHUB LINK</label>
+              <div type="link" class="form-control" autocomplete="off" id="git" placeholder="GITHUB link"></div>
+              <small>Error Message</small>
+            </div>
+            <div class="mb-3">
+              <label for="linkedln" class="form-label">LINKEDIN</label>
+              <div type="text" class="form-control" autocomplete="off" id="linkedln" placeholder="Linkedln"></div>
+              <small>Error Message</small>
+            </div>
+            <div class="mb-3">
+              <label for="personal_website" class="form-label">PERSONAL WEBSITE</label>
+              <div type="text" class="form-control" autocomplete="off" id="personal_website"
+                placeholder="Personal Website"></div>
+              <small>Error Message</small>
+            </div>
+            <div class="mb-3">
+              <label for="year" class="form-label">YEAR OF GRADUATION</label>
+              <div type="text" class="form-control" autocomplete="off" id="year" placeholder="Year of Graduation"></div>
+              <small>Error Message</small>
+            </div>
+            <div class="mb-3">
+              <label for="review" class="form-label">ADD A REVIEW</label>
+              <textarea class="form-control" rows="6" autocomplete="off" spellcheck="false" id="review"
+                placeholder="Review"></textarea>
+              <small>Error Message</small>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <form id="form">
+            <div class="mb-3">
+              <label for="bio" class="form-label">BIO</label>
+              <textarea class="form-control" rows="8" autocomplete="off" spellcheck="false" id="bio"
+                placeholder="Bio"></textarea>
+              <small>Error Message</small>
+            </div>
+          </form>
+          <div class="d-flex justify-content-center">
+            <div class="card" style="width: 21rem;">
+              <div class="card-body" id="card-body">
+                <!--<h5 class="card-title">Skills</h5>
                         <p class="fill">
                           <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
                           <label class="check-label" for="flexCheckDefault">Frontend Development</label>
@@ -111,22 +119,22 @@
                         <label class="check-label" for="flexCheckDefault">UI/UX Design</label>
                       </p>
                       </div>-->
-                </div>
-                </div>
+              </div>
             </div>
+          </div>
         </div>
         <div class="row">
-            <div class="bottommost-button">
+          <div class="bottommost-button">
             <div class=" x col-lg-6 col-md-6 col-sm-12">
-                <div class="d-flex justify-content-center" id="bottom_square" style="padding-top:5%; ">
-                    <button id="square_active" class="square_inactive" onclick="add_review()">Submit</button>
-                </div>
+              <div class="d-flex justify-content-center" id="bottom_square" style="padding-top:5%; ">
+                <button id="square_active" class="square_inactive" onclick="add_review()">Submit</button>
+              </div>
             </div>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-<div id="foobottom"></div>
+    <div id="foobottom"></div>
 </body>
 <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
@@ -134,10 +142,11 @@
 <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-storage.js"></script>
 <script type="text/javascript" src="../JS/config.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="../JS/url.js"></script>
 <script src="../JS/parprofile_othersview.js"></script>
-</html>
 
+</html>

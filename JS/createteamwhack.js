@@ -1219,9 +1219,9 @@ function inviteme() {
         .catch(e => {
           console.log(e);
           console.log(e.response.status);
-          // if (e.response.status == 400) {
-          //   swal("SUCCESS!!", "Your invite has been submitted successfully", "success");
-          // }
+          if (e.response.status == 400) {
+            swal("WARNING!!", "Invite has already been sent", "warning");
+          }
         });
       })
     }

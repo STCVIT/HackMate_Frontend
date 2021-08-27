@@ -224,9 +224,23 @@ html,body{
     height: 200px;
 }
 .Image1{
+	height: 50px;
+	width: 50px;
 	margin-bottom: 20px;
 }
 .Image2{
+	height: 50px;
+	width: 50px;
+	margin-bottom: 20px;
+}
+.Image3{
+	height: 50px;
+	width: 50px;
+	margin-bottom: 20px;
+}
+.Image4{
+	height: 50px;
+	width: 50px;
 	margin-bottom: 20px;
 }
 .text16{

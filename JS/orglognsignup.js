@@ -102,6 +102,13 @@ function signin() {
             window.location.assign("./organiser_profile.html");
             // location.href = ""; 
           }
+          else if (response.status == 401) {
+            window.location.assign("../index.html");
+            alert("You are a participant and not a organiser!!");
+          }
+          else if (response.status == 418) {
+            alert("Set Claim not happened right now !!");
+          }
           else if (response.status == 200) {
             localStorage.setItem("auth", idToken);
             window.location.assign("./addhack.html");
@@ -116,4 +123,19 @@ function signin() {
     .catch((error) => {
       console.log(error)
     });
+}
+
+function forgot(){
+  const email=document.getElementById('login_email').value;
+  firebase.auth().sendPasswordResetEmail(email)
+  .then(() => {
+    // Password reset email sent!
+    // ..
+    alert("Password mail set was sent!!");
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ..
+  });
 }

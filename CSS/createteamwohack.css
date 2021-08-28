@@ -233,6 +233,8 @@ a, a:hover, a:focus, a:active {
 	margin-bottom: 20px;
 }
 .Image1{
+	height: 100px;
+	width: 90px;
 	margin-top: 10px;
 }
 .text13{
@@ -245,6 +247,7 @@ a, a:hover, a:focus, a:active {
 	color: #ffffff;
 	margin-top: 30px;
 	margin-bottom: 0px;
+	cursor: pointer;
 }
 .text14{
 	font-family: Nunito Sans;

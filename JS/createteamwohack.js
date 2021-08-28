@@ -95,7 +95,7 @@ app.addEventListener('click', function () {
             // localStorage.setItem("participant", part123);
             for (let i = 0; i < hacks.final.length; i++) {
               document.querySelector(".persons").innerHTML +=
-                "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>App Dev</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" + hacks.final[i].pt._id + "</p></div></div>";
+                "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='"+hacks.final[i].pt.photo+"' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>App Dev</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" + hacks.final[i].pt._id + "</p></div></div>";
             }
           }
           catch (err) {
@@ -213,7 +213,7 @@ fweb.addEventListener('click', function () {
             // localStorage.setItem("participant", part123);
             for (let i = 0; i < hacks.final.length; i++) {
               document.querySelector(".persons").innerHTML +=
-                "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>Frontend</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><div class='row'><p id='participant-id' style='display:none;'>" + hacks.final[i].pt._id + "</p></div></div></div>";
+                "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='"+hacks.final[i].pt.photo+"' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>Frontend</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><div class='row'><p id='participant-id' style='display:none;'>" + hacks.final[i].pt._id + "</p></div></div></div>";
             }
           }
           catch (err) {
@@ -335,7 +335,7 @@ bweb.addEventListener('click', function () {
             // localStorage.setItem("participant", part123);
             for (let i = 0; i < hacks.final.length; i++) {
               document.querySelector(".persons").innerHTML +=
-                "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>Backend</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" + hacks.final[i].pt._id + "</p></div></div>";
+                "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='"+hacks.final[i].pt.photo+"' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>Backend</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" + hacks.final[i].pt._id + "</p></div></div>";
             }
           }
           catch (err) {
@@ -441,7 +441,7 @@ ml.addEventListener('click', function () {
             // localStorage.setItem("participant", part123);
             for (let i = 0; i < hacks.final.length; i++) {
               document.querySelector(".persons").innerHTML +=
-                "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>Machine Learning</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" + hacks.final[i].pt._id + "</p></div></div>";
+                "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='"+hacks.final[i].pt.photo+"' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>Machine Learning</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" + hacks.final[i].pt._id + "</p></div></div>";
             }
           }
           catch (err) {
@@ -547,7 +547,7 @@ design.addEventListener('click', function () {
             // localStorage.setItem("participant", part123);
             for (let i = 0; i < hacks.final.length; i++) {
               document.querySelector(".persons").innerHTML +=
-                "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>UI/UX</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" + hacks.final[i].pt._id + "</p></div></div>";
+                "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='"+hacks.final[i].pt.photo+"' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>UI/UX</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" + hacks.final[i].pt._id + "</p></div></div>";
             }
           }
           catch (err) {
@@ -653,7 +653,7 @@ mgmt.addEventListener('click', function () {
             // localStorage.setItem("participant", part123);
             for (let i = 0; i < hacks.final.length; i++) {
               document.querySelector(".persons").innerHTML +=
-                "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>Management</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" + hacks.final[i].pt._id + "</p></div></div>";
+                "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='"+hacks.final[i].pt.photo+"' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>Management</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" + hacks.final[i].pt._id + "</p></div></div>";
             }
           }
           catch (err) {
@@ -759,7 +759,7 @@ block.addEventListener('click', function () {
             // localStorage.setItem("participant", part123);
             for (let i = 0; i < hacks.final.length; i++) {
               document.querySelector(".persons").innerHTML +=
-                "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>Blockchain</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" + hacks.final[i].pt._id + "</p></div></div>";
+                "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='"+hacks.final[i].pt.photo+"' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>Blockchain</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" + hacks.final[i].pt._id + "</p></div></div>";
             }
           }
           catch (err) {
@@ -865,7 +865,7 @@ cyber.addEventListener('click', function () {
             // localStorage.setItem("participant", part123);
             for (let i = 0; i < hacks.final.length; i++) {
               document.querySelector(".persons").innerHTML +=
-                "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>Cyber Security</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" + hacks.final[i].pt._id + "</p></div></div>";
+                "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='"+hacks.final[i].pt.photo+"' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" + hacks.final[i].pt.name + "</a></h4><h5 class='text14'>Cyber Security</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" + hacks.final[i].pt._id + "</p></div></div>";
             }
           }
           catch (err) {
@@ -1093,42 +1093,42 @@ document.getElementById("participant_name").addEventListener("keyup", function (
           if (teams.final[0].skills.length == 1) {
             document.querySelector(".persons").innerHTML = "";
             document.querySelector(".persons").innerHTML +=
-              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + teams.final[0].pt.name + "</a></h4><h5 class='text14'>" + teams.final[0].skills[0].skill + "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='"+teams.final[0].pt.photo+"' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + teams.final[0].pt.name + "</a></h4><h5 class='text14'>" + teams.final[0].skills[0].skill + "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
           }
           if (teams.final[0].skills.length == 2) {
             document.querySelector(".persons").innerHTML = "";
             document.querySelector(".persons").innerHTML +=
-              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + teams.final[0].pt.name + "</a></h4><h5 class='text14'>" + teams.final[0].skills[0].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[1].skill + "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='"+teams.final[0].pt.photo+"' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + teams.final[0].pt.name + "</a></h4><h5 class='text14'>" + teams.final[0].skills[0].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[1].skill + "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
           }
           if (teams.final[0].skills.length == 3) {
             document.querySelector(".persons").innerHTML = "";
             document.querySelector(".persons").innerHTML +=
-              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + teams.final[0].pt.name + "</a></h4><h5 class='text14'>" + teams.final[0].skills[0].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[1].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[2].skill + "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='"+teams.final[0].pt.photo+"' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + teams.final[0].pt.name + "</a></h4><h5 class='text14'>" + teams.final[0].skills[0].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[1].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[2].skill + "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
           }
           if (teams.final[0].skills.length == 4) {
             document.querySelector(".persons").innerHTML = "";
             document.querySelector(".persons").innerHTML +=
-              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + teams.final[0].pt.name + "</a></h4><h5 class='text14'>" + teams.final[0].skills[0].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[1].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[2].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[3].skill + "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='"+teams.final[0].pt.photo+"' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + teams.final[0].pt.name + "</a></h4><h5 class='text14'>" + teams.final[0].skills[0].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[1].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[2].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[3].skill + "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
           }
           if (teams.final[0].skills.length == 5) {
             document.querySelector(".persons").innerHTML = "";
             document.querySelector(".persons").innerHTML +=
-              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + teams.final[0].pt.name + "</a></h4><h5 class='text14'>" + teams.final[0].skills[0].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[1].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[2].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[3].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[4].skill + "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='"+teams.final[0].pt.photo+"' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + teams.final[0].pt.name + "</a></h4><h5 class='text14'>" + teams.final[0].skills[0].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[1].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[2].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[3].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[4].skill + "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
           }
           if (teams.final[0].skills.length == 6) {
             document.querySelector(".persons").innerHTML = "";
             document.querySelector(".persons").innerHTML +=
-              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + teams.final[0].pt.name + "</a></h4><h5 class='text14'>" + teams.final[0].skills[0].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[1].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[2].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[3].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[4].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[5].skill + "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='"+teams.final[0].pt.photo+"' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + teams.final[0].pt.name + "</a></h4><h5 class='text14'>" + teams.final[0].skills[0].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[1].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[2].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[3].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[4].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[5].skill + "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
           }
           if (teams.final[0].skills.length == 7) {
             document.querySelector(".persons").innerHTML = "";
             document.querySelector(".persons").innerHTML +=
-              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + teams.final[0].pt.name + "</a></h4><h5 class='text14'>" + teams.final[0].skills[0].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[1].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[2].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[3].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[4].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[5].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[6].skill + "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='"+teams.final[0].pt.photo+"' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + teams.final[0].pt.name + "</a></h4><h5 class='text14'>" + teams.final[0].skills[0].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[1].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[2].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[3].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[4].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[5].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[6].skill + "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
           }
           if (teams.final[0].skills.length == 8) {
             document.querySelector(".persons").innerHTML = "";
             document.querySelector(".persons").innerHTML +=
-              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + teams.final[0].pt.name + "</a></h4><h5 class='text14'>" + teams.final[0].skills[0].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[1].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[2].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[3].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[4].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[5].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[6].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[7].skill + "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+              "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='"+teams.final[0].pt.photo+"' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html'>" + teams.final[0].pt.name + "</a></h4><h5 class='text14'>" + teams.final[0].skills[0].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[1].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[2].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[3].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[4].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[5].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[6].skill + "</h5>&nbsp;&nbsp;<h5 class='text14'>" + teams.final[0].skills[7].skill + "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
           }
         })
         .catch(e => {

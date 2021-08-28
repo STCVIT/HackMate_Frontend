@@ -247,6 +247,8 @@ function check(){
     window.location.assign('./MyProfile_otherView.html')
     var part123 = participant_id;
     localStorage.setItem("participant", part123);
+    var team_id = window.location.search.split("?")[1];
+    localStorage.setItem("team", team_id);
   }
 }
 bweb.addEventListener('click', function () {

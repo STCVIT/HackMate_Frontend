@@ -5,7 +5,7 @@ $(document).ready(function () {
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-    user.getIdToken().then(function(idToken){
+    user.getIdToken().then(function (idToken) {
       console.log(idToken)
       auth = idToken
       axios(`${url}/getHacks/${window.location.search.split("?")[1]}`, {
@@ -16,7 +16,7 @@ firebase.auth().onAuthStateChanged((user) => {
         .then((response) => {
           hack = response.data;
           console.log(hack);
-      
+
           document.querySelector(".parent").innerHTML =
             "<div class='row' style='padding-top: 54px;'> <div class='col-1'></div> <div class='col-10 main'> <img src='../Assets/Images/Hack Deets Banner.svg' style='width: 83.333vw;' alt=''> <div class='row' style='margin: 41.89px 0 0;'> <div class='col-1'></div> <div class='col-lg-4 col-12 justify-content-center text-center'> <img src='" + hack.poster + "' style='width: 200px;height: 200px;' alt=''> </div> <div class='col-lg-6 col-12'> <div class='nbw text-lg-start text-center  '>" +
             hack.name +
@@ -67,13 +67,14 @@ firebase.auth().onAuthStateChanged((user) => {
             "</div> </div> </div> </div> <div class='col-1'></div> </div> <div class='row about'> <div class='col-lg-1'></div> <div class='col-10'> <nbgre> About: </nbgre> <div class='nbwsb'>" +
             hack.description +
             "</div> </div> </div> </div> <div class='col-1'></div> </div>";
-      
+
           document.querySelector(".child").innerHTML =
             "<div class='row justify-content-lg-between justify-content-evenly' style='padding-left: 8.333%; padding-right: 8.3333%;'>  <div class='card'> <div class='card-body justify-content-center text-center'> <div class='gray' style='height: 252px; background: #C4C4C4;'></div> <a class=' btns btn btn-success' href='./searchforteamswhack.html?" +
             hack._id +
             "' role='button' style='margin-top: 34px;'>Join Team</a> </div> </div> <div class='card'> <div class='card-body justify-content-center text-center'> <div class='gray' style='height: 252px; background: #C4C4C4;'></div> <a class=' btns btn btn-success' href='./createteamwhackwteam.html?" +
             hack._id +
-            "' role='button' style='margin-top: 34px;'>Create Team</a> </div> </div> <div class='card'> <div class='card-body justify-content-center text-center'> <div class='gray' style='height: 252px; background: #C4C4C4;'></div> <a class=' btns btn btn-success' href='./addfromexisting.html' role='button' style='margin-top: 34px;'>Add from Existing</a> </div> </div> </div>";
+            "' role='button' style='margin-top: 34px;'>Create Team</a> </div> </div> <div class='card'> <div class='card-body justify-content-center text-center'> <div class='gray' style='height: 252px; background: #C4C4C4;'></div> <a class=' btns btn btn-success' href='./addfromexisting.html?" +
+            hack._id + "' role='button' style='margin-top: 34px;'>Add from Existing</a> </div> </div> </div>";
         })
         .catch((error) => {
           console.error("Error:", error);

@@ -2,6 +2,9 @@
   color: #e7efef;
   font-family: "Fira Code", monospace;
 }
+html {
+  scroll-behavior: smooth;
+}
 #add{
   position:relative;
   top:-30px;
@@ -129,7 +132,7 @@ f{
 .team-members{
     list-style-type: none;
 }
-li{
+.list-item{
    display: flex;
    line-height:0.99;
 }

@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito+Sans&family=Raleway&display=swap");
+html {
+  scroll-behavior: smooth;
+}
 body{
     background-color: #23303d;
     font-family: "Fira Code", monospace;

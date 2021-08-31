@@ -27,10 +27,10 @@ firebase.auth().onAuthStateChanged((user) => {
           team_code.innerHTML = team.team.team_code;
 
           let body = document.getElementById("member_card");
-          yourhtml = "";
+          yourHTML = "";
           for (let i = 0; i < team.team.members.length; i++) {
             if (team.pt_skills[i].participant._id == team.team.admin_id) {
-              yourhtml += "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'>"
+              yourHTML += "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'>"
               if (team.pt_skills[i].participant.photo == "hey") {
                 yourHTML += "<img id='dp' src='../Assets/Images/blank-profile.png'>"
               }
@@ -40,7 +40,7 @@ firebase.auth().onAuthStateChanged((user) => {
               yourHTML += "<p>" + team.pt_skills[i].participant.name + "<m>(Leader)</m><br><t>" + team.pt_skills[i].skills[i].skill + "</t></p></div></div><l id='leave'>YOU</l></div>"
             }
             else {
-              yourhtml += "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'>"
+              yourHTML += "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'>"
               if (team.pt_skills[i].participant.photo == "hey") {
                 yourHTML += "<img id='dp' src='../Assets/Images/blank-profile.png'>"
               }
@@ -49,7 +49,7 @@ firebase.auth().onAuthStateChanged((user) => {
               }
               yourHTML += "<p>" + team.pt_skills[i].participant.name + "<m>(Member)</m><br><t>" + team.pt_skills[i].skills[i].skill + "</t></p></div></div><l id='member' onclick = 'removemem()'>REMOVE<identity id='member_id' style='display:none'>" + team.pt_skills[i].participant._id + "</identity></l></div>"
             }
-            body.innerHTML = yourhtml;
+            body.innerHTML = yourHTML;
           }
         })
         .catch((error) => console.error("Error: " + error));

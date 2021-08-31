@@ -25,7 +25,7 @@ function events(event) {
                 var yourHTML = "";
                 for (var i = 0; i < teams.final.length;) {
                     if (teams["final"][i]["hackName"] == "") {
-                        yourHTML += "<div class='row'><div class='col-lg-6 col-md-6 col-sm-12'style='padding-bottom:5%' onclick='check()'><div class='card1' id='team'style='max-width: 497px; max-height: 371px;padding-bottom: 10%;'><div class='card-body'><h4 class='card-title'>" +
+                        yourHTML += "<div class='row'><div class='col-lg-6 col-md-6 col-sm-12'style='padding-bottom:5%'><div class='card1' id='team'style='max-width: 497px; max-height: 371px;padding-bottom: 10%;'><div class='card-body'><h4 class='card-title'>" +
                             teams["final"][i]["team"].name +
                             "</h4><img id='add' src='../Assets/Images/addbutton.svg'onclick='add()'><p><text>Hackathon:</text><hackathon id='hack_name'>" +
                             teams["final"][i]["hackName"] +
@@ -47,7 +47,7 @@ function events(event) {
                     i++;
                     if (i < teams.final.length) {
                         if (teams["final"][i]["hackName"] == "") {
-                            yourHTML += "<div class='col-lg-6 col-md-6 col-sm-12'onclick='check()'><div class='card2' id='team' style='max-width: 497px; max-height: 371px; padding-bottom:20px;' ><div class='card-body'><h4 class='card-title'>" +
+                            yourHTML += "<div class='col-lg-6 col-md-6 col-sm-12'><div class='card2' id='team' style='max-width: 497px; max-height: 371px; padding-bottom:20px;' ><div class='card-body'><h4 class='card-title'>" +
                                 teams["final"][i]["team"].name +
                                 "</h4><img id='add' src='../Assets/Images/addbutton.svg'onclick='add()'><p><text>Hackathon:</text><hackathon id='hack_name'>" +
                                 teams["final"][i]["hackName"] +
@@ -199,7 +199,7 @@ function displayTeams() {
                     var yourHTML = "";
                     for (var i = 0; i < teams.final.length;) {
                         if (teams["final"][i]["hackName"] == "") {
-                            yourHTML += "<div class='row'><div class='col-lg-6 col-md-6 col-sm-12'style='padding-bottom:5%' onclick='check()'><div class='card1' id='team'style='max-width: 497px; max-height: 371px;padding-bottom: 10%;'><div class='card-body'><h4 class='card-title'>" +
+                            yourHTML += "<div class='row'><div class='col-lg-6 col-md-6 col-sm-12'style='padding-bottom:5%'><div class='card1' id='team'style='max-width: 497px; max-height: 371px;padding-bottom: 10%;'><div class='card-body'><h4 class='card-title'>" +
                                 teams["final"][i]["team"].name +
                                 "</h4><img id='add' src='../Assets/Images/addbutton.svg'onclick='add()'><p><text>Hackathon:</text><hackathon id='hack_name'>" +
                                 teams["final"][i]["hackName"] +
@@ -221,7 +221,7 @@ function displayTeams() {
                         i++;
                         if (i < teams.final.length) {
                             if (teams["final"][i]["hackName"] == "") {
-                                yourHTML += "<div class='col-lg-6 col-md-6 col-sm-12'onclick='check()'><div class='card2' id='team' style='max-width: 497px; max-height: 371px; padding-bottom:20px;' ><div class='card-body'><h4 class='card-title'>" +
+                                yourHTML += "<div class='col-lg-6 col-md-6 col-sm-12'><div class='card2' id='team' style='max-width: 497px; max-height: 371px; padding-bottom:20px;' ><div class='card-body'><h4 class='card-title'>" +
                                     teams["final"][i]["team"].name +
                                     "</h4><img id='add' src='../Assets/Images/addbutton.svg'onclick='add()'><p><text>Hackathon:</text><hackathon id='hack_name'>" +
                                     teams["final"][i]["hackName"] +
@@ -302,7 +302,7 @@ function nextPage() {
                 var yourHTML = "";
                 for (var i = 0; i < teams.final.length;) {
                     if (teams["final"][i]["hackName"] == "") {
-                        yourHTML += "<div class='row'><div class='col-lg-6 col-md-6 col-sm-12'style='padding-bottom:5%' onclick='check()'><div class='card1' id='team'style='max-width: 497px; max-height: 371px;padding-bottom: 10%;'><div class='card-body'><h4 class='card-title'>" +
+                        yourHTML += "<div class='row'><div class='col-lg-6 col-md-6 col-sm-12'style='padding-bottom:5%'><div class='card1' id='team'style='max-width: 497px; max-height: 371px;padding-bottom: 10%;'><div class='card-body'><h4 class='card-title'>" +
                             teams["final"][i]["team"].name +
                             "</h4><img id='add' src='../Assets/Images/addbutton.svg'onclick='add()'><p><text>Hackathon:</text><hackathon id='hack_name'>" +
                             teams["final"][i]["hackName"] +
@@ -324,7 +324,7 @@ function nextPage() {
                     i++;
                     if (i < teams.final.length) {
                         if (teams["final"][i]["hackName"] == "") {
-                            yourHTML += "<div class='col-lg-6 col-md-6 col-sm-12'onclick='check()'><div class='card2' id='team' style='max-width: 497px; max-height: 371px; padding-bottom:20px;' ><div class='card-body'><h4 class='card-title'>" +
+                            yourHTML += "<div class='col-lg-6 col-md-6 col-sm-12'><div class='card2' id='team' style='max-width: 497px; max-height: 371px; padding-bottom:20px;' ><div class='card-body'><h4 class='card-title'>" +
                                 teams["final"][i]["team"].name +
                                 "</h4><img id='add' src='../Assets/Images/addbutton.svg'onclick='add()'><p><text>Hackathon:</text><hackathon id='hack_name'>" +
                                 teams["final"][i]["hackName"] +
@@ -395,7 +395,7 @@ function prevPage() {
                 var yourHTML = "";
                 for (var i = 0; i < teams.final.length;) {
                     if (teams["final"][i]["hackName"] == "") {
-                        yourHTML += "<div class='row'><div class='col-lg-6 col-md-6 col-sm-12'style='padding-bottom:5%' onclick='check()'><div class='card1' id='team'style='max-width: 497px; max-height: 371px;padding-bottom: 10%;'><div class='card-body'><h4 class='card-title'>" +
+                        yourHTML += "<div class='row'><div class='col-lg-6 col-md-6 col-sm-12'style='padding-bottom:5%'><div class='card1' id='team'style='max-width: 497px; max-height: 371px;padding-bottom: 10%;'><div class='card-body'><h4 class='card-title'>" +
                             teams["final"][i]["team"].name +
                             "</h4><img id='add' src='../Assets/Images/addbutton.svg'onclick='add()'><p><text>Hackathon:</text><hackathon id='hack_name'>" +
                             teams["final"][i]["hackName"] +
@@ -417,7 +417,7 @@ function prevPage() {
                     i++;
                     if (i < teams.final.length) {
                         if (teams["final"][i]["hackName"] == "") {
-                            yourHTML += "<div class='col-lg-6 col-md-6 col-sm-12'onclick='check()'><div class='card2' id='team' style='max-width: 497px; max-height: 371px; padding-bottom:20px;' ><div class='card-body'><h4 class='card-title'>" +
+                            yourHTML += "<div class='col-lg-6 col-md-6 col-sm-12'><div class='card2' id='team' style='max-width: 497px; max-height: 371px; padding-bottom:20px;' ><div class='card-body'><h4 class='card-title'>" +
                                 teams["final"][i]["team"].name +
                                 "</h4><img id='add' src='../Assets/Images/addbutton.svg' onclick='add()'><p><text>Hackathon:</text><hackathon id='hack_name'>" +
                                 teams["final"][i]["hackName"] +
@@ -490,35 +490,6 @@ firebase.auth().onAuthStateChanged((user) => {
     }
 });
 
-// function check() {
-//     firebase.auth().currentUser.getIdToken().then((id) => {
-//         auth = id;
-//         const cards = document.querySelectorAll("#team");
-//         cards.forEach(card => card.addEventListener('click', look));
-//         console.log(cards);
-//         function look() {
-//             console.log(" i was clicked");
-//             console.log(this);
-//             var team_id = this.querySelector("#team_id").textContent;
-//             var admin_id = this.querySelector("#admin_id").textContent;
-//             var hack_id = this.querySelector("#hack_id").textContent;
-//             var hack_name = this.querySelector("#hack_name").textContent;
-//             localStorage.setItem("team_id", team_id);
-//             localStorage.setItem("hack_id", hack_id);
-//             localStorage.setItem("hackName", hack_name);
-//             console.log(hack_id);
-//             console.log(team_id);
-//             console.log(admin_id);
-//             console.log(hack_name);
-//             if (admin_id == participant_id) {
-//                 window.location.assign("./teamProfLeaderView.html");
-//             }
-//             else {
-//                 window.location.assign("./teamprofile.html")
-//             }
-//         }
-//     })
-// }
 
 function add() {
     firebase.auth().currentUser.getIdToken().then((id) => {

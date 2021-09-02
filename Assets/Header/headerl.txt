@@ -63,6 +63,7 @@
 </nav>
 
 <script>
+    var count = 0
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
             user.getIdToken().then(function (idToken) {
@@ -109,9 +110,12 @@
             })
         } else {
             // User is signed out
-            alert("Please sign in!")
-            window.location = "./participantlognsignup.html"
-            console.log("I'm signed out!")
+            if(count != 1)
+            {
+                alert("Please sign in!")
+                window.location = "./participantlognsignup.html"
+                console.log("I'm signed out!")
+            }
         }
     });
 
@@ -179,6 +183,7 @@
         })
     }
     function logout() {
+        count = 1
         firebase.auth().signOut().then(() => {
             window.location = "./participantlognsignup.html"
   // Sign-out successful.

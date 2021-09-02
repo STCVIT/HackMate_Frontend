@@ -88,6 +88,8 @@ function signin() {
       console.log("Signed in")
       user.getIdToken().then(function (idToken) {
         console.log(idToken)
+        var loadingDiv = document.getElementById('loading');
+        loadingDiv.style.visibility = 'visible';
 
         fetch(`https://hackportalbackend.herokuapp.com/organiser/login`, {
           method: "GET",
@@ -111,7 +113,7 @@ function signin() {
           }
           else if (response.status == 200) {
             localStorage.setItem("auth", idToken);
-            window.location.assign("./addhack.html");
+            window.location.assign("./orghack.html");
             // location.href = "";
           }
         });

@@ -88,6 +88,8 @@ function signin(){
     console.log("Signed in")
     user.getIdToken().then(function(idToken){
         console.log(idToken)
+        var loadingDiv = document.getElementById('loading');
+        loadingDiv.style.visibility = 'visible';
         
     fetch(`https://hackportalbackend.herokuapp.com/participant/login`,{
       method:"GET",

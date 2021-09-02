@@ -5,6 +5,38 @@
   color: #e7efef;
 }
 
+#loading{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: #23303d;
+  z-index: 99999;
+}
+.hack{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #1ea54c;
+  border-bottom: 16px solid #1ea54c;
+  width: 80px;
+  height: 80px;
+  margin-top: 10px;
+  margin-left: 140px;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 .text {
   padding-top: 10%;
 }

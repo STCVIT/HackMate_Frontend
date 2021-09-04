@@ -44,9 +44,10 @@ function signup() {
     return false;
   }
   else {
-    alert("Your password created successfully");
+    // alert("Your password created successfully");
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then(({ user }) => {
+        alert ("Your password created successfully"); 
         console.log('signed up!')
         user.getIdToken().then(function (idToken) {
           console.log(idToken)
@@ -60,11 +61,17 @@ function signup() {
           })
         })
         user.sendEmailVerification().then(function () {
-          console.log('Email has been sent!')
+          console.log('Email has been sent!');
+          alert("Pls verify your email");
         })
       })
       .catch((error) => {
-        console.log(error)
+        console.log(error);
+        console.log(error.message);
+
+        if(error.message == "The email address is badly formatted."){
+          alert("Enter Valid Email-Id!!");
+        }
       });
   }
 }
@@ -123,21 +130,32 @@ function signin() {
 
     })
     .catch((error) => {
-      console.log(error)
+      console.log(error);
+      console.log(error.message);
+
+      if(error.message == "The email address is badly formatted."){
+        alert("Enter Valid Email-Id!!");
+      }
+      if(error.message == "The password is invalid or the user does not have a password."){
+        alert("Enter Valid Password!!");
+      }
+      if(error.message == "There is no user record corresponding to this identifier. The user may have been deleted."){
+        alert("No User!!");
+      }
     });
 }
 
-function forgot(){
-  const email=document.getElementById('login_email').value;
-  firebase.auth().sendPasswordResetEmail(email)
-  .then(() => {
-    // Password reset email sent!
-    // ..
-    alert("Password mail set was sent!!");
-  })
-  .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // ..
-  });
-}
+// function forgot(){
+//   const email=document.getElementById('login_email').value;
+//   firebase.auth().sendPasswordResetEmail(email)
+//   .then(() => {
+//     // Password reset email sent!
+//     // ..
+//     alert("Password mail set was sent!!");
+//   })
+//   .catch((error) => {
+//     var errorCode = error.code;
+//     var errorMessage = error.message;
+//     // ..
+//   });
+// }

@@ -5,6 +5,7 @@ const all = document.querySelector("#all");
 const ongoing = document.querySelector("#ongoing");
 const upcoming = document.querySelector("#upcoming");
 const popular = document.querySelector("#popularity");
+const loadingDiv = document.getElementById('loading');
 
 $(document).ready(function () {
   $("#nav").load("../Assets/Header/headerl.txt");
@@ -74,6 +75,7 @@ popular.addEventListener("click", function () {
 });
 
 function events(event) {
+  loadingDiv.style.visibility = 'visible';
   console.log(event);
   page = event.target.innerHTML;
   console.log(page);
@@ -132,6 +134,7 @@ function events(event) {
             hacks.final[i]._id +
             "' role='button'>Know More</a> </div> </div>";
         }
+        loadingDiv.style.visibility = 'hidden';
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -243,74 +246,77 @@ var Pagination = {
   },
 };
 function displayTeams() {
+  loadingDiv.style.visibility = 'visible';
   var init = function () {
-    
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      user.getIdToken().then(async function(idToken){
-        console.log(idToken)
-        sessionStorage.setItem("auth", idToken)
-        auth = idToken
 
-        var res = await axios(`${url}/getHacks/${occurence}?page=1`, {
-          headers: {
-            Authorization: "Bearer " + auth,
-          },
-        });
-        hacks = await res.data;
-        console.log(hacks);
-  
-        var length = await res.data.length;
-        console.log(length);
-        document.querySelector(".wrapper").innerHTML = '';
-        for (var i = 0; i < hacks.final.length; i++) {
-          document.querySelector(".wrapper").innerHTML +=
-            "<div class='box'><img src='../Assets/Images/Name Banner.png' class='namebanner' alt=''> <div class='innertxt'> <nb1 class='hackname'>" +
-            hacks.final[i].name +
-            " <a target='_blank' href='https://" +
-            hacks.final[i].website +
-            "'><img src='../Assets/Images/Hack Link.svg' alt=''></a></nb1> <br> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw class='startd'>" +
-            //hacks.final[i].start.split("T")[0] +
-            new Date(hacks.final[i].start.split("T")[0]).toString().split(" ")[2] +
-            " " +
-            new Date(hacks.final[i].start.split("T")[0]).toString().split(" ")[1] +
-            " " +
-            new Date(hacks.final[i].start.split("T")[0]).toString().split(" ")[3] +
-            " " +
-            "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw class='endd'>" +
-            //hacks.final[i].end.split("T")[0] +
-            new Date(hacks.final[i].end.split("T")[0]).toString().split(" ")[2] +
-            " " +
-            new Date(hacks.final[i].end.split("T")[0]).toString().split(" ")[1] +
-            " " +
-            new Date(hacks.final[i].end.split("T")[0]).toString().split(" ")[3] +
-            " " +
-            "</nbw> </div> </div> </div> </div> <div class='nbg'> <nbg>Venue: </nbg> <nbw class='venue'>" +
-            hacks.final[i].venue +
-            "</nbw> </div> <div class='nbg'> <nbg>Team Size: </nbg> <nbw class='ts'>" +
-            +hacks.final[i].min_team_size +
-            "-" +
-            hacks.final[i].max_team_size +
-            "</nbw><nbw> Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
-            hacks.final[i].prize_pool +
-            "</div> <img class='mode_of_conduct pt-3' src='../Assets/Images/" +
-            hacks.final[i].mode_of_conduct + ".svg'>" +
-            "<a class='btnkm btn btn-success' href='./hackdetails.html?" +
-            hacks.final[i]._id +
-            "' role='button'>Know More</a> </div> </div>";
-        }
-        total_hacks = Math.ceil(length / 6);
-        Pagination.Init(document.getElementById("pagination"), {
-          size: total_hacks,
-          page: 1,
-          step: 1,
-        });
-      })
-    } else {
-      // User is signed out
-      console.log("I'm signed out!")
-    }
-  });
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        user.getIdToken().then(async function (idToken) {
+          console.log(idToken)
+          sessionStorage.setItem("auth", idToken)
+          auth = idToken
+
+          var res = await axios(`${url}/getHacks/${occurence}?page=1`, {
+            headers: {
+              Authorization: "Bearer " + auth,
+            },
+          });
+          hacks = await res.data;
+          console.log(hacks);
+
+          var length = await res.data.length;
+          console.log(length);
+          document.querySelector(".wrapper").innerHTML = '';
+          for (var i = 0; i < hacks.final.length; i++) {
+            document.querySelector(".wrapper").innerHTML +=
+              "<div class='box'><img src='../Assets/Images/Name Banner.png' class='namebanner' alt=''> <div class='innertxt'> <nb1 class='hackname'>" +
+              hacks.final[i].name +
+              " <a target='_blank' href='https://" +
+              hacks.final[i].website +
+              "'><img src='../Assets/Images/Hack Link.svg' alt=''></a></nb1> <br> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw class='startd'>" +
+              //hacks.final[i].start.split("T")[0] +
+              new Date(hacks.final[i].start.split("T")[0]).toString().split(" ")[2] +
+              " " +
+              new Date(hacks.final[i].start.split("T")[0]).toString().split(" ")[1] +
+              " " +
+              new Date(hacks.final[i].start.split("T")[0]).toString().split(" ")[3] +
+              " " +
+              "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw class='endd'>" +
+              //hacks.final[i].end.split("T")[0] +
+              new Date(hacks.final[i].end.split("T")[0]).toString().split(" ")[2] +
+              " " +
+              new Date(hacks.final[i].end.split("T")[0]).toString().split(" ")[1] +
+              " " +
+              new Date(hacks.final[i].end.split("T")[0]).toString().split(" ")[3] +
+              " " +
+              "</nbw> </div> </div> </div> </div> <div class='nbg'> <nbg>Venue: </nbg> <nbw class='venue'>" +
+              hacks.final[i].venue +
+              "</nbw> </div> <div class='nbg'> <nbg>Team Size: </nbg> <nbw class='ts'>" +
+              +hacks.final[i].min_team_size +
+              "-" +
+              hacks.final[i].max_team_size +
+              "</nbw><nbw> Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
+              hacks.final[i].prize_pool +
+              "</div> <img class='mode_of_conduct pt-3' src='../Assets/Images/" +
+              hacks.final[i].mode_of_conduct + ".svg'>" +
+              "<a class='btnkm btn btn-success' href='./hackdetails.html?" +
+              hacks.final[i]._id +
+              "' role='button'>Know More</a> </div> </div>";
+          }
+          total_hacks = Math.ceil(length / 6);
+          Pagination.Init(document.getElementById("pagination"), {
+            size: total_hacks,
+            page: 1,
+            step: 1,
+          });
+
+          loadingDiv.style.visibility = 'hidden';
+        })
+      } else {
+        // User is signed out
+        console.log("I'm signed out!")
+      }
+    });
   };
   init();
 }
@@ -319,6 +325,7 @@ displayTeams();
 
 
 function nextPage() {
+  loadingDiv.style.visibility = 'visible';
   if (page < total_hacks) {
     page = Pagination.page + 1;
   }
@@ -377,6 +384,7 @@ function nextPage() {
             hacks.final[i]._id +
             "' role='button'>Know More</a> </div> </div>";
         }
+        loadingDiv.style.visibility = 'hidden';
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -384,6 +392,7 @@ function nextPage() {
   })
 }
 function prevPage() {
+  loadingDiv.style.visibility ='visible';
   if (page > 1) {
     page = Pagination.page - 1;
   }
@@ -441,6 +450,7 @@ function prevPage() {
             hacks.final[i]._id +
             "' role='button'>Know More</a> </div> </div>";
         }
+        loadingDiv.style.visibility = 'hidden';
       })
       .catch((error) => {
         console.error("Error:", error);

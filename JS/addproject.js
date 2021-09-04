@@ -1,3 +1,5 @@
+const loadingDiv = document.getElementById('loading');
+
 $(document).ready(function () {
   $("#nav").load("../Assets/Header/headerl.txt");
   $("#foobottom").load("../Assets/Footer/footer.txt");
@@ -36,6 +38,7 @@ firebase.auth().onAuthStateChanged((user) => {
               projects.teams[i].project_description +
               "</div></div></a></div>";
           }
+          loadingDiv.style.visibility = 'hidden';
         })
         .catch((error) => {
           console.error("Error:", error);

@@ -35,18 +35,18 @@
 					<div class="tabs-content">
 						<div id="signup-tab-content" class="active">
 							<form class="signup-form" id="form" action="" method="post">
-								<input type="email" class="input" id="user_email" autocomplete="off" placeholder="Email">
-								<input type="password" class="input" id="user_pass1" autocomplete="off" placeholder="Password">
-								<input type="password" class="input" id="user_pass2" autocomplete="off" placeholder="Confirm Password">
+								<input type="email" class="input" id="user_email" autocomplete="off" placeholder="Email" required>
+								<input type="password" class="input" id="user_pass1" autocomplete="off" placeholder="Password" required>
+								<input type="password" class="input" id="user_pass2" autocomplete="off" placeholder="Confirm Password" required>
 								<input type="submit" class="button" value="Sign Up" onclick="signup()">
 							</form><!--.login-form-->
 						</div><!--.signup-tab-content-->
 						<div id="login-tab-content">
 							<form class="login-form" id="form1" action="" method="post">
-								<input type="text" class="input" id="login_email" autocomplete="off" placeholder="Email">
-								<input type="password" class="input" id="login_pass1" autocomplete="off" placeholder="Password">
+								<input type="text" class="input" id="login_email" autocomplete="off" placeholder="Email" required>
+								<input type="password" class="input" id="login_pass1" autocomplete="off" placeholder="Password" required>
 								<div class="help-text">
-									<p><a class="forgot" href="" onclick="forgot()">Forgot password?</a></p>
+									<p><a class="forgot" href="./participantforgotpwd.html">Forgot password?</a></p>
 								</div><!--.help-text-->
 								 <!-- <input type="submit" class="button" value="Log In" onclick="location.href='./profile.html'" id="getBtn"> -->	
 								<input type="submit" class="button" value="Log In" onclick="signin()" id="getBtn">

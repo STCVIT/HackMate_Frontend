@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+html,
+body {
+    background-color: #23303D;
+    margin: 0;
+    font-family: "Fira Code";
+    font-style: normal;
+    font-weight: bold;
+    overflow: auto;
+}
+
+.card {
+    margin-top: 50px;
+    width: 560px;
+    height: 400px;
+    background: #1D2833;
+    border: 1px solid rgba(59, 66, 77, 0.3);
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.text1 {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-family: Fira Code;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 140%;
+    /* identical to box height, or 31px */
+    letter-spacing: 0.04em;
+    color: white;
+}
+
+.text2 {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 140%;
+    /* identical to box height, or 20px */
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.input {
+    position: absolute;
+    width: 93%;
+    height: 46px;
+    margin: 30px 0 0 10px;
+    padding: 25px 10px 25px 10px;
+    background: #2E3D4C;
+    border: 2px solid rgba(30, 165, 76, 0.2);
+    box-sizing: border-box;
+    border-radius: 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 18px;
+    outline: 0;
+    display: inline-block;
+    background-color: #2E3D4C;
+}
+
+.button {
+    width: 88%;
+    margin: 120px 0 0 30px;
+    padding: .8em 0 10px .8em;
+    background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #157347;
+}

@@ -1,3 +1,4 @@
+const loadingDiv = document.getElementById('loading');
 $(document).ready(function () {
   $("#nav").load("../Assets/Header/headero.txt");
   $("#foobottom").load("../Assets/Footer/footer.txt");
@@ -26,6 +27,7 @@ firebase.auth().onAuthStateChanged((user) => {
           document.querySelector(".email").innerHTML = user.email;
           document.myform.website.value = user.website;
           console.log(user);
+          loadingDiv.style.visibility = 'hidden';
         })
         .catch((error) => console.error("Error: " + error));
     })

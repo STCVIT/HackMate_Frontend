@@ -1,6 +1,7 @@
 const authentication = firebase.auth();
 var poster;
-
+const loadingDiv = document.getElementById('loading');
+document.onload = loadingDiv.style.visibility = 'hidden';
 $(document).ready(function () {
   $("#nav").load("../Assets/Header/headero.txt");
 });
@@ -14,6 +15,7 @@ document
   });
 
 async function uploadBlob(file) {
+  document.onload = loadingDiv.style.visibility = 'visible';
   console.log("Testing");
   const ref = firebase
     .storage()
@@ -91,6 +93,7 @@ async function uploadBlob(file) {
           .then((response) => {
             console.log("Success:", response.data);
             console.log(response.data._id);
+            document.onload = loadingDiv.style.visibility = 'hidden';
             swal("SUCCESS!!", "Your request has been submitted successfully", "success");
             document.querySelector(".swal-button--confirm").addEventListener("click", ()=> {
               window.location.assign("./orghackprofile.html?" + response.data._id)
@@ -108,4 +111,5 @@ document
   .querySelector("#image_uploads")
   .addEventListener("change", function () {
     console.log("File Uploaded Locally");
+    document.querySelector(".image_uploads").innerHTML = "File Uploaded!"
   });

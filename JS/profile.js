@@ -114,9 +114,9 @@ block.addEventListener('click', function () {
         n = n + 1;
     }
 });
-
 function add_skills() {
     firebase.auth().onAuthStateChanged((user) => {
+        console.log(choice);
         if (user) {
             user.getIdToken().then(function (idToken) {
                 console.log(idToken)
@@ -138,6 +138,7 @@ function add_skills() {
                             if (okay) {
                                 window.location.href = "./viewhackathon.html";
                             }
+                        
                         })
                     })
                     .catch((error) => {
@@ -151,4 +152,5 @@ function add_skills() {
         }
     });
 }
+
 

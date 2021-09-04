@@ -255,8 +255,8 @@ function displayTeams() {
           console.log(idToken)
           sessionStorage.setItem("auth", idToken)
           auth = idToken
-
-          var res = await axios(`${url}/getHacks/${occurence}?page=1`, {
+          try
+          {var res = await axios(`${url}/getHacks/${occurence}?page=1`, {
             headers: {
               Authorization: "Bearer " + auth,
             },
@@ -308,8 +308,12 @@ function displayTeams() {
             size: total_hacks,
             page: 1,
             step: 1,
-          });
-
+          })}
+          catch(error){
+            if (error.response.status == 404) {
+              document.querySelector(".wrapper").innerHTML = "<h2 style='margin-top: 82px;'>No Hacks Found!</h2>"
+            }
+          }
           loadingDiv.style.visibility = 'hidden';
         })
       } else {

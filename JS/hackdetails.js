@@ -4,6 +4,9 @@ $(document).ready(function () {
 });
 const loadingDiv = document.getElementById('loading');
 
+if(window.location.search.split("?")[1] == undefined){
+  window.location = "./viewhackathon.html"
+}
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     user.getIdToken().then(function (idToken) {

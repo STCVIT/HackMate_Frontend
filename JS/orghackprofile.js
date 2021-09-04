@@ -46,7 +46,7 @@ firebase.auth().onAuthStateChanged((user) => {
 
       function displayTeams() {
         var init = async function () {
-          var res = await axios(
+          try {var res = await axios(
             `${url}/organiser/getTeams/${window.location.search.split("?")[1]
             }?page=1`,
             {
@@ -90,7 +90,12 @@ firebase.auth().onAuthStateChanged((user) => {
             size: total_teams,
             page: 1,
             step: 1,
-          });
+          });}
+          catch(error){
+            if (error.response.status == 404) {
+              document.querySelector(".wrapper").innerHTML = "<h2 class='text-center' style='margin-top: 82px;'>No Teams Found!</h2>"
+            }
+          }
           loadingDiv.style.visibility = 'hidden';
         };
         init();

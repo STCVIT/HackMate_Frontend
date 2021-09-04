@@ -255,7 +255,7 @@ function displayHacks() {
         console.log(idToken)
         auth = idToken
         var init = async function () {
-          var res = await axios(`${url}/organiser/hacks?page=1`, {
+        try{ var res = await axios(`${url}/organiser/hacks?page=1`, {
             headers: {
               Authorization: "Bearer " + auth,
             },
@@ -292,7 +292,12 @@ function displayHacks() {
             size: total_hacks,
             page: 1,
             step: 1,
-          });
+          });}
+          catch(error){
+            if (error.response.status == 404) {
+              document.querySelector(".wrapper").innerHTML = "<h2 class='text-center' style='margin-top: 82px;'>No Hacks Found!</h2>"
+            }
+          }
           loadingDiv.style.visibility = 'hidden';
         };
         init();

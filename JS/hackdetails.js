@@ -2,6 +2,7 @@ $(document).ready(function () {
   $("#nav").load("../Assets/Header/headerl.txt");
   $("#foobottom").load("../Assets/Footer/footer.txt");
 });
+const loadingDiv = document.getElementById('loading');
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
@@ -75,7 +76,8 @@ firebase.auth().onAuthStateChanged((user) => {
             hack._id +
             "' role='button' style='margin-top: 34px;'>Create Team</a> </div> </div> <div class='card'> <div class='card-body justify-content-center text-center'> <div class='gray' style='height: 252px; background: #C4C4C4;'></div> <a class=' btns btn btn-success' href='./addfromexisting.html?" +
             hack._id + "' role='button' style='margin-top: 34px;'>Add from Existing</a> </div> </div> </div>";
-        })
+            loadingDiv.style.visibility = 'hidden';
+          })
         .catch((error) => {
           console.error("Error:", error);
         });

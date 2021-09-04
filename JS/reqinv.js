@@ -1,4 +1,5 @@
 var count = 0
+const loadingDiv = document.getElementById('loading');
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
@@ -24,17 +25,17 @@ firebase.auth().onAuthStateChanged((user) => {
                     document.querySelector(".reqinv").innerHTML = ""
                     requests.received.forEach(element => {
                         console.log(element)
-                        document.querySelector(".reqinv").innerHTML += "<div class='row reqinvrow'><div class='col-12'>    <div class='row'>        <div class='col-12'>            <nbw>" + element.participant.name + "</nbw> has requested you to become a part of <nbw>" + element.team.name + ".</nbw>        </div>    </div>    <div class='row justify-content-end' style='padding-top: 16px;'>        <input id=" + element.req + " class=' delete btn btn-success' name='accept' type='submit' value='ACCEPT' onclick='acceptreq(event.target.id)'            style='color: #fff; opacity: 1;'>        <input name='reject' type='submit' value='REJECT' onclick='rejectreq(event.target.id)'            style='color: #E7EFEF; opacity: 1; border: none; width: 60px;'>    </div></div></div>"
+                        document.querySelector(".reqinv").innerHTML += "<div class='row reqinvrow'><div class='col-12'>    <div class='row'>        <div class='col-12'>            <nbw>" + element.participant.name + "</nbw> has requested you to become a part of <nbw>" + element.team.name + ".</nbw>        </div>    </div>    <div class='row justify-content-end' style='padding-top: 16px;'>        <input id=" + element.req + " class=' delete btn btn-success' name='accept' type='submit' value='ACCEPT' onclick='acceptreq(event.target.id)'            style='color: #fff; opacity: 1;'>        <input id=" + element.req + " name='reject' type='submit' value='REJECT' onclick='rejectreq(event.target.id)'            style='color: #E7EFEF; opacity: 1; border: none; width: 60px;'>    </div></div></div>"
                     })
                     requests.sent.forEach(element => {
                         console.log(element)
-                        document.querySelector(".reqinv").innerHTML += "<div class='row reqinvrow'><div class='col-12'>    <div class='row'>        <div class='col-12'>            <nbw>You</nbw> have requested to become a part of <nbw>" + element.team.name + ".</nbw>        </div>    </div>    <div class='row justify-content-end' style='padding-top: 16px;'>        <input name='reject' type='submit' value='DELETE' onclick='deletereq(event.target.id)'            style='color: #E7EFEF; opacity: 1; border: none; width: 60px;'>    </div></div></div>"
+                        document.querySelector(".reqinv").innerHTML += "<div class='row reqinvrow'><div class='col-12'>    <div class='row'>        <div class='col-12'>            <nbw>You</nbw> have requested to become a part of <nbw>" + element.team.name + ".</nbw>        </div>    </div>    <div class='row justify-content-end' style='padding-top: 16px;'>        <input id=" + element.req + " name='reject' type='submit' value='DELETE' onclick='deletereq(event.target.id)'            style='color: #E7EFEF; opacity: 1; border: none; width: 60px;'>    </div></div></div>"
                     })
-
+                    loadingDiv.style.visibility = 'hidden';
                 })
                 .catch((error) => {
                     console.error("Error:", error);
-
+                    loadingDiv.style.visibility = 'hidden';
                     if (error.response.status == 404) {
                         document.querySelector(".reqinv").innerHTML = "<div class='reqinv container-fluid'><div class='row reqinvrow'><div class='col-12 text-center' style='font-size: 18px;'>    You don't have any notifications right now!</div></div></div>"
                     }
@@ -79,7 +80,7 @@ document.querySelector("#invites").addEventListener("click", () => {
 })
 
 function getRequests() {
-
+    loadingDiv.style.visibility = 'visible';
     firebase.auth().currentUser.getIdToken().then((id) => {
         auth = id;
         axios(`${url}/requests/myRequests`, {
@@ -93,17 +94,18 @@ function getRequests() {
                 document.querySelector(".reqinv").innerHTML = ""
                 requests.received.forEach(element => {
                     console.log(element)
-                    document.querySelector(".reqinv").innerHTML += "<div class='row reqinvrow'><div class='col-12'>    <div class='row'>        <div class='col-12'>            <nbw>" + element.participant.name + "</nbw> has requested you to become a part of <nbw>" + element.team.name + ".</nbw>        </div>    </div>    <div class='row justify-content-end' style='padding-top: 16px;'>        <input id=" + element.req + " class=' delete btn btn-success' name='accept' type='submit' value='ACCEPT' onclick='acceptreq(event.target.id)'            style='color: #fff; opacity: 1;'>        <input name='reject' type='submit' value='REJECT' onclick='rejectreq(event.target.id)'            style='color: #E7EFEF; opacity: 1; border: none; width: 60px;'>    </div></div></div>"
+                    document.querySelector(".reqinv").innerHTML += "<div class='row reqinvrow'><div class='col-12'>    <div class='row'>        <div class='col-12'>            <nbw>" + element.participant.name + "</nbw> has requested you to become a part of <nbw>" + element.team.name + ".</nbw>        </div>    </div>    <div class='row justify-content-end' style='padding-top: 16px;'>        <input id=" + element.req + " class=' delete btn btn-success' name='accept' type='submit' value='ACCEPT' onclick='acceptreq(event.target.id)'            style='color: #fff; opacity: 1;'>        <input id=" + element.req + " name='reject' type='submit' value='REJECT' onclick='rejectreq(event.target.id)'            style='color: #E7EFEF; opacity: 1; border: none; width: 60px;'>    </div></div></div>"
                 })
                 requests.sent.forEach(element => {
                     console.log(element)
-                    document.querySelector(".reqinv").innerHTML += "<div class='row reqinvrow'><div class='col-12'>    <div class='row'>        <div class='col-12'>            <nbw>You</nbw> have requested to become a part of <nbw>" + element.team.name + ".</nbw>        </div>    </div>    <div class='row justify-content-end' style='padding-top: 16px;'>        <input name='reject' type='submit' value='DELETE' onclick='deletereq(event.target.id)'            style='color: #E7EFEF; opacity: 1; border: none; width: 60px;'>    </div></div></div>"
+                    document.querySelector(".reqinv").innerHTML += "<div class='row reqinvrow'><div class='col-12'>    <div class='row'>        <div class='col-12'>            <nbw>You</nbw> have requested to become a part of <nbw>" + element.team.name + ".</nbw>        </div>    </div>    <div class='row justify-content-end' style='padding-top: 16px;'>        <input id=" + element.req + " name='reject' type='submit' value='DELETE' onclick='deletereq(event.target.id)'            style='color: #E7EFEF; opacity: 1; border: none; width: 60px;'>    </div></div></div>"
                 })
+                loadingDiv.style.visibility = 'hidden';
 
             })
             .catch((error) => {
                 console.error("Error:", error);
-
+                loadingDiv.style.visibility = 'hidden';
                 if (error.response.status == 404) {
                     document.querySelector(".reqinv").innerHTML = "<div class='reqinv container-fluid'><div class='row reqinvrow'><div class='col-12 text-center' style='font-size: 18px;'>    You don't have any notifications right now!</div></div></div>"
                 }
@@ -111,7 +113,7 @@ function getRequests() {
     })
 }
 function getInvites() {
-
+    loadingDiv.style.visibility = 'visible';
     firebase.auth().currentUser.getIdToken().then((id) => {
         auth = id;
         axios(`${url}/invites/myInvites`, {
@@ -125,17 +127,18 @@ function getInvites() {
                 document.querySelector(".reqinv").innerHTML = ""
                 requests.received.forEach(element => {
                     console.log(element)
-                    document.querySelector(".reqinv").innerHTML += "<div class='row reqinvrow'><div class='col-12'>    <div class='row'>        <div class='col-12'>            <nbw>" + element.leader.name + "</nbw> has requested you to become a part of <nbw>" + element.team.name + ".</nbw>        </div>    </div>    <div class='row justify-content-end' style='padding-top: 16px;'>        <input id=" + element.inv + " class=' delete btn btn-success' name='accept' type='submit' value='ACCEPT' onclick='acceptinv(event.target.id)'            style='color: #fff; opacity: 1;'>        <input name='reject' type='submit' value='REJECT' onclick='rejectinv(event.target.id)'            style='color: #E7EFEF; opacity: 1; border: none; width: 60px;'>    </div></div></div>"
+                    document.querySelector(".reqinv").innerHTML += "<div class='row reqinvrow'><div class='col-12'>    <div class='row'>        <div class='col-12'>            <nbw>" + element.leader.name + "</nbw> has requested you to become a part of <nbw>" + element.team.name + ".</nbw>        </div>    </div>    <div class='row justify-content-end' style='padding-top: 16px;'>        <input id=" + element.inv + " class=' delete btn btn-success' name='accept' type='submit' value='ACCEPT' onclick='acceptinv(event.target.id)'            style='color: #fff; opacity: 1;'>        <input id=" + element.inv + " name='reject' type='submit' value='REJECT' onclick='rejectinv(event.target.id)'            style='color: #E7EFEF; opacity: 1; border: none; width: 60px;'>    </div></div></div>"
                 });
                 requests.sent.forEach(element => {
                     console.log(element)
-                    document.querySelector(".reqinv").innerHTML += "<div class='row reqinvrow'><div class='col-12'>    <div class='row'>        <div class='col-12'>            <nbw>You</nbw> have invited <nbw>" + element.participant.name + "</nbw> to join the team <nbw>" + element.team.name + ".</nbw>        </div>    </div>    <div class='row justify-content-end' style='padding-top: 16px;'>        <input name='reject' type='submit' value='DELETE' onclick='deleteinv(event.target.id)'            style='color: #E7EFEF; opacity: 1; border: none; width: 60px;'>    </div></div></div>"
+                    document.querySelector(".reqinv").innerHTML += "<div class='row reqinvrow'><div class='col-12'>    <div class='row'>        <div class='col-12'>            <nbw>You</nbw> have invited <nbw>" + element.participant.name + "</nbw> to join the team <nbw>" + element.team.name + ".</nbw>        </div>    </div>    <div class='row justify-content-end' style='padding-top: 16px;'>        <input id=" + element.inv + " name='reject' type='submit' value='DELETE' onclick='deleteinv(event.target.id)'            style='color: #E7EFEF; opacity: 1; border: none; width: 60px;'>    </div></div></div>"
 
                 });
-
+                loadingDiv.style.visibility = 'hidden';
             })
             .catch((error) => {
                 console.error("Error:", error);
+                loadingDiv.style.visibility = 'hidden';
                 if (error.response.status == 404) {
                     document.querySelector(".reqinv").innerHTML = "<div class='reqinv container-fluid'><div class='row reqinvrow'><div class='col-12 text-center' style='font-size: 18px;'>    You don't have any notifications right now!</div></div></div>"
                 }

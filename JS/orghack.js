@@ -1,4 +1,5 @@
 var page = 1;
+const loadingDiv = document.getElementById('loading');
 
 $(document).ready(function () {
   $("#nav").load("../Assets/Header/headero.txt");
@@ -6,6 +7,7 @@ $(document).ready(function () {
 });
 
 function events(event) {
+  loadingDiv.style.visibility = 'visible';
   console.log(event);
   page = event.target.innerHTML;
   console.log(page);
@@ -42,6 +44,7 @@ function events(event) {
           hacks.newHacks[i].mode_of_conduct + ".svg'>" +
           "</div> </div> </a></div>";
       }
+      loadingDiv.style.visibility = 'hidden';
     })
     .catch((error) => {
       console.error("Error:", error);
@@ -51,6 +54,7 @@ function events(event) {
 
 }
 function nextPage() {
+  loadingDiv.style.visibility = 'visible';
   if(page <total_hacks)
   {
     page = Pagination.page + 1; 
@@ -89,6 +93,7 @@ function nextPage() {
           hacks.newHacks[i].mode_of_conduct + ".svg'>" +
           "</div> </div> </a></div>";
       }
+      loadingDiv.style.visibility = 'hidden';
     })
     .catch((error) => {
       console.error("Error:", error);
@@ -97,6 +102,7 @@ function nextPage() {
   })
 }
 function prevPage() {
+  loadingDiv.style.visibility = 'visible';
   if (page > 1) {
     page = Pagination.page - 1;
   }
@@ -136,6 +142,7 @@ function prevPage() {
           hacks.newHacks[i].mode_of_conduct + ".svg'>" +
           "</div> </a></div>";
       }
+      loadingDiv.style.visibility = 'hidden';
     })
     .catch((error) => {
       console.error("Error:", error);
@@ -241,7 +248,7 @@ var Pagination = {
 };
 
 function displayHacks() {
-
+  loadingDiv.style.visibility = 'visible';
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       user.getIdToken().then(function(idToken){
@@ -286,6 +293,7 @@ function displayHacks() {
             page: 1,
             step: 1,
           });
+          loadingDiv.style.visibility = 'hidden';
         };
         init();
       })

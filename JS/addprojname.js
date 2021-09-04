@@ -1,3 +1,5 @@
+const loadingDiv = document.getElementById('loading');
+
 $(document).ready(function () {
   $("#nav").load("../Assets/Header/headerl.txt");
 });
@@ -6,3 +8,5 @@ $(document).ready(function () {
 const project_name = () => {
   localStorage.setItem("project_name", document.myform.projectname.value);
 }
+
+document.onload = loadingDiv.style.visibility = 'hidden';

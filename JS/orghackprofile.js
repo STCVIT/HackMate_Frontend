@@ -1,4 +1,5 @@
 const authentication = firebase.auth();
+const loadingDiv = document.getElementById('loading');
 
 $(document).ready(function () {
   $("#nav").load("../Assets/Header/headero.txt");
@@ -90,6 +91,7 @@ firebase.auth().onAuthStateChanged((user) => {
             page: 1,
             step: 1,
           });
+          loadingDiv.style.visibility = 'hidden';
         };
         init();
       }
@@ -103,7 +105,7 @@ firebase.auth().onAuthStateChanged((user) => {
 });
 
 function deleteHack() {
-
+  loadingDiv.style.visibility = 'visible';
   firebase.auth().currentUser.getIdToken().then((id) => {
     auth = id;
 
@@ -119,7 +121,11 @@ function deleteHack() {
       .then((response) => {
         hack = response.data;
         console.log(hack);
-        window.location = "./orghack.html"
+        loadingDiv.style.visibility = 'hidden';
+        swal("SUCCESS!!", "Your hack has been submitted successfully", "success");
+        document.querySelector(".swal-button--confirm").addEventListener("click", () => {
+          window.location.assign("./orghack.html")
+        })
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -392,6 +398,7 @@ document
   });
 
 async function uploadBlob(file) {
+  loadingDiv.style.visibility = 'visible';
   console.log("Testing");
   const ref = firebase
     .storage()
@@ -470,6 +477,7 @@ async function uploadBlob(file) {
           .then((response) => {
             console.log("Success:", response.data);
             console.log(response.data._id);
+            loadingDiv.style.visibility = 'hidden';
             swal("SUCCESS!!", "Your request has been submitted successfully", "success");
             document.querySelector(".swal-button--confirm").addEventListener("click", () => {
               window.location.assign("./orghackprofile.html?" + response.data._id)

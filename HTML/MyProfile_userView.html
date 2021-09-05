@@ -48,49 +48,49 @@
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <form id="par_form" name="par_form" method="post">
                         <div class="mb-3">
-                            <label for="name" class="form-label">NAME</label>
-                            <input type="text" class="form-control" id="name" autocomplete="off" placeholder="Name">
+                            <label for="name" class="form-label">NAME<sym>*</sym></label>
+                            <input type="text" class="form-control" id="name" autocomplete="off" required placeholder="Name">
                             <small>Error Message</small>
                         </div>
                         <div class="mb-3">
-                            <label for="username" class="form-label">USERNAME</label>
-                            <input type="text" class="form-control" id="username" autocomplete="off"
+                            <label for="username" class="form-label">USERNAME<sym>*</sym></label>
+                            <input type="text" class="form-control" id="username" autocomplete="off" required
                                 placeholder="Username">
                             <small>Error Message</small>
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="form-label">EMAIL</label>
-                            <div type="email" class="form-control" id="email" autocomplete="off" placeholder="Email">
+                            <label for="email" class="form-label">EMAIL<sym>*</sym></label>
+                            <div type="email" class="form-control" id="email" autocomplete="off" required placeholder="Email">
                             </div>
                             <small>Error Message</small>
                         </div>
                         <div class="mb-3">
-                            <label for="college" class="form-label">COLLEGE/UNIVERSITY</label>
-                            <input type="text" class="form-control" id="college" autocomplete="off"
+                            <label for="college" class="form-label">COLLEGE/UNIVERSITY<sym>*</sym></label>
+                            <input type="text" class="form-control" id="college" required autocomplete="off"
                                 placeholder="College/University">
                             <small>Error Message</small>
                         </div>
                         <div class="mb-3">
-                            <label for="github" class="form-label">GITHUB LINK</label>
-                            <input type="link" class="form-control" id="git" autocomplete="off"
+                            <label for="github" class="form-label">GITHUB LINK<sym>*</sym></label>
+                            <input type="link" class="form-control" id="git"required autocomplete="off"
                                 placeholder="GITHUB link">
                             <small>Error Message</small>
                         </div>
                         <div class="mb-3">
-                            <label for="linkedln" class="form-label">LINKEDIN</label>
-                            <input type="text" class="form-control" id="linkedln" autocomplete="off"
+                            <label for="linkedln" class="form-label">LINKEDIN<sym>*</sym></label>
+                            <input type="text" class="form-control" id="linkedln" autocomplete="off" required
                                 placeholder="Linkedln">
                             <small>Error Message</small>
                         </div>
                         <div class="mb-3">
                             <label for="personal_website" class="form-label">PERSONAL WEBSITE</label>
-                            <input type="text" class="form-control" id="personal_website" autocomplete="off"
+                            <input type="text" class="form-control" id="personal_website" autocomplete="off" 
                                 placeholder="Personal Website">
                             <small>Error Message</small>
                         </div>
                         <div class="mb-3">
-                            <label for="year" class="form-label">YEAR OF GRADUATION</label>
-                            <input type="text" class="form-control" id="year" autocomplete="off"
+                            <label for="year" class="form-label">YEAR OF GRADUATION<sym>*</sym></label>
+                            <input type="text" class="form-control" id="year" autocomplete="off" required
                                 placeholder="Year of Graduation">
                             <small>Error Message</small>
                         </div>
@@ -99,8 +99,8 @@
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <form id="form" name="form" method="post">
                         <div class="mb-3">
-                            <label for="bio" class="form-label">BIO</label>
-                            <textarea class="form-control" rows="8" spellcheck="false" id="bio"
+                            <label for="bio" class="form-label">BIO<sym>*</sym></label>
+                            <textarea class="form-control" rows="8" spellcheck="false" id="bio" required
                                 placeholder="Bio"></textarea>
                             <small>Error Message</small>
                         </div>
@@ -167,6 +167,11 @@
     </div>
     <div id="foobottom">
 
+    </div>
+    <div class="container"> 
+        <div id="loading" class="loading">
+          Loading&#8230;     
+        </div>
     </div>
 </body>
 <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>

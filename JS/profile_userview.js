@@ -2,15 +2,14 @@ $(document).ready(function () {
     $("#nav").load("../Assets/Header/headerl.txt");
     $("#foobottom").load("../Assets/Footer/footer.txt");
 });
-
 var logo;
 var user;
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         user.getIdToken().then(function (idToken) {
             console.log(idToken)
-            sessionStorage.setItem("auth", idToken)
-            auth = idToken
+            sessionStorage.setItem("auth", idToken);
+            auth = idToken;
             axios(`${url}/participant/login`, {
                 headers: {
                     Authorization: "Bearer " + auth,
@@ -18,12 +17,7 @@ firebase.auth().onAuthStateChanged((user) => {
             })
                 .then((response) => {
                     user = response.data;
-                    if (user.photo == "hey") {
-                        document.querySelector(".photo").setAttribute("src", "../Assets/Images/blank-profile.png");
-                    }
-                    else {
-                        document.querySelector(".photo").setAttribute("src", user.photo);
-                    }
+                    document.querySelector(".photo").setAttribute("src", user.photo);
                     document.par_form.name.value = user.name;
                     document.par_form.username.value = user.username;
                     document.querySelector("#email").innerHTML = user.email;
@@ -82,6 +76,7 @@ firebase.auth().onAuthStateChanged((user) => {
                     if (userskills.includes("blockchain")) {
                         block.checked = true;
                     }
+                    document.getElementById("loading").style.visibility = 'hidden';
                 })
                 .catch((error) => console.error("Error: " + error));
         })
@@ -91,10 +86,6 @@ firebase.auth().onAuthStateChanged((user) => {
         console.log("I'm signed out!")
     }
 });
-
-
-
-
 
 function delete_account() {
     firebase.auth().currentUser.getIdToken().then((id) => {
@@ -214,7 +205,7 @@ function update_account() {
             flag = flag + 1;
         }
         //personal website
-        if (regstr.test(website.value) === true) {
+        if (regstr.test(website.value) === true ||website.value=="") {
             onSuccess(website);
         }
         else {

@@ -47,6 +47,7 @@ firebase.auth().onAuthStateChanged((user) => {
           }
 
           body.innerHTML = yourHTML;
+          document.getElementById("loading").style.visibility = 'hidden';
         })
         .catch((error) => console.error("Error: " + error));
     })

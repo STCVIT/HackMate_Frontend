@@ -77,6 +77,7 @@ firebase.auth().onAuthStateChanged((user) => {
         }
       }
       hackinfo()
+      document.getElementById("loading").style.visibility = 'hidden';
     })
   } else {
     // User is signed out

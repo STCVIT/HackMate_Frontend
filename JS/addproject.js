@@ -45,7 +45,7 @@ firebase.auth().onAuthStateChanged((user) => {
             if (error.response.status == 404) {
               document.querySelector(".projects").innerHTML = "<h2 class='text-center' style='margin-top: 82px;'>No Projects Found!</h2>"
             }
-
+            loadingDiv.style.visibility = 'hidden';
         });
     })
   } else {

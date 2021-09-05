@@ -5,29 +5,29 @@ const loginSection = document.querySelector('#login-tab-content');
 const signupSection = document.querySelector('#signup-tab-content');
 
 signupBtn.addEventListener('click', function() {
-  loginSection.classList.remove('active');
-  signupSection.classList.add('active');
-  document.getElementById("active1").className = "active3";
-  document.getElementById("inactive1").className = "inactive4";
+    loginSection.classList.remove('active');
+    signupSection.classList.add('active');
+    document.getElementById("active1").className = "active3";
+    document.getElementById("inactive1").className = "inactive4";
 });
 
 loginBtn.addEventListener('click', function() {
-  signupSection.classList.remove('active');
-  loginSection.classList.add('active');
-  document.getElementById("inactive1").className = "active3";
-  document.getElementById("active1").className = "inactive4";
+    signupSection.classList.remove('active');
+    loginSection.classList.add('active');
+    document.getElementById("inactive1").className = "active3";
+    document.getElementById("active1").className = "inactive4";
 });
 
 
-const form=document.getElementById("form");
-form.addEventListener('submit',(e)=>{
+const form = document.getElementById("form");
+form.addEventListener('submit', (e) => {
     (e).preventDefault();
 });
 
-function signup(){
-    const email=document.getElementById('user_email').value;
-    const password=document.getElementById('user_pass1').value;
-    const confirmpwd=document.getElementById('user_pass2').value; 
+function signup() {
+    const email = document.getElementById('user_email').value;
+    const password = document.getElementById('user_pass1').value;
+    const confirmpwd = document.getElementById('user_pass2').value;
     const minNumberofChars = 8;
 
     console.log(email);
@@ -35,114 +35,111 @@ function signup(){
     console.log(confirmpwd);
 
     // Password greater or equal to 8
-    if(password.length < minNumberofChars){
-      alert("Password should be of Minimum 8 Characters.");
+    if (password.length < minNumberofChars) {
+        alert("Password should be of Minimum 8 Characters.");
     }
     // Password and confirm Password should be same
-    else if(password != confirmpwd) {  
-      alert("Password and Confirm Password are not same");  
-      return false;  
-    } 
-    else {  
-      // alert ("Your password created successfully"); 
+    else if (password != confirmpwd) {
+        alert("Password and Confirm Password are not same");
+        return false;
+    } else {
+        // alert ("Your password created successfully"); 
         firebase.auth().createUserWithEmailAndPassword(email, password)
-          .then(({user}) => {
-            alert ("Your password created successfully"); 
-            console.log('signed up!')
-            user.getIdToken().then(function(idToken){
-              console.log(idToken)
-              fetch('https://hackportalbackend.herokuapp.com/participant/signup',{
-                method:'POST',
-                headers: new Headers({
-                  'Authorization': 'Bearer '+ idToken
+            .then(({ user }) => {
+                swal("SUCCESS!!", "Your account has been created successfully", "success");
+                console.log('signed up!')
+                user.getIdToken().then(function(idToken) {
+                    console.log(idToken)
+                    fetch('https://hackportalbackend.herokuapp.com/participant/signup', {
+                        method: 'POST',
+                        headers: new Headers({
+                            'Authorization': 'Bearer ' + idToken
+                        })
+                    }).then((res) => {
+                        console.log(res.status)
+                    })
                 })
-              }).then((res)=>{
-                console.log(res.status)
-              })
-              })
-            user.sendEmailVerification().then(function() {
-              console.log('Email has been sent!');
-              alert("Pls verify your email");
-              })
+                user.sendEmailVerification().then(function() {
+                    console.log('Email has been sent!');
+                    alert("Pls verify your email");
+                    location.reload();
+                })
             })
-          .catch((error) => {
-            console.log(error);
-            console.log(error.message);
+            .catch((error) => {
+                console.log(error);
+                console.log(error.message);
 
-            if(error.message == "The email address is badly formatted."){
-              alert("Enter Valid Email-Id!!");
-            }
-          });
-        }
+                if (error.message == "The email address is badly formatted.") {
+                    swal("WARNING!!", "Enter Valid Email ID", "warning");
+                }
+            });
+    }
 }
 
-const form1=document.getElementById("form1");
-form1.addEventListener('submit',(e)=>{
+const form1 = document.getElementById("form1");
+form1.addEventListener('submit', (e) => {
     (e).preventDefault();
 });
 
 
-function signin(){
-    const email=document.getElementById('login_email').value;
-    const password=document.getElementById('login_pass1').value;
+function signin() {
+    const email = document.getElementById('login_email').value;
+    const password = document.getElementById('login_pass1').value;
     // const url = 'https://hackportalbackend.herokuapp.com/';
 
     console.log(email);
     console.log(password);
 
     firebase.auth().signInWithEmailAndPassword(email, password)
-  .then(({user}) => {
-    // Signed in 
-    console.log("Signed in")
-    user.getIdToken().then(function(idToken){
-        console.log(idToken)
-        var loadingDiv = document.getElementById('loading');
-        loadingDiv.style.visibility = 'visible';
-        
-    fetch(`https://hackportalbackend.herokuapp.com/participant/login`,{
-      method:"GET",
-      headers: new Headers({
-          'Authorization': 'Bearer ' + idToken
+        .then(({ user }) => {
+            // Signed in 
+            console.log("Signed in")
+            user.getIdToken().then(function(idToken) {
+                console.log(idToken)
+                var loadingDiv = document.getElementById('loading');
+                loadingDiv.style.visibility = 'visible';
+
+                fetch(`https://hackportalbackend.herokuapp.com/participant/login`, {
+                    method: "GET",
+                    headers: new Headers({
+                        'Authorization': 'Bearer ' + idToken
+                    })
+                }).then(response => {
+                    // console.log(response.json());
+                    console.log(response.status);
+                    if (response.status == 404 && typeof(Storage) !== "undefined") {
+                        localStorage.setItem("auth", idToken);
+                        window.location.assign("./profile.html");
+                        // location.href = ""; 
+                    } else if (response.status == 401) {
+                        window.location.assign("../index.html");
+                        swal("WARNING!!", "You are a organiser and not a participant!", "warning");
+                    } else if (response.status == 418) {
+                        swal("WARNING!!", "Set Claim not happened right now!", "warning");
+                    } else if (response.status == 200 && typeof(Storage) !== "undefined") {
+                        localStorage.setItem("auth", idToken);
+                        window.location.assign("./viewhackathon.html");
+                        // location.href = "";
+                    }
+                });
+                // .then(response => response.json())   
+                // .then(json => console.log(json));
+            })
         })
-    }).then(response => {
-      // console.log(response.json());
-      console.log(response.status);
-      if (response.status == 404 && typeof(Storage) !== "undefined") {
-        localStorage.setItem("auth", idToken);
-        window.location.assign("./profile.html");
-        // location.href = ""; 
-    }
-    else if (response.status == 401) {
-      window.location.assign("../index.html");
-      alert("You are a organiser and not a participant!!");
-    }
-    else if (response.status == 418) {
-      alert("Set Claim not happened right now!!");
-    }
-      else if(response.status == 200 && typeof(Storage) !== "undefined"){
-        localStorage.setItem("auth", idToken);
-        window.location.assign("./viewhackathon.html");
-        // location.href = "";
-      }
-  }); 
-      // .then(response => response.json())   
-      // .then(json => console.log(json));
-    })
-  })
-            .catch((error) => {
+        .catch((error) => {
             console.log(error);
             console.log(error.message);
 
-            if(error.message == "The email address is badly formatted."){
-              alert("Enter Valid Email-Id!!");
+            if (error.message == "The email address is badly formatted.") {
+                swal("WARNING!!", "Enter Valid Email ID!", "warning");
             }
-            if(error.message == "The password is invalid or the user does not have a password."){
-              alert("Enter Valid Password!!");
+            if (error.message == "The password is invalid or the user does not have a password.") {
+                swal("WARNING!!", "Enter Valid Password", "warning");
             }
-            if(error.message == "There is no user record corresponding to this identifier. The user may have been deleted."){
-              alert("No User!!");
+            if (error.message == "There is no user record corresponding to this identifier. The user may have been deleted.") {
+                swal("WARNING!!", "Pls SignUp before logging in!", "warning");
             }
-          });
+        });
 }
 // function forgot(){
 //   const email=document.getElementById('login_email').value;

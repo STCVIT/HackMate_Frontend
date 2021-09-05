@@ -1,68 +1,75 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Hackmate</title>
-<!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-<link rel="stylesheet" href="../CSS/searchforteamswohack.css">
-<link rel="stylesheet" href="../Assets/Header/headerl.css">
-<link rel="stylesheet" href="../Assets/Footer/footer.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hackmate</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="../CSS/searchforteamswohack.css">
+    <link rel="stylesheet" href="../Assets/Header/headerl.css">
+    <link rel="stylesheet" href="../Assets/Footer/footer.css">
 </head>
+
 <body>
-	<div id="nav"></div>
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 col-md-12 col-12">
-				<h3 class="text1">Search for Teams.</h3>		
-			</div>
-		</div>	
-	</div>
-
-	<div class="container complete">
-		<div class="row">
-			<div class="col-lg-3 order-lg-2 col-xs-12 col-12 cards">
-				<div class="box">
-				<div class="card">
-  					<div class="card-body">
-    					<h4 class="card-title">Join via Team Code.</h4>
-						<input type="text" class="text4" id="enter_code" autocomplete="off" placeholder="Enter Code">
-						<div class="joins">
-							<input type="submit" class="button2" value="Join" onclick="join()">
-						</div>
-  					</div>
-				</div>
-				</div>
-			</div>
-			<div class="col-lg-7 order-lg-1 col-xs-12">
-				<div class="row">
-					<input type="text" id="search" class="text2" id="search_teams" autocomplete="off" placeholder="Search for Teams">
-					<div class="row buttons">
-						<ul class="top-button">
-							<button id="active1" class="button"><h6 class="text5">All</h6></button>
-							<button id="inactive1" class="button1"><h6 class="text3">App Dev</h6></button>
-							<button id="inactive2" class="button5"><h6 class="text6">Frontend Dev</h6></button>
-							<button id="inactive3" class="button6"><h6 class="text7">Backend Dev</h6></button>
-							<button id="inactive4" class="button7"><h6 class="text8">Machine Learning</h6></button>
-        		</ul>
-        	</div>
-        	<div class="row buttons">
-        		<ul class="low buttons">
-        			<button id="inactive5" class="button8"><h6 class="text9">UI/UX Design</h6></button>
-        			<button id="inactive6" class="button9"><h6 class="text10">Management</h6></button>
-        			<button id="inactive7" class="button10"><h6 class="text11">Blockchain</h6></button>
-        			<button id="inactive8" class="button11"><h6 class="text12">Cyber Security</h6></button>
-        		</ul>
-        	</div>
+    <div id="nav"></div>
+    <div class="container">
+        <div id="loading" class="loading">
+            Loading&#8230;
         </div>
-      </div>
-		</div>
-	</div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-12">
+                <h3 class="text1">Search for Teams.</h3>
+            </div>
+        </div>
+    </div>
 
-	<div class="container cards_container">
-		<div class="row dam1">
-<!-- 		<div class="row">
+    <div class="container complete">
+        <div class="row">
+            <div class="col-lg-3 order-lg-2 col-xs-12 col-12 cards">
+                <div class="box">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Join via Team Code.</h4>
+                            <input type="text" class="text4" id="enter_code" autocomplete="off" placeholder="Enter Code">
+                            <div class="joins">
+                                <input type="submit" class="button2" value="Join" onclick="join()">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 order-lg-1 col-xs-12">
+                <div class="row">
+                    <input type="text" id="search" class="text2" id="search_teams" autocomplete="off" placeholder="Search for Teams">
+                    <div class="row buttons">
+                        <ul class="top-button">
+                            <button id="active1" class="button"><h6 class="text5">All</h6></button>
+                            <button id="inactive1" class="button1"><h6 class="text3">App Dev</h6></button>
+                            <button id="inactive2" class="button5"><h6 class="text6">Frontend Dev</h6></button>
+                            <button id="inactive3" class="button6"><h6 class="text7">Backend Dev</h6></button>
+                            <button id="inactive4" class="button7"><h6 class="text8">Machine Learning</h6></button>
+                        </ul>
+                    </div>
+                    <div class="row buttons">
+                        <ul class="low buttons">
+                            <button id="inactive5" class="button8"><h6 class="text9">UI/UX Design</h6></button>
+                            <button id="inactive6" class="button9"><h6 class="text10">Management</h6></button>
+                            <button id="inactive7" class="button10"><h6 class="text11">Blockchain</h6></button>
+                            <button id="inactive8" class="button11"><h6 class="text12">Cyber Security</h6></button>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container cards_container">
+        <div class="row dam1">
+            <!-- 		<div class="row">
 			<div class="col-lg-6 md-12 col-12">
 				<div class="d-flex justify-content-center">
 				<div class="card_of_teams1">
@@ -179,20 +186,21 @@
 				</div>
 			</div>
 		</div> -->
-	</div>
-	</div>
-	<div id="foobottom"></div>
-<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-storage.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script type="text/javascript" src="../JS/config.js"></script>
-<script type="text/javascript" src="../JS/searchforteamswohack.js"></script>
-<script type="text/javascript" src="../JS/url.js"></script>
+        </div>
+    </div>
+    <div id="foobottom"></div>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-storage.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript" src="../JS/config.js"></script>
+    <script type="text/javascript" src="../JS/searchforteamswohack.js"></script>
+    <script type="text/javascript" src="../JS/url.js"></script>
 </body>
+
 </html>

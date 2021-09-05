@@ -2,85 +2,69 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Hackmate</title>
-	<!-- CSS only -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-	<link rel="stylesheet" href="../CSS/createteamwhackwteam.css">
-	<link rel="stylesheet" href="../Assets/Header/headerl.css">
-	<link rel="stylesheet" href="../Assets/Footer/footer.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hackmate</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="../CSS/createteamwhackwteam.css">
+    <link rel="stylesheet" href="../Assets/Header/headerl.css">
+    <link rel="stylesheet" href="../Assets/Footer/footer.css">
 </head>
 
 <body>
-	<div id="nav"></div>
-	<div class="container">
-		<div class="row">
-			<h3 class="text1">Create a Team.</h3>
-		</div>
-	</div>
+    <div id="nav"></div>
+    <div class="container">
+        <div id="loading" class="loading">
+            Loading&#8230;
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <h3 class="text1">Create a Team.</h3>
+        </div>
+    </div>
 
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-8 col-md-12">
-				<div class="row teams">
-					<div class="col-lg-9 col-md-12 team_name">
-						<input type="text" class="input" id="team_name" autocomplete="off"
-							placeholder="Enter Team Name">
-					</div>
-					<div class="col-lg-3">
-						<div class="creates">
-							<!-- 							<input type="submit" class="button" value="Create">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                <div class="row teams">
+                    <div class="col-lg-9 col-md-12 team_name">
+                        <input type="text" class="input" id="team_name" autocomplete="off" placeholder="Enter Team Name">
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="creates">
+                            <!-- 							<input type="submit" class="button" value="Create">
 							<input type="submit" class="button" value="Create" onclick="location.href='./createteamwhack.html'">
 							<input type="submit" class="button" value="Create" onclick="create()">
 							<a href="./createteamwhack.html" class="button btn btn-primary">Create</a> -->
-						</div>
-					</div>
-				</div>
-				<div class="row1">
-					<div class="col-lg-9 col-md-12">
-						<input type="text" class="input1" id="participant_name" autocomplete="off"
-							placeholder="Search Participants by Username">
-					</div>
-				</div>
-				<div class="row options">
-					<div class="row buttons">
-						<ul class="top-button">
-							<button id="active1" class="button3">
-								<h6 class="text5">All</h6>
-							</button>
-							<button id="inactive1" class="button2">
-								<h6 class="text3">App Dev</h6>
-							</button>
-							<button id="inactive2" class="button2">
-								<h6 class="text6">Frontend Dev</h6>
-							</button>
-							<button id="inactive3" class="button2">
-								<h6 class="text7">Backend Dev</h6>
-							</button>
-							<button id="inactive4" class="button2">
-								<h6 class="text8">Machine Learning</h6>
-							</button>
-						</ul>
-						<ul class="low buttons">
-							<button id="inactive5" class="button2">
-								<h6 class="text9">UI/UX Design</h6>
-							</button>
-							<button id="inactive6" class="button2">
-								<h6 class="text10">Management</h6>
-							</button>
-							<button id="inactive7" class="button2">
-								<h6 class="text11">Blockchain</h6>
-							</button>
-							<button id="inactive8" class="button2">
-								<h6 class="text12">Cyber Security</h6>
-							</button>
-						</ul>
-					</div>
-				</div>
-				<div class="row persons">
-					<!-- <div class="card2">
+                        </div>
+                    </div>
+                </div>
+                <div class="row1">
+                    <div class="col-lg-9 col-md-12">
+                        <input type="text" class="input1" id="participant_name" autocomplete="off" placeholder="Search Participants by Username">
+                    </div>
+                </div>
+                <div class="row options">
+                    <div class="row buttons">
+                        <ul class="top-button">
+                            <button id="active1" class="button3"><h6 class="text5">All</h6></button>
+                            <button id="inactive1" class="button2"><h6 class="text3">App Dev</h6></button>
+                            <button id="inactive2" class="button2"><h6 class="text6">Frontend Dev</h6></button>
+                            <button id="inactive3" class="button2"><h6 class="text7">Backend Dev</h6></button>
+                            <button id="inactive4" class="button2"><h6 class="text8">Machine Learning</h6></button>
+                        </ul>
+                        <ul class="low buttons">
+                            <button id="inactive5" class="button2"><h6 class="text9">UI/UX Design</h6></button>
+                            <button id="inactive6" class="button2"><h6 class="text10">Management</h6></button>
+                            <button id="inactive7" class="button2"><h6 class="text11">Blockchain</h6></button>
+                            <button id="inactive8" class="button2"><h6 class="text12">Cyber Security</h6></button>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row persons">
+                    <!-- <div class="card2">
         				<div class="card-body-2">
         					<div class="row">
         						<div class="col-lg-2 col-md-2 col-2">
@@ -128,68 +112,66 @@
         					</div>
         				</div>
         			</div> -->
-				</div>
-			</div>
-			<div class="col-lg-4">
-				<div class="d-flex justify-content-center">
-					<div class="card">
-						<div class="card-body">
-							<h5 class="card-title">Select the skills<br>for your team.</h5>
-							<p>
-								<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
-								<label class="check-label" for="flexCheckDefault">Frontend Development</label>
-							</p>
-							<p>
-								<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
-								<label class="check-label" for="flexCheckDefault">Backend Development</label>
-							</p>
-							<p>
-								<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3">
-								<label class="check-label" for="flexCheckDefault">UI/UX Design</label>
-							</p>
-							<p>
-								<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault4">
-								<label class="check-label" for="flexCheckDefault">Machine Learning</label>
-							</p>
-							<p>
-								<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault5">
-								<label class="check-label" for="flexCheckDefault">Management</label>
-							</p>
-							<p>
-								<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault6">
-								<label class="check-label" for="flexCheckDefault">App Development</label>
-							</p>
-							<p>
-								<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault7">
-								<label class="check-label" for="flexCheckDefault">Cybersecurity</label>
-							</p>
-							<p>
-								<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault8">
-								<label class="check-label" for="flexCheckDefault">Blockchain</label>
-							</p>
-							<p>
-								<button class="button1" onclick="submit()">Save</button>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div id="foobottom"></div>
-	<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<!-- JavaScript Bundle with Popper -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-		crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-	<script src="../JS/createteamwhackwteam.js"></script>
-	<script type="text/javascript" src="../JS/config.js"></script>
-	<script type="text/javascript" src="../JS/url.js"></script>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="d-flex justify-content-center">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Select the skills<br>for your team.</h5>
+                            <p>
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
+                                <label class="check-label" for="flexCheckDefault">Frontend Development</label>
+                            </p>
+                            <p>
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
+                                <label class="check-label" for="flexCheckDefault">Backend Development</label>
+                            </p>
+                            <p>
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3">
+                                <label class="check-label" for="flexCheckDefault">UI/UX Design</label>
+                            </p>
+                            <p>
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault4">
+                                <label class="check-label" for="flexCheckDefault">Machine Learning</label>
+                            </p>
+                            <p>
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault5">
+                                <label class="check-label" for="flexCheckDefault">Management</label>
+                            </p>
+                            <p>
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault6">
+                                <label class="check-label" for="flexCheckDefault">App Development</label>
+                            </p>
+                            <p>
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault7">
+                                <label class="check-label" for="flexCheckDefault">Cybersecurity</label>
+                            </p>
+                            <p>
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault8">
+                                <label class="check-label" for="flexCheckDefault">Blockchain</label>
+                            </p>
+                            <p>
+                                <button class="button1" onclick="submit()">Save</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="foobottom"></div>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../JS/createteamwhackwteam.js"></script>
+    <script type="text/javascript" src="../JS/config.js"></script>
+    <script type="text/javascript" src="../JS/url.js"></script>
 </body>
 
 </html>

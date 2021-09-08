@@ -28,26 +28,18 @@ firebase.auth().onAuthStateChanged((user) => {
 
           let body = document.getElementById("member_card");
           yourHTML = "";
+          console.log(team.team.admin_id);
           for (let i = 0; i < team.team.members.length; i++) {
+            console.log(team.pt_skills[i].participant._id);
             if (team.pt_skills[i].participant._id == team.team.admin_id) {
               yourHTML += "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'>"
-              if (team.pt_skills[i].participant.photo == "hey") {
-                yourHTML += "<img id='dp' src='../Assets/Images/blank-profile.png'>"
-              }
-              else {
-                yourHTML += "<img id='dp' src='" + team.pt_skills[i].participant.photo + "'>"
-              }
-              yourHTML += "<p>" + team.pt_skills[i].participant.name + "<m>(Leader)</m><br><t>" + team.pt_skills[i].skills[i].skill + "</t></p></div></div><l id='leave'>YOU</l></div>"
+              yourHTML += "<img id='dp' src='" + team.pt_skills[i].participant.photo + "'>"
+              yourHTML += "<p>" + team.pt_skills[i].participant.name + "<m>(Leader)</m><br><t>" + team.pt_skills[i].skills[0].skill + "</t></p></div></div><l id='leave'>YOU</l></div>"
             }
             else {
               yourHTML += "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'>"
-              if (team.pt_skills[i].participant.photo == "hey") {
-                yourHTML += "<img id='dp' src='../Assets/Images/blank-profile.png'>"
-              }
-              else {
-                yourHTML += "<img id='dp' src='" + team.pt_skills[i].participant.photo + "'>"
-              }
-              yourHTML += "<p>" + team.pt_skills[i].participant.name + "<m>(Member)</m><br><t>" + team.pt_skills[i].skills[i].skill + "</t></p></div></div><l id='member' onclick = 'removemem()'>REMOVE<identity id='member_id' style='display:none'>" + team.pt_skills[i].participant._id + "</identity></l></div>"
+              yourHTML += "<img id='dp' src='" + team.pt_skills[i].participant.photo + "'>"
+              yourHTML += "<p>" + team.pt_skills[i].participant.name + "<m>(Member)</m><br><t>" + team.pt_skills[i].skills[0].skill + "</t></p></div></div><l id='member' onclick = 'removemem()'>REMOVE<identity id='member_id' style='display:none'>" + team.pt_skills[i].participant._id + "</identity></l></div>"
             }
             body.innerHTML = yourHTML;
           }
@@ -132,6 +124,7 @@ firebase.auth().onAuthStateChanged((user) => {
       }
       hackinfo()
     })
+    document.getElementById("loading").style.visibility = 'hidden';
   } else {
     // User is signed out
     console.log("I'm signed out!")

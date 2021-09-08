@@ -27,10 +27,10 @@ firebase.auth().onAuthStateChanged((user) => {
             document.querySelector(".photo").setAttribute("src", user.participant.photo);
           }
           document.querySelector(".caption h2").innerHTML = toTitleCase(user.participant.name);
-          document.querySelector("#name").innerHTML = user.participant.name;
+          document.querySelector("#name").innerHTML = toTitleCase(user.participant.name);
           document.querySelector("#username").innerHTML = user.participant.username;
           document.querySelector("#email").innerHTML = user.participant.email;
-          document.querySelector("#college").innerHTML = user.participant.college;
+          document.querySelector("#college").innerHTML = toTitleCase(user.participant.college);
           document.querySelector("#git").innerHTML = user.participant.github;
           document.querySelector("#linkedln").innerHTML = user.participant.linkedIn;
           document.querySelector("#personal_website").innerHTML = user.participant.website;
@@ -47,6 +47,7 @@ firebase.auth().onAuthStateChanged((user) => {
           }
 
           body.innerHTML = yourHTML;
+          document.getElementById("loading").style.visibility = 'hidden';
         })
         .catch((error) => console.error("Error: " + error));
     })
@@ -58,7 +59,7 @@ firebase.auth().onAuthStateChanged((user) => {
     return str.replace(
       /\w\S*/g,
       function (txt) {
-        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase() + ".";
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
       }
     );
   }

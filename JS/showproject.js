@@ -38,9 +38,14 @@ $(document).ready(function () {
           projects.teams[i].description +
           "</div></div></a></div>";
       }
+      document.getElementById("loading").style.visibility = 'hidden';
     })
     .catch((error) => {
       console.error("Error:", error);
+      if (error.response.status == 404) {
+        document.querySelector(".projects").innerHTML = "<h2 class='text-center' style='margin-top: 82px;'>No Projects Found!</h2>"
+      }
+      document.getElementById("loading").style.visibility = 'hidden';
     });
   })
 } else {

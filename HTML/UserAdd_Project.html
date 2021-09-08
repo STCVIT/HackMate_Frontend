@@ -28,8 +28,7 @@
                     <form id="project_form">
                         <div class="mb-3">
                             <label for="github" class="form-label">GITHUB LINK</label>
-                            <input type="link" class="form-control" autocomplete="off" id="git"
-                                placeholder="GITHUB link">
+                            <input type="link" class="form-control" autocomplete="off" id="git" placeholder="GITHUB link">
                             <small>Error</small>
                         </div>
                         <div class="mb-3">
@@ -48,11 +47,11 @@
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <form id="form">
                         <div class="mb-3">
-                            <label for="bio" class="form-label">DESCRIPTION</label>
-                            <textarea class="form-control" rows="8" spellcheck="false" id="bio" required
-                                placeholder="Bio"></textarea>
+                            <label for="bio" class="form-label">DESCRIPTION<sym>*</sym></label>
+                            <textarea class="form-control" rows="8" spellcheck="false" id="bio" required placeholder="Bio" required></textarea>
                             <small>Error</small>
                         </div>
+                        <input type="submit" style="visibility:hidden ;">
                     </form>
                 </div>
             </div>

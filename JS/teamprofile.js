@@ -28,21 +28,16 @@ firebase.auth().onAuthStateChanged((user) => {
           team_code.innerHTML = team.team.team_code;
 
           let body = document.getElementById("member_card");
-          yourhtml = "";
+          yourHTML = "";
           for (let i = 0; i < team.team.members.length; i++) {
             console.log(i);
             if (team.pt_skills[i].participant._id == participant_id) {
-              yourhtml += "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'>";
-              if (team.pt_skills[i].participant.photo == "hey") {
-                yourHTML += "<img id='dp' src='../Assets/Images/blank-profile.png'>"
-              }
-              else {
+              yourHTML += "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'>";
                 yourHTML += "<img id='dp' src='" + team.pt_skills[i].participant.photo + "'>"
-              }
               yourHTML += "<p>" + team.pt_skills[i].participant.name + "<m>(You)</m><br><t>" + team.pt_skills[i].skills[0].skill + "</t></p></div></div><l id='leave' onclick='leave()'>LEAVE</l></div>";
             }
             else {
-              yourhtml += "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'>"
+              yourHTML += "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'>"
               if (team.pt_skills[i].participant.photo == "hey") {
                 yourHTML += "<img id='dp' src='../Assets/Images/blank-profile.png'>"
               }
@@ -51,8 +46,9 @@ firebase.auth().onAuthStateChanged((user) => {
               }
               yourHTML += "<p>" + team.pt_skills[i].participant.name + "<m>(Member)</m><br><t>" + team.pt_skills[i].skills[0].skill + "</t></p></div><l></l></div></div>";
             }
+            body.innerHTML = yourHTML;
           }
-          body.innerHTML = yourhtml;
+          document.getElementById("loading").style.visibility = "hidden";
         })
         .catch((error) => console.error("Error: " + error));
       function hackinfo() {
@@ -81,6 +77,7 @@ firebase.auth().onAuthStateChanged((user) => {
         }
       }
       hackinfo()
+      document.getElementById("loading").style.visibility = 'hidden';
     })
   } else {
     // User is signed out

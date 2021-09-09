@@ -112,10 +112,54 @@ function signin() {
                         window.location.assign("./profile.html");
                         // location.href = ""; 
                     } else if (response.status == 401) {
-                        window.location.assign("../index.html");
+                        swal("WARNING!!", "Please verify your email address!", "warning");
+                        loadingDiv.style.visibility = 'hidden';
+                        user.sendEmailVerification().then(function() {
+                            console.log('Email has been sent!');
+                            alert("Pls verify your email");
+                            location.reload();
+                        })
+                    } else if (response.status == 403) {
                         swal("WARNING!!", "You are a organiser and not a participant!", "warning");
+                        loadingDiv.style.visibility = 'hidden';
                     } else if (response.status == 418) {
-                        swal("WARNING!!", "Set Claim not happened right now!", "warning");
+                        swal("WARNING!!", "Try Logging in again after some time!", "warning");
+                        loadingDiv.style.visibility = 'hidden';
+                        signins();
+
+                        function signins() {
+                            const email = document.getElementById('login_email').value;
+                            const password = document.getElementById('login_pass1').value;
+                            // const url = 'https://hackportalbackend.herokuapp.com/';
+
+                            console.log(email);
+                            console.log(password);
+
+                            firebase.auth().signInWithEmailAndPassword(email, password)
+                                .then(({ user }) => {
+                                    // Signed in 
+                                    console.log("Signed in")
+                                    user.getIdToken().then(function(idToken) {
+                                        console.log(idToken);
+
+                                        fetch(`https://hackportalbackend.herokuapp.com/participant/signup`, {
+                                            method: "POST",
+                                            headers: new Headers({
+                                                'Authorization': 'Bearer ' + idToken
+                                            })
+                                        }).then(response => {
+                                            // console.log(response.json());
+                                            console.log(response.status);
+                                        });
+                                        // .then(response => response.json())   
+                                        // .then(json => console.log(json));
+                                    })
+                                })
+                                .catch((error) => {
+                                    console.log(error);
+                                    console.log(error.message);
+                                });
+                        }
                     } else if (response.status == 200 && typeof(Storage) !== "undefined") {
                         localStorage.setItem("auth", idToken);
                         window.location.assign("./viewhackathon.html");

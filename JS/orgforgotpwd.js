@@ -10,6 +10,12 @@ function forgot() {
         .catch((error) => {
             var errorCode = error.code;
             var errorMessage = error.message;
+
+            console.log(errorCode);
+
+            if (errorCode == "auth/user-not-found") {
+                swal("WARNING!!", "No Account!!", "warning");
+            }
             // ..
         });
 }

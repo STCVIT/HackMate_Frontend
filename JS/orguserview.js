@@ -39,7 +39,7 @@ firebase.auth().onAuthStateChanged((user) => {
 
 
 function deleteacc() {
-
+  loadingDiv.style.visibility = 'visiblee';
   firebase.auth().currentUser.getIdToken().then(async (id) => {
     auth = id
     axios
@@ -60,7 +60,7 @@ function deleteacc() {
 
 function updateacc() {
 
-
+  loadingDiv.style.visibility = 'visible';
   firebase.auth().currentUser.getIdToken().then(async (id) => {
     auth = id
 

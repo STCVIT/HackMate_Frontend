@@ -82,7 +82,6 @@ function events(event) {
   window.location = "#wrapper"
 
   firebase.auth().currentUser.getIdToken().then((id) => {
-    console.log("Hey!")
     console.log(id)
     auth = id;
     axios(`${url}/getHacks/${occurence}?page=${page}`, {

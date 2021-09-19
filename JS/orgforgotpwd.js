@@ -16,6 +16,9 @@ function forgot() {
             if (errorCode == "auth/user-not-found") {
                 swal("WARNING!!", "No Account!!", "warning");
             }
+            else if (errorCode == "auth/invalid-email") {
+                swal("WARNING!!", "Invalid Email!!", "warning");
+            }
             // ..
         });
 }

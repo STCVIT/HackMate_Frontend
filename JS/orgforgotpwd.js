@@ -5,7 +5,7 @@ function forgot() {
         .then(() => {
             // Password reset email sent!
             // ..
-            alert("Password mail set was sent!!");
+            swal("SUCCESS!!", "Password mail set was sent!!", "success");
         })
         .catch((error) => {
             var errorCode = error.code;

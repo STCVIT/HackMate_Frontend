@@ -46,7 +46,23 @@ function signup() {
         // alert("Your password created successfully");
         firebase.auth().createUserWithEmailAndPassword(email, password)
             .then(({ user }) => {
-                swal("SUCCESS!!", "Your account has been created successfully", "success");
+                // swal("SUCCESS!!", "Your account has been created successfully", "success");
+                Swal.fire({
+                    title: 'SUCCESS!!',
+                    text: "Your account has been created successfully!",
+                    icon: 'success',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'Ok!'
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                      Swal.fire(
+                        'SUCCESS!!!',
+                        'Please verify your email!',
+                        'success'
+                      )
+                    }
+                  })
                 console.log('signed up!')
                 user.getIdToken().then(function(idToken) {
                     console.log(idToken)
@@ -61,8 +77,8 @@ function signup() {
                 })
                 user.sendEmailVerification().then(function() {
                     console.log('Email has been sent!');
-                    alert("Pls verify your email");
-                    location.reload();
+                    // alert("Pls verify your email");
+                    // location.reload();
                 })
             })
             .catch((error) => {
@@ -70,7 +86,26 @@ function signup() {
                 console.log(error.message);
 
                 if (error.message == "The email address is badly formatted.") {
-                    swal("WARNING!!", "Enter Valid Email ID", "warning");
+                    // swal("WARNING!!", "Enter Valid Email ID", "warning");
+                    Swal.fire({
+                        title: 'WARNING!!',
+                        text: "Enter Valid Email ID!",
+                        icon: 'warning',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'Ok!'
+                      })
+                }
+                else if (error.message == "The email address is already in use by another account.") {
+                    // swal("WARNING!!", "You already have an account!!", "warning");
+                    Swal.fire({
+                        title: 'WARNING!!',
+                        text: "You already have an account!!",
+                        icon: 'warning',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'Ok!'
+                      })
                 }
             });
     }
@@ -111,18 +146,40 @@ function signin() {
                         window.location.assign("./organiser_profile.html");
                         // location.href = ""; 
                     } else if (response.status == 401) {
-                        swal("WARNING!!", "Please verify your email address!", "warning");
+                        // swal("WARNING!!", "Please verify your email address!", "warning");
+                        Swal.fire({
+                            title: 'WARNING!!',
+                            text: "Please verify your email address!",
+                            icon: 'warning',
+                            showCancelButton: false,
+                            confirmButtonColor: '#3085d6',
+                            confirmButtonText: 'Ok!'
+                          })
                         loadingDiv.style.visibility = 'hidden';
                         user.sendEmailVerification().then(function() {
                             console.log('Email has been sent!');
-                            alert("Pls verify your email");
-                            location.reload();
                         })
                     } else if (response.status == 403) {
-                        swal("WARNING!!", "You are a participant and not an organiser!", "warning");
+                        // swal("WARNING!!", "You are a participant and not an organiser!", "warning");
+                        Swal.fire({
+                            title: 'WARNING!!',
+                            text: "You are a organiser and not a participant!",
+                            icon: 'warning',
+                            showCancelButton: false,
+                            confirmButtonColor: '#3085d6',
+                            confirmButtonText: 'Ok!'
+                          })
                         loadingDiv.style.visibility = 'hidden';
                     } else if (response.status == 418) {
-                        swal("WARNING!!", "Set Claim not happened right now!", "warning");
+                        // swal("WARNING!!", "Set Claim not happened right now!", "warning");
+                        Swal.fire({
+                            title: 'WARNING!!',
+                            text: "Try Logging in again after some time!",
+                            icon: 'warning',
+                            showCancelButton: false,
+                            confirmButtonColor: '#3085d6',
+                            confirmButtonText: 'Ok!'
+                          })
                         loadingDiv.style.visibility = 'hidden';
                         signins();
 
@@ -175,13 +232,37 @@ function signin() {
             console.log(error.message);
 
             if (error.message == "The email address is badly formatted.") {
-                swal("WARNING!!", "Enter Valid Email ID!", "warning");
+                // swal("WARNING!!", "Enter Valid Email ID!", "warning");
+                Swal.fire({
+                    title: 'WARNING!!',
+                    text: "Enter Valid Email ID!",
+                    icon: 'warning',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'Ok!'
+                  })
             }
             if (error.message == "The password is invalid or the user does not have a password.") {
-                swal("WARNING!!", "Enter Valid Password", "warning");
+                // swal("WARNING!!", "Enter Valid Password", "warning");
+                Swal.fire({
+                    title: 'WARNING!!',
+                    text: "Enter Valid Password",
+                    icon: 'warning',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'Ok!'
+                  })
             }
             if (error.message == "There is no user record corresponding to this identifier. The user may have been deleted.") {
-                swal("WARNING!!", "Pls SignUp before logging in!", "warning");
+                // swal("WARNING!!", "Pls SignUp before logging in!", "warning");
+                Swal.fire({
+                    title: 'WARNING!!',
+                    text: "Pls SignUp before logging in!",
+                    icon: 'warning',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'Ok!'
+                  })
             }
         });
 }

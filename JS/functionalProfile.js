@@ -1,6 +1,7 @@
 $(document).ready(function () {
     $("#nav").load("../Assets/Header/headerwobtn.txt");
 });
+const loadingDiv = document.getElementById('loading');
 let photo = "../Assets/Images/blank-profile.png";
 let back = 0;
 if(localStorage.getItem("BACK") == 1){

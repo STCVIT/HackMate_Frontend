@@ -2,7 +2,7 @@ $(document).ready(function () {
     $("#nav").load("../Assets/Header/headerwobtn.txt");
     $("#foobottom").load("../Assets/Footer/footer.txt");
 });
-
+const loadingDiv = document.getElementById('loading');
 let app = document.querySelector("#app");
 let frontend = document.querySelector("#frontend");
 let backend = document.querySelector("#backend");

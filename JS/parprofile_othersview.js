@@ -2,7 +2,7 @@ $(document).ready(function () {
   $("#nav").load("../Assets/Header/headerl.txt");
   $("#foobottom").load("../Assets/Footer/footer.txt");
 });
-
+const loadingDiv = document.getElementById('loading');
 let user;
 let user_id;
 let person_id;

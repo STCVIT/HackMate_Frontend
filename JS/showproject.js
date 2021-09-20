@@ -2,7 +2,7 @@ $(document).ready(function () {
     $("#nav").load("../Assets/Header/headerl.txt");
     $("#foobottom").load("../Assets/Footer/footer.txt");
   });
-
+  const loadingDiv = document.getElementById('loading');
   randomId = localStorage.getItem("participant");
   
   firebase.auth().onAuthStateChanged((user) => {

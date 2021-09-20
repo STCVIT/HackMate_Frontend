@@ -2,6 +2,7 @@ $(document).ready(function () {
     $("#nav").load("../Assets/Header/headerl.txt");
     $("#foobottom").load("../Assets/Footer/footer.txt");
 });
+const loadingDiv = document.getElementById('loading');
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         user.getIdToken().then(function (idToken) {

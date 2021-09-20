@@ -2,7 +2,7 @@ $(document).ready(function () {
   $("#nav").load("../Assets/Header/headerl.txt");
   $("#foobottom").load("../Assets/Footer/footer.txt");
 });
-
+const loadingDiv = document.getElementById('loading');
 let team_name = document.getElementById("team_name");
 let team_code = document.getElementById("team_code");
 let hack_id = localStorage.getItem("hack_id");

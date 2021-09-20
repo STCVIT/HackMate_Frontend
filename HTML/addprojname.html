@@ -16,44 +16,46 @@
 <body>
     <div id="nav"></div>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-1"></div>
-            <div class="col-10">
-                <div class="nbw">
-                    My Project.
-                    <div class="btns">
-                        <a class=" about btn btn-success" href="./MyProfile_userView.html" role="button">About</a>
-                        <a class=" addprojects btn btn-success" href="#" role="button">Add Projects</a>
+    <div class="main">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-10">
+                    <div class="nbw">
+                        My Project.
+                        <div class="btns">
+                            <a class=" about btn btn-success" href="./MyProfile_userView.html" role="button">About</a>
+                            <a class=" addprojects btn btn-success" href="#" role="button">Add Projects</a>
+                        </div>
                     </div>
                 </div>
+                <div class="col-1"></div>
             </div>
-            <div class="col-1"></div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-3 col-1"></div>
-            <div class="col-md-6 col-10 boxname text-center justify-content-center" style="margin-top: 35px;">
-                <div class="text projname" style="margin-top: 70px;">
-                    Enter Project Name.
-                </div>
-                <form name="myform" method="post">
-                    <input class="textbox" type="text" name="projectname" id="" placeholder="Project Name"> <br>
-
-                    <div class="btns" style="margin-top: 54.43px; margin-bottom: 71px;">
-                        <a class=" start btn btn-success" onclick="project_name()" href="./UserAdd_Project.html"
-                            role="button">Start</a>
-                        <a class=" start btn btn-success" href="#" role="button">Not Now</a>
+    
+            <div class="row">
+                <div class="col-md-3 col-1"></div>
+                <div class="col-md-6 col-10 boxname text-center justify-content-center" style="margin-top: 35px;">
+                    <div class="text projname" style="margin-top: 70px;">
+                        Enter Project Name.
                     </div>
-                </form>
+                    <form name="myform" method="post">
+                        <input class="textbox" type="text" name="projectname" id="" placeholder="Project Name"> <br>
+    
+                        <div class="btns" style="margin-top: 54.43px; margin-bottom: 71px;">
+                            <a class=" start btn btn-success" onclick="project_name()" 
+                                role="button">Start</a>
+                            <a class=" start btn btn-success" href="#" role="button">Not Now</a>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-3 col-1"></div>
             </div>
-            <div class="col-md-3 col-1"></div>
         </div>
-    </div>
-
-    <div class="container"> 
-        <div id="loading" class="loading">
-          Loading&#8230;     
+    
+        <div class="container"> 
+            <div id="loading" class="loading">
+              Loading&#8230;     
+            </div>
         </div>
     </div>
     
@@ -67,6 +69,7 @@
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="../JS/url.js"></script>
     <script src="../JS/addprojname.js"></script>
 </body>

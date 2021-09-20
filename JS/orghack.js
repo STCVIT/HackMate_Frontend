@@ -25,12 +25,16 @@ function events(event) {
       document.querySelector(".wrapper").innerHTML = "";
 
       for (var i = 0; i < hacks.newHacks.length; i++) {
+        if(hacks.newHacks[i].name.length > 15)
+        {
+          hacks.newHacks[i].name = hacks.newHacks[i].name.slice(0,12) + "..."
+        }
         document.querySelector(".wrapper").innerHTML +=
           "<div class='box'> <a href='./orghackprofile.html?" +
           hacks.newHacks[i]._id +
           "' style='text-decoration: none;'> <div class='innertxt'> <div class='hackname'> <nb1>" +
           hacks.newHacks[i].name +
-          ". </nb1> </div> <br> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw>" +
+          ". </nb1> </div> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw>" +
           hacks.newHacks[i].start.split("T")[0] +
           "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw>" +
           hacks.newHacks[i].end.split("T")[0] +
@@ -74,12 +78,16 @@ function nextPage() {
       document.querySelector(".wrapper").innerHTML = "";
 
       for (var i = 0; i < hacks.newHacks.length; i++) {
+        if(hacks.newHacks[i].name.length > 15)
+        {
+          hacks.newHacks[i].name = hacks.newHacks[i].name.slice(0,12) + "..."
+        }
         document.querySelector(".wrapper").innerHTML +=
           "<div class='box'> <a href='./orghackprofile.html?" +
           hacks.newHacks[i]._id +
           "' style='text-decoration: none;'> <div class='innertxt'> <div class='hackname'> <nb1>" +
           hacks.newHacks[i].name +
-          ". </nb1> </div> <br> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw>" +
+          ". </nb1> </div>  <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw>" +
           hacks.newHacks[i].start.split("T")[0] +
           "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw>" +
           hacks.newHacks[i].end.split("T")[0] +
@@ -123,12 +131,16 @@ function prevPage() {
       document.querySelector(".wrapper").innerHTML = "";
 
       for (var i = 0; i < hacks.newHacks.length; i++) {
+        if(hacks.newHacks[i].name.length > 15)
+        {
+          hacks.newHacks[i].name = hacks.newHacks[i].name.slice(0,12) + "..."
+        }
         document.querySelector(".wrapper").innerHTML +=
           "<div class='box'> <a href='./orghackprofile.html?" +
           hacks.newHacks[i]._id +
           "' style='text-decoration: none;'> <div class='innertxt'> <div class='hackname'> <nb1>" +
           hacks.newHacks[i].name +
-          ". </nb1> </div> <br> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw>" +
+          ". </nb1> </div>  <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw>" +
           hacks.newHacks[i].start.split("T")[0] +
           "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw>" +
           hacks.newHacks[i].end.split("T")[0] +
@@ -268,12 +280,16 @@ function displayHacks() {
           document.querySelector(".wrapper").innerHTML = "";
       
           for (var i = 0; i < hacks.newHacks.length; i++) {
+            if(hacks.newHacks[i].name.length > 15)
+            {
+              hacks.newHacks[i].name = hacks.newHacks[i].name.slice(0,12) + "..."
+            }
             document.querySelector(".wrapper").innerHTML +=
               "<div class='box'> <a href='./orghackprofile.html?" +
               hacks.newHacks[i]._id +
               "' style='text-decoration: none;'> <div class='innertxt'> <div class='hackname'> <nb1>" +
               hacks.newHacks[i].name +
-              ". </nb1> </div> <br> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw>" +
+              "</nb1> </div>  <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw>" +
               hacks.newHacks[i].start.split("T")[0] +
               "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw>" +
               hacks.newHacks[i].end.split("T")[0] +

@@ -11,7 +11,7 @@
 
 .loading {
   position: fixed;
-  z-index: 999;
+  z-index: 9999;
   height: 2em;
   width: 2em;
   overflow: show;
@@ -181,7 +181,7 @@ nb1 {
 .box {
   background: #1d2833;
   width: 317px;
-  height: 424px;
+  height: 404px;
   margin-top: 57px;
   margin-left: 2.5vw;
   margin-right: 2.5vw;

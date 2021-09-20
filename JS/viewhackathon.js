@@ -94,6 +94,10 @@ function events(event) {
         console.log(hacks);
         document.querySelector(".wrapper").innerHTML = "";
         for (var i = 0; i < hacks.final.length; i++) {
+          if(hacks.final[i].name.length > 15)
+          {
+            hacks.final[i].name = hacks.final[i].name.slice(0,12) + "..."
+          }
           document.querySelector(".wrapper").innerHTML +=
             "<div class='box'><img src='../Assets/Images/Name Banner.png' class='namebanner' alt=''> <div class='innertxt'> <nb1 class='hackname'>" +
             hacks.final[i].name +
@@ -267,6 +271,10 @@ function displayTeams() {
           console.log(length);
           document.querySelector(".wrapper").innerHTML = '';
           for (var i = 0; i < hacks.final.length; i++) {
+            if(hacks.final[i].name.length > 15)
+            {
+              hacks.final[i].name = hacks.final[i].name.slice(0,12) + "..."
+            }
             document.querySelector(".wrapper").innerHTML +=
               "<div class='box'><img src='../Assets/Images/Name Banner.png' class='namebanner' alt=''> <div class='innertxt'> <nb1 class='hackname'>" +
               hacks.final[i].name +
@@ -352,6 +360,10 @@ function nextPage() {
         console.log(hacks);
         document.querySelector(".wrapper").innerHTML = "";
         for (var i = 0; i < hacks.final.length; i++) {
+          if(hacks.final[i].name.length > 15)
+          {
+            hacks.final[i].name = hacks.final[i].name.slice(0,12) + "..."
+          }
           document.querySelector(".wrapper").innerHTML +=
             "<div class='box'><img src='../Assets/Images/Name Banner.png' class='namebanner' alt=''> <div class='innertxt'> <nb1 class='hackname'>" +
             hacks.final[i].name +
@@ -418,6 +430,10 @@ function prevPage() {
 
         document.querySelector(".wrapper").innerHTML = "";
         for (var i = 0; i < hacks.final.length; i++) {
+          if(hacks.final[i].name.length > 15)
+          {
+            hacks.final[i].name = hacks.final[i].name.slice(0,12) + "..."
+          }
           document.querySelector(".wrapper").innerHTML +=
             "<div class='box'><img src='../Assets/Images/Name Banner.png' class='namebanner' alt=''> <div class='innertxt'> <nb1 class='hackname'>" +
             hacks.final[i].name +

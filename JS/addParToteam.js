@@ -7,7 +7,7 @@ const design = document.querySelector('.text9');
 const block = document.querySelector('.text11');
 const cyber = document.querySelector('.text12');
 const all = document.querySelector('.text5');
-
+const loadingDiv = document.getElementById('loading');
 var n = 0;
 app.addEventListener('click', function () {
   firebase.auth().currentUser.getIdToken().then((id) => {

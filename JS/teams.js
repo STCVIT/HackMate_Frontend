@@ -5,6 +5,7 @@ $(document).ready(function () {
 var teams = {};
 var page = 1;
 var participant_id;
+const loadingDiv = document.getElementById('loading');
 function events(event) {
   firebase.auth().currentUser.getIdToken().then((id) => {
     auth = id;

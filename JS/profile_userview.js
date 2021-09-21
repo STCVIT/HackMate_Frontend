@@ -87,7 +87,7 @@ firebase.auth().onAuthStateChanged((user) => {
         console.log("I'm signed out!")
     }
 });
-
+let signal = 0;
 function delete_account() {
     firebase.auth().currentUser.getIdToken().then((id) => {
         auth = id;

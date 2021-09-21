@@ -42,18 +42,45 @@ function deleteacc() {
   loadingDiv.style.visibility = 'visiblee';
   firebase.auth().currentUser.getIdToken().then(async (id) => {
     auth = id
-    axios
-      .delete(`${url}/organiser/deleteProfile`, {
-        headers: {
-          Authorization: "Bearer " + auth,
-        },
-      })
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => console.error("Error: " + error));
-
-    window.location = "../";
+    // axios
+    //   .delete(`${url}/organiser/deleteProfile`, {
+    //     headers: {
+    //       Authorization: "Bearer " + auth,
+    //     },
+    //   })
+    //   .then((response) => {
+    //     console.log(response.data);
+    //       // window.location = "../";
+    //   })
+    //   .catch((error) => console.error("Error: " + error));  
+    swal({
+      title: "Are you sure?",
+      text: "Do you want to delete your profile?",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+  })
+      .then((willDelete) => {
+          if (willDelete) {
+              axios
+                  .delete(`${url}/organiser/deleteProfile`, {
+                      headers: {
+                          Authorization: "Bearer " + auth,
+                      },
+                  })
+                  .then((response) => {
+                      console.log(response.data);
+                      console.log(res);
+                      swal("Poof! Your profile has been deleted!", {
+                        icon: "success",
+                    });
+                  })
+                  .catch((error) => console.error("Error: " + error));
+          }
+          else {
+              swal("Your profile is safe!");
+          }
+      });
 
   })
 }

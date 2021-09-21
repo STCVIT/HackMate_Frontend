@@ -1,3 +1,5 @@
+var loadingDiv = document.getElementById('loading');
+loadingDiv.style.visibility = 'hidden';
 $(document).ready(function () {
     $("#nav").load("../Assets/Header/headerl.txt");
     $("#foobottom").load("../Assets/Footer/footer.txt");

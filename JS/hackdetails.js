@@ -5,7 +5,9 @@ $(document).ready(function () {
 const loadingDiv = document.getElementById('loading');
 
 if(window.location.search.split("?")[1] == undefined){
-  window.location = "./viewhackathon.html"
+  swal("Not Found!","Hack doesn't exist", "warning").then(()=>{
+    window.location.href = "./viewhackathon.html"
+  })
 }
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
@@ -83,6 +85,9 @@ firebase.auth().onAuthStateChanged((user) => {
           })
         .catch((error) => {
           console.error("Error:", error);
+          swal("Not Found!","Hack doesn't exist", "warning").then(()=>{
+            window.location.href = "./viewhackathon.html"
+          })
         });
     })
   } else {

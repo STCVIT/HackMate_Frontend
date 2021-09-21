@@ -4,8 +4,9 @@ $(document).ready(function () {
 const loadingDiv = document.getElementById('loading');
 let photo = "../Assets/Images/blank-profile.png";
 let back = 0;
-let change =0;
+let change = 0;
 let username;
+let signal =0 ;
 if (localStorage.getItem("BACK") == 1) {
     document.form.name.value = sessionStorage.getItem("NAME");
     document.form.username.value = sessionStorage.getItem("USERNAME");
@@ -30,7 +31,7 @@ function firstpage_profile() {
             sessionStorage.setItem("USERNAME", username.value);
             sessionStorage.setItem("COLLEGE", college.value);
             sessionStorage.setItem("YEAR", year.value);
-             window.location.assign("./profile_2nd.html");
+            window.location.assign("./profile_2nd.html");
         }
     });
 
@@ -70,8 +71,8 @@ function secondpage_profile() {
         let git = document.getElementById("github");
         let website = document.getElementById("personal_website");
         let bio = document.getElementById("bio");
-        sessionStorage.setItem("LINKEDIN",linkedin.value);
-        sessionStorage.setItem("GIT",git.value);
+        sessionStorage.setItem("LINKEDIN", linkedin.value);
+        sessionStorage.setItem("GIT", git.value);
         sessionStorage.setItem("WEBSITE", website.value);
         sessionStorage.setItem("BIO", bio.value);
         let eval = validate(linkedin, git, website, bio);
@@ -93,47 +94,50 @@ function secondpage_profile() {
                             .then((res) => {
                                 console.log(res.status);
                                 if (res.status === 403) {
+                                    signal = 100;
+                                    console.log(signal);
                                     console.log("username not unique");
                                     swal("WARNING!!", "Please choose a unique username", "warning");
-                            }
-                        })
+                                }
+                                else{
+                                    if (eval == 3) {
+                                        console.log("form validation completed");
+                                        fetch(`${url}/participant/createProfile`, {
+        
+                                            method: "POST",
+                                            headers: {
+                                                "Content-Type": "application/json; charset=utf-8",
+                                                Authorization: "Bearer " + auth,
+                                            },
+                                            body: JSON.stringify({
+                                                name: Name,
+                                                college: college,
+                                                github: git.value,
+                                                linkedIn: linkedin.value,
+                                                website: website.value,
+                                                photo: photo,
+                                                bio: bio.value,
+                                                graduation_year: year,
+                                                username: username
+                                            }),
+                                        })
+                                            .then((response) => response.text())
+                                            .then((text) => {
+                                                console.log("Success:", text);
+                                                window.location.assign("./profile_skills.html");
+                                            })
+                                            .catch((error) => {
+                                                console.log("Error:", error);
+                                            });
+                                    }
+                                }
+                            })
                             .catch((error) => {
                                 console.log(error);
                                 console.log(error.message);
                             })
                     }
-                    checkusername();
-
-                    if (eval == 3) {
-                        console.log("form validation completed");
-                        fetch(`${url}/participant/createProfile`, {
-
-                            method: "POST",
-                            headers: {
-                                "Content-Type": "application/json; charset=utf-8",
-                                Authorization: "Bearer " + auth,
-                            },
-                            body: JSON.stringify({
-                                name: Name,
-                                college: college,
-                                github: git.value,
-                                linkedIn: linkedin.value,
-                                website: website.value,
-                                photo: photo,
-                                bio: bio.value,
-                                graduation_year: year,
-                                username: username
-                            }),
-                        })
-                            .then((response) => response.text())
-                            .then((text) => {
-                                console.log("Success:", text);
-                                window.location.assign("./profile_skills.html");
-                            })
-                            .catch((error) => {
-                                console.log("Error:", error);
-                            });
-                    }
+                    checkusername()
                 })
             } else {
                 // User is signed out

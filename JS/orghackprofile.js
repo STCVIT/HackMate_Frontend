@@ -42,6 +42,9 @@ firebase.auth().onAuthStateChanged((user) => {
         })
         .catch((error) => {
           console.error("Error:", error);
+          swal("Not Found!","Hack doesn't exist", "warning").then(()=>{
+            window.location.href = "./orghack.html"
+          })
         });
 
       function displayTeams() {
@@ -127,7 +130,7 @@ function deleteHack() {
         hack = response.data;
         console.log(hack);
         loadingDiv.style.visibility = 'hidden';
-        swal("SUCCESS!!", "Your hack has been submitted successfully", "success");
+        swal("SUCCESS!!", "Your hack has been deleted successfully", "success");
         document.querySelector(".swal-button--confirm").addEventListener("click", () => {
           window.location.assign("./orghack.html")
         })

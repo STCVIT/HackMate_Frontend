@@ -101,7 +101,7 @@
                 })
                 .catch((error) => {
                     console.error("Error:", error);
-
+                    
                     if (error.response.status == 404) {
                         document.querySelector(".notification2").innerHTML = "<div class='text-center notification1' style='padding-top: 16px;'>    Notifications</div><div class='text-center notification2' style='padding-top: 25px'>    You don't have any Notifications</div>"
                     }

@@ -4,13 +4,15 @@ $(document).ready(function () {
 const loadingDiv = document.getElementById('loading');
 let photo = "../Assets/Images/blank-profile.png";
 let back = 0;
-if(localStorage.getItem("BACK") == 1){
+let change =0;
+let username;
+if (localStorage.getItem("BACK") == 1) {
     document.form.name.value = sessionStorage.getItem("NAME");
     document.form.username.value = sessionStorage.getItem("USERNAME");
     document.form.college.value = sessionStorage.getItem("COLLEGE");
     document.form.year.value = sessionStorage.getItem("YEAR");
     back = 0;
-    localStorage.setItem("BACK",back);
+    localStorage.setItem("BACK", back);
 }
 function firstpage_profile() {
     let Name = document.getElementById("name");
@@ -28,13 +30,24 @@ function firstpage_profile() {
             sessionStorage.setItem("USERNAME", username.value);
             sessionStorage.setItem("COLLEGE", college.value);
             sessionStorage.setItem("YEAR", year.value);
-            window.location.assign("./profile_2nd.html");
+             window.location.assign("./profile_2nd.html");
         }
     });
+
+    // function get_items() {
+    //     if (localStorage.getItem("BACK") == 0) {
+    //         document.form2.linkedin.value= sessionStorage.getItem("LINKEDIN");
+    //         document.form2.git.value = sessionStorage.getItem("GIT");
+    //         document.form2.website.value= sessionStorage.getItem("WEBSITE");
+    //         document.form2.bio.value = sessionStorage.getItem("BIO");
+    //     }
+    // }
+
+    // get_items();
 }
-function set_items(){
+function set_items() {
     back = 1;
-    localStorage.setItem("BACK",back);
+    localStorage.setItem("BACK", back);
     window.location.assign("./profile.html");
 }
 function secondpage_profile() {
@@ -42,7 +55,7 @@ function secondpage_profile() {
     form2.addEventListener('submit', (e) => {
         (e).preventDefault();
         const Name = toTitleCase(sessionStorage.getItem("NAME"));
-        const username = sessionStorage.getItem("USERNAME");
+        username = sessionStorage.getItem("USERNAME");
         const college = toTitleCase(sessionStorage.getItem("COLLEGE"));
         const year = sessionStorage.getItem("YEAR");
         function toTitleCase(str) {
@@ -57,6 +70,10 @@ function secondpage_profile() {
         let git = document.getElementById("github");
         let website = document.getElementById("personal_website");
         let bio = document.getElementById("bio");
+        sessionStorage.setItem("LINKEDIN",linkedin.value);
+        sessionStorage.setItem("GIT",git.value);
+        sessionStorage.setItem("WEBSITE", website.value);
+        sessionStorage.setItem("BIO", bio.value);
         let eval = validate(linkedin, git, website, bio);
         console.log(eval);
         firebase.auth().onAuthStateChanged((user) => {
@@ -64,6 +81,29 @@ function secondpage_profile() {
                 user.getIdToken().then(function (idToken) {
                     console.log(idToken)
                     auth = idToken
+                    console.log(auth);
+                    function checkusername() {
+                        fetch(`${url}/participant/checkUserName/${username}`, {
+
+                            method: "POST",
+                            headers: {
+                                Authorization: "Bearer " + auth,
+                            },
+                        })
+                            .then((res) => {
+                                console.log(res.status);
+                                if (res.status === 403) {
+                                    console.log("username not unique");
+                                    swal("WARNING!!", "Please choose a unique username", "warning");
+                            }
+                        })
+                            .catch((error) => {
+                                console.log(error);
+                                console.log(error.message);
+                            })
+                    }
+                    checkusername();
+
                     if (eval == 3) {
                         console.log("form validation completed");
                         fetch(`${url}/participant/createProfile`, {
@@ -112,7 +152,7 @@ function checkInputs(Name, username, college, year) {
     let len = Name.value.length;
     let n = username.value.length;
     let reg1 = /^[a-zA-Z][a-zA-Z\s]*$/;
-    let reg2 = /(19|20)\d{2}$/;
+    let reg2 = /^(19|20)\d{2}$/;
     //name should be only alphabets and of max length 30
     if (len <= 30) {
         if (reg1.test(Name.value) === true) {
@@ -127,6 +167,14 @@ function checkInputs(Name, username, college, year) {
         onError(Name, "Enter a valid name");
     }
     //username should be only alphabets and of max length 30
+    // let res09 = checkusername();
+    // if(res09 != 403){
+    //     onSuccess(username);
+    //     flag = flag + 1;
+    // }
+    // else{
+    //     onError(username,"Username is already taken");
+    // }
     if (n <= 20) {
         onSuccess(username);
         flag = flag + 1;
@@ -135,17 +183,17 @@ function checkInputs(Name, username, college, year) {
         onError(username, "Username cannot be longer than 10 charecters");
     }
     //college name only alphabets
-    let x =0;
-    for(let i=0;i<col_name.length;i++){
-        if(col_name.charCodeAt(i)>47 && col_name.charCodeAt(i)<58){
-            onError(college,"Enter valid college name");
+    let x = 0;
+    for (let i = 0; i < col_name.length; i++) {
+        if (col_name.charCodeAt(i) > 47 && col_name.charCodeAt(i) < 58) {
+            onError(college, "Enter valid college name");
             x = 1;
             break;
         }
     }
-    if(x == 0){
+    if (x == 0) {
         onSuccess(college);
-        flag=flag+1;
+        flag = flag + 1;
     }
     //year check
     if (year.value.match(reg2)) {
@@ -170,7 +218,7 @@ function validate(linkedin, git, website, bio) {
     //linkedin validation
     if (regex.test(linkedin.value) === true) {
         onSuccess(linkedin);
-        flag = flag+1;
+        flag = flag + 1;
     }
     else {
         onError(linkedin, "Enter correct linkedIn profile link");
@@ -178,7 +226,7 @@ function validate(linkedin, git, website, bio) {
     //github profile link validation
     if (regstr.test(git.value) === true) {
         onSuccess(git);
-        flag = flag+1;
+        flag = flag + 1;
     }
     else {
         onError(git, "Enter correct github profile link");
@@ -211,3 +259,4 @@ function onError(input, message) {
     messageEle.style.visibility = "visible";
     messageEle.innerText = message;
 }
+

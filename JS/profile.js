@@ -115,6 +115,7 @@ block.addEventListener('click', function () {
     }
 });
 function add_skills() {
+    if(choice.length > 0){
     firebase.auth().onAuthStateChanged((user) => {
         console.log(choice);
         if (user) {
@@ -152,5 +153,11 @@ function add_skills() {
         }
     });
 }
-
+else{
+    swal("WARNING!!", "Please select at least one skill",
+    {
+        icon: "warning",
+    });
+}
+}
 

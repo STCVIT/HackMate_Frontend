@@ -6,7 +6,7 @@ let photo = "../Assets/Images/blank-profile.png";
 let back = 0;
 let change = 0;
 let username;
-let signal =0 ;
+// let count = 0;
 if (localStorage.getItem("BACK") == 1) {
     document.form.name.value = sessionStorage.getItem("NAME");
     document.form.username.value = sessionStorage.getItem("USERNAME");
@@ -35,8 +35,8 @@ function firstpage_profile() {
         }
     });
 
-    // function get_items() {
-    //     if (localStorage.getItem("BACK") == 0) {
+    //  function get_items() {
+    //      if (count>=0) {
     //         document.form2.linkedin.value= sessionStorage.getItem("LINKEDIN");
     //         document.form2.git.value = sessionStorage.getItem("GIT");
     //         document.form2.website.value= sessionStorage.getItem("WEBSITE");
@@ -51,7 +51,9 @@ function set_items() {
     localStorage.setItem("BACK", back);
     window.location.assign("./profile.html");
 }
+// console.log(count);
 function secondpage_profile() {
+    // count = count+1;
     const form2 = document.getElementById("form2");
     form2.addEventListener('submit', (e) => {
         (e).preventDefault();
@@ -71,10 +73,10 @@ function secondpage_profile() {
         let git = document.getElementById("github");
         let website = document.getElementById("personal_website");
         let bio = document.getElementById("bio");
-        sessionStorage.setItem("LINKEDIN", linkedin.value);
-        sessionStorage.setItem("GIT", git.value);
-        sessionStorage.setItem("WEBSITE", website.value);
-        sessionStorage.setItem("BIO", bio.value);
+        localStorage.setItem("LINKEDIN", linkedin.value);
+        localStorage.setItem("GIT", git.value);
+        localStorage.setItem("WEBSITE", website.value);
+        localStorage.setItem("BIO", bio.value);
         let eval = validate(linkedin, git, website, bio);
         console.log(eval);
         firebase.auth().onAuthStateChanged((user) => {

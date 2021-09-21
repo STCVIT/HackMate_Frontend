@@ -39,7 +39,7 @@ firebase.auth().onAuthStateChanged((user) => {
             else {
               yourHTML += "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'>"
               yourHTML += "<img id='dp' src='" + team.pt_skills[i].participant.photo + "'>"
-              yourHTML += "<p>" + team.pt_skills[i].participant.name + "<m>(Member)</m><br><t>" + team.pt_skills[i].skills[0].skill + "</t></p></div></div><l id='member' onclick = 'removemem()'>REMOVE<identity id='member_id' style='display:none'>" + team.pt_skills[i].participant._id + "</identity></l></div>"
+              yourHTML += "<p>" + team.pt_skills[i].participant.name + "<m>(Member)</m><br><t>" + team.pt_skills[i].skills[0].skill + "</t></p></div></div><l id='member' onclick = 'removemem()' style='cursor : pointer'>REMOVE<identity id='member_id' style='display:none'>" + team.pt_skills[i].participant._id + "</identity></l></div>"
             }
             body.innerHTML = yourHTML;
           }
@@ -124,11 +124,11 @@ firebase.auth().onAuthStateChanged((user) => {
       }
       hackinfo()
     })
-    document.getElementById("loading").style.visibility = 'hidden';
   } else {
     // User is signed out
     console.log("I'm signed out!")
   }
+  document.getElementById("loading").style.visibility = 'hidden';
 });
 function submit() {
 
@@ -239,10 +239,6 @@ function deleteteam() {
       dangerMode: true,
     })
       .then((willDelete) => {
-        if (willDelete) {
-          swal("Poof! Your team has been deleted!", {
-            icon: "success",
-          });
           axios
             .delete(
               `${url}/DN_Team/deleteTeam/${random_id}`,
@@ -261,6 +257,10 @@ function deleteteam() {
             .catch((error) => {
               console.error("Error:", error);
             });
+            if (willDelete) {
+              swal("Poof! Your team has been deleted!", {
+                icon: "success",
+              });
         }
         else {
           swal("Your team is safe!");
@@ -269,19 +269,24 @@ function deleteteam() {
   })
 }
 let member_id;
-
+let count = 0;
 function removemem() {
+  count += 1;
   firebase.auth().currentUser.getIdToken().then((id) => {
     auth = id;
     const members = document.querySelectorAll("#member");
-    members.forEach(member => member.addEventListener('click', look));
+    members.forEach(member =>  member.addEventListener('click', look));
     console.log(members);
     function look() {
       console.log(" i was clicked");
       console.log(this);
       member_id = this.querySelector("#member_id").textContent;
       console.log(member_id);
+      count += 1;
     }
+
+    console.log(count);
+    if(count === 2){
     swal({
       title: "Are you sure?",
       text: "Do you want to remove this member from your team?!",
@@ -318,6 +323,7 @@ function removemem() {
           swal("Your team is safe!!!");
         }
       });
+    }
   })
 }
 

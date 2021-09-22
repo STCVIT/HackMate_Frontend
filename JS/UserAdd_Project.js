@@ -2,16 +2,16 @@ $(document).ready(function () {
   $("#nav").load("../Assets/Header/headerl.txt");
   $("#foobottom").load("../Assets/Footer/footer.txt");
 });
-const loadingDiv = document.getElementById('loading');
+const loadingDiv = document.getElementById("loading");
 const project_form = document.getElementById("project_form");
-project_form.addEventListener('submit', (e) => {
-  (e).preventDefault();
+project_form.addEventListener("submit", (e) => {
+  e.preventDefault();
 });
 let projname = localStorage.getItem("project_name");
-document.getElementById("projname").innerHTML = toTitleCase(projname)+".";
+document.getElementById("projname").innerHTML = toTitleCase(projname) + ".";
 const form = document.getElementById("form");
-form.addEventListener('submit', (e) => {
-  (e).preventDefault();
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
 });
 function submitform() {
   let flag = 0;
@@ -26,17 +26,18 @@ function submitform() {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       user.getIdToken().then(function (idToken) {
-        auth = idToken
+        auth = idToken;
         if (flag == 0) {
-          console.log("megha")
+          console.log("megha");
           axios
-            .post(`${url}/projects/create`,
+            .post(
+              `${url}/projects/create`,
               {
                 name: projname,
                 code: git,
                 design: design,
                 demonstration: demo,
-                description: bio
+                description: bio,
               },
               {
                 headers: {
@@ -45,27 +46,25 @@ function submitform() {
               }
             )
             .then((response) => {
-              console.log("Success:", response.data);
-              swal("SUCCESS!!", "Project has been created successfully", "success");
+              swal(
+                "SUCCESS!!",
+                "Project has been created successfully",
+                "success"
+              );
             })
             .catch((error) => {
               console.error("Error:", error);
             });
         }
-      })
-    }
-    else {
+      });
+    } else {
       // User is signed out
-      console.log("I'm signed out!");
     }
   });
 }
- 
+
 function toTitleCase(str) {
-  return str.replace(
-    /\w\S*/g,
-    function (txt) {
-      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-    }
-  );
+  return str.replace(/\w\S*/g, function (txt) {
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+  });
 }

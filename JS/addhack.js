@@ -16,7 +16,6 @@ document
 
 async function uploadBlob(file) {
   document.onload = loadingDiv.style.visibility = 'visible';
-  console.log("Testing");
   const ref = firebase
     .storage()
     .ref("/Organisers/Hacks/" + document.myform.name.value);
@@ -29,10 +28,8 @@ async function uploadBlob(file) {
       var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
       switch (snapshot.state) {
         case firebase.storage.TaskState.PAUSED:
-          console.log("Upload is paused");
           break;
         case firebase.storage.TaskState.RUNNING:
-          console.log("Upload is running");
           break;
       }
     },
@@ -41,7 +38,6 @@ async function uploadBlob(file) {
     },
     async () => {
       uploadTask.snapshot.ref.getDownloadURL().then(async (downloadURL) => {
-        console.log("File available at", downloadURL);
 
         poster = await downloadURL;
         var name = document.myform.name.value;
@@ -91,8 +87,6 @@ async function uploadBlob(file) {
             }
           )
           .then((response) => {
-            console.log("Success:", response.data);
-            console.log(response.data._id);
             document.onload = loadingDiv.style.visibility = 'hidden';
             swal("SUCCESS!!", "Your request has been submitted successfully", "success");
             document.querySelector(".swal-button--confirm").addEventListener("click", ()=> {
@@ -110,6 +104,5 @@ async function uploadBlob(file) {
 document
   .querySelector("#image_uploads")
   .addEventListener("change", function () {
-    console.log("File Uploaded Locally");
     document.querySelector(".image_uploads").innerHTML = "File Uploaded!"
   });

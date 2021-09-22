@@ -67,7 +67,6 @@
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
             user.getIdToken().then(function (idToken) {
-                console.log(idToken)
                 auth = idToken
 
                 axios(`${url}/participant/login`, {
@@ -87,23 +86,23 @@
             })
                 .then((response) => {
                     requests = response.data;
-                    console.log(requests);
                     document.querySelector(".notification2").innerHTML = ""
                     requests.received.forEach(element => {
-                        console.log(element)
                         document.querySelector(".notification2").innerHTML += "<div class='row notification-inner' style='background: #283d4c;'>    <div class='col-1' style='margin-left: 30px; padding-left: 0;'><img            style='width: 47px;height: 47px;padding-bottom:10px;' src='"+element.participant.photo +"' alt=''></div>    <div class='col-6 text-start' style='cursor: default;'>        <nbw>" + element.participant.name + "</nbw> has requested you to become a part of        <nbw>" + element.team.name + "</nbw>.    </div>    <div class='col-2'>        <nbgr id=" + element.req + " onclick='acceptreq(event.target.id)' style='cursor: pointer;'>ACCEPT</nbgr>    </div>    <div class='col-2'>        <nbgr id=" + element.req + " onclick='rejectreq(event.target.id)' style='cursor: pointer;'>REJECT</nbgr>    </div></div>"
                     })
                     requests.sent.forEach(element => {
-                        console.log(element)
+
                         document.querySelector(".notification2").innerHTML += "<div class='row notification-inner' style='background: #283d4c;'>    <div class='col-1' style='margin-left: 30px; padding-left: 0;'><img            style='width: 47px;height: 47px;padding-bottom:10px;' src='"+element.leader.photo +"' alt=''></div>    <div class='col-6 text-start' style='cursor: default;'><nbw> You </nbw> have requested to become a part of <nbw>" + element.team.name + "</nbw>.    </div>    <div class='col-4 text-center'>        <nbgr id=" + element.req + " onclick='deletereq(event.target.id)' style='cursor: pointer;'>DELETE</nbgr>    </div></div>"
                     })
 
                 })
                 .catch((error) => {
-                    console.error("Error:", error);
                     
                     if (error.response.status == 404) {
                         document.querySelector(".notification2").innerHTML = "<div class='text-center notification1' style='padding-top: 16px;'>    Notifications</div><div class='text-center notification2' style='padding-top: 25px'>    You don't have any Notifications</div>"
+                    }
+                    else {
+                         console.error("Error:", error);
                     }
                 });
             
@@ -114,7 +113,6 @@
             {
                 alert("Please sign in!")
                 window.location = "./participantlognsignup.html"
-                console.log("I'm signed out!")
             }
         }
     });
@@ -130,14 +128,14 @@
             })
                 .then((response) => {
                     requests = response.data;
-                    console.log(requests);
+
                     document.querySelector(".notification2").innerHTML = ""
                     requests.received.forEach(element => {
-                        console.log(element)
+
                         document.querySelector(".notification2").innerHTML += "<div class='row notification-inner' style='background: #283d4c;'>    <div class='col-1' style='margin-left: 30px; padding-left: 0;'><img            style='width: 47px;height: 47px;padding-bottom:10px;' src='"+element.participant.photo +"' alt=''></div>    <div class='col-6 text-start' style='cursor: default;'>        <nbw>" + element.participant.name + "</nbw> has requested you to become a part of        <nbw>" + element.team.name + "</nbw>.    </div>    <div class='col-2'>        <nbgr id=" + element.req + " onclick='acceptreq(event.target.id)' style='cursor: pointer;'>ACCEPT</nbgr>    </div>    <div class='col-2'>        <nbgr id=" + element.req + " onclick='rejectreq(event.target.id)' style='cursor: pointer;'>REJECT</nbgr>    </div></div>"
                     })
                     requests.sent.forEach(element => {
-                        console.log(element)
+
                         document.querySelector(".notification2").innerHTML += "<div class='row notification-inner' style='background: #283d4c;'>    <div class='col-1' style='margin-left: 30px; padding-left: 0;'><img            style='width: 47px;height: 47px;padding-bottom:10px;' src='"+element.leader.photo +"' alt=''></div>    <div class='col-6 text-start' style='cursor: default;'><nbw> You </nbw> have requested to become a part of <nbw>" + element.team.name + "</nbw>.    </div>    <div class='col-4 text-center'>        <nbgr id=" + element.req + " onclick='deletereq(event.target.id)' style='cursor: pointer;'>DELETE</nbgr>    </div></div>"
                     })
                 loadingDiv.style.visibility = 'hidden';
@@ -163,14 +161,14 @@
         })
             .then((response) => {
                 requests = response.data;
-                console.log(requests);
+
                 document.querySelector(".notification2").innerHTML = ""
                 requests.received.forEach(element => {
-                    console.log(element)
+
                     document.querySelector(".notification2").innerHTML += "<div class='row notification-inner' style='background: #283d4c;'>    <div class='col-1' style='margin-left: 30px; padding-left: 0;'><img            style='width: 47px;height: 47px;padding-bottom:10px;' src='"+element.leader.photo +"' alt=''></div>    <div class='col-6 text-start' style='cursor: default;'>        <nbw>" + element.leader.name + "</nbw> has invited you to join the team <nbw>" + element.team.name + "</nbw>.    </div>    <div class='col-2'>        <nbgr id=" + element.inv + " onclick='acceptinv(event.target.id)' style='cursor: pointer;'>ACCEPT</nbgr>    </div>    <div class='col-2'>        <nbgr id=" + element.inv + " onclick='rejectinv(event.target.id)' style='cursor: pointer;'>REJECT</nbgr>    </div></div>"
                 });
                 requests.sent.forEach(element => {
-                    console.log(element)
+
                     document.querySelector(".notification2").innerHTML += "<div class='row notification-inner' style='background: #283d4c;'>    <div class='col-1' style='margin-left: 30px; padding-left: 0;'><img            style='width: 47px;height: 47px;padding-bottom:10px;' src='"+element.participant.photo +"' alt=''></div>    <div class='col-6 text-start' style='cursor: default;'>        <nbw> You </nbw> have invited <nbw>" + element.participant.name + " </nbw>to join the team <nbw>" + element.team.name + "</nbw>.    </div>    <div class='col-4 text-center'> <nbgr id=" + element.inv + " onclick='deleteinv(event.target.id)' style='cursor: pointer;'>DELETE</nbgr>    </div></div>"
                 });
             loadingDiv.style.visibility = 'hidden';
@@ -189,7 +187,7 @@
         firebase.auth().signOut().then(() => {
             window.location = "./participantlognsignup.html"
   // Sign-out successful.
-  console.log("Signed Out!")
+  
 }).catch((error) => {
   // An error happened.
 });
@@ -231,7 +229,7 @@
     })
 
     async function acceptreq(id) {
-        console.log("Here")
+        
         await firebase.auth().currentUser.getIdToken().then((id) => {
             auth = id;
         })
@@ -252,7 +250,7 @@
     }
     
     async function rejectreq(id) {
-        console.log("Here")
+        
                 await firebase.auth().currentUser.getIdToken().then((id) => {
             auth = id;
         })
@@ -270,7 +268,7 @@
         getRequests()
     }
     async function deletereq(id) {
-        console.log("lmfao")
+        
                 await firebase.auth().currentUser.getIdToken().then((id) => {
             auth = id;
         })
@@ -288,7 +286,7 @@
         getRequests()
     }
     async function acceptinv(id) {
-        console.log("Here")
+        
                 await firebase.auth().currentUser.getIdToken().then((id) => {
             auth = id;
         })
@@ -306,7 +304,7 @@
         getInvites()
     }
     async function rejectinv(id) {
-        console.log("Here")
+        
                 await firebase.auth().currentUser.getIdToken().then((id) => {
             auth = id;
         })
@@ -324,7 +322,7 @@
         getInvites()
     }
     async function deleteinv(id) {
-        console.log("lmfao")
+        
                 await firebase.auth().currentUser.getIdToken().then((id) => {
             auth = id;
         })

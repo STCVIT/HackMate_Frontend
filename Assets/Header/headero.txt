@@ -38,7 +38,6 @@
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       user.getIdToken().then(function(idToken){
-        console.log(idToken)
         auth = idToken
         axios(`${url}/organiser/login`, {
     headers: {
@@ -56,7 +55,7 @@
           {
             alert("Please sign in!")
             window.location = "./orglognsignup.html"
-            console.log("I'm signed out!")
+
           }
     }
   });
@@ -66,7 +65,7 @@
         firebase.auth().signOut().then(() => {
           window.location = "./orglognsignup.html"
   // Sign-out successful.
-  console.log("Signed Out!")
+  
 }).catch((error) => {
   // An error happened.
 });

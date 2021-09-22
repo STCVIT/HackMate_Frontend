@@ -2,18 +2,17 @@ $(document).ready(function () {
   $("#nav").load("../Assets/Header/headerl.txt");
   $("#foobottom").load("../Assets/Footer/footer.txt");
 });
-const loadingDiv = document.getElementById('loading');
+const loadingDiv = document.getElementById("loading");
 
-if(window.location.search.split("?")[1] == undefined){
-  swal("Not Found!","Hack doesn't exist", "warning").then(()=>{
-    window.location.href = "./viewhackathon.html"
-  })
+if (window.location.search.split("?")[1] == undefined) {
+  swal("Not Found!", "Hack doesn't exist", "warning").then(() => {
+    window.location.href = "./viewhackathon.html";
+  });
 }
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     user.getIdToken().then(function (idToken) {
-      console.log(idToken)
-      auth = idToken
+      auth = idToken;
       axios(`${url}/getHacks/${window.location.search.split("?")[1]}`, {
         headers: {
           Authorization: "Bearer " + auth,
@@ -21,14 +20,18 @@ firebase.auth().onAuthStateChanged((user) => {
       })
         .then((response) => {
           hack = response.data;
-          console.log(hack);
+
 
           document.querySelector(".parent").innerHTML =
-            "<div class='row' style='padding-top: 54px;'> <div class='col-1'></div> <div class='col-10 main'> <img src='../Assets/Images/Hack Deets Banner.svg' style='width: 83.333vw;' alt=''> <div class='row' style='margin: 41.89px 0 0;'> <div class='col-1'></div> <div class='col-lg-4 col-12 justify-content-center text-center'> <img src='" + hack.poster + "' style='width: 200px;height: 200px;' alt=''> </div> <div class='col-lg-6 col-12'> <div class='nbw text-lg-start text-center  '>" +
+            "<div class='row' style='padding-top: 54px;'> <div class='col-1'></div> <div class='col-10 main'> <img src='../Assets/Images/Hack Deets Banner.svg' style='width: 83.333vw;' alt=''> <div class='row' style='margin: 41.89px 0 0;'> <div class='col-1'></div> <div class='col-lg-4 col-12 justify-content-center text-center'> <img src='" +
+            hack.poster +
+            "' style='width: 200px;height: 200px;' alt=''> </div> <div class='col-lg-6 col-12'> <div class='nbw text-lg-start text-center  '>" +
             hack.name +
             " <a target='_blank' href='https://" +
             hack.website +
-            "'><img src='../Assets/Images/Attachment.svg' alt=''></a> <img class='mode_of_conduct' src='../Assets/Images/" + hack.mode_of_conduct + ".svg'> </div> <div class='row' style='margin-top: 25.91px;'> <div class='display1 col-3'> <nbgre>Begins:</nbgre> <div class='nbwsd' style='padding-bottom: 5.65px;'>" +
+            "'><img src='../Assets/Images/Attachment.svg' alt=''></a> <img class='mode_of_conduct' src='../Assets/Images/" +
+            hack.mode_of_conduct +
+            ".svg'> </div> <div class='row' style='margin-top: 25.91px;'> <div class='display1 col-3'> <nbgre>Begins:</nbgre> <div class='nbwsd' style='padding-bottom: 5.65px;'>" +
             //hack.start.split("T")[0] +
             new Date(hack.start.split("T")[0]).toString().split(" ")[2] +
             " " +
@@ -80,19 +83,18 @@ firebase.auth().onAuthStateChanged((user) => {
             "' role='button' style='margin-top: 34px;'>Join Team</a> </div> </div> <div class='card'> <div class='card-body justify-content-center text-center'> <div class='gray' style='height: 252px; background: #C4C4C4;'></div> <a class=' btns btn btn-success' href='./createteamwhackwteam.html?" +
             hack._id +
             "' role='button' style='margin-top: 34px;'>Create Team</a> </div> </div> <div class='card'> <div class='card-body justify-content-center text-center'> <div class='gray' style='height: 252px; background: #C4C4C4;'></div> <a class=' btns btn btn-success' href='./addfromexisting.html?" +
-            hack._id + "' role='button' style='margin-top: 34px;'>Add from Existing</a> </div> </div> </div>";
-            loadingDiv.style.visibility = 'hidden';
-          })
+            hack._id +
+            "' role='button' style='margin-top: 34px;'>Add from Existing</a> </div> </div> </div>";
+          loadingDiv.style.visibility = "hidden";
+        })
         .catch((error) => {
           console.error("Error:", error);
-          swal("Not Found!","Hack doesn't exist", "warning").then(()=>{
-            window.location.href = "./viewhackathon.html"
-          })
+          swal("Not Found!", "Hack doesn't exist", "warning").then(() => {
+            window.location.href = "./viewhackathon.html";
+          });
         });
-    })
+    });
   } else {
     // User is signed out
-    console.log("I'm signed out!")
   }
 });
-

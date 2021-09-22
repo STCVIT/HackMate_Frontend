@@ -143,7 +143,7 @@ function secondpage_profile() {
                 })
             } else {
                 // User is signed out
-                console.log("I'm signed out!")
+                
             }
         });
     });

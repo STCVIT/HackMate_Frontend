@@ -2,6 +2,12 @@ $(document).ready(function () {
     $("#nav").load("../Assets/Header/headerl.txt");
     $("#foobottom").load("../Assets/Footer/footer.txt");
 });
+const loadingDiv = document.getElementById('loading');
+loadingDiv.style.visibility = 'visible';
+setTimeout(function() {
+    loadingDiv.style.visibility = 'hidden';
+}, 4000);
+
 var teams = {};
 var page = 1;
 var participant_id;
@@ -521,8 +527,19 @@ function add() {
                     .then((response) => {
                         hack = response.data;
                         console.log(hack);
+                        swal("SUCCESS!!", "Your team has been successfully added in the Hack!!", "success");
                     })
-                    .catch((error) => console.error("Error: " + error));
+                    .catch((error) => {
+                        console.log(error);
+                        console.log(error.response.status);
+
+                        if(error.response.status == 403){
+                            swal("WARNING!!", "You are already a part of this hack.", "warning");
+                        }
+                        else{
+                            swal("WARNING!!", "Hack doesn't exist.", "warning");
+                        }
+                    });
             }
         }
     })

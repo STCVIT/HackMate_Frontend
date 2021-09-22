@@ -29,9 +29,9 @@ function signup() {
   const confirmpwd = document.getElementById("user_pass2").value;
   const minNumberofChars = 8;
 
-  console.log(email);
-  console.log(password);
-  console.log(confirmpwd);
+  // console.log(email);
+  // console.log(password);
+  // console.log(confirmpwd);
 
   // Password greater or equal to 8
   if (password.length < minNumberofChars) {
@@ -48,7 +48,7 @@ function signup() {
       .createUserWithEmailAndPassword(email, password)
       .then(({ user }) => {
         // swal("SUCCESS!!", "Your account has been created successfully", "success");
-        console.log("signed up!");
+        // console.log("signed up!");
         Swal.fire({
           title: "SUCCESS!!",
           text: "Your account has been created successfully!",
@@ -62,25 +62,25 @@ function signup() {
           }
         });
         user.getIdToken().then(function (idToken) {
-          console.log(idToken);
+          // console.log(idToken);
           fetch("https://hackportalbackend.herokuapp.com/participant/signup", {
             method: "POST",
             headers: new Headers({
               Authorization: "Bearer " + idToken,
             }),
           }).then((res) => {
-            console.log(res.status);
+            // console.log(res.status);
           });
         });
         user.sendEmailVerification().then(function () {
-          console.log("Email has been sent!");
+          // console.log("Email has been sent!");
           // alert("Pls verify your email");
           // location.reload();
         });
       })
       .catch((error) => {
-        console.log(error);
-        console.log(error.message);
+        // console.log(error);
+        // console.log(error.message);
 
         if (error.message == "The email address is badly formatted.") {
           // swal("WARNING!!", "Enter Valid Email ID", "warning");
@@ -120,17 +120,17 @@ function signin() {
   const password = document.getElementById("login_pass1").value;
   // const url = 'https://hackportalbackend.herokuapp.com/';
 
-  console.log(email);
-  console.log(password);
+  // console.log(email);
+  // console.log(password);
 
   firebase
     .auth()
     .signInWithEmailAndPassword(email, password)
     .then(({ user }) => {
       // Signed in
-      console.log("Signed in");
+      // console.log("Signed in");
       user.getIdToken().then(function (idToken) {
-        console.log(idToken);
+        // console.log(idToken);
         var loadingDiv = document.getElementById("loading");
         loadingDiv.style.visibility = "visible";
 
@@ -141,7 +141,7 @@ function signin() {
           }),
         }).then((response) => {
           // console.log(response.json());
-          console.log(response.status);
+          // console.log(response.status);
           if (response.status == 404 && typeof Storage !== "undefined") {
             localStorage.setItem("auth", idToken);
             window.location.assign("./profile.html");
@@ -158,7 +158,7 @@ function signin() {
             });
             loadingDiv.style.visibility = "hidden";
             user.sendEmailVerification().then(function () {
-              console.log("Email has been sent!");
+              // console.log("Email has been sent!");
             });
           } else if (response.status == 403) {
             // swal("WARNING!!", "You are a organiser and not a participant!", "warning");
@@ -189,15 +189,15 @@ function signin() {
               const password = document.getElementById("login_pass1").value;
               // const url = 'https://hackportalbackend.herokuapp.com/';
 
-              console.log(email);
-              console.log(password);
+              // console.log(email);
+              // console.log(password);
 
               firebase
                 .auth()
                 .signInWithEmailAndPassword(email, password)
                 .then(({ user }) => {
                   // Signed in
-                  console.log("Signed in");
+                  // console.log("Signed in");
                   user.getIdToken().then(function (idToken) {
                     fetch(
                       `https://hackportalbackend.herokuapp.com/participant/signup`,
@@ -209,15 +209,15 @@ function signin() {
                       }
                     ).then((response) => {
                       // console.log(response.json());
-                      console.log(response.status);
+                      // console.log(response.status);
                     });
                     // .then(response => response.json())
                     // .then(json => console.log(json));
                   });
                 })
                 .catch((error) => {
-                  console.log(error);
-                  console.log(error.message);
+                  // console.log(error);
+                  // console.log(error.message);
                 });
             }
           } else if (response.status == 200 && typeof Storage !== "undefined") {
@@ -231,8 +231,8 @@ function signin() {
       });
     })
     .catch((error) => {
-      console.log(error);
-      console.log(error.message);
+      // console.log(error);
+      // console.log(error.message);
 
       if (error.message == "The email address is badly formatted.") {
         // swal("WARNING!!", "Enter Valid Email ID!", "warning");

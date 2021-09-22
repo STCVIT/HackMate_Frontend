@@ -330,13 +330,13 @@ function displayTeams() {
         };
         init();
         var height = document.body.clientHeight;
-        console.log(height);
+        (height);
         if (height == document.body.clientHeight) {
           window.addEventListener("scroll", someFunction);
 
           function someFunction() {
             if (window.scrollY + window.innerHeight >= 3100) {
-              console.log(window.scrollY + window.innerHeight);
+              (window.scrollY + window.innerHeight);
               window.removeEventListener("scroll", someFunction);
             }
           }
@@ -1409,7 +1409,7 @@ function displayTeams() {
                 }
               }
             } catch (err) {
-              console.log(err.response);
+              (err.response);
               if (err.response.status == 404) {
                 swal("WARNING!!", "No Teams formed till now.", "warning");
                 loadingDiv.style.visibility = "hidden";
@@ -1423,7 +1423,7 @@ function displayTeams() {
         }
       });
     } else {
-      console.log("Signed Out!!");
+      ("Signed Out!!");
     }
   });
 }
@@ -1585,18 +1585,18 @@ app.addEventListener("click", function () {
               page = page + 1;
             }
           } catch (err) {
-            console.log(err.response.status);
+            (err.response.status);
           }
         };
         init();
         var height = document.body.clientHeight;
-        console.log(height);
+        (height);
         if (height == document.body.clientHeight) {
           window.addEventListener("scroll", someFunction);
 
           function someFunction() {
             if (window.scrollY + window.innerHeight >= 3106) {
-              console.log(window.scrollY + window.innerHeight);
+              (window.scrollY + window.innerHeight);
               displayTeams();
               window.removeEventListener("scroll", someFunction);
             }
@@ -2670,7 +2670,7 @@ app.addEventListener("click", function () {
                 }
               }
             } catch (err) {
-              console.log(err.response.status);
+              (err.response.status);
               if (err.response.status == 404) {
                 swal("WARNING!!", "No Team has formed till now!!.", "warning");
               }
@@ -2840,18 +2840,18 @@ fweb.addEventListener("click", function () {
               page = page + 1;
             }
           } catch (err) {
-            console.log(err.response.status);
+            (err.response.status);
           }
         };
         init();
         var height = document.body.clientHeight;
-        console.log(height);
+        (height);
         if (height == document.body.clientHeight) {
           window.addEventListener("scroll", someFunction);
 
           function someFunction() {
             if (window.scrollY + window.innerHeight >= 3106) {
-              console.log(window.scrollY + window.innerHeight);
+              (window.scrollY + window.innerHeight);
               displayTeams();
               window.removeEventListener("scroll", someFunction);
             }
@@ -3925,7 +3925,7 @@ fweb.addEventListener("click", function () {
                 }
               }
             } catch (err) {
-              console.log(err.response.status);
+              (err.response.status);
               if (err.response.status == 404) {
                 swal("WARNING!!", "No Team has formed till now!!.", "warning");
               }
@@ -4095,18 +4095,18 @@ bweb.addEventListener("click", function () {
               page = page + 1;
             }
           } catch (err) {
-            console.log(err.response.status);
+            (err.response.status);
           }
         };
         init();
         var height = document.body.clientHeight;
-        console.log(height);
+        (height);
         if (height == document.body.clientHeight) {
           window.addEventListener("scroll", someFunction);
 
           function someFunction() {
             if (window.scrollY + window.innerHeight >= 3106) {
-              console.log(window.scrollY + window.innerHeight);
+              (window.scrollY + window.innerHeight);
               displayTeams();
               window.removeEventListener("scroll", someFunction);
             }
@@ -5180,7 +5180,7 @@ bweb.addEventListener("click", function () {
                 }
               }
             } catch (err) {
-              console.log(err.response.status);
+              (err.response.status);
               if (err.response.status == 404) {
                 swal("WARNING!!", "No Team has formed till now!!.", "warning");
               }
@@ -5350,18 +5350,18 @@ ml.addEventListener("click", function () {
               page = page + 1;
             }
           } catch (err) {
-            console.log(err.response.status);
+            (err.response.status);
           }
         };
         init();
         var height = document.body.clientHeight;
-        console.log(height);
+        (height);
         if (height == document.body.clientHeight) {
           window.addEventListener("scroll", someFunction);
 
           function someFunction() {
             if (window.scrollY + window.innerHeight >= 3107) {
-              console.log(window.scrollY + window.innerHeight);
+              (window.scrollY + window.innerHeight);
               displayTeams();
               window.removeEventListener("scroll", someFunction);
             }
@@ -6435,7 +6435,7 @@ ml.addEventListener("click", function () {
                 }
               }
             } catch (err) {
-              console.log(err.response.status);
+              (err.response.status);
               if (err.response.status == 404) {
                 swal("WARNING!!", "No Team has formed till now!!.", "warning");
               }
@@ -6605,18 +6605,18 @@ design.addEventListener("click", function () {
               page = page + 1;
             }
           } catch (err) {
-            console.log(err.response.status);
+            (err.response.status);
           }
         };
         init();
         var height = document.body.clientHeight;
-        console.log(height);
+        (height);
         if (height == document.body.clientHeight) {
           window.addEventListener("scroll", someFunction);
 
           function someFunction() {
             if (window.scrollY + window.innerHeight >= 3106) {
-              console.log(window.scrollY + window.innerHeight);
+              (window.scrollY + window.innerHeight);
               displayTeams();
               window.removeEventListener("scroll", someFunction);
             }
@@ -7690,7 +7690,7 @@ design.addEventListener("click", function () {
                 }
               }
             } catch (err) {
-              console.log(err.response.status);
+              (err.response.status);
               if (err.response.status == 404) {
                 swal("WARNING!!", "No Team has formed till now!!.", "warning");
               }
@@ -7860,18 +7860,18 @@ mgmt.addEventListener("click", function () {
               page = page + 1;
             }
           } catch (err) {
-            console.log(err.response.status);
+            (err.response.status);
           }
         };
         init();
         var height = document.body.clientHeight;
-        console.log(height);
+        (height);
         if (height == document.body.clientHeight) {
           window.addEventListener("scroll", someFunction);
 
           function someFunction() {
             if (window.scrollY + window.innerHeight >= 3106) {
-              console.log(window.scrollY + window.innerHeight);
+              (window.scrollY + window.innerHeight);
               displayTeams();
               window.removeEventListener("scroll", someFunction);
             }
@@ -8945,7 +8945,7 @@ mgmt.addEventListener("click", function () {
                 }
               }
             } catch (err) {
-              console.log(err.response.status);
+              (err.response.status);
               if (err.response.status == 404) {
                 swal("WARNING!!", "No Team has formed till now!!.", "warning");
               }
@@ -9115,18 +9115,18 @@ block.addEventListener("click", function () {
               page = page + 1;
             }
           } catch (err) {
-            console.log(err.response.status);
+            (err.response.status);
           }
         };
         init();
         var height = document.body.clientHeight;
-        console.log(height);
+        (height);
         if (height == document.body.clientHeight) {
           window.addEventListener("scroll", someFunction);
 
           function someFunction() {
             if (window.scrollY + window.innerHeight >= 3106) {
-              console.log(window.scrollY + window.innerHeight);
+              (window.scrollY + window.innerHeight);
               displayTeams();
               window.removeEventListener("scroll", someFunction);
             }
@@ -10200,7 +10200,7 @@ block.addEventListener("click", function () {
                 }
               }
             } catch (err) {
-              console.log(err.response.status);
+              (err.response.status);
               if (err.response.status == 404) {
                 swal("WARNING!!", "No Team has formed till now!!.", "warning");
               }
@@ -10220,15 +10220,15 @@ function myFunction() {
   var nk = 0;
   const cards = document.querySelectorAll("#goods");
   cards.forEach((card) => card.addEventListener("click", look));
-  console.log(cards);
+  (cards);
 
   function look() {
-    console.log(" i was clicked");
-    console.log(this);
+    (" i was clicked");
+    (this);
     nk = nk + 1;
     if (nk == 1) {
       var team_id = this.querySelector("#team-id").textContent;
-      console.log(team_id);
+      (team_id);
       var dots = this.querySelector("#dots");
       var moreText = this.querySelector("#more");
       var btnText = this.querySelector("#myBtn");
@@ -10250,15 +10250,15 @@ function myFunction1() {
   var nk1 = 0;
   const cards1 = document.querySelectorAll("#goods");
   cards1.forEach((card1) => card1.addEventListener("click", look1));
-  console.log(cards1);
+  (cards1);
 
   function look1() {
-    console.log(" i was clicked");
-    console.log(this);
+    (" i was clicked");
+    (this);
     nk1 = nk1 + 1;
     if (nk1 == 1) {
       var team_id_1 = this.querySelector("#team-id-1").textContent;
-      console.log(team_id_1);
+      (team_id_1);
       var dots1 = this.querySelector("#dots1");
       var moreText1 = this.querySelector("#more1");
       var btnText1 = this.querySelector("#myBtn1");
@@ -10280,15 +10280,15 @@ function myFunction2() {
   var nk2 = 0;
   const cards2 = document.querySelectorAll("#goods");
   cards2.forEach((card2) => card2.addEventListener("click", look2));
-  console.log(cards2);
+  (cards2);
 
   function look2() {
-    console.log(" i was clicked");
-    console.log(this);
+    (" i was clicked");
+    (this);
     nk2 = nk2 + 1;
     if (nk2 == 1) {
       var team_id_2 = this.querySelector("#team-id-2").textContent;
-      console.log(team_id_2);
+      (team_id_2);
       var dots2 = this.querySelector("#dots2");
       var moreText2 = this.querySelector("#more2");
       var btnText2 = this.querySelector("#myBtn2");
@@ -10310,15 +10310,15 @@ function myFunction3() {
   var nk3 = 0;
   const cards3 = document.querySelectorAll("#goods");
   cards3.forEach((card3) => card3.addEventListener("click", look3));
-  console.log(cards3);
+  (cards3);
 
   function look3() {
-    console.log(" i was clicked");
-    console.log(this);
+    (" i was clicked");
+    (this);
     nk3 = nk3 + 1;
     if (nk3 == 1) {
       var team_id_3 = this.querySelector("#team-id-3").textContent;
-      console.log(team_id_3);
+      (team_id_3);
       var dots3 = this.querySelector("#dots3");
       var moreText3 = this.querySelector("#more3");
       var btnText3 = this.querySelector("#myBtn3");
@@ -10490,18 +10490,18 @@ cyber.addEventListener("click", function () {
               page = page + 1;
             }
           } catch (err) {
-            console.log(err.response.status);
+            (err.response.status);
           }
         };
         init();
         var height = document.body.clientHeight;
-        console.log(height);
+        (height);
         if (height == document.body.clientHeight) {
           window.addEventListener("scroll", someFunction);
 
           function someFunction() {
             if (window.scrollY + window.innerHeight >= 3106) {
-              console.log(window.scrollY + window.innerHeight);
+              (window.scrollY + window.innerHeight);
               displayTeams();
               window.removeEventListener("scroll", someFunction);
             }
@@ -11575,7 +11575,7 @@ cyber.addEventListener("click", function () {
                 }
               }
             } catch (err) {
-              console.log(err.response.status);
+              (err.response.status);
               if (err.response.status == 404) {
                 swal("WARNING!!", "No Team has formed till now!!.", "warning");
               }
@@ -11925,18 +11925,18 @@ all.addEventListener("click", function () {
             page = page + 1;
           }
         } catch (err) {
-          console.log(err.response.status);
+          (err.response.status);
         }
       };
       init();
       var height = document.body.clientHeight;
-      console.log(height);
+      (height);
       if (height == document.body.clientHeight) {
         window.addEventListener("scroll", someFunction);
 
         function someFunction() {
           if (window.scrollY + window.innerHeight >= 3100) {
-            console.log(window.scrollY + window.innerHeight);
+            (window.scrollY + window.innerHeight);
             window.removeEventListener("scroll", someFunction);
           }
         }
@@ -13009,7 +13009,7 @@ all.addEventListener("click", function () {
               }
             }
           } catch (err) {
-            console.log(err.response.status);
+            (err.response.status);
             if (err.response.status == 404) {
               swal("WARNING!!", "No Team has formed till now!!.", "warning");
             }
@@ -13033,7 +13033,7 @@ function allow() {
     .then((id) => {
       auth = id;
       var team_id = hacks[0].team._id;
-      console.log(team_id);
+      (team_id);
       axios
         .post(
           `${url}/requests/request/${team_id}`,
@@ -13048,7 +13048,7 @@ function allow() {
         )
         .then((response) => {
           accept = response.data;
-          console.log(accept);
+          (accept);
           swal(
             "SUCCESS!!",
             "Your request has been submitted successfully",
@@ -13057,7 +13057,7 @@ function allow() {
         })
         .catch((error) => {
           console.error("Error:", error);
-          console.log(error.response.status);
+          (error.response.status);
           if (error.response.status == 409) {
             swal(
               "WARNING!!",
@@ -14039,8 +14039,8 @@ document.getElementById("search").addEventListener("keyup", function (event) {
             }
           })
           .catch((e) => {
-            console.log(e);
-            console.log(e.response.status);
+            (e);
+            (e.response.status);
             if (e.response.status == 404) {
               swal("WARNING!!", "There is no such team.", "warning");
             }
@@ -14056,7 +14056,7 @@ function join() {
     .then((id) => {
       auth = id;
       code = document.getElementById("enter_code").value;
-      console.log(code);
+      (code);
       axios
         .post(
           `${url}/DN_Team/code/${window.location.search.split("?")[1]}`,
@@ -14102,15 +14102,15 @@ function request() {
   var nk = 0;
   const cards = document.querySelectorAll("#goods");
   cards.forEach((card) => card.addEventListener("click", look));
-  console.log(cards);
-  console.log(nk);
+  (cards);
+  (nk);
 
   function look() {
-    console.log(this);
+    (this);
     nk = nk + 1;
     if (nk == 1) {
       var team_id = this.querySelector("#team-ids").textContent;
-      console.log(team_id);
+      (team_id);
       firebase
         .auth()
         .currentUser.getIdToken()
@@ -14130,7 +14130,7 @@ function request() {
             )
             .then((response) => {
               accept = response.data;
-              console.log(accept);
+              (accept);
               swal(
                 "SUCCESS!!",
                 "Your request has been submitted successfully",
@@ -14139,7 +14139,7 @@ function request() {
             })
             .catch((error) => {
               console.error("Error:", error);
-              console.log(error.response.status);
+              (error.response.status);
               if (error.response.status == 403) {
                 swal(
                   "WARNING!!",

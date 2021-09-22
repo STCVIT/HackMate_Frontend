@@ -153,6 +153,9 @@ function create() {
                 if (error.response.status == 403) {
                     swal("WARNING!!", "You have already formed a team for this particular hack.", "warning");
                 }
+                // if(error.response.status!=403){
+                //     swal("WARNING!!", "No Hack found!!", "warning");
+                // }
             });
     })
 }

@@ -7,6 +7,7 @@ var teams = {};
 var page = 1;
 var participant_id;
 function events(event) {
+    loadingDiv.style.visibility = 'visible';
     firebase.auth().currentUser.getIdToken().then((id) => {
         auth = id;
         console.log(event);
@@ -75,6 +76,7 @@ function events(event) {
                     console.log(i);
                     body.innerHTML += yourHTML;
                     yourHTML = "";
+                    loadingDiv.style.visibility = 'hidden';
                 }
             })
             .catch((error) => {
@@ -260,6 +262,7 @@ function displayTeams() {
                         console.log(i);
                         body.innerHTML += yourHTML;
                         yourHTML = "";
+                        loadingDiv.style.visibility = 'hidden';
                     }
                     total_teams = Math.ceil(length / 8);
                     console.log("total_teams", total_teams);
@@ -281,6 +284,7 @@ function displayTeams() {
 displayTeams();
 
 function nextPage() {
+    loadingDiv.style.visibility = 'visible';
     firebase.auth().currentUser.getIdToken().then((id) => {
         auth = id;
         if (page < total_teams) {
@@ -363,6 +367,8 @@ function nextPage() {
                     console.log(i);
                     body.innerHTML += yourHTML;
                     yourHTML = "";
+                    loadingDiv.style.visibility = 'hidden';
+                    
                 }
             })
             .catch((error) => {
@@ -373,6 +379,7 @@ function nextPage() {
 
 
 function prevPage() {
+    loadingDiv.style.visibility = 'visible';
     firebase.auth().currentUser.getIdToken().then((id) => {
         auth = id;
         if (page > 1) {
@@ -456,6 +463,7 @@ function prevPage() {
                     console.log(i);
                     body.innerHTML += yourHTML;
                     yourHTML = "";
+                    loadingDiv.style.visibility = 'hidden';
                 }
             })
             .catch((error) => {
@@ -522,8 +530,19 @@ function add() {
                     .then((response) => {
                         hack = response.data;
                         console.log(hack);
+                        swal("SUCCESS!!", "Your team has been successfully added in the Hack!!", "success");
                     })
-                    .catch((error) => console.error("Error: " + error));
+                    .catch((error) => {
+                        console.log(error);
+                        console.log(error.response.status);
+
+                        if(error.response.status == 403){
+                            swal("WARNING!!", "You are already a part of this hack.", "warning");
+                        }
+                        else{
+                            swal("WARNING!!", "Hack doesn't exist.", "warning");
+                        }
+                    });
             }
         }
     })

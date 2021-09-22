@@ -101,6 +101,9 @@ app.addEventListener('click', function () {
 }
 catch (err) {
   console.log(err.response.status);
+  if (err.response.status == 400) {
+    swal("WARNING!!", "No Hack Found!", "warning");
+  }
   if (err.response.status == 404) {
     swal("WARNING!!", "You can't search this team.", "warning");
   }
@@ -220,6 +223,9 @@ fweb.addEventListener('click', function () {
         }
         catch (err) {
           console.log(err.response.status);
+          if (err.response.status == 400) {
+            swal("WARNING!!", "No Hack Found!", "warning");
+          }
           if (err.response.status == 404) {
             swal("WARNING!!", "You can't search this team.", "warning");
           }
@@ -343,6 +349,9 @@ bweb.addEventListener('click', function () {
         }
         catch (err) {
           console.log(err.response.status);
+          if (err.response.status == 400) {
+            swal("WARNING!!", "No Hack Found!", "warning");
+          }
           if (err.response.status == 404) {
             swal("WARNING!!", "You can't search this team.", "warning");
           }
@@ -450,6 +459,9 @@ ml.addEventListener('click', function () {
         }
         catch (err) {
           console.log(err.response.status);
+          if (err.response.status == 400) {
+            swal("WARNING!!", "No Hack Found!", "warning");
+          }
           if (err.response.status == 404) {
             swal("WARNING!!", "You can't search this team.", "warning");
           }
@@ -557,6 +569,9 @@ design.addEventListener('click', function () {
         }
         catch (err) {
           console.log(err.response.status);
+          if (err.response.status == 400) {
+            swal("WARNING!!", "No Hack Found!", "warning");
+          }
           if (err.response.status == 404) {
             swal("WARNING!!", "You can't search this team.", "warning");
           }
@@ -664,6 +679,9 @@ mgmt.addEventListener('click', function () {
         }
         catch (err) {
           console.log(err.response.status);
+          if (err.response.status == 400) {
+            swal("WARNING!!", "No Hack Found!", "warning");
+          }
           if (err.response.status == 404) {
             swal("WARNING!!", "You can't search this team.", "warning");
           }
@@ -771,6 +789,9 @@ block.addEventListener('click', function () {
         }
         catch (err) {
           console.log(err.response.status);
+          if (err.response.status == 400) {
+            swal("WARNING!!", "No Hack Found!", "warning");
+          }
           if (err.response.status == 404) {
             swal("WARNING!!", "You can't search this team.", "warning");
           }
@@ -878,6 +899,9 @@ cyber.addEventListener('click', function () {
         }
         catch (err) {
           console.log(err.response.status);
+          if (err.response.status == 400) {
+            swal("WARNING!!", "No Hack Found!", "warning");
+          }
           if (err.response.status == 404) {
             swal("WARNING!!", "You can't search this team.", "warning");
           }
@@ -1142,6 +1166,9 @@ document.getElementById("participant_name").addEventListener("keyup", function (
     .catch(e => {
       console.log(e);
       console.log(e.response.status);
+      if (e.response.status == 400) {
+        swal("WARNING!!", "No Hack Found!", "warning");
+      }
       if (e.response.status == 404) {
         swal("WARNING!!", "No Participant Found", "warning");
       }

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackMate</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="../CSS/addproject.css">
+    <link rel="stylesheet" href="../Assets/Header/headerl.css">
+    <link rel="stylesheet" href="../Assets/Footer/footer.css">
+</head>
+
+<body>
+    <div id="nav"></div>
+
+    <div class="main">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-10">
+                    <div class="nbw">
+                        My Project.
+                        <div class="btns">
+                            <a class=" about btn btn-success" href="./teamProfLeaderView.html" role="button">About</a>
+                            <a class=" addprojects btn btn-success" href="#" role="button">Add Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+            </div>
+    
+            <div class="row">
+                <div class="col-md-3 col-1"></div>
+                <div class="col-md-6 col-10 boxname text-center justify-content-center" style="margin-top: 35px;">
+                    <div class="text projname" style="margin-top: 70px;">
+                        Enter Project Name.
+                    </div>
+                    <form name="myform" method="post">
+                        <input class="textbox" type="text" name="projectname" id="" placeholder="Project Name"> <br>
+    
+                        <div class="btns" style="margin-top: 54.43px; margin-bottom: 71px;">
+                            <a class=" start btn btn-success" onclick="teamproj()" 
+                                role="button">Start</a>
+                            <a class=" start btn btn-success" href="#" role="button">Not Now</a>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-3 col-1"></div>
+            </div>
+        </div>
+    
+        <div class="container"> 
+            <div id="loading" class="loading">
+              Loading&#8230;     
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-storage.js"></script>
+    <script type="text/javascript" src="../JS/config.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../JS/url.js"></script>
+    <script src="../JS/teamaddprojname.js"></script>
+</body>
+
+</html>

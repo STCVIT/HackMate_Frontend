@@ -114,7 +114,8 @@
                                 </member>
                                 <div class="d-flex justify-content-end">
                                     <a id="square_inactive" class="square_inactive"
-                                        style="text-decoration: none;color:white;" onclick="redirect()">Add Participants</a>
+                                        style="text-decoration: none;color:white;" onclick="redirect()">Add
+                                        Participants</a>
                                 </div>
                             </div>
                         </div>
@@ -197,21 +198,47 @@
                 </div>
             </div>
             <div class="row">
-                <div class="maintext">
-                    <h2>Project</h2>
-                    <p>Don't have a project ? Worry not we have got u covered.</p>
-                </div>
-                <div class="col-sm-12 col-md-12 col-sm-12">
-                    <div class="d-flex justify justify-content-center">
-                        <div class="card-last" style="max-width:539px;max-height:330px;">
-                            <div class="card-body">
-                                <div class="wrapall">
-                                    <div class="d-flex justify justify-content-center">
-                                        <img src="../Assets/Images/fileicon.svg">
+                <div class="addproject" id="addproject">
+                    <div class="maintext">
+                        <h2>Project</h2>
+                        <p>Don't have a project ? Worry not we have got u covered.</p>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-sm-12">
+                        <div class="d-flex justify justify-content-center">
+                            <div class="card-last" style="max-width:539px;max-height:330px;">
+                                <div class="card-body">
+                                    <div class="wrapall">
+                                        <div class="d-flex justify justify-content-center">
+                                            <img src="../Assets/Images/fileicon.svg">
+                                        </div>
+                                        <div class="d-flex justify justify-content-center">
+                                            <a onclick="addproject()"
+                                                style="color:#1EA54C;text-decoration:none;cursor: pointer;">ADD A
+                                                NEW PROJECT</a>
+                                        </div>
                                     </div>
-                                    <div class="d-flex justify justify-content-center">
-                                        <a href="./addProject.html" style="color:#1EA54C;text-decoration:none;cursor: pointer;">ADD A
-                                            NEW PROJECT</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="showproject" id="showproject" style="margin-top:-40%">
+                    <div class="maintext">
+                        <h2>Team Project</h2>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-sm-12">
+                        <div class="d-flex justify justify-content-center">
+                            <div class="card-last" style="max-width:539px;max-height:330px;">
+                                <div class="card-body">
+                                    <div class="wrapit">
+                                        <div class="d-flex justify justify-content-center">
+                                            <div class="deets">
+                                            <h2 id="projname">ProjName</h2>
+                                            <p id="des">Description</p>
+                                            <a onclick="viewproject()"
+                                                style="color:#1EA54C;text-decoration:none;cursor: pointer;">VIEW PROJECT DETAILS</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -225,9 +252,9 @@
     <div id="foobottom">
 
     </div>
-    <div class="container"> 
+    <div class="container">
         <div id="loading" class="loading">
-          Loading&#8230;     
+            Loading&#8230;
         </div>
     </div>
 </body>

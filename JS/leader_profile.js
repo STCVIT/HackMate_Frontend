@@ -9,6 +9,7 @@ let hack_id = localStorage.getItem("hack_id");
 let hack_name = localStorage.getItem("hackName");
 console.log(hack_name);
 var random_id = localStorage.getItem("team_id");
+console.log("team ID: "+random_id);
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     user.getIdToken().then(function (idToken) {
@@ -42,6 +43,18 @@ firebase.auth().onAuthStateChanged((user) => {
               yourHTML += "<p>" + team.pt_skills[i].participant.name + "<m>(Member)</m><br><t>" + team.pt_skills[i].skills[0].skill + "</t></p></div></div><l id='member' onclick = 'removemem()' style='cursor : pointer'>REMOVE<identity id='member_id' style='display:none'>" + team.pt_skills[i].participant._id + "</identity></l></div>"
             }
             body.innerHTML = yourHTML;
+            console.log(team.team.hasOwnProperty('project_name'));
+            if(team.team.hasOwnProperty('project_name')){
+              console.log("cjfcfjchh");
+              document.getElementById("addproject").style.visibility = "hidden";
+              document.getElementById("projname").innerHTML = team.team.project_name;
+              document.getElementById("des").innerHTML = team.team.project_description;
+            }
+            else{
+              document.getElementById("addproject").style.visibility = "visible";
+              document.getElementById("showproject").style.visibility = "hidden";
+            }
+            document.getElementById("loading").style.visibility = 'hidden';
           }
         })
         .catch((error) => console.error("Error: " + error));
@@ -128,7 +141,6 @@ firebase.auth().onAuthStateChanged((user) => {
     // User is signed out
     console.log("I'm signed out!")
   }
-  document.getElementById("loading").style.visibility = 'hidden';
 });
 function submit() {
 
@@ -296,28 +308,28 @@ function removemem() {
       dangerMode: true,
     })
       .then((willDelete) => {
-        if (willDelete) {
-          swal("Poof! The team member has been removed!", {
-            icon: "success",
-          });
-          axios
-            .patch(`${url}/DN_Team/removeMember/${random_id}/${member_id}`,
-              {
-              },
-              {
-                headers: {
-                  Authorization: "Bearer " + auth,
+            if (willDelete) {
+              axios
+              .patch(`${url}/DN_Team/removeMember/${random_id}/${member_id}`,
+                {
                 },
-              }
-            )
-            .then((response) => {
-              res = response.data;
-              console.log(res);
-              window.location.assign("./My_teams.html");
-            })
-            .catch((error) => {
-              console.error("Error:", error);
-            });
+                {
+                  headers: {
+                    Authorization: "Bearer " + auth,
+                  },
+                }
+              )
+              .then((response) => {
+                res = response.data;
+                console.log(res);
+                window.location.assign("./My_teams.html");
+              })
+              .catch((error) => {
+                console.error("Error:", error);
+              });
+              swal("Poof! The team member has been removed!", {
+                icon: "success",
+              });
         }
         else {
           swal("Your team is safe!!!");
@@ -329,4 +341,11 @@ function removemem() {
 
 function redirect() {
   window.location.assign("./AddParNew.html?" + random_id);
+}
+function addproject() {
+  window.location.assign("./teamaddprojname.html?" + random_id);
+}
+
+function viewproject() {
+  window.location.assign("./TeamAdd_Project.html?" + random_id);
 }

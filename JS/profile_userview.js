@@ -101,9 +101,6 @@ function delete_account() {
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    swal("Poof! Your profile has been deleted!", {
-                        icon: "success",
-                    });
                     axios
                         .delete(`${url}/participant/deleteProfile`, {
                             headers: {
@@ -113,8 +110,14 @@ function delete_account() {
                         .then((response) => {
                             console.log(response.data);
                             console.log(res);
+                            window.location.assign("./participantlognsignup.html");
                         })
-                        .catch((error) => console.error("Error: " + error));
+                        .catch((error) => {
+                            console.error("Error:", error);
+                          });
+                        swal("Poof! Your profile has been deleted!", {
+                            icon: "success",
+                        });
                 }
                 else {
                     swal("Your profile is safe!");

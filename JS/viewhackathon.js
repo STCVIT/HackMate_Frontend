@@ -279,7 +279,7 @@ function displayTeams() {
               document.querySelector(".wrapper").innerHTML +=
                 "<div class='box'><img src='../Assets/Images/Name Banner.png' class='namebanner' alt=''> <div class='innertxt'> <nb1 class='hackname'>" +
                 hacks.final[i].name +
-                " <a target='_blank' href='https://" +
+                " <a target='_blank' href='" +
                 hacks.final[i].website +
                 "'><img src='../Assets/Images/Hack Link.svg' alt=''></a></nb1> <br> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw class='startd'>" +
                 //hacks.final[i].start.split("T")[0] +
@@ -377,7 +377,7 @@ function nextPage() {
             document.querySelector(".wrapper").innerHTML +=
               "<div class='box'><img src='../Assets/Images/Name Banner.png' class='namebanner' alt=''> <div class='innertxt'> <nb1 class='hackname'>" +
               hacks.final[i].name +
-              " <a target='_blank' href='https://" +
+              " <a target='_blank' href='" +
               hacks.final[i].website +
               "'><img src='../Assets/Images/Hack Link.svg' alt=''></a></nb1> <br> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw class='startd'>" +
               //hacks.final[i].start.split("T")[0] +
@@ -456,7 +456,7 @@ function prevPage() {
             document.querySelector(".wrapper").innerHTML +=
               "<div class='box'><img src='../Assets/Images/Name Banner.png' class='namebanner' alt=''> <div class='innertxt'> <nb1 class='hackname'>" +
               hacks.final[i].name +
-              " <a target='_blank' href='https://" +
+              " <a target='_blank' href='" +
               hacks.final[i].website +
               "'><img src='../Assets/Images/Hack Link.svg' alt=''></a></nb1> <br> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw class='startd'>" +
               //hacks.final[i].start.split("T")[0] +

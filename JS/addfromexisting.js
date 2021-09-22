@@ -228,6 +228,7 @@ function displayTeams() {
       user.getIdToken().then(function (idToken) {
         auth = idToken;
         var init = async function () {
+            try{
           var res = await axios(`${url}/DN_Team/myTeams?page=1`, {
             headers: {
               Authorization: "Bearer " + auth,
@@ -348,7 +349,19 @@ function displayTeams() {
             size: total_teams,
             page: 1,
             step: 1,
-          });
+          })
+        }
+        catch(error){
+            console.log(error.response.status);
+            if(error.response.status == 404){
+                swal(
+                    "WARNING!!",
+                    "No Team has been formed here!",
+                    "warning"
+                  );
+                  loadingDiv.style.visibility = "hidden";
+            }
+        }
         };
         init();
       });

@@ -5,26 +5,154 @@
 html {
   scroll-behavior: smooth;
 }
-#add{
-  position:relative;
-  top:-30px;
-  left:70%;
-}
-.mainsection{
+.loading {
+  position: fixed;
+  z-index: 9999;
+  height: 2em;
+  width: 2em;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   background-color: #23303d;
 }
-.maintext{
-    font-family: "Fira Code", monospace;
-    padding-top:5%;
-    padding-bottom:4%;
+
+/* Transparent Overlay */
+
+.loading:before {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #23303d;
 }
-#team_id{
-  display:none;
+
+/* :not(:required) hides these rules from IE9 and below */
+
+.loading:not(:required) {
+  /* hide "loading..." text */
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
 }
-#admin_id{
-  display:none;
+
+.loading:not(:required):after {
+  content: "";
+  display: block;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  margin-top: -0.5em;
+  -webkit-animation: spinner 1500ms infinite linear;
+  -moz-animation: spinner 1500ms infinite linear;
+  -ms-animation: spinner 1500ms infinite linear;
+  -o-animation: spinner 1500ms infinite linear;
+  animation: spinner 1500ms infinite linear;
+  border-radius: 0.5em;
+  -webkit-box-shadow: #1ea54c 1.5em 0 0 0, #1ea54c 1.1em 1.1em 0 0,
+    #1ea54c 0 1.5em 0 0, #1ea54c -1.1em 1.1em 0 0, #1ea54c -1.5em 0 0 0,
+    #1ea54c -1.1em -1.1em 0 0, #1ea54c 0 -1.5em 0 0, #1ea54c 1.1em -1.1em 0 0;
+  box-shadow: #1ea54c 1.5em 0 0 0, #1ea54c 1.1em 1.1em 0 0, #1ea54c 0 1.5em 0 0,
+    #1ea54c -1.1em 1.1em 0 0, #1ea54c -1.5em 0 0 0, #1ea54c -1.1em -1.1em 0 0,
+    #1ea54c 0 -1.5em 0 0, #1ea54c 1.1em -1.1em 0 0;
 }
-#hack_id{
+
+/* Animation */
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-o-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+#add {
+  position: relative;
+  top: -30px;
+  left: 70%;
+}
+.mainsection {
+  background-color: #23303d;
+}
+.maintext {
+  font-family: "Fira Code", monospace;
+  padding-top: 5%;
+  padding-bottom: 4%;
+}
+#team_id {
+  display: none;
+}
+#admin_id {
+  display: none;
+}
+#hack_id {
   display: none;
 }
 #pagination {
@@ -43,18 +171,18 @@ html {
   align-items: center;
   flex-wrap: wrap;
 }
-.dots{
+.dots {
   font-family: Nunito Sans;
-font-style: normal;
-font-weight: bold;
-font-size: 22px;
-line-height: 30px;
-/* identical to box height */
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 30px;
+  /* identical to box height */
 
-letter-spacing: 0.16em;
-color: #008249;
-position: relative;
-margin-left: 11px;
+  letter-spacing: 0.16em;
+  color: #008249;
+  position: relative;
+  margin-left: 11px;
 }
 .current {
   justify-content: center;
@@ -78,217 +206,121 @@ margin-left: 11px;
 
   /* Text Colour */
 
-  color: #E7EFEF;
-
+  color: #e7efef;
 }
-  .wrapper1 {
+.wrapper1 {
   display: flex;
   justify-content: center;
   text-align: start;
   align-items: center;
   flex-wrap: wrap;
 }
-.pagenation{
+.pagenation {
   justify-content: center;
   text-align: center;
   margin-left: 11px;
   width: 42px;
-height: 42px;
-background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);
-box-shadow: 1.17615px 1.17615px 11.7615px rgba(0, 0, 0, 0.2);
-border-radius: 1.55556px;
-border: none;
-font-family: Nunito Sans;
-font-style: normal;
-font-weight: bold;
-font-size: 19.96px;
-line-height: 27px;
-/* identical to box height */
+  height: 42px;
+  background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);
+  box-shadow: 1.17615px 1.17615px 11.7615px rgba(0, 0, 0, 0.2);
+  border-radius: 1.55556px;
+  border: none;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19.96px;
+  line-height: 27px;
+  /* identical to box height */
 
-letter-spacing: 0.04em;
+  letter-spacing: 0.04em;
 
-/* Text Colour */
+  /* Text Colour */
 
-color: #E7EFEF;
-
+  color: #e7efef;
 }
-text{
+text {
   color: #1ea54c;
 }
-hackathon{
-  color: #E7EFEF99;
+hackathon {
+  color: #e7efef99;
 }
-f{
-  font-family: 'Nunito Sans', sans-serif;
-  font-size:40px;
+f {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 40px;
 }
-.vl{
+.vl {
   height: 230px;
-  border-left: 1.08px solid #F3F3F34D;
+  border-left: 1.08px solid #f3f3f34d;
 }
-.card-details{
-    display: flex;
+.card-details {
+  display: flex;
 }
-.team-members{
-    list-style-type: none;
+.team-members {
+  list-style-type: none;
 }
-.list-item{
-   display: flex;
-   line-height:0.99;
+.list-item {
+  display: flex;
+  line-height: 0.99;
 }
-#pp{
-   padding-right:20px;
-   width:68px;
-   height:42px;
+#pp {
+  padding-right: 20px;
+  width: 68px;
+  height: 42px;
 }
-r{
+r {
   float: right;
   padding: 10px;
-  color: #E7EFEF99;
+  color: #e7efef99;
 }
-.card-body{
-  border:none;
+.card-body {
+  border: none;
   background-color: #1d2833;
   box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
-  padding:5%;
+  padding: 5%;
 }
-li p t{
+li p t {
   color: #1ea54c;
-  font-size:small;
+  font-size: small;
 }
-@media only screen and (min-width:1400px){
-.card1{
-  position:relative;
-  top:-30px;
-  left:8%;
-}
-.card2{
-  position: relative;
-  top:-30px;
-  left:13%;
-}
-.card-body{
-margin-left: 8%;
-}
-.card-body #btnadd{
-padding-left:30%;
-}
-}
-@media only screen and (max-width:1400px){
-  #left_triangles{
-      display: none;
+@media only screen and (min-width: 1400px) {
+  .card1 {
+    position: relative;
+    top: -30px;
+    left: 8%;
   }
-  #right_triangles{
-      display: none;
+  .card2 {
+    position: relative;
+    top: -30px;
+    left: 13%;
   }
-  .col-lg-6{
-      padding-top:40px;
+  .card-body {
+    margin-left: 8%;
   }
-  .card-body #btnadd{
-    padding-left:20%;
+  .card-body #btnadd {
+    padding-left: 30%;
   }
 }
-@media only screen and (max-width:1000px) and (min-width:768px){
-  .card-body #btnadd{
-    padding-left:5%;
+@media only screen and (max-width: 1400px) {
+  #left_triangles {
+    display: none;
+  }
+  #right_triangles {
+    display: none;
+  }
+  .col-lg-6 {
+    padding-top: 40px;
+  }
+  .card-body #btnadd {
+    padding-left: 20%;
   }
 }
-@media only screen and (max-width:600px){
-.maintext h2{
-  padding-top:5%;
-}
-}
-
-
-
-
-
-
-
-
-
-.loading {
-  position: fixed;
-  z-index: 9999;
-  height: 2em;
-  width: 2em;
-  overflow: show;
-  margin: auto;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-color: #23303d;
-  visibility: visible;
-}
-
-/* Transparent Overlay */
-.loading:before {
-  content: '';
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #23303d;
-}
-
-/* :not(:required) hides these rules from IE9 and below */
-.loading:not(:required) {
-  /* hide "loading..." text */
-  font: 0/0 a;
-  color: transparent;
-  text-shadow: none;
-  background-color: transparent;
-  border: 0;
-}
-
-.loading:not(:required):after {
-  content: '';
-  display: block;
-  font-size: 10px;
-  width: 1em;
-  height: 1em;
-  margin-top: -0.5em;
-  -webkit-animation: spinner 1500ms infinite linear;
-  -moz-animation: spinner 1500ms infinite linear;
-  -ms-animation: spinner 1500ms infinite linear;
-  -o-animation: spinner 1500ms infinite linear;
-  animation: spinner 1500ms infinite linear;
-  border-radius: 0.5em;
-  -webkit-box-shadow: #1ea54c 1.5em 0 0 0, #1ea54c 1.1em 1.1em 0 0, #1ea54c 0 1.5em 0 0, #1ea54c -1.1em 1.1em 0 0, #1ea54c -1.5em 0 0 0, #1ea54c -1.1em -1.1em 0 0, #1ea54c 0 -1.5em 0 0, #1ea54c 1.1em -1.1em 0 0;
-  box-shadow: #1ea54c 1.5em 0 0 0, #1ea54c 1.1em 1.1em 0 0, #1ea54c 0 1.5em 0 0, #1ea54c -1.1em 1.1em 0 0, #1ea54c -1.5em 0 0 0, #1ea54c -1.1em -1.1em 0 0, #1ea54c 0 -1.5em 0 0, #1ea54c 1.1em -1.1em 0 0;
-}
-@-o-keyframes spinner {
-  0% {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
+@media only screen and (max-width: 1000px) and (min-width: 768px) {
+  .card-body #btnadd {
+    padding-left: 5%;
   }
 }
-@keyframes spinner {
-  0% {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
+@media only screen and (max-width: 600px) {
+  .maintext h2 {
+    padding-top: 5%;
   }
 }

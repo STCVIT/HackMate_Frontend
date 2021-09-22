@@ -569,6 +569,9 @@ function displayTeams() {
                                 swal("WARNING!!", "No Teams formed till now.", "warning");
                                 loadingDiv.style.visibility = 'hidden';
                             }
+                            if (err.response.status == 400) {
+                                swal("WARNING!!", "No Hack Found.", "warning");
+                            }
 
                         }
                     }

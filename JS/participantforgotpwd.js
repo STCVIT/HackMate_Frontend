@@ -7,6 +7,9 @@ function forgot() {
             // ..
             // alert("Password mail set was sent!!");
             swal("SUCCESS!!", "Password mail set was sent!!", "success");
+            setTimeout(function(){
+                window.location.assign('./participantlognsignup.html')
+            } , 3000);   
         })
         .catch((error) => {
             var errorCode = error.code;

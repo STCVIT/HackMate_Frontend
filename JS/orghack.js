@@ -1,5 +1,5 @@
 var page = 1;
-const loadingDiv = document.getElementById('loading');
+const loadingDiv = document.getElementById("loading");
 
 $(document).ready(function () {
   $("#nav").load("../Assets/Header/headero.txt");
@@ -7,160 +7,164 @@ $(document).ready(function () {
 });
 
 function events(event) {
-  loadingDiv.style.visibility = 'visible';
-  console.log(event);
+  loadingDiv.style.visibility = "visible";
+
   page = event.target.innerHTML;
-  console.log(page);
 
-  firebase.auth().currentUser.getIdToken().then((id) => {
-    auth = id;
-  axios(`${url}/organiser/hacks?page=${page}`, {
-    headers: {
-      Authorization: "Bearer " + auth,
-    },
-  })
-    .then((response) => {
-      hacks = response.data;
-      console.log(hacks);
-      document.querySelector(".wrapper").innerHTML = "";
+  firebase
+    .auth()
+    .currentUser.getIdToken()
+    .then((id) => {
+      auth = id;
+      axios(`${url}/organiser/hacks?page=${page}`, {
+        headers: {
+          Authorization: "Bearer " + auth,
+        },
+      })
+        .then((response) => {
+          hacks = response.data;
 
-      for (var i = 0; i < hacks.newHacks.length; i++) {
-        if(hacks.newHacks[i].name.length > 15)
-        {
-          hacks.newHacks[i].name = hacks.newHacks[i].name.slice(0,12) + "..."
-        }
-        document.querySelector(".wrapper").innerHTML +=
-          "<div class='box'> <a href='./orghackprofile.html?" +
-          hacks.newHacks[i]._id +
-          "' style='text-decoration: none;'> <div class='innertxt'> <div class='hackname'> <nb1>" +
-          hacks.newHacks[i].name +
-          ". </nb1> </div> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw>" +
-          hacks.newHacks[i].start.split("T")[0] +
-          "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw>" +
-          hacks.newHacks[i].end.split("T")[0] +
-          "</nbw> </div> </div> </div> </div> <div class='nbg'> <nbg>Venue: </nbg> <nbw>" +
-          hacks.newHacks[i].venue +
-          "</nbw> </div> <div class='nbg'> <nbg>Max Team Size: </nbg> <nbw> " +
-          hacks.newHacks[i].max_team_size +
-          " Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
-          hacks.newHacks[i].prize_pool +
-          "</div> <img class='mode_of_conduct pt-3  ' src='../Assets/Images/" + 
-          hacks.newHacks[i].mode_of_conduct + ".svg'>" +
-          "</div> </div> </a></div>";
-      }
-      loadingDiv.style.visibility = 'hidden';
-    })
-    .catch((error) => {
-      console.error("Error:", error);
+          document.querySelector(".wrapper").innerHTML = "";
+
+          for (var i = 0; i < hacks.newHacks.length; i++) {
+            if (hacks.newHacks[i].name.length > 15) {
+              hacks.newHacks[i].name =
+                hacks.newHacks[i].name.slice(0, 12) + "...";
+            }
+            document.querySelector(".wrapper").innerHTML +=
+              "<div class='box'> <a href='./orghackprofile.html?" +
+              hacks.newHacks[i]._id +
+              "' style='text-decoration: none;'> <div class='innertxt'> <div class='hackname'> <nb1>" +
+              hacks.newHacks[i].name +
+              ". </nb1> </div> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw>" +
+              hacks.newHacks[i].start.split("T")[0] +
+              "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw>" +
+              hacks.newHacks[i].end.split("T")[0] +
+              "</nbw> </div> </div> </div> </div> <div class='nbg'> <nbg>Venue: </nbg> <nbw>" +
+              hacks.newHacks[i].venue +
+              "</nbw> </div> <div class='nbg'> <nbg>Max Team Size: </nbg> <nbw> " +
+              hacks.newHacks[i].max_team_size +
+              " Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
+              hacks.newHacks[i].prize_pool +
+              "</div> <img class='mode_of_conduct pt-3  ' src='../Assets/Images/" +
+              hacks.newHacks[i].mode_of_conduct +
+              ".svg'>" +
+              "</div> </div> </a></div>";
+          }
+          loadingDiv.style.visibility = "hidden";
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
     });
-  })
-  window.location = "./orghack.html#hacksadded"
-
+  window.location = "./orghack.html#hacksadded";
 }
 function nextPage() {
-  loadingDiv.style.visibility = 'visible';
-  if(page <total_hacks)
-  {
-    page = Pagination.page + 1; 
+  loadingDiv.style.visibility = "visible";
+  if (page < total_hacks) {
+    page = Pagination.page + 1;
   }
-  console.log(page);
 
-  firebase.auth().currentUser.getIdToken().then((id) => {
-    auth = id;
-  axios(`${url}/organiser/hacks?page=${page}`, {
-    headers: {
-      Authorization: "Bearer " + auth,
-    },
-  })
-    .then((response) => {
-      hacks = response.data;
-      console.log(hacks);
-      document.querySelector(".wrapper").innerHTML = "";
+  firebase
+    .auth()
+    .currentUser.getIdToken()
+    .then((id) => {
+      auth = id;
+      axios(`${url}/organiser/hacks?page=${page}`, {
+        headers: {
+          Authorization: "Bearer " + auth,
+        },
+      })
+        .then((response) => {
+          hacks = response.data;
 
-      for (var i = 0; i < hacks.newHacks.length; i++) {
-        if(hacks.newHacks[i].name.length > 15)
-        {
-          hacks.newHacks[i].name = hacks.newHacks[i].name.slice(0,12) + "..."
-        }
-        document.querySelector(".wrapper").innerHTML +=
-          "<div class='box'> <a href='./orghackprofile.html?" +
-          hacks.newHacks[i]._id +
-          "' style='text-decoration: none;'> <div class='innertxt'> <div class='hackname'> <nb1>" +
-          hacks.newHacks[i].name +
-          ". </nb1> </div>  <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw>" +
-          hacks.newHacks[i].start.split("T")[0] +
-          "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw>" +
-          hacks.newHacks[i].end.split("T")[0] +
-          "</nbw> </div> </div> </div> </div> <div class='nbg'> <nbg>Venue: </nbg> <nbw>" +
-          hacks.newHacks[i].venue +
-          "</nbw> </div> <div class='nbg'> <nbg>Max Team Size: </nbg> <nbw> " +
-          hacks.newHacks[i].max_team_size +
-          " Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
-          hacks.newHacks[i].prize_pool +
-          "</div> <img class='mode_of_conduct pt-3  ' src='../Assets/Images/" + 
-          hacks.newHacks[i].mode_of_conduct + ".svg'>" +
-          "</div> </div> </a></div>";
-      }
-      loadingDiv.style.visibility = 'hidden';
-    })
-    .catch((error) => {
-      console.error("Error:", error);
+          document.querySelector(".wrapper").innerHTML = "";
+
+          for (var i = 0; i < hacks.newHacks.length; i++) {
+            if (hacks.newHacks[i].name.length > 15) {
+              hacks.newHacks[i].name =
+                hacks.newHacks[i].name.slice(0, 12) + "...";
+            }
+            document.querySelector(".wrapper").innerHTML +=
+              "<div class='box'> <a href='./orghackprofile.html?" +
+              hacks.newHacks[i]._id +
+              "' style='text-decoration: none;'> <div class='innertxt'> <div class='hackname'> <nb1>" +
+              hacks.newHacks[i].name +
+              ". </nb1> </div>  <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw>" +
+              hacks.newHacks[i].start.split("T")[0] +
+              "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw>" +
+              hacks.newHacks[i].end.split("T")[0] +
+              "</nbw> </div> </div> </div> </div> <div class='nbg'> <nbg>Venue: </nbg> <nbw>" +
+              hacks.newHacks[i].venue +
+              "</nbw> </div> <div class='nbg'> <nbg>Max Team Size: </nbg> <nbw> " +
+              hacks.newHacks[i].max_team_size +
+              " Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
+              hacks.newHacks[i].prize_pool +
+              "</div> <img class='mode_of_conduct pt-3  ' src='../Assets/Images/" +
+              hacks.newHacks[i].mode_of_conduct +
+              ".svg'>" +
+              "</div> </div> </a></div>";
+          }
+          loadingDiv.style.visibility = "hidden";
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
     });
-
-  })
 }
 function prevPage() {
-  loadingDiv.style.visibility = 'visible';
+  loadingDiv.style.visibility = "visible";
   if (page > 1) {
     page = Pagination.page - 1;
   }
 
-  console.log(page);
+  firebase
+    .auth()
+    .currentUser.getIdToken()
+    .then((id) => {
+      auth = id;
 
-  firebase.auth().currentUser.getIdToken().then((id) => {
-    auth = id;
-  
-  axios(`${url}/organiser/hacks?page=${page}`, {
-    headers: {
-      Authorization: "Bearer " + auth,
-    },
-  })
-    .then((response) => {
-      hacks = response.data;
-      console.log(hacks);
-      document.querySelector(".wrapper").innerHTML = "";
+      axios(`${url}/organiser/hacks?page=${page}`, {
+        headers: {
+          Authorization: "Bearer " + auth,
+        },
+      })
+        .then((response) => {
+          hacks = response.data;
 
-      for (var i = 0; i < hacks.newHacks.length; i++) {
-        if(hacks.newHacks[i].name.length > 15)
-        {
-          hacks.newHacks[i].name = hacks.newHacks[i].name.slice(0,12) + "..."
-        }
-        document.querySelector(".wrapper").innerHTML +=
-          "<div class='box'> <a href='./orghackprofile.html?" +
-          hacks.newHacks[i]._id +
-          "' style='text-decoration: none;'> <div class='innertxt'> <div class='hackname'> <nb1>" +
-          hacks.newHacks[i].name +
-          ". </nb1> </div>  <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw>" +
-          hacks.newHacks[i].start.split("T")[0] +
-          "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw>" +
-          hacks.newHacks[i].end.split("T")[0] +
-          "</nbw> </div> </div> </div> </div> <div class='nbg'> <nbg>Venue: </nbg> <nbw>" +
-          hacks.newHacks[i].venue +
-          "</nbw> </div> <div class='nbg'> <nbg>Max Team Size: </nbg> <nbw> " +
-          hacks.newHacks[i].max_team_size +
-          " Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
-          hacks.newHacks[i].prize_pool +
-          "</div> <img class='mode_of_conduct pt-3  ' src='../Assets/Images/" + 
-          hacks.newHacks[i].mode_of_conduct + ".svg'>" +
-          "</div> </a></div>";
-      }
-      loadingDiv.style.visibility = 'hidden';
-    })
-    .catch((error) => {
-      console.error("Error:", error);
+          document.querySelector(".wrapper").innerHTML = "";
+
+          for (var i = 0; i < hacks.newHacks.length; i++) {
+            if (hacks.newHacks[i].name.length > 15) {
+              hacks.newHacks[i].name =
+                hacks.newHacks[i].name.slice(0, 12) + "...";
+            }
+            document.querySelector(".wrapper").innerHTML +=
+              "<div class='box'> <a href='./orghackprofile.html?" +
+              hacks.newHacks[i]._id +
+              "' style='text-decoration: none;'> <div class='innertxt'> <div class='hackname'> <nb1>" +
+              hacks.newHacks[i].name +
+              ". </nb1> </div>  <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw>" +
+              hacks.newHacks[i].start.split("T")[0] +
+              "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw>" +
+              hacks.newHacks[i].end.split("T")[0] +
+              "</nbw> </div> </div> </div> </div> <div class='nbg'> <nbg>Venue: </nbg> <nbw>" +
+              hacks.newHacks[i].venue +
+              "</nbw> </div> <div class='nbg'> <nbg>Max Team Size: </nbg> <nbw> " +
+              hacks.newHacks[i].max_team_size +
+              " Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
+              hacks.newHacks[i].prize_pool +
+              "</div> <img class='mode_of_conduct pt-3  ' src='../Assets/Images/" +
+              hacks.newHacks[i].mode_of_conduct +
+              ".svg'>" +
+              "</div> </a></div>";
+          }
+          loadingDiv.style.visibility = "hidden";
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
     });
-
-  })
 }
 
 var Pagination = {
@@ -260,67 +264,67 @@ var Pagination = {
 };
 
 function displayHacks() {
-  loadingDiv.style.visibility = 'visible';
+  loadingDiv.style.visibility = "visible";
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      user.getIdToken().then(function(idToken){
-        console.log(idToken)
-        auth = idToken
+      user.getIdToken().then(function (idToken) {
+        auth = idToken;
         var init = async function () {
-        try{ var res = await axios(`${url}/organiser/hacks?page=1`, {
-            headers: {
-              Authorization: "Bearer " + auth,
-            },
-          });
-          hacks = await res.data;
-          console.log(hacks);
-      
-          var length = await res.data.length;
-          console.log(length);
-          document.querySelector(".wrapper").innerHTML = "";
-      
-          for (var i = 0; i < hacks.newHacks.length; i++) {
-            if(hacks.newHacks[i].name.length > 15)
-            {
-              hacks.newHacks[i].name = hacks.newHacks[i].name.slice(0,12) + "..."
+          try {
+            var res = await axios(`${url}/organiser/hacks?page=1`, {
+              headers: {
+                Authorization: "Bearer " + auth,
+              },
+            });
+            hacks = await res.data;
+
+            var length = await res.data.length;
+
+            document.querySelector(".wrapper").innerHTML = "";
+
+            for (var i = 0; i < hacks.newHacks.length; i++) {
+              if (hacks.newHacks[i].name.length > 15) {
+                hacks.newHacks[i].name =
+                  hacks.newHacks[i].name.slice(0, 12) + "...";
+              }
+              document.querySelector(".wrapper").innerHTML +=
+                "<div class='box'> <a href='./orghackprofile.html?" +
+                hacks.newHacks[i]._id +
+                "' style='text-decoration: none;'> <div class='innertxt'> <div class='hackname'> <nb1>" +
+                hacks.newHacks[i].name +
+                "</nb1> </div>  <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw>" +
+                hacks.newHacks[i].start.split("T")[0] +
+                "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw>" +
+                hacks.newHacks[i].end.split("T")[0] +
+                "</nbw> </div> </div> </div> </div> <div class='nbg'> <nbg>Venue: </nbg> <nbw>" +
+                hacks.newHacks[i].venue +
+                "</nbw> </div> <div class='nbg'> <nbg>Max Team Size: </nbg> <nbw> " +
+                hacks.newHacks[i].max_team_size +
+                " Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
+                hacks.newHacks[i].prize_pool +
+                "</div> <img class='mode_of_conduct pt-3  ' src='../Assets/Images/" +
+                hacks.newHacks[i].mode_of_conduct +
+                ".svg'>" +
+                " </div> </a></div>";
             }
-            document.querySelector(".wrapper").innerHTML +=
-              "<div class='box'> <a href='./orghackprofile.html?" +
-              hacks.newHacks[i]._id +
-              "' style='text-decoration: none;'> <div class='innertxt'> <div class='hackname'> <nb1>" +
-              hacks.newHacks[i].name +
-              "</nb1> </div>  <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw>" +
-              hacks.newHacks[i].start.split("T")[0] +
-              "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw>" +
-              hacks.newHacks[i].end.split("T")[0] +
-              "</nbw> </div> </div> </div> </div> <div class='nbg'> <nbg>Venue: </nbg> <nbw>" +
-              hacks.newHacks[i].venue +
-              "</nbw> </div> <div class='nbg'> <nbg>Max Team Size: </nbg> <nbw> " +
-              hacks.newHacks[i].max_team_size +
-              " Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
-              hacks.newHacks[i].prize_pool +
-              "</div> <img class='mode_of_conduct pt-3  ' src='../Assets/Images/" + 
-              hacks.newHacks[i].mode_of_conduct + ".svg'>" +
-              " </div> </a></div>";
-          }
-          total_hacks = Math.ceil(length / 6);
-          Pagination.Init(document.getElementById("pagination"), {
-            size: total_hacks,
-            page: 1,
-            step: 1,
-          });}
-          catch(error){
+            total_hacks = Math.ceil(length / 6);
+            Pagination.Init(document.getElementById("pagination"), {
+              size: total_hacks,
+              page: 1,
+              step: 1,
+            });
+          } catch (error) {
             if (error.response.status == 404) {
-              document.querySelector(".wrapper").innerHTML = "<h2 class='text-center' style='margin-top: 82px;'>No Hacks Found!</h2>"
+              document.querySelector(".wrapper").innerHTML =
+                "<h2 class='text-center' style='margin-top: 82px;'>No Hacks Found!</h2>";
             }
           }
-          loadingDiv.style.visibility = 'hidden';
+          loadingDiv.style.visibility = "hidden";
         };
         init();
-      })
+      });
     } else {
       // User is signed out
-      console.log("I'm signed out!")
     }
   });
 }

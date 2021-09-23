@@ -1,4 +1,4 @@
-const loadingDiv = document.getElementById('loading');
+const loadingDiv = document.getElementById("loading");
 
 $(document).ready(function () {
   $("#nav").load("../Assets/Header/headerl.txt");
@@ -8,8 +8,7 @@ $(document).ready(function () {
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     user.getIdToken().then(function (idToken) {
-      console.log(idToken)
-      auth = idToken
+      auth = idToken;
       axios(`${url}/projects/getAll`, {
         headers: {
           Authorization: "Bearer " + auth,
@@ -17,7 +16,6 @@ firebase.auth().onAuthStateChanged((user) => {
       })
         .then((response) => {
           projects = response.data;
-          console.log(projects);
           for (var i = 0; i < projects.individualProjects.length; i++) {
             document.querySelector(".projects").innerHTML +=
               "<div class='card'><a href='./Project_Profile.html?" +
@@ -38,19 +36,18 @@ firebase.auth().onAuthStateChanged((user) => {
               projects.teams[i].project_description +
               "</div></div></a></div>";
           }
-          loadingDiv.style.visibility = 'hidden';
+          loadingDiv.style.visibility = "hidden";
         })
         .catch((error) => {
           console.error("Error:", error);
-            if (error.response.status == 404) {
-              document.querySelector(".projects").innerHTML = "<h2 class='text-center' style='margin-top: 82px;'>No Projects Found!</h2>"
-            }
-            loadingDiv.style.visibility = 'hidden';
+          if (error.response.status == 404) {
+            document.querySelector(".projects").innerHTML =
+              "<h2 class='text-center' style='margin-top: 82px;'>No Projects Found!</h2>";
+          }
+          loadingDiv.style.visibility = "hidden";
         });
-    })
+    });
   } else {
     // User is signed out
-    console.log("I'm signed out!")
   }
 });
-

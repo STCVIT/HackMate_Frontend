@@ -134,6 +134,12 @@ function make_profile() {
     if (user) {
       user.getIdToken().then(function (idToken) {
         auth = idToken;
+        if(choice.length==0){
+          swal("WARNING!!", "Please select at least one skill", {
+            icon: "warning",
+        })
+      }
+      else{
         fetch(`${url}/participant/createProfile`, {
           method: "POST",
           headers: {
@@ -153,48 +159,42 @@ function make_profile() {
           }),
         })
           .then((response) => response.text())
-          .then((text) => {
+          .then(() => {
+            axios
+            .post(
+              `${url}/skills/mySkills`,
+              {
+                skills: choice,
+              },
+              {
+                headers: {
+                  Authorization: "Bearer " + auth,
+                },
+              }
+            )
+            .then((response) => {
+              swal(
+                "SUCCESS!!",
+                "Your profile has been created successfully",
+                "success"
+              ).then((okay) => {
+                if (okay) {
+                  window.location.href = "./viewhackathon.html";
+                }
+              });
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+            });
           })
           .catch((error) => {
+            console.error("Error:", error);
           });
+        }
       });
-    } else {
+    } 
+    else {
       // User is signed out
     }
   });
-  add_skills();
-  function add_skills() {
-    if (choice.length > 0) {
-      axios
-        .post(
-          `${url}/skills/mySkills`,
-          {
-            skills: choice,
-          },
-          {
-            headers: {
-              Authorization: "Bearer " + auth,
-            },
-          }
-        )
-        .then((response) => {
-          swal(
-            "SUCCESS!!",
-            "Your profile has been created successfully",
-            "success"
-          ).then((okay) => {
-            if (okay) {
-              window.location.href = "./viewhackathon.html";
-            }
-          });
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-        });
-    } else {
-      swal("WARNING!!", "Please select at least one skill", {
-        icon: "warning",
-      });
-    }
-  }
 }

@@ -293,57 +293,6 @@ h6 {
   display: contents;
 }
 
-.status {
-  margin-top: 18.12px;
-  width: 93.91px;
-height: 30.96px;
-border: 2.39498px solid #1EA54C;
-box-sizing: border-box;
-border-radius: 51.5993px;
-text-align: center;
-font-family: Nunito Sans;
-font-style: normal;
-font-weight: bold;
-font-size: 12.3838px;
-line-height: 140%;
-/* identical to box height, or 17px */
-
-letter-spacing: 0.04em;
-padding-top: 3px;
-color: #1EA54C;
-}
-
-.circle1{
-  width:13.76px;
-  height:13.76px;
-  border-radius: 50%;
-  background-color: #1EA54C;
-  display: inline-block;
-  position: relative;
-  left: 7px;
-  top: 3px;
-}
-.circle2{
-
-  width:10px;
-  height:10px;
-  border-radius: 50%;
-  display: inline-block;
-  position: relative;
-  right: 5.2px;
-  top: 1px;
-}
-.circle3{
-
-  width:6.02px;
-  height:6.02px;
-  border-radius: 50%;
-  background-color: #1EA54C;
-  display: inline-block;
-  position: relative;
-  right: 13px;
-  bottom: 1px;
-}
 .btnkm {
   margin-top: 26.04px;
   background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);

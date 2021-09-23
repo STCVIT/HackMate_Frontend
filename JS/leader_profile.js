@@ -124,7 +124,6 @@ firebase.auth().onAuthStateChanged((user) => {
         if (hack_name == "") {
           document.getElementById("hackathon").remove();
           document.getElementById("hackdetails").remove();
-          document.getElementById("hackdetails_mobile").remove();
         } else {
           axios(`${url}/getHacks/${hack_id}`, {
             headers: {
@@ -236,6 +235,12 @@ function submit() {
     .currentUser.getIdToken()
     .then((id) => {
       auth = id;
+      if(choice.length==0){
+        swal("WARNING!!", "Please select at least one skill", {
+          icon: "warning",
+      })
+    }
+    else{
       axios
         .post(
           `${url}/DN_Team/addSkills/${random_id}`,
@@ -260,6 +265,7 @@ function submit() {
         .catch((error) => {
           console.error("Error:", error);
         });
+      }
     });
 }
 function deleteteam() {

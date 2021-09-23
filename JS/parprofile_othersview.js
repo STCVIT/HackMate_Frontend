@@ -54,7 +54,7 @@ firebase.auth().onAuthStateChanged((user) => {
           let len = user.skills.length;
           for (let i = 0; i < len; i++) {
             yourHTML +=
-              "<p class='fill'><input class='form-check-input' type='checkbox' value='' id='flexCheckDefault' checked><label class='check-label' for='flexCheckDefault'>" +
+              "<p class='fill'><input class='form-check-input' type='checkbox' value='' id='flexCheckDefault' checked disabled='disabled'><label class='check-label' for='flexCheckDefault'>" +
               user.skills[i].skill;
             yourHTML += "</label></p>";
           }
@@ -73,52 +73,6 @@ firebase.auth().onAuthStateChanged((user) => {
     });
   }
 });
-
-firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-    user.getIdToken().then(function (idToken) {
-      auth = idToken;
-      var user;
-      axios(`${url}/participant/login`, {
-        headers: {
-          Authorization: "Bearer " + auth,
-        },
-      })
-        .then((response) => {
-          user = response.data;
-          user_id = user._id;
-        })
-        .catch((error) => console.error("Error: " + error));
-    });
-  }
-});
-let review = document.getElementById("review");
-
-function add_review() {
-  firebase
-    .auth()
-    .currentUser.getIdToken()
-    .then((id) => {
-      auth = id;
-      axios
-        .post(
-          `${url}/review/postReview/${user_id}/${randomId}`,
-          {
-            review: review.value,
-          },
-          {
-            headers: {
-              Authorization: "Bearer " + auth,
-            },
-          }
-        )
-        .then((response) => {})
-        .catch((error) => {
-          console.error("Error:", error);
-        });
-    });
-}
-
 function invite() {
   // id.innerHTML = "Ooops!";
   firebase

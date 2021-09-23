@@ -332,7 +332,12 @@ function addskills() {
       choice = arrayRemove(choice, "blockchain");
     }
   }
-
+  if(choice.length==0){
+    swal("WARNING!!", "Please select at least one skill", {
+      icon: "warning",
+  })
+}
+  else{
   axios
     .post(
       `${url}/skills/mySkills`,
@@ -351,6 +356,7 @@ function addskills() {
     .catch((error) => {
       console.error("Error:", error);
     });
+  }
 }
 
 async function uploadBlob(file) {

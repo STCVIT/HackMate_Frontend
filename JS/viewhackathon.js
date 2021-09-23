@@ -99,7 +99,7 @@ function events(event) {
               hacks.final[i].name = hacks.final[i].name.slice(0, 12) + "...";
             }
             document.querySelector(".wrapper").innerHTML +=
-              "<div class='box'><img src='../Assets/Images/Name Banner.png' class='namebanner' alt=''> <div class='innertxt'> <nb1 class='hackname'>" +
+              "<div class='box'> <div class='innertxt' style='margin-top:32px'> <nb1 class='hackname'>" +
               hacks.final[i].name +
               " <a href='" +
               hacks.final[i].website +
@@ -277,7 +277,7 @@ function displayTeams() {
                 hacks.final[i].name = hacks.final[i].name.slice(0, 12) + "...";
               }
               document.querySelector(".wrapper").innerHTML +=
-                "<div class='box'><img src='../Assets/Images/Name Banner.png' class='namebanner' alt=''> <div class='innertxt'> <nb1 class='hackname'>" +
+                "<div class='box'> <div class='innertxt' style='margin-top:32px'> <nb1 class='hackname'>" +
                 hacks.final[i].name +
                 " <a target='_blank' href='" +
                 hacks.final[i].website +
@@ -375,7 +375,7 @@ function nextPage() {
               hacks.final[i].name = hacks.final[i].name.slice(0, 12) + "...";
             }
             document.querySelector(".wrapper").innerHTML +=
-              "<div class='box'><img src='../Assets/Images/Name Banner.png' class='namebanner' alt=''> <div class='innertxt'> <nb1 class='hackname'>" +
+              "<div class='box'> <div class='innertxt' style='margin-top:32px'> <nb1 class='hackname'>" +
               hacks.final[i].name +
               " <a target='_blank' href='" +
               hacks.final[i].website +
@@ -454,7 +454,7 @@ function prevPage() {
               hacks.final[i].name = hacks.final[i].name.slice(0, 12) + "...";
             }
             document.querySelector(".wrapper").innerHTML +=
-              "<div class='box'><img src='../Assets/Images/Name Banner.png' class='namebanner' alt=''> <div class='innertxt'> <nb1 class='hackname'>" +
+              "<div class='box'> <div class='innertxt' style='margin-top:32px'> <nb1 class='hackname'>" +
               hacks.final[i].name +
               " <a target='_blank' href='" +
               hacks.final[i].website +

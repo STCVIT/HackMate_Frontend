@@ -130,6 +130,14 @@ function create() {
     .then((id) => {
       auth = id;
       console.log(name);
+      if(name == ""){
+        swal(
+          "WARNING!!",
+          "Team Name is not written!!",
+          "warning"
+        );
+      }
+      else{
       axios
         .post(
           `${url}/Dn_Team/createTeam/${window.location.search.split("?")[1]}`,
@@ -167,6 +175,7 @@ function create() {
           //     swal("WARNING!!", "No Hack found!!", "warning");
           // }
         });
+      }
     });
 }
 

@@ -129,6 +129,14 @@ function create() {
       auth = id;
       name = document.getElementById("team_name").value;
       console.log(name);
+      if(name == ""){
+        swal(
+          "WARNING!!",
+          "Team Name is not written!!",
+          "warning"
+        );
+      }
+      else{
       axios
         .post(
           `${url}/Dn_Team/createTeam/null`,
@@ -155,6 +163,7 @@ function create() {
         .catch((error) => {
           console.error("Error:", error);
         });
+      }
     });
 }
 

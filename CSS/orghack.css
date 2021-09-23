@@ -32,41 +32,35 @@ input {
 }
 .wrapper {
   display: flex;
-  flex-basis: 276.26px;
+  flex-basis: 353.33px;
+  justify-content: center;
   text-align: start;
   align-items: center;
   flex-wrap: wrap;
-  padding-left: 128px;
-  padding-right: 128px;
 }
 
 nb1 {
   font-family: Fira Code;
   font-style: normal;
   font-weight: bold;
-  font-size: 19.9188px;
-  line-height: 140%;
-  /* identical to box height, or 28px */
-
+  font-size: 25.3533px;
+  line-height: 33px;
   letter-spacing: 0.04em;
-
-  color: #e7efef;
 }
 
 .box {
   background: #1d2833;
-  width: 276.26px;
-  height: 305px;
-  margin-bottom: 60px;
-  margin-right: 30px;
-  border-radius: 2.21008px;
+  width: 317px;
+  height: 404px;
+  margin-top: 57px;
+  margin-left: 2.5vw;
+  margin-right: 2.5vw;
+  box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
+  border-radius: 4px;
 }
 
-.hackname {
-  padding-top: 18px;
-}
 .innertxt {
-  padding-left: 43.09px;
+  padding-left: 25px;
 }
 
 .box * {
@@ -77,9 +71,9 @@ nbg {
   font-family: Nunito Sans;
   font-style: normal;
   font-weight: normal;
-  font-size: 11.2478px;
+  font-size: 13.7886px;
   line-height: 160%;
-  /* or 18px */
+  /* or 22px */
 
   letter-spacing: 0.04em;
 
@@ -87,23 +81,21 @@ nbg {
 }
 
 .nbg {
-  margin-top: 14.77px;
+  margin-top: 15.05px;
 }
 .nbw {
-  margin-top: 4.22px;
+  margin-top: 5.17px;
 }
 
 nbw {
   font-family: Nunito Sans;
   font-style: normal;
   font-weight: 400;
-  font-size: 12.6538px;
+  font-size: 15.5122px;
   line-height: 160%;
-  /* identical to box height, or 20px */
+  /* identical to box height, or 25px */
 
   letter-spacing: 0.04em;
-
-  color: #e7efef;
 }
 
 .box2 {
@@ -113,26 +105,81 @@ nbw {
   display: flex;
 }
 
-.status {
-  margin-top: 18.12px;
-  width: 93.91px;
-height: 30.96px;
-border: 2.39498px solid #1EA54C;
-box-sizing: border-box;
-border-radius: 51.5993px;
-text-align: center;
-font-family: Nunito Sans;
-font-style: normal;
-font-weight: bold;
-font-size: 12.3838px;
-line-height: 140%;
-/* identical to box height, or 17px */
-
-letter-spacing: 0.04em;
-padding-top: 3px;
-color: #1EA54C;
+.button {
+  margin-top: 10px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  background: #1ea54c;
+  border: 2.53333px solid #1ea54c;
+  box-sizing: border-box;
+  border-radius: 63.3333px;
+  filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
+  height: 38px;
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 15.2px;
+  width: 115.27px;
+    line-height: 140%;
+  letter-spacing: 0.04em;
+}
+.button * {
+  background: #1ea54c;
+}
+.button1 {
+  margin-top: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  background: #1d2833;
+  border: 2.53333px solid #1ea54c;
+  box-sizing: border-box;
+  border-radius: 63.3333px;
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 15.2px;
+  line-height: 140%;
+  letter-spacing: 0.04em;
+  color: #1ea54c;
+  filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
+  height: 38px;
+  width: 115.27px;
 }
 
+h6 {
+  margin-bottom: 0;
+}
+
+.button1 * {
+  background: #1d2833;
+}
+
+.top-button {
+  display: contents;
+}
+
+.btnkm {
+  margin-top: 26.04px;
+  background: linear-gradient(103.71deg, #008249 -20.85%, #226045 122.33%);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  width: 267px;
+  height: 41px;
+  font-family: Fira Code;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16.9706px;
+  line-height: 22px;
+  border: none;
+  /* identical to box height */
+
+  letter-spacing: 0.04em;
+}
 
 #pagination {
   display: flex;

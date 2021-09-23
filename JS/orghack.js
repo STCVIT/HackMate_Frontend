@@ -25,31 +25,55 @@ function events(event) {
           hacks = response.data;
 
           document.querySelector(".wrapper").innerHTML = "";
-
           for (var i = 0; i < hacks.newHacks.length; i++) {
             if (hacks.newHacks[i].name.length > 15) {
-              hacks.newHacks[i].name =
-                hacks.newHacks[i].name.slice(0, 12) + "...";
+              hacks.newHacks[i].name = hacks.newHacks[i].name.slice(0, 12) + "...";
             }
             document.querySelector(".wrapper").innerHTML +=
-              "<div class='box'> <a href='./orghackprofile.html?" +
-              hacks.newHacks[i]._id +
-              "' style='text-decoration: none;'> <div class='innertxt'> <div class='hackname'> <nb1>" +
+              "<div class='box'> <div class='innertxt' style='margin-top:32px'> <nb1 class='hackname'>" +
               hacks.newHacks[i].name +
-              ". </nb1> </div> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw>" +
-              hacks.newHacks[i].start.split("T")[0] +
-              "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw>" +
-              hacks.newHacks[i].end.split("T")[0] +
-              "</nbw> </div> </div> </div> </div> <div class='nbg'> <nbg>Venue: </nbg> <nbw>" +
+              " <a href='" +
+              hacks.newHacks[i].website +
+              "'><img src='../Assets/Images/Hack Link.svg' alt=''></a></nb1> <br> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw class='startd'>" +
+              new Date(hacks.newHacks[i].start.split("T")[0])
+                .toString()
+                .split(" ")[2] +
+              " " +
+              new Date(hacks.newHacks[i].start.split("T")[0])
+                .toString()
+                .split(" ")[1] +
+              " " +
+              new Date(hacks.newHacks[i].start.split("T")[0])
+                .toString()
+                .split(" ")[3] +
+              " " +
+              "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw class='endd'>" +
+              new Date(hacks.newHacks[i].end.split("T")[0])
+                .toString()
+                .split(" ")[2] +
+              " " +
+              new Date(hacks.newHacks[i].end.split("T")[0])
+                .toString()
+                .split(" ")[1] +
+              " " +
+              new Date(hacks.newHacks[i].end.split("T")[0])
+                .toString()
+                .split(" ")[3] +
+              " " +
+              "</nbw> </div> </div> </div> </div> <div class='nbg'> <nbg>Venue: </nbg> <nbw class='venue'>" +
               hacks.newHacks[i].venue +
-              "</nbw> </div> <div class='nbg'> <nbg>Max Team Size: </nbg> <nbw> " +
+              "</nbw> </div> <div class='nbg'> <nbg>Team Size: </nbg> <nbw class='ts'>" +
+              +hacks.newHacks[i].min_team_size +
+              "-" +
               hacks.newHacks[i].max_team_size +
-              " Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
+              "</nbw><nbw> Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
               hacks.newHacks[i].prize_pool +
-              "</div> <img class='mode_of_conduct pt-3  ' src='../Assets/Images/" +
+              "</div><img class='mode_of_conduct pt-3' src='../Assets/Images/" +
               hacks.newHacks[i].mode_of_conduct +
               ".svg'>" +
-              "</div> </div> </a></div>";
+              "<a class='btnkm btn btn-success' href='./hackdetails.html?" +
+              hacks.newHacks[i]._id +
+              "' role='button'>Know More</a> </div> </div>";
           }
           loadingDiv.style.visibility = "hidden";
         })
@@ -77,33 +101,56 @@ function nextPage() {
       })
         .then((response) => {
           hacks = response.data;
-
           document.querySelector(".wrapper").innerHTML = "";
-
           for (var i = 0; i < hacks.newHacks.length; i++) {
             if (hacks.newHacks[i].name.length > 15) {
-              hacks.newHacks[i].name =
-                hacks.newHacks[i].name.slice(0, 12) + "...";
+              hacks.newHacks[i].name = hacks.newHacks[i].name.slice(0, 12) + "...";
             }
             document.querySelector(".wrapper").innerHTML +=
-              "<div class='box'> <a href='./orghackprofile.html?" +
-              hacks.newHacks[i]._id +
-              "' style='text-decoration: none;'> <div class='innertxt'> <div class='hackname'> <nb1>" +
+              "<div class='box'> <div class='innertxt' style='margin-top:32px'> <nb1 class='hackname'>" +
               hacks.newHacks[i].name +
-              ". </nb1> </div>  <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw>" +
-              hacks.newHacks[i].start.split("T")[0] +
-              "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw>" +
-              hacks.newHacks[i].end.split("T")[0] +
-              "</nbw> </div> </div> </div> </div> <div class='nbg'> <nbg>Venue: </nbg> <nbw>" +
+              " <a href='" +
+              hacks.newHacks[i].website +
+              "'><img src='../Assets/Images/Hack Link.svg' alt=''></a></nb1> <br> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw class='startd'>" +
+              new Date(hacks.newHacks[i].start.split("T")[0])
+                .toString()
+                .split(" ")[2] +
+              " " +
+              new Date(hacks.newHacks[i].start.split("T")[0])
+                .toString()
+                .split(" ")[1] +
+              " " +
+              new Date(hacks.newHacks[i].start.split("T")[0])
+                .toString()
+                .split(" ")[3] +
+              " " +
+              "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw class='endd'>" +
+              new Date(hacks.newHacks[i].end.split("T")[0])
+                .toString()
+                .split(" ")[2] +
+              " " +
+              new Date(hacks.newHacks[i].end.split("T")[0])
+                .toString()
+                .split(" ")[1] +
+              " " +
+              new Date(hacks.newHacks[i].end.split("T")[0])
+                .toString()
+                .split(" ")[3] +
+              " " +
+              "</nbw> </div> </div> </div> </div> <div class='nbg'> <nbg>Venue: </nbg> <nbw class='venue'>" +
               hacks.newHacks[i].venue +
-              "</nbw> </div> <div class='nbg'> <nbg>Max Team Size: </nbg> <nbw> " +
+              "</nbw> </div> <div class='nbg'> <nbg>Team Size: </nbg> <nbw class='ts'>" +
+              +hacks.newHacks[i].min_team_size +
+              "-" +
               hacks.newHacks[i].max_team_size +
-              " Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
+              "</nbw><nbw> Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
               hacks.newHacks[i].prize_pool +
-              "</div> <img class='mode_of_conduct pt-3  ' src='../Assets/Images/" +
+              "</div><img class='mode_of_conduct pt-3' src='../Assets/Images/" +
               hacks.newHacks[i].mode_of_conduct +
               ".svg'>" +
-              "</div> </div> </a></div>";
+              "<a class='btnkm btn btn-success' href='./hackdetails.html?" +
+              hacks.newHacks[i]._id +
+              "' role='button'>Know More</a> </div> </div>";
           }
           loadingDiv.style.visibility = "hidden";
         })
@@ -133,31 +180,55 @@ function prevPage() {
           hacks = response.data;
 
           document.querySelector(".wrapper").innerHTML = "";
-
           for (var i = 0; i < hacks.newHacks.length; i++) {
             if (hacks.newHacks[i].name.length > 15) {
-              hacks.newHacks[i].name =
-                hacks.newHacks[i].name.slice(0, 12) + "...";
+              hacks.newHacks[i].name = hacks.newHacks[i].name.slice(0, 12) + "...";
             }
             document.querySelector(".wrapper").innerHTML +=
-              "<div class='box'> <a href='./orghackprofile.html?" +
-              hacks.newHacks[i]._id +
-              "' style='text-decoration: none;'> <div class='innertxt'> <div class='hackname'> <nb1>" +
+              "<div class='box'> <div class='innertxt' style='margin-top:32px'> <nb1 class='hackname'>" +
               hacks.newHacks[i].name +
-              ". </nb1> </div>  <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw>" +
-              hacks.newHacks[i].start.split("T")[0] +
-              "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw>" +
-              hacks.newHacks[i].end.split("T")[0] +
-              "</nbw> </div> </div> </div> </div> <div class='nbg'> <nbg>Venue: </nbg> <nbw>" +
+              " <a href='" +
+              hacks.newHacks[i].website +
+              "'><img src='../Assets/Images/Hack Link.svg' alt=''></a></nb1> <br> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw class='startd'>" +
+              new Date(hacks.newHacks[i].start.split("T")[0])
+                .toString()
+                .split(" ")[2] +
+              " " +
+              new Date(hacks.newHacks[i].start.split("T")[0])
+                .toString()
+                .split(" ")[1] +
+              " " +
+              new Date(hacks.newHacks[i].start.split("T")[0])
+                .toString()
+                .split(" ")[3] +
+              " " +
+              "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw class='endd'>" +
+              new Date(hacks.newHacks[i].end.split("T")[0])
+                .toString()
+                .split(" ")[2] +
+              " " +
+              new Date(hacks.newHacks[i].end.split("T")[0])
+                .toString()
+                .split(" ")[1] +
+              " " +
+              new Date(hacks.newHacks[i].end.split("T")[0])
+                .toString()
+                .split(" ")[3] +
+              " " +
+              "</nbw> </div> </div> </div> </div> <div class='nbg'> <nbg>Venue: </nbg> <nbw class='venue'>" +
               hacks.newHacks[i].venue +
-              "</nbw> </div> <div class='nbg'> <nbg>Max Team Size: </nbg> <nbw> " +
+              "</nbw> </div> <div class='nbg'> <nbg>Team Size: </nbg> <nbw class='ts'>" +
+              +hacks.newHacks[i].min_team_size +
+              "-" +
               hacks.newHacks[i].max_team_size +
-              " Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
+              "</nbw><nbw> Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
               hacks.newHacks[i].prize_pool +
-              "</div> <img class='mode_of_conduct pt-3  ' src='../Assets/Images/" +
+              "</div><img class='mode_of_conduct pt-3' src='../Assets/Images/" +
               hacks.newHacks[i].mode_of_conduct +
               ".svg'>" +
-              "</div> </a></div>";
+              "<a class='btnkm btn btn-success' href='./hackdetails.html?" +
+              hacks.newHacks[i]._id +
+              "' role='button'>Know More</a> </div> </div>";
           }
           loadingDiv.style.visibility = "hidden";
         })
@@ -281,31 +352,55 @@ function displayHacks() {
             var length = await res.data.length;
 
             document.querySelector(".wrapper").innerHTML = "";
-
             for (var i = 0; i < hacks.newHacks.length; i++) {
               if (hacks.newHacks[i].name.length > 15) {
-                hacks.newHacks[i].name =
-                  hacks.newHacks[i].name.slice(0, 12) + "...";
+                hacks.newHacks[i].name = hacks.newHacks[i].name.slice(0, 12) + "...";
               }
               document.querySelector(".wrapper").innerHTML +=
-                "<div class='box'> <a href='./orghackprofile.html?" +
-                hacks.newHacks[i]._id +
-                "' style='text-decoration: none;'> <div class='innertxt'> <div class='hackname'> <nb1>" +
+                "<div class='box'> <div class='innertxt' style='margin-top:32px'> <nb1 class='hackname'>" +
                 hacks.newHacks[i].name +
-                "</nb1> </div>  <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw>" +
-                hacks.newHacks[i].start.split("T")[0] +
-                "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw>" +
-                hacks.newHacks[i].end.split("T")[0] +
-                "</nbw> </div> </div> </div> </div> <div class='nbg'> <nbg>Venue: </nbg> <nbw>" +
+                " <a href='" +
+                hacks.newHacks[i].website +
+                "'><img src='../Assets/Images/Hack Link.svg' alt=''></a></nb1> <br> <div class='dates'> <div class='box1 start'> <div class='nbg'> <nbg>Begins:</nbg> <div class='nbw'> <nbw class='startd'>" +
+                new Date(hacks.newHacks[i].start.split("T")[0])
+                  .toString()
+                  .split(" ")[2] +
+                " " +
+                new Date(hacks.newHacks[i].start.split("T")[0])
+                  .toString()
+                  .split(" ")[1] +
+                " " +
+                new Date(hacks.newHacks[i].start.split("T")[0])
+                  .toString()
+                  .split(" ")[3] +
+                " " +
+                "</nbw> </div> </div> </div> <div class='box2 end'> <div class='nbg'> <nbg>Ends:</nbg> <div class='nbw'> <nbw class='endd'>" +
+                new Date(hacks.newHacks[i].end.split("T")[0])
+                  .toString()
+                  .split(" ")[2] +
+                " " +
+                new Date(hacks.newHacks[i].end.split("T")[0])
+                  .toString()
+                  .split(" ")[1] +
+                " " +
+                new Date(hacks.newHacks[i].end.split("T")[0])
+                  .toString()
+                  .split(" ")[3] +
+                " " +
+                "</nbw> </div> </div> </div> </div> <div class='nbg'> <nbg>Venue: </nbg> <nbw class='venue'>" +
                 hacks.newHacks[i].venue +
-                "</nbw> </div> <div class='nbg'> <nbg>Max Team Size: </nbg> <nbw> " +
+                "</nbw> </div> <div class='nbg'> <nbg>Team Size: </nbg> <nbw class='ts'>" +
+                +hacks.newHacks[i].min_team_size +
+                "-" +
                 hacks.newHacks[i].max_team_size +
-                " Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
+                "</nbw><nbw> Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
                 hacks.newHacks[i].prize_pool +
-                "</div> <img class='mode_of_conduct pt-3  ' src='../Assets/Images/" +
+                "</div><img class='mode_of_conduct pt-3' src='../Assets/Images/" +
                 hacks.newHacks[i].mode_of_conduct +
                 ".svg'>" +
-                " </div> </a></div>";
+                "<a class='btnkm btn btn-success' href='./orghackprofile.html?" +
+                hacks.newHacks[i]._id +
+                "' role='button'>Know More</a> </div> </div>";
             }
             total_hacks = Math.ceil(length / 6);
             Pagination.Init(document.getElementById("pagination"), {

@@ -46,11 +46,9 @@ firebase.auth().onAuthStateChanged((user) => {
       })
         .then((response) => {
           skills = response.data;
-          // console.log(skills);
           skills.forEach((element) => {
             userskills.push(element.skill);
           });
-          console.log(userskills);
           if (userskills.includes("frontend")) {
             fd.checked = true;
           }
@@ -213,7 +211,6 @@ function update_account() {
         onError(bio, "bio should not exceed 200 characters");
         flag = flag + 1;
       }
-      console.log(flag);
 
       if (flag == 0) {
         axios

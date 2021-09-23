@@ -24,7 +24,6 @@ function firstpage_profile() {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     result = checkInputs(Name, username, college, year);
-    console.log(result);
     if (result == 4) {
       sessionStorage.setItem("NAME", Name.value);
       sessionStorage.setItem("USERNAME", username.value);
@@ -35,7 +34,6 @@ function firstpage_profile() {
         if (user) {
           user.getIdToken().then(function (idToken) {
             auth = idToken;
-            console.log(auth);
             function checkusername() {
               fetch(`${url}/participant/checkUserName/${username}`, {
                 method: "POST",
@@ -44,9 +42,7 @@ function firstpage_profile() {
                 },
               })
                 .then((res) => {
-                  console.log(res.status);
                   if (res.status === 403) {
-                    console.log("username not unique");
                     swal(
                       "WARNING!!",
                       "Please choose a unique username",

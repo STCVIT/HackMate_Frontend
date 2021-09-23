@@ -255,8 +255,6 @@ function check() {
   cards.forEach((card) => card.addEventListener("click", look));
   console.log(cards);
   function look() {
-    console.log(" i was clicked");
-    console.log(this);
     var participant_id = this.querySelector("#participant-id").textContent;
     console.log(participant_id);
     window.location.assign("./MyProfile_otherView.html?" + team_id);
@@ -1004,7 +1002,6 @@ $(document).ready(function () {
 });
 
 const team_name = localStorage.getItem("hack_name");
-console.log(team_name);
 document.getElementById("teams").innerHTML = team_name;
 
 let a = document.querySelector("#flexCheckDefault6");
@@ -1028,7 +1025,6 @@ var t = 0;
 a.addEventListener("click", function () {
   if (z % 2 == 0) {
     choice.push("appdev");
-    console.log(choice);
     z += 1;
   } else {
     choice = choice.filter((item) => item !== "appdev");
@@ -1039,7 +1035,6 @@ a.addEventListener("click", function () {
 f.addEventListener("click", function () {
   if (n % 2 == 0) {
     choice.push("frontend");
-    console.log(choice);
     n += 1;
   } else {
     choice = choice.filter((item) => item !== "frontend");
@@ -1050,7 +1045,6 @@ f.addEventListener("click", function () {
 b.addEventListener("click", function () {
   if (y % 2 == 0) {
     choice.push("backend");
-    console.log(choice);
     y += 1;
   } else {
     choice = choice.filter((item) => item !== "backend");
@@ -1061,7 +1055,6 @@ b.addEventListener("click", function () {
 u.addEventListener("click", function () {
   if (x % 2 == 0) {
     choice.push("ui/ux");
-    console.log(choice);
     x += 1;
   } else {
     choice = choice.filter((item) => item !== "ui/ux");
@@ -1072,7 +1065,6 @@ u.addEventListener("click", function () {
 mac.addEventListener("click", function () {
   if (w % 2 == 0) {
     choice.push("ml");
-    console.log(choice);
     w += 1;
   } else {
     choice = choice.filter((item) => item !== "ml");
@@ -1083,7 +1075,7 @@ mac.addEventListener("click", function () {
 man.addEventListener("click", function () {
   if (v % 2 == 0) {
     choice.push("management");
-    console.log(choice);
+
     v += 1;
   } else {
     choice = choice.filter((item) => item !== "management");
@@ -1094,7 +1086,7 @@ man.addEventListener("click", function () {
 blo.addEventListener("click", function () {
   if (ua % 2 == 0) {
     choice.push("blockchain");
-    console.log(choice);
+
     ua += 1;
   } else {
     choice = choice.filter((item) => item !== "blockchain");
@@ -1105,7 +1097,7 @@ blo.addEventListener("click", function () {
 c.addEventListener("click", function () {
   if (t % 2 == 0) {
     choice.push("cybersecurity");
-    console.log(choice);
+
     t += 1;
   } else {
     choice = choice.filter((item) => item !== "cybersecurity");

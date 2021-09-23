@@ -7,14 +7,11 @@ let team_name = document.getElementById("team_name");
 let team_code = document.getElementById("team_code");
 let hack_id = localStorage.getItem("hack_id");
 let hack_name = localStorage.getItem("hackName");
-console.log(hack_name);
 var random_id = localStorage.getItem("team_id");
-console.log("team ID: " + random_id);
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     user.getIdToken().then(function (idToken) {
       auth = idToken;
-      console.log(random_id);
       axios(`${url}/DN_Team/${random_id}`, {
         headers: {
           Authorization: "Bearer " + auth,
@@ -22,15 +19,12 @@ firebase.auth().onAuthStateChanged((user) => {
       })
         .then((response) => {
           team = response.data;
-          console.log(team);
           team_name.innerHTML = "Team " + team.team.name;
           team_code.innerHTML = team.team.team_code;
 
           let body = document.getElementById("member_card");
           yourHTML = "";
-          console.log(team.team.admin_id);
           for (let i = 0; i < team.team.members.length; i++) {
-            console.log(team.pt_skills[i].participant._id);
             if (team.pt_skills[i].participant._id == team.team.admin_id) {
               yourHTML +=
                 "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'>";
@@ -61,9 +55,7 @@ firebase.auth().onAuthStateChanged((user) => {
                 "</identity></l></div>";
             }
             body.innerHTML = yourHTML;
-            console.log(team.team.hasOwnProperty("project_name"));
             if (team.team.hasOwnProperty("project_name")) {
-              console.log("cjfcfjchh");
               document.getElementById("addproject").style.visibility = "hidden";
               document.getElementById("projname").innerHTML =
                 team.team.project_name;
@@ -97,11 +89,9 @@ firebase.auth().onAuthStateChanged((user) => {
         })
           .then((response) => {
             skills = response.data;
-            // console.log(skills);
             skills.forEach((element) => {
               userskills.push(element.skill);
             });
-            console.log(userskills);
             if (userskills.includes("frontend")) {
               fd.checked = true;
             }
@@ -321,16 +311,10 @@ function removemem() {
       auth = id;
       const members = document.querySelectorAll("#member");
       members.forEach((member) => member.addEventListener("click", look));
-      console.log(members);
       function look() {
-        console.log(" i was clicked");
-        console.log(this);
         member_id = this.querySelector("#member_id").textContent;
-        console.log(member_id);
         count += 1;
       }
-
-      console.log(count);
       if (count === 2) {
         swal({
           title: "Are you sure?",

@@ -25,13 +25,10 @@ firebase.auth().onAuthStateChanged((user) => {
       })
         .then((response) => {
           team = response.data;
-          console.log(team);
-          console.log(team.team.hasOwnProperty("project_name"));
           if (team.team.hasOwnProperty("project_description")) {
             document.getElementById("projname").innerHTML =
               toTitleCase(team.team.project_name) + ".";
             teamproj = team.team.project_name;
-            console.log(team.team.code);
             document.project_form.git.value = team.team.code;
             document.project_form.design.value = team.team.design;
             document.project_form.personal_website.value =

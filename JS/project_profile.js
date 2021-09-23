@@ -15,7 +15,6 @@ firebase.auth().onAuthStateChanged((user) => {
       })
         .then((response) => {
           project = response.data;
-          console.log(project);
           document.querySelector("#git").innerHTML = project.code;
           document.querySelector("#design").innerHTML = project.design;
           document.querySelector("#personal_website").innerHTML =

@@ -25,7 +25,6 @@ function firstpage_profile() {
     form.addEventListener('submit', (e) => {
         (e).preventDefault();
         result = checkInputs(Name, username, college, year);
-        console.log(result);
         if (result == 4) {
             sessionStorage.setItem("NAME", Name.value);
             sessionStorage.setItem("USERNAME", username.value);
@@ -51,7 +50,6 @@ function set_items() {
     localStorage.setItem("BACK", back);
     window.location.assign("./profile.html");
 }
-// console.log(count);
 function secondpage_profile() {
     // count = count+1;
     const form2 = document.getElementById("form2");
@@ -78,13 +76,10 @@ function secondpage_profile() {
         localStorage.setItem("WEBSITE", website.value);
         localStorage.setItem("BIO", bio.value);
         let eval = validate(linkedin, git, website, bio);
-        console.log(eval);
         firebase.auth().onAuthStateChanged((user) => {
             if (user) {
                 user.getIdToken().then(function (idToken) {
-                    console.log(idToken)
                     auth = idToken
-                    console.log(auth);
                     function checkusername() {
                         fetch(`${url}/participant/checkUserName/${username}`, {
 
@@ -94,16 +89,12 @@ function secondpage_profile() {
                             },
                         })
                             .then((res) => {
-                                console.log(res.status);
                                 if (res.status === 403) {
                                     signal = 100;
-                                    console.log(signal);
-                                    console.log("username not unique");
                                     swal("WARNING!!", "Please choose a unique username", "warning");
                                 }
                                 else{
                                     if (eval == 3) {
-                                        console.log("form validation completed");
                                         fetch(`${url}/participant/createProfile`, {
         
                                             method: "POST",
@@ -125,7 +116,6 @@ function secondpage_profile() {
                                         })
                                             .then((response) => response.text())
                                             .then((text) => {
-                                                console.log("Success:", text);
                                                 window.location.assign("./profile_skills.html");
                                             })
                                             .catch((error) => {

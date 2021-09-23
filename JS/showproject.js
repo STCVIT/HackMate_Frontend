@@ -16,7 +16,6 @@ firebase.auth().onAuthStateChanged((user) => {
       })
         .then((response) => {
           projects = response.data;
-          console.log(projects);
           for (var i = 0; i < projects.individualProjects.length; i++) {
             document.querySelector(".projects").innerHTML +=
               "<div class='card'><a href='./Project_Profile.html?" +

@@ -8,9 +8,7 @@ let team_code = document.getElementById("team_code");
 let hack_id = localStorage.getItem("hack_id");
 let hack_name = localStorage.getItem("hackName");
 let participant_id = localStorage.getItem("participant_id");
-console.log(hack_name);
 let random_id = localStorage.getItem("team_id");
-console.log(random_id);
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     user.getIdToken().then(function (idToken) {
@@ -22,14 +20,12 @@ firebase.auth().onAuthStateChanged((user) => {
       })
         .then((response) => {
           team = response.data;
-          console.log(team);
           team_name.innerHTML = "Team " + team.team.name;
           team_code.innerHTML = team.team.team_code;
 
           let body = document.getElementById("member_card");
           yourHTML = "";
           for (let i = 0; i < team.team.members.length; i++) {
-            console.log(i);
             if (team.pt_skills[i].participant._id == participant_id) {
               yourHTML +=
                 "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'>";
@@ -128,8 +124,6 @@ function leave() {
       .currentUser.getIdToken()
       .then((id) => {
         auth = id;
-        console.log("Work!!");
-        console.log(auth);
         if (willDelete) {
           swal("Poof! You left the team successfully!", {
             icon: "success",

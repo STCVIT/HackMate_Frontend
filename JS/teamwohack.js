@@ -20,7 +20,6 @@ $(document).ready(function () {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       user.getIdToken().then(function(idToken){
-        console.log(idToken)
         sessionStorage.setItem("auth", idToken)
         auth = idToken
       })

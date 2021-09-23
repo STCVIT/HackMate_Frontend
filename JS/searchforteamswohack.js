@@ -377,7 +377,7 @@ function displayTeams() {
                       hacks.final[i].participants[0].photo +
                       "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h5 class='text16'>" +
                       hacks.final[i].participants[0].name +
-                      "</h5></div></div></div></div></div><div class='row'><div class='col-lg-4 col-md-4 col-4'><h3 class='text19'>Skills required :</h3></div><div class='col-lg-8 col-md-8 col-8'><h3 style='color:white; font-size:20px; font-family: Nunito Sans; margin-top: 17px; margin-bottom: 60px'>No Skills Required</h3></div></div><div class='row' id='team-ids' style='display:none;'>" +
+                      "</h5></div></div></div></div></div><div class='row'><div class='col-lg-4 col-md-4 col-4'><h3 class='text19'>Skills required :</h3></div><div class='col-lg-8 col-md-8 col-8'><h3 style='color:white; font-size:22px; font-family: Nunito Sans; margin-top: 17px; margin-bottom: 60px'>No Skills Required</h3></div></div><div class='row' id='team-ids' style='display:none;'>" +
                       hacks.final[i].team._id +
                       "</div><div class='row'><input type='submit' class='button4'  onclick='request()'value='Request to Join'></div></div><div class='empty'></div></div></div>";
                   }
@@ -589,7 +589,7 @@ function displayTeams() {
                       hacks.final[i].participants[1].photo +
                       "' class='Image2'></div><div class='col-lg-7 col-md-7 col-7'><h5 class='text17'>" +
                       hacks.final[i].participants[1].name +
-                      "</h5></div></div></div></div></div><div class='row'><div class='col-lg-4 col-md-4 col-4'><h3 class='text19'>Skills required :</h3></div><div class='col-lg-8 col-md-8 col-8'><h3 style='color:white; font-size:20px; font-family: Nunito Sans; margin-top: 17px; margin-bottom: 60px'>No Skills Required</h3></div></div><div class='row' id='team-ids' style='display:none;'>" +
+                      "</h5></div></div></div></div></div><div class='row'><div class='col-lg-4 col-md-4 col-4'><h3 class='text19'>Skills required :</h3></div><div class='col-lg-8 col-md-8 col-8'><h3 style='color:white; font-size:22px; font-family: Nunito Sans; margin-top: 17px; margin-bottom: 60px'>No Skills Required</h3></div></div><div class='row' id='team-ids' style='display:none;'>" +
                       hacks.final[i].team._id +
                       "</div><div class='row'><input type='submit' class='button4'  onclick='request()'value='Request to Join'></div></div><div class='empty'></div></div></div>";
                   }
@@ -811,9 +811,7 @@ function displayTeams() {
                       hacks.final[i].skills[6].skill +
                       "</h6></button><button class='button3'><h6 class='text21'>" +
                       hacks.final[i].skills[7].skill +
-                      "</h6></button></span></div></div><h4 id='myBtn' style='color:white; cursor:pointer; margin-left:165px; margin-top:15px; font-family: Nunito Sans; font-style: normal;letter-spacing: 0.04em; font-size: 18px;' onclick='myFunction()'>View More</h4><div class='row' id='team-id' style='display:none;'>" +
-                      hacks.final[i].team._id +
-                      "</div><div class='row' id='team-ids' style='display:none;'>" +
+                      "</h6></button></span></div></div><h4 id='myBtn' style='color:white; cursor:pointer; margin-left:165px; font-family: Nunito Sans; font-style: normal;letter-spacing: 0.04em; font-size: 18px;' onclick='myFunction()'>View More</h4><div class='row' id='team-id' style='display:none;'>" +
                       hacks.final[i].team._id +
                       "</div><div class='row'><input type='submit' class='button4'  onclick='request()'value='Request to Join'></div></div><div class='empty'></div></div></div>";
                   }
@@ -837,7 +835,7 @@ function displayTeams() {
                       hacks.final[i].participants[2].photo +
                       "' class='Image3'></div><div class='col-lg-7 col-md-7 col-7'><h5 class='text18'>" +
                       hacks.final[i].participants[2].name +
-                      "</h5></div></div></div></div></div><div class='row'><div class='col-lg-4 col-md-4 col-4'><h3 class='text19'>Skills required :</h3></div><div class='col-lg-8 col-md-8 col-8'><h3 style='color:white; font-size:20px; font-family: Nunito Sans; margin-top: 17px; margin-bottom: 60px'>No Skills Required</h3></div></div><div class='row' id='team-ids' style='display:none;'>" +
+                      "</h5></div></div></div></div></div><div class='row'><div class='col-lg-4 col-md-4 col-4'><h3 class='text19'>Skills required :</h3></div><div class='col-lg-8 col-md-8 col-8'><h3 style='color:white; font-size:22px; font-family: Nunito Sans; margin-top: 17px; margin-bottom: 60px'>No Skills Required</h3></div></div><div class='row' id='team-ids' style='display:none;'>" +
                       hacks.final[i].team._id +
                       "</div><div class='row'><input type='submit' class='button4'  onclick='request()'value='Request to Join'></div></div><div class='empty'></div></div></div>";
                   }
@@ -1091,7 +1089,7 @@ function displayTeams() {
                       hacks.final[i].skills[6].skill +
                       "</h6></button><button class='button3'><h6 class='text21'>" +
                       hacks.final[i].skills[7].skill +
-                      "</h6></button></span></div></div><h4 id='myBtn' style='color:white; cursor:pointer; margin-left:165px; margin-top:15px; font-family: Nunito Sans; font-style: normal;letter-spacing: 0.04em; font-size: 18px;' onclick='myFunction()'>View More</h4><div class='row' id='team-id' style='display:none;'>" +
+                      "</h6></button></span></div></div><h4 id='myBtn' style='color:white; cursor:pointer; margin-left:165px; font-family: Nunito Sans; font-style: normal;letter-spacing: 0.04em; font-size: 18px;' onclick='myFunction()'>View More</h4><div class='row' id='team-id' style='display:none;'>" +
                       hacks.final[i].team._id +
                       "</div><div class='row' id='team-ids' style='display:none;'>" +
                       hacks.final[i].team._id +
@@ -1121,7 +1119,7 @@ function displayTeams() {
                       hacks.final[i].participants[3].photo +
                       "' class='Image4'></div><div class='col-lg-7 col-md-7 col-7'><h5 class='text18'>" +
                       hacks.final[i].participants[3].name +
-                      "</h5></div></div></div></div></div><div class='row'><div class='col-lg-4 col-md-4 col-4'><h3 class='text19'>Skills required :</h3></div><div class='col-lg-8 col-md-8 col-8'><h3 style='color:white; font-size:20px; font-family: Nunito Sans; margin-top: 17px; margin-bottom: 60px'>No Skills Required</h3></div></div><div class='row' id='team-ids' style='display:none;'>" +
+                      "</h5></div></div></div></div></div><div class='row'><div class='col-lg-4 col-md-4 col-4'><h3 class='text19'>Skills required :</h3></div><div class='col-lg-8 col-md-8 col-8'><h3 style='color:white; font-size:22px; font-family: Nunito Sans; margin-top: 17px; margin-bottom: 60px'>No Skills Required</h3></div></div><div class='row' id='team-ids' style='display:none;'>" +
                       hacks.final[i].team._id +
                       "</div><div class='row'><input type='submit' class='button4'  onclick='request()'value='Request to Join'></div></div><div class='empty'></div></div></div>";
                   }
@@ -1407,7 +1405,7 @@ function displayTeams() {
                       hacks.final[i].skills[6].skill +
                       "</h6></button><button class='button3'><h6 class='text21'>" +
                       hacks.final[i].skills[7].skill +
-                      "</h6></button></span></div></div><h4 id='myBtn' style='color:white; cursor:pointer; margin-left:165px; margin-top:15px; font-family: Nunito Sans; font-style: normal;letter-spacing: 0.04em; font-size: 18px;' onclick='myFunction()'>View More</h4><div class='row' id='team-id' style='display:none;'>" +
+                      "</h6></button></span></div></div><h4 id='myBtn' style='color:white; cursor:pointer; margin-left:165px; font-family: Nunito Sans; font-style: normal;letter-spacing: 0.04em; font-size: 18px;' onclick='myFunction()'>View More</h4><div class='row' id='team-id' style='display:none;'>" +
                       hacks.final[i].team._id +
                       "</div><div class='row' id='team-ids' style='display:none;'>" +
                       hacks.final[i].team._id +
@@ -11967,7 +11965,7 @@ all.addEventListener("click", function () {
                     hacks.final[i].participants[0].photo +
                     "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h5 class='text16'>" +
                     hacks.final[i].participants[0].name +
-                    "</h5></div></div></div></div></div><div class='row'><div class='col-lg-4 col-md-4 col-4'><h3 class='text19'>Skills required :</h3></div><div class='col-lg-8 col-md-8 col-8'><h3 style='color:white; font-size:20px; font-family: Nunito Sans; margin-top: 17px; margin-bottom: 60px'>No Skills Required</h3></div></div><div class='row' id='team-ids' style='display:none;'>" +
+                    "</h5></div></div></div></div></div><div class='row'><div class='col-lg-4 col-md-4 col-4'><h3 class='text19'>Skills required :</h3></div><div class='col-lg-8 col-md-8 col-8'><h3 style='color:white; font-size:22px; font-family: Nunito Sans; margin-top: 17px; margin-bottom: 60px'>No Skills Required</h3></div></div><div class='row' id='team-ids' style='display:none;'>" +
                     hacks.final[i].team._id +
                     "</div><div class='row'><input type='submit' class='button4'  onclick='request()'value='Request to Join'></div></div><div class='empty'></div></div></div>";
                 }
@@ -12179,7 +12177,7 @@ all.addEventListener("click", function () {
                     hacks.final[i].participants[1].photo +
                     "' class='Image2'></div><div class='col-lg-7 col-md-7 col-7'><h5 class='text17'>" +
                     hacks.final[i].participants[1].name +
-                    "</h5></div></div></div></div></div><div class='row'><div class='col-lg-4 col-md-4 col-4'><h3 class='text19'>Skills required :</h3></div><div class='col-lg-8 col-md-8 col-8'><h3 style='color:white; font-size:20px; font-family: Nunito Sans; margin-top: 17px; margin-bottom: 60px'>No Skills Required</h3></div></div><div class='row' id='team-ids' style='display:none;'>" +
+                    "</h5></div></div></div></div></div><div class='row'><div class='col-lg-4 col-md-4 col-4'><h3 class='text19'>Skills required :</h3></div><div class='col-lg-8 col-md-8 col-8'><h3 style='color:white; font-size:22px; font-family: Nunito Sans; margin-top: 17px; margin-bottom: 60px'>No Skills Required</h3></div></div><div class='row' id='team-ids' style='display:none;'>" +
                     hacks.final[i].team._id +
                     "</div><div class='row'><input type='submit' class='button4'  onclick='request()'value='Request to Join'></div></div><div class='empty'></div></div></div>";
                 }
@@ -12427,7 +12425,7 @@ all.addEventListener("click", function () {
                     hacks.final[i].participants[2].photo +
                     "' class='Image3'></div><div class='col-lg-7 col-md-7 col-7'><h5 class='text18'>" +
                     hacks.final[i].participants[2].name +
-                    "</h5></div></div></div></div></div><div class='row'><div class='col-lg-4 col-md-4 col-4'><h3 class='text19'>Skills required :</h3></div><div class='col-lg-8 col-md-8 col-8'><h3 style='color:white; font-size:20px; font-family: Nunito Sans; margin-top: 17px; margin-bottom: 60px'>No Skills Required</h3></div></div><div class='row' id='team-ids' style='display:none;'>" +
+                    "</h5></div></div></div></div></div><div class='row'><div class='col-lg-4 col-md-4 col-4'><h3 class='text19'>Skills required :</h3></div><div class='col-lg-8 col-md-8 col-8'><h3 style='color:white; font-size:22px; font-family: Nunito Sans; margin-top: 17px; margin-bottom: 60px'>No Skills Required</h3></div></div><div class='row' id='team-ids' style='display:none;'>" +
                     hacks.final[i].team._id +
                     "</div><div class='row'><input type='submit' class='button4'  onclick='request()'value='Request to Join'></div></div><div class='empty'></div></div></div>";
                 }
@@ -12711,7 +12709,7 @@ all.addEventListener("click", function () {
                     hacks.final[i].participants[3].photo +
                     "' class='Image4'></div><div class='col-lg-7 col-md-7 col-7'><h5 class='text18'>" +
                     hacks.final[i].participants[3].name +
-                    "</h5></div></div></div></div></div><div class='row'><div class='col-lg-4 col-md-4 col-4'><h3 class='text19'>Skills required :</h3></div><div class='col-lg-8 col-md-8 col-8'><h3 style='color:white; font-size:20px; font-family: Nunito Sans; margin-top: 17px; margin-bottom: 60px'>No Skills Required</h3></div></div><div class='row' id='team-ids' style='display:none;'>" +
+                    "</h5></div></div></div></div></div><div class='row'><div class='col-lg-4 col-md-4 col-4'><h3 class='text19'>Skills required :</h3></div><div class='col-lg-8 col-md-8 col-8'><h3 style='color:white; font-size:22px; font-family: Nunito Sans; margin-top: 17px; margin-bottom: 60px'>No Skills Required</h3></div></div><div class='row' id='team-ids' style='display:none;'>" +
                     hacks.final[i].team._id +
                     "</div><div class='row'><input type='submit' class='button4'  onclick='request()'value='Request to Join'></div></div><div class='empty'></div></div></div>";
                 }

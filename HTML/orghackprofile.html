@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../Assets/Images/favicon.svg" type="image/x-icon">
     <title>HackMate</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
@@ -19,37 +20,40 @@
 
     <div class="container-fluid">
         <form action="" name="myform" method="post">
-        <div class="row">
-            <div class="col-md-1 col-sm-1 col-1"> </div>
-            <div class="col-md-5">
-                <div class="hackname"></div>
-            </div>
-            <div class="col-md-5">
-                <div class="text-md-end justify-md-content-end">
-                    <div class="btns"><a class=" delete btn btn-success" href="#" onclick="deleteHack()"
-                            role="button">Delete Hack</a>
-                        <input class=" savechanges btn btn-success" name="submit" type="submit" value="Save Changes"
-                        style="color: #fff; opacity: 1;">
+            <div class="row">
+                <div class="col-md-1 col-sm-1 col-1"> </div>
+                <div class="col-md-5">
+                    <div class="hackname"></div>
+                </div>
+                <div class="col-md-5">
+                    <div class="text-md-end justify-md-content-end">
+                        <div class="btns"><a class=" delete btn btn-success" href="#" onclick="deleteHack()"
+                                role="button">Delete Hack</a>
+                            <input class=" savechanges btn btn-success" name="submit" type="submit" value="Save Changes"
+                                style="color: #fff; opacity: 1;">
+                        </div>
                     </div>
                 </div>
+                <div class="col-1"></div>
             </div>
-            <div class="col-1"></div>
-        </div>
 
-        <div class="row">
-            <div class="col-md-1 col-sm-1 col-1"> </div>
-            <div class="col-md-5">
+            <div class="row">
+                <div class="col-md-1 col-sm-1 col-1"> </div>
+                <div class="col-md-5">
                     <div class="details">
                         <div class="inputdeets">
-                            <nbg>NAME<re>*</re></nbg> <br>
+                            <nbg>NAME<re>*</re>
+                            </nbg> <br>
                             <input class="textbox" type="text" name="name" required> <br>
                         </div>
                         <div class="inputdeets">
-                            <nbg>VENUE<re>*</re></nbg> <br>
+                            <nbg>VENUE<re>*</re>
+                            </nbg> <br>
                             <input class="textbox" type="text" name="venue" required> <br>
                         </div>
                         <div class="inputdeets">
-                            <nbg>MODE OF CONDUCT<re>*</re></nbg> <br>
+                            <nbg>MODE OF CONDUCT<re>*</re>
+                            </nbg> <br>
                             <select class="textbox" name="moc" style="  color: #e7efef; padding-left: 18px;" required>
                                 <option value="" disabled selected>Select</option>
                                 <option value="Online" style="color: #e7efef;">Online</option>
@@ -57,81 +61,89 @@
                             </select>
                         </div>
                         <div class="inputdeets">
-                            <nbg>WEBSITE LINK<re>*</re></nbg> <br>
+                            <nbg>WEBSITE LINK<re>*</re>
+                            </nbg> <br>
                             <input class="textbox" type="text" name="website" id="" required> <br>
                         </div>
                         <div class="inputdeets">
-                            <nbg>BIO<re>*</re></nbg> <br>
+                            <nbg>BIO<re>*</re>
+                            </nbg> <br>
                             <textarea class="textboxbio" name="about" id="" cols="30" rows="10" required></textarea>
                         </div>
 
                     </div>
-            </div>
-            <div class="col-md-5 outerdetails">
+                </div>
+                <div class="col-md-5 outerdetails">
 
-                <div class="details2">
-                    <div class="inputdeets">
-                        <nbg>POSTER<re>*</re></nbg>  <label for="image_uploads" class="label">
-                            <img src="../Assets/Images/EDIT.svg" alt="">
-                        </label>                        
-                        <input style="height: 0px; width: 0px;" type="file" id="image_uploads" name="image_uploads"
-                            accept=".jpg, .jpeg, .png" required>
-                        <div class="poster" style="padding-top: 6px;"></div>
+                    <div class="details2">
+                        <div class="inputdeets">
+                            <nbg>POSTER<re>*</re>
+                            </nbg> <label for="image_uploads" class="label">
+                                <img src="../Assets/Images/EDIT.svg" alt="">
+                            </label>
+                            <input style="height: 0px; width: 0px;" type="file" id="image_uploads" name="image_uploads"
+                                accept=".jpg, .jpeg, .png" required>
+                            <div class="poster" style="padding-top: 6px;"></div>
+                        </div>
+                        <div class="inputdeets">
+                            <nbg>START DATE<re>*</re>
+                            </nbg> <br>
+                            <input class="textbox" type="datetime-local" name="start" id="" required> <br>
+                        </div>
+                        <div class="inputdeets">
+                            <nbg>END DATE<re>*</re>
+                            </nbg> <br>
+                            <input class="textbox" type="datetime-local" name="end" id="" required> <br>
+                        </div>
+                        <div class="inputdeets">
+                            <nbg>MIN TEAM SIZE<re>*</re>
+                            </nbg> <br>
+                            <input class="textbox" type="number" name="mints" id="" min="0" required>
+                        </div>
+                        <div class="inputdeets">
+                            <nbg>MAX TEAM SIZE<re>*</re>
+                            </nbg> <br>
+                            <input class="textbox" type="number" name="maxts" id="" min="0" required>
+                        </div>
+                        <div class="inputdeets">
+                            <nbg>PRIZES POOL<re>*</re>
+                            </nbg> <br>
+                            <input class="textbox" type="text" name="prizes" id="" required> <br>
+                        </div>
                     </div>
-                    <div class="inputdeets">
-                        <nbg>START DATE<re>*</re></nbg> <br>
-                        <input class="textbox" type="datetime-local" name="start" id="" required> <br>
+
+
+
+                </div>
+                <div class="col-1"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-1"> </div>
+                <div class="col-10">
+                    <div class="nbg">
+                        <nbg>TEAMS</nbg>
                     </div>
-                    <div class="inputdeets">
-                        <nbg>END DATE<re>*</re></nbg> <br>
-                        <input class="textbox" type="datetime-local" name="end" id="" required> <br>
-                    </div>
-                    <div class="inputdeets">
-                        <nbg>MIN TEAM SIZE<re>*</re></nbg> <br>
-                        <input class="textbox" type="number" name="mints" id="" min="0" required>
-                    </div>
-                    <div class="inputdeets">
-                        <nbg>MAX TEAM SIZE<re>*</re></nbg> <br>
-                        <input class="textbox" type="number" name="maxts" id="" min="0" required>
-                    </div>
-                    <div class="inputdeets">
-                        <nbg>PRIZES POOL<re>*</re></nbg> <br>
-                        <input class="textbox" type="text" name="prizes" id="" required> <br>
-                    </div>
+
+
+                    <div class="col-md-1 col-1 col-sm-1"></div>
                 </div>
 
-
-
-            </div>
-            <div class="col-1"></div>
-        </div>
-        <div class="row">
-            <div class="col-md-1"> </div>
-            <div class="col-10">
-                <div class="nbg">
-                    <nbg>TEAMS</nbg>
-                </div>
-
-
-                <div class="col-md-1 col-1 col-sm-1"></div>
             </div>
 
-        </div>
-
-    </form>
+        </form>
     </div>
 
-    <div class="wrapper justify-content-lg-between justify-content-sm-center" >
+    <div class="wrapper justify-content-lg-between justify-content-sm-center">
     </div>
 
-    
+
 
     <div id="pagination"></div>
     <div id="foobottom"></div>
 
-    <div class="container"> 
+    <div class="container">
         <div id="loading" class="loading">
-          Loading&#8230;     
+            Loading&#8230;
         </div>
     </div>
 

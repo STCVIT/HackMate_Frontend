@@ -80,7 +80,6 @@ app.addEventListener('click', function () {
       //   }
       // }
       document.querySelector(".persons").innerHTML = "";
-      console.log(page);
       function displayTeams() {
         var init = async function () {
           try {
@@ -90,7 +89,6 @@ app.addEventListener('click', function () {
               },
             });
             hacks = await res.data;
-            console.log(hacks);
             // var part123 = hacks.final[0].pt._id;
             // localStorage.setItem("participant", part123);
             for (let i = 0; i < hacks.final.length; i++) {
@@ -99,7 +97,6 @@ app.addEventListener('click', function () {
             }
           }
           catch (err) {
-            console.log(err.response.status);
             if (err.response.status == 404) {
               swal("WARNING!!", "You can't search this team.", "warning");
             }
@@ -135,14 +132,11 @@ fweb.addEventListener('click', function () {
           hackss = await res.data;
           if (hackss.length >= 13 && hackss.length <= 24) {
             page = page + 1;
-            console.log(page);
             var height = document.body.clientHeight;
-            console.log(height);
             if (height == document.body.clientHeight) {
               window.addEventListener('scroll', someFunction);
               function someFunction() {
                 if (window.scrollY + window.innerHeight >= 1153) {
-                  console.log(window.scrollY + window.innerHeight);
                   displayTeams();
                   window.removeEventListener('scroll', someFunction);
                 }
@@ -151,33 +145,24 @@ fweb.addEventListener('click', function () {
           }
           else if (hackss.length >= 25 && hackss.length <= 36) {
             page = page + 1;
-            console.log(page);
             displayTeams();
             page = page + 1;
-            console.log(page);
           }
           else if (hackss.length >= 37 && hackss.length <= 48) {
             page = page + 1;
-            console.log(page);
             displayTeams();
             page = page + 1;
-            console.log(page);
             displayTeams();
             page = page + 1;
-            console.log(page);
           }
           else if (hackss.length >= 49 && hackss.length <= 60) {
             page = page + 1;
-            console.log(page);
             displayTeams();
             page = page + 1;
-            console.log(page);
             displayTeams();
             page = page + 1;
-            console.log(page);
             displayTeams();
             page = page + 1;
-            console.log(page);
           }
         }
         catch (err) {
@@ -198,7 +183,6 @@ fweb.addEventListener('click', function () {
       //   }
       // }
       document.querySelector(".persons").innerHTML = "";
-      console.log(page);
       function displayTeams() {
         var init = async function () {
           try {
@@ -208,7 +192,6 @@ fweb.addEventListener('click', function () {
               },
             });
             hacks = await res.data;
-            console.log(hacks);
             // var part123 = hacks.final[0].pt._id;
             // localStorage.setItem("participant", part123);
             for (let i = 0; i < hacks.final.length; i++) {
@@ -217,7 +200,6 @@ fweb.addEventListener('click', function () {
             }
           }
           catch (err) {
-            console.log(err.response.status);
             if (err.response.status == 404) {
               swal("WARNING!!", "You can't search this team.", "warning");
             }
@@ -237,12 +219,8 @@ function check() {
   var team_id = window.location.search.split("?")[1];
   const cards = document.querySelectorAll("#good");
   cards.forEach(card => card.addEventListener('click', look));
-  console.log(cards);
   function look() {
-    console.log(" i was clicked");
-    console.log(this);
     var participant_id = this.querySelector("#participant-id").textContent;
-    console.log(participant_id);
     window.location.assign('./MyProfile_otherView.html?'+team_id);
     var part123 = participant_id;
     localStorage.setItem("participant", part123);
@@ -319,7 +297,6 @@ bweb.addEventListener('click', function () {
       //   }
       // }
       document.querySelector(".persons").innerHTML = "";
-      console.log(page);
       function displayTeams() {
         var init = async function () {
           try {
@@ -329,7 +306,6 @@ bweb.addEventListener('click', function () {
               },
             });
             hacks = await res.data;
-            console.log(hacks);
             // var part123 = hacks.final[0].pt._id;
             // localStorage.setItem("participant", part123);
             for (let i = 0; i < hacks.final.length; i++) {
@@ -338,7 +314,6 @@ bweb.addEventListener('click', function () {
             }
           }
           catch (err) {
-            console.log(err.response.status);
             if (err.response.status == 404) {
               swal("WARNING!!", "You can't search this team.", "warning");
             }
@@ -425,7 +400,6 @@ ml.addEventListener('click', function () {
       //   }
       // }
       document.querySelector(".persons").innerHTML = "";
-      console.log(page);
       function displayTeams() {
         var init = async function () {
           try {
@@ -435,7 +409,6 @@ ml.addEventListener('click', function () {
               },
             });
             hacks = await res.data;
-            console.log(hacks);
             // var part123 = hacks.final[0].pt._id;
             // localStorage.setItem("participant", part123);
             for (let i = 0; i < hacks.final.length; i++) {
@@ -444,7 +417,6 @@ ml.addEventListener('click', function () {
             }
           }
           catch (err) {
-            console.log(err.response.status);
             if (err.response.status == 404) {
               swal("WARNING!!", "You can't search this team.", "warning");
             }
@@ -531,7 +503,6 @@ design.addEventListener('click', function () {
       //   }
       // }
       document.querySelector(".persons").innerHTML = "";
-      console.log(page);
       function displayTeams() {
         var init = async function () {
           try {
@@ -541,7 +512,6 @@ design.addEventListener('click', function () {
               },
             });
             hacks = await res.data;
-            console.log(hacks);
             // var part123 = hacks.final[0].pt._id;
             // localStorage.setItem("participant", part123);
             for (let i = 0; i < hacks.final.length; i++) {
@@ -550,7 +520,6 @@ design.addEventListener('click', function () {
             }
           }
           catch (err) {
-            console.log(err.response.status);
             if (err.response.status == 404) {
               swal("WARNING!!", "You can't search this team.", "warning");
             }
@@ -637,7 +606,6 @@ mgmt.addEventListener('click', function () {
       //   }
       // }
       document.querySelector(".persons").innerHTML = "";
-      console.log(page);
       function displayTeams() {
         var init = async function () {
           try {
@@ -647,7 +615,6 @@ mgmt.addEventListener('click', function () {
               },
             });
             hacks = await res.data;
-            console.log(hacks);
             // var part123 = hacks.final[0].pt._id;
             // localStorage.setItem("participant", part123);
             for (let i = 0; i < hacks.final.length; i++) {
@@ -656,7 +623,6 @@ mgmt.addEventListener('click', function () {
             }
           }
           catch (err) {
-            console.log(err.response.status);
             if (err.response.status == 404) {
               swal("WARNING!!", "You can't search this team.", "warning");
             }
@@ -743,7 +709,6 @@ block.addEventListener('click', function () {
       //   }
       // }
       document.querySelector(".persons").innerHTML = "";
-      console.log(page);
       function displayTeams() {
         var init = async function () {
           try {
@@ -753,7 +718,6 @@ block.addEventListener('click', function () {
               },
             });
             hacks = await res.data;
-            console.log(hacks);
             // var part123 = hacks.final[0].pt._id;
             // localStorage.setItem("participant", part123);
             for (let i = 0; i < hacks.final.length; i++) {
@@ -762,7 +726,6 @@ block.addEventListener('click', function () {
             }
           }
           catch (err) {
-            console.log(err.response.status);
             if (err.response.status == 404) {
               swal("WARNING!!", "You can't search this team.", "warning");
             }
@@ -849,7 +812,6 @@ cyber.addEventListener('click', function () {
       //   }
       // }
       document.querySelector(".persons").innerHTML = "";
-      console.log(page);
       function displayTeams() {
         var init = async function () {
           try {
@@ -859,7 +821,6 @@ cyber.addEventListener('click', function () {
               },
             });
             hacks = await res.data;
-            console.log(hacks);
             // var part123 = hacks.final[0].pt._id;
             // localStorage.setItem("participant", part123);
             for (let i = 0; i < hacks.final.length; i++) {
@@ -868,7 +829,6 @@ cyber.addEventListener('click', function () {
             }
           }
           catch (err) {
-            console.log(err.response.status);
             if (err.response.status == 404) {
               swal("WARNING!!", "You can't search this team.", "warning");
             }
@@ -929,7 +889,6 @@ $(document).ready(function () {
 });
 
 const team_name = localStorage.getItem("hack_name");
-console.log(team_name);
 document.getElementById("teams").innerHTML = team_name;
 
 let a = document.querySelector("#flexCheckDefault6");
@@ -953,96 +912,86 @@ var t = 0;
 a.addEventListener('click', function () {
   if (z % 2 == 0) {
     choice.push("appdev");
-    console.log(choice);
     z += 1;
   }
   else {
     choice = choice.filter((item) => item !== "appdev")
-    console.log(choice);
     z += 1;
   }
 });
 f.addEventListener('click', function () {
   if (n % 2 == 0) {
     choice.push("frontend");
-    console.log(choice);
     n += 1;
   }
   else {
-    choice = choice.filter((item) => item !== "frontend")
-    console.log(choice);
+    choice = choice.filter((item) => item !== "frontend");
     n += 1;
   }
 });
 b.addEventListener('click', function () {
   if (y % 2 == 0) {
     choice.push("backend");
-    console.log(choice);
     y += 1;
   }
   else {
     choice = choice.filter((item) => item !== "backend")
-    console.log(choice);
     y += 1;
   }
 });
 u.addEventListener('click', function () {
   if (x % 2 == 0) {
     choice.push("ui/ux");
-    console.log(choice);
     x += 1;
   }
   else {
     choice = choice.filter((item) => item !== "ui/ux")
-    console.log(choice);
     x += 1;
   }
 });
 mac.addEventListener('click', function () {
   if (w % 2 == 0) {
     choice.push("ml");
-    console.log(choice);
     w += 1;
   }
   else {
     choice = choice.filter((item) => item !== "ml")
-    console.log(choice);
     w += 1;
   }
 });
 man.addEventListener('click', function () {
   if (v % 2 == 0) {
     choice.push("management");
-    console.log(choice);
+
     v += 1;
   }
   else {
     choice = choice.filter((item) => item !== "management")
-    console.log(choice);
+
     v += 1;
   }
 });
 blo.addEventListener('click', function () {
   if (ua % 2 == 0) {
     choice.push("blockchain");
-    console.log(choice);
+
     ua += 1;
   }
   else {
     choice = choice.filter((item) => item !== "blockchain")
-    console.log(choice);
+
     ua += 1;
   }
 });
 c.addEventListener('click', function () {
   if (t % 2 == 0) {
     choice.push("cybersecurity");
-    console.log(choice);
+
     t += 1;
   }
   else {
     choice = choice.filter((item) => item !== "cybersecurity")
-    console.log(choice);
+
     t += 1;
   }
 });
@@ -1063,7 +1012,7 @@ function submit() {
       )
       .then((response) => {
         talent = response.data;
-        console.log(talent);
+
         swal("SUCCESS!!", "The skills has been saved successfully.", "success");
       })
       .catch((error) => {
@@ -1086,7 +1035,6 @@ document.getElementById("participant_name").addEventListener("keyup", function (
       })
         .then((response) => {
           teams = response.data;
-          console.log(teams);
           var team_id = window.location.search.split("?")[1]; 
           var part123 = teams.final[0].pt._id;
           localStorage.setItem("participant", part123);
@@ -1132,8 +1080,6 @@ document.getElementById("participant_name").addEventListener("keyup", function (
           }
         })
         .catch(e => {
-          console.log(e);
-          console.log(e.response.status);
           if (e.response.status == 404) {
             swal("WARNING!!", "No Participant Found", "warning");
           }
@@ -1147,7 +1093,6 @@ function invite() {
   firebase.auth().currentUser.getIdToken().then((id) => {
     auth = id;
     var participant_id = teams.final[0].pt._id;
-    console.log(participant_id);
     axios
       .post(
         `${url}/invites/invite/${window.location.search.split("?")[1]}/${participant_id}`,
@@ -1162,12 +1107,9 @@ function invite() {
       )
       .then((response) => {
         accepted = response.data;
-        console.log(accepted);
         swal("SUCCESS!!", "Your invite has been submitted successfully", "success");
       })
       .catch(e => {
-        console.log(e);
-        console.log(e.response.status);
         if (e.response.status == 404) {
           swal("WARNING!!", "No Participant Found", "warning");
         }
@@ -1183,14 +1125,13 @@ function inviteme() {
   var nk = 0;
     const cards = document.querySelectorAll("#good");
     cards.forEach(card => card.addEventListener('click', look));
-    console.log(cards);
-    console.log(nk);
+
     function look() {
-      console.log(this);
+
       nk = nk + 1; 
       if(nk == 1){     
       var participant_id = this.querySelector("#participant-id").textContent;
-      console.log(participant_id);
+
       firebase.auth().currentUser.getIdToken().then((id) => {
         auth = id;
       axios
@@ -1207,12 +1148,11 @@ function inviteme() {
         )
         .then((response) => {
           accepted = response.data;
-          console.log(accepted);
+
             swal("SUCCESS!!", "Your invite has been submitted successfully", "success");
         })
         .catch(e => {
-          console.log(e);
-          console.log(e.response.status);
+
           if (e.response.status == 400) {
             swal("WARNING!!", "Invite has already been sent", "warning");
           }

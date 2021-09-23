@@ -126,7 +126,6 @@ function invite() {
     .currentUser.getIdToken()
     .then((id) => {
       auth = id;
-      console.log(person_id);
       axios
         .post(
           `${url}/invites/invite/${
@@ -143,7 +142,6 @@ function invite() {
         )
         .then((response) => {
           accepted = response.data;
-          console.log(accepted);
           swal(
             "SUCCESS!!",
             "Your invite has been submitted successfully",
@@ -151,8 +149,6 @@ function invite() {
           );
         })
         .catch((e) => {
-          console.log(e);
-          console.log(e.response.status);
           if (e.response.status == 404) {
             swal("WARNING!!", "No Participant Found", "warning");
           } else if (e.response.status == 400) {

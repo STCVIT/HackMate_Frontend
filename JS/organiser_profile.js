@@ -33,7 +33,6 @@ form.addEventListener("submit", (e) => {
           })
             .then((response) => response.text())
             .then((text) => {
-              console.log("Success:", text);
               window.location.assign("./orghack.html");
               swal(
                 "SUCCESS!!",
@@ -63,7 +62,6 @@ function checkInputs(username, phone_num, college) {
   if (n <= 30) {
     if (reg1.test(username.value) === true) {
       onSuccess(username);
-      console.log(username);
       flag = flag + 1;
     } else {
       onError(username, "Enter a valid name");
@@ -74,7 +72,6 @@ function checkInputs(username, phone_num, college) {
   //10 digit phone number
   if (phone_num.value.match(reg2)) {
     onSuccess(phone_num);
-    console.log(phone_num);
     flag = flag + 1;
   } else {
     onError(phone_num, "Enter a valid phone number");
@@ -90,7 +87,6 @@ function checkInputs(username, phone_num, college) {
   }
   if (x == 0) {
     onSuccess(college);
-    console.log(coll);
     flag = flag + 1;
   }
   return flag;

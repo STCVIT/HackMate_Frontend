@@ -8,10 +8,7 @@ let count = 0;
 let username;
 let previous = 0;
 let x = sessionStorage.getItem("GIT");
-console.log(x);
 if (sessionStorage.getItem("PREVIOUS") == 1) {
-    console.log(sessionStorage.getItem("GIT"));
-    console.log(sessionStorage.getItem("LINKEDIN"));
     document.form2.linkedln.value = sessionStorage.getItem("LINKEDIN");
     document.form2.git.value = sessionStorage.getItem("GIT");
     document.form2.website.value = sessionStorage.getItem("WEBSITE");
@@ -21,8 +18,6 @@ if (sessionStorage.getItem("PREVIOUS") == 1) {
     sessionStorage.setItem("PREVIOUS", previous);
 }
 if (sessionStorage.getItem("COUNT") == 1) {
-    console.log(sessionStorage.getItem("GIT"));
-    console.log(sessionStorage.getItem("LINKEDIN"));
     document.form2.linkedln.value = sessionStorage.getItem("LINKEDIN");
     document.form2.git.value = sessionStorage.getItem("GIT");
     document.form2.website.value = sessionStorage.getItem("WEBSITE");
@@ -38,31 +33,16 @@ function set_items() {
     sessionStorage.setItem("COUNT", count);
     window.location.assign("./profile.html");
 }
-// console.log(count);
 function secondpage_profile() {
     // count = count+1;
     const form2 = document.getElementById("form2");
     form2.addEventListener('submit', (e) => {
         (e).preventDefault();
-        // const Name = toTitleCase(sessionStorage.getItem("NAME"));
-        // username = sessionStorage.getItem("USERNAME");
-        // const college = toTitleCase(sessionStorage.getItem("COLLEGE"));
-        // const year = sessionStorage.getItem("YEAR");
-        // console.log(Name,username,college,year);
-        // function toTitleCase(str) {
-        //     return str.replace(
-        //         /\w\S*/g,
-        //         function (txt) {
-        //             return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-        //         }
-        //     );
-        // }
         let linkedin = document.getElementById("linkedln");
         let git = document.getElementById("github");
         let website = document.getElementById("personal_website");
         let bio = document.getElementById("bio");
         let eval = validate(linkedin, git, website, bio);
-        console.log(eval);
         sessionStorage.setItem("LINKEDIN", linkedin.value);
         sessionStorage.setItem("GIT", git.value);
         sessionStorage.setItem("WEBSITE", website.value);
@@ -73,51 +53,8 @@ function secondpage_profile() {
             sessionStorage.setItem("GIT", git.value);
             sessionStorage.setItem("WEBSITE", website.value);
             sessionStorage.setItem("BIO", bio.value);
-            console.log("form validation completed");
             window.location.assign("./profile_skills.html");
         }
-        // firebase.auth().onAuthStateChanged((user) => {
-        //     if (user) {
-        //         user.getIdToken().then(function (idToken) {
-        //             console.log(idToken)
-        //             auth = idToken
-        //             console.log(auth);
-        //             if (eval == 3) {
-        //                 console.log("form validation completed");
-        //                 fetch(`${url}/participant/createProfile`, {
-
-        //                     method: "POST",
-        //                     headers: {
-        //                         "Content-Type": "application/json; charset=utf-8",
-        //                         Authorization: "Bearer " + auth,
-        //                     },
-        //                     body: JSON.stringify({
-        //                         name: Name,
-        //                         college: college,
-        //                         github: git.value,
-        //                         linkedIn: linkedin.value,
-        //                         website: website.value,
-        //                         photo: photo,
-        //                         bio: bio.value,
-        //                         graduation_year: year,
-        //                         username: username
-        //                     }),
-        //                 })
-        //                     .then((response) => response.text())
-        //                     .then((text) => {
-        //                         console.log("Success:", text);
-        //                         window.location.assign("./profile_skills.html");
-        //                     })
-        //                     .catch((error) => {
-        //                         console.log("Error:", error);
-        //                     });
-        //             }
-        //         })
-        //     } else {
-        //         // User is signed out
-        //         
-        //     }
-        // });
     });
 }
 

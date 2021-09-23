@@ -154,10 +154,8 @@ function make_profile() {
         })
           .then((response) => response.text())
           .then((text) => {
-            console.log("Success:", text);
           })
           .catch((error) => {
-            console.log("Error:", error);
           });
       });
     } else {
@@ -167,7 +165,6 @@ function make_profile() {
   add_skills();
   function add_skills() {
     if (choice.length > 0) {
-      console.log(choice);
       axios
         .post(
           `${url}/skills/mySkills`,

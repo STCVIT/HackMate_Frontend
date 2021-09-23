@@ -316,13 +316,11 @@ function displayTeams() {
 
               i++;
 
-              console.log(i);
               body.innerHTML += yourHTML;
               yourHTML = "";
               document.getElementById("loading").style.visibility = "hidden";
             }
             total_teams = Math.ceil(length / 8);
-            console.log("total_teams", total_teams);
             Pagination.Init(document.getElementById("pagination"), {
               size: total_teams,
               page: 1,
@@ -551,7 +549,6 @@ function prevPage() {
               "</p></div></div></div>";
 
             i++;
-            console.log(i);
 
             body.innerHTML += yourHTML;
             yourHTML = "";
@@ -573,7 +570,6 @@ axios(`${url}/participant/login`, {
   .then((response) => {
     user = response.data;
     participant_id = user._id;
-    console.log(participant_id);
     localStorage.setItem("participant_id", participant_id);
   })
   .catch((error) => console.error("Error: " + error));
@@ -586,10 +582,7 @@ function check() {
       auth = id;
       const cards = document.querySelectorAll("#team");
       cards.forEach((card) => card.addEventListener("click", look));
-      console.log(cards);
       function look() {
-        console.log(" i was clicked");
-        console.log(this);
         var team_id = this.querySelector("#team_id").textContent;
         var admin_id = this.querySelector("#admin_id").textContent;
         var hack_id = this.querySelector("#hack_id").textContent;
@@ -597,10 +590,6 @@ function check() {
         localStorage.setItem("team_id", team_id);
         localStorage.setItem("hack_id", hack_id);
         localStorage.setItem("hackName", hack_name);
-        console.log(hack_id);
-        console.log(team_id);
-        console.log(admin_id);
-        console.log(hack_name);
         if (admin_id == participant_id) {
           window.location.assign("./teamProfLeaderView.html");
         } else {

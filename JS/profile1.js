@@ -45,7 +45,7 @@ function firstpage_profile() {
                   if (res.status === 403) {
                     swal(
                       "WARNING!!",
-                      "Please choose a unique username",
+                      "Username has already been taken.",
                       "warning"
                     );
                   } else {

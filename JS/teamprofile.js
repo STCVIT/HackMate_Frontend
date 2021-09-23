@@ -20,6 +20,7 @@ firebase.auth().onAuthStateChanged((user) => {
       })
         .then((response) => {
           team = response.data;
+          console.log(team);
           team_name.innerHTML = "Team " + team.team.name;
           team_code.innerHTML = team.team.team_code;
 
@@ -39,7 +40,13 @@ firebase.auth().onAuthStateChanged((user) => {
                 "<m>(You)</m><br><t>" +
                 team.pt_skills[i].skills[0].skill +
                 "</t></p></div></div><l id='leave' onclick='leave()'>LEAVE</l></div>";
-            } else {
+            } 
+            else if(team.pt_skills[i].participant._id === team.team.admin_id){
+              yourHTML += "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'>";
+              yourHTML +="<img id='dp' src='" +team.pt_skills[i].participant.photo +"'>";
+              yourHTML += "<p>" +team.pt_skills[i].participant.name +"<m>(Leader)</m><br><t>" +team.pt_skills[i].skills[0].skill +"</t></p></div><l></l></div></div>";
+            }
+            else {
               yourHTML +=
                 "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'>";
               if (team.pt_skills[i].participant.photo == "hey") {

@@ -29,14 +29,27 @@ function events(event) {
           var yourHTML = "";
           for (var i = 0; i < teams.final.length; ) {
             yourHTML +=
-              "<div class='row'><div class='col-lg-6 col-md-6 col-sm-12'style='padding-bottom:5% ;cursor : pointer;' onclick='check()' ><div class='card1' id='team' style='max-width: 497px; max-height: 371px;padding-bottom: 10%;'><div class='card-body'><h4 class='card-title'>" +
+              "<div class='row'><div class='col-lg-6 col-md-6 col-sm-12'style='padding-bottom:5% ;cursor : pointer' onclick='check()'><div class='card1' id='team'style='max-width: 497px; max-height: 371px;padding-bottom: 10%;'><div class='card-body'><h4 class='card-title'>" +
               teams["final"][i]["team"].name +
-              "</h4><p><text>Hackathon:</text><hackathon id='hack_name'>" +
-              teams["final"][i]["hackName"] +
-              "</hackathon></p><div class='card-details'><p><f>" +
+              "</h4>"
+              if(teams["final"][i]["hackName"] == ""){
+                yourHTML += "<p><text style='display:none'>Hackathon:</text><hackathon id='hack_name' style='display:none'>" +
+                teams["final"][i]["hackName"] +
+                "</hackathon></p>"
+              }
+              else{
+                yourHTML += "<p><text>Hackathon:</text><hackathon id='hack_name'>" +
+                teams["final"][i]["hackName"] +
+                "</hackathon></p>"
+              }
+              yourHTML +=  "<div class='card-details'><p><f>" +
               teams["final"][i]["team"].members.length +
               "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>";
-            for (var j = 0; j < teams["final"][i]["team"].members.length; j++) {
+            for (
+              var j = 0;
+              j < teams["final"][i]["team"].members.length;
+              j++
+            ) {
               yourHTML += "<li class='list-item'>";
               if (teams.final[i].pt_skill[j].participant.photo == "hey") {
                 yourHTML +=
@@ -66,11 +79,20 @@ function events(event) {
             i++;
             if (i < teams.final.length) {
               yourHTML +=
-                "<div class='col-lg-6 col-md-6 col-sm-12' onclick='check()' style='cursor : pointer'><div class='card2'id='team' style='max-width: 497px; max-height: 371px; padding-bottom:20px;'  onclick='check()'><div class='card-body'><h4 class='card-title'>" +
+                "<div class='col-lg-6 col-md-6 col-sm-12'onclick='check()' style='cursor : pointer'><div class='card2' id='team' style='max-width: 497px; max-height: 371px; padding-bottom:20px;' ><div class='card-body'><h4 class='card-title'>" +
                 teams["final"][i]["team"].name +
-                "</h4><p><text>Hackathon:</text><hackathon id='hack_name'>" +
-                teams["final"][i]["hackName"] +
-                "</hackathon></p><div class='card-details'><p><f>" +
+                "</h4>"
+                if(teams["final"][i]["hackName"] == ""){
+                  yourHTML += "<p><text style='display:none'>Hackathon:</text><hackathon id='hack_name' style='display:none'>" +
+                  teams["final"][i]["hackName"] +
+                  "</hackathon></p>"
+                }
+                else{
+                  yourHTML += "<p><text>Hackathon:</text><hackathon id='hack_name'>" +
+                  teams["final"][i]["hackName"] +
+                  "</hackathon></p>"
+                }
+                yourHTML += "<div class='card-details'><p><f>" +
                 teams["final"][i]["team"].members.length +
                 "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>";
               for (
@@ -109,6 +131,7 @@ function events(event) {
 
             body.innerHTML += yourHTML;
             yourHTML = "";
+            document.getElementById("loading").style.visibility = "hidden";
           }
         })
         .catch((error) => {
@@ -236,9 +259,18 @@ function displayTeams() {
               yourHTML +=
                 "<div class='row'><div class='col-lg-6 col-md-6 col-sm-12'style='padding-bottom:5% ;cursor : pointer' onclick='check()'><div class='card1' id='team'style='max-width: 497px; max-height: 371px;padding-bottom: 10%;'><div class='card-body'><h4 class='card-title'>" +
                 teams["final"][i]["team"].name +
-                "</h4><p><text>Hackathon:</text><hackathon id='hack_name'>" +
-                teams["final"][i]["hackName"] +
-                "</hackathon></p><div class='card-details'><p><f>" +
+                "</h4>"
+                if(teams["final"][i]["hackName"] == ""){
+                  yourHTML += "<p><text style='display:none'>Hackathon:</text><hackathon id='hack_name' style='display:none'>" +
+                  teams["final"][i]["hackName"] +
+                  "</hackathon></p>"
+                }
+                else{
+                  yourHTML += "<p><text>Hackathon:</text><hackathon id='hack_name'>" +
+                  teams["final"][i]["hackName"] +
+                  "</hackathon></p>"
+                }
+                yourHTML +=  "<div class='card-details'><p><f>" +
                 teams["final"][i]["team"].members.length +
                 "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>";
               for (
@@ -277,9 +309,18 @@ function displayTeams() {
                 yourHTML +=
                   "<div class='col-lg-6 col-md-6 col-sm-12'onclick='check()' style='cursor : pointer'><div class='card2' id='team' style='max-width: 497px; max-height: 371px; padding-bottom:20px;' ><div class='card-body'><h4 class='card-title'>" +
                   teams["final"][i]["team"].name +
-                  "</h4><p><text>Hackathon:</text><hackathon id='hack_name'>" +
-                  teams["final"][i]["hackName"] +
-                  "</hackathon></p><div class='card-details'><p><f>" +
+                  "</h4>"
+                  if(teams["final"][i]["hackName"] == ""){
+                    yourHTML += "<p><text style='display:none'>Hackathon:</text><hackathon id='hack_name' style='display:none'>" +
+                    teams["final"][i]["hackName"] +
+                    "</hackathon></p>"
+                  }
+                  else{
+                    yourHTML += "<p><text>Hackathon:</text><hackathon id='hack_name'>" +
+                    teams["final"][i]["hackName"] +
+                    "</hackathon></p>"
+                  }
+                  yourHTML += "<div class='card-details'><p><f>" +
                   teams["final"][i]["team"].members.length +
                   "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>";
                 for (
@@ -366,14 +407,27 @@ function nextPage() {
           var yourHTML = "";
           for (var i = 0; i < teams.final.length; ) {
             yourHTML +=
-              "<div class='row'><div class='col-lg-6 col-md-6 col-sm-12'style='padding-bottom:5%' onclick='check()' style='cursor : pointer'><div class='card1' id='team' style='max-width: 497px; max-height: 371px;padding-bottom: 10%;'><div class='card-body'><h4 class='card-title'>" +
+              "<div class='row'><div class='col-lg-6 col-md-6 col-sm-12'style='padding-bottom:5% ;cursor : pointer' onclick='check()'><div class='card1' id='team'style='max-width: 497px; max-height: 371px;padding-bottom: 10%;'><div class='card-body'><h4 class='card-title'>" +
               teams["final"][i]["team"].name +
-              "</h4><p><text>Hackathon:</text><hackathon id='hack_name'>" +
-              teams["final"][i]["hackName"] +
-              "</hackathon></p><div class='card-details'><p><f>" +
+              "</h4>"
+              if(teams["final"][i]["hackName"] == ""){
+                yourHTML += "<p><text style='display:none'>Hackathon:</text><hackathon id='hack_name' style='display:none'>" +
+                teams["final"][i]["hackName"] +
+                "</hackathon></p>"
+              }
+              else{
+                yourHTML += "<p><text>Hackathon:</text><hackathon id='hack_name'>" +
+                teams["final"][i]["hackName"] +
+                "</hackathon></p>"
+              }
+              yourHTML +=  "<div class='card-details'><p><f>" +
               teams["final"][i]["team"].members.length +
               "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>";
-            for (var j = 0; j < teams["final"][i]["team"].members.length; j++) {
+            for (
+              var j = 0;
+              j < teams["final"][i]["team"].members.length;
+              j++
+            ) {
               yourHTML += "<li class='list-item'>";
               if (teams.final[i].pt_skill[j].participant.photo == "hey") {
                 yourHTML +=
@@ -403,11 +457,20 @@ function nextPage() {
             i++;
             if (i < teams.final.length) {
               yourHTML +=
-                "<div class='col-lg-6 col-md-6 col-sm-12' onclick='check()' style='cursor : pointer'><div class='card2' id='team' style='max-width: 497px; max-height: 371px; padding-bottom:20px;'  onclick='check()' style='cursor : pointer'><div class='card-body'><h4 class='card-title'>" +
+                "<div class='col-lg-6 col-md-6 col-sm-12'onclick='check()' style='cursor : pointer'><div class='card2' id='team' style='max-width: 497px; max-height: 371px; padding-bottom:20px;' ><div class='card-body'><h4 class='card-title'>" +
                 teams["final"][i]["team"].name +
-                "</h4><p><text>Hackathon:</text><hackathon id='hack_name'>" +
-                teams["final"][i]["hackName"] +
-                "</hackathon></p><div class='card-details'><p><f>" +
+                "</h4>"
+                if(teams["final"][i]["hackName"] == ""){
+                  yourHTML += "<p><text style='display:none'>Hackathon:</text><hackathon id='hack_name' style='display:none'>" +
+                  teams["final"][i]["hackName"] +
+                  "</hackathon></p>"
+                }
+                else{
+                  yourHTML += "<p><text>Hackathon:</text><hackathon id='hack_name'>" +
+                  teams["final"][i]["hackName"] +
+                  "</hackathon></p>"
+                }
+                yourHTML += "<div class='card-details'><p><f>" +
                 teams["final"][i]["team"].members.length +
                 "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>";
               for (
@@ -432,17 +495,22 @@ function nextPage() {
                   teams["final"][i]["pt_skill"][j]["skills"][0]["skill"] +
                   "</t></p></li>";
               }
+              yourHTML +=
+                "</ul></div><p id='admin_id'>" +
+                teams["final"][i].team.admin_id +
+                "</p><p id='team_id'>" +
+                teams["final"][i]["team"]._id +
+                "<p><p id='hack_id'>" +
+                teams.final[i].team.hack_id +
+                "</p></div></div></div>";
             }
-            yourHTML +=
-              "</ul></div><p id='admin_id'>" +
-              teams["final"][i].team.admin_id +
-              "</p><p id='team_id'>" +
-              teams["final"][i]["team"]._id +
-              "<p><p id='hack_id'>" +
-              teams.final[i].team.hack_id +
-              "</p></div></div></div>";
-          }
 
+            i++;
+
+            body.innerHTML += yourHTML;
+            yourHTML = "";
+            document.getElementById("loading").style.visibility = "hidden";
+          }
           i++;
 
           body.innerHTML += yourHTML;
@@ -478,14 +546,27 @@ function prevPage() {
           var yourHTML = "";
           for (var i = 0; i < teams.final.length; ) {
             yourHTML +=
-              "<div class='row'><div class='col-lg-6 col-md-6 col-sm-12'style='padding-bottom:5%' onclick='check()' style='cursor : pointer'><div class='card1' id='team' style='max-width: 497px; max-height: 371px;padding-bottom: 10%;'><div class='card-body'><h4 class='card-title'>" +
+              "<div class='row'><div class='col-lg-6 col-md-6 col-sm-12'style='padding-bottom:5% ;cursor : pointer' onclick='check()'><div class='card1' id='team'style='max-width: 497px; max-height: 371px;padding-bottom: 10%;'><div class='card-body'><h4 class='card-title'>" +
               teams["final"][i]["team"].name +
-              "</h4><p><text>Hackathon:</text><hackathon id='hack_name'>" +
-              teams["final"][i]["hackName"] +
-              "</hackathon></p><div class='card-details'><p><f>" +
+              "</h4>"
+              if(teams["final"][i]["hackName"] == ""){
+                yourHTML += "<p><text style='display:none'>Hackathon:</text><hackathon id='hack_name' style='display:none'>" +
+                teams["final"][i]["hackName"] +
+                "</hackathon></p>"
+              }
+              else{
+                yourHTML += "<p><text>Hackathon:</text><hackathon id='hack_name'>" +
+                teams["final"][i]["hackName"] +
+                "</hackathon></p>"
+              }
+              yourHTML +=  "<div class='card-details'><p><f>" +
               teams["final"][i]["team"].members.length +
               "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>";
-            for (var j = 0; j < teams["final"][i]["team"].members.length; j++) {
+            for (
+              var j = 0;
+              j < teams["final"][i]["team"].members.length;
+              j++
+            ) {
               yourHTML += "<li class='list-item'>";
               if (teams.final[i].pt_skill[j].participant.photo == "hey") {
                 yourHTML +=
@@ -511,47 +592,63 @@ function prevPage() {
               "<p><p id='hack_id'>" +
               teams.final[i].team.hack_id +
               "</p></div></div></div>";
-            i++;
 
-            yourHTML +=
-              "<div class='col-lg-6 col-md-6 col-sm-12' onclick='check()' style='cursor : pointer'><div class='card2' id='team' style='max-width: 497px; max-height: 371px; padding-bottom:20px;'><div class='card-body'><h4 class='card-title'>" +
-              teams["final"][i]["team"].name +
-              "</h4><p><text>Hackathon:</text><hackathon id='hack_name'>" +
-              teams["final"][i]["hackName"] +
-              "</hackathon></p><div class='card-details'><p><f>" +
-              teams["final"][i]["team"].members.length +
-              "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>";
-            for (var j = 0; j < teams["final"][i]["team"].members.length; j++) {
-              yourHTML += "<li class='list-item'>";
-              if (teams.final[i].pt_skill[j].participant.photo == "hey") {
+            i++;
+            if (i < teams.final.length) {
+              yourHTML +=
+                "<div class='col-lg-6 col-md-6 col-sm-12'onclick='check()' style='cursor : pointer'><div class='card2' id='team' style='max-width: 497px; max-height: 371px; padding-bottom:20px;' ><div class='card-body'><h4 class='card-title'>" +
+                teams["final"][i]["team"].name +
+                "</h4>"
+                if(teams["final"][i]["hackName"] == ""){
+                  yourHTML += "<p><text style='display:none'>Hackathon:</text><hackathon id='hack_name' style='display:none'>" +
+                  teams["final"][i]["hackName"] +
+                  "</hackathon></p>"
+                }
+                else{
+                  yourHTML += "<p><text>Hackathon:</text><hackathon id='hack_name'>" +
+                  teams["final"][i]["hackName"] +
+                  "</hackathon></p>"
+                }
+                yourHTML += "<div class='card-details'><p><f>" +
+                teams["final"][i]["team"].members.length +
+                "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>";
+              for (
+                var j = 0;
+                j < teams["final"][i]["team"].members.length;
+                j++
+              ) {
+                yourHTML += "<li class='list-item'>";
+                if (teams.final[i].pt_skill[j].participant.photo == "hey") {
+                  yourHTML +=
+                    "<img id='pp' src='../Assets/Images/blank-profile.png'>";
+                } else {
+                  yourHTML +=
+                    "<img id='pp' src='" +
+                    teams.final[i].pt_skill[j].participant.photo +
+                    "'>";
+                }
                 yourHTML +=
-                  "<img id='pp' src='../Assets/Images/blank-profile.png'>";
-              } else {
-                yourHTML +=
-                  "<img id='pp' src='" +
-                  teams.final[i].pt_skill[j].participant.photo +
-                  "'>";
+                  "<p>" +
+                  teams["final"][i]["pt_skill"][j]["participant"].name +
+                  "<br><t>" +
+                  teams["final"][i]["pt_skill"][j]["skills"][0]["skill"] +
+                  "</t></p></li>";
               }
               yourHTML +=
-                "<p>" +
-                teams["final"][i]["pt_skill"][j]["participant"].name +
-                "<br><t>" +
-                teams["final"][i]["pt_skill"][j]["skills"][0]["skill"] +
-                "</t></p></li>";
+                "</ul></div><p id='admin_id'>" +
+                teams["final"][i].team.admin_id +
+                "</p><p id='team_id'>" +
+                teams["final"][i]["team"]._id +
+                "<p><p id='hack_id'>" +
+                teams.final[i].team.hack_id +
+                "</p></div></div></div>";
             }
-            yourHTML +=
-              "</ul></div><p id='admin_id'>" +
-              teams["final"][i].team.admin_id +
-              "</p><p id='team_id'>" +
-              teams["final"][i]["team"]._id +
-              "<p><p id='hack_id'>" +
-              teams.final[i].team.hack_id +
-              "</p></div></div></div>";
 
             i++;
 
             body.innerHTML += yourHTML;
             yourHTML = "";
+            document.getElementById("loading").style.visibility = "hidden";
           }
         })
         .catch((error) => {

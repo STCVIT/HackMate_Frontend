@@ -161,12 +161,17 @@ function create() {
           // window.location.assign("./createteamwhack.html?" + window.location.search.split("?")[1]);
         })
         .catch((error) => {
-          console.error("Error:", error);
-          console.log(error.response.status);
           if (error.response.status == 403) {
             swal(
               "WARNING!!",
               "You have already formed a team for this particular hack.",
+              "warning"
+            );
+          }
+          if (error.response.status == 418) {
+            swal(
+              "WARNING!!",
+              "This team name already exists.",
               "warning"
             );
           }

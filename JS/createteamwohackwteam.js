@@ -128,7 +128,6 @@ function create() {
     .then((id) => {
       auth = id;
       name = document.getElementById("team_name").value;
-      console.log(name);
       if(name == ""){
         swal(
           "WARNING!!",

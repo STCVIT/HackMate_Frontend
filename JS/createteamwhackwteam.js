@@ -129,7 +129,6 @@ function create() {
     .currentUser.getIdToken()
     .then((id) => {
       auth = id;
-      console.log(name);
       if(name == ""){
         swal(
           "WARNING!!",

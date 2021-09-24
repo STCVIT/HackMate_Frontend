@@ -315,7 +315,7 @@ a, a:hover, a:focus, a:active {
 		font-size: 18px;
 	}
 	.text13{
-		font-size: 30px;
+		font-size: 26px;
 		margin-left: 15px;
 	}
 	.text14{
@@ -324,11 +324,11 @@ a, a:hover, a:focus, a:active {
 		margin-left: 15px;
 	}
 	.text15{
-		font-size: 20px;
+		font-size: 16px;
 		margin-left: 25px;
 	}
 	.card2{
-		height: 180px;
+		height: auto;
 	}
 }
 @media (min-width: 375px) and (max-width: 464px){
@@ -336,17 +336,17 @@ a, a:hover, a:focus, a:active {
 		font-size: 16px;
 	}
 	.text13{
-		font-size: 24px;
-		margin-left: 20px;
+		font-size: 16px;
+		margin-left: 35px;
 	}
 	.text14{
 		font-size: 15px;
 		margin-top: 10px;
-		margin-left: 20px;
+		margin-left: 35px;
 	}
 	.text15{
 		font-size: 15px;
-		margin-left: 22px;
+		margin-left: 15px;
 	}
 	.card{
 		height: 500px;
@@ -354,7 +354,7 @@ a, a:hover, a:focus, a:active {
 		margin-left: 10px;
 	}
 	.card2{
-		height: 180px;
+		height: auto;
 	}
 }
 @media (min-width: 992px) and (max-width: 1200px){

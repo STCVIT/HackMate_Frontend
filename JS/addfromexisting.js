@@ -338,13 +338,11 @@ function displayTeams() {
 
             i++;
 
-            console.log(i);
             body.innerHTML += yourHTML;
             yourHTML = "";
             loadingDiv.style.visibility = "hidden";
           }
           total_teams = Math.ceil(length / 8);
-          console.log("total_teams", total_teams);
           Pagination.Init(document.getElementById("pagination"), {
             size: total_teams,
             page: 1,
@@ -667,16 +665,11 @@ function add() {
       auth = id;
       var nk = 0;
       const cards = document.querySelectorAll("#team");
-      console.log(nk);
       cards.forEach((card) => card.addEventListener("click", look));
-      console.log(cards);
       function look() {
-        console.log(" i was clicked");
-        console.log(this);
         nk += 1;
         if (nk == 1) {
           var team_name = this.querySelector(".card-title").textContent;
-          console.log(team_name);
           axios
             .post(
               `${url}/Dn_Team/createTeam/${
@@ -701,9 +694,6 @@ function add() {
               );
             })
             .catch((error) => {
-              console.log(error);
-              console.log(error.response.status);
-
               if (error.response.status == 403) {
                 swal(
                   "WARNING!!",

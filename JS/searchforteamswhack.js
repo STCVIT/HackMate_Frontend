@@ -330,7 +330,6 @@ function displayTeams() {
         };
         init();
         var height = document.body.clientHeight;
-        (height);
         if (height == document.body.clientHeight) {
           window.addEventListener("scroll", someFunction);
 
@@ -14140,7 +14139,6 @@ function request() {
               );
             })
             .catch((error) => {
-              console.error("Error:", error);
               (error.response.status);
               if (error.response.status == 403) {
                 swal(

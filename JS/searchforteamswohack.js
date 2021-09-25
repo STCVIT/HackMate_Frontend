@@ -363,7 +363,7 @@ function displayTeams() {
                 },
               });
               hacks = await res.data;
-              console.log(hacks);
+              // console.log(hacks);
 
               loadingDiv.style.visibility = "hidden";
               for (let i = 0; i < hacks.final.length; i++) {
@@ -13093,7 +13093,6 @@ document.getElementById("search").addEventListener("keyup", function (event) {
         })
           .then((response) => {
             hacks = response.data;
-            console.log(hacks);
 
             document.querySelector(".dam1").innerHTML = "";
             for (let i = 0; i < hacks.length; i++) {
@@ -14116,7 +14115,6 @@ document.getElementById("search").addEventListener("keyup", function (event) {
             }
           })
           .catch((e) => {
-            console.log(e);
             if (e.response.status == 404) {
               swal("WARNING!!", "There is no such team.", "warning");
             }

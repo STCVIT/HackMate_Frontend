@@ -6,7 +6,6 @@ body {
     font-family: "Fira Code";
     font-style: normal;
     font-weight: bold;
-    overflow: auto;
 }
 
 .loading {
@@ -179,6 +178,7 @@ body {
     padding-right: 2em;
     width: 100%;
     background-color: #2E3D4C;
+    display: none;
 }
 
 .button {
@@ -207,6 +207,7 @@ body {
     margin-left: 50px;
     margin-bottom: 20px;
     margin-top: 75px;
+    display: none;
 }
 
 .card-body {
@@ -370,6 +371,7 @@ body {
 .options {
     margin-top: 30px;
     margin-left: auto;
+    display: none;
 }
 
 .persons {
@@ -452,12 +454,14 @@ body {
     .card {
         height: 500px;
         margin-top: 30px;
+        display: none;
     }
     .input {
         font-size: 30px;
     }
     .input1 {
         font-size: 18px;
+        display: none;
     }
     .text13 {
         font-size: 30px;
@@ -477,6 +481,7 @@ body {
 @media (min-width: 375px) and (max-width: 464px) {
     .input1 {
         font-size: 16px;
+        display: none;
     }
     .text13 {
         font-size: 24px;
@@ -495,12 +500,14 @@ body {
         height: 500px;
         margin-top: 30px;
         margin-left: 10px;
+        display: none;
     }
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
     .card {
         margin-left: 26px;
+        display: none;
     }
     .card-body {
         padding-right: 0px;

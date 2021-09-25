@@ -78,9 +78,9 @@ function displayTeams() {
       document.querySelector(".persons").innerHTML +=
         "<div class='card2' id='good><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
         hacks.final[i].pt.photo +
-        "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" +
+        "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
         hacks.final[i].pt.name +
-        "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
+        "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5></div><div class='col-lg-3 col-md-3 col-1'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
         hacks.final[i].pt._id +
         "</p></div></div>";
     }
@@ -88,9 +88,9 @@ function displayTeams() {
       document.querySelector(".persons").innerHTML +=
         "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
         hacks.final[i].pt.photo +
-        "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" +
+        "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
         hacks.final[i].pt.name +
-        "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
+        "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5></div><div class='col-lg-3 col-md-3 col-1'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
         hacks.final[i].pt._id +
         "</p></div></div>";
     }
@@ -98,9 +98,9 @@ function displayTeams() {
       document.querySelector(".persons").innerHTML +=
         "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
         hacks.final[i].pt.photo +
-        "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" +
+        "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
         hacks.final[i].pt.name +
-        "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
+        "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5></div><div class='col-lg-3 col-md-3 col-1'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
         hacks.final[i].pt._id +
         "</p></div></div>";
     }
@@ -108,9 +108,9 @@ function displayTeams() {
       document.querySelector(".persons").innerHTML +=
         "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
         hacks.final[i].pt.photo +
-        "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" +
+        "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
         hacks.final[i].pt.name +
-        "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[3].skill+"</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
+        "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[3].skill+"</h5></div><div class='col-lg-3 col-md-3 col-1'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
         hacks.final[i].pt._id +
         "</p></div></div>";
     }
@@ -118,9 +118,9 @@ function displayTeams() {
       document.querySelector(".persons").innerHTML +=
         "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
         hacks.final[i].pt.photo +
-        "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" +
+        "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
         hacks.final[i].pt.name +
-        "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[3].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[4].skill+"</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
+        "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[3].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[4].skill+"</h5></div><div class='col-lg-3 col-md-3 col-1'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
         hacks.final[i].pt._id +
         "</p></div></div>";
     }
@@ -128,9 +128,9 @@ function displayTeams() {
       document.querySelector(".persons").innerHTML +=
         "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
         hacks.final[i].pt.photo +
-        "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" +
+        "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
         hacks.final[i].pt.name +
-        "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[3].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[4].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[5].skill+"</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
+        "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[3].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[4].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[5].skill+"</h5></div><div class='col-lg-3 col-md-3 col-1'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
         hacks.final[i].pt._id +
         "</p></div></div>";
     }
@@ -138,9 +138,9 @@ function displayTeams() {
       document.querySelector(".persons").innerHTML +=
         "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
         hacks.final[i].pt.photo +
-        "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" +
+        "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
         hacks.final[i].pt.name +
-        "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[3].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[4].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[5].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[6].skill+"</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
+        "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[3].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[4].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[5].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[6].skill+"</h5></div><div class='col-lg-3 col-md-3 col-1'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
         hacks.final[i].pt._id +
         "</p></div></div>";
     }
@@ -148,9 +148,9 @@ function displayTeams() {
       document.querySelector(".persons").innerHTML +=
         "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
         hacks.final[i].pt.photo +
-        "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" +
+        "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
         hacks.final[i].pt.name +
-        "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[3].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[4].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[5].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[6].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[7].skill+"</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
+        "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[3].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[4].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[5].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[6].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[7].skill+"</h5></div><div class='col-lg-3 col-md-3 col-1'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
         hacks.final[i].pt._id +
         "</p></div></div>";
     }
@@ -1239,9 +1239,9 @@ all.addEventListener("click", function () {
         document.querySelector(".persons").innerHTML +=
           "<div class='card2' id='good><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
           hacks.final[i].pt.photo +
-          "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" +
+          "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
           hacks.final[i].pt.name +
-          "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
+          "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5></div><div class='col-lg-3 col-md-3 col-1'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
           hacks.final[i].pt._id +
           "</p></div></div>";
       }
@@ -1249,9 +1249,9 @@ all.addEventListener("click", function () {
         document.querySelector(".persons").innerHTML +=
           "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
           hacks.final[i].pt.photo +
-          "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" +
+          "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
           hacks.final[i].pt.name +
-          "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
+          "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5></div><div class='col-lg-3 col-md-3 col-1'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
           hacks.final[i].pt._id +
           "</p></div></div>";
       }
@@ -1259,9 +1259,9 @@ all.addEventListener("click", function () {
         document.querySelector(".persons").innerHTML +=
           "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
           hacks.final[i].pt.photo +
-          "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" +
+          "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
           hacks.final[i].pt.name +
-          "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
+          "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5></div><div class='col-lg-3 col-md-3 col-1'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
           hacks.final[i].pt._id +
           "</p></div></div>";
       }
@@ -1269,9 +1269,9 @@ all.addEventListener("click", function () {
         document.querySelector(".persons").innerHTML +=
           "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
           hacks.final[i].pt.photo +
-          "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" +
+          "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
           hacks.final[i].pt.name +
-          "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[3].skill+"</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
+          "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[3].skill+"</h5></div><div class='col-lg-3 col-md-3 col-1'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
           hacks.final[i].pt._id +
           "</p></div></div>";
       }
@@ -1279,9 +1279,9 @@ all.addEventListener("click", function () {
         document.querySelector(".persons").innerHTML +=
           "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
           hacks.final[i].pt.photo +
-          "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" +
+          "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
           hacks.final[i].pt.name +
-          "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[3].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[4].skill+"</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
+          "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[3].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[4].skill+"</h5></div><div class='col-lg-3 col-md-3 col-1'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
           hacks.final[i].pt._id +
           "</p></div></div>";
       }
@@ -1289,9 +1289,9 @@ all.addEventListener("click", function () {
         document.querySelector(".persons").innerHTML +=
           "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
           hacks.final[i].pt.photo +
-          "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" +
+          "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
           hacks.final[i].pt.name +
-          "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[3].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[4].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[5].skill+"</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
+          "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[3].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[4].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[5].skill+"</h5></div><div class='col-lg-3 col-md-3 col-1'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
           hacks.final[i].pt._id +
           "</p></div></div>";
       }
@@ -1299,9 +1299,9 @@ all.addEventListener("click", function () {
         document.querySelector(".persons").innerHTML +=
           "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
           hacks.final[i].pt.photo +
-          "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" +
+          "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
           hacks.final[i].pt.name +
-          "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[3].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[4].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[5].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[6].skill+"</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
+          "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[3].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[4].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[5].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[6].skill+"</h5></div><div class='col-lg-3 col-md-3 col-1'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
           hacks.final[i].pt._id +
           "</p></div></div>";
       }
@@ -1309,9 +1309,9 @@ all.addEventListener("click", function () {
         document.querySelector(".persons").innerHTML +=
           "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
           hacks.final[i].pt.photo +
-          "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" +
+          "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
           hacks.final[i].pt.name +
-          "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[3].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[4].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[5].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[6].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[7].skill+"</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
+          "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[3].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[4].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[5].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[6].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[7].skill+"</h5></div><div class='col-lg-3 col-md-3 col-1'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
           hacks.final[i].pt._id +
           "</p></div></div>";
       }

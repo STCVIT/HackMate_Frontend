@@ -21,7 +21,6 @@
         <div class="container">
             <div class="row">
                 <div class="caption">
-                    <h1>Eureka.</h1>
                 </div>
             </div>
             <div class="row">
@@ -49,7 +48,7 @@
                         <div class="mb-3">
                             <label for="bio" class="form-label">DESCRIPTION</label>
                             <textarea class="form-control" rows="8" spellcheck="false" id="bio"
-                                placeholder="Bio"></textarea>
+                                placeholder="Bio" disabled></textarea>
                             <small>Error</small>
                         </div>
                     </form>
@@ -59,6 +58,11 @@
     </div>
     <div id="foobottom">
 
+    </div>
+    <div class="container">
+        <div id="loading" class="loading">
+            Loading&#8230;
+        </div>
     </div>
 </body>
 <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>

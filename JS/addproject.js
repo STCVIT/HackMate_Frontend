@@ -28,7 +28,7 @@ firebase.auth().onAuthStateChanged((user) => {
           }
           for (var i = 0; i < projects.teams.length; i++) {
             document.querySelector(".projects").innerHTML +=
-              "<div class='card'><a href='./Project_Profile.html?" +
+              "<div class='card'><a href='./teamproject.html?" +
               projects.teams[i]._id +
               "' style='text-decoration: none;'><div class='card-body '><nbgre>" +
               projects.teams[i].project_name +

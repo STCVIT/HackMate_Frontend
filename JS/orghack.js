@@ -27,7 +27,8 @@ function events(event) {
           document.querySelector(".wrapper").innerHTML = "";
           for (var i = 0; i < hacks.newHacks.length; i++) {
             if (hacks.newHacks[i].name.length > 15) {
-              hacks.newHacks[i].name = hacks.newHacks[i].name.slice(0, 12) + "...";
+              hacks.newHacks[i].name =
+                hacks.newHacks[i].name.slice(0, 12) + "...";
             }
             document.querySelector(".wrapper").innerHTML +=
               "<div class='box'> <div class='innertxt' style='margin-top:32px'> <nb1 class='hackname'>" +
@@ -104,7 +105,8 @@ function nextPage() {
           document.querySelector(".wrapper").innerHTML = "";
           for (var i = 0; i < hacks.newHacks.length; i++) {
             if (hacks.newHacks[i].name.length > 15) {
-              hacks.newHacks[i].name = hacks.newHacks[i].name.slice(0, 12) + "...";
+              hacks.newHacks[i].name =
+                hacks.newHacks[i].name.slice(0, 12) + "...";
             }
             document.querySelector(".wrapper").innerHTML +=
               "<div class='box'> <div class='innertxt' style='margin-top:32px'> <nb1 class='hackname'>" +
@@ -182,7 +184,8 @@ function prevPage() {
           document.querySelector(".wrapper").innerHTML = "";
           for (var i = 0; i < hacks.newHacks.length; i++) {
             if (hacks.newHacks[i].name.length > 15) {
-              hacks.newHacks[i].name = hacks.newHacks[i].name.slice(0, 12) + "...";
+              hacks.newHacks[i].name =
+                hacks.newHacks[i].name.slice(0, 12) + "...";
             }
             document.querySelector(".wrapper").innerHTML +=
               "<div class='box'> <div class='innertxt' style='margin-top:32px'> <nb1 class='hackname'>" +
@@ -296,7 +299,7 @@ var Pagination = {
     } else if (Pagination.page < Pagination.step * 2 + 1) {
       Pagination.Add(1, Pagination.step * 2 + 2);
       Pagination.Last();
-    } else if (Pagination.page > Pagination.size - Pagination.step * 2) {
+    } else if (Pagination.page > Pagination.size - Pagination.step * 2 - 2) {
       Pagination.First();
       Pagination.Add(
         Pagination.size - Pagination.step * 2 - 1,
@@ -354,7 +357,8 @@ function displayHacks() {
             document.querySelector(".wrapper").innerHTML = "";
             for (var i = 0; i < hacks.newHacks.length; i++) {
               if (hacks.newHacks[i].name.length > 15) {
-                hacks.newHacks[i].name = hacks.newHacks[i].name.slice(0, 12) + "...";
+                hacks.newHacks[i].name =
+                  hacks.newHacks[i].name.slice(0, 12) + "...";
               }
               document.querySelector(".wrapper").innerHTML +=
                 "<div class='box'> <div class='innertxt' style='margin-top:32px'> <nb1 class='hackname'>" +

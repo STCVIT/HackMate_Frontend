@@ -184,7 +184,7 @@ var Pagination = {
     } else if (Pagination.page < Pagination.step * 2 + 1) {
       Pagination.Add(1, Pagination.step * 2 + 2);
       Pagination.Last();
-    } else if (Pagination.page > Pagination.size - Pagination.step * 2) {
+    } else if (Pagination.page > Pagination.size - Pagination.step * 2 - 2) {
       Pagination.First();
       Pagination.Add(
         Pagination.size - Pagination.step * 2 - 1,
@@ -228,81 +228,28 @@ function displayTeams() {
       user.getIdToken().then(function (idToken) {
         auth = idToken;
         var init = async function () {
-            try{
-          var res = await axios(`${url}/DN_Team/myTeams?page=1`, {
-            headers: {
-              Authorization: "Bearer " + auth,
-            },
-          });
-          teams = await res.data;
+          try {
+            var res = await axios(`${url}/DN_Team/myTeams?page=1`, {
+              headers: {
+                Authorization: "Bearer " + auth,
+              },
+            });
+            teams = await res.data;
 
-          var length = await res.data.length;
+            var length = await res.data.length;
 
-          let body = document.querySelector(".cards");
-          var yourHTML = "";
-          for (var i = 0; i < teams.final.length; ) {
-            if (teams["final"][i]["hackName"] == "") {
-              yourHTML +=
-                "<div class='row'><div class='col-lg-6 col-md-6 col-sm-12'style='padding-bottom:5%'><div class='card1' id='team'style='max-width: 497px; max-height: 371px;padding-bottom: 10%;'><div class='card-body'><h4 class='card-title'>" +
-                teams["final"][i]["team"].name +
-                "</h4><img id='add' src='../Assets/Images/addbutton.svg'onclick='add()'><p><text>Hackathon:</text><hackathon id='hack_name'>" +
-                teams["final"][i]["hackName"] +
-                "</hackathon></p><div class='card-details'><p><f>" +
-                teams["final"][i]["team"].members.length +
-                "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>";
-              for (
-                var j = 0;
-                j < teams["final"][i]["team"].members.length;
-                j++
-              ) {
-                yourHTML += "<li class='list-item'>";
-                if (teams.final[i].pt_skill[j].participant.photo == "hey") {
-                  yourHTML +=
-                    "<img id='pp' src='../Assets/Images/blank-profile.png'>";
-                } else {
-                  yourHTML +=
-                    "<img id='pp' src='" +
-                    teams.final[i].pt_skill[j].participant.photo +
-                    "'>";
-                }
-                yourHTML +=
-                  "<p>" +
-                  teams["final"][i]["pt_skill"][j]["participant"].name +
-                  "<br><t>" +
-                  teams["final"][i]["pt_skill"][j]["skills"][0]["skill"] +
-                  "</t></p></li>";
-              }
-              yourHTML +=
-                "</ul></div><p id='admin_id'>" +
-                teams["final"][i].team.admin_id +
-                "</p><p id='team_id'>" +
-                teams["final"][i]["team"]._id +
-                "<p><p id='hack_id'>" +
-                teams.final[i].team.hack_id +
-                "</p></div></div></div>";
-            }
-            i++;
-            if (i < teams.final.length) {
+            let body = document.querySelector(".cards");
+            var yourHTML = "";
+            for (var i = 0; i < teams.final.length; ) {
               if (teams["final"][i]["hackName"] == "") {
                 yourHTML +=
-                  "<div class='col-lg-6 col-md-6 col-sm-12'><div class='card2' id='team' style='max-width: 497px; max-height: 371px; padding-bottom:20px;' ><div class='card-body'><h4 class='card-title'>" +
+                  "<div class='row'><div class='col-lg-6 col-md-6 col-sm-12'style='padding-bottom:5%'><div class='card1' id='team'style='max-width: 497px; max-height: 371px;padding-bottom: 10%;'><div class='card-body'><h4 class='card-title'>" +
                   teams["final"][i]["team"].name +
                   "</h4><img id='add' src='../Assets/Images/addbutton.svg'onclick='add()'><p><text>Hackathon:</text><hackathon id='hack_name'>" +
                   teams["final"][i]["hackName"] +
                   "</hackathon></p><div class='card-details'><p><f>" +
                   teams["final"][i]["team"].members.length +
                   "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>";
-                // for (var j = 0; j < teams["final"][i]["team"].members.length; j++) {
-                //     yourHTML += "<li class='list-item'><img id='pp' src='" + teams.final[i].pt_skill[j].participant.photo + "'><p>" +
-                //         teams['final'][i]['pt_skill'][j]['participant'].name +
-                //         "<br><t>"
-                //     if (teams["final"][i]["pt_skill"][j]["skills"].length == 0) {
-                //         yourHTML += "</t></p></li>"
-                //     }
-                //     else {
-                //         yourHTML += teams["final"][i]["pt_skill"][j]["skills"][0]["skill"] + "</t></p></li>"
-                //     }
-                // }
                 for (
                   var j = 0;
                   j < teams["final"][i]["team"].members.length;
@@ -334,32 +281,80 @@ function displayTeams() {
                   teams.final[i].team.hack_id +
                   "</p></div></div></div>";
               }
+              i++;
+              if (i < teams.final.length) {
+                if (teams["final"][i]["hackName"] == "") {
+                  yourHTML +=
+                    "<div class='col-lg-6 col-md-6 col-sm-12'><div class='card2' id='team' style='max-width: 497px; max-height: 371px; padding-bottom:20px;' ><div class='card-body'><h4 class='card-title'>" +
+                    teams["final"][i]["team"].name +
+                    "</h4><img id='add' src='../Assets/Images/addbutton.svg'onclick='add()'><p><text>Hackathon:</text><hackathon id='hack_name'>" +
+                    teams["final"][i]["hackName"] +
+                    "</hackathon></p><div class='card-details'><p><f>" +
+                    teams["final"][i]["team"].members.length +
+                    "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>";
+                  // for (var j = 0; j < teams["final"][i]["team"].members.length; j++) {
+                  //     yourHTML += "<li class='list-item'><img id='pp' src='" + teams.final[i].pt_skill[j].participant.photo + "'><p>" +
+                  //         teams['final'][i]['pt_skill'][j]['participant'].name +
+                  //         "<br><t>"
+                  //     if (teams["final"][i]["pt_skill"][j]["skills"].length == 0) {
+                  //         yourHTML += "</t></p></li>"
+                  //     }
+                  //     else {
+                  //         yourHTML += teams["final"][i]["pt_skill"][j]["skills"][0]["skill"] + "</t></p></li>"
+                  //     }
+                  // }
+                  for (
+                    var j = 0;
+                    j < teams["final"][i]["team"].members.length;
+                    j++
+                  ) {
+                    yourHTML += "<li class='list-item'>";
+                    if (teams.final[i].pt_skill[j].participant.photo == "hey") {
+                      yourHTML +=
+                        "<img id='pp' src='../Assets/Images/blank-profile.png'>";
+                    } else {
+                      yourHTML +=
+                        "<img id='pp' src='" +
+                        teams.final[i].pt_skill[j].participant.photo +
+                        "'>";
+                    }
+                    yourHTML +=
+                      "<p>" +
+                      teams["final"][i]["pt_skill"][j]["participant"].name +
+                      "<br><t>" +
+                      teams["final"][i]["pt_skill"][j]["skills"][0]["skill"] +
+                      "</t></p></li>";
+                  }
+                  yourHTML +=
+                    "</ul></div><p id='admin_id'>" +
+                    teams["final"][i].team.admin_id +
+                    "</p><p id='team_id'>" +
+                    teams["final"][i]["team"]._id +
+                    "<p><p id='hack_id'>" +
+                    teams.final[i].team.hack_id +
+                    "</p></div></div></div>";
+                }
+              }
+
+              i++;
+
+              body.innerHTML += yourHTML;
+              yourHTML = "";
+              loadingDiv.style.visibility = "hidden";
             }
-
-            i++;
-
-            body.innerHTML += yourHTML;
-            yourHTML = "";
-            loadingDiv.style.visibility = "hidden";
-          }
-          total_teams = Math.ceil(length / 8);
-          Pagination.Init(document.getElementById("pagination"), {
-            size: total_teams,
-            page: 1,
-            step: 1,
-          })
-        }
-        catch(error){
+            total_teams = Math.ceil(length / 8);
+            Pagination.Init(document.getElementById("pagination"), {
+              size: total_teams,
+              page: 1,
+              step: 1,
+            });
+          } catch (error) {
             console.log(error.response.status);
-            if(error.response.status == 404){
-                swal(
-                    "WARNING!!",
-                    "No Team has been formed here!",
-                    "warning"
-                  );
-                  loadingDiv.style.visibility = "hidden";
+            if (error.response.status == 404) {
+              swal("WARNING!!", "No Team has been formed here!", "warning");
+              loadingDiv.style.visibility = "hidden";
             }
-        }
+          }
         };
         init();
       });

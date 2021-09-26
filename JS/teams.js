@@ -31,25 +31,23 @@ function events(event) {
             yourHTML +=
               "<div class='row'><div class='col-lg-6 col-md-6 col-sm-12'style='padding-bottom:5% ;cursor : pointer' onclick='check()'><div class='card1' id='team'style='max-width: 497px; max-height: 371px;padding-bottom: 10%;'><div class='card-body'><h4 class='card-title'>" +
               teams["final"][i]["team"].name +
-              "</h4>"
-              if(teams["final"][i]["hackName"] == ""){
-                yourHTML += "<p><text style='display:none'>Hackathon:</text><hackathon id='hack_name' style='display:none'>" +
+              "</h4>";
+            if (teams["final"][i]["hackName"] == "") {
+              yourHTML +=
+                "<p><text style='display:none'>Hackathon:</text><hackathon id='hack_name' style='display:none'>" +
                 teams["final"][i]["hackName"] +
-                "</hackathon></p>"
-              }
-              else{
-                yourHTML += "<p><text>Hackathon:</text><hackathon id='hack_name'>" +
+                "</hackathon></p>";
+            } else {
+              yourHTML +=
+                "<p><text>Hackathon:</text><hackathon id='hack_name'>" +
                 teams["final"][i]["hackName"] +
-                "</hackathon></p>"
-              }
-              yourHTML +=  "<div class='card-details'><p><f>" +
+                "</hackathon></p>";
+            }
+            yourHTML +=
+              "<div class='card-details'><p><f>" +
               teams["final"][i]["team"].members.length +
               "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>";
-            for (
-              var j = 0;
-              j < teams["final"][i]["team"].members.length;
-              j++
-            ) {
+            for (var j = 0; j < teams["final"][i]["team"].members.length; j++) {
               yourHTML += "<li class='list-item'>";
               if (teams.final[i].pt_skill[j].participant.photo == "hey") {
                 yourHTML +=
@@ -81,18 +79,20 @@ function events(event) {
               yourHTML +=
                 "<div class='col-lg-6 col-md-6 col-sm-12'onclick='check()' style='cursor : pointer'><div class='card2' id='team' style='max-width: 497px; max-height: 371px; padding-bottom:20px;' ><div class='card-body'><h4 class='card-title'>" +
                 teams["final"][i]["team"].name +
-                "</h4>"
-                if(teams["final"][i]["hackName"] == ""){
-                  yourHTML += "<p><text style='display:none'>Hackathon:</text><hackathon id='hack_name' style='display:none'>" +
+                "</h4>";
+              if (teams["final"][i]["hackName"] == "") {
+                yourHTML +=
+                  "<p><text style='display:none'>Hackathon:</text><hackathon id='hack_name' style='display:none'>" +
                   teams["final"][i]["hackName"] +
-                  "</hackathon></p>"
-                }
-                else{
-                  yourHTML += "<p><text>Hackathon:</text><hackathon id='hack_name'>" +
+                  "</hackathon></p>";
+              } else {
+                yourHTML +=
+                  "<p><text>Hackathon:</text><hackathon id='hack_name'>" +
                   teams["final"][i]["hackName"] +
-                  "</hackathon></p>"
-                }
-                yourHTML += "<div class='card-details'><p><f>" +
+                  "</hackathon></p>";
+              }
+              yourHTML +=
+                "<div class='card-details'><p><f>" +
                 teams["final"][i]["team"].members.length +
                 "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>";
               for (
@@ -197,7 +197,7 @@ var Pagination = {
     } else if (Pagination.page < Pagination.step * 2 + 1) {
       Pagination.Add(1, Pagination.step * 2 + 2);
       Pagination.Last();
-    } else if (Pagination.page > Pagination.size - Pagination.step * 2) {
+    } else if (Pagination.page > Pagination.size - Pagination.step * 2 - 2) {
       Pagination.First();
       Pagination.Add(
         Pagination.size - Pagination.step * 2 - 1,
@@ -259,18 +259,20 @@ function displayTeams() {
               yourHTML +=
                 "<div class='row'><div class='col-lg-6 col-md-6 col-sm-12'style='padding-bottom:5% ;cursor : pointer' onclick='check()'><div class='card1' id='team'style='max-width: 497px; max-height: 371px;padding-bottom: 10%;'><div class='card-body'><h4 class='card-title'>" +
                 teams["final"][i]["team"].name +
-                "</h4>"
-                if(teams["final"][i]["hackName"] == ""){
-                  yourHTML += "<p><text style='display:none'>Hackathon:</text><hackathon id='hack_name' style='display:none'>" +
+                "</h4>";
+              if (teams["final"][i]["hackName"] == "") {
+                yourHTML +=
+                  "<p><text style='display:none'>Hackathon:</text><hackathon id='hack_name' style='display:none'>" +
                   teams["final"][i]["hackName"] +
-                  "</hackathon></p>"
-                }
-                else{
-                  yourHTML += "<p><text>Hackathon:</text><hackathon id='hack_name'>" +
+                  "</hackathon></p>";
+              } else {
+                yourHTML +=
+                  "<p><text>Hackathon:</text><hackathon id='hack_name'>" +
                   teams["final"][i]["hackName"] +
-                  "</hackathon></p>"
-                }
-                yourHTML +=  "<div class='card-details'><p><f>" +
+                  "</hackathon></p>";
+              }
+              yourHTML +=
+                "<div class='card-details'><p><f>" +
                 teams["final"][i]["team"].members.length +
                 "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>";
               for (
@@ -309,18 +311,20 @@ function displayTeams() {
                 yourHTML +=
                   "<div class='col-lg-6 col-md-6 col-sm-12'onclick='check()' style='cursor : pointer'><div class='card2' id='team' style='max-width: 497px; max-height: 371px; padding-bottom:20px;' ><div class='card-body'><h4 class='card-title'>" +
                   teams["final"][i]["team"].name +
-                  "</h4>"
-                  if(teams["final"][i]["hackName"] == ""){
-                    yourHTML += "<p><text style='display:none'>Hackathon:</text><hackathon id='hack_name' style='display:none'>" +
+                  "</h4>";
+                if (teams["final"][i]["hackName"] == "") {
+                  yourHTML +=
+                    "<p><text style='display:none'>Hackathon:</text><hackathon id='hack_name' style='display:none'>" +
                     teams["final"][i]["hackName"] +
-                    "</hackathon></p>"
-                  }
-                  else{
-                    yourHTML += "<p><text>Hackathon:</text><hackathon id='hack_name'>" +
+                    "</hackathon></p>";
+                } else {
+                  yourHTML +=
+                    "<p><text>Hackathon:</text><hackathon id='hack_name'>" +
                     teams["final"][i]["hackName"] +
-                    "</hackathon></p>"
-                  }
-                  yourHTML += "<div class='card-details'><p><f>" +
+                    "</hackathon></p>";
+                }
+                yourHTML +=
+                  "<div class='card-details'><p><f>" +
                   teams["final"][i]["team"].members.length +
                   "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>";
                 for (
@@ -409,25 +413,23 @@ function nextPage() {
             yourHTML +=
               "<div class='row'><div class='col-lg-6 col-md-6 col-sm-12'style='padding-bottom:5% ;cursor : pointer' onclick='check()'><div class='card1' id='team'style='max-width: 497px; max-height: 371px;padding-bottom: 10%;'><div class='card-body'><h4 class='card-title'>" +
               teams["final"][i]["team"].name +
-              "</h4>"
-              if(teams["final"][i]["hackName"] == ""){
-                yourHTML += "<p><text style='display:none'>Hackathon:</text><hackathon id='hack_name' style='display:none'>" +
+              "</h4>";
+            if (teams["final"][i]["hackName"] == "") {
+              yourHTML +=
+                "<p><text style='display:none'>Hackathon:</text><hackathon id='hack_name' style='display:none'>" +
                 teams["final"][i]["hackName"] +
-                "</hackathon></p>"
-              }
-              else{
-                yourHTML += "<p><text>Hackathon:</text><hackathon id='hack_name'>" +
+                "</hackathon></p>";
+            } else {
+              yourHTML +=
+                "<p><text>Hackathon:</text><hackathon id='hack_name'>" +
                 teams["final"][i]["hackName"] +
-                "</hackathon></p>"
-              }
-              yourHTML +=  "<div class='card-details'><p><f>" +
+                "</hackathon></p>";
+            }
+            yourHTML +=
+              "<div class='card-details'><p><f>" +
               teams["final"][i]["team"].members.length +
               "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>";
-            for (
-              var j = 0;
-              j < teams["final"][i]["team"].members.length;
-              j++
-            ) {
+            for (var j = 0; j < teams["final"][i]["team"].members.length; j++) {
               yourHTML += "<li class='list-item'>";
               if (teams.final[i].pt_skill[j].participant.photo == "hey") {
                 yourHTML +=
@@ -459,18 +461,20 @@ function nextPage() {
               yourHTML +=
                 "<div class='col-lg-6 col-md-6 col-sm-12'onclick='check()' style='cursor : pointer'><div class='card2' id='team' style='max-width: 497px; max-height: 371px; padding-bottom:20px;' ><div class='card-body'><h4 class='card-title'>" +
                 teams["final"][i]["team"].name +
-                "</h4>"
-                if(teams["final"][i]["hackName"] == ""){
-                  yourHTML += "<p><text style='display:none'>Hackathon:</text><hackathon id='hack_name' style='display:none'>" +
+                "</h4>";
+              if (teams["final"][i]["hackName"] == "") {
+                yourHTML +=
+                  "<p><text style='display:none'>Hackathon:</text><hackathon id='hack_name' style='display:none'>" +
                   teams["final"][i]["hackName"] +
-                  "</hackathon></p>"
-                }
-                else{
-                  yourHTML += "<p><text>Hackathon:</text><hackathon id='hack_name'>" +
+                  "</hackathon></p>";
+              } else {
+                yourHTML +=
+                  "<p><text>Hackathon:</text><hackathon id='hack_name'>" +
                   teams["final"][i]["hackName"] +
-                  "</hackathon></p>"
-                }
-                yourHTML += "<div class='card-details'><p><f>" +
+                  "</hackathon></p>";
+              }
+              yourHTML +=
+                "<div class='card-details'><p><f>" +
                 teams["final"][i]["team"].members.length +
                 "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>";
               for (
@@ -548,25 +552,23 @@ function prevPage() {
             yourHTML +=
               "<div class='row'><div class='col-lg-6 col-md-6 col-sm-12'style='padding-bottom:5% ;cursor : pointer' onclick='check()'><div class='card1' id='team'style='max-width: 497px; max-height: 371px;padding-bottom: 10%;'><div class='card-body'><h4 class='card-title'>" +
               teams["final"][i]["team"].name +
-              "</h4>"
-              if(teams["final"][i]["hackName"] == ""){
-                yourHTML += "<p><text style='display:none'>Hackathon:</text><hackathon id='hack_name' style='display:none'>" +
+              "</h4>";
+            if (teams["final"][i]["hackName"] == "") {
+              yourHTML +=
+                "<p><text style='display:none'>Hackathon:</text><hackathon id='hack_name' style='display:none'>" +
                 teams["final"][i]["hackName"] +
-                "</hackathon></p>"
-              }
-              else{
-                yourHTML += "<p><text>Hackathon:</text><hackathon id='hack_name'>" +
+                "</hackathon></p>";
+            } else {
+              yourHTML +=
+                "<p><text>Hackathon:</text><hackathon id='hack_name'>" +
                 teams["final"][i]["hackName"] +
-                "</hackathon></p>"
-              }
-              yourHTML +=  "<div class='card-details'><p><f>" +
+                "</hackathon></p>";
+            }
+            yourHTML +=
+              "<div class='card-details'><p><f>" +
               teams["final"][i]["team"].members.length +
               "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>";
-            for (
-              var j = 0;
-              j < teams["final"][i]["team"].members.length;
-              j++
-            ) {
+            for (var j = 0; j < teams["final"][i]["team"].members.length; j++) {
               yourHTML += "<li class='list-item'>";
               if (teams.final[i].pt_skill[j].participant.photo == "hey") {
                 yourHTML +=
@@ -598,18 +600,20 @@ function prevPage() {
               yourHTML +=
                 "<div class='col-lg-6 col-md-6 col-sm-12'onclick='check()' style='cursor : pointer'><div class='card2' id='team' style='max-width: 497px; max-height: 371px; padding-bottom:20px;' ><div class='card-body'><h4 class='card-title'>" +
                 teams["final"][i]["team"].name +
-                "</h4>"
-                if(teams["final"][i]["hackName"] == ""){
-                  yourHTML += "<p><text style='display:none'>Hackathon:</text><hackathon id='hack_name' style='display:none'>" +
+                "</h4>";
+              if (teams["final"][i]["hackName"] == "") {
+                yourHTML +=
+                  "<p><text style='display:none'>Hackathon:</text><hackathon id='hack_name' style='display:none'>" +
                   teams["final"][i]["hackName"] +
-                  "</hackathon></p>"
-                }
-                else{
-                  yourHTML += "<p><text>Hackathon:</text><hackathon id='hack_name'>" +
+                  "</hackathon></p>";
+              } else {
+                yourHTML +=
+                  "<p><text>Hackathon:</text><hackathon id='hack_name'>" +
                   teams["final"][i]["hackName"] +
-                  "</hackathon></p>"
-                }
-                yourHTML += "<div class='card-details'><p><f>" +
+                  "</hackathon></p>";
+              }
+              yourHTML +=
+                "<div class='card-details'><p><f>" +
                 teams["final"][i]["team"].members.length +
                 "</f><r> Team <br> Members</r></p><div class='vl'></div><ul class='team-members'>";
               for (

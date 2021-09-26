@@ -210,7 +210,7 @@ var Pagination = {
     } else if (Pagination.page < Pagination.step * 2 + 1) {
       Pagination.Add(1, Pagination.step * 2 + 2);
       Pagination.Last();
-    } else if (Pagination.page > Pagination.size - Pagination.step * 2) {
+    } else if (Pagination.page > Pagination.size - Pagination.step * 2 - 2) {
       Pagination.First();
       Pagination.Add(
         Pagination.size - Pagination.step * 2 - 1,

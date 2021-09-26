@@ -6,12 +6,12 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../Assets/Images/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="../CSS/profile.css">
     <link rel="stylesheet" type="text/css" href="../Assets/Footer/footer.css">
     <link rel="stylesheet" href="../Assets/Header/headerl.css">
-
     <title>HackMate</title>
 </head>
 
@@ -21,24 +21,33 @@
         <div class="container">
             <div class="row">
                 <div class="caption">
+                    <h1 id="projname"></h1>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    <form id="form">
+                    <form id="project_form">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">NAME</label>
+                            <input type="link" class="form-control" autocomplete="off" id="name"
+                                placeholder="NAME">
+                            <small>Error</small>
+                        </div>
                         <div class="mb-3">
                             <label for="github" class="form-label">GITHUB LINK</label>
-                            <div type="link" class="form-control" id="git" placeholder="GITHUB link"></div>
+                            <input type="link" class="form-control" autocomplete="off" id="git"
+                                placeholder="GITHUB link">
                             <small>Error</small>
                         </div>
                         <div class="mb-3">
                             <label for="linkedln" class="form-label">DESIGN</label>
-                            <div type="text" class="form-control" id="design" placeholder="Design"></div>
+                            <input type="text" class="form-control" autocomplete="off" id="design" placeholder="Design">
                             <small>Error</small>
                         </div>
                         <div class="mb-3">
                             <label for="personal_website" class="form-label">DEMO LINK</label>
-                            <div type="text" class="form-control" id="personal_website" placeholder="Demo Link"></div>
+                            <input type="text" class="form-control" autocomplete="off" id="personal_website"
+                                placeholder="Demo Link">
                             <small>Error</small>
                         </div>
                     </form>
@@ -46,12 +55,20 @@
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <form id="form">
                         <div class="mb-3">
-                            <label for="bio" class="form-label">DESCRIPTION</label>
-                            <textarea class="form-control" rows="8" spellcheck="false" id="bio"
-                                placeholder="Bio" disabled></textarea>
-                            <small>Error</small>
+                            <label for="bio" class="form-label">DESCRIPTION<sym>*</sym></label>
+                            <textarea class="form-control" style="height: 300px;" spellcheck="false" id="bio" required
+                                placeholder="Bio" required></textarea>
+                            <small id="error_bio">Please fill this field.</small>
                         </div>
                     </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="d-flex justify-content-center" id="bottom_square">
+                    <button id="square_inactive" class="square_inactive" style="width:165px;"
+                        onclick="deleteProject()">Delete</button>
+                    <button id="square_active" class="square_inactive" style="margin-left:24px; width:165px;"
+                        onclick="submitform()">Submit</button>
                 </div>
             </div>
         </div>
@@ -59,17 +76,21 @@
     <div id="foobottom">
 
     </div>
+
     <div class="container">
         <div id="loading" class="loading">
             Loading&#8230;
         </div>
     </div>
+
+
 </body>
 <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-storage.js"></script>
 <script type="text/javascript" src="../JS/config.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"

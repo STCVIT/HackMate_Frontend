@@ -28,7 +28,6 @@ function submitform() {
       user.getIdToken().then(function (idToken) {
         auth = idToken;
         if (flag == 0) {
-          console.log("megha");
           axios
             .post(
               `${url}/projects/create`,
@@ -60,11 +59,5 @@ function submitform() {
     } else {
       // User is signed out
     }
-  });
-}
-
-function toTitleCase(str) {
-  return str.replace(/\w\S*/g, function (txt) {
-    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
   });
 }

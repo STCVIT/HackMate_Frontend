@@ -36,7 +36,7 @@ firebase.auth().onAuthStateChanged((user) => {
 });
 
 function deleteacc() {
-  loadingDiv.style.visibility = "visiblee";
+  loadingDiv.style.visibility = "visible";
   firebase
     .auth()
     .currentUser.getIdToken()
@@ -60,6 +60,7 @@ function deleteacc() {
               swal("Poof! Your profile has been deleted!", {
                 icon: "success",
               });
+              window.location.href = "../"
             })
             .catch((error) => console.error("Error: " + error));
         } else {

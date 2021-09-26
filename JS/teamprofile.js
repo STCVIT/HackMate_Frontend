@@ -3,6 +3,7 @@ $(document).ready(function () {
   $("#foobottom").load("../Assets/Footer/footer.txt");
 });
 const loadingDiv = document.getElementById("loading");
+loadingDiv.style.visibility = "visible";
 let team_name = document.getElementById("team_name");
 let team_code = document.getElementById("team_code");
 let hack_id = localStorage.getItem("hack_id");
@@ -106,12 +107,12 @@ firebase.auth().onAuthStateChanged((user) => {
                 hack_id +
                 "' role='button'>Know More</a></div></div>";
               body.innerHTML = yourhtml;
+              document.getElementById("loading").style.visibility = "hidden";
             })
             .catch((error) => console.error("Error: " + error));
         }
       }
       hackinfo();
-      document.getElementById("loading").style.visibility = "hidden";
     });
   } else {
     // User is signed out

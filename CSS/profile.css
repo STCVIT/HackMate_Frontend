@@ -170,6 +170,50 @@ input#image_uploads {
 .maincap h2{
   font-weight:bold !important;
 }
+.addprojects {
+  width: 129px;
+  height: 38px;
+  background: #1ea54c;
+  /* Pill Button Colour */
+
+  border: 2.5px solid #1ea54c;
+  box-sizing: border-box;
+  border-radius: 63.3333px;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight:600;
+  font-size: 15.2px;
+  line-height: 140%;
+  /* or 21px */
+
+  letter-spacing: 0.04em;
+
+  /* Text Colour */
+
+  color: #e7efef;
+}
+
+.about {
+  width: 101px;
+  height: 38px;
+  border: 2.53333px solid #1ea54c;
+  box-sizing: border-box;
+  border-radius: 63.3333px;
+  background: none;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15.2px;
+  line-height: 140%;
+  /* or 21px */
+
+  letter-spacing: 0.04em;
+
+  /* Pill Button Colour */
+
+  color: #1ea54c;
+}
+
 .maintext2{
   font-family: 'Fira Code', monospace;
   background-color: #23303d;

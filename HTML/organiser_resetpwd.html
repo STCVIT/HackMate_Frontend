@@ -19,34 +19,37 @@
 
 <body>
     <div id="nav"></div>
-
     <div class="container">
         <div class="row">
             <div class="d-flex justify-content-center">
                 <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <h2 class="text1">Reset Password.</h2>
+                    <form action="" method="post" name="myform">
+                        <div class="card-body">
+                            <div class="row">
+                                <h2 class="text1">Reset Password.</h2>
+                            </div>
+                            <div class="row">
+                                <h5 class="text2">Don't worry, it happens to the best of us.</h5>
+                            </div>
+                            <div class="row">
+
+                                <input type="email" class="input" id="user_email" autocomplete="off" placeholder="Email"
+                                    required>
+                            </div>
+                            <div class="row">
+                                <input type="password" class="input1" id="login_pass1" autocomplete="off"
+                                    placeholder="Old Password here..." required>
+                            </div>
+                            <div class="row">
+                                <input type="password" class="input2" id="login_pass2" autocomplete="off"
+                                    placeholder="New Password here..." required>
+                            </div>
+                            <div class="row">
+                                <input type="submit" class="button" value="Submit" id="getBtn">
+
+                            </div>
                         </div>
-                        <div class="row">
-                            <h5 class="text2">Don't worry, it happens to the best of us.</h5>
-                        </div>
-                        <div class="row">
-                            <input type="email" class="input" id="user_email" autocomplete="off"
-                            placeholder="Email" required>
-                        </div>
-                        <div class="row">
-                            <input type="password" class="input1" id="login_pass1" autocomplete="off"
-                            placeholder="Old Password here..." required>
-                        </div>
-                        <div class="row">
-                            <input type="password" class="input2" id="login_pass2" autocomplete="off"
-                            placeholder="New Password here..." required>
-                        </div>
-                        <div class="row">
-                            <input type="submit" class="button" value="Submit" id="getBtn" onclick="reset()">
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

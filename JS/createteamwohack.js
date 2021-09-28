@@ -88,7 +88,7 @@ function displayTeams() {
     for(let i = 0; i<hacks.final.length; i++){
     if(hacks.final[i].skills.length == 1){
       document.querySelector(".persons").innerHTML +=
-        "<div class='card2' id='good><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+        "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
         hacks.final[i].pt.photo +
         "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
         hacks.final[i].pt.name +
@@ -299,6 +299,7 @@ app.addEventListener("click", function () {
             } catch (err) {
               if (err.response.status == 404) {
                 swal("WARNING!!", "You can't search this participant.", "warning");
+                loadingDiv.style.visibility = "hidden";
               }
             }
           };
@@ -423,6 +424,7 @@ fweb.addEventListener("click", function () {
             } catch (err) {
               if (err.response.status == 404) {
                 swal("WARNING!!", "You can't search this participant.", "warning");
+                loadingDiv.style.visibility = "hidden";
               }
             }
           };
@@ -552,6 +554,7 @@ bweb.addEventListener("click", function () {
             } catch (err) {
               if (err.response.status == 404) {
                 swal("WARNING!!", "You can't search this participant.", "warning");
+                loadingDiv.style.visibility = "hidden";
               }
             }
           };
@@ -670,6 +673,7 @@ ml.addEventListener("click", function () {
             } catch (err) {
               if (err.response.status == 404) {
                 swal("WARNING!!", "You can't search this participant.", "warning");
+                loadingDiv.style.visibility = "hidden";
               }
             }
           };
@@ -788,6 +792,7 @@ design.addEventListener("click", function () {
             } catch (err) {
               if (err.response.status == 404) {
                 swal("WARNING!!", "You can't search this participant.", "warning");
+                loadingDiv.style.visibility = "hidden";
               }
             }
           };
@@ -906,6 +911,7 @@ mgmt.addEventListener("click", function () {
             } catch (err) {
               if (err.response.status == 404) {
                 swal("WARNING!!", "You can't search this participant.", "warning");
+                loadingDiv.style.visibility = "hidden";
               }
             }
           };
@@ -1024,6 +1030,7 @@ block.addEventListener("click", function () {
             } catch (err) {
               if (err.response.status == 404) {
                 swal("WARNING!!", "You can't search this participant.", "warning");
+                loadingDiv.style.visibility = "hidden";
               }
             }
           };
@@ -1142,6 +1149,7 @@ cyber.addEventListener("click", function () {
             } catch (err) {
               if (err.response.status == 404) {
                 swal("WARNING!!", "You can't search this participant.", "warning");
+                loadingDiv.style.visibility = "hidden";
               }
             }
           };
@@ -1736,11 +1744,14 @@ document.querySelector(".creates").innerHTML =
       // id.innerHTML = "Ooops!";
       var nk = 0;
       const cards = document.querySelectorAll("#goods");
+      console.log(cards);
       cards.forEach((card) => card.addEventListener("click", look));
+      console.log(look);
       function look() {
         nk = nk + 1;
         if (nk == 1) {
           var participant_id = this.querySelector("#participant-ids").textContent;
+          console.log(participant_id);
       firebase
         .auth()
         .currentUser.getIdToken()
@@ -1773,6 +1784,9 @@ document.querySelector(".creates").innerHTML =
                 swal("WARNING!!", "No Participant Found", "warning");
               } else if (e.response.status == 409) {
                 swal("WARNING!!", "Invite has already been sent", "warning");
+              }
+              else if (e.response.status == 400) {
+                swal("WARNING!!", "Same Team!!", "warning");
               }
             });
         });
@@ -1819,6 +1833,9 @@ function inviteme() {
             .catch((e) => {
               if (e.response.status == 409) {
                 swal("WARNING!!", "Invite has already been sent", "warning");
+              }
+              else if (e.response.status == 400) {
+                swal("WARNING!!", "Same Team!!", "warning");
               }
             });
         });

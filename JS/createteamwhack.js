@@ -47,6 +47,17 @@ function displayTeams() {
         displayTeams();
         page = page + 1;
       }
+      else if (hack.length >= 49 && hack.length <= 60) {
+        page = page + 1;
+
+        displayTeams();
+        page = page + 1;
+
+        displayTeams();
+        page = page + 1;
+        displayTeams();
+        page = page + 1;
+      }
     } catch (err) {
       console.log(err);
     }
@@ -1236,6 +1247,17 @@ all.addEventListener("click", function () {
         displayTeams();
         page = page + 1;
         console.log(page);
+      }
+      else if (hack.length >= 49 && hack.length <= 60) {
+        page = page + 1;
+
+        displayTeams();
+        page = page + 1;
+
+        displayTeams();
+        page = page + 1;
+        displayTeams();
+        page = page + 1;
       }
     } catch (err) {
       console.log(err);

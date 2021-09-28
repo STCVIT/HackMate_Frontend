@@ -46,6 +46,17 @@ function displayTeams() {
         displayTeams();
         page = page + 1;
       }
+      else if (hack.length >= 49 && hack.length <= 60) {
+        page = page + 1;
+
+        displayTeams();
+        page = page + 1;
+
+        displayTeams();
+        page = page + 1;
+        displayTeams();
+        page = page + 1;
+      }
     } catch (err) {
       console.log(err);
     }
@@ -1187,6 +1198,17 @@ all.addEventListener("click", function () {
         displayTeams();
         page = page + 1;
       }
+      else if (hack.length >= 49 && hack.length <= 60) {
+        page = page + 1;
+
+        displayTeams();
+        page = page + 1;
+
+        displayTeams();
+        page = page + 1;
+        displayTeams();
+        page = page + 1;
+      }
     } catch (err) {
       console.log(err);
     }
@@ -1209,7 +1231,7 @@ all.addEventListener("click", function () {
   function displayTeams() {
   var init = async function () {
     try{
-    var res = await axios(`${url}/participant/get/all/${hack_id}?page=${page}`, {
+    var res = await axios(`${url}/participant/get/all/null?page=${page}`, {
       headers: {
         Authorization: "Bearer " + auth,
       },

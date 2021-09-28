@@ -8,6 +8,185 @@ const block = document.querySelector(".text11");
 const cyber = document.querySelector(".text12");
 const all = document.querySelector(".text5");
 const loadingDiv = document.getElementById("loading");
+loadingDiv.style.visibility = "visible";
+
+function displayTeams() {
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      user.getIdToken().then(function (idToken) {
+        auth = idToken;
+        var page = 1;
+        displayTeams();
+  var init = async function () {
+    try {
+      var res = await axios(
+        `${url}/participant/get/all/null?page=1`,
+        {
+          headers: {
+            Authorization: "Bearer " + auth,
+          },
+        }
+      );
+      hack = await res.data;
+      if (hack.length >= 13 && hack.length <= 24) {
+        page = page + 1;
+        displayTeams();
+        
+      } else if (hack.length >= 25 && hack.length <= 36) {
+        page = page + 1;
+
+        displayTeams();
+        page = page + 1;
+      } else if (hack.length >= 37 && hack.length <= 48) {
+        page = page + 1;
+
+        displayTeams();
+        page = page + 1;
+
+        displayTeams();
+        page = page + 1;
+      }
+      else if (hack.length >= 49 && hack.length <= 60) {
+        page = page + 1;
+
+        displayTeams();
+        page = page + 1;
+
+        displayTeams();
+        page = page + 1;
+        displayTeams();
+        page = page + 1;
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  init();
+  var height = document.body.clientHeight;
+  if (height == document.body.clientHeight) {
+    window.addEventListener("scroll", someFunction);
+    function someFunction() {
+      if (window.scrollY + window.innerHeight >= 1153) {
+        displayTeams();
+        window.removeEventListener("scroll", someFunction);
+      }
+    }
+  }
+
+  document.querySelector(".persons").innerHTML = "";
+  
+  function displayTeams() {
+  var init = async function () {
+    try{
+    var res = await axios(`${url}/participant/get/all/null?page=${page}`, {
+      headers: {
+        Authorization: "Bearer " + auth,
+      },
+    });
+    hacks = await res.data;
+    loadingDiv.style.visibility = "hidden";
+    for(let i = 0; i<hacks.final.length; i++){
+    if(hacks.final[i].skills.length == 1){
+      document.querySelector(".persons").innerHTML +=
+        "<div class='card2' id='good><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+        hacks.final[i].pt.photo +
+        "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
+        hacks.final[i].pt.name +
+        "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5></div><div class='col-lg-3 col-md-3 col-1'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
+        hacks.final[i].pt._id +
+        "</p></div></div>";
+    }
+    if(hacks.final[i].skills.length == 2){
+      document.querySelector(".persons").innerHTML +=
+        "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+        hacks.final[i].pt.photo +
+        "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
+        hacks.final[i].pt.name +
+        "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5></div><div class='col-lg-3 col-md-3 col-1'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
+        hacks.final[i].pt._id +
+        "</p></div></div>";
+    }
+    if(hacks.final[i].skills.length == 3){
+      document.querySelector(".persons").innerHTML +=
+        "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+        hacks.final[i].pt.photo +
+        "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
+        hacks.final[i].pt.name +
+        "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5></div><div class='col-lg-3 col-md-3 col-1'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
+        hacks.final[i].pt._id +
+        "</p></div></div>";
+    }
+    if(hacks.final[i].skills.length == 4){
+      document.querySelector(".persons").innerHTML +=
+        "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+        hacks.final[i].pt.photo +
+        "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
+        hacks.final[i].pt.name +
+        "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[3].skill+"</h5></div><div class='col-lg-3 col-md-3 col-1'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
+        hacks.final[i].pt._id +
+        "</p></div></div>";
+    }
+    if(hacks.final[i].skills.length == 5){
+      document.querySelector(".persons").innerHTML +=
+        "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+        hacks.final[i].pt.photo +
+        "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
+        hacks.final[i].pt.name +
+        "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[3].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[4].skill+"</h5></div><div class='col-lg-3 col-md-3 col-1'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
+        hacks.final[i].pt._id +
+        "</p></div></div>";
+    }
+    if(hacks.final[i].skills.length == 6){
+      document.querySelector(".persons").innerHTML +=
+        "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+        hacks.final[i].pt.photo +
+        "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
+        hacks.final[i].pt.name +
+        "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[3].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[4].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[5].skill+"</h5></div><div class='col-lg-3 col-md-3 col-1'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
+        hacks.final[i].pt._id +
+        "</p></div></div>";
+    }
+    if(hacks.final[i].skills.length == 7){
+      document.querySelector(".persons").innerHTML +=
+        "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+        hacks.final[i].pt.photo +
+        "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
+        hacks.final[i].pt.name +
+        "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[3].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[4].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[5].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[6].skill+"</h5></div><div class='col-lg-3 col-md-3 col-1'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
+        hacks.final[i].pt._id +
+        "</p></div></div>";
+    }
+    if(hacks.final[i].skills.length == 8){
+      document.querySelector(".persons").innerHTML +=
+        "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+        hacks.final[i].pt.photo +
+        "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
+        hacks.final[i].pt.name +
+        "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[3].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[4].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[5].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[6].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[7].skill+"</h5></div><div class='col-lg-3 col-md-3 col-1'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
+        hacks.final[i].pt._id +
+        "</p></div></div>";
+    }
+  }
+  }
+  catch(err) {
+    console.log(err);
+    if(err.response.status == 404){
+      swal("WARNING!!", "You can't search this team.", "warning");
+    }
+  }
+  }
+  init();
+  }
+});
+} else {
+  ("Signed Out!!");
+}
+});
+}
+
+displayTeams();
+
+
 var n = 0;
 app.addEventListener("click", function () {
   firebase
@@ -15,10 +194,17 @@ app.addEventListener("click", function () {
     .currentUser.getIdToken()
     .then((id) => {
       auth = id;
-      if (n % 2 == 0) {
         document.getElementById("active1").className = "button2";
         document.getElementById("inactive1").className = "button3";
+        document.getElementById("inactive2").className = "button2";
+        document.getElementById("inactive3").className = "button2";
+        document.getElementById("inactive4").className = "button2";
+        document.getElementById("inactive5").className = "button2";
+        document.getElementById("inactive6").className = "button2";
+        document.getElementById("inactive7").className = "button2";
+        document.getElementById("inactive8").className = "button2";
         n = n + 1;
+        loadingDiv.style.visibility = "visible";
         var occurence = "appdev";
         var page = 1;
         displayTeams();
@@ -96,6 +282,7 @@ app.addEventListener("click", function () {
                 }
               );
               hacks = await res.data;
+              loadingDiv.style.visibility = "hidden";
 
               // var part123 = hacks.final[0].pt._id;
               // localStorage.setItem("participant", part123);
@@ -110,19 +297,13 @@ app.addEventListener("click", function () {
                   "</p></div></div>";
               }
             } catch (err) {
-              console.log(err.response.status);
               if (err.response.status == 404) {
-                swal("WARNING!!", "You can't search this team.", "warning");
+                swal("WARNING!!", "You can't search this participant.", "warning");
               }
             }
           };
           init();
         }
-      } else {
-        document.getElementById("active1").className = "button2";
-        document.getElementById("inactive1").className = "button2";
-        n = n + 1;
-      }
     });
 });
 fweb.addEventListener("click", function () {
@@ -131,10 +312,17 @@ fweb.addEventListener("click", function () {
     .currentUser.getIdToken()
     .then((id) => {
       auth = id;
-      if (n % 2 == 0) {
-        document.getElementById("active1").className = "button2";
-        document.getElementById("inactive2").className = "button3";
+      document.getElementById("active1").className = "button2";
+      document.getElementById("inactive1").className = "button2";
+      document.getElementById("inactive2").className = "button3";
+      document.getElementById("inactive3").className = "button2";
+      document.getElementById("inactive4").className = "button2";
+      document.getElementById("inactive5").className = "button2";
+      document.getElementById("inactive6").className = "button2";
+      document.getElementById("inactive7").className = "button2";
+      document.getElementById("inactive8").className = "button2";
         n = n + 1;
+        loadingDiv.style.visibility = "visible";
         var occurence = "frontend";
         var page = 1;
         displayTeams();
@@ -153,12 +341,10 @@ fweb.addEventListener("click", function () {
               page = page + 1;
 
               var height = document.body.clientHeight;
-              console.log(height);
               if (height == document.body.clientHeight) {
                 window.addEventListener("scroll", someFunction);
                 function someFunction() {
                   if (window.scrollY + window.innerHeight >= 1153) {
-                    console.log(window.scrollY + window.innerHeight);
                     displayTeams();
                     window.removeEventListener("scroll", someFunction);
                   }
@@ -220,6 +406,7 @@ fweb.addEventListener("click", function () {
                 }
               );
               hacks = await res.data;
+              loadingDiv.style.visibility = "hidden";
 
               // var part123 = hacks.final[0].pt._id;
               // localStorage.setItem("participant", part123);
@@ -234,29 +421,21 @@ fweb.addEventListener("click", function () {
                   "</p></div></div></div>";
               }
             } catch (err) {
-              console.log(err.response.status);
               if (err.response.status == 404) {
-                swal("WARNING!!", "You can't search this team.", "warning");
+                swal("WARNING!!", "You can't search this participant.", "warning");
               }
             }
           };
           init();
         }
-      } else {
-        document.getElementById("active1").className = "button2";
-        document.getElementById("inactive2").className = "button2";
-        n = n + 1;
-      }
     });
 });
 function check() {
   var team_id = window.location.search.split("?")[1];
   const cards = document.querySelectorAll("#good");
   cards.forEach((card) => card.addEventListener("click", look));
-  console.log(cards);
   function look() {
     var participant_id = this.querySelector("#participant-id").textContent;
-    console.log(participant_id);
     window.location.assign("./MyProfile_otherView.html?" + team_id);
     var part123 = participant_id;
     localStorage.setItem("participant", part123);
@@ -268,10 +447,17 @@ bweb.addEventListener("click", function () {
     .currentUser.getIdToken()
     .then((id) => {
       auth = id;
-      if (n % 2 == 0) {
-        document.getElementById("active1").className = "button2";
-        document.getElementById("inactive3").className = "button3";
+      document.getElementById("active1").className = "button2";
+      document.getElementById("inactive1").className = "button2";
+      document.getElementById("inactive2").className = "button2";
+      document.getElementById("inactive3").className = "button3";
+      document.getElementById("inactive4").className = "button2";
+      document.getElementById("inactive5").className = "button2";
+      document.getElementById("inactive6").className = "button2";
+      document.getElementById("inactive7").className = "button2";
+      document.getElementById("inactive8").className = "button2";
         n = n + 1;
+        loadingDiv.style.visibility = "visible";
         var occurence = "backend";
         var page = 1;
         displayTeams();
@@ -349,6 +535,7 @@ bweb.addEventListener("click", function () {
                 }
               );
               hacks = await res.data;
+              loadingDiv.style.visibility = "hidden";
 
               // var part123 = hacks.final[0].pt._id;
               // localStorage.setItem("participant", part123);
@@ -363,19 +550,13 @@ bweb.addEventListener("click", function () {
                   "</p></div></div>";
               }
             } catch (err) {
-              console.log(err.response.status);
               if (err.response.status == 404) {
-                swal("WARNING!!", "You can't search this team.", "warning");
+                swal("WARNING!!", "You can't search this participant.", "warning");
               }
             }
           };
           init();
         }
-      } else {
-        document.getElementById("active1").className = "button2";
-        document.getElementById("inactive3").className = "button2";
-        n = n + 1;
-      }
     });
 });
 ml.addEventListener("click", function () {
@@ -384,10 +565,17 @@ ml.addEventListener("click", function () {
     .currentUser.getIdToken()
     .then((id) => {
       auth = id;
-      if (n % 2 == 0) {
-        document.getElementById("active1").className = "button2";
+      document.getElementById("active1").className = "button2";
+        document.getElementById("inactive1").className = "button2";
+        document.getElementById("inactive2").className = "button2";
+        document.getElementById("inactive3").className = "button2";
         document.getElementById("inactive4").className = "button3";
+        document.getElementById("inactive5").className = "button2";
+        document.getElementById("inactive6").className = "button2";
+        document.getElementById("inactive7").className = "button2";
+        document.getElementById("inactive8").className = "button2";
         n = n + 1;
+        loadingDiv.style.visibility = "visible";
         var occurence = "ml";
         var page = 1;
         displayTeams();
@@ -465,6 +653,7 @@ ml.addEventListener("click", function () {
                 }
               );
               hacks = await res.data;
+              loadingDiv.style.visibility = "hidden";
 
               // var part123 = hacks.final[0].pt._id;
               // localStorage.setItem("participant", part123);
@@ -479,19 +668,13 @@ ml.addEventListener("click", function () {
                   "</p></div></div>";
               }
             } catch (err) {
-              console.log(err.response.status);
               if (err.response.status == 404) {
-                swal("WARNING!!", "You can't search this team.", "warning");
+                swal("WARNING!!", "You can't search this participant.", "warning");
               }
             }
           };
           init();
         }
-      } else {
-        document.getElementById("active1").className = "button2";
-        document.getElementById("inactive4").className = "button2";
-        n = n + 1;
-      }
     });
 });
 design.addEventListener("click", function () {
@@ -500,10 +683,17 @@ design.addEventListener("click", function () {
     .currentUser.getIdToken()
     .then((id) => {
       auth = id;
-      if (n % 2 == 0) {
         document.getElementById("active1").className = "button2";
+        document.getElementById("inactive1").className = "button2";
+        document.getElementById("inactive2").className = "button2";
+        document.getElementById("inactive3").className = "button2";
+        document.getElementById("inactive4").className = "button2";
         document.getElementById("inactive5").className = "button3";
+        document.getElementById("inactive6").className = "button2";
+        document.getElementById("inactive7").className = "button2";
+        document.getElementById("inactive8").className = "button2";
         n = n + 1;
+        loadingDiv.style.visibility = "visible";
         var occurence = "ui/ux";
         var page = 1;
         displayTeams();
@@ -581,6 +771,7 @@ design.addEventListener("click", function () {
                 }
               );
               hacks = await res.data;
+              loadingDiv.style.visibility = "hidden";
 
               // var part123 = hacks.final[0].pt._id;
               // localStorage.setItem("participant", part123);
@@ -595,19 +786,13 @@ design.addEventListener("click", function () {
                   "</p></div></div>";
               }
             } catch (err) {
-              console.log(err.response.status);
               if (err.response.status == 404) {
-                swal("WARNING!!", "You can't search this team.", "warning");
+                swal("WARNING!!", "You can't search this participant.", "warning");
               }
             }
           };
           init();
         }
-      } else {
-        document.getElementById("active1").className = "button2";
-        document.getElementById("inactive5").className = "button2";
-        n = n + 1;
-      }
     });
 });
 mgmt.addEventListener("click", function () {
@@ -616,10 +801,17 @@ mgmt.addEventListener("click", function () {
     .currentUser.getIdToken()
     .then((id) => {
       auth = id;
-      if (n % 2 == 0) {
-        document.getElementById("active1").className = "button2";
-        document.getElementById("inactive6").className = "button3";
+      document.getElementById("active1").className = "button2";
+      document.getElementById("inactive1").className = "button2";
+      document.getElementById("inactive2").className = "button2";
+      document.getElementById("inactive3").className = "button2";
+      document.getElementById("inactive4").className = "button2";
+      document.getElementById("inactive5").className = "button2";
+      document.getElementById("inactive6").className = "button3";
+      document.getElementById("inactive7").className = "button2";
+      document.getElementById("inactive8").className = "button2";
         n = n + 1;
+        loadingDiv.style.visibility = "visible";
         var occurence = "management";
         var page = 1;
         displayTeams();
@@ -697,6 +889,7 @@ mgmt.addEventListener("click", function () {
                 }
               );
               hacks = await res.data;
+              loadingDiv.style.visibility = "hidden";
 
               // var part123 = hacks.final[0].pt._id;
               // localStorage.setItem("participant", part123);
@@ -711,19 +904,13 @@ mgmt.addEventListener("click", function () {
                   "</p></div></div>";
               }
             } catch (err) {
-              console.log(err.response.status);
               if (err.response.status == 404) {
-                swal("WARNING!!", "You can't search this team.", "warning");
+                swal("WARNING!!", "You can't search this participant.", "warning");
               }
             }
           };
           init();
         }
-      } else {
-        document.getElementById("active1").className = "button2";
-        document.getElementById("inactive6").className = "button2";
-        n = n + 1;
-      }
     });
 });
 block.addEventListener("click", function () {
@@ -732,10 +919,17 @@ block.addEventListener("click", function () {
     .currentUser.getIdToken()
     .then((id) => {
       auth = id;
-      if (n % 2 == 0) {
         document.getElementById("active1").className = "button2";
+        document.getElementById("inactive1").className = "button2";
+        document.getElementById("inactive2").className = "button2";
+        document.getElementById("inactive3").className = "button2";
+        document.getElementById("inactive4").className = "button2";
+        document.getElementById("inactive5").className = "button2";
+        document.getElementById("inactive6").className = "button2";
         document.getElementById("inactive7").className = "button3";
+        document.getElementById("inactive8").className = "button2";
         n = n + 1;
+        loadingDiv.style.visibility = "visible";
         var occurence = "blockchain";
         var page = 1;
         displayTeams();
@@ -813,6 +1007,7 @@ block.addEventListener("click", function () {
                 }
               );
               hacks = await res.data;
+              loadingDiv.style.visibility = "hidden";
 
               // var part123 = hacks.final[0].pt._id;
               // localStorage.setItem("participant", part123);
@@ -827,19 +1022,13 @@ block.addEventListener("click", function () {
                   "</p></div></div>";
               }
             } catch (err) {
-              console.log(err.response.status);
               if (err.response.status == 404) {
-                swal("WARNING!!", "You can't search this team.", "warning");
+                swal("WARNING!!", "You can't search this participant.", "warning");
               }
             }
           };
           init();
         }
-      } else {
-        document.getElementById("active1").className = "button2";
-        document.getElementById("inactive7").className = "button2";
-        n = n + 1;
-      }
     });
 });
 cyber.addEventListener("click", function () {
@@ -848,10 +1037,17 @@ cyber.addEventListener("click", function () {
     .currentUser.getIdToken()
     .then((id) => {
       auth = id;
-      if (n % 2 == 0) {
         document.getElementById("active1").className = "button2";
+        document.getElementById("inactive1").className = "button2";
+        document.getElementById("inactive2").className = "button2";
+        document.getElementById("inactive3").className = "button2";
+        document.getElementById("inactive4").className = "button2";
+        document.getElementById("inactive5").className = "button2";
+        document.getElementById("inactive6").className = "button2";
+        document.getElementById("inactive7").className = "button2";
         document.getElementById("inactive8").className = "button3";
         n = n + 1;
+        loadingDiv.style.visibility = "visible";
         var occurence = "cybersecurity";
         var page = 1;
         displayTeams();
@@ -929,6 +1125,7 @@ cyber.addEventListener("click", function () {
                 }
               );
               hacks = await res.data;
+              loadingDiv.style.visibility = "hidden";
 
               // var part123 = hacks.final[0].pt._id;
               // localStorage.setItem("participant", part123);
@@ -943,22 +1140,21 @@ cyber.addEventListener("click", function () {
                   "</p></div></div>";
               }
             } catch (err) {
-              console.log(err.response.status);
               if (err.response.status == 404) {
-                swal("WARNING!!", "You can't search this team.", "warning");
+                swal("WARNING!!", "You can't search this participant.", "warning");
               }
             }
           };
           init();
         }
-      } else {
-        document.getElementById("active1").className = "button2";
-        document.getElementById("inactive8").className = "button2";
-        n = n + 1;
-      }
     });
 });
 all.addEventListener("click", function () {
+  firebase
+  .auth()
+  .currentUser.getIdToken()
+  .then((id) => {
+    auth = id;
   document.getElementById("active1").className = "button3";
   document.getElementById("inactive1").className = "button2";
   document.getElementById("inactive2").className = "button2";
@@ -969,32 +1165,172 @@ all.addEventListener("click", function () {
   document.getElementById("inactive7").className = "button2";
   document.getElementById("inactive8").className = "button2";
 
+  loadingDiv.style.visibility = "visible";
+  var page = 1;
+  var hack_id = window.location.search.split("?")[1];
+  displayTeams();
+  var init = async function () {
+    try {
+      var res = await axios(
+        `${url}/participant/get/all/${hack_id}?page=1`,
+        {
+          headers: {
+            Authorization: "Bearer " + auth,
+          },
+        }
+      );
+      hack = await res.data;
+      if (hack.length >= 13 && hack.length <= 24) {
+        page = page + 1;
+        displayTeams();
+        
+      } else if (hack.length >= 25 && hack.length <= 36) {
+        page = page + 1;
+
+        displayTeams();
+        page = page + 1;
+      } else if (hack.length >= 37 && hack.length <= 48) {
+        page = page + 1;
+
+        displayTeams();
+        page = page + 1;
+
+        displayTeams();
+        page = page + 1;
+      }
+      else if (hack.length >= 49 && hack.length <= 60) {
+        page = page + 1;
+
+        displayTeams();
+        page = page + 1;
+
+        displayTeams();
+        page = page + 1;
+        displayTeams();
+        page = page + 1;
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  init();
+
+  var height = document.body.clientHeight;
+  if (height == document.body.clientHeight) {
+    window.addEventListener("scroll", someFunction);
+    function someFunction() {
+      if (window.scrollY + window.innerHeight >= 1153) {
+        displayTeams();
+        window.removeEventListener("scroll", someFunction);
+      }
+    }
+  }
+
   document.querySelector(".persons").innerHTML = "";
-  //   displayTeams()
-  // function displayTeams() {
-  // var init = async function () {
-  //   try{
-  //   var res = await axios(`${url}/participant/get/all/null?page=1`, {
-  //     headers: {
-  //       Authorization: "Bearer " + auth,
-  //     },
-  //   });
-  //   hacks = await res.data;
-  //
-  //   for(let i = 0; i<hacks.final.length; i++){
-  //     document.querySelector(".persons").innerHTML +=
-  //       "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'>"+hacks.final[i].pt.name+"</h4><h5 class='text14'>"+ hacks.final[0].skills[0].skill+"</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
-  //   }
-  // }
-  // catch(err) {
-  //   console.log(err.response.status);
-  //   if(err.response.status == 404){
-  //     swal("WARNING!!", "You can't search this team.", "warning");
-  //   }
-  // }
-  // }
-  // init();
-  // }
+
+  function displayTeams() {
+  var init = async function () {
+    try{
+    var res = await axios(`${url}/participant/get/all/null?page=${page}`, {
+      headers: {
+        Authorization: "Bearer " + auth,
+      },
+    });
+    hacks = await res.data;
+    loadingDiv.style.visibility = "hidden";
+  
+    for(let i = 0; i<hacks.final.length; i++){
+      if(hacks.final[i].skills.length == 1){
+        document.querySelector(".persons").innerHTML +=
+          "<div class='card2' id='good><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+          hacks.final[i].pt.photo +
+          "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
+          hacks.final[i].pt.name +
+          "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5></div><div class='col-lg-3 col-md-3 col-1'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
+          hacks.final[i].pt._id +
+          "</p></div></div>";
+      }
+      if(hacks.final[i].skills.length == 2){
+        document.querySelector(".persons").innerHTML +=
+          "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+          hacks.final[i].pt.photo +
+          "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
+          hacks.final[i].pt.name +
+          "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5></div><div class='col-lg-3 col-md-3 col-1'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
+          hacks.final[i].pt._id +
+          "</p></div></div>";
+      }
+      if(hacks.final[i].skills.length == 3){
+        document.querySelector(".persons").innerHTML +=
+          "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+          hacks.final[i].pt.photo +
+          "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
+          hacks.final[i].pt.name +
+          "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5></div><div class='col-lg-3 col-md-3 col-1'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
+          hacks.final[i].pt._id +
+          "</p></div></div>";
+      }
+      if(hacks.final[i].skills.length == 4){
+        document.querySelector(".persons").innerHTML +=
+          "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+          hacks.final[i].pt.photo +
+          "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
+          hacks.final[i].pt.name +
+          "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[3].skill+"</h5></div><div class='col-lg-3 col-md-3 col-1'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
+          hacks.final[i].pt._id +
+          "</p></div></div>";
+      }
+      if(hacks.final[i].skills.length == 5){
+        document.querySelector(".persons").innerHTML +=
+          "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+          hacks.final[i].pt.photo +
+          "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
+          hacks.final[i].pt.name +
+          "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[3].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[4].skill+"</h5></div><div class='col-lg-3 col-md-3 col-1'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
+          hacks.final[i].pt._id +
+          "</p></div></div>";
+      }
+      if(hacks.final[i].skills.length == 6){
+        document.querySelector(".persons").innerHTML +=
+          "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+          hacks.final[i].pt.photo +
+          "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
+          hacks.final[i].pt.name +
+          "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[3].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[4].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[5].skill+"</h5></div><div class='col-lg-3 col-md-3 col-1'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
+          hacks.final[i].pt._id +
+          "</p></div></div>";
+      }
+      if(hacks.final[i].skills.length == 7){
+        document.querySelector(".persons").innerHTML +=
+          "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+          hacks.final[i].pt.photo +
+          "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
+          hacks.final[i].pt.name +
+          "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[3].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[4].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[5].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[6].skill+"</h5></div><div class='col-lg-3 col-md-3 col-1'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
+          hacks.final[i].pt._id +
+          "</p></div></div>";
+      }
+      if(hacks.final[i].skills.length == 8){
+        document.querySelector(".persons").innerHTML +=
+          "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+          hacks.final[i].pt.photo +
+          "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
+          hacks.final[i].pt.name +
+          "</a></h4><h5 class='text14'>"+ hacks.final[i].skills[0].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[1].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[2].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[3].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[4].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[5].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[6].skill+"</h5>&nbsp;&nbsp;<h5 class='text14'>"+ hacks.final[i].skills[7].skill+"</h5></div><div class='col-lg-3 col-md-3 col-1'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
+          hacks.final[i].pt._id +
+          "</p></div></div>";
+      }
+    }
+  }
+  catch(err) {
+    if(err.response.status == 404){
+      swal("WARNING!!", "You can't search this participant.", "warning");
+    }
+  }
+  }
+  init();
+  }
+})
 });
 $(document).ready(function () {
   $("#nav").load("../Assets/Header/headerl.txt");
@@ -1003,108 +1339,6 @@ $(document).ready(function () {
 
 const team_name = localStorage.getItem("hack_name");
 document.getElementById("teams").innerHTML = team_name;
-
-let a = document.querySelector("#flexCheckDefault6");
-let f = document.querySelector("#flexCheckDefault1");
-let b = document.querySelector("#flexCheckDefault2");
-let u = document.querySelector("#flexCheckDefault3");
-let mac = document.querySelector("#flexCheckDefault4");
-let man = document.querySelector("#flexCheckDefault5");
-let c = document.querySelector("#flexCheckDefault7");
-let blo = document.querySelector("#flexCheckDefault8");
-
-let choice = [];
-var n = 0;
-var z = 0;
-var y = 0;
-var x = 0;
-var w = 0;
-var v = 0;
-var ua = 0;
-var t = 0;
-a.addEventListener("click", function () {
-  if (z % 2 == 0) {
-    choice.push("appdev");
-    z += 1;
-  } else {
-    choice = choice.filter((item) => item !== "appdev");
-    console.log(choice);
-    z += 1;
-  }
-});
-f.addEventListener("click", function () {
-  if (n % 2 == 0) {
-    choice.push("frontend");
-    n += 1;
-  } else {
-    choice = choice.filter((item) => item !== "frontend");
-    console.log(choice);
-    n += 1;
-  }
-});
-b.addEventListener("click", function () {
-  if (y % 2 == 0) {
-    choice.push("backend");
-    y += 1;
-  } else {
-    choice = choice.filter((item) => item !== "backend");
-    console.log(choice);
-    y += 1;
-  }
-});
-u.addEventListener("click", function () {
-  if (x % 2 == 0) {
-    choice.push("ui/ux");
-    x += 1;
-  } else {
-    choice = choice.filter((item) => item !== "ui/ux");
-    console.log(choice);
-    x += 1;
-  }
-});
-mac.addEventListener("click", function () {
-  if (w % 2 == 0) {
-    choice.push("ml");
-    w += 1;
-  } else {
-    choice = choice.filter((item) => item !== "ml");
-    console.log(choice);
-    w += 1;
-  }
-});
-man.addEventListener("click", function () {
-  if (v % 2 == 0) {
-    choice.push("management");
-
-    v += 1;
-  } else {
-    choice = choice.filter((item) => item !== "management");
-    console.log(choice);
-    v += 1;
-  }
-});
-blo.addEventListener("click", function () {
-  if (ua % 2 == 0) {
-    choice.push("blockchain");
-
-    ua += 1;
-  } else {
-    choice = choice.filter((item) => item !== "blockchain");
-    console.log(choice);
-    ua += 1;
-  }
-});
-c.addEventListener("click", function () {
-  if (t % 2 == 0) {
-    choice.push("cybersecurity");
-
-    t += 1;
-  } else {
-    choice = choice.filter((item) => item !== "cybersecurity");
-    console.log(choice);
-    t += 1;
-  }
-});
 
 function submit() {
   firebase
@@ -1126,7 +1360,6 @@ function submit() {
         )
         .then((response) => {
           talent = response.data;
-          console.log(talent);
           swal(
             "SUCCESS!!",
             "The skills has been saved successfully.",
@@ -1134,14 +1367,23 @@ function submit() {
           );
         })
         .catch((error) => {
-          console.error("Error:", error);
+          if(error.response.status == 404){
+            swal(
+              "WARNING!!",
+              "You need to atleast give minimum 1 skill.",
+              "warning"
+            );
+          }
         });
     });
 }
 
+document.querySelector(".creates").innerHTML =
+  "<input type='submit' class='button' value='Search' onclick='search()'>";
+
+function search(){
 document
   .getElementById("participant_name")
-  .addEventListener("keyup", function (event) {
     firebase
       .auth()
       .currentUser.getIdToken()
@@ -1150,7 +1392,6 @@ document
         event.preventDefault();
         var hack_id = window.location.search.split("?")[1];
         var name = document.getElementById("participant_name").value;
-        if (event.keyCode === 13) {
           axios(`${url}/participant/get/userName/null?name=${name}&page=1`, {
             headers: {
               Authorization: "Bearer " + auth,
@@ -1324,15 +1565,12 @@ document
               }
             })
             .catch((e) => {
-              console.log(e);
-              console.log(e.response.status);
               if (e.response.status == 404) {
                 swal("WARNING!!", "No Participant Found", "warning");
               }
             });
-        }
       });
-  });
+  }
 
 function invite() {
   // id.innerHTML = "Ooops!";
@@ -1342,7 +1580,6 @@ function invite() {
     .then((id) => {
       auth = id;
       var participant_id = teams.final[0].pt._id;
-      console.log(participant_id);
       axios
         .post(
           `${url}/invites/invite/${
@@ -1359,7 +1596,6 @@ function invite() {
         )
         .then((response) => {
           accepted = response.data;
-          console.log(accepted);
           swal(
             "SUCCESS!!",
             "Your invite has been submitted successfully",
@@ -1367,8 +1603,6 @@ function invite() {
           );
         })
         .catch((e) => {
-          console.log(e);
-          console.log(e.response.status);
           if (e.response.status == 404) {
             swal("WARNING!!", "No Participant Found", "warning");
           } else if (e.response.status == 400) {
@@ -1383,14 +1617,10 @@ function inviteme() {
   var nk = 0;
   const cards = document.querySelectorAll("#good");
   cards.forEach((card) => card.addEventListener("click", look));
-  console.log(cards);
-  console.log(nk);
   function look() {
-    console.log(this);
     nk = nk + 1;
     if (nk == 1) {
       var participant_id = this.querySelector("#participant-id").textContent;
-      console.log(participant_id);
       firebase
         .auth()
         .currentUser.getIdToken()
@@ -1412,7 +1642,6 @@ function inviteme() {
             )
             .then((response) => {
               accepted = response.data;
-              console.log(accepted);
               swal(
                 "SUCCESS!!",
                 "Your invite has been submitted successfully",
@@ -1420,8 +1649,6 @@ function inviteme() {
               );
             })
             .catch((e) => {
-              console.log(e);
-              console.log(e.response.status);
               if (e.response.status == 400) {
                 swal("WARNING!!", "Invite has already been sent", "warning");
               }

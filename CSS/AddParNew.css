@@ -1,0 +1,509 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito+Sans&family=Raleway&display=swap");
+html,body{
+	background-color: #23303D;
+	margin:0;
+	font-family: "Fira Code";
+	font-style: normal;
+	font-weight: bold;
+}
+.creates {
+    align-content: center;
+    text-align: center;
+}
+.loading {
+    position: fixed;
+    z-index: 9999;
+    height: 2em;
+    width: 2em;
+    overflow: show;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #23303d;
+    visibility: hidden;
+}
+
+
+/* Transparent Overlay */
+
+.loading:before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #23303d;
+}
+
+
+/* :not(:required) hides these rules from IE9 and below */
+
+.loading:not(:required) {
+    /* hide "loading..." text */
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+.loading:not(:required):after {
+    content: '';
+    display: block;
+    font-size: 10px;
+    width: 1em;
+    height: 1em;
+    margin-top: -0.5em;
+    -webkit-animation: spinner 1500ms infinite linear;
+    -moz-animation: spinner 1500ms infinite linear;
+    -ms-animation: spinner 1500ms infinite linear;
+    -o-animation: spinner 1500ms infinite linear;
+    animation: spinner 1500ms infinite linear;
+    border-radius: 0.5em;
+    -webkit-box-shadow: #1ea54c 1.5em 0 0 0, #1ea54c 1.1em 1.1em 0 0, #1ea54c 0 1.5em 0 0, #1ea54c -1.1em 1.1em 0 0, #1ea54c -1.5em 0 0 0, #1ea54c -1.1em -1.1em 0 0, #1ea54c 0 -1.5em 0 0, #1ea54c 1.1em -1.1em 0 0;
+    box-shadow: #1ea54c 1.5em 0 0 0, #1ea54c 1.1em 1.1em 0 0, #1ea54c 0 1.5em 0 0, #1ea54c -1.1em 1.1em 0 0, #1ea54c -1.5em 0 0 0, #1ea54c -1.1em -1.1em 0 0, #1ea54c 0 -1.5em 0 0, #1ea54c 1.1em -1.1em 0 0;
+}
+
+
+/* Animation */
+
+@-webkit-keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+a, a:hover, a:focus, a:active {
+	text-decoration: none;
+	color: inherit;
+}
+.text1{
+	font-family: Fira Code;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 36px;
+	line-height: 140%;
+	letter-spacing: 0.04em;
+	color: #ffffff;
+	margin-top: 50px;
+	display: none;
+}
+.input {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 20px;
+  padding: .8em 0 10px .8em;
+  border: 2px solid rgba(30, 165, 76, 0.2);
+  outline: 0;
+  display: inline-block;
+  margin: 80px 0 0 5px;
+  padding-right: 2em;
+  width: 100%; 
+  background-color: #2E3D4C;
+}
+.input1 {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 20px;
+  padding: .8em 0 10px .8em;
+  border: 2px solid rgba(30, 165, 76, 0.2);
+  outline: 0;
+  display: inline-block;
+  margin: 10px 0 0 5px;
+  padding-right: 2em;
+  width: 100%; 
+  background-color: #2E3D4C;
+}
+.button {
+  	margin-top: 10px;
+  	background-color: #226045;
+  	border: none;
+  	color: #fff;
+  	cursor: pointer;
+  	filter: drop-shadow(1.36585px 1.36585px 13.6585px rgba(0, 0, 0, 0.2));
+  	width: 169px;
+	height: 60px;
+	font-family: Fira Code;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 23.1794px;
+	line-height: 30px;
+	letter-spacing: 0.04em;
+}
+.card{
+	width: 316px;
+	height: 520px;
+	background: #1D2833;
+	box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
+	border-radius: 3px;
+	margin-left: 50px;
+	margin-bottom: 20px;
+	margin-top: 75px;
+}
+.card-body{
+	color: #ffffff;
+}
+.card-title{
+	font-family: Fira Code;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 19.0385px;
+	line-height: 25px;
+	letter-spacing: 0.04em;
+	margin-left: 30px;
+	margin-top: 15px;
+	margin-bottom: 20px;
+}
+.form-check-input{
+	margin-left: 30px;
+    height: 20px;
+    width: 20px;
+}
+.check-label{
+	font-family: Nunito Sans;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14.2788px;
+	letter-spacing: 0.04em;
+	margin-left: 10px;	
+}
+.button1{
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  margin: 0 0 0 90px;
+  cursor: pointer;
+  background: #1D2833;
+  border: 2.53333px solid #1EA54C;
+  box-sizing: border-box;
+  border-radius: 90px;
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 15.2px;
+  line-height: 140%;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
+}         
+.buttons{
+	margin-left: 20px;
+	display: contents;
+}
+.button3{
+  color: #fff;
+  padding: 8px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 4px;
+  cursor: pointer;
+  background: #1EA54C;
+  border: 2.53333px solid #1EA54C;
+  box-sizing: border-box;
+  border-radius: 63.3333px;
+  filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
+  height: 38px;
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 15.2px;
+}
+.button2{
+  padding: 8px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 4px;
+  cursor: pointer;
+  background: #1D2833;
+  border: 2.53333px solid #1EA54C;
+  box-sizing: border-box;
+  border-radius: 63.3333px;
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 15.2px;
+  line-height: 140%;
+  letter-spacing: 0.04em;
+  color: #1EA54C;
+  filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
+  height: 38px;
+}
+.top-button{
+	display: contents;
+}
+.low-button{
+	display: contents;
+}
+.text5{
+	height: 21px;
+	left: 251px;
+	top: 370px;
+}
+.text6{
+	height: 21px;
+	left: 251px;
+	top: 370px;
+}
+.text7{
+	height: 21px;
+	left: 251px;
+	top: 370px;
+}
+.text8{
+	height: 21px;
+	left: 251px;
+	top: 370px;
+}
+.text9{
+	height: 21px;
+	left: 251px;
+	top: 370px;
+}
+.text10{
+	height: 21px;
+	left: 251px;
+	top: 370px;
+}
+.text11{
+	height: 21px;
+	left: 251px;
+	top: 370px;
+}
+.text12{
+	height: 21px;
+	left: 251px;
+	top: 370px;
+}
+.one{
+	margin-top: 100px;
+}
+.options{
+	margin-top: 30px;
+	margin-left: auto;
+}
+.persons{
+	margin-top: 30px;
+}
+.card2{
+	width: 743px;
+	height: 115px;
+	left: 128px;
+	top: 547px;
+	filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.2));
+	background-color: #1D2833;
+	margin-bottom: 20px;
+}
+.Image1{
+	height: 100px;
+	width: 90px;
+	margin-top: 10px;
+}
+.text13{
+	font-family: Nunito Sans;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 22px;
+	line-height: 30px;
+	letter-spacing: 0.04em;
+	color: #ffffff;
+	margin-top: 30px;
+	margin-bottom: 0px;
+	cursor: pointer;
+}
+.text14{
+	font-family: Nunito Sans;
+	font-style: normal;
+	font-weight: 800;
+	font-size: 15.2632px;
+	line-height: 21px;
+	letter-spacing: 0.04em;
+	color: #1EA54C;
+	display: inline-block;
+}
+.text15{
+	font-family: Nunito Sans;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 19px;
+	letter-spacing: 0.12em;
+	color: #ffffff;
+	margin: 40px 0 0 60px;
+	cursor: pointer;
+}
+	.creates{
+	align-content: center;
+	text-align: center;
+}
+.textteam{
+	font-family: Fira Code;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 28px;
+	line-height: 140%;
+	letter-spacing: 0.04em;
+	color: #ffffff;
+	margin-top: 30px;
+}
+@media (min-width: 465px) and (max-width: 991px){
+	.text1{
+		font-size: 40px;
+	}
+	.creates{
+	align-content: center;
+	text-align: center;
+}
+	.button{
+		margin-top: 40px;
+		margin-bottom: 10px;
+	}
+	.one{
+		margin-bottom: 50px;
+	}
+	.button1{
+		margin: 10px 20px 10px 85px;
+	}
+	.persons{
+		margin-top: 100px;
+	}
+	.card{
+		height: 500px;
+		margin-top: 30px;
+	}
+	.input{
+		font-size: 30px;
+	}
+	.input1{
+		font-size: 18px;
+	}
+	.text13{
+		font-size: 26px;
+		margin-left: 15px;
+	}
+	.text14{
+		font-size: 20px;
+		margin-top: 10px;
+		margin-left: 20px;
+	}
+	.text15{
+		font-size: 16px;
+		margin-left: 25px;
+	}
+	.card2{
+		height: auto;
+	}
+}
+@media (min-width: 375px) and (max-width: 464px){
+	.input1{
+		font-size: 16px;
+	}
+	.text13{
+		font-size: 16px;
+	}
+	.text14{
+		font-size: 15px;
+		margin-top: 10px;
+	}
+	.text15{
+		font-size: 15px;
+		margin-left: 15px;
+	}
+	.card{
+		height: 500px;
+		margin-top: 30px;
+		margin-left: 10px;
+	}
+	.card2{
+		height: auto;
+	}
+	.Image1{
+		width: 60px;
+		height: 90px;
+	}
+}
+@media (min-width: 992px) and (max-width: 1200px){
+	.card{
+		margin-left: 26px;
+	}
+	.card-body{
+		padding-right: 0px;
+	}
+}
+.form-check-input:checked {
+  background-color: green !important;
+  border-color: green !important;
+}
+.form-check-input[type=checkbox] {
+  border-radius:0rem !important;
+}

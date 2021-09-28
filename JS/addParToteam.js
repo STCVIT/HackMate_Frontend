@@ -1242,7 +1242,7 @@ all.addEventListener("click", function () {
     for(let i = 0; i<hacks.final.length; i++){
       if(hacks.final[i].skills.length == 1){
         document.querySelector(".persons").innerHTML +=
-          "<div class='card2' id='good><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+          "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
           hacks.final[i].pt.photo +
           "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7 abc'><h4 class='text13'><a onclick='check()'>" +
           hacks.final[i].pt.name +
@@ -1340,48 +1340,71 @@ $(document).ready(function () {
 const team_name = localStorage.getItem("hack_name");
 document.getElementById("teams").innerHTML = team_name;
 
-function submit() {
-  firebase
-    .auth()
-    .currentUser.getIdToken()
-    .then((id) => {
-      auth = id;
-      axios
-        .post(
-          `${url}/DN_Team/addSkills/${window.location.search.split("?")[1]}`,
-          {
-            skills: choice,
-          },
-          {
-            headers: {
-              Authorization: "Bearer " + auth,
-            },
-          }
-        )
-        .then((response) => {
-          talent = response.data;
-          swal(
-            "SUCCESS!!",
-            "The skills has been saved successfully.",
-            "success"
-          );
-        })
-        .catch((error) => {
-          if(error.response.status == 404){
-            swal(
-              "WARNING!!",
-              "You need to atleast give minimum 1 skill.",
-              "warning"
-            );
-          }
-        });
-    });
-}
-
 document.querySelector(".creates").innerHTML =
   "<input type='submit' class='button' value='Search' onclick='search()'>";
 
 function search(){
+  displayTeams();
+  var page = 1;
+  var init = async function () {
+    var name = document.getElementById("participant_name").value;
+    try {
+      var res = await axios(
+        `${url}/participant/get/userName/null?name=${name}&page=1`,
+        {
+          headers: {
+            Authorization: "Bearer " + auth,
+          },
+        }
+      );
+      hack = await res.data;
+      if (hack.length >= 13 && hack.length <= 24) {
+        page = page + 1;
+        
+      } else if (hack.length >= 25 && hack.length <= 36) {
+        page = page + 1;
+
+        displayTeams();
+        page = page + 1;
+      } else if (hack.length >= 37 && hack.length <= 48) {
+        page = page + 1;
+
+        displayTeams();
+        page = page + 1;
+
+        displayTeams();
+        page = page + 1;
+      }
+      else if (hack.length >= 49 && hack.length <= 60) {
+        page = page + 1;
+
+        displayTeams();
+        page = page + 1;
+
+        displayTeams();
+        page = page + 1;
+        displayTeams();
+        page = page + 1;
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  init();
+
+  var height = document.body.clientHeight;
+  if (height == document.body.clientHeight) {
+    window.addEventListener("scroll", someFunction);
+    function someFunction() {
+      if (window.scrollY + window.innerHeight >= 1153) {
+        displayTeams();
+        window.removeEventListener("scroll", someFunction);
+      }
+    }
+  }
+  document.querySelector(".persons").innerHTML = "";
+
+  function displayTeams(){
 document
   .getElementById("participant_name")
     firebase
@@ -1389,10 +1412,9 @@ document
       .currentUser.getIdToken()
       .then((id) => {
         auth = id;
-        event.preventDefault();
         var hack_id = window.location.search.split("?")[1];
         var name = document.getElementById("participant_name").value;
-          axios(`${url}/participant/get/userName/null?name=${name}&page=1`, {
+          axios(`${url}/participant/get/userName/null?name=${name}&page=${page}`, {
             headers: {
               Authorization: "Bearer " + auth,
             },
@@ -1400,186 +1422,201 @@ document
             .then((response) => {
               teams = response.data;
 
-              var team_id = window.location.search.split("?")[1];
-              var part123 = teams.final[0].pt._id;
-              localStorage.setItem("participant", part123);
-              if (teams.final[0].skills.length == 1) {
-                document.querySelector(".persons").innerHTML = "";
+              // var team_id = window.location.search.split("?")[1];
+              // var part123 = teams.final[0].pt._id;
+              // localStorage.setItem("participant", part123);
+              // document.querySelector(".persons").innerHTML = "";
+              for(let i = 0; i<teams.final.length; i++){
+              if (teams.final[i].skills.length == 1) {
                 document.querySelector(".persons").innerHTML +=
-                  "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
-                  teams.final[0].pt.photo +
-                  "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html?" +
-                  team_id +
-                  "'>" +
-                  teams.final[0].pt.name +
+                  "<div class='card2' id='goods'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+                  teams.final[i].pt.photo +
+                  "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='checks()'>"+
+                  teams.final[i].pt.name +
                   "</a></h4><h5 class='text14'>" +
-                  teams.final[0].skills[0].skill +
-                  "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+                  teams.final[i].skills[0].skill +
+                  "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div><p id='participant-ids' style='display:none;'>" +
+                  teams.final[i].pt._id +
+                  "</p></div></div>";
               }
-              if (teams.final[0].skills.length == 2) {
-                document.querySelector(".persons").innerHTML = "";
+              if (teams.final[i].skills.length == 2) {
                 document.querySelector(".persons").innerHTML +=
-                  "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
-                  teams.final[0].pt.photo +
-                  "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html?" +
-                  team_id +
-                  "'>" +
-                  teams.final[0].pt.name +
+                  "<div class='card2' id='goods'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+                  teams.final[i].pt.photo +
+                  "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='checks()'>"+
+                  teams.final[i].pt.name +
                   "</a></h4><h5 class='text14'>" +
-                  teams.final[0].skills[0].skill +
+                  teams.final[i].skills[0].skill +
                   "</h5>&nbsp;&nbsp;<h5 class='text14'>" +
-                  teams.final[0].skills[1].skill +
-                  "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+                  teams.final[i].skills[1].skill +
+                  "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div><p id='participant-ids' style='display:none;'>" +
+                  teams.final[i].pt._id +
+                  "</p></div></div>";
               }
-              if (teams.final[0].skills.length == 3) {
-                document.querySelector(".persons").innerHTML = "";
+              if (teams.final[i].skills.length == 3) {
                 document.querySelector(".persons").innerHTML +=
-                  "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
-                  teams.final[0].pt.photo +
-                  "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html?" +
-                  team_id +
-                  "'>" +
-                  teams.final[0].pt.name +
+                  "<div class='card2' id='goods'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+                  teams.final[i].pt.photo +
+                  "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='checks()'>"+
+                  teams.final[i].pt.name +
                   "</a></h4><h5 class='text14'>" +
-                  teams.final[0].skills[0].skill +
+                  teams.final[i].skills[0].skill +
                   "</h5>&nbsp;&nbsp;<h5 class='text14'>" +
-                  teams.final[0].skills[1].skill +
+                  teams.final[i].skills[1].skill +
                   "</h5>&nbsp;&nbsp;<h5 class='text14'>" +
-                  teams.final[0].skills[2].skill +
-                  "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+                  teams.final[i].skills[2].skill +
+                  "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div><p id='participant-ids' style='display:none;'>" +
+                  teams.final[i].pt._id +
+                  "</p></div></div>";
               }
-              if (teams.final[0].skills.length == 4) {
-                document.querySelector(".persons").innerHTML = "";
+              if (teams.final[i].skills.length == 4) {
                 document.querySelector(".persons").innerHTML +=
-                  "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
-                  teams.final[0].pt.photo +
-                  "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html?" +
-                  team_id +
-                  "'>" +
-                  teams.final[0].pt.name +
+                  "<div class='card2' id='goods'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+                  teams.final[i].pt.photo +
+                  "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='checks()'>"+
+                  teams.final[i].pt.name +
                   "</a></h4><h5 class='text14'>" +
-                  teams.final[0].skills[0].skill +
+                  teams.final[i].skills[0].skill +
                   "</h5>&nbsp;&nbsp;<h5 class='text14'>" +
-                  teams.final[0].skills[1].skill +
+                  teams.final[i].skills[1].skill +
                   "</h5>&nbsp;&nbsp;<h5 class='text14'>" +
-                  teams.final[0].skills[2].skill +
+                  teams.final[i].skills[2].skill +
                   "</h5>&nbsp;&nbsp;<h5 class='text14'>" +
-                  teams.final[0].skills[3].skill +
-                  "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+                  teams.final[i].skills[3].skill +
+                  "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div><p id='participant-ids' style='display:none;'>" +
+                  teams.final[i].pt._id +
+                  "</p></div></div>";
               }
-              if (teams.final[0].skills.length == 5) {
-                document.querySelector(".persons").innerHTML = "";
+              if (teams.final[i].skills.length == 5) {
                 document.querySelector(".persons").innerHTML +=
-                  "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
-                  teams.final[0].pt.photo +
-                  "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html?" +
-                  team_id +
-                  "'>" +
-                  teams.final[0].pt.name +
+                  "<div class='card2' id='goods'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+                  teams.final[i].pt.photo +
+                  "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='checks()'>"+
+                  teams.final[i].pt.name +
                   "</a></h4><h5 class='text14'>" +
-                  teams.final[0].skills[0].skill +
+                  teams.final[i].skills[0].skill +
                   "</h5>&nbsp;&nbsp;<h5 class='text14'>" +
-                  teams.final[0].skills[1].skill +
+                  teams.final[i].skills[1].skill +
                   "</h5>&nbsp;&nbsp;<h5 class='text14'>" +
-                  teams.final[0].skills[2].skill +
+                  teams.final[i].skills[2].skill +
                   "</h5>&nbsp;&nbsp;<h5 class='text14'>" +
-                  teams.final[0].skills[3].skill +
+                  teams.final[i].skills[3].skill +
                   "</h5>&nbsp;&nbsp;<h5 class='text14'>" +
-                  teams.final[0].skills[4].skill +
-                  "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+                  teams.final[i].skills[4].skill +
+                  "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div><p id='participant-ids' style='display:none;'>" +
+                  teams.final[i].pt._id +
+                  "</p></div></div>";
               }
-              if (teams.final[0].skills.length == 6) {
-                document.querySelector(".persons").innerHTML = "";
+              if (teams.final[i].skills.length == 6) {
                 document.querySelector(".persons").innerHTML +=
-                  "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
-                  teams.final[0].pt.photo +
-                  "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html?" +
-                  team_id +
-                  "'>" +
-                  teams.final[0].pt.name +
+                  "<div class='card2' id='goods'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+                  teams.final[i].pt.photo +
+                  "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='checks()'>"+
+                  teams.final[i].pt.name +
                   "</a></h4><h5 class='text14'>" +
-                  teams.final[0].skills[0].skill +
+                  teams.final[i].skills[0].skill +
                   "</h5>&nbsp;&nbsp;<h5 class='text14'>" +
-                  teams.final[0].skills[1].skill +
+                  teams.final[i].skills[1].skill +
                   "</h5>&nbsp;&nbsp;<h5 class='text14'>" +
-                  teams.final[0].skills[2].skill +
+                  teams.final[i].skills[2].skill +
                   "</h5>&nbsp;&nbsp;<h5 class='text14'>" +
-                  teams.final[0].skills[3].skill +
+                  teams.final[i].skills[3].skill +
                   "</h5>&nbsp;&nbsp;<h5 class='text14'>" +
-                  teams.final[0].skills[4].skill +
+                  teams.final[i].skills[4].skill +
                   "</h5>&nbsp;&nbsp;<h5 class='text14'>" +
-                  teams.final[0].skills[5].skill +
-                  "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+                  teams.final[i].skills[5].skill +
+                  "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div><p id='participant-ids' style='display:none;'>" +
+                  teams.final[i].pt._id +
+                  "</p></div></div>";
               }
-              if (teams.final[0].skills.length == 7) {
-                document.querySelector(".persons").innerHTML = "";
+              if (teams.final[i].skills.length == 7) {
                 document.querySelector(".persons").innerHTML +=
-                  "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
-                  teams.final[0].pt.photo +
-                  "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html?" +
-                  team_id +
-                  "'>" +
-                  teams.final[0].pt.name +
+                  "<div class='card2' id='goods'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+                  teams.final[i].pt.photo +
+                  "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='checks()'>"+
+                  teams.final[i].pt.name +
                   "</a></h4><h5 class='text14'>" +
-                  teams.final[0].skills[0].skill +
+                  teams.final[i].skills[0].skill +
                   "</h5>&nbsp;&nbsp;<h5 class='text14'>" +
-                  teams.final[0].skills[1].skill +
+                  teams.final[i].skills[1].skill +
                   "</h5>&nbsp;&nbsp;<h5 class='text14'>" +
-                  teams.final[0].skills[2].skill +
+                  teams.final[i].skills[2].skill +
                   "</h5>&nbsp;&nbsp;<h5 class='text14'>" +
-                  teams.final[0].skills[3].skill +
+                  teams.final[i].skills[3].skill +
                   "</h5>&nbsp;&nbsp;<h5 class='text14'>" +
-                  teams.final[0].skills[4].skill +
+                  teams.final[i].skills[4].skill +
                   "</h5>&nbsp;&nbsp;<h5 class='text14'>" +
-                  teams.final[0].skills[5].skill +
+                  teams.final[i].skills[5].skill +
                   "</h5>&nbsp;&nbsp;<h5 class='text14'>" +
-                  teams.final[0].skills[6].skill +
-                  "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+                  teams.final[i].skills[6].skill +
+                  "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div><p id='participant-ids' style='display:none;'>" +
+                  teams.final[i].pt._id +
+                  "</p></div></div>";
               }
-              if (teams.final[0].skills.length == 8) {
-                document.querySelector(".persons").innerHTML = "";
+              if (teams.final[i].skills.length == 8) {
                 document.querySelector(".persons").innerHTML +=
-                  "<div class='card2'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
-                  teams.final[0].pt.photo +
-                  "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a href='./MyProfile_otherView.html?" +
-                  team_id +
-                  "'>" +
-                  teams.final[0].pt.name +
+                  "<div class='card2' id='goods'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+                  teams.final[i].pt.photo +
+                  "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='checks()'>"+
+                  teams.final[i].pt.name +
                   "</a></h4><h5 class='text14'>" +
-                  teams.final[0].skills[0].skill +
+                  teams.final[i].skills[0].skill +
                   "</h5>&nbsp;&nbsp;<h5 class='text14'>" +
-                  teams.final[0].skills[1].skill +
+                  teams.final[i].skills[1].skill +
                   "</h5>&nbsp;&nbsp;<h5 class='text14'>" +
-                  teams.final[0].skills[2].skill +
+                  teams.final[i].skills[2].skill +
                   "</h5>&nbsp;&nbsp;<h5 class='text14'>" +
-                  teams.final[0].skills[3].skill +
+                  teams.final[i].skills[3].skill +
                   "</h5>&nbsp;&nbsp;<h5 class='text14'>" +
-                  teams.final[0].skills[4].skill +
+                  teams.final[i].skills[4].skill +
                   "</h5>&nbsp;&nbsp;<h5 class='text14'>" +
-                  teams.final[0].skills[5].skill +
+                  teams.final[i].skills[5].skill +
                   "</h5>&nbsp;&nbsp;<h5 class='text14'>" +
-                  teams.final[0].skills[6].skill +
+                  teams.final[i].skills[6].skill +
                   "</h5>&nbsp;&nbsp;<h5 class='text14'>" +
-                  teams.final[0].skills[7].skill +
-                  "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div></div></div>";
+                  teams.final[i].skills[7].skill +
+                  "</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div><p id='participant-ids' style='display:none;'>" +
+                  teams.final[i].pt._id +
+                  "</p></div></div>";
               }
+            }
             })
             .catch((e) => {
+              console.log(e);
               if (e.response.status == 404) {
                 swal("WARNING!!", "No Participant Found", "warning");
               }
             });
       });
+    }
+  }
+
+  function checks() {
+    var team_id = window.location.search.split("?")[1];
+    const cards = document.querySelectorAll("#goods");
+    cards.forEach((card) => card.addEventListener("click", look));
+    function look() {
+      var participant_id = this.querySelector("#participant-ids").textContent;
+      window.location.assign("./MyProfile_otherView.html?" + team_id);
+      var part123 = participant_id;
+      localStorage.setItem("participant", part123);
+    }
   }
 
 function invite() {
   // id.innerHTML = "Ooops!";
+  var nk = 0;
+  const cards = document.querySelectorAll("#goods");
+  cards.forEach((card) => card.addEventListener("click", look));
+  function look() {
+    nk = nk + 1;
+    if (nk == 1) {
+      var participant_id = this.querySelector("#participant-ids").textContent;
   firebase
     .auth()
     .currentUser.getIdToken()
     .then((id) => {
       auth = id;
-      var participant_id = teams.final[0].pt._id;
       axios
         .post(
           `${url}/invites/invite/${
@@ -1610,6 +1647,8 @@ function invite() {
           }
         });
     });
+  }
+}
 }
 
 function inviteme() {

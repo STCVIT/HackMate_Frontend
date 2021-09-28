@@ -21,10 +21,9 @@ firebase.auth().onAuthStateChanged((user) => {
       })
         .then((response) => {
           requests = response.data;
-          
+
           document.querySelector(".reqinv").innerHTML = "";
           requests.received.forEach((element) => {
-            
             document.querySelector(".reqinv").innerHTML +=
               "<div class='row reqinvrow'><div class='col-12'>    <div class='row'>        <div class='col-12'>            <nbw>" +
               element.participant.name +
@@ -37,7 +36,6 @@ firebase.auth().onAuthStateChanged((user) => {
               " name='reject' type='submit' value='REJECT' onclick='rejectreq(event.target.id)'            style='color: #E7EFEF; opacity: 1; border: none; width: 60px;'>    </div></div></div>";
           });
           requests.sent.forEach((element) => {
-            
             document.querySelector(".reqinv").innerHTML +=
               "<div class='row reqinvrow'><div class='col-12'>    <div class='row'>        <div class='col-12'>            <nbw>You</nbw> have requested to become a part of <nbw>" +
               element.team.name +
@@ -126,10 +124,9 @@ function getRequests() {
       })
         .then((response) => {
           requests = response.data;
-          
+
           document.querySelector(".reqinv").innerHTML = "";
           requests.received.forEach((element) => {
-            
             document.querySelector(".reqinv").innerHTML +=
               "<div class='row reqinvrow'><div class='col-12'>    <div class='row'>        <div class='col-12'>            <nbw>" +
               element.participant.name +
@@ -142,7 +139,6 @@ function getRequests() {
               " name='reject' type='submit' value='REJECT' onclick='rejectreq(event.target.id)'            style='color: #E7EFEF; opacity: 1; border: none; width: 60px;'>    </div></div></div>";
           });
           requests.sent.forEach((element) => {
-            
             document.querySelector(".reqinv").innerHTML +=
               "<div class='row reqinvrow'><div class='col-12'>    <div class='row'>        <div class='col-12'>            <nbw>You</nbw> have requested to become a part of <nbw>" +
               element.team.name +
@@ -176,10 +172,9 @@ function getInvites() {
       })
         .then((response) => {
           requests = response.data;
-          
+
           document.querySelector(".reqinv").innerHTML = "";
           requests.received.forEach((element) => {
-            
             document.querySelector(".reqinv").innerHTML +=
               "<div class='row reqinvrow'><div class='col-12'>    <div class='row'>        <div class='col-12'>            <nbw>" +
               element.leader.name +
@@ -192,7 +187,6 @@ function getInvites() {
               " name='reject' type='submit' value='REJECT' onclick='rejectinv(event.target.id)'            style='color: #E7EFEF; opacity: 1; border: none; width: 60px;'>    </div></div></div>";
           });
           requests.sent.forEach((element) => {
-            
             document.querySelector(".reqinv").innerHTML +=
               "<div class='row reqinvrow'><div class='col-12'>    <div class='row'>        <div class='col-12'>            <nbw>You</nbw> have invited <nbw>" +
               element.participant.name +
@@ -263,23 +257,32 @@ document.querySelector("#invites").addEventListener("click", () => {
 });
 
 async function acceptreq(id) {
-  await firebase
-    .auth()
-    .currentUser.getIdToken()
-    .then((id) => {
-      auth = id;
-    });
-  var response = await axios.post(
-    `${url}/requests/requestStatus/accepted/${id}`,
-    {},
-    {
-      headers: {
-        Authorization: "Bearer " + auth,
-      },
+  try {
+    await firebase
+      .auth()
+      .currentUser.getIdToken()
+      .then((id) => {
+        auth = id;
+      });
+    var response = await axios.post(
+      `${url}/requests/requestStatus/accepted/${id}`,
+      {},
+      {
+        headers: {
+          Authorization: "Bearer " + auth,
+        },
+      }
+    );
+    var accepted = await response.data;
+  } catch (error) {
+    if (error.response.status == 409) {
+      swal(
+        "Warning!!",
+        "That participant is already going to the same hack, this request cannot be accepted.",
+        "warning"
+      )
     }
-  );
-
-  var accepted = await response.data;
+  }
 
   document.querySelector(".reqinv").innerHTML = "";
 
@@ -325,23 +328,32 @@ async function deletereq(id) {
   getRequests();
 }
 async function acceptinv(id) {
-  await firebase
-    .auth()
-    .currentUser.getIdToken()
-    .then((id) => {
-      auth = id;
-    });
-  var response = await axios.post(
-    `${url}/invites/inviteStatus/accepted/${id}`,
-    {},
-    {
-      headers: {
-        Authorization: "Bearer " + auth,
-      },
+  try {
+    await firebase
+      .auth()
+      .currentUser.getIdToken()
+      .then((id) => {
+        auth = id;
+      });
+    var response = await axios.post(
+      `${url}/invites/inviteStatus/accepted/${id}`,
+      {},
+      {
+        headers: {
+          Authorization: "Bearer " + auth,
+        },
+      }
+    );
+    var accepted = await response.data;
+  } catch (error) {
+    if (error.response.status == 409) {
+      swal(
+        "Warning!!",
+        "You are already going to the same hack. This invite cannot be accepted.",
+        "warning"
+      );
     }
-  );
-
-  var accepted = await response.data;
+  }
   document.querySelector(".reqinv").innerHTML = "";
   getInvites();
 }

@@ -63,6 +63,7 @@
 </nav>
 
 <script>
+var login_count = 0
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
             user.getIdToken().then(function (idToken) {
@@ -108,10 +109,12 @@
             })
         } else {
             // User is signed out
-            if(count != 1)
+            if(login_count != 1)
             {
-                alert("Please sign in!")
-                window.location = "./participantlognsignup.html"
+
+                swal("Warning!!", "Please Sign In", "warning").then(() => {
+                    window.location = "./participantlognsignup.html"
+                });
             }
         }
     });
@@ -182,7 +185,7 @@
         })
     }
     function logout() {
-        count = 1
+        login_count = 1
         firebase.auth().signOut().then(() => {
             window.location = "./participantlognsignup.html"
   // Sign-out successful.
@@ -227,26 +230,38 @@
         getInvites();
     })
 
-    async function acceptreq(id) {
-        
-        await firebase.auth().currentUser.getIdToken().then((id) => {
-            auth = id;
-        })
-        var response = await axios.post(
-            `${url}/requests/requestStatus/accepted/${id}`, {},
-            {
-                headers: {
-                    Authorization: "Bearer " + auth,
-                },
-            }
-        )
-
-        var accepted = await response.data;
-
-        document.querySelector(".notification2").innerHTML = "";
-
-        getRequests()
+async function acceptreq(id) {
+  try {
+    await firebase
+      .auth()
+      .currentUser.getIdToken()
+      .then((id) => {
+        auth = id;
+      });
+    var response = await axios.post(
+      `${url}/requests/requestStatus/accepted/${id}`,
+      {},
+      {
+        headers: {
+          Authorization: "Bearer " + auth,
+        },
+      }
+    );
+    var accepted = await response.data;
+  } catch (error) {
+    if (error.response.status == 409) {
+      swal(
+        "Warning!!",
+        "That participant is already going to the same hack, this request cannot be accepted.",
+        "warning"
+      )
     }
+  }
+
+document.querySelector(".notification2").innerHTML = "";
+
+  getRequests();
+}
     
     async function rejectreq(id) {
         
@@ -284,24 +299,30 @@
         document.querySelector(".notification2").innerHTML = "";
         getRequests()
     }
-    async function acceptinv(id) {
-        
-                await firebase.auth().currentUser.getIdToken().then((id) => {
-            auth = id;
-        })
-        var response = await axios.post(
-            `${url}/invites/inviteStatus/accepted/${id}`, {},
-            {
-                headers: {
-                    Authorization: "Bearer " + auth,
-                },
-            }
-        )
-
-        var accepted = await response.data;
-        document.querySelector(".notification2").innerHTML = "";
-        getInvites()
+async function acceptinv(id) {
+  try{await firebase
+    .auth()
+    .currentUser.getIdToken()
+    .then((id) => {
+      auth = id;
+    });
+  var response = await axios.post(
+    `${url}/invites/inviteStatus/accepted/${id}`,
+    {},
+    {
+      headers: {
+        Authorization: "Bearer " + auth,
+      },
     }
+  );
+  var accepted = await response.data;}
+  catch(error)
+  {
+    if(error.response.status == 409){swal("Warning!!", "You are already going to the same hack. This invite cannot be accepted.", "warning")}
+  }
+document.querySelector(".notification2").innerHTML = "";
+  getInvites();
+}
     async function rejectinv(id) {
         
                 await firebase.auth().currentUser.getIdToken().then((id) => {

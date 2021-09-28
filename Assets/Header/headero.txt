@@ -34,7 +34,7 @@
 </nav>
 
 <script>
-  var count = 0
+  var login_count = 0
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       user.getIdToken().then(function(idToken){
@@ -51,17 +51,18 @@
       })
     } else {
       // User is signed out
-        if(count != 1)
+        if(login_count != 1)
           {
-            alert("Please sign in!")
-            window.location = "./orglognsignup.html"
+                swal("Warning!!", "Please Sign In", "warning").then(() => {
+                    window.location = "./participantlognsignup.html"
+                });
 
           }
     }
   });
 
     function logout() {
-        count = 1
+        login_count = 1
         firebase.auth().signOut().then(() => {
           window.location = "./orglognsignup.html"
   // Sign-out successful.

@@ -6,10 +6,13 @@ html {
 sym{
   color: rgba(255, 0, 0, 0.438);
 }
-body{
-    background-color: #23303d;
-    color: #e7efef;
-  }
+body {
+  background-color: #23303d;
+}
+*{
+  font-family: "Fira Code", monospace;
+  color: #e7efef;
+}
 /*Mainsection CSS*/
 .form-control{
     max-width: 478px;

@@ -164,7 +164,7 @@ function add(event) {
                 "Your team has been successfully added in the Hack!!",
                 "success"
               ).then(() => {
-                window.location.href("./teamProfLeaderView.html");
+                window.location.href = "./teamProfLeaderView.html";
               });
             })
             .catch((error) => {

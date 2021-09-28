@@ -125,6 +125,9 @@ nb1 {
   box-shadow: 3px 3px 3px 1px rgba(24, 33, 42, 0.83);
   border-radius: 4px;
 }
+.leaves{
+  cursor: pointer;
+}
 
 .innertxt {
   padding-left: 43.09px;

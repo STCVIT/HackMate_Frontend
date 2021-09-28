@@ -446,6 +446,15 @@ input#image_uploads {
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
   font-family: "Fira Code", monospace;
 }
+#square_inactive:hover{
+  padding:1vh 4.5vh;
+  border: 2.53333px solid  #226045;
+  background: #226045;
+  color: #e7efef;
+  filter: drop-shadow(2px 2px 14px rgba(0, 0, 0, 0.18));
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  font-family: "Fira Code", monospace;
+}
 #square_active{
   padding:1vh 4.5vh;
   border: 2.53333px solid  #226045;

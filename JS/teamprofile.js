@@ -21,7 +21,6 @@ firebase.auth().onAuthStateChanged((user) => {
       })
         .then((response) => {
           team = response.data;
-          console.log(team);
           team_name.innerHTML = "Team " + team.team.name;
           team_code.innerHTML = team.team.team_code;
 
@@ -40,7 +39,7 @@ firebase.auth().onAuthStateChanged((user) => {
                 team.pt_skills[i].participant.name +
                 "<m>(You)</m><br><t>" +
                 team.pt_skills[i].skills[0].skill +
-                "</t></p></div></div><l id='leave' onclick='leave()'>LEAVE</l></div>";
+                "</t></p></div></div><l id='leave' class='leaves' onclick='leave()'>LEAVE</l></div>";
             } 
             else if(team.pt_skills[i].participant._id === team.team.admin_id){
               yourHTML += "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'>";

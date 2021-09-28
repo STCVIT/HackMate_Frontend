@@ -1526,7 +1526,6 @@ document.querySelector(".creates").innerHTML =
       window.addEventListener("scroll", someFunction);
       function someFunction() {
         if (window.scrollY + window.innerHeight >= 1153) {
-          console.log(window.scrollY + window.innerHeight);
           displayTeams();
           window.removeEventListener("scroll", someFunction);
         }
@@ -1551,7 +1550,6 @@ document.querySelector(".creates").innerHTML =
             })
               .then((response) => {
                 teams = response.data;
-                console.log(teams);
   
                 // var team_id = window.location.search.split("?")[1];
                 // var part123 = teams.final[0].pt._id;
@@ -1773,7 +1771,7 @@ document.querySelector(".creates").innerHTML =
             .catch((e) => {
               if (e.response.status == 404) {
                 swal("WARNING!!", "No Participant Found", "warning");
-              } else if (e.response.status == 400) {
+              } else if (e.response.status == 409) {
                 swal("WARNING!!", "Invite has already been sent", "warning");
               }
             });
@@ -1819,7 +1817,7 @@ function inviteme() {
               );
             })
             .catch((e) => {
-              if (e.response.status == 400) {
+              if (e.response.status == 409) {
                 swal("WARNING!!", "Invite has already been sent", "warning");
               }
             });

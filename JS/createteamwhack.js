@@ -2046,7 +2046,7 @@ document
           .catch((e) => {
             if (e.response.status == 404) {
               swal("WARNING!!", "No Participant Found", "warning");
-            } else if (e.response.status == 400) {
+            } else if (e.response.status == 409) {
               swal("WARNING!!", "Invite has already been sent", "warning");
             }
           });
@@ -2090,7 +2090,7 @@ function inviteme() {
               );
             })
             .catch((e) => {
-              if (e.response.status == 400) {
+              if (e.response.status == 409) {
                 swal("WARNING!!", "Invite has already been sent", "warning");
               }
             });

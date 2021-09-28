@@ -7,6 +7,8 @@ const design = document.querySelector(".text9");
 const block = document.querySelector(".text11");
 const cyber = document.querySelector(".text12");
 const all = document.querySelector(".text5");
+const loadingDiv = document.getElementById("loading");
+loadingDiv.style.visibility = "visible";
 
 function displayTeams() {
   firebase.auth().onAuthStateChanged((user) => {
@@ -71,7 +73,7 @@ function displayTeams() {
       },
     });
     hacks = await res.data;
-  
+    loadingDiv.style.visibility = "hidden";
     for(let i = 0; i<hacks.final.length; i++){
     if(hacks.final[i].skills.length == 1){
       document.querySelector(".persons").innerHTML +=
@@ -191,6 +193,7 @@ app.addEventListener("click", function () {
       document.getElementById("inactive7").className = "button2";
       document.getElementById("inactive8").className = "button2";
         n = n + 1;
+        loadingDiv.style.visibility = "visible";
         var occurence = "appdev";
         var page = 1;
         displayTeams();
@@ -268,6 +271,7 @@ app.addEventListener("click", function () {
                 }
               );
               hacks = await res.data;
+              loadingDiv.style.visibility = "hidden";
 
               // var part123 = hacks.final[0].pt._id;
               // localStorage.setItem("participant", part123);
@@ -307,6 +311,7 @@ fweb.addEventListener("click", function () {
       document.getElementById("inactive7").className = "button2";
       document.getElementById("inactive8").className = "button2";
         n = n + 1;
+        loadingDiv.style.visibility = "visible";
         var occurence = "frontend";
         var page = 1;
         displayTeams();
@@ -390,6 +395,7 @@ fweb.addEventListener("click", function () {
                 }
               );
               hacks = await res.data;
+              loadingDiv.style.visibility = "hidden";
 
               // var part123 = hacks.final[0].pt._id;
               // localStorage.setItem("participant", part123);
@@ -440,6 +446,7 @@ bweb.addEventListener("click", function () {
       document.getElementById("inactive7").className = "button2";
       document.getElementById("inactive8").className = "button2";
         n = n + 1;
+        loadingDiv.style.visibility = "visible";
         var occurence = "backend";
         var page = 1;
         displayTeams();
@@ -517,6 +524,7 @@ bweb.addEventListener("click", function () {
                 }
               );
               hacks = await res.data;
+              loadingDiv.style.visibility = "hidden";
 
               // var part123 = hacks.final[0].pt._id;
               // localStorage.setItem("participant", part123);
@@ -556,6 +564,7 @@ ml.addEventListener("click", function () {
       document.getElementById("inactive7").className = "button2";
       document.getElementById("inactive8").className = "button2";
         n = n + 1;
+        loadingDiv.style.visibility = "visible";
         var occurence = "ml";
         var page = 1;
         displayTeams();
@@ -633,6 +642,7 @@ ml.addEventListener("click", function () {
                 }
               );
               hacks = await res.data;
+              loadingDiv.style.visibility = "hidden";
 
               // var part123 = hacks.final[0].pt._id;
               // localStorage.setItem("participant", part123);
@@ -672,6 +682,7 @@ design.addEventListener("click", function () {
       document.getElementById("inactive7").className = "button2";
       document.getElementById("inactive8").className = "button2";
         n = n + 1;
+        loadingDiv.style.visibility = "visible";
         var occurence = "ui/ux";
         var page = 1;
         displayTeams();
@@ -749,6 +760,7 @@ design.addEventListener("click", function () {
                 }
               );
               hacks = await res.data;
+              loadingDiv.style.visibility = "hidden";
 
               // var part123 = hacks.final[0].pt._id;
               // localStorage.setItem("participant", part123);
@@ -788,6 +800,7 @@ mgmt.addEventListener("click", function () {
       document.getElementById("inactive7").className = "button2";
       document.getElementById("inactive8").className = "button2";
         n = n + 1;
+        loadingDiv.style.visibility = "visible";
         var occurence = "management";
         var page = 1;
         displayTeams();
@@ -865,6 +878,7 @@ mgmt.addEventListener("click", function () {
                 }
               );
               hacks = await res.data;
+              loadingDiv.style.visibility = "hidden";
 
               // var part123 = hacks.final[0].pt._id;
               // localStorage.setItem("participant", part123);
@@ -904,6 +918,7 @@ block.addEventListener("click", function () {
       document.getElementById("inactive7").className = "button3";
       document.getElementById("inactive8").className = "button2";
         n = n + 1;
+        loadingDiv.style.visibility = "visible";
         var occurence = "blockchain";
         var page = 1;
         displayTeams();
@@ -981,6 +996,7 @@ block.addEventListener("click", function () {
                 }
               );
               hacks = await res.data;
+              loadingDiv.style.visibility = "hidden";
 
               // var part123 = hacks.final[0].pt._id;
               // localStorage.setItem("participant", part123);
@@ -1020,6 +1036,7 @@ cyber.addEventListener("click", function () {
       document.getElementById("inactive7").className = "button2";
       document.getElementById("inactive8").className = "button3";
         n = n + 1;
+        loadingDiv.style.visibility = "visible";
         var occurence = "cybersecurity";
         var page = 1;
         displayTeams();
@@ -1097,6 +1114,7 @@ cyber.addEventListener("click", function () {
                 }
               );
               hacks = await res.data;
+              loadingDiv.style.visibility = "hidden";
 
               // var part123 = hacks.final[0].pt._id;
               // localStorage.setItem("participant", part123);
@@ -1136,7 +1154,7 @@ all.addEventListener("click", function () {
   document.getElementById("inactive7").className = "button2";
   document.getElementById("inactive8").className = "button2";
 
-  
+  loadingDiv.style.visibility = "visible";
   var page = 1;
   var hack_id = window.location.search.split("?")[1];
   displayTeams();
@@ -1197,6 +1215,7 @@ all.addEventListener("click", function () {
       },
     });
     hacks = await res.data;
+    loadingDiv.style.visibility = "hidden";
   
     for(let i = 0; i<hacks.final.length; i++){
       if(hacks.final[i].skills.length == 1){
@@ -1428,9 +1447,12 @@ function submit() {
     });
 }
 
+document.querySelector(".creates").innerHTML =
+  "<input type='submit' class='button' value='Search' onclick='search()'>";
+
+function search(){
 document
   .getElementById("participant_name")
-  .addEventListener("keyup", function (event) {
     firebase
       .auth()
       .currentUser.getIdToken()
@@ -1439,7 +1461,6 @@ document
         event.preventDefault();
         var hack_id = window.location.search.split("?")[1];
         var name = document.getElementById("participant_name").value;
-        if (event.keyCode === 13) {
           axios(`${url}/participant/get/userName/null?name=${name}&page=1`, {
             headers: {
               Authorization: "Bearer " + auth,
@@ -1617,9 +1638,8 @@ document
                 swal("WARNING!!", "No Participant Found", "warning");
               }
             });
-        }
       });
-  });
+}
 
 function invite() {
   // id.innerHTML = "Ooops!";

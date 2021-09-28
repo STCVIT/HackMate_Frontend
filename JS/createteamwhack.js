@@ -7,6 +7,8 @@ const design = document.querySelector(".text9");
 const block = document.querySelector(".text11");
 const cyber = document.querySelector(".text12");
 const all = document.querySelector(".text5");
+const loadingDiv = document.getElementById("loading");
+loadingDiv.style.visibility = "visible";
 
 function displayTeams() {
   firebase.auth().onAuthStateChanged((user) => {
@@ -72,6 +74,7 @@ function displayTeams() {
       },
     });
     hacks = await res.data;
+    loadingDiv.style.visibility = "hidden";
   
     for(let i = 0; i<hacks.final.length; i++){
     if(hacks.final[i].skills.length == 1){
@@ -192,6 +195,7 @@ app.addEventListener("click", function () {
       document.getElementById("inactive7").className = "button2";
       document.getElementById("inactive8").className = "button2";
         n = n + 1;
+        loadingDiv.style.visibility = "visible";
         var occurence = "appdev";
         var hack_id = window.location.search.split("?")[1];
         var page = 1;
@@ -270,12 +274,15 @@ app.addEventListener("click", function () {
                 }
               );
               hacks = await res.data;
+              loadingDiv.style.visibility = "hidden";
 
               // var part123 = hacks.final[0].pt._id;
               // localStorage.setItem("participant", part123);
               for (let i = 0; i < hacks.final.length; i++) {
                 document.querySelector(".persons").innerHTML +=
-                  "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" +
+                  "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+                  hacks.final[i].pt.photo +
+                  "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" +
                   hacks.final[i].pt.name +
                   "</a></h4><h5 class='text14'>App Dev</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
                   hacks.final[i].pt._id +
@@ -311,6 +318,7 @@ fweb.addEventListener("click", function () {
       document.getElementById("inactive7").className = "button2";
       document.getElementById("inactive8").className = "button2";
         n = n + 1;
+        loadingDiv.style.visibility = "visible";
         var occurence = "frontend";
         var hack_id = window.location.search.split("?")[1];
         var page = 1;
@@ -395,12 +403,15 @@ fweb.addEventListener("click", function () {
                 }
               );
               hacks = await res.data;
+              loadingDiv.style.visibility = "hidden";
 
               // var part123 = hacks.final[0].pt._id;
               // localStorage.setItem("participant", part123);
               for (let i = 0; i < hacks.final.length; i++) {
                 document.querySelector(".persons").innerHTML +=
-                  "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" +
+                  "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+                  hacks.final[i].pt.photo +
+                  "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" +
                   hacks.final[i].pt.name +
                   "</a></h4><h5 class='text14'>Frontend</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
                   hacks.final[i].pt._id +
@@ -452,6 +463,7 @@ bweb.addEventListener("click", function () {
       document.getElementById("inactive7").className = "button2";
       document.getElementById("inactive8").className = "button2";
         n = n + 1;
+        loadingDiv.style.visibility = "visible";
         var occurence = "backend";
         var hack_id = window.location.search.split("?")[1];
         var page = 1;
@@ -530,12 +542,15 @@ bweb.addEventListener("click", function () {
                 }
               );
               hacks = await res.data;
+              loadingDiv.style.visibility = "hidden";
 
               // var part123 = hacks.final[0].pt._id;
               // localStorage.setItem("participant", part123);
               for (let i = 0; i < hacks.final.length; i++) {
                 document.querySelector(".persons").innerHTML +=
-                  "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" +
+                  "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+                  hacks.final[i].pt.photo +
+                  "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" +
                   hacks.final[i].pt.name +
                   "</a></h4><h5 class='text14'>Backend</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
                   hacks.final[i].pt._id +
@@ -571,6 +586,7 @@ ml.addEventListener("click", function () {
         document.getElementById("inactive7").className = "button2";
         document.getElementById("inactive8").className = "button2";
         n = n + 1;
+        loadingDiv.style.visibility = "visible";
         var occurence = "ml";
         var hack_id = window.location.search.split("?")[1];
         var page = 1;
@@ -649,12 +665,15 @@ ml.addEventListener("click", function () {
                 }
               );
               hacks = await res.data;
+              loadingDiv.style.visibility = "hidden";
 
               // var part123 = hacks.final[0].pt._id;
               // localStorage.setItem("participant", part123);
               for (let i = 0; i < hacks.final.length; i++) {
                 document.querySelector(".persons").innerHTML +=
-                  "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" +
+                  "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+                  hacks.final[i].pt.photo +
+                  "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" +
                   hacks.final[i].pt.name +
                   "</a></h4><h5 class='text14'>Machine Learning</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
                   hacks.final[i].pt._id +
@@ -690,6 +709,7 @@ design.addEventListener("click", function () {
       document.getElementById("inactive7").className = "button2";
       document.getElementById("inactive8").className = "button2";
         n = n + 1;
+        loadingDiv.style.visibility = "visible";
         var occurence = "ui/ux";
         var hack_id = window.location.search.split("?")[1];
         var page = 1;
@@ -768,12 +788,15 @@ design.addEventListener("click", function () {
                 }
               );
               hacks = await res.data;
+              loadingDiv.style.visibility = "hidden";
 
               // var part123 = hacks.final[0].pt._id;
               // localStorage.setItem("participant", part123);
               for (let i = 0; i < hacks.final.length; i++) {
                 document.querySelector(".persons").innerHTML +=
-                  "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" +
+                  "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+                  hacks.final[i].pt.photo +
+                  "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" +
                   hacks.final[i].pt.name +
                   "</a></h4><h5 class='text14'>UI/UX</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
                   hacks.final[i].pt._id +
@@ -809,6 +832,7 @@ mgmt.addEventListener("click", function () {
       document.getElementById("inactive7").className = "button2";
       document.getElementById("inactive8").className = "button2";
         n = n + 1;
+        loadingDiv.style.visibility = "visible";
         var occurence = "management";
         var hack_id = window.location.search.split("?")[1];
         var page = 1;
@@ -887,12 +911,15 @@ mgmt.addEventListener("click", function () {
                 }
               );
               hacks = await res.data;
+              loadingDiv.style.visibility = "hidden";
 
               // var part123 = hacks.final[0].pt._id;
               // localStorage.setItem("participant", part123);
               for (let i = 0; i < hacks.final.length; i++) {
                 document.querySelector(".persons").innerHTML +=
-                  "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" +
+                  "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+                  hacks.final[i].pt.photo +
+                  "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" +
                   hacks.final[i].pt.name +
                   "</a></h4><h5 class='text14'>Management</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
                   hacks.final[i].pt._id +
@@ -928,6 +955,7 @@ block.addEventListener("click", function () {
         document.getElementById("inactive7").className = "button3";
         document.getElementById("inactive8").className = "button2";
         n = n + 1;
+        loadingDiv.style.visibility = "visible";
         var occurence = "blockchain";
         var hack_id = window.location.search.split("?")[1];
         var page = 1;
@@ -1006,12 +1034,15 @@ block.addEventListener("click", function () {
                 }
               );
               hacks = await res.data;
+              loadingDiv.style.visibility = "hidden";
 
               // var part123 = hacks.final[0].pt._id;
               // localStorage.setItem("participant", part123);
               for (let i = 0; i < hacks.final.length; i++) {
                 document.querySelector(".persons").innerHTML +=
-                  "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" +
+                  "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+                  hacks.final[i].pt.photo +
+                  "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" +
                   hacks.final[i].pt.name +
                   "</a></h4><h5 class='text14'>Blockchain</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
                   hacks.final[i].pt._id +
@@ -1039,7 +1070,7 @@ cyber.addEventListener("click", function () {
       auth = id;
       document.getElementById("active1").className = "button2";
       document.getElementById("inactive1").className = "button2";
-      document.getElementById("inactive2").className = "button3";
+      document.getElementById("inactive2").className = "button2";
       document.getElementById("inactive3").className = "button2";
       document.getElementById("inactive4").className = "button2";
       document.getElementById("inactive5").className = "button2";
@@ -1047,6 +1078,7 @@ cyber.addEventListener("click", function () {
       document.getElementById("inactive7").className = "button2";
       document.getElementById("inactive8").className = "button3";
         n = n + 1;
+        loadingDiv.style.visibility = "visible";
         var occurence = "cybersecurity";
         var hack_id = window.location.search.split("?")[1];
         var page = 1;
@@ -1125,12 +1157,15 @@ cyber.addEventListener("click", function () {
                 }
               );
               hacks = await res.data;
+              loadingDiv.style.visibility = "hidden";
 
               // var part123 = hacks.final[0].pt._id;
               // localStorage.setItem("participant", part123);
               for (let i = 0; i < hacks.final.length; i++) {
                 document.querySelector(".persons").innerHTML +=
-                  "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='../Assets/Images/dp1.svg' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" +
+                  "<div class='card2' id='good'><div class='card-body-2'><div class='row'><div class='col-lg-2 col-md-2 col-2'><img src='" +
+                  hacks.final[i].pt.photo +
+                  "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" +
                   hacks.final[i].pt.name +
                   "</a></h4><h5 class='text14'>Cyber Security</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
                   hacks.final[i].pt._id +
@@ -1165,7 +1200,7 @@ all.addEventListener("click", function () {
   document.getElementById("inactive6").className = "button2";
   document.getElementById("inactive7").className = "button2";
   document.getElementById("inactive8").className = "button2";
-
+  loadingDiv.style.visibility = "visible";
   
   var page = 1;
   var hack_id = window.location.search.split("?")[1];
@@ -1232,7 +1267,7 @@ all.addEventListener("click", function () {
       },
     });
     hacks = await res.data;
-    console.log(hacks);
+    loadingDiv.style.visibility = "hidden";
   
     for(let i = 0; i<hacks.final.length; i++){
       if(hacks.final[i].skills.length == 1){
@@ -1465,10 +1500,12 @@ function submit() {
     });
 }
 
+document.querySelector(".creates").innerHTML =
+  "<input type='submit' class='button' value='Search' onclick='search()'>";
+
+function search(){
 document
   .getElementById("participant_name")
-  .addEventListener("keyup", function (event) {
-    event.preventDefault();
     firebase
       .auth()
       .currentUser.getIdToken()
@@ -1476,7 +1513,6 @@ document
         auth = id;
         var hack_id = window.location.search.split("?")[1];
         var name = document.getElementById("participant_name").value;
-        if (event.keyCode === 13) {
           axios(
             `${url}/participant/get/userName/${hack_id}?name=${name}&page=1`,
             {
@@ -1643,9 +1679,8 @@ document
                 swal("WARNING!!", "No Participant Found", "warning");
               }
             });
-        }
       });
-  });
+}
 
 function invite() {
   // id.innerHTML = "Ooops!";

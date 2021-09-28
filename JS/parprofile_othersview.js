@@ -98,7 +98,7 @@ function invite() {
           accepted = response.data;
           swal(
             "SUCCESS!!",
-            "Your invite has been submitted successfully",
+            "Your invite has been submitted successfully!!",
             "success"
           );
         })

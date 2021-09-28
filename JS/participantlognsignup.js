@@ -74,7 +74,7 @@ function signup() {
         });
         user.sendEmailVerification().then(function () {
           // console.log("Email has been sent!");
-          // alert("Pls verify your email");
+          // alert("Please verify your email");
           // location.reload();
         });
       })
@@ -263,10 +263,10 @@ function signin() {
         error.message ==
         "There is no user record corresponding to this identifier. The user may have been deleted."
       ) {
-        // swal("WARNING!!", "Pls SignUp before logging in!", "warning");
+        // swal("WARNING!!", "Please SignUp before logging in!", "warning");
         Swal.fire({
           title: "WARNING!!",
-          text: "Pls SignUp before logging in!",
+          text: "Please Sign Up before logging in!",
           icon: "warning",
           showCancelButton: false,
           confirmButtonColor: "#3085d6",

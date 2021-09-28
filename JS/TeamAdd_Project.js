@@ -88,9 +88,9 @@ function submitform() {
               "Project has been created successfully",
               "success"
             ).then((okay) => {
-              // if (okay) {
-              //     window.location.assign("./My_teams.html");
-              // }
+              if (okay) {
+                  window.location.assign("./My_teams.html");
+              }
             });
           })
           .catch((error) => {

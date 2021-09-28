@@ -108,7 +108,7 @@ g {
   border-color: #1ea54c;
 }
 
-.carbon-notification{
+.carbon-notification {
   background-color: transparent;
 }
 nbw {
@@ -118,32 +118,28 @@ nbw {
   letter-spacing: 0.08em;
 }
 
-nbg{
+nbg {
   font-weight: bold;
-font-size: 10px;
-line-height: 14px;
-/* identical to box height */
+  font-size: 10px;
+  line-height: 14px;
+  /* identical to box height */
 
-letter-spacing: 0.12em;
+  letter-spacing: 0.12em;
 
-color: rgba(231, 239, 239, 0.7);
-
-
+  color: rgba(231, 239, 239, 0.7);
 }
-nbgr{
+nbgr {
   font-weight: bold;
-font-size: 10px;
-line-height: 14px;
-/* identical to box height */
+  font-size: 10px;
+  line-height: 14px;
+  /* identical to box height */
 
-letter-spacing: 0.12em;
+  letter-spacing: 0.12em;
 
-color: rgba(231, 239, 239, 0.7);
-
-
+  color: rgba(231, 239, 239, 0.7);
 }
 
-.notification-mobile{
+.notification-mobile {
   display: none;
 }
 @media (min-width: 1060px) {
@@ -209,6 +205,8 @@ color: rgba(231, 239, 239, 0.7);
   letter-spacing: 0.08em;
 
   color: rgba(231, 239, 239, 0.2);
+  max-height: 375px;
+  overflow: auto;
 }
 
 .notification2 * {
@@ -260,10 +258,10 @@ color: rgba(231, 239, 239, 0.7);
     background: #1d2833;
   }
 
-  .notification-lap{
+  .notification-lap {
     display: none;
   }
-  .notification-mobile{
+  .notification-mobile {
     display: initial;
   }
 }

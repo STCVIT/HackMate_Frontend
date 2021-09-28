@@ -63,7 +63,6 @@
 </nav>
 
 <script>
-    var count = 0
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
             user.getIdToken().then(function (idToken) {

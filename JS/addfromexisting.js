@@ -3,6 +3,7 @@ $(document).ready(function () {
   $("#foobottom").load("../Assets/Footer/footer.txt");
 });
 const loadingDiv = document.getElementById("loading");
+loadingDiv.style.visibility = "visible"
 var teams = {};
 var page = 1;
 var participant_id;
@@ -113,6 +114,12 @@ function displayTeams() {
             if(error.response.status == 403)
             {
               swal("Warning!", "You are already going to this hack!", "warning").then(() => {
+                window.location.href = "./hackdetails.html?" + window.location.search.split("?")[1]
+              });
+            }
+            if(error.response.status == 404)
+            {
+              swal("Warning!", "You have no eligible teams to add to this hack!", "warning").then(() => {
                 window.location.href = "./hackdetails.html?" + window.location.search.split("?")[1]
               });
             }

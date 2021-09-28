@@ -134,10 +134,15 @@ function update_account() {
       let git = document.getElementById("git");
       let website = document.getElementById("personal_website");
       let bio = document.getElementById("bio");
-      Name.value = Name.value.toUpperCase().trim();
+      Name.value = toTitleCase(Name.value.trim());
       username.value = username.value.trim();
       year.value = year.value.trim();
-      college.value = college.value.toUpperCase().trim();
+      college.value = college.value.trim();
+      function toTitleCase(str) {
+        return str.replace(/\w\S*/g, function (txt) {
+          return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        });
+      }
       let len = Name.value.length;
       let n = username.value.length;
       linkedin.value = linkedin.value.trim();
@@ -148,7 +153,7 @@ function update_account() {
       website.value = website.value.trim();
       bio.value = bio.value.trim();
       let length = bio.value.length;
-      let reg1 = /^[A-Z][A-Z\s]*$/;
+      let reg1 = /^[a-zA-Z][a-zA-Z\s]*$/;
       let reg2 = /(19|20)\d{2}$/;
       //name should be only alphabets and of max length 30
       if (len <= 30) {
@@ -205,11 +210,16 @@ function update_account() {
         flag = flag + 1;
       }
       //setting limit to bio
-      if (length <= 200) {
+      if (length <= 200 && bio.value != "") {
         onSuccess(bio);
       } else {
-        onError(bio, "bio should not exceed 200 characters");
-        flag = flag + 1;
+        if (length > 200) {
+          onError(bio, "bio should not exceed 200 characters");
+          flag = flag + 1;
+        } else if (bio.value == "") {
+          onError(bio, "Bio can't be empty.");
+          flag = flag + 1;
+        }
       }
 
       if (flag == 0) {
@@ -219,7 +229,7 @@ function update_account() {
             {
               name: toTitleCase(document.par_form.name.value),
               username: document.par_form.username.value,
-              college: toTitleCase(document.par_form.college.value),
+              college: document.par_form.college.value,
               github: document.par_form.git.value,
               linkedIn: document.par_form.linkedln.value,
               website: document.par_form.personal_website.value,
@@ -239,7 +249,7 @@ function update_account() {
               "success"
             ).then((okay) => {
               if (okay) {
-                window.location.href = "./viewhackathon.html";
+                window.location.href = "./MyProfile_userView.html";
               }
             });
           })
@@ -332,30 +342,33 @@ function addskills() {
       choice = arrayRemove(choice, "blockchain");
     }
   }
-  if(choice.length==0){
+  if (choice.length == 0) {
     swal("WARNING!!", "Please select at least one skill", {
       icon: "warning",
-  })
-}
-  else{
-  axios
-    .post(
-      `${url}/skills/mySkills`,
-      {
-        skills: choice,
-      },
-      {
-        headers: {
-          Authorization: "Bearer " + auth,
-        },
-      }
-    )
-    .then((response) => {
-      swal("SUCCESS!!", "Your skills have been added successfully", "success");
-    })
-    .catch((error) => {
-      console.error("Error:", error);
     });
+  } else {
+    axios
+      .post(
+        `${url}/skills/mySkills`,
+        {
+          skills: choice,
+        },
+        {
+          headers: {
+            Authorization: "Bearer " + auth,
+          },
+        }
+      )
+      .then((response) => {
+        swal(
+          "SUCCESS!!",
+          "Your skills have been added successfully",
+          "success"
+        );
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   }
 }
 

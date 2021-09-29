@@ -68,7 +68,7 @@ function displayTeams() {
     window.addEventListener("scroll", someFunction);
     function someFunction() {
       if (window.scrollY + window.innerHeight >= 1153) {
-        displayTeams();
+        // displayTeams();
         window.removeEventListener("scroll", someFunction);
       }
     }
@@ -300,7 +300,6 @@ app.addEventListener("click", function () {
                   "</p></div></div>";
               }
             } catch (err) {
-              console.log(err.response.status);
               if (err.response.status == 400) {
                 swal("WARNING!!", "No Hack Found!", "warning");
               }
@@ -430,7 +429,6 @@ fweb.addEventListener("click", function () {
                   "</p></div></div>";
               }
             } catch (err) {
-              console.log(err.response.status);
               if (err.response.status == 400) {
                 swal("WARNING!!", "No Hack Found!", "warning");
               }
@@ -445,19 +443,17 @@ fweb.addEventListener("click", function () {
     });
 });
 function check() {
+  var team_id = window.location.search.split("?")[1];
   const cards = document.querySelectorAll("#good");
   cards.forEach((card) => card.addEventListener("click", look));
-  console.log(cards);
   function look() {
     console.log(" i was clicked");
-    console.log(this);
     var participant_id = this.querySelector("#participant-id").textContent;
-    console.log(participant_id);
-    window.location.assign("./MyProfile_otherView.html");
+    window.location.assign("./MyProfile_otherView.html?" + team_id);
     var part123 = participant_id;
     localStorage.setItem("participant", part123);
-    var team_id = window.location.search.split("?")[1];
-    localStorage.setItem("team", team_id);
+    // var team_id = window.location.search.split("?")[1];
+    // localStorage.setItem("team", team_id);
   }
 }
 bweb.addEventListener("click", function () {
@@ -570,7 +566,6 @@ bweb.addEventListener("click", function () {
                   "</p></div></div>";
               }
             } catch (err) {
-              console.log(err.response.status);
               if (err.response.status == 400) {
                 swal("WARNING!!", "No Hack Found!", "warning");
               }
@@ -694,7 +689,6 @@ ml.addEventListener("click", function () {
                   "</p></div></div>";
               }
             } catch (err) {
-              console.log(err.response.status);
               if (err.response.status == 400) {
                 swal("WARNING!!", "No Hack Found!", "warning");
               }
@@ -818,7 +812,6 @@ design.addEventListener("click", function () {
                   "</p></div></div>";
               }
             } catch (err) {
-              console.log(err.response.status);
               if (err.response.status == 400) {
                 swal("WARNING!!", "No Hack Found!", "warning");
               }
@@ -942,7 +935,6 @@ mgmt.addEventListener("click", function () {
                   "</p></div></div>";
               }
             } catch (err) {
-              console.log(err.response.status);
               if (err.response.status == 400) {
                 swal("WARNING!!", "No Hack Found!", "warning");
               }
@@ -1066,7 +1058,6 @@ block.addEventListener("click", function () {
                   "</p></div></div>";
               }
             } catch (err) {
-              console.log(err.response.status);
               if (err.response.status == 400) {
                 swal("WARNING!!", "No Hack Found!", "warning");
               }
@@ -1190,7 +1181,6 @@ cyber.addEventListener("click", function () {
                   "</p></div></div>";
               }
             } catch (err) {
-              console.log(err.response.status);
               if (err.response.status == 400) {
                 swal("WARNING!!", "No Hack Found!", "warning");
               }
@@ -1274,13 +1264,11 @@ all.addEventListener("click", function () {
   init();
 
   var height = document.body.clientHeight;
-  console.log(height);
   if (height == document.body.clientHeight) {
     window.addEventListener("scroll", someFunction);
     function someFunction() {
       if (window.scrollY + window.innerHeight >= 1153) {
-        console.log(window.scrollY + window.innerHeight);
-        displayTeams();
+        // displayTeams();
         window.removeEventListener("scroll", someFunction);
       }
     }
@@ -1383,7 +1371,6 @@ all.addEventListener("click", function () {
     }
   }
   catch(err) {
-    console.log(err);
     if(err.response.status == 404){
       swal("WARNING!!", "You can't search this team.", "warning");
     }

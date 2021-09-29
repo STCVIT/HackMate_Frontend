@@ -58,7 +58,6 @@ function displayTeams() {
         page = page + 1;
       }
     } catch (err) {
-      console.log(err);
     }
   };
   init();
@@ -67,7 +66,7 @@ function displayTeams() {
     window.addEventListener("scroll", someFunction);
     function someFunction() {
       if (window.scrollY + window.innerHeight >= 1153) {
-        displayTeams();
+        // displayTeams();
         window.removeEventListener("scroll", someFunction);
       }
     }
@@ -1228,7 +1227,7 @@ all.addEventListener("click", function () {
     window.addEventListener("scroll", someFunction);
     function someFunction() {
       if (window.scrollY + window.innerHeight >= 1153) {
-        displayTeams();
+        // displayTeams();
         window.removeEventListener("scroll", someFunction);
       }
     }

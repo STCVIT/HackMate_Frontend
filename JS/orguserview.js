@@ -67,6 +67,15 @@ function deleteacc() {
           swal("Your profile is safe!");
         }
       });
+    }).catch((error) => {
+      if(error.response.status == 417)
+      {
+        swal("Warning!!", "Please enter all the required fields.", "warning");
+      }
+      if(error.response.status == 400)
+      {
+        swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+      }
     });
 }
 
@@ -98,6 +107,18 @@ function updateacc() {
         })
         .catch((error) => {
           console.error("Error:", error);
+          if(error.response.status == 403)
+          {
+            swal("Warning!!", "Some of the fields you are trying to update aren't mutable.", "warning");
+          }
+          if(error.response.status == 400)
+          {
+            swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+          }
+          if(error.response.status == 417)
+          {
+            swal("Warning!!", "Please enter all the required fields.", "warning");
+          }
         });
     });
 }
@@ -162,6 +183,18 @@ async function uploadBlob(file) {
           })
           .catch((error) => {
             console.error("Error:", error);
+            if(error.response.status == 400)
+            {
+              swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+            }
+            if(error.response.status == 417)
+            {
+              swal("Warning!!", "Please enter all the required fields.", "warning");
+            }
+            if(error.response.status == 403)
+            {
+              swal("Warning!!", "Some of the fields you are trying to update are immutable.", "warning");
+            }
           });
       });
     }

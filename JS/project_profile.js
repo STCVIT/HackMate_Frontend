@@ -25,7 +25,20 @@ firebase.auth().onAuthStateChanged((user) => {
           document.querySelector("#bio").innerHTML = project.description;
           loadingDiv.style.visibility = "hidden";
         })
-        .catch((error) => console.error("Error: " + error));
+        .catch((error) => {
+          if (error.response.status == 400) {
+            swal(
+              "Warning!!",
+              "Some unknown error occured, please try again.",
+              "warning"
+            );
+          }
+          if (error.response.status == 404) {
+            swal("Warning!!", "Not found.", "warning");
+          }
+
+          console.error("Error: " + error);
+        });
     });
   } else {
     // User is signed out
@@ -74,6 +87,26 @@ function submitform() {
             })
             .catch((error) => {
               console.error("Error:", error);
+              if (error.response.status == 400) {
+                swal(
+                  "Warning!!",
+                  "Some unknown error occured, please try again.",
+                  "warning"
+                );
+              }
+              if (error.response.status == 403) {
+                swal("Warning!!", "Invalid updates.", "warning");
+              }
+              if (error.response.status == 404) {
+                swal("Warning!!", "Not found.", "warning");
+              }
+              if (error.response.status == 417) {
+                swal(
+                  "Warning!!",
+                  "Please enter all the required fields.",
+                  "warning"
+                );
+              }
             });
         }
       });
@@ -112,10 +145,21 @@ function deleteProject() {
               swal("Poof! Your project has been deleted!", {
                 icon: "success",
               }).then(() => {
+                window.location.href = "./addproject.html"
                 loadingDiv.style.visibility = "hidden";
               });
             })
-            .catch((error) => console.error("Error: " + error));
+            .catch((error) => {
+              if(error.response.status == 400)
+              {
+                swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+              }
+              if(error.response.status == 404)
+              {
+                swal("Warning!!", "Not found.", "warning");
+              }
+              console.error("Error: " + error);
+            });
         } else {
           swal("Your project is safe!").then(() => {
             loadingDiv.style.visibility = "hidden";

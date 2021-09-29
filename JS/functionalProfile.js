@@ -89,6 +89,10 @@ function secondpage_profile() {
                             },
                         })
                             .then((res) => {
+                                if(res.status == 400)
+                                {
+                                  swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+                                }
                                 if (res.status === 403) {
                                     signal = 100;
                                     swal("WARNING!!", "Please choose a unique username", "warning");
@@ -114,12 +118,29 @@ function secondpage_profile() {
                                                 username: username
                                             }),
                                         })
-                                            .then((response) => response.text())
+                                            .then((response) => 
+                                            {if(response.status == 400)
+                                                {
+                                                  swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+                                                }
+                                                if(response.status == 417)
+                                                {
+                                                  swal("Warning!!", "Please enter all the required fields.", "warning");
+                                                }
+                                                response.text()})
                                             .then((text) => {
                                                 window.location.assign("./profile_skills.html");
                                             })
                                             .catch((error) => {
                                                 console.log("Error:", error);
+                                                if(error.response.status == 400)
+                                                {
+                                                  swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+                                                }
+                                                if(error.response.status == 417)
+                                                {
+                                                  swal("Warning!!", "Please enter all the required fields.", "warning");
+                                                }
                                             });
                                     }
                                 }
@@ -127,6 +148,14 @@ function secondpage_profile() {
                             .catch((error) => {
                                 console.log(error);
                                 console.log(error.message);
+                                if(error.response.status == 400)
+                                {
+                                  swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+                                }
+                                if (error.response.status === 403) {
+                                    signal = 100;
+                                    swal("WARNING!!", "Please choose a unique username", "warning");
+                                }
                             })
                     }
                     checkusername()
@@ -162,15 +191,6 @@ function checkInputs(Name, username, college, year) {
     else {
         onError(Name, "Enter a valid name");
     }
-    //username should be only alphabets and of max length 30
-    // let res09 = checkusername();
-    // if(res09 != 403){
-    //     onSuccess(username);
-    //     flag = flag + 1;
-    // }
-    // else{
-    //     onError(username,"Username is already taken");
-    // }
     if (n <= 20) {
         onSuccess(username);
         flag = flag + 1;

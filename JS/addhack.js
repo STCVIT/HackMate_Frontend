@@ -128,6 +128,14 @@ async function uploadBlob(file) {
             if (error.response.status == 407) {
               swal("Error!", "Start date cannot be after end date", "warning");
             }
+            if(error.response.status == 417)
+            {
+              swal("Warning!!", "Please enter all the required fields.", "warning");
+            }
+            if(error.response.status == 400)
+            {
+              swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+            }
           });
       });
     }

@@ -42,6 +42,14 @@ form.addEventListener("submit", (e) => {
             })
             .catch((error) => {
               console.log("Error:", error);
+              if(error.response.status == 400)
+              {
+                swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+              }
+              if(error.response.status == 417)
+              {
+                swal("Warning!!", "Please enter all the required fields.", "warning");
+              }
             });
         }
       });

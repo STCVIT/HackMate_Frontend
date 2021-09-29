@@ -75,7 +75,17 @@ firebase.auth().onAuthStateChanged((user) => {
           }
           document.getElementById("loading").style.visibility = "hidden";
         })
-        .catch((error) => console.error("Error: " + error));
+        .catch((error) => {
+          if(error.response.status == 400)
+          {
+            swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+          }
+          if(error.response.status == 404)
+          {
+            swal("Warning!!", "Not found.", "warning");
+          }
+          console.error("Error: " + error);
+        });
     });
   } else {
     // User is signed out
@@ -108,6 +118,13 @@ function delete_account() {
             })
             .catch((error) => {
               console.error("Error:", error);
+              if (error.response.status == 400) {
+                swal(
+                  "Warning!!",
+                  "Some unknown error occured, please try again.",
+                  "warning"
+                );
+              }
             });
           swal("Poof! Your profile has been deleted!", {
             icon: "success",
@@ -255,6 +272,23 @@ function update_account() {
           })
           .catch((error) => {
             console.error("Error:", error);
+            if (error.response.status == 400) {
+              swal(
+                "Warning!!",
+                "Some unknown error occured, please try again.",
+                "warning"
+              );
+            }
+            if (error.response.status == 403) {
+              swal("Warning!!", "Invalid updates.", "warning");
+            }
+            if (error.response.status == 417) {
+              swal(
+                "Warning!!",
+                "Please enter all the required fields.",
+                "warning"
+              );
+            }
           });
       }
     });
@@ -368,6 +402,20 @@ function addskills() {
       })
       .catch((error) => {
         console.error("Error:", error);
+        if (error.response.status == 404) {
+          swal("Warning!!", "Please enter some skills.", "warning");
+        }
+        if (error.response.status == 403) {
+          swal("Warning!!", "Invalid.", "warning");
+        }
+
+        if (error.response.status == 400) {
+          swal(
+            "Warning!!",
+            "Some unknown error occured, please try again.",
+            "warning"
+          );
+        }
       });
   }
 }
@@ -426,6 +474,23 @@ async function uploadBlob(file) {
           })
           .catch((error) => {
             console.error("Error:", error);
+            if (error.response.status == 400) {
+              swal(
+                "Warning!!",
+                "Some unknown error occured, please try again.",
+                "warning"
+              );
+            }
+            if (error.response.status == 403) {
+              swal("Warning!!", "Invalid updates.", "warning");
+            }
+            if (error.response.status == 417) {
+              swal(
+                "Warning!!",
+                "Please enter all the required fields.",
+                "warning"
+              );
+            }
           });
       });
     }

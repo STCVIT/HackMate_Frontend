@@ -99,7 +99,11 @@ firebase.auth().onAuthStateChanged((user) => {
           } catch (error) {
             if (error.response.status == 404) {
               document.querySelector(".wrapper").innerHTML =
-                "<h2 class='text-center' style='margin-top: 82px;'>No Teams Found!</h2>";
+                "<h2 class='text-center' style='margin-top: 82px;'>No Hacks Found!</h2>";
+            }
+            if(error.response.status == 400)
+            {
+              swal("Warning!!", "Some unknown error occured, please try again.", "warning");
             }
           }
           loadingDiv.style.visibility = "hidden";
@@ -148,6 +152,13 @@ function deleteHack() {
         })
         .catch((error) => {
           console.error("Error:", error);
+          if (error.response.status == 400 || error.response.status == 418) {
+            swal(
+              "Warning!!",
+              "Some unknown error occured, please try again.",
+              "warning"
+            );
+          }
         });
     });
 }
@@ -295,6 +306,14 @@ function events(event) {
         })
         .catch((error) => {
           console.error("Error:", error);
+          if (error.response.status == 404) {
+            document.querySelector(".wrapper").innerHTML =
+              "<h2 class='text-center' style='margin-top: 82px;'>No Hacks Found!</h2>";
+          }
+          if(error.response.status == 400)
+          {
+            swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+          }
         });
     });
 }
@@ -347,6 +366,14 @@ function nextPage() {
         })
         .catch((error) => {
           console.error("Error:", error);
+          if (error.response.status == 404) {
+            document.querySelector(".wrapper").innerHTML =
+              "<h2 class='text-center' style='margin-top: 82px;'>No Hacks Found!</h2>";
+          }
+          if(error.response.status == 400)
+          {
+            swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+          }
         });
     });
 }
@@ -399,6 +426,14 @@ function prevPage() {
         })
         .catch((error) => {
           console.error("Error:", error);
+          if (error.response.status == 404) {
+            document.querySelector(".wrapper").innerHTML =
+              "<h2 class='text-center' style='margin-top: 82px;'>No Hacks Found!</h2>";
+          }
+          if(error.response.status == 400)
+          {
+            swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+          }
         });
     });
 }
@@ -407,8 +442,25 @@ document
   .querySelector("form")
   .addEventListener("submit", async function (event) {
     event.preventDefault();
-
-    uploadBlob(document.getElementById("image_uploads").files[0]);
+    if (
+      document.myform.name.value.trim() == "" ||
+      document.myform.venue.value.trim() == "" ||
+      document.myform.moc.value.trim() == "" ||
+      document.myform.website.value.trim() == "" ||
+      document.myform.about.value.trim() == "" ||
+      document.myform.start.value.trim() == "" ||
+      document.myform.end.value.trim() == "" ||
+      document.myform.maxts.value.trim() == "" ||
+      document.myform.mints.value.trim() == ""
+    ) {
+      swal("Error!", "Please fill in all the required fields", "warning");
+    } else {
+      if (document.getElementById("image_uploads").files[0] != undefined) {
+        uploadBlob(document.getElementById("image_uploads").files[0]);
+      } else {
+        updateHack()
+      }
+    }
   });
 
 async function uploadBlob(file) {
@@ -466,8 +518,8 @@ async function uploadBlob(file) {
           });
 
         axios
-          .post(
-            `${url}/organiser/createHack`,
+          .patch(
+            `${url}/organiser/updateHack`,
             {
               name: name,
               venue: venue,
@@ -510,6 +562,88 @@ async function uploadBlob(file) {
   );
 }
 
+function updateHack() {
+  var name = document.myform.name.value;
+  var venue = document.myform.venue.value;
+  var moc = document.myform.moc.value;
+  var website = document.myform.website.value;
+  var about = document.myform.about.value;
+  var start = new Date(
+    document.myform.start.value.split("T")[0] +
+      " " +
+      document.myform.start.value.split("T")[1] +
+      " GMT+05:30"
+  );
+  var end = new Date(
+    document.myform.end.value.split("T")[0] +
+      " " +
+      document.myform.end.value.split("T")[1] +
+      " GMT+05:30"
+  );
+  var mints = document.myform.mints.value;
+  var maxts = document.myform.maxts.value;
+  var prizes = document.myform.prizes.value;
+
+  firebase
+    .auth()
+    .currentUser.getIdToken()
+    .then(async (id) => {
+      auth = await id;
+    });
+
+  axios
+    .patch(
+      `${url}/organiser/updateHack/${window.location.search.split('?')[1]}`,
+      {
+        name: name,
+        venue: venue,
+        start: start,
+        end: end,
+        min_team_size: mints,
+        max_team_size: maxts,
+        mode_of_conduct: moc,
+        prize_pool: prizes,
+        // description: about,
+        website: website,
+      },
+      {
+        headers: {
+          Authorization: "Bearer " + auth,
+        },
+      }
+    )
+    .then((response) => {
+      loadingDiv.style.visibility = "hidden";
+      swal(
+        "SUCCESS!!",
+        "Your request has been submitted successfully",
+        "success"
+      );
+      document
+        .querySelector(".swal-button--confirm")
+        .addEventListener("click", () => {
+          window.location.assign("./orghackprofile.html?" + response.data._id);
+        });
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      if (error.response.status == 407) {
+        swal("Error!", "Start date cannot be after end date", "warning");
+      }
+      if (error.response.status == 417) {
+        swal("Warning!!", "Please enter all the required fields.", "warning");
+      }
+      if (error.response.status == 400) {
+        swal(
+          "Warning!!",
+          "Some unknown error occured, please try again.",
+          "warning"
+        );
+      }
+    });
+}
 document
   .querySelector("#image_uploads")
-  .addEventListener("change", function () {});
+  .addEventListener("change", function () {
+    document.querySelector(".image_uploads").innerHTML = "File Uploaded!";
+  });

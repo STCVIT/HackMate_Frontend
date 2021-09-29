@@ -80,6 +80,14 @@ function events(event) {
         })
         .catch((error) => {
           console.error("Error:", error);
+          if (error.response.status == 404) {
+            document.querySelector(".wrapper").innerHTML =
+              "<h2 class='text-center' style='margin-top: 82px;'>No Hacks Found!</h2>";
+          }
+          if(error.response.status == 400)
+          {
+            swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+          }
         });
     });
   window.location = "./orghack.html#hacksadded";
@@ -158,6 +166,14 @@ function nextPage() {
         })
         .catch((error) => {
           console.error("Error:", error);
+          if (error.response.status == 404) {
+            document.querySelector(".wrapper").innerHTML =
+              "<h2 class='text-center' style='margin-top: 82px;'>No Hacks Found!</h2>";
+          }
+          if(error.response.status == 400)
+          {
+            swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+          }
         });
     });
 }
@@ -237,6 +253,14 @@ function prevPage() {
         })
         .catch((error) => {
           console.error("Error:", error);
+          if (error.response.status == 404) {
+            document.querySelector(".wrapper").innerHTML =
+              "<h2 class='text-center' style='margin-top: 82px;'>No Hacks Found!</h2>";
+          }
+          if(error.response.status == 400)
+          {
+            swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+          }
         });
     });
 }
@@ -416,6 +440,10 @@ function displayHacks() {
             if (error.response.status == 404) {
               document.querySelector(".wrapper").innerHTML =
                 "<h2 class='text-center' style='margin-top: 82px;'>No Hacks Found!</h2>";
+            }
+            if(error.response.status == 400)
+            {
+              swal("Warning!!", "Some unknown error occured, please try again.", "warning");
             }
           }
           loadingDiv.style.visibility = "hidden";

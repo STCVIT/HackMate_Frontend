@@ -395,6 +395,9 @@ nb3 {
   .outerdetails {
     margin-left: 0;
   }
+  .wrapper {
+    padding-left: 0px;
+  }
 }
 
 @media (max-width: 768px) {

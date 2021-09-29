@@ -335,7 +335,7 @@ function displayTeams() {
               displayTeams();
             }
           } catch (err) {
-            (err.response.status);
+            err.response.status;
           }
         };
         init();
@@ -346,7 +346,7 @@ function displayTeams() {
 
           function someFunction() {
             if (window.scrollY + window.innerHeight >= 3100) {
-              (window.scrollY + window.innerHeight);
+              window.scrollY + window.innerHeight;
               window.removeEventListener("scroll", someFunction);
             }
           }
@@ -1415,7 +1415,6 @@ function displayTeams() {
                 }
               }
             } catch (err) {
-              
               if (err.response.status == 404) {
                 swal("WARNING!!", "No Teams formed till now.", "warning");
                 loadingDiv.style.visibility = "hidden";
@@ -1426,7 +1425,6 @@ function displayTeams() {
         }
       });
     } else {
-      
     }
   });
 }
@@ -1586,19 +1584,16 @@ app.addEventListener("click", function () {
               displayTeams();
               page = page + 1;
             }
-          } catch (err) {
-            
-          }
+          } catch (err) {}
         };
         init();
         var height = document.body.clientHeight;
-        
+
         if (height == document.body.clientHeight) {
           window.addEventListener("scroll", someFunction);
 
           function someFunction() {
             if (window.scrollY + window.innerHeight >= 700) {
-              
               displayTeams();
               window.removeEventListener("scroll", someFunction);
             }
@@ -2672,7 +2667,6 @@ app.addEventListener("click", function () {
                 }
               }
             } catch (err) {
-              
               if (err.response.status == 404) {
                 swal("WARNING!!", "No Team has formed till now!!", "warning");
               }
@@ -2839,19 +2833,16 @@ fweb.addEventListener("click", function () {
               displayTeams();
               page = page + 1;
             }
-          } catch (err) {
-            
-          }
+          } catch (err) {}
         };
         init();
         var height = document.body.clientHeight;
-        
+
         if (height == document.body.clientHeight) {
           window.addEventListener("scroll", someFunction);
 
           function someFunction() {
             if (window.scrollY + window.innerHeight >= 3106) {
-              
               displayTeams();
               window.removeEventListener("scroll", someFunction);
             }
@@ -3925,7 +3916,6 @@ fweb.addEventListener("click", function () {
                 }
               }
             } catch (err) {
-              
               if (err.response.status == 404) {
                 swal("WARNING!!", "No Team has formed till now!!", "warning");
               }
@@ -4093,18 +4083,18 @@ bweb.addEventListener("click", function () {
               page = page + 1;
             }
           } catch (err) {
-            (err.response.status);
+            err.response.status;
           }
         };
         init();
         var height = document.body.clientHeight;
-        (height);
+        height;
         if (height == document.body.clientHeight) {
           window.addEventListener("scroll", someFunction);
 
           function someFunction() {
             if (window.scrollY + window.innerHeight >= 3106) {
-              (window.scrollY + window.innerHeight);
+              window.scrollY + window.innerHeight;
               displayTeams();
               window.removeEventListener("scroll", someFunction);
             }
@@ -5178,7 +5168,7 @@ bweb.addEventListener("click", function () {
                 }
               }
             } catch (err) {
-              (err.response.status);
+              err.response.status;
               if (err.response.status == 404) {
                 swal("WARNING!!", "No Team has formed till now!!", "warning");
               }
@@ -5346,18 +5336,18 @@ ml.addEventListener("click", function () {
               page = page + 1;
             }
           } catch (err) {
-            (err.response.status);
+            err.response.status;
           }
         };
         init();
         var height = document.body.clientHeight;
-        (height);
+        height;
         if (height == document.body.clientHeight) {
           window.addEventListener("scroll", someFunction);
 
           function someFunction() {
             if (window.scrollY + window.innerHeight >= 3107) {
-              (window.scrollY + window.innerHeight);
+              window.scrollY + window.innerHeight;
               displayTeams();
               window.removeEventListener("scroll", someFunction);
             }
@@ -6431,7 +6421,7 @@ ml.addEventListener("click", function () {
                 }
               }
             } catch (err) {
-              (err.response.status);
+              err.response.status;
               if (err.response.status == 404) {
                 swal("WARNING!!", "No Team has formed till now!!", "warning");
               }
@@ -6599,18 +6589,18 @@ design.addEventListener("click", function () {
               page = page + 1;
             }
           } catch (err) {
-            (err.response.status);
+            err.response.status;
           }
         };
         init();
         var height = document.body.clientHeight;
-        (height);
+        height;
         if (height == document.body.clientHeight) {
           window.addEventListener("scroll", someFunction);
 
           function someFunction() {
             if (window.scrollY + window.innerHeight >= 3106) {
-              (window.scrollY + window.innerHeight);
+              window.scrollY + window.innerHeight;
               displayTeams();
               window.removeEventListener("scroll", someFunction);
             }
@@ -7684,7 +7674,7 @@ design.addEventListener("click", function () {
                 }
               }
             } catch (err) {
-              (err.response.status);
+              err.response.status;
               if (err.response.status == 404) {
                 swal("WARNING!!", "No Team has formed till now!!", "warning");
               }
@@ -7852,18 +7842,18 @@ mgmt.addEventListener("click", function () {
               page = page + 1;
             }
           } catch (err) {
-            (err.response.status);
+            err.response.status;
           }
         };
         init();
         var height = document.body.clientHeight;
-        (height);
+        height;
         if (height == document.body.clientHeight) {
           window.addEventListener("scroll", someFunction);
 
           function someFunction() {
             if (window.scrollY + window.innerHeight >= 3106) {
-              (window.scrollY + window.innerHeight);
+              window.scrollY + window.innerHeight;
               displayTeams();
               window.removeEventListener("scroll", someFunction);
             }
@@ -8937,7 +8927,7 @@ mgmt.addEventListener("click", function () {
                 }
               }
             } catch (err) {
-              (err.response.status);
+              err.response.status;
               if (err.response.status == 404) {
                 swal("WARNING!!", "No Team has formed till now!!", "warning");
               }
@@ -9105,18 +9095,18 @@ block.addEventListener("click", function () {
               page = page + 1;
             }
           } catch (err) {
-            (err.response.status);
+            err.response.status;
           }
         };
         init();
         var height = document.body.clientHeight;
-        (height);
+        height;
         if (height == document.body.clientHeight) {
           window.addEventListener("scroll", someFunction);
 
           function someFunction() {
             if (window.scrollY + window.innerHeight >= 3106) {
-              (window.scrollY + window.innerHeight);
+              window.scrollY + window.innerHeight;
               displayTeams();
               window.removeEventListener("scroll", someFunction);
             }
@@ -10190,7 +10180,7 @@ block.addEventListener("click", function () {
                 }
               }
             } catch (err) {
-              (err.response.status);
+              err.response.status;
               if (err.response.status == 404) {
                 swal("WARNING!!", "No Team has formed till now!!", "warning");
               }
@@ -10210,15 +10200,15 @@ function myFunction() {
   var nk = 0;
   const cards = document.querySelectorAll("#goods");
   cards.forEach((card) => card.addEventListener("click", look));
-  (cards);
+  cards;
 
   function look() {
     (" i was clicked");
-    (this);
+    this;
     nk = nk + 1;
     if (nk == 1) {
       var team_id = this.querySelector("#team-id").textContent;
-      (team_id);
+      team_id;
       var dots = this.querySelector("#dots");
       var moreText = this.querySelector("#more");
       var btnText = this.querySelector("#myBtn");
@@ -10240,15 +10230,15 @@ function myFunction1() {
   var nk1 = 0;
   const cards1 = document.querySelectorAll("#goods");
   cards1.forEach((card1) => card1.addEventListener("click", look1));
-  (cards1);
+  cards1;
 
   function look1() {
     (" i was clicked");
-    (this);
+    this;
     nk1 = nk1 + 1;
     if (nk1 == 1) {
       var team_id_1 = this.querySelector("#team-id-1").textContent;
-      (team_id_1);
+      team_id_1;
       var dots1 = this.querySelector("#dots1");
       var moreText1 = this.querySelector("#more1");
       var btnText1 = this.querySelector("#myBtn1");
@@ -10270,15 +10260,15 @@ function myFunction2() {
   var nk2 = 0;
   const cards2 = document.querySelectorAll("#goods");
   cards2.forEach((card2) => card2.addEventListener("click", look2));
-  (cards2);
+  cards2;
 
   function look2() {
     (" i was clicked");
-    (this);
+    this;
     nk2 = nk2 + 1;
     if (nk2 == 1) {
       var team_id_2 = this.querySelector("#team-id-2").textContent;
-      (team_id_2);
+      team_id_2;
       var dots2 = this.querySelector("#dots2");
       var moreText2 = this.querySelector("#more2");
       var btnText2 = this.querySelector("#myBtn2");
@@ -10300,15 +10290,15 @@ function myFunction3() {
   var nk3 = 0;
   const cards3 = document.querySelectorAll("#goods");
   cards3.forEach((card3) => card3.addEventListener("click", look3));
-  (cards3);
+  cards3;
 
   function look3() {
     (" i was clicked");
-    (this);
+    this;
     nk3 = nk3 + 1;
     if (nk3 == 1) {
       var team_id_3 = this.querySelector("#team-id-3").textContent;
-      (team_id_3);
+      team_id_3;
       var dots3 = this.querySelector("#dots3");
       var moreText3 = this.querySelector("#more3");
       var btnText3 = this.querySelector("#myBtn3");
@@ -10478,18 +10468,18 @@ cyber.addEventListener("click", function () {
               page = page + 1;
             }
           } catch (err) {
-            (err.response.status);
+            err.response.status;
           }
         };
         init();
         var height = document.body.clientHeight;
-        (height);
+        height;
         if (height == document.body.clientHeight) {
           window.addEventListener("scroll", someFunction);
 
           function someFunction() {
             if (window.scrollY + window.innerHeight >= 2900) {
-              (window.scrollY + window.innerHeight);
+              window.scrollY + window.innerHeight;
               displayTeams();
               window.removeEventListener("scroll", someFunction);
             }
@@ -11563,7 +11553,7 @@ cyber.addEventListener("click", function () {
                 }
               }
             } catch (err) {
-              (err.response.status);
+              err.response.status;
               if (err.response.status == 404) {
                 swal("WARNING!!", "No Team has formed till now!!", "warning");
               }
@@ -11924,18 +11914,18 @@ all.addEventListener("click", function () {
             page = page + 1;
           }
         } catch (err) {
-          (err.response.status);
+          err.response.status;
         }
       };
       init();
       var height = document.body.clientHeight;
-      (height);
+      height;
       if (height == document.body.clientHeight) {
         window.addEventListener("scroll", someFunction);
 
         function someFunction() {
           if (window.scrollY + window.innerHeight >= 3100) {
-            (window.scrollY + window.innerHeight);
+            window.scrollY + window.innerHeight;
             window.removeEventListener("scroll", someFunction);
           }
         }
@@ -13005,7 +12995,7 @@ all.addEventListener("click", function () {
               }
             }
           } catch (err) {
-            (err.response.status);
+            err.response.status;
             if (err.response.status == 404) {
               swal("WARNING!!", "No Team has formed till now!!", "warning");
             }
@@ -13032,46 +13022,59 @@ function allow() {
     nk = nk + 1;
     if (nk == 1) {
       var team_id = this.querySelector("#team-id").textContent;
-  firebase
-    .auth()
-    .currentUser.getIdToken()
-    .then((id) => {
-      auth = id;
-      axios
-        .post(
-          `${url}/requests/request/${team_id}`,
-          {
-            code: request,
-          },
-          {
-            headers: {
-              Authorization: "Bearer " + auth,
-            },
-          }
-        )
-        .then((response) => {
-          accept = response.data;
-          (accept);
-          swal(
-            "SUCCESS!!",
-            "Your request has been submitted successfully",
-            "success"
-          );
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-          (error.response.status);
-          if (error.response.status == 409) {
-            swal(
-              "WARNING!!",
-              "Request to join this team has already been sent.",
-              "warning"
-            );
-          }
+      firebase
+        .auth()
+        .currentUser.getIdToken()
+        .then((id) => {
+          auth = id;
+          axios
+            .post(
+              `${url}/requests/request/${team_id}`,
+              {
+                code: request,
+              },
+              {
+                headers: {
+                  Authorization: "Bearer " + auth,
+                },
+              }
+            )
+            .then((response) => {
+              accept = response.data;
+              accept;
+              swal(
+                "SUCCESS!!",
+                "Your request has been submitted successfully",
+                "success"
+              );
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              error.response.status;
+              if (error.response.status == 403) {
+                swal(
+                  "WARNING!!",
+                  "You are already a part of this Hack so you can't send a request.",
+                  "warning"
+                );
+              } else if (error.response.status == 409) {
+                swal(
+                  "WARNING!!",
+                  "Request to join this team has already been sent.",
+                  "warning"
+                );
+              }
+              else if (error.response.status == 404) {
+                swal(
+                  "WARNING!!",
+                  "Team not found.",
+                  "warning"
+                );
+              }
+            });
         });
-    });
+    }
   }
-}
 }
 
 document.getElementById("search").addEventListener("keyup", function (event) {
@@ -14130,7 +14133,7 @@ function join() {
     .then((id) => {
       auth = id;
       code = document.getElementById("enter_code").value;
-      (code);
+      code;
       axios
         .post(
           `${url}/DN_Team/code/null`,
@@ -14156,9 +14159,19 @@ function join() {
           console.error("Error:", error);
           if (error.response.status == 403) {
             swal("WARNING!!", "You have already joined the team.", "warning");
+          } else if (error.response.status == 404) {
+            swal(
+              "WARNING!!",
+              "You didn't write the code for joining the team.",
+              "warning"
+            );
           }
           else if (error.response.status == 404) {
-            swal("WARNING!!", "You didn't write the code for joining the team.", "warning");
+            swal(
+              "WARNING!!",
+              "Team not found.",
+              "warning"
+            );
           }
         });
     });
@@ -14193,7 +14206,7 @@ function request() {
             )
             .then((response) => {
               accept = response.data;
-              (accept);
+              accept;
               swal(
                 "SUCCESS!!",
                 "Your request has been submitted successfully",
@@ -14201,11 +14214,23 @@ function request() {
               );
             })
             .catch((error) => {
-              (error.response.status);
-              if (error.response.status == 409) {
+              error.response.status;
+              if (error.response.status == 403) {
+                swal(
+                  "WARNING!!",
+                  "You are already a part of this Hack so you can't send a request.",
+                  "warning"
+                );
+              } else if (error.response.status == 409) {
                 swal(
                   "WARNING!!",
                   "Request to join this team has already been sent.",
+                  "warning"
+                );
+              } else if (error.response.status == 404) {
+                swal(
+                  "WARNING!!",
+                  "Team not found.",
                   "warning"
                 );
               }

@@ -21,7 +21,6 @@ firebase.auth().onAuthStateChanged((user) => {
         .then((response) => {
           hack = response.data;
 
-
           document.querySelector(".parent").innerHTML =
             "<div class='row' style='padding-top: 54px;'> <div class='col-1'></div> <div class='col-10 main'> <img src='../Assets/Images/Hack Deets Banner.svg' style='width: 81vw;' alt=''> <div class='row' style='margin: 41.89px 0 0;'> <div class='col-1'></div> <div class='col-lg-4 col-12 justify-content-center text-center'> <img src='" +
             hack.poster +
@@ -89,9 +88,17 @@ firebase.auth().onAuthStateChanged((user) => {
         })
         .catch((error) => {
           console.error("Error:", error);
-          swal("Not Found!", "Hack doesn't exist", "warning").then(() => {
-            window.location.href = "./viewhackathon.html";
-          });
+          if (error.response.status == 400) {
+            swal(
+              "Warning!!",
+              "Some unknown error occured, please try again.",
+              "warning"
+            );
+          } else {
+            swal("Not Found!", "Hack doesn't exist", "warning").then(() => {
+              window.location.href = "./viewhackathon.html";
+            });
+          }
         });
     });
   } else {

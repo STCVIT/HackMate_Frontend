@@ -97,13 +97,15 @@ var login_count = 0
 
                 })
                 .catch((error) => {
-                    
+                    console.error("Error: ", error)
                     if (error.response.status == 404) {
                         document.querySelector(".notification2").innerHTML = "<div class='text-center notification1' style='padding-top: 16px;'>    Notifications</div><div class='text-center notification2' style='padding-top: 25px'>    You don't have any Notifications</div>"
                     }
-                    else {
-                         console.error("Error:", error);
-                    }
+                                  if(error.response.status == 400)
+              {
+                swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+              }
+              
                 });
             
             })
@@ -148,6 +150,10 @@ var login_count = 0
                     if (error.response.status == 404) {
                         document.querySelector(".notification2").innerHTML = "<div class='text-center notification1' style='padding-top: 16px;'>    Notifications</div><div class='text-center notification2' style='padding-top: 25px'>    You don't have any Notifications</div>"
                     }
+                                  if(error.response.status == 400)
+              {
+                swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+              }
                 loadingDiv.style.visibility = 'hidden';
                 });
         })
@@ -180,6 +186,10 @@ var login_count = 0
                 if (error.response.status == 404) {
                     document.querySelector(".notification2").innerHTML = "<div class='text-center notification1' style='padding-top: 16px;'>    Notifications</div><div class='text-center notification2' style='padding-top: 25px'>    You don't have any Notifications</div>"
                 }
+                          if(error.response.status == 400)
+          {
+            swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+          }
                 loadingDiv.style.visibility = 'hidden';
             });
         })
@@ -256,6 +266,14 @@ async function acceptreq(id) {
         "warning"
       )
     }
+        if(error.response.status == 400)
+    {
+      swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+    }
+    if(error.response.status == 404)
+    {
+      swal("Warning!!", "Not found.", "warning");
+    }
   }
 
 document.querySelector(".notification2").innerHTML = "";
@@ -265,7 +283,7 @@ document.querySelector(".notification2").innerHTML = "";
     
     async function rejectreq(id) {
         
-                await firebase.auth().currentUser.getIdToken().then((id) => {
+                try{await firebase.auth().currentUser.getIdToken().then((id) => {
             auth = id;
         })
         var response = await axios.post(
@@ -277,13 +295,30 @@ document.querySelector(".notification2").innerHTML = "";
             }
         )
 
-        var deleted = await response.data
+        var deleted = await response.data}
+        catch(error){
+                if (error.response.status == 409) {
+      swal(
+        "Warning!!",
+        "You are already going to the same hack. This invite cannot be accepted.",
+        "warning"
+      );
+    }
+    if(error.response.status == 400)
+    {
+      swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+    }
+    if(error.response.status == 404)
+    {
+      swal("Warning!!", "Not found.", "warning");
+    }
+        }
         document.querySelector(".notification2").innerHTML = "";
         getRequests()
     }
     async function deletereq(id) {
         
-                await firebase.auth().currentUser.getIdToken().then((id) => {
+                try{await firebase.auth().currentUser.getIdToken().then((id) => {
             auth = id;
         })
         var response = await axios.delete(
@@ -295,7 +330,20 @@ document.querySelector(".notification2").innerHTML = "";
             }
         )
 
-        var deleted = await response.data
+        var deleted = await response.data}
+        catch(error){
+    if (error.response.status == 401) {
+      swal(
+        "WARNING!!",
+        "Unauthorised",
+        "warning"
+      );
+    }
+    if(error.response.status == 400)
+    {
+      swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+    }
+        }
         document.querySelector(".notification2").innerHTML = "";
         getRequests()
     }
@@ -318,14 +366,30 @@ async function acceptinv(id) {
   var accepted = await response.data;}
   catch(error)
   {
-    if(error.response.status == 409){swal("Warning!!", "You are already going to the same hack. This invite cannot be accepted.", "warning")}
+    if(error.response.status == 409){
+            if (error.response.status == 409) {
+      swal(
+        "Warning!!",
+        "You are already going to the same hack. This invite cannot be accepted.",
+        "warning"
+      );
+    }
+    if(error.response.status == 400)
+    {
+      swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+    }
+    if(error.response.status == 404)
+    {
+      swal("Warning!!", "Not found.", "warning");
+    }
+    }
   }
 document.querySelector(".notification2").innerHTML = "";
   getInvites();
 }
     async function rejectinv(id) {
         
-                await firebase.auth().currentUser.getIdToken().then((id) => {
+               try{await firebase.auth().currentUser.getIdToken().then((id) => {
             auth = id;
         })
         var response = await axios.post(
@@ -337,13 +401,29 @@ document.querySelector(".notification2").innerHTML = "";
             }
         )
 
-        var deleted = await response.data
+        var deleted = await response.data}
+          catch(error){
+    if (error.response.status == 409) {
+      swal(
+        "Warning!!",
+        "You are already going to the same hack. This invite cannot be accepted.",
+        "warning"
+      );
+    }
+    if(error.response.status == 400)
+    {
+      swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+    }
+    if(error.response.status == 404)
+    {
+      swal("Warning!!", "Not found.", "warning");
+    }
         document.querySelector(".notification2").innerHTML = "";
         getInvites()
     }
     async function deleteinv(id) {
         
-                await firebase.auth().currentUser.getIdToken().then((id) => {
+                try{await firebase.auth().currentUser.getIdToken().then((id) => {
             auth = id;
         })
         var response = await axios.delete(
@@ -355,7 +435,17 @@ document.querySelector(".notification2").innerHTML = "";
             }
         )
 
-        var deleted = await response.data
+        var deleted = await response.data}
+        catch(error){
+                if(error.response.status == 400)
+    {
+      swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+    }
+    if(error.response.status == 401)
+    {
+      swal("Warning!!", "Not authorized","warning");
+    }
+        }
         document.querySelector(".notification2").innerHTML = "";
         getInvites()
     }

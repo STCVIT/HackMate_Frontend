@@ -13057,10 +13057,23 @@ function allow() {
         .catch((error) => {
           console.error("Error:", error);
           (error.response.status);
-          if (error.response.status == 409) {
+          if (error.response.status == 403) {
+            swal(
+              "WARNING!!",
+              "You are already a part of this Hack so you can't send a request.",
+              "warning"
+            );
+          } else if (error.response.status == 409) {
             swal(
               "WARNING!!",
               "Request to join this team has already been sent.",
+              "warning"
+            );
+          }
+          else if (error.response.status == 404) {
+            swal(
+              "WARNING!!",
+              "Team not found.",
               "warning"
             );
           }
@@ -14150,6 +14163,13 @@ function request() {
                 swal(
                   "WARNING!!",
                   "Request to join this team has already been sent.",
+                  "warning"
+                );
+              }
+              else if (error.response.status == 404) {
+                swal(
+                  "WARNING!!",
+                  "Team not found.",
                   "warning"
                 );
               }

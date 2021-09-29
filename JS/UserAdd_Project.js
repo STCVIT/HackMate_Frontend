@@ -4,11 +4,19 @@ $(document).ready(function () {
 });
 const loadingDiv = document.getElementById("loading");
 const project_form = document.getElementById("project_form");
+function toTitleCase(str) {
+  return str.replace(
+      /\w\S*/g,
+      function (txt) {
+          return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      }
+  );
+}
 project_form.addEventListener("submit", (e) => {
   e.preventDefault();
 });
 let projname = localStorage.getItem("project_name");
-document.getElementById("projname").innerHTML = toTitleCase(projname) + ".";
+document.getElementById("projname").innerHTML = toTitleCase(projname);
 const form = document.getElementById("form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -49,10 +57,20 @@ function submitform() {
                 "SUCCESS!!",
                 "Project has been created successfully",
                 "success"
-              );
+              ).then(() => {
+                
+              });
             })
             .catch((error) => {
               console.error("Error:", error);
+              if(error.response.status == 400)
+              {
+                swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+              }
+              if(error.response.status == 417)
+              {
+                swal("Warning!!", "Please enter all the required fields.", "warning");
+              }
             });
         }
       });

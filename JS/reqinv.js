@@ -1,4 +1,4 @@
-var count = 0;
+var login_count = 0;
 const loadingDiv = document.getElementById("loading");
 
 firebase.auth().onAuthStateChanged((user) => {
@@ -52,11 +52,15 @@ firebase.auth().onAuthStateChanged((user) => {
             document.querySelector(".reqinv").innerHTML =
               "<div class='reqinv container-fluid'><div class='row reqinvrow'><div class='col-12 text-center' style='font-size: 18px;'>    You don't have any notifications right now!</div></div></div>";
           }
+          if(error.response.status == 400)
+          {
+            swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+          }
         });
     });
   } else {
     // User is signed out
-    if (count != 1) {
+    if (login_count != 1) {
       alert("Please sign in!");
       window.location = "./participantlognsignup.html";
     }
@@ -155,6 +159,10 @@ function getRequests() {
             document.querySelector(".reqinv").innerHTML =
               "<div class='reqinv container-fluid'><div class='row reqinvrow'><div class='col-12 text-center' style='font-size: 18px;'>    You don't have any notifications right now!</div></div></div>";
           }
+          if(error.response.status == 400)
+          {
+            swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+          }
         });
     });
 }
@@ -204,6 +212,10 @@ function getInvites() {
           if (error.response.status == 404) {
             document.querySelector(".reqinv").innerHTML =
               "<div class='reqinv container-fluid'><div class='row reqinvrow'><div class='col-12 text-center' style='font-size: 18px;'>    You don't have any notifications right now!</div></div></div>";
+          }
+          if(error.response.status == 400)
+          {
+            swal("Warning!!", "Some unknown error occured, please try again.", "warning");
           }
         });
     });
@@ -282,6 +294,14 @@ async function acceptreq(id) {
         "warning"
       )
     }
+    if(error.response.status == 400)
+    {
+      swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+    }
+    if(error.response.status == 404)
+    {
+      swal("Warning!!", "Not found.", "warning");
+    }
   }
 
   document.querySelector(".reqinv").innerHTML = "";
@@ -290,7 +310,7 @@ async function acceptreq(id) {
 }
 
 async function rejectreq(id) {
-  await firebase
+  try{await firebase
     .auth()
     .currentUser.getIdToken()
     .then((id) => {
@@ -306,12 +326,29 @@ async function rejectreq(id) {
     }
   );
 
-  var deleted = await response.data;
+  var deleted = await response.data;}
+  catch(error){
+    if (error.response.status == 409) {
+      swal(
+        "Warning!!",
+        "You are already going to the same hack. This invite cannot be accepted.",
+        "warning"
+      );
+    }
+    if(error.response.status == 400)
+    {
+      swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+    }
+    if(error.response.status == 404)
+    {
+      swal("Warning!!", "Not found.", "warning");
+    }
+  }
   document.querySelector(".reqinv").innerHTML = "";
   getRequests();
 }
 async function deletereq(id) {
-  await firebase
+  try{await firebase
     .auth()
     .currentUser.getIdToken()
     .then((id) => {
@@ -323,7 +360,21 @@ async function deletereq(id) {
     },
   });
 
-  var deleted = await response.data;
+  var deleted = await response.data;}
+  catch(error){
+    console.error(error)
+    if (error.response.status == 401) {
+      swal(
+        "WARNING!!",
+        "Unauthorised",
+        "warning"
+      );
+    }
+    if(error.response.status == 400)
+    {
+      swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+    }
+  }
   document.querySelector(".reqinv").innerHTML = "";
   getRequests();
 }
@@ -353,12 +404,20 @@ async function acceptinv(id) {
         "warning"
       );
     }
+    if(error.response.status == 400)
+    {
+      swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+    }
+    if(error.response.status == 404)
+    {
+      swal("Warning!!", "Not found.", "warning");
+    }
   }
   document.querySelector(".reqinv").innerHTML = "";
   getInvites();
 }
 async function rejectinv(id) {
-  await firebase
+  try{await firebase
     .auth()
     .currentUser.getIdToken()
     .then((id) => {
@@ -374,12 +433,29 @@ async function rejectinv(id) {
     }
   );
 
-  var deleted = await response.data;
+  var deleted = await response.data;}
+  catch(error){
+    if (error.response.status == 409) {
+      swal(
+        "Warning!!",
+        "You are already going to the same hack. This invite cannot be accepted.",
+        "warning"
+      );
+    }
+    if(error.response.status == 400)
+    {
+      swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+    }
+    if(error.response.status == 404)
+    {
+      swal("Warning!!", "Not found.", "warning");
+    }
+  }
   document.querySelector(".reqinv").innerHTML = "";
   getInvites();
 }
 async function deleteinv(id) {
-  await firebase
+  try{await firebase
     .auth()
     .currentUser.getIdToken()
     .then((id) => {
@@ -391,13 +467,23 @@ async function deleteinv(id) {
     },
   });
 
-  var deleted = await response.data;
+  var deleted = await response.data;}
+  catch(error){
+    if(error.response.status == 400)
+    {
+      swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+    }
+    if(error.response.status == 401)
+    {
+      swal("Warning!!", "Not authorized","warning");
+    }
+  }
   document.querySelector(".reqinv").innerHTML = "";
   getInvites();
 }
 
 function logout() {
-  count = 1;
+  login_count = 1;
   firebase
     .auth()
     .signOut()

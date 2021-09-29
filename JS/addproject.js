@@ -44,6 +44,10 @@ firebase.auth().onAuthStateChanged((user) => {
             document.querySelector(".projects").innerHTML =
               "<h2 class='text-center' style='margin-top: 82px;'>No Projects Found!</h2>";
           }
+          if(error.response.status == 400)
+          {
+            swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+          }
           loadingDiv.style.visibility = "hidden";
         });
     });

@@ -134,66 +134,108 @@ function make_profile() {
     if (user) {
       user.getIdToken().then(function (idToken) {
         auth = idToken;
-        if(choice.length==0){
+        if (choice.length == 0) {
           swal("WARNING!!", "Please select at least one skill", {
             icon: "warning",
-        })
-      }
-      else{
-        fetch(`${url}/participant/createProfile`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json; charset=utf-8",
-            Authorization: "Bearer " + auth,
-          },
-          body: JSON.stringify({
-            name: Name,
-            college: college,
-            github: git,
-            linkedIn: linkedin,
-            website: website,
-            photo: photo,
-            bio: bio,
-            graduation_year: year,
-            username: username,
-          }),
-        })
-          .then((response) => response.text())
-          .then(() => {
-            axios
-            .post(
-              `${url}/skills/mySkills`,
-              {
-                skills: choice,
-              },
-              {
-                headers: {
-                  Authorization: "Bearer " + auth,
-                },
-              }
-            )
+          });
+        } else {
+          fetch(`${url}/participant/createProfile`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json; charset=utf-8",
+              Authorization: "Bearer " + auth,
+            },
+            body: JSON.stringify({
+              name: Name,
+              college: college,
+              github: git,
+              linkedIn: linkedin,
+              website: website,
+              photo: photo,
+              bio: bio,
+              graduation_year: year,
+              username: username,
+            }),
+          })
             .then((response) => {
-              swal(
-                "SUCCESS!!",
-                "Your profile has been created successfully",
-                "success"
-              ).then((okay) => {
-                if (okay) {
-                  window.location.href = "./viewhackathon.html";
-                }
-              });
+              {
+                swal(
+                  "Warning!!",
+                  "Some unknown error occured, please try again.",
+                  "warning"
+                );
+              }
+              if (response.status == 417) {
+                swal(
+                  "Warning!!",
+                  "Please enter all the required fields.",
+                  "warning"
+                );
+              }
+              response.text();
+            })
+            .then(() => {
+              axios
+                .post(
+                  `${url}/skills/mySkills`,
+                  {
+                    skills: choice,
+                  },
+                  {
+                    headers: {
+                      Authorization: "Bearer " + auth,
+                    },
+                  }
+                )
+                .then((response) => {
+                  swal(
+                    "SUCCESS!!",
+                    "Your profile has been created successfully",
+                    "success"
+                  ).then((okay) => {
+                    if (okay) {
+                      window.location.href = "./viewhackathon.html";
+                    }
+                  });
+                })
+                .catch((error) => {
+                  console.error("Error:", error);
+                  if (error.response.status == 404) {
+                    swal("Warning!!", "Please enter some skills.", "warning");
+                  }
+                  if (error.response.status == 403) {
+                    swal("Warning!!", "Invalid.", "warning");
+                  }
+
+                  if (error.response.status == 400) {
+                    swal(
+                      "Warning!!",
+                      "Some unknown error occured, please try again.",
+                      "warning"
+                    );
+                  }
+                });
             })
             .catch((error) => {
               console.error("Error:", error);
+              if (error.response.status == 400) {
+                swal(
+                  "Warning!!",
+                  "Some unknown error occured, please try again.",
+                  "warning"
+                );
+              }
+              if (error.response.status == 417) {
+                swal(
+                  "Warning!!",
+                  "Please enter all the required fields.",
+                  "warning"
+                );
+              }
             });
-          })
-          .catch((error) => {
-            console.error("Error:", error);
-          });
         }
       });
-    } 
-    else {
+    } else {
       // User is signed out
     }
   });

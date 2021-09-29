@@ -204,6 +204,7 @@ input {
   color: #fff;
   cursor: pointer;
   text-transform: uppercase; 
+  font-size: 16.9706px;
 }
 .form-wrap form .button:hover {
   background-color: #157347; 

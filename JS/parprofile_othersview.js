@@ -105,8 +105,11 @@ function invite() {
         .catch((e) => {
           if (e.response.status == 404) {
             swal("WARNING!!", "No Participant Found", "warning");
-          } else if (e.response.status == 400) {
+          } else if (e.response.status == 409) {
             swal("WARNING!!", "Invite has already been sent", "warning");
+          }
+          else if (e.response.status == 400) {
+            swal("WARNING!!", "The participant you are trying to invite is already in the given team!!", "warning");
           }
         });
     });

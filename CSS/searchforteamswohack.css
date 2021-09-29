@@ -193,7 +193,7 @@ body {
 
 .button {
     color: #fff;
-    padding: 10px 20px;
+    padding: 10px 20px 10px;
     text-align: center;
     text-decoration: none;
     margin: 4px 4px;
@@ -218,7 +218,7 @@ body {
 .button9,
 .button10,
 .button11 {
-    padding: 10px 20px;
+    padding: 8px 20px 10px;
     text-align: center;
     text-decoration: none;
     margin: 4px 4px;
@@ -461,11 +461,11 @@ body {
 }
 
 .text20 {
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .text21 {
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .button3 {

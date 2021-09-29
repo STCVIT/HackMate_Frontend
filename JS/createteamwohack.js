@@ -67,7 +67,7 @@ function displayTeams() {
     window.addEventListener("scroll", someFunction);
     function someFunction() {
       if (window.scrollY + window.innerHeight >= 1153) {
-        displayTeams();
+        // displayTeams();
         window.removeEventListener("scroll", someFunction);
       }
     }
@@ -1228,7 +1228,7 @@ all.addEventListener("click", function () {
     window.addEventListener("scroll", someFunction);
     function someFunction() {
       if (window.scrollY + window.innerHeight >= 1153) {
-        displayTeams();
+        // displayTeams();
         window.removeEventListener("scroll", someFunction);
       }
     }
@@ -1744,14 +1744,11 @@ document.querySelector(".creates").innerHTML =
       // id.innerHTML = "Ooops!";
       var nk = 0;
       const cards = document.querySelectorAll("#goods");
-      console.log(cards);
       cards.forEach((card) => card.addEventListener("click", look));
-      console.log(look);
       function look() {
         nk = nk + 1;
         if (nk == 1) {
           var participant_id = this.querySelector("#participant-ids").textContent;
-          console.log(participant_id);
       firebase
         .auth()
         .currentUser.getIdToken()
@@ -1786,7 +1783,7 @@ document.querySelector(".creates").innerHTML =
                 swal("WARNING!!", "Invite has already been sent", "warning");
               }
               else if (e.response.status == 400) {
-                swal("WARNING!!", "Same Team!!", "warning");
+                swal("WARNING!!", "The participant you are trying to invite is already in the given team!!", "warning");
               }
             });
         });
@@ -1835,7 +1832,7 @@ function inviteme() {
                 swal("WARNING!!", "Invite has already been sent", "warning");
               }
               else if (e.response.status == 400) {
-                swal("WARNING!!", "Same Team!!", "warning");
+                swal("WARNING!!", "The participant you are trying to invite is already in the given team!!", "warning");
               }
             });
         });

@@ -58,7 +58,7 @@ function submitform() {
                 "Project has been created successfully",
                 "success"
               ).then(() => {
-                
+                window.location.href = "./"
               });
             })
             .catch((error) => {

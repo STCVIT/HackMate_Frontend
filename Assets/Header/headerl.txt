@@ -449,5 +449,6 @@ document.querySelector(".notification2").innerHTML = "";
         document.querySelector(".notification2").innerHTML = "";
         getInvites()
     }
+    }
 
 </script>

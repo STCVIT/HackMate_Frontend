@@ -2,6 +2,7 @@ $(document).ready(function () {
   $("#nav").load("../Assets/Header/headerl.txt");
   $("#foobottom").load("../Assets/Footer/footer.txt");
 });
+let github_regex = /https:\/\/github.com\//gm;
 const loadingDiv = document.getElementById("loading");
 const project_form = document.getElementById("project_form");
 function toTitleCase(str) {
@@ -31,6 +32,11 @@ function submitform() {
     document.getElementById("error_bio").style.visibility = "visible";
     flag = 1;
   }
+  if (github_regex.test(git) == false && git.trim() != "")
+  {
+    flag = 1;
+    swal("Warning!!", "Please enter a valid GitHub link.", "warning");
+  }
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       user.getIdToken().then(function (idToken) {
@@ -58,7 +64,7 @@ function submitform() {
                 "Project has been created successfully",
                 "success"
               ).then(() => {
-                window.location.href = "./"
+                window.location.href = "./Project_profile.html?" + response.data._id;
               });
             })
             .catch((error) => {

@@ -1,244 +1,352 @@
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-    <div class="container-fluid">
-        <a class="navbar-brand logo" href="./viewhackathon.html">
-            <g><</g><b>HackMate</b><g>></g>
-        </a>
-        <div>  
-        <a class="notification-mobile pe-2" href="./reqinv.html"><img src="../Assets/Images/carbon_notification-new.svg" alt=""></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" style="border: none;">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        </div>
-        <div class="justify-content-end collapse navbar-collapse" id="navbarNavAltMarkup">
 
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="./viewhackathon.html">Hackathons</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./teamwohack.html">Create Team</a>
-                </li>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand logo" href="./viewhackathon.html">
+                <g><</g><b>HackMate</b><g>></g>
+            </a>
+            <div>
+                <a class="notification-mobile pe-2" href="./reqinv.html"><img
+                        src="../Assets/Images/carbon_notification-new.svg" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation" style="border: none;">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="justify-content-end collapse navbar-collapse" id="navbarNavAltMarkup">
 
-                <li class="nav-item dropdown notification-lap">
-                    <a class="nav-link dropdown-toggle notification" href="#" id="navbarDropdown"
-                        style="padding-right: 2vw;" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="../Assets/Images/carbon_notification-new.svg" alt="">
-                    </a>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./viewhackathon.html">Hackathons</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./teamwohack.html">Create Team</a>
+                    </li>
 
-                    <div class="carbon-notification" style="display: none;">
-                        <div class="triangle-up1"></div>
-                        <div class="wrap1"
-                            style="background: #283d4c; width: 576px; border: 1px solid rgba(30, 165, 76, 0.2);">
-                            <div class="d-flex notification1" style="background: #26313c;">
-                                <div class="notification-type-active flex-fill" id="requests" style="cursor: pointer">
-                                    Requests</div>
-                                <div class="notification-type-inactive flex-fill" id="invites" style="cursor: pointer;">
-                                    Invites</div>
-                            </div>
-                            <div class="notification2" style="padding: 12px; background: #283d4c;">
+                    <li class="nav-item dropdown notification-lap">
+                        <a class="nav-link dropdown-toggle notification" href="#" id="navbarDropdown"
+                            style="padding-right: 2vw;" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="../Assets/Images/carbon_notification-new.svg" alt="">
+                        </a>
+
+                        <div class="carbon-notification" style="display: none;">
+                            <div class="triangle-up1"></div>
+                            <div class="wrap1"
+                                style="background: #283d4c; width: 576px; border: 1px solid rgba(30, 165, 76, 0.2);">
+                                <div class="d-flex notification1" style="background: #26313c;">
+                                    <div class="notification-type-active flex-fill" id="requests"
+                                        style="cursor: pointer">
+                                        Requests</div>
+                                    <div class="notification-type-inactive flex-fill" id="invites"
+                                        style="cursor: pointer;">
+                                        Invites</div>
+                                </div>
+                                <div class="notification2" style="padding: 12px; background: #283d4c;">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle username" href="#" id="navbarDropdown"
-                        style="padding-right: 2vw;" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <div class="triangle-up"></div>
-                        <li><a class="dropdown-item" href="./My_teams.html">MY TEAMS</a></li>
-                        <li><a class="dropdown-item" href="./MyProfile_userView.html">MY PROFILE</a></li>
-                        <li><a class="dropdown-item" onclick="logout()" href="../" style="color: #F54646;">LOGOUT</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link img" href="#"><img class="userdp" style="width:47px; height: 47px;" alt=""></a>
-                </li>
-            </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle username" href="#" id="navbarDropdown"
+                            style="padding-right: 2vw;" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <div class="triangle-up"></div>
+                            <li><a class="dropdown-item" href="./My_teams.html">MY TEAMS</a></li>
+                            <li><a class="dropdown-item" href="./MyProfile_userView.html">MY PROFILE</a></li>
+                            <li><a class="dropdown-item" onclick="logout()" href="../"
+                                    style="color: #F54646;">LOGOUT</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link img" href="./MyProfile_userView.html"><img class="userdp"
+                                style="width:47px; height: 47px;" alt=""></a>
+                    </li>
+                </ul>
 
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
 <script>
-var login_count = 0
-    firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
-            user.getIdToken().then(function (idToken) {
-                auth = idToken
+var login_count = 0;
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    user.getIdToken().then(function (idToken) {
+      auth = idToken;
 
-                axios(`${url}/participant/login`, {
-                    headers: {
-                        Authorization: "Bearer " + auth,
-                    },
-                })
-                    .then((response) => { 
-                        document.querySelector(".username").innerText = response.data.username 
-                        document.querySelector(".userdp").setAttribute("src", response.data.photo)
-                        })
-            
-                        axios(`${url}/requests/myRequests`, {
-                headers: {
-                    Authorization: "Bearer " + auth,
-                },
-            })
-                .then((response) => {
-                    requests = response.data;
-                    document.querySelector(".notification2").innerHTML = ""
-                    requests.received.forEach(element => {
-                        document.querySelector(".notification2").innerHTML += "<div class='row notification-inner' style='background: #283d4c;'>    <div class='col-1' style='margin-left: 30px; padding-left: 0;'><img            style='width: 47px;height: 47px;padding-bottom:10px;' src='"+element.participant.photo +"' alt=''></div>    <div class='col-6 text-start' style='cursor: default;'>        <nbw>" + element.participant.name + "</nbw> has requested you to become a part of        <nbw>" + element.team.name + "</nbw>.    </div>    <div class='col-2'>        <nbgr id=" + element.req + " onclick='acceptreq(event.target.id)' style='cursor: pointer;'>ACCEPT</nbgr>    </div>    <div class='col-2'>        <nbgr id=" + element.req + " onclick='rejectreq(event.target.id)' style='cursor: pointer;'>REJECT</nbgr>    </div></div>"
-                    })
-                    requests.sent.forEach(element => {
+      axios(`${url}/participant/login`, {
+        headers: {
+          Authorization: "Bearer " + auth,
+        },
+      }).then((response) => {
+        document.querySelector(".username").innerText = response.data.username;
+        document
+          .querySelector(".userdp")
+          .setAttribute("src", response.data.photo);
+      });
 
-                        document.querySelector(".notification2").innerHTML += "<div class='row notification-inner' style='background: #283d4c;'>    <div class='col-1' style='margin-left: 30px; padding-left: 0;'><img            style='width: 47px;height: 47px;padding-bottom:10px;' src='"+element.leader.photo +"' alt=''></div>    <div class='col-6 text-start' style='cursor: default;'><nbw> You </nbw> have requested to become a part of <nbw>" + element.team.name + "</nbw>.    </div>    <div class='col-4 text-center'>        <nbgr id=" + element.req + " onclick='deletereq(event.target.id)' style='cursor: pointer;'>DELETE</nbgr>    </div></div>"
-                    })
-
-                })
-                .catch((error) => {
-                    console.error("Error: ", error)
-                    if (error.response.status == 404) {
-                        document.querySelector(".notification2").innerHTML = "<div class='text-center notification1' style='padding-top: 16px;'>    Notifications</div><div class='text-center notification2' style='padding-top: 25px'>    You don't have any Notifications</div>"
-                    }
-                                  if(error.response.status == 400)
-              {
-                swal("Warning!!", "Some unknown error occured, please try again.", "warning");
-              }
-              
-                });
-            
-            })
-        } else {
-            // User is signed out
-            if(login_count != 1)
-            {
-
-                swal("Warning!!", "Please Sign In", "warning").then(() => {
-                    window.location = "./participantlognsignup.html"
-                });
-            }
-        }
-    });
-
-    function getRequests() {
-    loadingDiv.style.visibility = 'visible';
-        firebase.auth().currentUser.getIdToken().then((id) => {
-            auth = id;
-            axios(`${url}/requests/myRequests`, {
-                headers: {
-                    Authorization: "Bearer " + auth,
-                },
-            })
-                .then((response) => {
-                    requests = response.data;
-
-                    document.querySelector(".notification2").innerHTML = ""
-                    requests.received.forEach(element => {
-
-                        document.querySelector(".notification2").innerHTML += "<div class='row notification-inner' style='background: #283d4c;'>    <div class='col-1' style='margin-left: 30px; padding-left: 0;'><img            style='width: 47px;height: 47px;padding-bottom:10px;' src='"+element.participant.photo +"' alt=''></div>    <div class='col-6 text-start' style='cursor: default;'>        <nbw>" + element.participant.name + "</nbw> has requested you to become a part of        <nbw>" + element.team.name + "</nbw>.    </div>    <div class='col-2'>        <nbgr id=" + element.req + " onclick='acceptreq(event.target.id)' style='cursor: pointer;'>ACCEPT</nbgr>    </div>    <div class='col-2'>        <nbgr id=" + element.req + " onclick='rejectreq(event.target.id)' style='cursor: pointer;'>REJECT</nbgr>    </div></div>"
-                    })
-                    requests.sent.forEach(element => {
-
-                        document.querySelector(".notification2").innerHTML += "<div class='row notification-inner' style='background: #283d4c;'>    <div class='col-1' style='margin-left: 30px; padding-left: 0;'><img            style='width: 47px;height: 47px;padding-bottom:10px;' src='"+element.leader.photo +"' alt=''></div>    <div class='col-6 text-start' style='cursor: default;'><nbw> You </nbw> have requested to become a part of <nbw>" + element.team.name + "</nbw>.    </div>    <div class='col-4 text-center'>        <nbgr id=" + element.req + " onclick='deletereq(event.target.id)' style='cursor: pointer;'>DELETE</nbgr>    </div></div>"
-                    })
-                loadingDiv.style.visibility = 'hidden';
-                })
-                .catch((error) => {
-                    console.error("Error:", error);
-
-                    if (error.response.status == 404) {
-                        document.querySelector(".notification2").innerHTML = "<div class='text-center notification1' style='padding-top: 16px;'>    Notifications</div><div class='text-center notification2' style='padding-top: 25px'>    You don't have any Notifications</div>"
-                    }
-                                  if(error.response.status == 400)
-              {
-                swal("Warning!!", "Some unknown error occured, please try again.", "warning");
-              }
-                loadingDiv.style.visibility = 'hidden';
-                });
+      axios(`${url}/requests/myRequests`, {
+        headers: {
+          Authorization: "Bearer " + auth,
+        },
+      })
+        .then((response) => {
+          requests = response.data;
+          document.querySelector(".notification2").innerHTML = "";
+          requests.received.forEach((element) => {
+            document.querySelector(".notification2").innerHTML +=
+              "<div class='row notification-inner' style='background: #283d4c;'>    <div class='col-1' style='margin-left: 30px; padding-left: 0;'><img            style='width: 47px;height: 47px;padding-bottom:10px;' src='" +
+              element.participant.photo +
+              "' alt=''></div>    <div class='col-6 text-start' style='cursor: default;'>        <nbw>" +
+              element.participant.name +
+              "</nbw> has requested you to become a part of        <nbw>" +
+              element.team.name +
+              "</nbw>.    </div>    <div class='col-2'>        <nbgr id=" +
+              element.req +
+              " onclick='acceptreq(event.target.id)' style='cursor: pointer;'>ACCEPT</nbgr>    </div>    <div class='col-2'>        <nbgr id=" +
+              element.req +
+              " onclick='rejectreq(event.target.id)' style='cursor: pointer;'>REJECT</nbgr>    </div></div>";
+          });
+          requests.sent.forEach((element) => {
+            document.querySelector(".notification2").innerHTML +=
+              "<div class='row notification-inner' style='background: #283d4c;'>    <div class='col-1' style='margin-left: 30px; padding-left: 0;'><img            style='width: 47px;height: 47px;padding-bottom:10px;' src='" +
+              element.leader.photo +
+              "' alt=''></div>    <div class='col-6 text-start' style='cursor: default;'><nbw> You </nbw> have requested to become a part of <nbw>" +
+              element.team.name +
+              "</nbw>.    </div>    <div class='col-4 text-center'>        <nbgr id=" +
+              element.req +
+              " onclick='deletereq(event.target.id)' style='cursor: pointer;'>DELETE</nbgr>    </div></div>";
+          });
         })
-    }
-    function getInvites() {
-        loadingDiv.style.visibility = 'visible';
-        firebase.auth().currentUser.getIdToken().then((id) => {
-            auth = id;
-                    axios(`${url}/invites/myInvites`, {
-            headers: {
-                Authorization: "Bearer " + auth,
-            },
-        })
-            .then((response) => {
-                requests = response.data;
-
-                document.querySelector(".notification2").innerHTML = ""
-                requests.received.forEach(element => {
-
-                    document.querySelector(".notification2").innerHTML += "<div class='row notification-inner' style='background: #283d4c;'>    <div class='col-1' style='margin-left: 30px; padding-left: 0;'><img            style='width: 47px;height: 47px;padding-bottom:10px;' src='"+element.leader.photo +"' alt=''></div>    <div class='col-6 text-start' style='cursor: default;'>        <nbw>" + element.leader.name + "</nbw> has invited you to join the team <nbw>" + element.team.name + "</nbw>.    </div>    <div class='col-2'>        <nbgr id=" + element.inv + " onclick='acceptinv(event.target.id)' style='cursor: pointer;'>ACCEPT</nbgr>    </div>    <div class='col-2'>        <nbgr id=" + element.inv + " onclick='rejectinv(event.target.id)' style='cursor: pointer;'>REJECT</nbgr>    </div></div>"
-                });
-                requests.sent.forEach(element => {
-
-                    document.querySelector(".notification2").innerHTML += "<div class='row notification-inner' style='background: #283d4c;'>    <div class='col-1' style='margin-left: 30px; padding-left: 0;'><img            style='width: 47px;height: 47px;padding-bottom:10px;' src='"+element.participant.photo +"' alt=''></div>    <div class='col-6 text-start' style='cursor: default;'>        <nbw> You </nbw> have invited <nbw>" + element.participant.name + " </nbw>to join the team <nbw>" + element.team.name + "</nbw>.    </div>    <div class='col-4 text-center'> <nbgr id=" + element.inv + " onclick='deleteinv(event.target.id)' style='cursor: pointer;'>DELETE</nbgr>    </div></div>"
-                });
-            loadingDiv.style.visibility = 'hidden';
-            })
-            .catch((error) => {
-                console.error("Error:", error);
-                if (error.response.status == 404) {
-                    document.querySelector(".notification2").innerHTML = "<div class='text-center notification1' style='padding-top: 16px;'>    Notifications</div><div class='text-center notification2' style='padding-top: 25px'>    You don't have any Notifications</div>"
-                }
-                          if(error.response.status == 400)
-          {
-            swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+        .catch((error) => {
+          console.error("Error: ", error);
+          if (error.response.status == 404) {
+            document.querySelector(".notification2").innerHTML =
+              "<div class='text-center notification1' style='padding-top: 16px;'>    Notifications</div><div class='text-center notification2' style='padding-top: 25px'>    You don't have any Notifications</div>";
           }
-                loadingDiv.style.visibility = 'hidden';
-            });
-        })
+          if (error.response.status == 400) {
+            swal(
+              "Warning!!",
+              "Some unknown error occured, please try again.",
+              "warning"
+            );
+          }
+        });
+    });
+  } else {
+    // User is signed out
+    if (login_count != 1) {
+      swal("Warning!!", "Please Sign In", "warning").then(() => {
+        window.location = "./participantlognsignup.html";
+      });
     }
-    function logout() {
-        login_count = 1
-        firebase.auth().signOut().then(() => {
-            window.location = "./participantlognsignup.html"
-  // Sign-out successful.
-  
-}).catch((error) => {
-  // An error happened.
+  }
 });
-    }
 
-    document.querySelector(".notification").addEventListener("click", () => {
-        if (document.querySelector(".carbon-notification").getAttribute("style") == "display: none;") {
-            document.querySelector(".carbon-notification").setAttribute("style", "display: block; position:absolute; top: 100%; left: auto; right: 0; margin-top: 15px;")
-        }
-        else if (document.querySelector(".carbon-notification").getAttribute("style") == "display: block; position:absolute; top: 100%; left: auto; right: 0; margin-top: 15px;") {
-            document.querySelector(".carbon-notification").setAttribute("style", "display: none;")
-        }
+function getRequests() {
+  loadingDiv.style.visibility = "visible";
+  firebase
+    .auth()
+    .currentUser.getIdToken()
+    .then((id) => {
+      auth = id;
+      axios(`${url}/requests/myRequests`, {
+        headers: {
+          Authorization: "Bearer " + auth,
+        },
+      })
+        .then((response) => {
+          requests = response.data;
+
+          document.querySelector(".notification2").innerHTML = "";
+          requests.received.forEach((element) => {
+            document.querySelector(".notification2").innerHTML +=
+              "<div class='row notification-inner' style='background: #283d4c;'>    <div class='col-1' style='margin-left: 30px; padding-left: 0;'><img            style='width: 47px;height: 47px;padding-bottom:10px;' src='" +
+              element.participant.photo +
+              "' alt=''></div>    <div class='col-6 text-start' style='cursor: default;'>        <nbw>" +
+              element.participant.name +
+              "</nbw> has requested you to become a part of        <nbw>" +
+              element.team.name +
+              "</nbw>.    </div>    <div class='col-2'>        <nbgr id=" +
+              element.req +
+              " onclick='acceptreq(event.target.id)' style='cursor: pointer;'>ACCEPT</nbgr>    </div>    <div class='col-2'>        <nbgr id=" +
+              element.req +
+              " onclick='rejectreq(event.target.id)' style='cursor: pointer;'>REJECT</nbgr>    </div></div>";
+          });
+          requests.sent.forEach((element) => {
+            document.querySelector(".notification2").innerHTML +=
+              "<div class='row notification-inner' style='background: #283d4c;'>    <div class='col-1' style='margin-left: 30px; padding-left: 0;'><img            style='width: 47px;height: 47px;padding-bottom:10px;' src='" +
+              element.leader.photo +
+              "' alt=''></div>    <div class='col-6 text-start' style='cursor: default;'><nbw> You </nbw> have requested to become a part of <nbw>" +
+              element.team.name +
+              "</nbw>.    </div>    <div class='col-4 text-center'>        <nbgr id=" +
+              element.req +
+              " onclick='deletereq(event.target.id)' style='cursor: pointer;'>DELETE</nbgr>    </div></div>";
+          });
+          loadingDiv.style.visibility = "hidden";
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+
+          if (error.response.status == 404) {
+            document.querySelector(".notification2").innerHTML =
+              "<div class='text-center notification1' style='padding-top: 16px;'>    Notifications</div><div class='text-center notification2' style='padding-top: 25px'>    You don't have any Notifications</div>";
+          }
+          if (error.response.status == 400) {
+            swal(
+              "Warning!!",
+              "Some unknown error occured, please try again.",
+              "warning"
+            );
+          }
+          loadingDiv.style.visibility = "hidden";
+        });
+    });
+}
+function getInvites() {
+  loadingDiv.style.visibility = "visible";
+  firebase
+    .auth()
+    .currentUser.getIdToken()
+    .then((id) => {
+      auth = id;
+      axios(`${url}/invites/myInvites`, {
+        headers: {
+          Authorization: "Bearer " + auth,
+        },
+      })
+        .then((response) => {
+          requests = response.data;
+
+          document.querySelector(".notification2").innerHTML = "";
+          requests.received.forEach((element) => {
+            document.querySelector(".notification2").innerHTML +=
+              "<div class='row notification-inner' style='background: #283d4c;'>    <div class='col-1' style='margin-left: 30px; padding-left: 0;'><img            style='width: 47px;height: 47px;padding-bottom:10px;' src='" +
+              element.leader.photo +
+              "' alt=''></div>    <div class='col-6 text-start' style='cursor: default;'>        <nbw>" +
+              element.leader.name +
+              "</nbw> has invited you to join the team <nbw>" +
+              element.team.name +
+              "</nbw>.    </div>    <div class='col-2'>        <nbgr id=" +
+              element.inv +
+              " onclick='acceptinv(event.target.id)' style='cursor: pointer;'>ACCEPT</nbgr>    </div>    <div class='col-2'>        <nbgr id=" +
+              element.inv +
+              " onclick='rejectinv(event.target.id)' style='cursor: pointer;'>REJECT</nbgr>    </div></div>";
+          });
+          requests.sent.forEach((element) => {
+            document.querySelector(".notification2").innerHTML +=
+              "<div class='row notification-inner' style='background: #283d4c;'>    <div class='col-1' style='margin-left: 30px; padding-left: 0;'><img            style='width: 47px;height: 47px;padding-bottom:10px;' src='" +
+              element.participant.photo +
+              "' alt=''></div>    <div class='col-6 text-start' style='cursor: default;'>        <nbw> You </nbw> have invited <nbw>" +
+              element.participant.name +
+              " </nbw>to join the team <nbw>" +
+              element.team.name +
+              "</nbw>.    </div>    <div class='col-4 text-center'> <nbgr id=" +
+              element.inv +
+              " onclick='deleteinv(event.target.id)' style='cursor: pointer;'>DELETE</nbgr>    </div></div>";
+          });
+          loadingDiv.style.visibility = "hidden";
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          if (error.response.status == 404) {
+            document.querySelector(".notification2").innerHTML =
+              "<div class='text-center notification1' style='padding-top: 16px;'>    Notifications</div><div class='text-center notification2' style='padding-top: 25px'>    You don't have any Notifications</div>";
+          }
+          if (error.response.status == 400) {
+            swal(
+              "Warning!!",
+              "Some unknown error occured, please try again.",
+              "warning"
+            );
+          }
+          loadingDiv.style.visibility = "hidden";
+        });
+    });
+}
+function logout() {
+  login_count = 1;
+  firebase
+    .auth()
+    .signOut()
+    .then(() => {
+      window.location = "./participantlognsignup.html";
+      // Sign-out successful.
     })
+    .catch((error) => {
+      // An error happened.
+    });
+}
 
-    document.querySelector("#requests").addEventListener("click", () => {
+document.querySelector(".notification").addEventListener("click", () => {
+  if (
+    document.querySelector(".carbon-notification").getAttribute("style") ==
+    "display: none;"
+  ) {
+    document
+      .querySelector(".carbon-notification")
+      .setAttribute(
+        "style",
+        "display: block; position:absolute; top: 100%; left: auto; right: 0; margin-top: 15px;"
+      );
+  } else if (
+    document.querySelector(".carbon-notification").getAttribute("style") ==
+    "display: block; position:absolute; top: 100%; left: auto; right: 0; margin-top: 15px;"
+  ) {
+    document
+      .querySelector(".carbon-notification")
+      .setAttribute("style", "display: none;");
+  }
+});
 
-        if (document.querySelector("#requests").classList.contains("notification-type-inactive")) {
-            document.querySelector("#requests").classList.remove("notification-type-inactive")
-            document.querySelector("#requests").classList.add("notification-type-active")
-            document.querySelector("#invites").classList.remove("notification-type-active")
-            document.querySelector("#invites").classList.add("notification-type-inactive")
-        }
-        document.querySelector(".notification2").innerHTML = "";
+document.querySelector("#requests").addEventListener("click", () => {
+  if (
+    document
+      .querySelector("#requests")
+      .classList.contains("notification-type-inactive")
+  ) {
+    document
+      .querySelector("#requests")
+      .classList.remove("notification-type-inactive");
+    document
+      .querySelector("#requests")
+      .classList.add("notification-type-active");
+    document
+      .querySelector("#invites")
+      .classList.remove("notification-type-active");
+    document
+      .querySelector("#invites")
+      .classList.add("notification-type-inactive");
+  }
+  document.querySelector(".notification2").innerHTML = "";
 
-        getRequests()
+  getRequests();
+});
+document.querySelector("#invites").addEventListener("click", () => {
+  if (
+    document
+      .querySelector("#invites")
+      .classList.contains("notification-type-inactive")
+  ) {
+    document
+      .querySelector("#invites")
+      .classList.remove("notification-type-inactive");
+    document
+      .querySelector("#invites")
+      .classList.add("notification-type-active");
+    document
+      .querySelector("#requests")
+      .classList.remove("notification-type-active");
+    document
+      .querySelector("#requests")
+      .classList.add("notification-type-inactive");
+  }
 
-    })
-    document.querySelector("#invites").addEventListener("click", () => {
-
-        if (document.querySelector("#invites").classList.contains("notification-type-inactive")) {
-            document.querySelector("#invites").classList.remove("notification-type-inactive")
-            document.querySelector("#invites").classList.add("notification-type-active")
-            document.querySelector("#requests").classList.remove("notification-type-active")
-            document.querySelector("#requests").classList.add("notification-type-inactive")
-        }
-
-        document.querySelector(".notification2").innerHTML = "";
-        getInvites();
-    })
+  document.querySelector(".notification2").innerHTML = "";
+  getInvites();
+});
 
 async function acceptreq(id) {
   try {
@@ -264,145 +372,45 @@ async function acceptreq(id) {
         "Warning!!",
         "That participant is already going to the same hack, this request cannot be accepted.",
         "warning"
-      )
+      );
     }
-        if(error.response.status == 400)
-    {
-      swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+    if (error.response.status == 400) {
+      swal(
+        "Warning!!",
+        "Some unknown error occured, please try again.",
+        "warning"
+      );
     }
-    if(error.response.status == 404)
-    {
+    if (error.response.status == 404) {
       swal("Warning!!", "Not found.", "warning");
     }
   }
 
-document.querySelector(".notification2").innerHTML = "";
+  document.querySelector(".notification2").innerHTML = "";
 
   getRequests();
 }
-    
-    async function rejectreq(id) {
-        
-                try{await firebase.auth().currentUser.getIdToken().then((id) => {
-            auth = id;
-        })
-        var response = await axios.post(
-            `${url}/requests/requestStatus/rejected/${id}`, {},
-            {
-                headers: {
-                    Authorization: "Bearer " + auth,
-                },
-            }
-        )
 
-        var deleted = await response.data}
-        catch(error){
-                if (error.response.status == 409) {
-      swal(
-        "Warning!!",
-        "You are already going to the same hack. This invite cannot be accepted.",
-        "warning"
-      );
-    }
-    if(error.response.status == 400)
-    {
-      swal("Warning!!", "Some unknown error occured, please try again.", "warning");
-    }
-    if(error.response.status == 404)
-    {
-      swal("Warning!!", "Not found.", "warning");
-    }
-        }
-        document.querySelector(".notification2").innerHTML = "";
-        getRequests()
-    }
-    async function deletereq(id) {
-        
-                try{await firebase.auth().currentUser.getIdToken().then((id) => {
-            auth = id;
-        })
-        var response = await axios.delete(
-            `${url}/requests/${id}`,
-            {
-                headers: {
-                    Authorization: "Bearer " + auth,
-                },
-            }
-        )
+async function rejectreq(id) {
+  try {
+    await firebase
+      .auth()
+      .currentUser.getIdToken()
+      .then((id) => {
+        auth = id;
+      });
+    var response = await axios.post(
+      `${url}/requests/requestStatus/rejected/${id}`,
+      {},
+      {
+        headers: {
+          Authorization: "Bearer " + auth,
+        },
+      }
+    );
 
-        var deleted = await response.data}
-        catch(error){
-    if (error.response.status == 401) {
-      swal(
-        "WARNING!!",
-        "Unauthorised",
-        "warning"
-      );
-    }
-    if(error.response.status == 400)
-    {
-      swal("Warning!!", "Some unknown error occured, please try again.", "warning");
-    }
-        }
-        document.querySelector(".notification2").innerHTML = "";
-        getRequests()
-    }
-async function acceptinv(id) {
-  try{await firebase
-    .auth()
-    .currentUser.getIdToken()
-    .then((id) => {
-      auth = id;
-    });
-  var response = await axios.post(
-    `${url}/invites/inviteStatus/accepted/${id}`,
-    {},
-    {
-      headers: {
-        Authorization: "Bearer " + auth,
-      },
-    }
-  );
-  var accepted = await response.data;}
-  catch(error)
-  {
-    if(error.response.status == 409){
-            if (error.response.status == 409) {
-      swal(
-        "Warning!!",
-        "You are already going to the same hack. This invite cannot be accepted.",
-        "warning"
-      );
-    }
-    if(error.response.status == 400)
-    {
-      swal("Warning!!", "Some unknown error occured, please try again.", "warning");
-    }
-    if(error.response.status == 404)
-    {
-      swal("Warning!!", "Not found.", "warning");
-    }
-    }
-  }
-document.querySelector(".notification2").innerHTML = "";
-  getInvites();
-}
-    async function rejectinv(id) {
-        
-               try{await firebase.auth().currentUser.getIdToken().then((id) => {
-            auth = id;
-        })
-        var response = await axios.post(
-            `${url}/invites/inviteStatus/rejected/${id}`, {},
-            {
-                headers: {
-                    Authorization: "Bearer " + auth,
-                },
-            }
-        )
-
-        var deleted = await response.data}
-          catch(error){
+    var deleted = await response.data;
+  } catch (error) {
     if (error.response.status == 409) {
       swal(
         "Warning!!",
@@ -410,45 +418,162 @@ document.querySelector(".notification2").innerHTML = "";
         "warning"
       );
     }
-    if(error.response.status == 400)
-    {
-      swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+    if (error.response.status == 400) {
+      swal(
+        "Warning!!",
+        "Some unknown error occured, please try again.",
+        "warning"
+      );
     }
-    if(error.response.status == 404)
-    {
+    if (error.response.status == 404) {
       swal("Warning!!", "Not found.", "warning");
     }
-        document.querySelector(".notification2").innerHTML = "";
-        getInvites()
-    }
-    async function deleteinv(id) {
-        
-                try{await firebase.auth().currentUser.getIdToken().then((id) => {
-            auth = id;
-        })
-        var response = await axios.delete(
-            `${url}/invites/${id}`,
-            {
-                headers: {
-                    Authorization: "Bearer " + auth,
-                },
-            }
-        )
+  }
+  document.querySelector(".notification2").innerHTML = "";
+  getRequests();
+}
+async function deletereq(id) {
+  try {
+    await firebase
+      .auth()
+      .currentUser.getIdToken()
+      .then((id) => {
+        auth = id;
+      });
+    var response = await axios.delete(`${url}/requests/${id}`, {
+      headers: {
+        Authorization: "Bearer " + auth,
+      },
+    });
 
-        var deleted = await response.data}
-        catch(error){
-                if(error.response.status == 400)
-    {
-      swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+    var deleted = await response.data;
+  } catch (error) {
+    if (error.response.status == 401) {
+      swal("WARNING!!", "Unauthorised", "warning");
     }
-    if(error.response.status == 401)
-    {
-      swal("Warning!!", "Not authorized","warning");
+    if (error.response.status == 400) {
+      swal(
+        "Warning!!",
+        "Some unknown error occured, please try again.",
+        "warning"
+      );
     }
-        }
-        document.querySelector(".notification2").innerHTML = "";
-        getInvites()
+  }
+  document.querySelector(".notification2").innerHTML = "";
+  getRequests();
+}
+async function acceptinv(id) {
+  try {
+    await firebase
+      .auth()
+      .currentUser.getIdToken()
+      .then((id) => {
+        auth = id;
+      });
+    var response = await axios.post(
+      `${url}/invites/inviteStatus/accepted/${id}`,
+      {},
+      {
+        headers: {
+          Authorization: "Bearer " + auth,
+        },
+      }
+    );
+    var accepted = await response.data;
+  } catch (error) {
+    if (error.response.status == 409) {
+      if (error.response.status == 409) {
+        swal(
+          "Warning!!",
+          "You are already going to the same hack. This invite cannot be accepted.",
+          "warning"
+        );
+      }
+      if (error.response.status == 400) {
+        swal(
+          "Warning!!",
+          "Some unknown error occured, please try again.",
+          "warning"
+        );
+      }
+      if (error.response.status == 404) {
+        swal("Warning!!", "Not found.", "warning");
+      }
     }
+  }
+  document.querySelector(".notification2").innerHTML = "";
+  getInvites();
+}
+async function rejectinv(id) {
+  try {
+    await firebase
+      .auth()
+      .currentUser.getIdToken()
+      .then((id) => {
+        auth = id;
+      });
+    var response = await axios.post(
+      `${url}/invites/inviteStatus/rejected/${id}`,
+      {},
+      {
+        headers: {
+          Authorization: "Bearer " + auth,
+        },
+      }
+    );
+
+    var deleted = await response.data;
+  } catch (error) {
+    if (error.response.status == 409) {
+      swal(
+        "Warning!!",
+        "You are already going to the same hack. This invite cannot be accepted.",
+        "warning"
+      );
     }
+    if (error.response.status == 400) {
+      swal(
+        "Warning!!",
+        "Some unknown error occured, please try again.",
+        "warning"
+      );
+    }
+    if (error.response.status == 404) {
+      swal("Warning!!", "Not found.", "warning");
+    }
+    document.querySelector(".notification2").innerHTML = "";
+    getInvites();
+  }
+}
+async function deleteinv(id) {
+  try {
+    await firebase
+      .auth()
+      .currentUser.getIdToken()
+      .then((id) => {
+        auth = id;
+      });
+    var response = await axios.delete(`${url}/invites/${id}`, {
+      headers: {
+        Authorization: "Bearer " + auth,
+      },
+    });
+
+    var deleted = await response.data;
+  } catch (error) {
+    if (error.response.status == 400) {
+      swal(
+        "Warning!!",
+        "Some unknown error occured, please try again.",
+        "warning"
+      );
+    }
+    if (error.response.status == 401) {
+      swal("Warning!!", "Not authorized", "warning");
+    }
+  }
+  document.querySelector(".notification2").innerHTML = "";
+  getInvites();
+}
 
 </script>

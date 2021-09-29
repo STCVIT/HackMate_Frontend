@@ -159,11 +159,12 @@ function make_profile() {
           })
             .then((response) => {
               {
-                swal(
-                  "Warning!!",
-                  "Some unknown error occured, please try again.",
-                  "warning"
-                );
+                if (response.status == 400) {
+                  swal(
+                    "Warning!!",
+                    "Some unknown error occured, please try again.",
+                    "warning"
+                  )};
               }
               if (response.status == 417) {
                 swal(

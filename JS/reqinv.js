@@ -52,9 +52,12 @@ firebase.auth().onAuthStateChanged((user) => {
             document.querySelector(".reqinv").innerHTML =
               "<div class='reqinv container-fluid'><div class='row reqinvrow'><div class='col-12 text-center' style='font-size: 18px;'>    You don't have any notifications right now!</div></div></div>";
           }
-          if(error.response.status == 400)
-          {
-            swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+          if (error.response.status == 400) {
+            swal(
+              "Warning!!",
+              "Some unknown error occured, please try again.",
+              "warning"
+            );
           }
         });
     });
@@ -159,9 +162,12 @@ function getRequests() {
             document.querySelector(".reqinv").innerHTML =
               "<div class='reqinv container-fluid'><div class='row reqinvrow'><div class='col-12 text-center' style='font-size: 18px;'>    You don't have any notifications right now!</div></div></div>";
           }
-          if(error.response.status == 400)
-          {
-            swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+          if (error.response.status == 400) {
+            swal(
+              "Warning!!",
+              "Some unknown error occured, please try again.",
+              "warning"
+            );
           }
         });
     });
@@ -213,9 +219,12 @@ function getInvites() {
             document.querySelector(".reqinv").innerHTML =
               "<div class='reqinv container-fluid'><div class='row reqinvrow'><div class='col-12 text-center' style='font-size: 18px;'>    You don't have any notifications right now!</div></div></div>";
           }
-          if(error.response.status == 400)
-          {
-            swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+          if (error.response.status == 400) {
+            swal(
+              "Warning!!",
+              "Some unknown error occured, please try again.",
+              "warning"
+            );
           }
         });
     });
@@ -292,14 +301,16 @@ async function acceptreq(id) {
         "Warning!!",
         "That participant is already going to the same hack, this request cannot be accepted.",
         "warning"
-      )
+      );
     }
-    if(error.response.status == 400)
-    {
-      swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+    if (error.response.status == 400) {
+      swal(
+        "Warning!!",
+        "Some unknown error occured, please try again.",
+        "warning"
+      );
     }
-    if(error.response.status == 404)
-    {
+    if (error.response.status == 404) {
       swal("Warning!!", "Not found.", "warning");
     }
   }
@@ -310,24 +321,25 @@ async function acceptreq(id) {
 }
 
 async function rejectreq(id) {
-  try{await firebase
-    .auth()
-    .currentUser.getIdToken()
-    .then((id) => {
-      auth = id;
-    });
-  var response = await axios.post(
-    `${url}/requests/requestStatus/rejected/${id}`,
-    {},
-    {
-      headers: {
-        Authorization: "Bearer " + auth,
-      },
-    }
-  );
+  try {
+    await firebase
+      .auth()
+      .currentUser.getIdToken()
+      .then((id) => {
+        auth = id;
+      });
+    var response = await axios.post(
+      `${url}/requests/requestStatus/rejected/${id}`,
+      {},
+      {
+        headers: {
+          Authorization: "Bearer " + auth,
+        },
+      }
+    );
 
-  var deleted = await response.data;}
-  catch(error){
+    var deleted = await response.data;
+  } catch (error) {
     if (error.response.status == 409) {
       swal(
         "Warning!!",
@@ -335,12 +347,14 @@ async function rejectreq(id) {
         "warning"
       );
     }
-    if(error.response.status == 400)
-    {
-      swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+    if (error.response.status == 400) {
+      swal(
+        "Warning!!",
+        "Some unknown error occured, please try again.",
+        "warning"
+      );
     }
-    if(error.response.status == 404)
-    {
+    if (error.response.status == 404) {
       swal("Warning!!", "Not found.", "warning");
     }
   }
@@ -348,31 +362,31 @@ async function rejectreq(id) {
   getRequests();
 }
 async function deletereq(id) {
-  try{await firebase
-    .auth()
-    .currentUser.getIdToken()
-    .then((id) => {
-      auth = id;
+  try {
+    await firebase
+      .auth()
+      .currentUser.getIdToken()
+      .then((id) => {
+        auth = id;
+      });
+    var response = await axios.delete(`${url}/requests/${id}`, {
+      headers: {
+        Authorization: "Bearer " + auth,
+      },
     });
-  var response = await axios.delete(`${url}/requests/${id}`, {
-    headers: {
-      Authorization: "Bearer " + auth,
-    },
-  });
 
-  var deleted = await response.data;}
-  catch(error){
-    console.error(error)
+    var deleted = await response.data;
+  } catch (error) {
+    console.error(error);
     if (error.response.status == 401) {
+      swal("WARNING!!", "Unauthorised", "warning");
+    }
+    if (error.response.status == 400) {
       swal(
-        "WARNING!!",
-        "Unauthorised",
+        "Warning!!",
+        "Some unknown error occured, please try again.",
         "warning"
       );
-    }
-    if(error.response.status == 400)
-    {
-      swal("Warning!!", "Some unknown error occured, please try again.", "warning");
     }
   }
   document.querySelector(".reqinv").innerHTML = "";
@@ -404,12 +418,14 @@ async function acceptinv(id) {
         "warning"
       );
     }
-    if(error.response.status == 400)
-    {
-      swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+    if (error.response.status == 400) {
+      swal(
+        "Warning!!",
+        "Some unknown error occured, please try again.",
+        "warning"
+      );
     }
-    if(error.response.status == 404)
-    {
+    if (error.response.status == 404) {
       swal("Warning!!", "Not found.", "warning");
     }
   }
@@ -417,24 +433,25 @@ async function acceptinv(id) {
   getInvites();
 }
 async function rejectinv(id) {
-  try{await firebase
-    .auth()
-    .currentUser.getIdToken()
-    .then((id) => {
-      auth = id;
-    });
-  var response = await axios.post(
-    `${url}/invites/inviteStatus/rejected/${id}`,
-    {},
-    {
-      headers: {
-        Authorization: "Bearer " + auth,
-      },
-    }
-  );
+  try {
+    await firebase
+      .auth()
+      .currentUser.getIdToken()
+      .then((id) => {
+        auth = id;
+      });
+    var response = await axios.post(
+      `${url}/invites/inviteStatus/rejected/${id}`,
+      {},
+      {
+        headers: {
+          Authorization: "Bearer " + auth,
+        },
+      }
+    );
 
-  var deleted = await response.data;}
-  catch(error){
+    var deleted = await response.data;
+  } catch (error) {
     if (error.response.status == 409) {
       swal(
         "Warning!!",
@@ -442,12 +459,14 @@ async function rejectinv(id) {
         "warning"
       );
     }
-    if(error.response.status == 400)
-    {
-      swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+    if (error.response.status == 400) {
+      swal(
+        "Warning!!",
+        "Some unknown error occured, please try again.",
+        "warning"
+      );
     }
-    if(error.response.status == 404)
-    {
+    if (error.response.status == 404) {
       swal("Warning!!", "Not found.", "warning");
     }
   }
@@ -455,27 +474,30 @@ async function rejectinv(id) {
   getInvites();
 }
 async function deleteinv(id) {
-  try{await firebase
-    .auth()
-    .currentUser.getIdToken()
-    .then((id) => {
-      auth = id;
+  try {
+    await firebase
+      .auth()
+      .currentUser.getIdToken()
+      .then((id) => {
+        auth = id;
+      });
+    var response = await axios.delete(`${url}/invites/${id}`, {
+      headers: {
+        Authorization: "Bearer " + auth,
+      },
     });
-  var response = await axios.delete(`${url}/invites/${id}`, {
-    headers: {
-      Authorization: "Bearer " + auth,
-    },
-  });
 
-  var deleted = await response.data;}
-  catch(error){
-    if(error.response.status == 400)
-    {
-      swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+    var deleted = await response.data;
+  } catch (error) {
+    if (error.response.status == 400) {
+      swal(
+        "Warning!!",
+        "Some unknown error occured, please try again.",
+        "warning"
+      );
     }
-    if(error.response.status == 401)
-    {
-      swal("Warning!!", "Not authorized","warning");
+    if (error.response.status == 401) {
+      swal("Warning!!", "Not authorized", "warning");
     }
   }
   document.querySelector(".reqinv").innerHTML = "";

@@ -33,17 +33,6 @@ function firstpage_profile() {
             window.location.assign("./profile_2nd.html");
         }
     });
-
-    //  function get_items() {
-    //      if (count>=0) {
-    //         document.form2.linkedin.value= sessionStorage.getItem("LINKEDIN");
-    //         document.form2.git.value = sessionStorage.getItem("GIT");
-    //         document.form2.website.value= sessionStorage.getItem("WEBSITE");
-    //         document.form2.bio.value = sessionStorage.getItem("BIO");
-    //     }
-    // }
-
-    // get_items();
 }
 function set_items() {
     back = 1;
@@ -119,7 +108,9 @@ function secondpage_profile() {
                                             }),
                                         })
                                             .then((response) => 
-                                            {if(response.status == 400)
+                                            
+                                            {console.log("Bsk",response)
+                                                if(response.status == 400)
                                                 {
                                                   swal("Warning!!", "Some unknown error occured, please try again.", "warning");
                                                 }
@@ -226,6 +217,7 @@ function validate(linkedin, git, website, bio) {
     let flag = 0;
     linkedin.value = linkedin.value.trim();
     let regex = /((https?:\/\/)?((www|\w\w)\.)?linkedin\.com\/)((([\w]{2,3})?)|([^\/]+\/(([\w|\d-&#?=])+\/?){1,}))$/;
+    let github_regex = /https:\/\/github.com\//gm;
     let regstr = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
     git.value = git.value.trim();
     website.value = website.value.trim();
@@ -240,7 +232,7 @@ function validate(linkedin, git, website, bio) {
         onError(linkedin, "Enter correct linkedIn profile link");
     }
     //github profile link validation
-    if (regstr.test(git.value) === true) {
+    if (github_regex.test(git.value) === true) {
         onSuccess(git);
         flag = flag + 1;
     }

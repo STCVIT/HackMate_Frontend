@@ -249,7 +249,6 @@ function displayTeams() {
               },
             });
             teams = await res.data;
-
             var length = 0;
             length = await res.data.length;
 
@@ -360,7 +359,6 @@ function displayTeams() {
               }
 
               i++;
-
               body.innerHTML += yourHTML;
               yourHTML = "";
               document.getElementById("loading").style.visibility = "hidden";
@@ -372,10 +370,11 @@ function displayTeams() {
               step: 1,
             });
           } catch (error) {
-            if (error.response.status == 404) {
-              document.querySelector(".wrapper").innerHTML =
-                "<h1 style='margin-top: 82px;'>No Teams Found!</h1>";
-            }
+            console.log(error)
+            // if (error.response.status == 404) {
+            //   document.querySelector(".wrapper").innerHTML =
+            //     "<h1 style='margin-top: 82px;'>No Teams Found!</h1>";
+            // }
           }
           document.getElementById("loading").style.visibility = "hidden";
         });
@@ -684,6 +683,7 @@ function check() {
       const cards = document.querySelectorAll("#team");
       cards.forEach((card) => card.addEventListener("click", look));
       function look() {
+        console.log(this)
         var team_id = this.querySelector("#team_id").textContent;
         var admin_id = this.querySelector("#admin_id").textContent;
         var hack_id = this.querySelector("#hack_id").textContent;

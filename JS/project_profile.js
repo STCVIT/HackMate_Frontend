@@ -2,6 +2,7 @@ $(document).ready(function () {
   $("#nav").load("../Assets/Header/headerl.txt");
   $("#foobottom").load("../Assets/Footer/footer.txt");
 });
+let github_regex = /https:\/\/github.com\//gm;
 const loadingDiv = document.getElementById("loading");
 loadingDiv.style.visibility = "visible";
 firebase.auth().onAuthStateChanged((user) => {
@@ -34,7 +35,9 @@ firebase.auth().onAuthStateChanged((user) => {
             );
           }
           if (error.response.status == 404) {
-            swal("Warning!!", "Not found.", "warning");
+            swal("Warning!!", "Not found.", "warning").then(() => {
+              window.location.href = "./addproject.html";
+            });
           }
 
           console.error("Error: " + error);
@@ -55,6 +58,11 @@ function submitform() {
   if (bio.trim() == "") {
     document.getElementById("error_bio").style.visibility = "visible";
     flag = 1;
+  }
+  if (github_regex.test(git) == false && git.trim() != "")
+  {
+    flag = 1;
+    swal("Warning!!", "Please enter a valid GitHub link.", "warning");
   }
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
@@ -78,7 +86,6 @@ function submitform() {
               }
             )
             .then((response) => {
-              console.log(response);
               swal(
                 "SUCCESS!!",
                 "Project has been updated successfully",
@@ -98,7 +105,9 @@ function submitform() {
                 swal("Warning!!", "Invalid updates.", "warning");
               }
               if (error.response.status == 404) {
-                swal("Warning!!", "Not found.", "warning");
+                swal("Warning!!", "Not found.", "warning").then(() => {
+                  window.location.href = "./addproject.html";
+                });
               }
               if (error.response.status == 417) {
                 swal(
@@ -141,22 +150,25 @@ function deleteProject() {
               }
             )
             .then((response) => {
-              console.log(response.data);
               swal("Poof! Your project has been deleted!", {
                 icon: "success",
               }).then(() => {
-                window.location.href = "./addproject.html"
+                window.location.href = "./addproject.html";
                 loadingDiv.style.visibility = "hidden";
               });
             })
             .catch((error) => {
-              if(error.response.status == 400)
-              {
-                swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+              if (error.response.status == 400) {
+                swal(
+                  "Warning!!",
+                  "Some unknown error occured, please try again.",
+                  "warning"
+                );
               }
-              if(error.response.status == 404)
-              {
-                swal("Warning!!", "Not found.", "warning");
+              if (error.response.status == 404) {
+                swal("Warning!!", "Not found.", "warning").then(() => {
+                  window.location.href = "./addproject.html";
+                });
               }
               console.error("Error: " + error);
             });

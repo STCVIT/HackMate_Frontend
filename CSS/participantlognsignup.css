@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Nunito+Sans&family=Raleway&display=swap");
-html,body{
-  background-color: #23303D;
-  margin:0;
+html,
+body {
+  background-color: #23303d;
+  margin: 0;
   font-family: "Fira Code";
   font-style: normal;
   font-weight: bold;
@@ -24,14 +25,14 @@ html,body{
 
 /* Transparent Overlay */
 .loading:before {
-  content: '';
+  content: "";
   display: block;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 /* :not(:required) hides these rules from IE9 and below */
@@ -45,7 +46,7 @@ html,body{
 }
 
 .loading:not(:required):after {
-  content: '';
+  content: "";
   display: block;
   font-size: 10px;
   width: 1em;
@@ -57,8 +58,12 @@ html,body{
   -o-animation: spinner 1500ms infinite linear;
   animation: spinner 1500ms infinite linear;
   border-radius: 0.5em;
-  -webkit-box-shadow: #1ea54c 1.5em 0 0 0, #1ea54c 1.1em 1.1em 0 0, #1ea54c 0 1.5em 0 0, #1ea54c -1.1em 1.1em 0 0, #1ea54c -1.5em 0 0 0, #1ea54c -1.1em -1.1em 0 0, #1ea54c 0 -1.5em 0 0, #1ea54c 1.1em -1.1em 0 0;
-  box-shadow: #1ea54c 1.5em 0 0 0, #1ea54c 1.1em 1.1em 0 0, #1ea54c 0 1.5em 0 0, #1ea54c -1.1em 1.1em 0 0, #1ea54c -1.5em 0 0 0, #1ea54c -1.1em -1.1em 0 0, #1ea54c 0 -1.5em 0 0, #1ea54c 1.1em -1.1em 0 0;
+  -webkit-box-shadow: #1ea54c 1.5em 0 0 0, #1ea54c 1.1em 1.1em 0 0,
+    #1ea54c 0 1.5em 0 0, #1ea54c -1.1em 1.1em 0 0, #1ea54c -1.5em 0 0 0,
+    #1ea54c -1.1em -1.1em 0 0, #1ea54c 0 -1.5em 0 0, #1ea54c 1.1em -1.1em 0 0;
+  box-shadow: #1ea54c 1.5em 0 0 0, #1ea54c 1.1em 1.1em 0 0, #1ea54c 0 1.5em 0 0,
+    #1ea54c -1.1em 1.1em 0 0, #1ea54c -1.5em 0 0 0, #1ea54c -1.1em -1.1em 0 0,
+    #1ea54c 0 -1.5em 0 0, #1ea54c 1.1em -1.1em 0 0;
 }
 
 /* Animation */
@@ -127,58 +132,59 @@ html,body{
     transform: rotate(360deg);
   }
 }
-.first{
+.first {
   padding-left: 130px;
   padding-top: 80px;
 }
 input {
-  font: 16px "Raleway", sans-serif; 
+  font: 16px "Fira Code", monospace;
 }
 .form-wrap {
-  background-color: #1D2833;
+  background-color: #1d2833;
   width: 450px;
   margin-top: 50px;
-  box-shadow: 0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19); 
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 .form-wrap .tabs {
-    overflow: hidden; 
+  overflow: hidden;
 }
 .form-wrap .tabs h3 {
   float: left;
   width: 50%;
-  font-size: 23px; 
+  font-size: 23px;
 }
 .form-wrap .tabs h3 a {
-    padding: 0.5em 0;
-    text-align: center;
-    font-family: "Fira Code";
-   font-style: normal;
-   font-weight: bold;
-    background-color: #23303D;
-    display: block;
-    color: #fff; 
+  padding: 0.5em 0;
+  text-align: center;
+  font-family: "Fira Code";
+  font-style: normal;
+  font-weight: bold;
+  background-color: #23303d;
+  display: block;
+  color: #fff;
 }
 .active3 {
-    border-bottom:6px solid transparent; 
-    border-color: #1EA54C;
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 0px 2px 0px 0px;
+  border-bottom: 6px solid transparent;
+  border-color: #1ea54c;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 2px 0px 0px;
 }
 .inactive4 {
-  background-color: #23303D;
+  background-color: #23303d;
   opacity: 0.8;
   border: 2px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   border-radius: 2px 0px 0px 0px;
 }
 .form-wrap .tabs-content {
-    padding: 1.5em; 
+  padding: 1.5em;
 }
 .form-wrap .tabs-content div[id$="tab-content"] {
-    display: none; 
+  display: none;
 }
 .form-wrap .tabs-content .active {
-    display: block !important; 
+  display: block !important;
 }
 .form-wrap form .input {
   box-sizing: border-box;
@@ -186,68 +192,74 @@ input {
   color: #ffffff;
   font-family: inherit;
   font-size: 16px;
-  padding: 15px 0 10px .8em;
+  padding: 15px 0 10px 0.8em;
   border: 2px solid rgba(30, 165, 76, 0.2);
   outline: 0;
   display: inline-block;
   margin: 0 0 1em 0;
   padding-right: 2em;
-  width: 100%; 
-  background-color: #2E3D4C;
+  width: 100%;
+  background-color: #2e3d4c;
 }
 .form-wrap form .button {
   width: 100%;
   margin-top: 40px;
-  padding: .8em 0 10px .8em;
+  padding: 0.8em 0 10px 0.8em;
   background-color: #226045;
   border: none;
   color: #fff;
   cursor: pointer;
-  text-transform: uppercase; 
   font-size: 16.9706px;
 }
 .form-wrap form .button:hover {
-  background-color: #157347; 
+  background-color: #157347;
 }
 .form-wrap .help-text {
-  margin-top: .6em; 
+  margin-top: 0.6em;
   margin-left: 285px;
   font-family: Nunito Sans;
   font-weight: 600;
   font-size: 14px;
 }
-.forgot{
+.forgot {
+  color: #fff;
   color: #fff;
   font-size: 14px;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 0.3px;
 }
-.forgot:hover{
+.forgot:hover {
   color: #fff;
 }
-@media (min-width: 375px) and (max-width: 1000px){
-  .first{
+@media (min-width: 375px) and (max-width: 1000px) {
+  .first {
     display: none;
   }
-  .form-wrap .help-text{
+  .form-wrap .help-text {
     font-size: 10px;
   }
-  .form-wrap{
+  .form-wrap {
     width: 475px;
   }
 }
-@media (min-width: 375px) and (max-width: 474px){
-  .first{
+@media (min-width: 375px) and (max-width: 474px) {
+  .first {
     display: none;
   }
-  .form-wrap .help-text{
+  .form-wrap .help-text {
     margin-left: 180px;
     font-size: 10px;
   }
-  .form-wrap{
+  .form-wrap {
     width: 475px;
   }
 }
-@media (min-width: 300px) and (max-width: 374px){
-  .first{
+@media (min-width: 300px) and (max-width: 374px) {
+  .first {
     display: none;
   }
 }

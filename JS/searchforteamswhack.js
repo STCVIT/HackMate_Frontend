@@ -326,7 +326,18 @@ function displayTeams() {
               displayTeams();
               page = page + 1;
             }
-          } catch (err) {}
+          } catch (err) {
+            if (err.response.status == 404) {
+              swal("WARNING!!", "No Team has formed till now!!", "warning");
+            }
+            if (error.response.status == 400) {
+              swal(
+                "Warning!!",
+                "Some unknown error occured, please try again.",
+                "warning"
+              );
+            }
+          }
         };
         init();
         var height = document.body.clientHeight;
@@ -335,7 +346,7 @@ function displayTeams() {
 
           function someFunction() {
             if (window.scrollY + window.innerHeight >= 3100) {
-              (window.scrollY + window.innerHeight);
+              window.scrollY + window.innerHeight;
               window.removeEventListener("scroll", someFunction);
             }
           }
@@ -1408,7 +1419,7 @@ function displayTeams() {
                 }
               }
             } catch (err) {
-              (err.response);
+              err.response;
               if (err.response.status == 404) {
                 swal("WARNING!!", "No Teams formed till now.", "warning");
                 loadingDiv.style.visibility = "hidden";
@@ -1584,18 +1595,28 @@ app.addEventListener("click", function () {
               page = page + 1;
             }
           } catch (err) {
-            (err.response.status);
+            err.response.status;
+            if (err.response.status == 404) {
+              swal("WARNING!!", "No Team has formed till now!!", "warning");
+            }
+            if (error.response.status == 400) {
+              swal(
+                "Warning!!",
+                "Some unknown error occured, please try again.",
+                "warning"
+              );
+            }
           }
         };
         init();
         var height = document.body.clientHeight;
-        (height);
+        height;
         if (height == document.body.clientHeight) {
           window.addEventListener("scroll", someFunction);
 
           function someFunction() {
             if (window.scrollY + window.innerHeight >= 3106) {
-              (window.scrollY + window.innerHeight);
+              window.scrollY + window.innerHeight;
               displayTeams();
               window.removeEventListener("scroll", someFunction);
             }
@@ -2669,9 +2690,16 @@ app.addEventListener("click", function () {
                 }
               }
             } catch (err) {
-              (err.response.status);
+              err.response.status;
               if (err.response.status == 404) {
                 swal("WARNING!!", "No Team has formed till now!!.", "warning");
+              }
+              if (error.response.status == 400) {
+                swal(
+                  "Warning!!",
+                  "Some unknown error occured, please try again.",
+                  "warning"
+                );
               }
             }
           };
@@ -2839,18 +2867,28 @@ fweb.addEventListener("click", function () {
               page = page + 1;
             }
           } catch (err) {
-            (err.response.status);
+            err.response.status;
+            if (err.response.status == 404) {
+              swal("WARNING!!", "No Team has formed till now!!", "warning");
+            }
+            if (error.response.status == 400) {
+              swal(
+                "Warning!!",
+                "Some unknown error occured, please try again.",
+                "warning"
+              );
+            }
           }
         };
         init();
         var height = document.body.clientHeight;
-        (height);
+        height;
         if (height == document.body.clientHeight) {
           window.addEventListener("scroll", someFunction);
 
           function someFunction() {
             if (window.scrollY + window.innerHeight >= 3106) {
-              (window.scrollY + window.innerHeight);
+              window.scrollY + window.innerHeight;
               displayTeams();
               window.removeEventListener("scroll", someFunction);
             }
@@ -3924,9 +3962,16 @@ fweb.addEventListener("click", function () {
                 }
               }
             } catch (err) {
-              (err.response.status);
+              err.response.status;
               if (err.response.status == 404) {
                 swal("WARNING!!", "No Team has formed till now!!.", "warning");
+              }
+              if (error.response.status == 400) {
+                swal(
+                  "Warning!!",
+                  "Some unknown error occured, please try again.",
+                  "warning"
+                );
               }
             }
           };
@@ -4094,18 +4139,28 @@ bweb.addEventListener("click", function () {
               page = page + 1;
             }
           } catch (err) {
-            (err.response.status);
+            err.response.status;
+            if (err.response.status == 404) {
+              swal("WARNING!!", "No Team has formed till now!!", "warning");
+            }
+            if (error.response.status == 400) {
+              swal(
+                "Warning!!",
+                "Some unknown error occured, please try again.",
+                "warning"
+              );
+            }
           }
         };
         init();
         var height = document.body.clientHeight;
-        (height);
+        height;
         if (height == document.body.clientHeight) {
           window.addEventListener("scroll", someFunction);
 
           function someFunction() {
             if (window.scrollY + window.innerHeight >= 3106) {
-              (window.scrollY + window.innerHeight);
+              window.scrollY + window.innerHeight;
               displayTeams();
               window.removeEventListener("scroll", someFunction);
             }
@@ -5179,9 +5234,16 @@ bweb.addEventListener("click", function () {
                 }
               }
             } catch (err) {
-              (err.response.status);
+              err.response.status;
               if (err.response.status == 404) {
                 swal("WARNING!!", "No Team has formed till now!!.", "warning");
+              }
+              if (error.response.status == 400) {
+                swal(
+                  "Warning!!",
+                  "Some unknown error occured, please try again.",
+                  "warning"
+                );
               }
             }
           };
@@ -5349,18 +5411,28 @@ ml.addEventListener("click", function () {
               page = page + 1;
             }
           } catch (err) {
-            (err.response.status);
+            err.response.status;
+            if (err.response.status == 404) {
+              swal("WARNING!!", "No Team has formed till now!!", "warning");
+            }
+            if (error.response.status == 400) {
+              swal(
+                "Warning!!",
+                "Some unknown error occured, please try again.",
+                "warning"
+              );
+            }
           }
         };
         init();
         var height = document.body.clientHeight;
-        (height);
+        height;
         if (height == document.body.clientHeight) {
           window.addEventListener("scroll", someFunction);
 
           function someFunction() {
             if (window.scrollY + window.innerHeight >= 3107) {
-              (window.scrollY + window.innerHeight);
+              window.scrollY + window.innerHeight;
               displayTeams();
               window.removeEventListener("scroll", someFunction);
             }
@@ -6434,9 +6506,16 @@ ml.addEventListener("click", function () {
                 }
               }
             } catch (err) {
-              (err.response.status);
+              err.response.status;
               if (err.response.status == 404) {
                 swal("WARNING!!", "No Team has formed till now!!.", "warning");
+              }
+              if (error.response.status == 400) {
+                swal(
+                  "Warning!!",
+                  "Some unknown error occured, please try again.",
+                  "warning"
+                );
               }
             }
           };
@@ -6604,18 +6683,28 @@ design.addEventListener("click", function () {
               page = page + 1;
             }
           } catch (err) {
-            (err.response.status);
+            err.response.status;
+            if (err.response.status == 404) {
+              swal("WARNING!!", "No Team has formed till now!!", "warning");
+            }
+            if (error.response.status == 400) {
+              swal(
+                "Warning!!",
+                "Some unknown error occured, please try again.",
+                "warning"
+              );
+            }
           }
         };
         init();
         var height = document.body.clientHeight;
-        (height);
+        height;
         if (height == document.body.clientHeight) {
           window.addEventListener("scroll", someFunction);
 
           function someFunction() {
             if (window.scrollY + window.innerHeight >= 3106) {
-              (window.scrollY + window.innerHeight);
+              window.scrollY + window.innerHeight;
               displayTeams();
               window.removeEventListener("scroll", someFunction);
             }
@@ -7689,9 +7778,16 @@ design.addEventListener("click", function () {
                 }
               }
             } catch (err) {
-              (err.response.status);
+              err.response.status;
               if (err.response.status == 404) {
                 swal("WARNING!!", "No Team has formed till now!!.", "warning");
+              }
+              if (error.response.status == 400) {
+                swal(
+                  "Warning!!",
+                  "Some unknown error occured, please try again.",
+                  "warning"
+                );
               }
             }
           };
@@ -7859,18 +7955,28 @@ mgmt.addEventListener("click", function () {
               page = page + 1;
             }
           } catch (err) {
-            (err.response.status);
+            err.response.status;
+            if (err.response.status == 404) {
+              swal("WARNING!!", "No Team has formed till now!!", "warning");
+            }
+            if (error.response.status == 400) {
+              swal(
+                "Warning!!",
+                "Some unknown error occured, please try again.",
+                "warning"
+              );
+            }
           }
         };
         init();
         var height = document.body.clientHeight;
-        (height);
+        height;
         if (height == document.body.clientHeight) {
           window.addEventListener("scroll", someFunction);
 
           function someFunction() {
             if (window.scrollY + window.innerHeight >= 3106) {
-              (window.scrollY + window.innerHeight);
+              window.scrollY + window.innerHeight;
               displayTeams();
               window.removeEventListener("scroll", someFunction);
             }
@@ -8944,9 +9050,16 @@ mgmt.addEventListener("click", function () {
                 }
               }
             } catch (err) {
-              (err.response.status);
+              err.response.status;
               if (err.response.status == 404) {
                 swal("WARNING!!", "No Team has formed till now!!.", "warning");
+              }
+              if (error.response.status == 400) {
+                swal(
+                  "Warning!!",
+                  "Some unknown error occured, please try again.",
+                  "warning"
+                );
               }
             }
           };
@@ -9114,18 +9227,28 @@ block.addEventListener("click", function () {
               page = page + 1;
             }
           } catch (err) {
-            (err.response.status);
+            err.response.status;
+            if (err.response.status == 404) {
+              swal("WARNING!!", "No Team has formed till now!!", "warning");
+            }
+            if (error.response.status == 400) {
+              swal(
+                "Warning!!",
+                "Some unknown error occured, please try again.",
+                "warning"
+              );
+            }
           }
         };
         init();
         var height = document.body.clientHeight;
-        (height);
+        height;
         if (height == document.body.clientHeight) {
           window.addEventListener("scroll", someFunction);
 
           function someFunction() {
             if (window.scrollY + window.innerHeight >= 3106) {
-              (window.scrollY + window.innerHeight);
+              window.scrollY + window.innerHeight;
               displayTeams();
               window.removeEventListener("scroll", someFunction);
             }
@@ -10199,9 +10322,16 @@ block.addEventListener("click", function () {
                 }
               }
             } catch (err) {
-              (err.response.status);
+              err.response.status;
               if (err.response.status == 404) {
                 swal("WARNING!!", "No Team has formed till now!!.", "warning");
+              }
+              if (error.response.status == 400) {
+                swal(
+                  "Warning!!",
+                  "Some unknown error occured, please try again.",
+                  "warning"
+                );
               }
             }
           };
@@ -10219,15 +10349,15 @@ function myFunction() {
   var nk = 0;
   const cards = document.querySelectorAll("#goods");
   cards.forEach((card) => card.addEventListener("click", look));
-  (cards);
+  cards;
 
   function look() {
     (" i was clicked");
-    (this);
+    this;
     nk = nk + 1;
     if (nk == 1) {
       var team_id = this.querySelector("#team-id").textContent;
-      (team_id);
+      team_id;
       var dots = this.querySelector("#dots");
       var moreText = this.querySelector("#more");
       var btnText = this.querySelector("#myBtn");
@@ -10249,15 +10379,15 @@ function myFunction1() {
   var nk1 = 0;
   const cards1 = document.querySelectorAll("#goods");
   cards1.forEach((card1) => card1.addEventListener("click", look1));
-  (cards1);
+  cards1;
 
   function look1() {
     (" i was clicked");
-    (this);
+    this;
     nk1 = nk1 + 1;
     if (nk1 == 1) {
       var team_id_1 = this.querySelector("#team-id-1").textContent;
-      (team_id_1);
+      team_id_1;
       var dots1 = this.querySelector("#dots1");
       var moreText1 = this.querySelector("#more1");
       var btnText1 = this.querySelector("#myBtn1");
@@ -10279,15 +10409,15 @@ function myFunction2() {
   var nk2 = 0;
   const cards2 = document.querySelectorAll("#goods");
   cards2.forEach((card2) => card2.addEventListener("click", look2));
-  (cards2);
+  cards2;
 
   function look2() {
     (" i was clicked");
-    (this);
+    this;
     nk2 = nk2 + 1;
     if (nk2 == 1) {
       var team_id_2 = this.querySelector("#team-id-2").textContent;
-      (team_id_2);
+      team_id_2;
       var dots2 = this.querySelector("#dots2");
       var moreText2 = this.querySelector("#more2");
       var btnText2 = this.querySelector("#myBtn2");
@@ -10309,15 +10439,15 @@ function myFunction3() {
   var nk3 = 0;
   const cards3 = document.querySelectorAll("#goods");
   cards3.forEach((card3) => card3.addEventListener("click", look3));
-  (cards3);
+  cards3;
 
   function look3() {
     (" i was clicked");
-    (this);
+    this;
     nk3 = nk3 + 1;
     if (nk3 == 1) {
       var team_id_3 = this.querySelector("#team-id-3").textContent;
-      (team_id_3);
+      team_id_3;
       var dots3 = this.querySelector("#dots3");
       var moreText3 = this.querySelector("#more3");
       var btnText3 = this.querySelector("#myBtn3");
@@ -10489,18 +10619,28 @@ cyber.addEventListener("click", function () {
               page = page + 1;
             }
           } catch (err) {
-            (err.response.status);
+            err.response.status;
+            if (err.response.status == 404) {
+              swal("WARNING!!", "No Team has formed till now!!", "warning");
+            }
+            if (error.response.status == 400) {
+              swal(
+                "Warning!!",
+                "Some unknown error occured, please try again.",
+                "warning"
+              );
+            }
           }
         };
         init();
         var height = document.body.clientHeight;
-        (height);
+        height;
         if (height == document.body.clientHeight) {
           window.addEventListener("scroll", someFunction);
 
           function someFunction() {
             if (window.scrollY + window.innerHeight >= 3106) {
-              (window.scrollY + window.innerHeight);
+              window.scrollY + window.innerHeight;
               displayTeams();
               window.removeEventListener("scroll", someFunction);
             }
@@ -11574,9 +11714,19 @@ cyber.addEventListener("click", function () {
                 }
               }
             } catch (err) {
-              (err.response.status);
+              err.response.status;
               if (err.response.status == 404) {
-                swal("WARNING!!", "No Team has formed till now!!.", "warning");
+                swal("WARNING!!", "No skills found!.", "warning");
+              }
+              if (err.response.status == 401) {
+                swal("WARNING!!", "Authentication Error!", "warning");
+              }
+              if (error.response.status == 400) {
+                swal(
+                  "Warning!!",
+                  "Some unknown error occured, please try again.",
+                  "warning"
+                );
               }
             }
           };
@@ -11924,18 +12074,28 @@ all.addEventListener("click", function () {
             page = page + 1;
           }
         } catch (err) {
-          (err.response.status);
+          err.response.status;
+          if (err.response.status == 404) {
+            swal("WARNING!!", "No Team has formed till now!!", "warning");
+          }
+          if (error.response.status == 400) {
+            swal(
+              "Warning!!",
+              "Some unknown error occured, please try again.",
+              "warning"
+            );
+          }
         }
       };
       init();
       var height = document.body.clientHeight;
-      (height);
+      height;
       if (height == document.body.clientHeight) {
         window.addEventListener("scroll", someFunction);
 
         function someFunction() {
           if (window.scrollY + window.innerHeight >= 3100) {
-            (window.scrollY + window.innerHeight);
+            window.scrollY + window.innerHeight;
             window.removeEventListener("scroll", someFunction);
           }
         }
@@ -13008,9 +13168,16 @@ all.addEventListener("click", function () {
               }
             }
           } catch (err) {
-            (err.response.status);
+            err.response.status;
             if (err.response.status == 404) {
               swal("WARNING!!", "No Team has formed till now!!.", "warning");
+            }
+            if (error.response.status == 400) {
+              swal(
+                "Warning!!",
+                "Some unknown error occured, please try again.",
+                "warning"
+              );
             }
           }
         };
@@ -13032,7 +13199,7 @@ function allow() {
     .then((id) => {
       auth = id;
       var team_id = hacks[0].team._id;
-      (team_id);
+      team_id;
       axios
         .post(
           `${url}/requests/request/${team_id}`,
@@ -13047,7 +13214,7 @@ function allow() {
         )
         .then((response) => {
           accept = response.data;
-          (accept);
+          accept;
           swal(
             "SUCCESS!!",
             "Your request has been submitted successfully",
@@ -13056,7 +13223,7 @@ function allow() {
         })
         .catch((error) => {
           console.error("Error:", error);
-          (error.response.status);
+          error.response.status;
           if (error.response.status == 403) {
             swal(
               "WARNING!!",
@@ -13069,11 +13236,12 @@ function allow() {
               "Request to join this team has already been sent.",
               "warning"
             );
-          }
-          else if (error.response.status == 404) {
+          } else if (error.response.status == 404) {
+            swal("WARNING!!", "Team not found.", "warning");
+          } else if (error.response.status == 400) {
             swal(
-              "WARNING!!",
-              "Team not found.",
+              "Warning!!",
+              "Some unknown error occured, please try again.",
               "warning"
             );
           }
@@ -14055,6 +14223,13 @@ document.getElementById("search").addEventListener("keyup", function (event) {
             if (e.response.status == 404) {
               swal("WARNING!!", "There is no such team.", "warning");
             }
+            if (error.response.status == 400) {
+              swal(
+                "Warning!!",
+                "Some unknown error occured, please try again.",
+                "warning"
+              );
+            }
           });
       }
     });
@@ -14067,7 +14242,7 @@ function join() {
     .then((id) => {
       auth = id;
       code = document.getElementById("enter_code").value;
-      (code);
+      code;
       axios
         .post(
           `${url}/DN_Team/code/${window.location.search.split("?")[1]}`,
@@ -14103,9 +14278,12 @@ function join() {
             );
           } else if (error.response.status == 403) {
             swal("WARNING!!", "You have already joined the team.", "warning");
-          }
-          else if (error.response.status == 404) {
-            swal("WARNING!!", "You didn't write the code for joining the team.", "warning");
+          } else if (error.response.status == 404) {
+            swal(
+              "WARNING!!",
+              "You didn't write the code for joining the team.",
+              "warning"
+            );
           }
         });
     });
@@ -14116,15 +14294,15 @@ function request() {
   var nk = 0;
   const cards = document.querySelectorAll("#goods");
   cards.forEach((card) => card.addEventListener("click", look));
-  (cards);
-  (nk);
+  cards;
+  nk;
 
   function look() {
-    (this);
+    this;
     nk = nk + 1;
     if (nk == 1) {
       var team_id = this.querySelector("#team-ids").textContent;
-      (team_id);
+      team_id;
       firebase
         .auth()
         .currentUser.getIdToken()
@@ -14144,7 +14322,7 @@ function request() {
             )
             .then((response) => {
               accept = response.data;
-              (accept);
+              accept;
               swal(
                 "SUCCESS!!",
                 "Your request has been submitted successfully",
@@ -14152,7 +14330,7 @@ function request() {
               );
             })
             .catch((error) => {
-              (error.response.status);
+              error.response.status;
               if (error.response.status == 403) {
                 swal(
                   "WARNING!!",
@@ -14165,11 +14343,13 @@ function request() {
                   "Request to join this team has already been sent.",
                   "warning"
                 );
+              } else if (error.response.status == 404) {
+                swal("WARNING!!", "Team not found.", "warning");
               }
-              else if (error.response.status == 404) {
+              if (error.response.status == 400) {
                 swal(
-                  "WARNING!!",
-                  "Team not found.",
+                  "Warning!!",
+                  "Some unknown error occured, please try again.",
                   "warning"
                 );
               }

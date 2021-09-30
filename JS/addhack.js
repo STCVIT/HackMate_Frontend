@@ -24,7 +24,27 @@ document
     ) {
       swal("Error!", "Please fill in all the required fields", "warning");
     } else {
-      uploadBlob(document.getElementById("image_uploads").files[0]);
+      if (
+        document.myform.start.value.trim() > document.myform.end.value.trim()
+      ) {
+        swal(
+          "Error!",
+          "Start date cannot be greater than end date.",
+          "warning"
+        );
+      } 
+      else if (
+        document.myform.mints.value.trim() > document.myform.maxts.value.trim()
+      ) {
+        swal(
+          "Error!",
+          "Minimum Team Size cannot be greater than Maximum Team Size.",
+          "warning"
+        );
+      }
+      else {
+        uploadBlob(document.getElementById("image_uploads").files[0]);
+      }
     }
   });
 

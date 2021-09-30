@@ -70,7 +70,18 @@ firebase.auth().onAuthStateChanged((user) => {
             document.getElementById("loading").style.visibility = "hidden";
           }
         })
-        .catch((error) => console.error("Error: " + error));
+        .catch((error) => {
+          if (error.response.status == 400) {
+            swal(
+              "Warning!!",
+              "Some unknown error occured, please try again.",
+              "warning"
+            );
+          } else if (error.response.status == 404) {
+            swal("Warning!!", "Team not found.", "warning");
+          }
+          console.error("Error: " + error);
+        });
       function getskills() {
         let fd = document.getElementById("frontend");
         let bd = document.getElementById("backend");
@@ -117,7 +128,20 @@ firebase.auth().onAuthStateChanged((user) => {
               block.checked = true;
             }
           })
-          .catch((error) => console.error("Error: " + error));
+          .catch((error) => {
+            if (error.response.status == 400) {
+              swal(
+                "Warning!!",
+                "Some unknown error occured, please try again.",
+                "warning"
+              );
+            } else if (error.response.status == 404) {
+              swal("Warning!!", "No skills found.", "warning");
+            } else if (error.response.status == 401) {
+              swal("Warning!", "No skills found.", "warning");
+            }
+            console.error("Error: " + error);
+          });
       }
       getskills();
       function hackinfo() {
@@ -155,7 +179,19 @@ firebase.auth().onAuthStateChanged((user) => {
                 " participants</p><img src='../Assets/Images/Group 29.svg'></div></div></div></div>";
               body.innerHTML = yourhtml;
             })
-            .catch((error) => console.error("Error: " + error));
+            .catch((error) => {
+              console.error("Error: " + error);
+              if (error.response.status == 400) {
+                swal(
+                  "Warning!!",
+                  "Some unknown error occured, please try again.",
+                  "warning"
+                );
+              }
+              else if (error.response.status == 404) {
+                swal("Warning!!", "Hack not found.", "warning");
+              }
+            });
         }
       }
       hackinfo();
@@ -235,36 +271,42 @@ function submit() {
     .currentUser.getIdToken()
     .then((id) => {
       auth = id;
-      if(choice.length==0){
+      if (choice.length == 0) {
         swal("WARNING!!", "Please select at least one skill", {
           icon: "warning",
-      })
-    }
-    else{
-      axios
-        .post(
-          `${url}/DN_Team/addSkills/${random_id}`,
-          {
-            skills: choice,
-          },
-          {
-            headers: {
-              Authorization: "Bearer " + auth,
-            },
-          }
-        )
-        .then((response) => {
-          talent = response.data;
-          console.log(talent);
-          swal(
-            "SUCCESS!!",
-            "The skills has been submitted successfully.",
-            "success"
-          );
-        })
-        .catch((error) => {
-          console.error("Error:", error);
         });
+      } else {
+        axios
+          .post(
+            `${url}/DN_Team/addSkills/${random_id}`,
+            {
+              skills: choice,
+            },
+            {
+              headers: {
+                Authorization: "Bearer " + auth,
+              },
+            }
+          )
+          .then((response) => {
+            talent = response.data;
+            console.log(talent);
+            swal(
+              "SUCCESS!!",
+              "The skills has been submitted successfully.",
+              "success"
+            );
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            if (error.response.status == 400) {
+              swal(
+                "Warning!!",
+                "Some unknown error occured, please try again.",
+                "warning"
+              );
+            }
+          });
       }
     });
 }
@@ -295,6 +337,13 @@ function deleteteam() {
           })
           .catch((error) => {
             console.error("Error:", error);
+            if (error.response.status == 400) {
+              swal(
+                "Warning!!",
+                "Some unknown error occured, please try again.",
+                "warning"
+              );
+            }
           });
         if (willDelete) {
           swal("Poof! Your team has been deleted!", {
@@ -348,6 +397,16 @@ function removemem() {
               })
               .catch((error) => {
                 console.error("Error:", error);
+                if (error.response.status == 400) {
+                  swal(
+                    "Warning!!",
+                    "Some unknown error occured, please try again.",
+                    "warning"
+                  );
+                }
+                else if (error.response.status == 404) {
+                  swal("Warning!!", "Not found.", "warning");
+                }
               });
             swal("Poof! The team member has been removed!", {
               icon: "success",

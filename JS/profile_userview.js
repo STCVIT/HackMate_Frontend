@@ -28,7 +28,16 @@ firebase.auth().onAuthStateChanged((user) => {
           document.par_form.year.value = user.graduation_year;
           document.form.bio.value = user.bio;
         })
-        .catch((error) => console.error("Error: " + error));
+        .catch((error) => {
+          if (error.response.status == 400) {
+            swal(
+              "Warning!!",
+              "Some unknown error occured, please try again.",
+              "warning"
+            );
+          }
+          console.error("Error: " + error);
+        });
       let fd = document.getElementById("frontend");
       let bd = document.getElementById("backend");
       let ui = document.getElementById("ui");
@@ -76,12 +85,14 @@ firebase.auth().onAuthStateChanged((user) => {
           document.getElementById("loading").style.visibility = "hidden";
         })
         .catch((error) => {
-          if(error.response.status == 400)
-          {
-            swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+          if (error.response.status == 400) {
+            swal(
+              "Warning!!",
+              "Some unknown error occured, please try again.",
+              "warning"
+            );
           }
-          if(error.response.status == 404)
-          {
+          if (error.response.status == 404) {
             swal("Warning!!", "Not found.", "warning");
           }
           console.error("Error: " + error);

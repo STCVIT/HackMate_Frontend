@@ -19,7 +19,8 @@ document
       document.myform.start.value.trim() == "" ||
       document.myform.end.value.trim() == "" ||
       document.myform.maxts.value.trim() == "" ||
-      document.myform.mints.value.trim() == "" || document.getElementById("image_uploads").files[0] == undefined
+      document.myform.mints.value.trim() == "" ||
+      document.getElementById("image_uploads").files[0] == undefined
     ) {
       swal("Error!", "Please fill in all the required fields", "warning");
     } else {
@@ -128,13 +129,19 @@ async function uploadBlob(file) {
             if (error.response.status == 407) {
               swal("Error!", "Start date cannot be after end date", "warning");
             }
-            if(error.response.status == 417)
-            {
-              swal("Warning!!", "Please enter all the required fields.", "warning");
+            if (error.response.status == 417) {
+              swal(
+                "Warning!!",
+                "Please enter all the required fields.",
+                "warning"
+              );
             }
-            if(error.response.status == 400)
-            {
-              swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+            if (error.response.status == 400) {
+              swal(
+                "Warning!!",
+                "Some unknown error occured, please try again.",
+                "warning"
+              );
             }
           });
       });

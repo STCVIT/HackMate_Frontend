@@ -33,12 +33,14 @@ form.addEventListener("submit", (e) => {
           })
             .then((response) => response.text())
             .then((text) => {
-              window.location.assign("./orghack.html");
+              
               swal(
                 "SUCCESS!!",
                 "Your profile has been created successfully",
                 "success"
-              );
+              ).then(() => {
+                window.location.assign("./orghack.html");
+              });
             })
             .catch((error) => {
               console.log("Error:", error);

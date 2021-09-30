@@ -175,6 +175,13 @@ function create() {
               "warning"
             );
           }
+          if (error.response.status == 417) {
+            swal(
+              "Warning!!",
+              "Please specify all required fields.",
+              "warning"
+            );
+          }
           // if(error.response.status!=403){
           //     swal("WARNING!!", "No Hack found!!", "warning");
           // }

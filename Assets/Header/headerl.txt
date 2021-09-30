@@ -85,6 +85,14 @@ firebase.auth().onAuthStateChanged((user) => {
         document
           .querySelector(".userdp")
           .setAttribute("src", response.data.photo);
+      }).catch((error) => {
+                  if (error.response.status == 400) {
+            swal(
+              "Warning!!",
+              "Some unknown error occured, please try again.",
+              "warning"
+            );
+          }
       });
 
       axios(`${url}/requests/myRequests`, {

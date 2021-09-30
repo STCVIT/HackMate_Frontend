@@ -28,7 +28,13 @@ firebase.auth().onAuthStateChanged((user) => {
 
           loadingDiv.style.visibility = "hidden";
         })
-        .catch((error) => console.error("Error: " + error));
+        .catch((error) => {
+          console.error("Error: " + error);
+          if(error.response.status == 400)
+          {
+            swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+          }
+        });
     });
   } else {
     // User is signed out
@@ -60,23 +66,25 @@ function deleteacc() {
               swal("Poof! Your profile has been deleted!", {
                 icon: "success",
               });
-              window.location.href = "../"
+              window.location.href = "../";
             })
-            .catch((error) => console.error("Error: " + error));
+            .catch((error) => {
+              if (error.response.status == 417) {
+                swal("Warning!!", "Please enter all the required fields.", "warning");
+              }
+              if (error.response.status == 400) {
+                swal(
+                  "Warning!!",
+                  "Some unknown error occured, please try again.",
+                  "warning"
+                );
+              }
+            });
         } else {
           swal("Your profile is safe!");
         }
       });
-    }).catch((error) => {
-      if(error.response.status == 417)
-      {
-        swal("Warning!!", "Please enter all the required fields.", "warning");
-      }
-      if(error.response.status == 400)
-      {
-        swal("Warning!!", "Some unknown error occured, please try again.", "warning");
-      }
-    });
+    })
 }
 
 function updateacc() {
@@ -107,17 +115,26 @@ function updateacc() {
         })
         .catch((error) => {
           console.error("Error:", error);
-          if(error.response.status == 403)
-          {
-            swal("Warning!!", "Some of the fields you are trying to update aren't mutable.", "warning");
+          if (error.response.status == 403) {
+            swal(
+              "Warning!!",
+              "Some of the fields you are trying to update aren't mutable.",
+              "warning"
+            );
           }
-          if(error.response.status == 400)
-          {
-            swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+          if (error.response.status == 400) {
+            swal(
+              "Warning!!",
+              "Some unknown error occured, please try again.",
+              "warning"
+            );
           }
-          if(error.response.status == 417)
-          {
-            swal("Warning!!", "Please enter all the required fields.", "warning");
+          if (error.response.status == 417) {
+            swal(
+              "Warning!!",
+              "Please enter all the required fields.",
+              "warning"
+            );
           }
         });
     });
@@ -183,17 +200,26 @@ async function uploadBlob(file) {
           })
           .catch((error) => {
             console.error("Error:", error);
-            if(error.response.status == 400)
-            {
-              swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+            if (error.response.status == 400) {
+              swal(
+                "Warning!!",
+                "Some unknown error occured, please try again.",
+                "warning"
+              );
             }
-            if(error.response.status == 417)
-            {
-              swal("Warning!!", "Please enter all the required fields.", "warning");
+            if (error.response.status == 417) {
+              swal(
+                "Warning!!",
+                "Please enter all the required fields.",
+                "warning"
+              );
             }
-            if(error.response.status == 403)
-            {
-              swal("Warning!!", "Some of the fields you are trying to update are immutable.", "warning");
+            if (error.response.status == 403) {
+              swal(
+                "Warning!!",
+                "Some of the fields you are trying to update are immutable.",
+                "warning"
+              );
             }
           });
       });

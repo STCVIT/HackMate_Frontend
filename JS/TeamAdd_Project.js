@@ -26,8 +26,9 @@ firebase.auth().onAuthStateChanged((user) => {
         .then((response) => {
           team = response.data;
           if (team.team.hasOwnProperty("project_description")) {
-            document.getElementById("projname").innerHTML =
-              toTitleCase(team.team.project_name);
+            document.getElementById("projname").innerHTML = toTitleCase(
+              team.team.project_name
+            );
             teamproj = team.team.project_name;
             document.project_form.git.value = team.team.code;
             document.project_form.design.value = team.team.design;
@@ -42,7 +43,23 @@ firebase.auth().onAuthStateChanged((user) => {
           }
           document.getElementById("loading").style.visibility = "hidden";
         })
-        .catch((error) => console.error("Error: " + error));
+        .catch((error) => {
+          if (error.response.status == 404) {
+            swal(
+              "Warning!!",
+              "Team not found.",
+              "warning"
+            );
+          }
+          if (error.response.status == 400) {
+            swal(
+              "Warning!!",
+              "Some unknown error occured, please try again.",
+              "warning"
+            );
+          }
+          console.error("Error: " + error);
+        });
     });
   } else {
     // User is signed out
@@ -89,11 +106,28 @@ function submitform() {
               "success"
             ).then((okay) => {
               if (okay) {
-                  window.location.assign("./My_teams.html");
+                window.location.assign("./My_teams.html");
               }
             });
           })
           .catch((error) => {
+            if (error.response.status == 403) {
+              swal("Error!", "Team name already exists.", "warning");
+            }
+            if (error.response.status == 417) {
+              swal(
+                "Warning!!",
+                "Please enter all the required fields.",
+                "warning"
+              );
+            }
+            if (error.response.status == 400) {
+              swal(
+                "Warning!!",
+                "Some unknown error occured, please try again.",
+                "warning"
+              );
+            }
             console.error("Error:", error);
           });
       }

@@ -40,13 +40,22 @@ firebase.auth().onAuthStateChanged((user) => {
                 "<m>(You)</m><br><t>" +
                 team.pt_skills[i].skills[0].skill +
                 "</t></p></div></div><l id='leave' class='leaves' onclick='leave()'>LEAVE</l></div>";
-            } 
-            else if(team.pt_skills[i].participant._id === team.team.admin_id){
-              yourHTML += "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'>";
-              yourHTML +="<img id='dp' src='" +team.pt_skills[i].participant.photo +"'>";
-              yourHTML += "<p>" +team.pt_skills[i].participant.name +"<m>(Leader)</m><br><t>" +team.pt_skills[i].skills[0].skill +"</t></p></div><l></l></div></div>";
-            }
-            else {
+            } else if (
+              team.pt_skills[i].participant._id === team.team.admin_id
+            ) {
+              yourHTML +=
+                "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'>";
+              yourHTML +=
+                "<img id='dp' src='" +
+                team.pt_skills[i].participant.photo +
+                "'>";
+              yourHTML +=
+                "<p>" +
+                team.pt_skills[i].participant.name +
+                "<m>(Leader)</m><br><t>" +
+                team.pt_skills[i].skills[0].skill +
+                "</t></p></div><l></l></div></div>";
+            } else {
               yourHTML +=
                 "<div class='card-row'><div class='d-flex justify-content-start'><div class='component'>";
               if (team.pt_skills[i].participant.photo == "hey") {
@@ -69,7 +78,19 @@ firebase.auth().onAuthStateChanged((user) => {
           }
           document.getElementById("loading").style.visibility = "hidden";
         })
-        .catch((error) => console.error("Error: " + error));
+        .catch((error) => {
+          if (error.response.status == 400) {
+            swal(
+              "Warning!!",
+              "Some unknown error occured, please try again.",
+              "warning"
+            );
+          }
+          if (error.response.status == 404) {
+            swal("Warning!!", "Team not found.", "warning");
+          }
+          console.error("Error: " + error);
+        });
       function hackinfo() {
         if (hack_name == "") {
           document.getElementById("hackathon").style.visibility = "hidden";
@@ -108,7 +129,21 @@ firebase.auth().onAuthStateChanged((user) => {
               body.innerHTML = yourhtml;
               document.getElementById("loading").style.visibility = "hidden";
             })
-            .catch((error) => console.error("Error: " + error));
+            .catch((error) => {
+              if (error.response.status == 400) {
+                swal(
+                  "Warning!!",
+                  "Some unknown error occured, please try again.",
+                  "warning"
+                );
+              } 
+              if (error.response.status == 404) {
+                swal("Not Found!", "Hack doesn't exist", "warning").then(() => {
+                  window.location.href = "./viewhackathon.html";
+                });
+              }
+              console.error("Error: " + error);
+            });
         }
       }
       hackinfo();
@@ -151,6 +186,13 @@ function leave() {
               window.location.assign("./My_teams.html");
             })
             .catch((error) => {
+              if (error.response.status == 400) {
+                swal(
+                  "Warning!!",
+                  "Some unknown error occured, please try again.",
+                  "warning"
+                );
+              } 
               console.error("Error:", error);
             });
         } else {

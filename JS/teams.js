@@ -136,6 +136,17 @@ function events(event) {
         })
         .catch((error) => {
           console.error("Error:", error);
+          if (error.response.status == 404) {
+            document.querySelector(".wrapper").innerHTML =
+              "<h1 style='margin-top: 82px;'>No Teams Found!</h1>";
+          }
+          if (error.response.status == 400) {
+            swal(
+              "Warning!!",
+              "Some unknown error occured, please try again.",
+              "warning"
+            );
+          }
         });
     });
 }
@@ -371,10 +382,17 @@ function displayTeams() {
             });
           } catch (error) {
             console.log(error)
-            // if (error.response.status == 404) {
-            //   document.querySelector(".wrapper").innerHTML =
-            //     "<h1 style='margin-top: 82px;'>No Teams Found!</h1>";
-            // }
+            if (error.response.status == 404) {
+              document.querySelector(".wrapper").innerHTML =
+                "<h1 style='margin-top: 82px;'>No Teams Found!</h1>";
+            }
+            if (error.response.status == 400) {
+              swal(
+                "Warning!!",
+                "Some unknown error occured, please try again.",
+                "warning"
+              );
+            }
           }
           document.getElementById("loading").style.visibility = "hidden";
         });
@@ -521,6 +539,17 @@ function nextPage() {
         })
         .catch((error) => {
           console.error("Error:", error);
+          if (error.response.status == 404) {
+            document.querySelector(".wrapper").innerHTML =
+              "<h1 style='margin-top: 82px;'>No Teams Found!</h1>";
+          }
+          if (error.response.status == 400) {
+            swal(
+              "Warning!!",
+              "Some unknown error occured, please try again.",
+              "warning"
+            );
+          }
         });
     });
 }
@@ -656,6 +685,17 @@ function prevPage() {
         })
         .catch((error) => {
           console.error("Error:", error);
+          if (error.response.status == 404) {
+            document.querySelector(".wrapper").innerHTML =
+              "<h1 style='margin-top: 82px;'>No Teams Found!</h1>";
+          }
+          if (error.response.status == 400) {
+            swal(
+              "Warning!!",
+              "Some unknown error occured, please try again.",
+              "warning"
+            );
+          }
         });
     });
 }

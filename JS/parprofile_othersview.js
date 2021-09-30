@@ -62,7 +62,23 @@ firebase.auth().onAuthStateChanged((user) => {
           body.innerHTML = yourHTML;
           document.getElementById("loading").style.visibility = "hidden";
         })
-        .catch((error) => console.error("Error: " + error));
+        .catch((error) => {
+          console.error("Error: " + error);
+          if (error.response.status == 400) {
+            swal(
+              "Warning!!",
+              "Some unknown error occured, please try again.",
+              "warning"
+            );
+          }
+          if (error.response.status == 404) {
+            swal(
+              "Warning!!",
+              "Profile doesn't exist.",
+              "warning"
+            );
+          }
+        });
     });
   } else {
     // User is signed out
@@ -107,9 +123,12 @@ function invite() {
             swal("WARNING!!", "No Participant Found", "warning");
           } else if (e.response.status == 409) {
             swal("WARNING!!", "Invite has already been sent", "warning");
-          }
-          else if (e.response.status == 400) {
-            swal("WARNING!!", "The participant you are trying to invite is already in the given team!!", "warning");
+          } else if (e.response.status == 400) {
+            swal(
+              "WARNING!!",
+              "The participant you are trying to invite is already in the given team!!",
+              "warning"
+            );
           }
         });
     });

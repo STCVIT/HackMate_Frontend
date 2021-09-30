@@ -110,7 +110,13 @@ function displayTeams() {
             loadingDiv.style.visibility = "hidden";
           } catch (error) {
             console.error(error);
-
+            if (error.response.status == 400) {
+              swal(
+                "Warning!!",
+                "Some unknown error occured, please try again.",
+                "warning"
+              );
+            }
             if(error.response.status == 403)
             {
               swal("Warning!", "You are already going to this hack!", "warning").then(() => {
@@ -122,6 +128,13 @@ function displayTeams() {
               swal("Warning!", "You have no eligible teams to add to this hack!", "warning").then(() => {
                 window.location.href = "./hackdetails.html?" + window.location.search.split("?")[1]
               });
+            }
+            if (error.response.status == 417) {
+              swal(
+                "Warning!!",
+                "Please enter all the required fields.",
+                "warning"
+              );
             }
           }
         };

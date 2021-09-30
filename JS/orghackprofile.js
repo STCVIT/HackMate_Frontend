@@ -99,7 +99,7 @@ firebase.auth().onAuthStateChanged((user) => {
           } catch (error) {
             if (error.response.status == 404) {
               document.querySelector(".wrapper").innerHTML =
-                "<h2 class='text-center' style='margin-top: 82px;'>No Hacks Found!</h2>";
+                "<h2 class='text-center' style='margin-top: 82px;'>No Teams Found!</h2>";
             }
             if(error.response.status == 400)
             {
@@ -308,7 +308,7 @@ function events(event) {
           console.error("Error:", error);
           if (error.response.status == 404) {
             document.querySelector(".wrapper").innerHTML =
-              "<h2 class='text-center' style='margin-top: 82px;'>No Hacks Found!</h2>";
+              "<h2 class='text-center' style='margin-top: 82px;'>No Teams Found!</h2>";
           }
           if(error.response.status == 400)
           {
@@ -368,7 +368,7 @@ function nextPage() {
           console.error("Error:", error);
           if (error.response.status == 404) {
             document.querySelector(".wrapper").innerHTML =
-              "<h2 class='text-center' style='margin-top: 82px;'>No Hacks Found!</h2>";
+              "<h2 class='text-center' style='margin-top: 82px;'>No Teams Found!</h2>";
           }
           if(error.response.status == 400)
           {
@@ -428,7 +428,7 @@ function prevPage() {
           console.error("Error:", error);
           if (error.response.status == 404) {
             document.querySelector(".wrapper").innerHTML =
-              "<h2 class='text-center' style='margin-top: 82px;'>No Hacks Found!</h2>";
+              "<h2 class='text-center' style='margin-top: 82px;'>No Teams Found!</h2>";
           }
           if(error.response.status == 400)
           {

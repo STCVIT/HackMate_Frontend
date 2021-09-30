@@ -94,7 +94,8 @@ firebase.auth().onAuthStateChanged((user) => {
               "Some unknown error occured, please try again.",
               "warning"
             );
-          } else {
+          } 
+          if (error.response.status == 404) {
             swal("Not Found!", "Hack doesn't exist", "warning").then(() => {
               window.location.href = "./viewhackathon.html";
             });

@@ -161,6 +161,21 @@ function create() {
         })
         .catch((error) => {
           console.error("Error:", error);
+          if (error.response.status == 400) {
+            swal(
+              "Warning!!",
+              "Some unknown error occured, please try again.",
+              "warning"
+            );
+          }
+          if (error.response.status == 417) {
+            swal(
+              "Warning!!",
+              "Please have all the required teams.",
+              "warning"
+            );
+          }
+          
         });
       }
     });

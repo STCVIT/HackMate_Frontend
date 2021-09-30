@@ -195,7 +195,7 @@ async function uploadBlob(file) {
             document
               .querySelector(".swal-button--confirm")
               .addEventListener("click", () => {
-                window.location = "";
+                window.location = "./orghack.html;";
               });
           })
           .catch((error) => {
@@ -212,7 +212,9 @@ async function uploadBlob(file) {
                 "Warning!!",
                 "Please enter all the required fields.",
                 "warning"
-              );
+              ).then(()=> {
+                window.location.href = "./orguserview.html"
+              });
             }
             if (error.response.status == 403) {
               swal(

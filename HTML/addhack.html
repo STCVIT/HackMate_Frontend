@@ -74,10 +74,10 @@
                     <div class="details2">
 
 
-                        <div class="inputdeets" style="height: 226.062px;">
+                        <div class="inputdeets inputdeetsposter" style="height: 226.062px;">
                             <nbg>POSTER<r>*</r>
                             </nbg> <br>
-                            <label for="image_uploads" style="width: 100%;">
+                            <label id="uploaded_image" for="image_uploads" style="width: 100%;">
                                 <div class="box text-center"><img class="plus" src="../Assets/Images/plus.svg" alt="">
                                 </div>
                             </label>
@@ -99,17 +99,17 @@
                         <div class="inputdeets">
                             <nbg>MIN TEAM SIZE<r>*</r>
                             </nbg> <br>
-                            <input class="textbox" type="number" name="mints" id="" min="0" >
+                            <input class="textbox" type="number" name="mints" id="" min="1" >
                         </div>
                         <div class="inputdeets">
                             <nbg>MAX TEAM SIZE<r>*</r>
                             </nbg> <br>
-                            <input class="textbox" type="number" name="maxts" id="" min="0" >
+                            <input class="textbox" type="number" name="maxts" id="" min="1" >
                         </div>
                         <div class="inputdeets">
                             <nbg>PRIZES POOL<r>*</r>
                             </nbg> <br>
-                            <input class="textbox" type="text" name="prizes" id="" > <br>
+                            <input class="textbox" type="number" name="prizes" id="" min="1" > <br>
                         </div>
 
                     </div>
@@ -121,7 +121,7 @@
 
             <div class="row">
                 <div class="col-12 text-center justify-content-center">
-                    <div class="btns"><a class="savechanges btn btn-success" href="#" role="button">Preview</a>
+                    <div class="btns">
                         <input class=" delete btn btn-success" name="submit" type="submit" value="Submit"
                             style="color: #fff; opacity: 1;">
                     </div>

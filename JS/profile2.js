@@ -62,6 +62,7 @@ function validate(linkedin, git, website, bio) {
     let flag = 0;
     linkedin.value = linkedin.value.trim();
     let regex = /((https?:\/\/)?((www|\w\w)\.)?linkedin\.com\/)((([\w]{2,3})?)|([^\/]+\/(([\w|\d-&#?=])+\/?){1,}))$/;
+    let github_regex = /https:\/\/github.com\//gm;
     let regstr = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
     git.value = git.value.trim();
     website.value = website.value.trim();
@@ -76,12 +77,12 @@ function validate(linkedin, git, website, bio) {
         onError(linkedin, "Enter correct linkedIn profile link");
     }
     //github profile link validation
-    if (regstr.test(git.value) === true) {
+    if (github_regex.test(git.value) === true) {
         onSuccess(git);
         flag = flag + 1;
     }
     else {
-        onError(git, "Enter correct github profile link");
+        onError(git, "Enter correct GitHub profile link");
     }
     //personal website
     if (regstr.test(website.value) === true || website.value == "") {

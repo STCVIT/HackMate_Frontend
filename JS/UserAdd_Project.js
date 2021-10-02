@@ -64,7 +64,7 @@ function submitform() {
                 "Project has been created successfully",
                 "success"
               ).then(() => {
-                window.location.href = "./Project_profile.html?" + response.data._id;
+                window.location.href = "./Project_Profile.html?" + response.data._id;
               });
             })
             .catch((error) => {

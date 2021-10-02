@@ -52,7 +52,9 @@ function displayTeams() {
               displayTeams();
               page = page + 1;
             }
-          } catch (err) {}
+          } catch (err) {
+
+          }
         };
         init();
         var height = document.body.clientHeight;
@@ -236,9 +238,9 @@ function displayTeams() {
                 }
               }
             } catch (err) {
-              console.log(err);
               if (err.response.status == 404) {
-                swal("WARNING!!", "You can't search this team.", "warning");
+                swal("WARNING!!", "You can't search the participant.", "warning");
+                loadingDiv.style.visibility = "hidden";
               }
             }
           };
@@ -246,7 +248,6 @@ function displayTeams() {
         }
       });
     } else {
-      ("Signed Out!!");
     }
   });
 }
@@ -620,7 +621,7 @@ design.addEventListener("click", function () {
                 hacks.final[i].pt.photo +
                 "' class='Image1'></div><div class='col-lg-7 col-md-7 col-7'><h4 class='text13'><a onclick='check()'>" +
                 hacks.final[i].pt.name +
-                "</a></h4><h5 class='text14'>UI/UX</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='invite()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
+                "</a></h4><h5 class='text14'>UI/UX</h5></div><div class='col-lg-3 col-md-3 col-3'><h5 class='text15' onclick='inviteme()'>INVITE</h5></div></div><p id='participant-id' style='display:none;'>" +
                 hacks.final[i].pt._id +
                 "</p></div></div>";
             }
@@ -853,14 +854,11 @@ all.addEventListener("click", function () {
       displayTeams();
       var init = async function () {
         try {
-          var res = await axios(
-            `${url}/participant/get/all/${hack_id}?page=1`,
-            {
+          var res = await axios(`${url}/participant/get/all/null?page=1`, {
               headers: {
                 Authorization: "Bearer " + auth,
               },
-            }
-          );
+        });
           hack = await res.data;
           if (hack.length >= 13 && hack.length <= 24) {
             page = page + 1;
@@ -1084,6 +1082,7 @@ all.addEventListener("click", function () {
                 "warning"
               );
             }
+            loadingDiv.style.visibility = "hidden";
           }
         };
         init();
@@ -1118,6 +1117,7 @@ function search() {
       hack = await res.data;
       if (hack.length >= 13 && hack.length <= 24) {
         page = page + 1;
+        displayTeams();
       } else if (hack.length >= 25 && hack.length <= 36) {
         page = page + 1;
 
@@ -1153,7 +1153,7 @@ function search() {
     window.addEventListener("scroll", someFunction);
     function someFunction() {
       if (window.scrollY + window.innerHeight >= 1153) {
-        displayTeams();
+        // displayTeams();
         window.removeEventListener("scroll", someFunction);
       }
     }
@@ -1344,6 +1344,7 @@ function search() {
             if (e.response.status == 404) {
               swal("WARNING!!", "No Participant Found", "warning");
             }
+            loadingDiv.style.visibility = "hidden";
           });
       });
   }
@@ -1405,7 +1406,7 @@ function invite() {
               } else if (e.response.status == 400) {
                 swal(
                   "WARNING!!",
-                  "The participant you are terying to invite is already in the given team!!",
+                  "The participant you are trying to invite is already in the given team!!",
                   "warning"
                 );
               }

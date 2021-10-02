@@ -129,7 +129,6 @@ function signin() {
       // Signed in
       // console.log("Signed in");
       user.getIdToken().then(function (idToken) {
-        console.log(idToken);
         var loadingDiv = document.getElementById("loading");
         loadingDiv.style.visibility = "visible";
 

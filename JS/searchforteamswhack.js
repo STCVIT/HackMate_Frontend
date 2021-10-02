@@ -327,16 +327,6 @@ function displayTeams() {
               page = page + 1;
             }
           } catch (err) {
-            if (err.response.status == 404) {
-              swal("WARNING!!", "No Team has formed till now!!", "warning");
-            }
-            if (error.response.status == 400) {
-              swal(
-                "Warning!!",
-                "Some unknown error occured, please try again.",
-                "warning"
-              );
-            }
           }
         };
         init();
@@ -1419,13 +1409,16 @@ function displayTeams() {
                 }
               }
             } catch (err) {
-              err.response;
               if (err.response.status == 404) {
                 swal("WARNING!!", "No Teams formed till now.", "warning");
                 loadingDiv.style.visibility = "hidden";
               }
               if (err.response.status == 400) {
-                swal("WARNING!!", "No Hack Found.", "warning");
+                swal(
+                  "Warning!!",
+                  "Some unknown error occured, please try again.",
+                  "warning"
+                );
               }
             }
           };
@@ -1433,7 +1426,6 @@ function displayTeams() {
         }
       });
     } else {
-      ("Signed Out!!");
     }
   });
 }
@@ -1595,17 +1587,6 @@ app.addEventListener("click", function () {
               page = page + 1;
             }
           } catch (err) {
-            err.response.status;
-            if (err.response.status == 404) {
-              swal("WARNING!!", "No Team has formed till now!!", "warning");
-            }
-            if (error.response.status == 400) {
-              swal(
-                "Warning!!",
-                "Some unknown error occured, please try again.",
-                "warning"
-              );
-            }
           }
         };
         init();
@@ -2690,11 +2671,11 @@ app.addEventListener("click", function () {
                 }
               }
             } catch (err) {
-              err.response.status;
               if (err.response.status == 404) {
-                swal("WARNING!!", "No Team has formed till now!!.", "warning");
+                swal("WARNING!!", "No Team has formed till now!!", "warning");
+                loadingDiv.style.visibility = "hidden";
               }
-              if (error.response.status == 400) {
+              if (err.response.status == 400) {
                 swal(
                   "Warning!!",
                   "Some unknown error occured, please try again.",
@@ -3962,11 +3943,11 @@ fweb.addEventListener("click", function () {
                 }
               }
             } catch (err) {
-              err.response.status;
               if (err.response.status == 404) {
-                swal("WARNING!!", "No Team has formed till now!!.", "warning");
+                swal("WARNING!!", "No Team has formed till now!!", "warning");
+                loadingDiv.style.visibility = "hidden";
               }
-              if (error.response.status == 400) {
+              if (err.response.status == 400) {
                 swal(
                   "Warning!!",
                   "Some unknown error occured, please try again.",
@@ -4139,17 +4120,6 @@ bweb.addEventListener("click", function () {
               page = page + 1;
             }
           } catch (err) {
-            err.response.status;
-            if (err.response.status == 404) {
-              swal("WARNING!!", "No Team has formed till now!!", "warning");
-            }
-            if (error.response.status == 400) {
-              swal(
-                "Warning!!",
-                "Some unknown error occured, please try again.",
-                "warning"
-              );
-            }
           }
         };
         init();
@@ -5236,9 +5206,10 @@ bweb.addEventListener("click", function () {
             } catch (err) {
               err.response.status;
               if (err.response.status == 404) {
-                swal("WARNING!!", "No Team has formed till now!!.", "warning");
+                swal("WARNING!!", "No Team has formed till now!!", "warning");
+                loadingDiv.style.visibility = "hidden";
               }
-              if (error.response.status == 400) {
+              if (err.response.status == 400) {
                 swal(
                   "Warning!!",
                   "Some unknown error occured, please try again.",
@@ -5411,17 +5382,6 @@ ml.addEventListener("click", function () {
               page = page + 1;
             }
           } catch (err) {
-            err.response.status;
-            if (err.response.status == 404) {
-              swal("WARNING!!", "No Team has formed till now!!", "warning");
-            }
-            if (error.response.status == 400) {
-              swal(
-                "Warning!!",
-                "Some unknown error occured, please try again.",
-                "warning"
-              );
-            }
           }
         };
         init();
@@ -6508,9 +6468,10 @@ ml.addEventListener("click", function () {
             } catch (err) {
               err.response.status;
               if (err.response.status == 404) {
-                swal("WARNING!!", "No Team has formed till now!!.", "warning");
+                swal("WARNING!!", "No Team has formed till now!!", "warning");
+                loadingDiv.style.visibility = "hidden";
               }
-              if (error.response.status == 400) {
+              if (err.response.status == 400) {
                 swal(
                   "Warning!!",
                   "Some unknown error occured, please try again.",
@@ -6683,17 +6644,6 @@ design.addEventListener("click", function () {
               page = page + 1;
             }
           } catch (err) {
-            err.response.status;
-            if (err.response.status == 404) {
-              swal("WARNING!!", "No Team has formed till now!!", "warning");
-            }
-            if (error.response.status == 400) {
-              swal(
-                "Warning!!",
-                "Some unknown error occured, please try again.",
-                "warning"
-              );
-            }
           }
         };
         init();
@@ -7955,17 +7905,6 @@ mgmt.addEventListener("click", function () {
               page = page + 1;
             }
           } catch (err) {
-            err.response.status;
-            if (err.response.status == 404) {
-              swal("WARNING!!", "No Team has formed till now!!", "warning");
-            }
-            if (error.response.status == 400) {
-              swal(
-                "Warning!!",
-                "Some unknown error occured, please try again.",
-                "warning"
-              );
-            }
           }
         };
         init();
@@ -9052,9 +8991,10 @@ mgmt.addEventListener("click", function () {
             } catch (err) {
               err.response.status;
               if (err.response.status == 404) {
-                swal("WARNING!!", "No Team has formed till now!!.", "warning");
+                swal("WARNING!!", "No Team has formed till now!!", "warning");
+                loadingDiv.style.visibility = "hidden";
               }
-              if (error.response.status == 400) {
+              if (err.response.status == 400) {
                 swal(
                   "Warning!!",
                   "Some unknown error occured, please try again.",
@@ -9227,17 +9167,6 @@ block.addEventListener("click", function () {
               page = page + 1;
             }
           } catch (err) {
-            err.response.status;
-            if (err.response.status == 404) {
-              swal("WARNING!!", "No Team has formed till now!!", "warning");
-            }
-            if (error.response.status == 400) {
-              swal(
-                "Warning!!",
-                "Some unknown error occured, please try again.",
-                "warning"
-              );
-            }
           }
         };
         init();
@@ -10324,14 +10253,11 @@ block.addEventListener("click", function () {
             } catch (err) {
               err.response.status;
               if (err.response.status == 404) {
-                swal("WARNING!!", "No Team has formed till now!!.", "warning");
+                swal("WARNING!!", "No Team has formed till now!!", "warning");
+                loadingDiv.style.visibility = "hidden";
               }
-              if (error.response.status == 400) {
-                swal(
-                  "Warning!!",
-                  "Some unknown error occured, please try again.",
-                  "warning"
-                );
+              if (err.response.status == 400) {
+                swal("Warning!!", "Not teams found.", "warning");
               }
             }
           };
@@ -10619,17 +10545,6 @@ cyber.addEventListener("click", function () {
               page = page + 1;
             }
           } catch (err) {
-            err.response.status;
-            if (err.response.status == 404) {
-              swal("WARNING!!", "No Team has formed till now!!", "warning");
-            }
-            if (error.response.status == 400) {
-              swal(
-                "Warning!!",
-                "Some unknown error occured, please try again.",
-                "warning"
-              );
-            }
           }
         };
         init();
@@ -11716,12 +11631,10 @@ cyber.addEventListener("click", function () {
             } catch (err) {
               err.response.status;
               if (err.response.status == 404) {
-                swal("WARNING!!", "No skills found!.", "warning");
+                swal("WARNING!!", "No Team has formed till now!!", "warning");
+                loadingDiv.style.visibility = "hidden";
               }
-              if (err.response.status == 401) {
-                swal("WARNING!!", "Authentication Error!", "warning");
-              }
-              if (error.response.status == 400) {
+              if (err.response.status == 400) {
                 swal(
                   "Warning!!",
                   "Some unknown error occured, please try again.",
@@ -12074,17 +11987,6 @@ all.addEventListener("click", function () {
             page = page + 1;
           }
         } catch (err) {
-          err.response.status;
-          if (err.response.status == 404) {
-            swal("WARNING!!", "No Team has formed till now!!", "warning");
-          }
-          if (error.response.status == 400) {
-            swal(
-              "Warning!!",
-              "Some unknown error occured, please try again.",
-              "warning"
-            );
-          }
         }
       };
       init();
@@ -13170,9 +13072,10 @@ all.addEventListener("click", function () {
           } catch (err) {
             err.response.status;
             if (err.response.status == 404) {
-              swal("WARNING!!", "No Team has formed till now!!.", "warning");
+              swal("WARNING!!", "No Team has formed till now!!", "warning");
+              loadingDiv.style.visibility = "hidden";
             }
-            if (error.response.status == 400) {
+            if (err.response.status == 400) {
               swal(
                 "Warning!!",
                 "Some unknown error occured, please try again.",
@@ -13222,7 +13125,6 @@ function allow() {
           );
         })
         .catch((error) => {
-          console.error("Error:", error);
           error.response.status;
           if (error.response.status == 403) {
             swal(
@@ -14269,7 +14171,6 @@ function join() {
           }
         })
         .catch((error) => {
-          console.error("Error:", error);
           if (error.response.status == 400) {
             swal(
               "WARNING!!",

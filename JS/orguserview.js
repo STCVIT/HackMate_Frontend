@@ -34,6 +34,7 @@ firebase.auth().onAuthStateChanged((user) => {
           {
             swal("Warning!!", "Some unknown error occured, please try again.", "warning");
           }
+          loadingDiv.style.visibility = "hidden";
         });
     });
   } else {
@@ -71,6 +72,7 @@ function deleteacc() {
             .catch((error) => {
               if (error.response.status == 417) {
                 swal("Warning!!", "Please enter all the required fields.", "warning");
+                loadingDiv.style.visibility = "hidden";
               }
               if (error.response.status == 400) {
                 swal(
@@ -78,6 +80,7 @@ function deleteacc() {
                   "Some unknown error occured, please try again.",
                   "warning"
                 );
+                loadingDiv.style.visibility = "hidden";
               }
             });
         } else {
@@ -121,6 +124,7 @@ function updateacc() {
               "Some of the fields you are trying to update aren't mutable.",
               "warning"
             );
+            loadingDiv.style.visibility = "hidden";
           }
           if (error.response.status == 400) {
             swal(
@@ -128,6 +132,7 @@ function updateacc() {
               "Some unknown error occured, please try again.",
               "warning"
             );
+            loadingDiv.style.visibility = "hidden";
           }
           if (error.response.status == 417) {
             swal(
@@ -135,6 +140,7 @@ function updateacc() {
               "Please enter all the required fields.",
               "warning"
             );
+            loadingDiv.style.visibility = "hidden";
           }
         });
     });
@@ -195,7 +201,7 @@ async function uploadBlob(file) {
             document
               .querySelector(".swal-button--confirm")
               .addEventListener("click", () => {
-                window.location = "./orghack.html;";
+                window.location = "./orghack.html";
               });
           })
           .catch((error) => {
@@ -206,6 +212,7 @@ async function uploadBlob(file) {
                 "Some unknown error occured, please try again.",
                 "warning"
               );
+              loadingDiv.style.visibility = "hidden";
             }
             if (error.response.status == 417) {
               swal(
@@ -222,6 +229,7 @@ async function uploadBlob(file) {
                 "Some of the fields you are trying to update are immutable.",
                 "warning"
               );
+              loadingDiv.style.visibility = "hidden";
             }
           });
       });

@@ -182,7 +182,7 @@ body{
 }
 .wrapall{
   border: 2px solid #1EA54C ;
-  padding-left:180px;
+  padding-left:140px;
   padding-right:140px;
   padding-bottom:10px;
   border-style: dashed;
@@ -202,7 +202,7 @@ body{
   background: #1d2833;
 }
 .wrapall img{
-  padding-top:60px;
+  padding-top:20px;
   padding-bottom:20px;
   background: #1d2833;
 }
@@ -213,7 +213,7 @@ body{
   }
   .wrapall{
     border: 2px solid #1EA54C ;
-    padding-left:90px;
+    padding-left:60px;
     padding-right:60px;
     padding-bottom:10px;
     border-style: dashed;

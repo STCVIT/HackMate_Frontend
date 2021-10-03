@@ -19,29 +19,29 @@
     <div id="nav"></div>
 
     <div class="main container-fluid">
-
-        <div class="row">
-            <div class="col-md-1 col-sm-1 col-1"> </div>
-            <div class="col-md-5">
-                <div class="hackname">My Profile.</div>
-            </div>
-            <div class="col-md-5">
-                <div class="text-end justify-content-end">
-                    <div class="btns">
-                        <a class="savechanges btn btn-success" href="#" onclick="updateacc()" role="button">Save
-                            Changes</a>
-                    </div>
-                </div>
-                <div class="text-center justify-content-center">
-                    <div class="btns1"><a class=" delete btn btn-success" href="#" role="button">Reset Password</a>
-                        <a class=" savechanges btn btn-success" href="#" onclick="deleteacc()" role="button">Delete
-                            Account</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-1"></div>
-        </div>
         <form action="" name="myform" method="post">
+            <div class="row">
+                <div class="col-md-1 col-sm-1 col-1"> </div>
+                <div class="col-md-5">
+                    <div class="hackname">My Profile.</div>
+                </div>
+                <div class="col-md-5">
+                    <div class="text-end justify-content-end">
+                        <div class="btns">
+                            <a class="savechanges btn btn-success" href="#" onclick="updateacc()" role="button">Save
+                                Changes</a>
+                        </div>
+                    </div>
+                    <div class="text-center justify-content-center">
+                        <div class="btns1"><a class=" delete btn btn-success" href="#" role="button">Reset Password</a>
+                            <a class=" savechanges btn btn-success" href="#" onclick="deleteacc()" role="button">Delete
+                                Account</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+            </div>
+
             <div class="row">
                 <div class="col-md-1 col-sm-1 col-1"> </div>
                 <div class="col-md-9">
@@ -77,7 +77,7 @@
                         <div class="inputdeets">
                             <nbg>WEBSITE<r>*</r>
                             </nbg> <br>
-                            <input class="textbox" name="website" type="url" placeholder=""> <br>
+                            <input class="textbox" name="website" type="url" placeholder="" required> <br>
                         </div>
                     </div>
                 </div>
@@ -88,7 +88,8 @@
                 <div class="col-md-1 col-sm-1 col-1"> </div>
                 <div class="col-md-9">
                     <div class="text-start justify-content-start">
-                        <div class="btns"><a class=" delete btn btn-success" href="./organiser_resetpwd.html" role="button">Reset Password</a>
+                        <div class="btns"><a class=" delete btn btn-success" href="./organiser_resetpwd.html"
+                                role="button">Reset Password</a>
                             <a class=" savechanges btn btn-success" href="#" onclick="deleteacc()" role="button">Delete
                                 Account</a>
                         </div>
@@ -103,6 +104,8 @@
 
                 <div class="col-1"></div>
             </div>
+
+
         </form>
     </div>
 

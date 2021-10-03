@@ -30,9 +30,12 @@ firebase.auth().onAuthStateChanged((user) => {
         })
         .catch((error) => {
           console.error("Error: " + error);
-          if(error.response.status == 400)
-          {
-            swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+          if (error.response.status == 400) {
+            swal(
+              "Warning!!",
+              "Some unknown error occured, please try again.",
+              "warning"
+            );
           }
           loadingDiv.style.visibility = "hidden";
         });
@@ -71,7 +74,11 @@ function deleteacc() {
             })
             .catch((error) => {
               if (error.response.status == 417) {
-                swal("Warning!!", "Please enter all the required fields.", "warning");
+                swal(
+                  "Warning!!",
+                  "Please enter all the required fields.",
+                  "warning"
+                );
                 loadingDiv.style.visibility = "hidden";
               }
               if (error.response.status == 400) {
@@ -87,12 +94,17 @@ function deleteacc() {
           swal("Your profile is safe!");
         }
       });
-    })
+    });
 }
 
 function updateacc() {
   loadingDiv.style.visibility = "visible";
-  firebase
+  if (
+    /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/.test(
+      document.myform.website.value
+    )
+  ){
+    firebase
     .auth()
     .currentUser.getIdToken()
     .then(async (id) => {
@@ -144,6 +156,12 @@ function updateacc() {
           }
         });
     });
+  }
+  else{
+    swal("Warning!", "Please enter a valid website","warning")
+    loadingDiv.style.visibility = "hidden";
+  }
+
 }
 
 document
@@ -158,7 +176,7 @@ async function uploadBlob(file) {
     .ref("/Organisers/Profile/" + document.myform.name.value);
 
   var uploadTask = ref.put(file);
-
+  loadingDiv.style.visibility = "hidden";
   uploadTask.on(
     "state_changed",
     (snapshot) => {
@@ -219,8 +237,8 @@ async function uploadBlob(file) {
                 "Warning!!",
                 "Please enter all the required fields.",
                 "warning"
-              ).then(()=> {
-                window.location.href = "./orguserview.html"
+              ).then(() => {
+                window.location.href = "./orguserview.html";
               });
             }
             if (error.response.status == 403) {

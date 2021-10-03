@@ -3,6 +3,7 @@ $(document).ready(function () {
   $("#foobottom").load("../Assets/Footer/footer.txt");
 });
 let teamproj;
+let github_regex = /https:\/\/github.com\//gm;
 const loadingDiv = document.getElementById("loading");
 const project_form = document.getElementById("project_form");
 project_form.addEventListener("submit", (e) => {
@@ -75,6 +76,11 @@ function submitform() {
   if (bio == "") {
     document.getElementById("error_bio").style.visibility = "visible";
     flag = 1;
+  }
+  if (github_regex.test(git) == false && git.trim() != "")
+  {
+    flag = 1;
+    swal("Warning!!", "Please enter a valid GitHub link.", "warning");
   }
   firebase
     .auth()

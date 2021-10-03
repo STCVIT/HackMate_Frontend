@@ -62,7 +62,7 @@ firebase.auth().onAuthStateChanged((user) => {
     // User is signed out
     if (login_count != 1) {
       swal("Warning!!", "Please Sign In", "warning").then(() => {
-        window.location = "./participantlognsignup.html";
+        window.location = "./orglognsignup.html";
       });
     }
   }

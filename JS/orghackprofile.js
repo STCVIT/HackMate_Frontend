@@ -622,7 +622,7 @@ function updateHack() {
       document
         .querySelector(".swal-button--confirm")
         .addEventListener("click", () => {
-          window.location.assign("./orghackprofile.html?" + response.data._id);
+          window.location = "./orghack.html";
         });
     })
     .catch((error) => {

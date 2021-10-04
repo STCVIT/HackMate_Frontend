@@ -1,6 +1,7 @@
 const authentication = firebase.auth();
 const loadingDiv = document.getElementById("loading");
-
+let objectURL;
+let uploadedFile;
 $(document).ready(function () {
   $("#nav").load("../Assets/Header/headero.txt");
 });
@@ -101,9 +102,12 @@ firebase.auth().onAuthStateChanged((user) => {
               document.querySelector(".wrapper").innerHTML =
                 "<h2 class='text-center' style='margin-top: 82px;'>No Teams Found!</h2>";
             }
-            if(error.response.status == 400)
-            {
-              swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+            if (error.response.status == 400) {
+              swal(
+                "Warning!!",
+                "Some unknown error occured, please try again.",
+                "warning"
+              );
             }
           }
           loadingDiv.style.visibility = "hidden";
@@ -126,40 +130,53 @@ function deleteHack() {
     .then((id) => {
       auth = id;
 
-      axios
-        .delete(
-          `${url}/organiser/deleteHack/${window.location.search.split("?")[1]}`,
-          {
-            headers: {
-              Authorization: "Bearer " + auth,
-            },
-          }
-        )
-        .then((response) => {
-          hack = response.data;
-
-          loadingDiv.style.visibility = "hidden";
-          swal(
-            "SUCCESS!!",
-            "Your hack has been deleted successfully",
-            "success"
-          );
-          document
-            .querySelector(".swal-button--confirm")
-            .addEventListener("click", () => {
-              window.location.assign("./orghack.html");
-            });
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-          if (error.response.status == 400 || error.response.status == 418) {
+      swal({
+        title: "Are you sure?",
+        text: "Do you want to delete your profile?",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      }).then((willDelete) => {
+        if (willDelete) {
+          axios
+          .delete(
+            `${url}/organiser/deleteHack/${window.location.search.split("?")[1]}`,
+            {
+              headers: {
+                Authorization: "Bearer " + auth,
+              },
+            }
+          )
+          .then((response) => {
+            hack = response.data;
+  
+            loadingDiv.style.visibility = "hidden";
             swal(
-              "Warning!!",
-              "Some unknown error occured, please try again.",
-              "warning"
+              "SUCCESS!!",
+              "Your hack has been deleted successfully",
+              "success"
             );
-          }
-        });
+            document
+              .querySelector(".swal-button--confirm")
+              .addEventListener("click", () => {
+                window.location.assign("./orghack.html");
+              });
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            if (error.response.status == 400 || error.response.status == 418) {
+              swal(
+                "Warning!!",
+                "Some unknown error occured, please try again.",
+                "warning"
+              );
+            }
+          });
+        }
+        else {
+          swal("Your hack is safe!");
+        }
+      })
     });
 }
 
@@ -310,9 +327,12 @@ function events(event) {
             document.querySelector(".wrapper").innerHTML =
               "<h2 class='text-center' style='margin-top: 82px;'>No Teams Found!</h2>";
           }
-          if(error.response.status == 400)
-          {
-            swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+          if (error.response.status == 400) {
+            swal(
+              "Warning!!",
+              "Some unknown error occured, please try again.",
+              "warning"
+            );
           }
         });
     });
@@ -370,9 +390,12 @@ function nextPage() {
             document.querySelector(".wrapper").innerHTML =
               "<h2 class='text-center' style='margin-top: 82px;'>No Teams Found!</h2>";
           }
-          if(error.response.status == 400)
-          {
-            swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+          if (error.response.status == 400) {
+            swal(
+              "Warning!!",
+              "Some unknown error occured, please try again.",
+              "warning"
+            );
           }
         });
     });
@@ -430,15 +453,18 @@ function prevPage() {
             document.querySelector(".wrapper").innerHTML =
               "<h2 class='text-center' style='margin-top: 82px;'>No Teams Found!</h2>";
           }
-          if(error.response.status == 400)
-          {
-            swal("Warning!!", "Some unknown error occured, please try again.", "warning");
+          if (error.response.status == 400) {
+            swal(
+              "Warning!!",
+              "Some unknown error occured, please try again.",
+              "warning"
+            );
           }
         });
     });
 }
 
-document
+  document
   .querySelector("form")
   .addEventListener("submit", async function (event) {
     event.preventDefault();
@@ -455,14 +481,33 @@ document
     ) {
       swal("Error!", "Please fill in all the required fields", "warning");
     } else {
-      if (document.getElementById("image_uploads").files[0] != undefined) {
-        uploadBlob(document.getElementById("image_uploads").files[0]);
+      if (
+        document.myform.start.value.trim() > document.myform.end.value.trim()
+      ) {
+        swal(
+          "Error!",
+          "Start date cannot be greater than end date.",
+          "warning"
+        );
+      } else if (
+        document.myform.mints.value.trim() > document.myform.maxts.value.trim()
+      ) {
+        swal(
+          "Error!",
+          "Minimum Team Size cannot be greater than Maximum Team Size.",
+          "warning"
+        );
+      } else if (new Date(document.myform.end.value) < new Date()) {
+        swal("Error!", "End date can't be before current date.", "warning");
       } else {
-        updateHack()
+        if (uploadedFile != undefined) {
+          uploadBlob(uploadedFile);
+        } else {
+          updateHack();
+        }
       }
     }
   });
-
 async function uploadBlob(file) {
   loadingDiv.style.visibility = "visible";
 
@@ -593,7 +638,7 @@ function updateHack() {
 
   axios
     .patch(
-      `${url}/organiser/updateHack/${window.location.search.split('?')[1]}`,
+      `${url}/organiser/updateHack/${window.location.search.split("?")[1]}`,
       {
         name: name,
         venue: venue,
@@ -603,7 +648,7 @@ function updateHack() {
         max_team_size: maxts,
         mode_of_conduct: moc,
         prize_pool: prizes,
-        // description: about,
+        description: about,
         website: website,
       },
       {
@@ -627,6 +672,13 @@ function updateHack() {
     })
     .catch((error) => {
       console.error("Error:", error);
+      if (error.response.status == 406) {
+        swal(
+          "Error!",
+          "Min team size cannot be greater than max team size",
+          "warning"
+        );
+      }
       if (error.response.status == 407) {
         swal("Error!", "Start date cannot be after end date", "warning");
       }
@@ -642,8 +694,13 @@ function updateHack() {
       }
     });
 }
+
 document
   .querySelector("#image_uploads")
   .addEventListener("change", function () {
-    document.querySelector(".image_uploads").innerHTML = "File Uploaded!";
+    uploadedFile = document.getElementById("image_uploads").files[0];
+    objectURL = URL.createObjectURL(
+      document.getElementById("image_uploads").files[0]
+    );
+    document.querySelector(".poster").innerHTML = "<img style='width: 200px; height: 200px;' src='" + objectURL + "' >";
   });

@@ -23,7 +23,7 @@ document
       document.myform.mints.value.trim() == "" ||
       uploadedFile == undefined
     ) {
-      swal("Error!", "Please fill in all the required fie lds", "warning");
+      swal("Error!", "Please fill in all the required fields", "warning");
     } else {
       if (
         document.myform.start.value.trim() > document.myform.end.value.trim()
@@ -42,13 +42,8 @@ document
           "warning"
         );
       } else if (new Date(document.myform.end.value) < new Date()) {
-        swal(
-          "Error!",
-          "End date can't be before current date.",
-          "warning"
-        );
-      }
-      else {
+        swal("Error!", "End date can't be before current date.", "warning");
+      } else {
         uploadBlob(uploadedFile);
       }
     }
@@ -179,12 +174,13 @@ document
   .querySelector("#image_uploads")
   .addEventListener("change", function () {
     uploadedFile = document.getElementById("image_uploads").files[0];
-    document.querySelector(".image_uploads").innerHTML = "File Uploaded!";
     objectURL = URL.createObjectURL(
       document.getElementById("image_uploads").files[0]
     );
-    document.querySelector(".inputdeetsposter").innerHTML =
-      "<nbg>POSTER<r>*</r></nbg> <label for='image_uploads' class='label'><img src='../Assets/Images/EDIT.svg' alt=''></label><input style='height: 0px; width: 0px;' type='file' id='image_uploads' name='image_uploads' accept='.jpg, .jpeg, .png'><div class='poster' style='padding-top: 6px;'><img style='width: 200px; height: 200px;' src='" +
+    document.querySelector("#uploaded_image").innerHTML =
+      "<img src='../Assets/Images/EDIT.svg' alt=''>";
+    document.querySelector(".image_uploads").innerHTML =
+      "<div class='poster' style='padding-top: 6px;'><img style='width: 200px; height: 200px;' src='" +
       objectURL +
       "'></div>";
   });

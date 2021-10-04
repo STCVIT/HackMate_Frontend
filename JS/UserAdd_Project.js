@@ -3,6 +3,7 @@ $(document).ready(function () {
   $("#foobottom").load("../Assets/Footer/footer.txt");
 });
 let github_regex = /https:\/\/github.com\//gm;
+let githubwww_regex = /https:\/\/www.github.com\//gm;
 const loadingDiv = document.getElementById("loading");
 const project_form = document.getElementById("project_form");
 function toTitleCase(str) {
@@ -32,7 +33,7 @@ function submitform() {
     document.getElementById("error_bio").style.visibility = "visible";
     flag = 1;
   }
-  if (github_regex.test(git) == false && git.trim() != "")
+  if (github_regex.test(git) == false && git.trim() != "" && githubwww_regex.test(git) == false)
   {
     flag = 1;
     swal("Warning!!", "Please enter a valid GitHub link.", "warning");

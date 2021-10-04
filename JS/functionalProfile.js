@@ -46,7 +46,7 @@ function secondpage_profile() {
         (e).preventDefault();
         const Name = toTitleCase(sessionStorage.getItem("NAME"));
         username = sessionStorage.getItem("USERNAME");
-        const college = toTitleCase(sessionStorage.getItem("COLLEGE"));
+        const college = sessionStorage.getItem("COLLEGE");
         const year = sessionStorage.getItem("YEAR");
         function toTitleCase(str) {
             return str.replace(
@@ -218,6 +218,7 @@ function validate(linkedin, git, website, bio) {
     linkedin.value = linkedin.value.trim();
     let regex = /((https?:\/\/)?((www|\w\w)\.)?linkedin\.com\/)((([\w]{2,3})?)|([^\/]+\/(([\w|\d-&#?=])+\/?){1,}))$/;
     let github_regex = /https:\/\/github.com\//gm;
+    let githubwww_regex = /https:\/\/www.github.com\//gm;
     let regstr = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
     git.value = git.value.trim();
     website.value = website.value.trim();
@@ -233,6 +234,10 @@ function validate(linkedin, git, website, bio) {
     }
     //github profile link validation
     if (github_regex.test(git.value) === true) {
+        onSuccess(git);
+        flag = flag + 1;
+    }
+    else if(githubwww_regex.test(git.value) === true){
         onSuccess(git);
         flag = flag + 1;
     }

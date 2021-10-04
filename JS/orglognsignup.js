@@ -18,6 +18,29 @@ loginBtn.addEventListener("click", function () {
   document.getElementById("active1").className = "inactive4";
 });
 
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    user.getIdToken().then(function (idToken) {
+      auth = idToken;
+      fetch(`https://hackportalbackend.herokuapp.com/participant/login`, {
+        method: "GET",
+        headers: new Headers({
+          Authorization: "Bearer " + idToken,
+        }),
+      }).then((response) => {
+        if (response.status == 403) {
+          loadingDiv.style.visibility = "hidden";
+          window.location.assign = "./orghack.html";
+        }else if (response.status == 200) {
+          window.location.assign("./viewhackathon.html");
+        }
+      });
+    });
+  } else {
+    // User is signed out
+  }
+});
+
 const form = document.getElementById("form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();

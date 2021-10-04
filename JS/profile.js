@@ -12,7 +12,7 @@ function get_previousterms() {
 let photo = "../Assets/Images/blank-profile.png";
 const Name = toTitleCase(sessionStorage.getItem("NAME"));
 const username = sessionStorage.getItem("USERNAME");
-const college = toTitleCase(sessionStorage.getItem("COLLEGE"));
+const college = sessionStorage.getItem("COLLEGE");
 const year = sessionStorage.getItem("YEAR");
 const linkedin = sessionStorage.getItem("LINKEDIN");
 const git = sessionStorage.getItem("GIT");

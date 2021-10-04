@@ -60,15 +60,19 @@ firebase.auth().onAuthStateChanged((user) => {
             " " +
             new Date(hack.end.split("T")[0]).toString().split(" ")[3] +
             " " +
-            "</div> </div> <div class='display1 col-3'> <nbgre>Prize Pool:</nbgre> <div class='nbws'>" +
+            "</div> </div> <div class='display1 col-3'> <nbgre>Prize Pool(₹):</nbgre> <div class='nbws'>" +
             hack.prize_pool +
-            "</div> </div> <div class='display1 col-3'> <nbgre>Team Size:</nbgre> <div class='nbws'> Min: 1 Member<br> Max: " +
+            "</div> </div> <div class='display1 col-3'> <nbgre>Team Size:</nbgre> <div class='nbws'> Min: " +
+            hack.min_team_size +
+            " Member<br> Max: " +
             hack.max_team_size +
             " Members </div> </div> <div class='display1 col-3'> <nbgre>Venue:</nbgre> <div class='nbws'>" +
             hack.venue +
-            "</div> </div> <div class='display2 col-4 pt-3'> <nbgre>Prize Pool:</nbgre> <div class='nbws'>" +
+            "</div> </div> <div class='display2 col-4 pt-3'> <nbgre>Prize Pool(₹):</nbgre> <div class='nbws'>" +
             hack.prize_pool +
-            "</div> </div> <div class='display2 col-5 pt-3'> <nbgre>Team Size:</nbgre> <div class='nbws2'> Min: 1 Member<br> Max: " +
+            "</div> </div> <div class='display2 col-5 pt-3'> <nbgre>Team Size:</nbgre> <div class='nbws2'> Min: " +
+            hack.min_team_size +
+            " Member<br> Max: " +
             hack.max_team_size +
             " Members </div> </div> <div class='display2 col-3 pt-3'> <nbgre>Venue:</nbgre> <div class='nbws'>" +
             hack.venue +
@@ -94,7 +98,7 @@ firebase.auth().onAuthStateChanged((user) => {
               "Some unknown error occured, please try again.",
               "warning"
             );
-          } 
+          }
           if (error.response.status == 404) {
             swal("Not Found!", "Hack doesn't exist", "warning").then(() => {
               window.location.href = "./viewhackathon.html";

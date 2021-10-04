@@ -135,7 +135,7 @@ function events(event) {
               +hacks.final[i].min_team_size +
               "-" +
               hacks.final[i].max_team_size +
-              "</nbw><nbw> Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
+              "</nbw><nbw> Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool (IN ₹): </nbg> <nbw></nbw>" +
               hacks.final[i].prize_pool +
               "</div><img class='mode_of_conduct pt-3' src='../Assets/Images/" +
               hacks.final[i].mode_of_conduct +
@@ -323,7 +323,7 @@ function displayTeams() {
                 +hacks.final[i].min_team_size +
                 "-" +
                 hacks.final[i].max_team_size +
-                "</nbw><nbw> Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
+                "</nbw><nbw> Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool (IN ₹): </nbg> <nbw></nbw>" +
                 hacks.final[i].prize_pool +
                 "</div> <img class='mode_of_conduct pt-3' src='../Assets/Images/" +
                 hacks.final[i].mode_of_conduct +
@@ -425,7 +425,7 @@ function nextPage() {
               +hacks.final[i].min_team_size +
               "-" +
               hacks.final[i].max_team_size +
-              "</nbw><nbw> Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
+              "</nbw><nbw> Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool (IN ₹): </nbg> <nbw></nbw>" +
               hacks.final[i].prize_pool +
               "</div><img class='mode_of_conduct pt-3' src='../Assets/Images/" +
               hacks.final[i].mode_of_conduct +
@@ -512,7 +512,7 @@ function prevPage() {
               +hacks.final[i].min_team_size +
               "-" +
               hacks.final[i].max_team_size +
-              "</nbw><nbw> Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool: </nbg> <nbw></nbw>" +
+              "</nbw><nbw> Participants</nbw> </div> <div class='nbg'> <nbg>Prize Pool (IN ₹): </nbg> <nbw></nbw>" +
               hacks.final[i].prize_pool +
               "</div><img class='mode_of_conduct pt-3' src='../Assets/Images/" +
               hacks.final[i].mode_of_conduct +

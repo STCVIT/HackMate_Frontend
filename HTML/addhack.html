@@ -41,17 +41,17 @@
                         <div class="inputdeets">
                             <nbg>NAME<r>*</r>
                             </nbg><br>
-                            <input class="textbox" type="text" name="name" id="" > <br>
+                            <input class="textbox" type="text" name="name" id=""> <br>
                         </div>
                         <div class="inputdeets">
                             <nbg>VENUE<r>*</r>
                             </nbg> <br>
-                            <input class="textbox" type="text" name="venue" id="" > <br>
+                            <input class="textbox" type="text" name="venue" id="" maxlength="50"> <br>
                         </div>
                         <div class="inputdeets">
                             <nbg>MODE OF CONDUCT<r>*</r>
                             </nbg> <br>
-                            <select class="textbox" name="moc" style="  color: #e7efef;" >
+                            <select class="textbox" name="moc" style="  color: #e7efef;">
                                 <option value="" disabled selected>Select</option>
                                 <option value="Online" style="color: #e7efef;">Online</option>
                                 <option value="Offline" style="  color: #e7efef;">Offline</option>
@@ -60,12 +60,12 @@
                         <div class="inputdeets">
                             <nbg>WEBSITE LINK<r>*</r>
                             </nbg> <br>
-                            <input type="url" class="textbox" name="website" id="" > <br>
+                            <input type="url" class="textbox" name="website" id=""> <br>
                         </div>
                         <div class="inputdeets">
                             <nbg>ABOUT<r>*</r>
                             </nbg> <br>
-                            <textarea class="textboxbio" name="about" id="" cols="30" rows="10" ></textarea>
+                            <textarea class="textboxbio" name="about" id="" cols="30" rows="10" maxlength="750"></textarea>
                         </div>
                     </div>
                 </div>
@@ -76,40 +76,41 @@
 
                         <div class="inputdeets inputdeetsposter" style="height: 226.062px;">
                             <nbg>POSTER<r>*</r>
-                            </nbg> <br>
-                            <label id="uploaded_image" for="image_uploads" style="width: 100%;">
+                            </nbg>
+                            <label id="uploaded_image" for="image_uploads">
                                 <div class="box text-center"><img class="plus" src="../Assets/Images/plus.svg" alt="">
                                 </div>
                             </label>
                             <input style="height: 0px; width: 0px;" type="file" id="image_uploads" name="image_uploads"
-                                accept=".jpg, .jpeg, .png" >
-                            <label for="image_uploads" class="image_uploads">
+                                accept=".jpg, .jpeg, .png">
+                            <br>
+                            <label class="image_uploads">
                             </label>
                         </div>
                         <div class="inputdeets">
                             <nbg>START DATE<r>*</r>
                             </nbg> <br>
-                            <input class="textbox" type="datetime-local" name="start" id="" > <br>
+                            <input class="textbox" type="datetime-local" name="start" id=""> <br>
                         </div>
                         <div class="inputdeets">
                             <nbg>END DATE<r>*</r>
                             </nbg> <br>
-                            <input class="textbox" type="datetime-local" name="end" id="" > <br>
+                            <input class="textbox" type="datetime-local" name="end" id=""> <br>
                         </div>
                         <div class="inputdeets">
                             <nbg>MIN TEAM SIZE<r>*</r>
                             </nbg> <br>
-                            <input class="textbox" type="number" name="mints" id="" min="1" >
+                            <input class="textbox" type="number" name="mints" id="" min="1">
                         </div>
                         <div class="inputdeets">
                             <nbg>MAX TEAM SIZE<r>*</r>
                             </nbg> <br>
-                            <input class="textbox" type="number" name="maxts" id="" min="1" >
+                            <input class="textbox" type="number" name="maxts" id="" min="1">
                         </div>
                         <div class="inputdeets">
-                            <nbg>PRIZES POOL<r>*</r>
+                            <nbg>PRIZES POOL (IN ₹)<r>*</r>
                             </nbg> <br>
-                            <input class="textbox" type="number" name="prizes" id="" min="1" > <br>
+                            <input class="textbox" type="number" name="prizes" id="" min="1"> <br>
                         </div>
 
                     </div>

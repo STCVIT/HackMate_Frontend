@@ -174,7 +174,10 @@ function update_account() {
       let len = Name.value.length;
       let n = username.value.length;
       linkedin.value = linkedin.value.trim();
-      let regex = /^(http(s)?:\/\/)?([\w]+\.)?linkedin\.com\/(pub|in|profile)/;
+      let regex =
+        /((https?:\/\/)?((www|\w\w)\.)?linkedin\.com\/)((([\w]{2,3})?)|([^\/]+\/(([\w|\d-&#?=])+\/?){1,}))$/;
+      let github_regex = /https:\/\/github.com\//gm;
+      let githubwww_regex = /https:\/\/www.github.com\//gm;
       let regstr =
         /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
       git.value = git.value.trim();
@@ -224,7 +227,9 @@ function update_account() {
         flag = flag + 1;
       }
       //github profile link validation
-      if (regstr.test(git.value) === true) {
+      if (github_regex.test(git.value) === true) {
+        onSuccess(git);
+      } else if (githubwww_regex.test(git.value) === true) {
         onSuccess(git);
       } else {
         onError(git, "Enter correct github profile link");

@@ -26,6 +26,7 @@ function displayTeams() {
             hackss = await res.data;
             if (hackss.length >= 9 && hackss.length <= 16) {
               page = page + 1;
+              displayTeams();
             } else if (hackss.length >= 17 && hackss.length <= 24) {
               page = page + 1;
 
@@ -345,6 +346,7 @@ function displayTeams() {
 
           function someFunction() {
             if (window.scrollY + window.innerHeight >= 3100) {
+              // displayTeams();
               window.removeEventListener("scroll", someFunction);
             }
           }
@@ -1436,17 +1438,16 @@ function displayTeams() {
 
 displayTeams();
 
-var n = 0;
+
 app.addEventListener("click", function () {
   firebase
     .auth()
     .currentUser.getIdToken()
     .then((id) => {
       auth = id;
-      if (n % 2 == 0) {
+      if (document.getElementById("active1").className = "button" && document.getElementById("inactive1").className == "button1") {
         document.getElementById("active1").className = "button1";
         document.getElementById("inactive1").className = "button";
-        n = n + 1;
         loadingDiv.style.visibility = "visible";
         var occurence = "appdev";
         var page = 1;
@@ -2688,10 +2689,10 @@ app.addEventListener("click", function () {
           };
           init();
         }
-      } else {
+      }
+      else {
         document.getElementById("active1").className = "button1";
         document.getElementById("inactive1").className = "button1";
-        n = n + 1;
       }
     });
 });
@@ -2701,10 +2702,9 @@ fweb.addEventListener("click", function () {
     .currentUser.getIdToken()
     .then((id) => {
       auth = id;
-      if (n % 2 == 0) {
+      if (document.getElementById("active1").className = "button" && document.getElementById("inactive2").className == "button1" || document.getElementById("inactive2").className == "button5") {
         document.getElementById("active1").className = "button1";
         document.getElementById("inactive2").className = "button";
-        n = n + 1;
         loadingDiv.style.visibility = "visible";
         var occurence = "frontend";
         var page = 1;
@@ -3949,7 +3949,6 @@ fweb.addEventListener("click", function () {
       } else {
         document.getElementById("active1").className = "button1";
         document.getElementById("inactive2").className = "button1";
-        n = n + 1;
       }
     });
 });
@@ -3959,10 +3958,9 @@ bweb.addEventListener("click", function () {
     .currentUser.getIdToken()
     .then((id) => {
       auth = id;
-      if (n % 2 == 0) {
+      if (document.getElementById("active1").className = "button" && document.getElementById("inactive3").className == "button1" || document.getElementById("inactive3").className == "button6") {
         document.getElementById("active1").className = "button1";
         document.getElementById("inactive3").className = "button";
-        n = n + 1;
         loadingDiv.style.visibility = "visible";
         var occurence = "backend";
         var page = 1;
@@ -5209,7 +5207,6 @@ bweb.addEventListener("click", function () {
       } else {
         document.getElementById("active1").className = "button1";
         document.getElementById("inactive3").className = "button1";
-        n = n + 1;
       }
     });
 });
@@ -5219,10 +5216,9 @@ ml.addEventListener("click", function () {
     .currentUser.getIdToken()
     .then((id) => {
       auth = id;
-      if (n % 2 == 0) {
+      if (document.getElementById("active1").className = "button" && document.getElementById("inactive4").className == "button1" || document.getElementById("inactive4").className == "button7") {
         document.getElementById("active1").className = "button1";
         document.getElementById("inactive4").className = "button";
-        n = n + 1;
         loadingDiv.style.visibility = "visible";
         var occurence = "ml";
         var page = 1;
@@ -6469,7 +6465,6 @@ ml.addEventListener("click", function () {
       } else {
         document.getElementById("active1").className = "button1";
         document.getElementById("inactive4").className = "button1";
-        n = n + 1;
       }
     });
 });
@@ -6479,10 +6474,9 @@ design.addEventListener("click", function () {
     .currentUser.getIdToken()
     .then((id) => {
       auth = id;
-      if (n % 2 == 0) {
+      if (document.getElementById("active1").className = "button" && document.getElementById("inactive5").className == "button1" || document.getElementById("inactive5").className == "button8") {
         document.getElementById("active1").className = "button1";
         document.getElementById("inactive5").className = "button";
-        n = n + 1;
         loadingDiv.style.visibility = "visible";
         var occurence = "ui/ux";
         var page = 1;
@@ -7729,7 +7723,6 @@ design.addEventListener("click", function () {
       } else {
         document.getElementById("active1").className = "button1";
         document.getElementById("inactive5").className = "button1";
-        n = n + 1;
       }
     });
 });
@@ -7739,10 +7732,9 @@ mgmt.addEventListener("click", function () {
     .currentUser.getIdToken()
     .then((id) => {
       auth = id;
-      if (n % 2 == 0) {
+      if (document.getElementById("active1").className = "button" && document.getElementById("inactive6").className == "button1" || document.getElementById("inactive6").className == "button9") {
         document.getElementById("active1").className = "button1";
         document.getElementById("inactive6").className = "button";
-        n = n + 1;
         loadingDiv.style.visibility = "visible";
         var occurence = "management";
         var page = 1;
@@ -8989,7 +8981,6 @@ mgmt.addEventListener("click", function () {
       } else {
         document.getElementById("active1").className = "button1";
         document.getElementById("inactive6").className = "button1";
-        n = n + 1;
       }
     });
 });
@@ -8999,10 +8990,9 @@ block.addEventListener("click", function () {
     .currentUser.getIdToken()
     .then((id) => {
       auth = id;
-      if (n % 2 == 0) {
+      if (document.getElementById("active1").className = "button" && document.getElementById("inactive7").className == "button1" || document.getElementById("inactive7").className == "button10") {
         document.getElementById("active1").className = "button1";
         document.getElementById("inactive7").className = "button";
-        n = n + 1;
         loadingDiv.style.visibility = "visible";
         var occurence = "blockchain";
         var page = 1;
@@ -10245,7 +10235,6 @@ block.addEventListener("click", function () {
       } else {
         document.getElementById("active1").className = "button1";
         document.getElementById("inactive7").className = "button1";
-        n = n + 1;
       }
     });
 });
@@ -10375,10 +10364,9 @@ cyber.addEventListener("click", function () {
     .currentUser.getIdToken()
     .then((id) => {
       auth = id;
-      if (n % 2 == 0) {
+      if (document.getElementById("active1").className = "button" && document.getElementById("inactive8").className == "button1" || document.getElementById("inactive8").className == "button11") {
         document.getElementById("active1").className = "button1";
         document.getElementById("inactive8").className = "button";
-        n = n + 1;
         loadingDiv.style.visibility = "visible";
         var occurence = "cybersecurity";
         var page = 1;
@@ -11625,7 +11613,6 @@ cyber.addEventListener("click", function () {
       } else {
         document.getElementById("active1").className = "button1";
         document.getElementById("inactive8").className = "button1";
-        n = n + 1;
       }
     });
 });
@@ -11658,6 +11645,7 @@ all.addEventListener("click", function () {
           hackss = await res.data;
           if (hackss.length >= 9 && hackss.length <= 16) {
             page = page + 1;
+            displayTeams();
           } else if (hackss.length >= 17 && hackss.length <= 24) {
             page = page + 1;
 

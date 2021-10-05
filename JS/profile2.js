@@ -119,3 +119,14 @@ function onError(input, message) {
     messageEle.innerText = message;
 }
 
+$(document).ready(function() {
+    var max = 200;
+    $('#feedback').html(max + 'characters remaining');
+
+    $('#bio').keyup(function() {
+        var text_length = $('#bio').val().length;
+        var text_remaining = max - text_length;
+
+        $('#feedback').html(text_remaining + ' characters remaining');
+    });
+});

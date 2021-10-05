@@ -59,6 +59,12 @@ html,body{
 	background: center;
 	margin-top: 30px;
 }
+#leftBIG_triangles{
+	display: none;
+}
+#rightBIG_triangles{
+	display: none;
+}
 @media only screen  and (min-width:1200px){
 	.image_box{
 		position: relative;
@@ -67,6 +73,9 @@ html,body{
 	#leftBIG_triangles{
 		position: relative;
 		top:10%;
+	}
+	.cardss{
+		margin-top: 150px;
 	}
 }
 @media only screen  and (max-width:1200px){

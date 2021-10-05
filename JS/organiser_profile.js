@@ -11,12 +11,12 @@ form.addEventListener("submit", (e) => {
   let college = document.getElementById("college");
   let website = document.getElementById("website");
   let logo = "../Assets/Images/blank-profile.png";
-  let res = checkInputs(username, phone_num, college);
+  let res = checkInputs(username, phone_num, college, website);
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       user.getIdToken().then(function (idToken) {
         auth = idToken;
-        if (res == 3) {
+        if (res == 4) {
           fetch(`${url}/organiser/createProfile`, {
             method: "POST",
             headers: {
@@ -33,7 +33,7 @@ form.addEventListener("submit", (e) => {
           })
             .then((response) => response.text())
             .then((text) => {
-              
+
               swal(
                 "SUCCESS!!",
                 "Your profile has been created successfully",
@@ -44,12 +44,10 @@ form.addEventListener("submit", (e) => {
             })
             .catch((error) => {
               console.log("Error:", error);
-              if(error.response.status == 400)
-              {
+              if (error.response.status == 400) {
                 swal("Warning!!", "Some unknown error occured, please try again.", "warning");
               }
-              if(error.response.status == 417)
-              {
+              if (error.response.status == 417) {
                 swal("Warning!!", "Please enter all the required fields.", "warning");
               }
             });
@@ -60,15 +58,17 @@ form.addEventListener("submit", (e) => {
     }
   });
 });
-function checkInputs(username, phone_num, college) {
+function checkInputs(username, phone_num, college, website) {
   let flag = 0;
   //name should be only alphabets and of max length 30
   username.value = username.value.trim();
   college.value = college.value;
+  website.value = website.value;
   let coll = college.value;
   let n = username.value.length;
   let reg1 = /^[a-zA-Z][a-zA-Z\s]*$/;
   let reg2 = /^[6-9]\d{9}$/;
+  let regstr = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
   if (n <= 30) {
     if (reg1.test(username.value) === true) {
       onSuccess(username);
@@ -99,6 +99,14 @@ function checkInputs(username, phone_num, college) {
     onSuccess(college);
     flag = flag + 1;
   }
+  if (regstr.test(website.value) === true || website.value == "") {
+    onSuccess(website);
+    flag = flag + 1;
+  }
+  else {
+    onError(website, "Enter correct website link");
+  }
+
   return flag;
 }
 function onSuccess(input) {

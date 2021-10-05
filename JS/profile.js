@@ -33,7 +33,7 @@ let machine = document.querySelector("#machine");
 let management = document.querySelector("#management");
 let cyber = document.querySelector("#cyber");
 let block = document.querySelector("#block");
-var n = 0;
+// var n = 0;
 function arrayRemove(arr, value) {
   return arr.filter(function (geeks) {
     return geeks != value;
@@ -41,91 +41,91 @@ function arrayRemove(arr, value) {
 }
 let choice = [];
 app.addEventListener("click", function () {
-  if (n % 2 == 0) {
-    app.style.backgroundColor = "#1ea54c";
+  if (app.classList == "button1") {
+    app.classList.remove("button1");
+    app.classList.add("button");
     choice.push("appdev");
-    n = n + 1;
   } else {
-    app.style.backgroundColor = "#1D2833";
+    app.classList.add("button1");
+    app.classList.remove("button");
     choice = arrayRemove(choice, "appdev");
-    n = n + 1;
   }
 });
 frontend.addEventListener("click", function () {
-  if (n % 2 == 0) {
-    frontend.style.backgroundColor = "#1ea54c";
+  if (frontend.classList == "button1") {
+    frontend.classList.remove("button1");
+    frontend.classList.add("button");
     choice.push("frontend");
-    n = n + 1;
   } else {
-    frontend.style.backgroundColor = "#1D2833";
+    frontend.classList.remove("button");
+    frontend.classList.add("button1");
     choice = arrayRemove(choice, "frontend");
-    n = n + 1;
   }
 });
 backend.addEventListener("click", function () {
-  if (n % 2 == 0) {
-    backend.style.backgroundColor = "#1ea54c";
+  if (backend.classList == "button1") {
+    backend.classList.remove("button1");
+    backend.classList.add("button");
     choice.push("backend");
-    n = n + 1;
   } else {
-    backend.style.backgroundColor = "#1D2833";
+    backend.classList.remove("button");
+    backend.classList.add("button1");
     choice = arrayRemove(choice, "backend");
-    n = n + 1;
   }
 });
 ui.addEventListener("click", function () {
-  if (n % 2 == 0) {
-    ui.style.backgroundColor = "#1ea54c";
+  if (ui.classList == "button1") {
+    ui.classList.remove("button1");
+    ui.classList.add("button");
     choice.push("ui/ux");
-    n = n + 1;
   } else {
-    ui.style.backgroundColor = "#1D2833";
+    ui.classList.remove("button");
+    ui.classList.add("button1");
     choice = arrayRemove(choice, "ui/ux");
-    n = n + 1;
   }
 });
 machine.addEventListener("click", function () {
-  if (n % 2 == 0) {
-    machine.style.backgroundColor = "#1ea54c";
+  if (machine.classList == "button1") {
+    machine.classList.remove("button1");
+    machine.classList.add("button");
     choice.push("ml");
-    n = n + 1;
   } else {
-    machine.style.backgroundColor = "#1D2833";
+    machine.classList.remove("button");
+    machine.classList.add("button1");
     choice = arrayRemove(choice, "ml");
-    n = n + 1;
   }
 });
 management.addEventListener("click", function () {
-  if (n % 2 == 0) {
-    management.style.backgroundColor = "#1ea54c";
+  if (management.classList == "button1") {
+    management.classList.remove("button1");
+    management.classList.add("button");
     choice.push("management");
-    n = n + 1;
   } else {
-    management.style.backgroundColor = "#1D2833";
+    management.classList.remove("button");
+    management.classList.add("button1");
     choice = arrayRemove(choice, "management");
-    n = n + 1;
   }
 });
 cyber.addEventListener("click", function () {
-  if (n % 2 == 0) {
-    cyber.style.backgroundColor = "#1ea54c";
+  if (cyber.classList == "button1") {
+    cyber.classList.remove("button1");
+    cyber.classList.add("button");
     choice.push("cybersecurity");
-    n = n + 1;
   } else {
-    cyber.style.backgroundColor = "#1D2833";
+    cyber.classList.remove("button");
+    cyber.classList.add("button1");
     choice = arrayRemove(choice, "cybersecurity");
-    n = n + 1;
   }
 });
 block.addEventListener("click", function () {
-  if (n % 2 == 0) {
-    block.style.backgroundColor = "#1ea54c";
+  if (block.classList == "button1") {
+    block.classList.remove("button1");
+    block.classList.add("button");
     choice.push("blockchain");
-    n = n + 1;
   } else {
-    block.style.backgroundColor = "#1D2833";
+    block.classList.remove("button");
+    block.classList.add("button1");
     choice = arrayRemove(choice, "blockchain");
-    n = n + 1;
   }
 });
 

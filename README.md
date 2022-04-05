@@ -9,6 +9,8 @@
 
 ## Built With
 <img src="https://github.com/STCVIT/CryptoAuction/blob/b541fecf108f1ef673d7a1f163c8eae1e2fdeffd/Build%20With/react%20png.png" alt="ReactJS" width="15%" >
+<img src="https://github.com/STCVIT/HackMate_Frontend/blob/main/Build%20With/CSS%20png.png" alt="ReactJS" width="15%" >
+
 
 ## Getting started
 * Open the <a href="https://stcvit.github.io/HackMate_Frontend/"> website</a>  or clone this repository

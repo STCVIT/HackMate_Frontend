@@ -4,7 +4,7 @@
 <h1>Hackmate </h1>
 
 
-> A software that allows students to find teammates to take part in Various hackathons. It also allows VIT Chapters to post about their hackathons to which students can register.
+> A software that allows students to find teammates to take part in various hackathons. It also allows organizations to post about their hackathons to which students can register.
 
 
 ## Built With
@@ -16,6 +16,8 @@
 * You're good to go! Now you can join, create and search for any team you want to!
 
 ## Contributors
+*   <a href="https://github.com/aneeshpanda">Aneesh Panda</a>
+*   <a href="https://github.com/megh-hub">Megha Maitin</a>
 *   <a href="https://github.com/Shreyan111">Shreyan Sanyal</a>
 ## Connect with Us
 

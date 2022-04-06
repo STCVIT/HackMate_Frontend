@@ -6,9 +6,9 @@
 
 > A software that allows students to find teammates to take part in various hackathons. It also allows organizations to post about their hackathons to which students can register.
 <p float="left">
-<img src="https://github.com/STCVIT/HackMate_Frontend/blob/main/Build%20With/landing.png" alt="landing" width="30%" >
-<img src="https://github.com/STCVIT/HackMate_Frontend/blob/main/Build%20With/search.png" alt="search" width="30%" >
-<img src="https://github.com/STCVIT/HackMate_Frontend/blob/main/Build%20With/view.png" alt="view" width="30%" >
+<img src="https://github.com/STCVIT/HackMate_Frontend/blob/main/Build%20With/landing.png" alt="landing" width="33%" >
+<img src="https://github.com/STCVIT/HackMate_Frontend/blob/main/Build%20With/search.png" alt="search" width="33%" >
+<img src="https://github.com/STCVIT/HackMate_Frontend/blob/main/Build%20With/view.png" alt="view" width="33%" >
 
 </p>
 

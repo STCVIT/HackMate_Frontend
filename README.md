@@ -11,7 +11,7 @@
 <!-- Add tech stack images -->
 <p float="left">
 <img src="https://github.com/STCVIT/HackMate_Frontend/blob/main/Build%20With/HTML%20png.png" alt="HTML" width="15%" >
-<img src="https://github.com/STCVIT/HackMate_Frontend/blob/main/Build%20With/CSS%20png.png" alt="CSS" width="10%" >
+<img src="https://github.com/STCVIT/HackMate_Frontend/blob/main/Build%20With/CSS%20png.png" alt="CSS" width="13%" >
 <img src="https://github.com/STCVIT/HackMate_Frontend/blob/main/Build%20With/JS%20png.png" alt="JS" width="15%" >
 
 </p>
@@ -23,6 +23,8 @@
 
 ## Contributors
 *   <a href="https://github.com/aneeshpanda">Aneesh Panda</a>
+*   <a href="https://github.com/deepg7">Deep Gandhi</a>
+*   <a href="https://github.com/dwijaxo">Dwija Patel</a>
 *   <a href="https://github.com/megh-hub">Megha Maitin</a>
 *   <a href="https://github.com/Shreyan111">Shreyan Sanyal</a>
 ## Connect with Us
